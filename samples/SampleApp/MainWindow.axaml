@@ -1,0 +1,61 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:demoPages="clr-namespace:SampleApp.DemoPages"
+        xmlns:experiments="clr-namespace:SampleApp.Experiments"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SampleApp.MainWindow"
+        Title="SampleApp">
+
+  <!-- TODO: move the margins into the theme ?? -->
+  <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
+    <TabItem>
+      <TabItem.Header>
+        <TextBlock FontWeight="600">Overview</TextBlock>
+      </TabItem.Header>
+      <StackPanel Margin="10">
+        <TextBlock Classes="h1" Text="Theme Sampler" />
+        <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap">
+          Elements in this sampler are styled with a partial
+          <TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />
+          theme, built upon <TextBlock Classes="code" FontSize="16" Text="Avalonia.Fluent" />. <LineBreak />
+          <LineBreak />
+          <Bold>Note:</Bold> at the moment the base theme is not just a
+          fallback for everything not implemented yet in the MacOS theme, but may in some (or most?) instances provide
+          the base template to attach styles to (currently the case for buttons, while TabControl is re-templated).
+          We still need to research what the drawbacks to this approach might be ...
+        </TextBlock>
+      </StackPanel>
+    </TabItem>
+    <TabItem Header="Button">
+      <demoPages:ButtonDemo />
+    </TabItem>
+    <TabItem Header="TabControl">
+      <demoPages:TabControlDemo />
+    </TabItem>
+    <TabItem Header="Toggle Switch [WIP]">
+      <demoPages:ToggleSwitchDemo />
+    </TabItem>
+
+    <TabItem>
+      <TabItem.Header>
+        <StackPanel Orientation="Horizontal">
+          <!-- TODO: Find a way to use SVGs as SVGs ... i.e. allow currentColor to be set etc. -->
+          <!-- <svg:Svg Path="/Assets/Padlock.svg" Width="16" Height="16" Margin="0,0,5,0" /> -->
+          <!-- <Image Source="{SvgImage /Assets/Padlock.svg}"/> -->
+          <Image Source="{StaticResource PadlockIcon}" Height="16" Width="16" Margin="0 -3 3 0" />
+          <TextBlock Text="Experiments" />
+        </StackPanel>
+      </TabItem.Header>
+      <TabControl>
+        <TabItem Header="System Colours">
+          <experiments:SystemColoursDemo />
+        </TabItem>
+        <TabItem Header="Toggle Buttons">
+          <experiments:ToggleButtonExperiments />
+        </TabItem>
+      </TabControl>
+    </TabItem>
+  </TabControl>
+</Window>

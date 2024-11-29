@@ -1,0 +1,27 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <StackPanel>
+      <TextBlock Classes="h1">Heading</TextBlock>
+      <TextBlock>Standard Text with some <TextBlock Classes="code">Code</TextBlock> in the middle</TextBlock>
+
+    </StackPanel>
+  </Design.PreviewWith>
+  <ControlTheme x:Key="{x:Type TextBlock}"
+                TargetType="TextBlock">
+    <Style Selector="^.h1">
+      <Setter Property="FontSize" Value="{DynamicResource H1FontSize}" />
+      <Setter Property="FontWeight" Value="{DynamicResource H1FontWeight}" />
+      <Setter Property="Margin" Value="{DynamicResource H1Margins}" />
+    </Style>
+    <Style Selector="^.code">
+      <!-- AMP: <Span> or <Run> don't support padding, so not looking great with coloured background -->
+      <Setter Property="FontFamily" Value="{DynamicResource CodeFontFamily}" />
+      <Setter Property="Foreground" Value="{DynamicResource CodeFontColor}" />
+      <Setter Property="Background" Value="{DynamicResource CodeBackgroundColor}" />
+      <Setter Property="Padding" Value="2,2,1,1" />
+      <Setter Property="Margin" Value="0 0 0 -1" />
+      <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

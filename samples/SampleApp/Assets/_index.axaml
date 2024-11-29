@@ -1,0 +1,8 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SampleApp;assembly=SampleApp">
+
+  <!-- Each asset listed here also needs to be registered in `SampleApp.csproj` as `<AdditionalFiles ...>` -->
+  <SKPictureImage x:Key="PadlockIcon" Source="{x:Static local:Padlock.Picture}" />
+
+</ResourceDictionary>
