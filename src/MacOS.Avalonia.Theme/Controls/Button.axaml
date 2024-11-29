@@ -1,0 +1,61 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <StackPanel>
+      <Button Content="Test" Margin="10" />
+      <Button Content="Test" Margin="10 " IsEnabled="False" />
+      <Button Classes="Primary" Content="Open" Margin="10 " />
+      <Button Classes="Primary" Content="Open" Margin="10 " IsEnabled="False" />
+    </StackPanel>
+  </Design.PreviewWith>
+
+  <ControlTheme x:Key="{x:Type Button}"
+                TargetType="Button">
+    <Setter Property="Background" Value="{DynamicResource ButtonDefaultBackgroundColor}" />
+    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryColor}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorder}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+    <Setter Property="Padding" Value="{DynamicResource ButtonDefaultPadding}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="FontSize" Value="{DynamicResource ButtonDefaultFontSize}" />
+    <Setter Property="FontWeight" Value="{DynamicResource ButtonDefaultFontWeight}" />
+    <Style Selector="^:pressed">
+      <Setter Property="Background" Value="{DynamicResource ButtonDefaultPressedBackground}" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
+      <Setter Property="Background" Value="{DynamicResource ButtonDisabledBackground}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ButtonDisabledBorder}" />
+    </Style>
+
+    <Style Selector="^.Primary">
+      <Setter Property="Background" Value="{DynamicResource ButtonPrimaryBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Style Selector="^:pressed">
+        <Setter Property="Background" Value="{DynamicResource ButtonPrimaryPressedBackground}" />
+      </Style>
+      <Style Selector="^:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonDisabledBackground}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^.PrimaryPrecise">
+      <Setter Property="Background" Value="{DynamicResource ButtonPrimaryBackgroundPrecise}" />
+      <Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Style Selector="^:pressed">
+        <Setter Property="Background" Value="{DynamicResource ButtonPrimaryPressedBackgroundPrecise}" />
+      </Style>
+      <Style Selector="^:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonDisabledBackground}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+      </Style>
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

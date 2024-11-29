@@ -1,0 +1,135 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <StackPanel Orientation="Horizontal" Margin="10">
+      <Border Width="500">
+        <TabControl TabStripPlacement="Left">
+          <TabItem Header="Tab One">
+            <TextBlock Text="Content 1" />
+          </TabItem>
+          <TabItem Header="Tab Two">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Disabled Tab" IsEnabled="False" />
+        </TabControl>
+      </Border>
+      <Border Width="500">
+        <TabControl>
+          <TabItem Header="Tab 1">
+            <TextBlock Text="Content 1" />
+          </TabItem>
+          <TabItem Header="Tab 2">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Disabled Tab" IsEnabled="False" />
+        </TabControl>
+      </Border>
+    </StackPanel>
+  </Design.PreviewWith>
+
+  <!-- Shifting the divider right up to the left neighbour -->
+  <Thickness x:Key="TabItemDividerMargin">-2, 0, 0, 0</Thickness>
+  <!-- Shifting the 'selected' border to the right to hide the divider -->
+  <Thickness x:Key="TabItemSelectedMargin">1, 0, -1, 0</Thickness>
+  <!-- = ButtonDefaultPadding + 1px horizontal offset to keep the text position stable as the margin shifts -->
+  <Thickness x:Key="TabItemSelectedOffsetPadding">7, 2, 9, 2</Thickness>
+
+  <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="FontSize" Value="{DynamicResource ButtonDefaultFontSize}" />
+    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryColor}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="Padding" Value="{DynamicResource TabItemPadding}" />
+
+    <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Top], ^[TabStripPlacement=Bottom]">
+      <Setter Property="Template">
+        <ControlTemplate>
+          <StackPanel Name="PART_RootElement" Orientation="Horizontal">
+            <!-- POTENTIALLY FRAGILE HACK (TODO: test with different user font size settings ...?)
+               The TextBlock as divider works better than Rectangle, because the pipe character is anti-aliased.
+               A better option might be to track the selected tab in code-behind and attach a property addressing the 
+               tab to the right of it somehow ... TODO: ??? -->
+            <TextBlock Name="PART_Divider"
+                       Foreground="{DynamicResource TextTertiaryColor}"
+                       VerticalAlignment="Center"
+                       Margin="{DynamicResource TabItemDividerMargin}">
+              |
+            </TextBlock>
+            <!-- <Rectangle Name="PART_Divider" -->
+            <!--            Height="14" -->
+            <!--            Width="1" -->
+            <!--            Fill="{DynamicResource TextTertiaryColor}" -->
+            <!--            VerticalAlignment="Center" /> -->
+            <ContentPresenter Name="PART_ContentPresenter"
+                              Padding="{TemplateBinding Padding}"
+                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              Content="{TemplateBinding Header}"
+                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                              CornerRadius="{TemplateBinding CornerRadius}"
+                              RecognizesAccessKey="True" />
+          </StackPanel>
+        </ControlTemplate>
+      </Setter>
+      <Style Selector="^:nth-child(1) /template/ TextBlock#PART_Divider">
+        <Setter Property="Foreground" Value="Transparent" />
+      </Style>
+      <!-- <Style Selector="^:nth-child(1) /template/ Rectangle#PART_Divider"> -->
+      <!--   <Setter Property="Fill" Value="Transparent" /> -->
+      <!-- </Style> -->
+      <Style Selector="^:selected /template/ TextBlock#PART_Divider">
+        <Setter Property="Foreground" Value="Transparent" />
+      </Style>
+      <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ButtonDefaultBackgroundColor}" />
+        <!-- Border deliberately a bit darker, to hide right neighbour's divider better -->
+        <Setter Property="BorderBrush" Value="{DynamicResource TextTertiaryColor}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+      </Style>
+      <Style Selector="^:selected:not(:nth-last-child(1)) /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Margin" Value="{DynamicResource TabItemSelectedMargin}" />
+        <Setter Property="Padding" Value="{DynamicResource TabItemSelectedOffsetPadding}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^[TabStripPlacement=Right], ^[TabStripPlacement=Left]">
+      <Setter Property="Padding" Value="8 4" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Content="{TemplateBinding Header}"
+                            ContentTemplate="{TemplateBinding HeaderTemplate}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            RecognizesAccessKey="True" />
+        </ControlTemplate>
+      </Setter>
+      <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource SelectionUnfocused}" />
+        <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+      </Style>
+    </Style>
+    <Style Selector="^[TabStripPlacement=Right]">
+      <Setter Property="HorizontalContentAlignment" Value="Right" />
+    </Style>
+    <Style Selector="^[TabStripPlacement=Left]">
+      <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.2.1"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.1"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.1"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia.Svg" Version="11.2.0.2"/>
+        <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0.2"/>
+        <PackageReference Include="Svg.SourceGenerator.Skia" Version="2.0.0.4"/>
+        <PackageReference Include="Avalonia.Controls.Skia" Version="11.2.0.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="Assets/Padlock.svg" NamespaceName="SampleApp" ClassName="Padlock"/>
+    </ItemGroup>
+
+    <!-- AMP: Temporary link during development. Once the theme is packaged as a nuget, it can be referenced like the others above-->
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MacOS.Avalonia.Theme\MacOS.Avalonia.Theme.csproj" />
+    </ItemGroup>
+</Project>
