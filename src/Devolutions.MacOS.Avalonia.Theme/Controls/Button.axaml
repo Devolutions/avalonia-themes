@@ -11,50 +11,50 @@
 
   <ControlTheme x:Key="{x:Type Button}"
                 TargetType="Button">
-    <Setter Property="Background" Value="{DynamicResource ButtonDefaultBackgroundColor}" />
-    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryColor}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource ButtonDefaultBorder}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="Padding" Value="{DynamicResource ButtonDefaultPadding}" />
+    <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="FontSize" Value="{DynamicResource ButtonDefaultFontSize}" />
-    <Setter Property="FontWeight" Value="{DynamicResource ButtonDefaultFontWeight}" />
+    <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+    <Setter Property="FontWeight" Value="{DynamicResource ButtonFontWeight}" />
     <Style Selector="^:pressed">
-      <Setter Property="Background" Value="{DynamicResource ButtonDefaultPressedBackground}" />
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundActiveHighBrush}" />
     </Style>
     <Style Selector="^:disabled">
-      <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
-      <Setter Property="Background" Value="{DynamicResource ButtonDisabledBackground}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ButtonDisabledBorder}" />
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderDisabledBrush}" />
     </Style>
 
     <Style Selector="^.Primary">
-      <Setter Property="Background" Value="{DynamicResource ButtonPrimaryBackground}" />
-      <Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource ButtonPrimaryPressedBackground}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRecessedBrush}" />
       </Style>
       <Style Selector="^:disabled">
-        <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
-        <Setter Property="Background" Value="{DynamicResource ButtonDisabledBackground}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
       </Style>
     </Style>
 
     <Style Selector="^.PrimaryPrecise">
-      <Setter Property="Background" Value="{DynamicResource ButtonPrimaryBackgroundPrecise}" />
-      <Setter Property="Foreground" Value="{DynamicResource ButtonPrimaryForeground}" />
+      <Setter Property="Background" Value="{DynamicResource TempButtonPrimaryBackgroundPrecise}" />
+      <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource ButtonPrimaryPressedBackgroundPrecise}" />
+        <Setter Property="Background" Value="{DynamicResource TempButtonPrimaryPressedBackgroundPrecise}" />
       </Style>
       <Style Selector="^:disabled">
-        <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
-        <Setter Property="Background" Value="{DynamicResource ButtonDisabledBackground}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
       </Style>
     </Style>
   </ControlTheme>

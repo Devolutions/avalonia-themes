@@ -1,5 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <!-- Styles currently only used in the app  -->
+
   <Design.PreviewWith>
     <StackPanel>
       <TextBlock Classes="h1">Heading</TextBlock>
@@ -7,6 +10,14 @@
 
     </StackPanel>
   </Design.PreviewWith>
+
+  <x:Double x:Key="H1FontSize">16</x:Double>
+  <FontWeight x:Key="H1FontWeight">Bold</FontWeight>
+  <Thickness x:Key="H1Margins">0,0,0,10</Thickness>
+
+  <FontFamily x:Key="CodeFontFamily">"Courier New, Courier, monospace"</FontFamily>
+  <Color x:Key="CodeFontColor">SlateBlue</Color>
+
   <ControlTheme x:Key="{x:Type TextBlock}"
                 TargetType="TextBlock">
     <Style Selector="^.h1">
@@ -18,7 +29,7 @@
       <!-- AMP: <Span> or <Run> don't support padding, so not looking great with coloured background -->
       <Setter Property="FontFamily" Value="{DynamicResource CodeFontFamily}" />
       <Setter Property="Foreground" Value="{DynamicResource CodeFontColor}" />
-      <Setter Property="Background" Value="{DynamicResource CodeBackgroundColor}" />
+      <Setter Property="Background" Value="{DynamicResource LayoutBackgroundLowBrush}" />
       <Setter Property="Padding" Value="2,2,1,1" />
       <Setter Property="Margin" Value="0 0 0 -1" />
       <Setter Property="VerticalAlignment" Value="Bottom" />

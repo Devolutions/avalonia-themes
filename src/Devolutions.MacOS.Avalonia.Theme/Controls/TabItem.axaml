@@ -36,9 +36,9 @@
 
   <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
     <Setter Property="Background" Value="Transparent" />
-    <Setter Property="FontSize" Value="{DynamicResource ButtonDefaultFontSize}" />
-    <Setter Property="Foreground" Value="{DynamicResource TextPrimaryColor}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+    <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -46,7 +46,7 @@
     <Setter Property="Padding" Value="{DynamicResource TabItemPadding}" />
 
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Foreground" Value="{DynamicResource TextTertiaryColor}" />
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
     </Style>
 
     <Style Selector="^[TabStripPlacement=Top], ^[TabStripPlacement=Bottom]">
@@ -58,7 +58,7 @@
                A better option might be to track the selected tab in code-behind and attach a property addressing the 
                tab to the right of it somehow ... TODO: ??? -->
             <TextBlock Name="PART_Divider"
-                       Foreground="{DynamicResource TextTertiaryColor}"
+                       Foreground="{DynamicResource ForegroundLowBrush}"
                        VerticalAlignment="Center"
                        Margin="{DynamicResource TabItemDividerMargin}">
               |
@@ -66,7 +66,7 @@
             <!-- <Rectangle Name="PART_Divider" -->
             <!--            Height="14" -->
             <!--            Width="1" -->
-            <!--            Fill="{DynamicResource TextTertiaryColor}" -->
+            <!--            Fill="{DynamicResource ForegroundLowBrush}" -->
             <!--            VerticalAlignment="Center" /> -->
             <ContentPresenter Name="PART_ContentPresenter"
                               Padding="{TemplateBinding Padding}"
@@ -92,9 +92,9 @@
         <Setter Property="Foreground" Value="Transparent" />
       </Style>
       <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="{DynamicResource ButtonDefaultBackgroundColor}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
         <!-- Border deliberately a bit darker, to hide right neighbour's divider better -->
-        <Setter Property="BorderBrush" Value="{DynamicResource TextTertiaryColor}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ForegroundLowBrush}" />
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
       </Style>
       <Style Selector="^:selected:not(:nth-last-child(1)) /template/ ContentPresenter#PART_ContentPresenter">
@@ -121,7 +121,7 @@
         </ControlTemplate>
       </Setter>
       <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="{DynamicResource SelectionUnfocused}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundMidBrush}" />
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
       </Style>
     </Style>

@@ -15,7 +15,7 @@
         <TextBlock FontWeight="600">Overview</TextBlock>
       </TabItem.Header>
       <StackPanel Margin="10">
-        <TextBlock Classes="h1" Text="Theme Sampler" />
+        <TextBlock Classes="h1" Text=" Sampler" />
         <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap">
           Elements in this sampler are styled with a partial
           <TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />
