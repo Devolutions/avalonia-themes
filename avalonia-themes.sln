@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "samples\SampleApp\SampleApp.csproj", "{8FB0A38F-D80A-45A1-9796-FD22FDB14064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacOS.Avalonia.Theme", "src\MacOS.Avalonia.Theme\MacOS.Avalonia.Theme.csproj", "{052424E1-48F3-4D8E-A780-DEB4D33B4482}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacOS.Avalonia.Theme", "src\Devolutions.MacOS.Avalonia.Theme\Devolutions.MacOS.Avalonia.Theme.csproj", "{052424E1-48F3-4D8E-A780-DEB4D33B4482}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7756B42B-13EB-4DC9-BA61-11997466D93C}"
 EndProject
