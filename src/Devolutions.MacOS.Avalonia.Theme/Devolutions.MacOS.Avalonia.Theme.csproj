@@ -1,6 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <Version>1.0.0.0</Version>
+        <Company>Devolutions</Company>
+        <Description>Devolutions Avalonia macOS Theme</Description>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
@@ -12,3 +15,5 @@
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1"/>
     </ItemGroup>
 </Project>
+
+
