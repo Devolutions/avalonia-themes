@@ -37,7 +37,7 @@
     <Style Selector="^[TabStripPlacement=Top]">
       <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderLowBrush}" />
       <Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
-      <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+      <Setter Property="CornerRadius" Value="{DynamicResource LayoutCornerRadius}" />
       <Setter Property="Template">
         <ControlTemplate>
           <Border Background="{TemplateBinding Background}"

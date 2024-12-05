@@ -9,6 +9,7 @@
   <Color x:Key="ControlBorderLowColor">#29000000</Color> <!-- 16% -->
   <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
 
+  <CornerRadius x:Key="LayoutCornerRadius">5</CornerRadius>
   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
 
   <Thickness x:Key="BorderThickness">1</Thickness>
@@ -57,11 +58,6 @@
   <Thickness x:Key="ButtonPadding">10 2</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
 
-  <!-- TabControl & TabItem Resources -->
-  <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
-  <Thickness x:Key="TabItemPadding">8 2</Thickness>
-  <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{StaticResource TabControlBackgroundColor}" />
-
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
   <VisualBrush x:Key="TempButtonPrimaryBackgroundPrecise" Stretch="Fill">
     <VisualBrush.Visual>
@@ -102,4 +98,10 @@
       </Panel>
     </VisualBrush.Visual>
   </VisualBrush>
+
+  <!-- TabControl & TabItem Resources -->
+  <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
+  <Thickness x:Key="TabItemPadding">8 2</Thickness>
+  <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{StaticResource TabControlBackgroundColor}" />
+
 </ResourceDictionary>
