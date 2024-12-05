@@ -21,14 +21,16 @@
         <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0.2"/>
         <PackageReference Include="Svg.SourceGenerator.Skia" Version="2.0.0.4"/>
         <PackageReference Include="Avalonia.Controls.Skia" Version="11.2.0.2"/>
+        <!-- <PackageReference Include="Devolutions.MacOS.Avalonia.Theme" Version="2024.12.4" /> -->
     </ItemGroup>
 
     <ItemGroup>
         <AdditionalFiles Include="Assets/Padlock.svg" NamespaceName="SampleApp" ClassName="Padlock"/>
     </ItemGroup>
 
-    <!-- AMP: Temporary link during development. Once the theme is packaged as a nuget, it can be referenced like the others above-->
+    <!-- Temporary link for development. 
+         (To use the published nuget, uncomment PackageReference above (update version) or install with Nuget manager) -->
     <ItemGroup>
-        <ProjectReference Include="..\..\src\MacOS.Avalonia.Theme\MacOS.Avalonia.Theme.csproj" />
+        <ProjectReference Include="..\..\src\Devolutions.MacOS.Avalonia.Theme\Devolutions.MacOS.Avalonia.Theme.csproj"/>
     </ItemGroup>
 </Project>

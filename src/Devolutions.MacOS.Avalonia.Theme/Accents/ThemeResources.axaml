@@ -1,73 +1,72 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <Color x:Key="ButtonDefaultBackgroundColor">White</Color>
-  <Color x:Key="ButtonBackgroundActiveColor">LightGray</Color>
-  <Color x:Key="ButtonBackgroundPointerOverColor">red</Color>
-  <Color x:Key="ButtonBorderTopColor">#d6d6d6</Color>
-  <Color x:Key="ButtonBorderBottomColor">#b5b5b5</Color>
-  <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading ... -->
-  <Color x:Key="ButtonPrimaryForegroundColor">White</Color>
-  <Color x:Key="CodeFontColor">SlateBlue</Color>
-  <Color x:Key="CodeBackgroundColor">#f7f7f7</Color>
-  <!-- <Color x:Key="SelectionUnfocusedColor">#f3f3f3</Color> -->
-  <Color x:Key="TabUnselectedColor">#f2f2f2</Color>
-  <Color x:Key="PanelBorderColor">#ececec</Color>
-  <Color x:Key="PanelBackgroundColor">#f7f7f7</Color>
-  <Color x:Key="SidePanelBackgroundColor">#e5e5e5</Color>
-  <Color x:Key="TabStripBorderColor">#e6e6e6</Color>
+  <Color x:Key="BackgroundColor">#ffffff</Color>
+  <Color x:Key="ForegroundColor">#000000</Color>
 
+  <Color x:Key="AccentForegroundColor">#ffffff</Color>
+
+  <Color x:Key="ControlBorderHighColor">#4a000000</Color> <!-- 29% -->
+  <Color x:Key="ControlBorderLowColor">#29000000</Color> <!-- 16% -->
+  <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
 
   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
 
-  <!-- Typography -->
-  <SolidColorBrush x:Key="TextPrimaryColor" Color="Black" />
-  <SolidColorBrush x:Key="TextOnDarkColor" Color="White" />
-  <SolidColorBrush x:Key="TextSecondaryColor" Color="Black" Opacity="0.5" />
-  <SolidColorBrush x:Key="TextTertiaryColor" Color="Black" Opacity="0.25" />
-  <SolidColorBrush x:Key="SelectionUnfocused" Color="Black" Opacity="0.09" />
-  <x:Double x:Key="H1FontSize">16</x:Double>
-  <FontWeight x:Key="H1FontWeight">Bold</FontWeight>
-  <Thickness x:Key="H1Margins">0,0,0,10</Thickness>
-  <FontFamily x:Key="CodeFontFamily">"Courier New, Courier, monospace"</FontFamily>
+  <Thickness x:Key="BorderThickness">1</Thickness>
+  <Thickness x:Key="ControlBorderThickness">1</Thickness>
 
-  <SolidColorBrush x:Key="Highlight" Color="{DynamicResource HighlightColor}" />
+  <x:Double x:Key="FontSize">13</x:Double>
 
-  <SolidColorBrush x:Key="PanelBorder" Color="{DynamicResource PanelBorderColor}" />
-  <SolidColorBrush x:Key="PanelBackground" Color="{DynamicResource PanelBackgroundColor}" />
-  <SolidColorBrush x:Key="SidePanelBackground" Color="{DynamicResource SidePanelBackgroundColor}" />
-  <Thickness x:Key="PanelBorderThickness">1</Thickness>
 
+  <SolidColorBrush x:Key="ForegroundHighBrush" Color="{StaticResource ForegroundColor}" />
+  <SolidColorBrush x:Key="ForegroundMidBrush" Color="{StaticResource ForegroundColor}" Opacity="0.5" />
+  <SolidColorBrush x:Key="ForegroundLowBrush" Color="{StaticResource ForegroundColor}" Opacity="0.25" />
+
+  <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{StaticResource ForegroundColor}" Opacity="0.12" />
+  <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{StaticResource ForegroundColor}" Opacity="0.03" />
+
+  <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{StaticResource ForegroundColor}" Opacity="0.07" />
+  <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{StaticResource ForegroundColor}" Opacity="0.02" />
+
+  <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{StaticResource AccentForegroundColor}" />
+
+  <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{StaticResource BackgroundColor}" />
+  <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{StaticResource ForegroundColor}" Opacity="0.1" />
+  <SolidColorBrush x:Key="ControlBackgroundLowBrush" Color="{StaticResource ForegroundColor}" Opacity="0.9" />
+  <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{StaticResource ForegroundColor}" Opacity="0.05" />
+  <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
+    <GradientStop Offset="1" Color="{StaticResource SystemAccentColor}" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="ControlBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
+    <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
+                   Color="{StaticResource BackgroundColor}" Opacity="0.5" />
+  <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{StaticResource ControlBorderLowColor}" />
+    <GradientStop Offset="1" Color="{StaticResource ControlBorderHighColor}" />
+  </LinearGradientBrush>
+  <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{StaticResource ControlBorderHighColor}" />
+    <GradientStop Offset="1" Color="{StaticResource ControlBorderLowColor}" />
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{StaticResource ControlBorderLowColor}" />
+
+  <!-- Button Resources -->
+  <Thickness x:Key="ButtonPadding">10 2</Thickness>
+  <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
+
+  <!-- TabControl & TabItem Resources -->
+  <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
   <Thickness x:Key="TabItemPadding">8 2</Thickness>
+  <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{StaticResource TabControlBackgroundColor}" />
 
-  <Thickness x:Key="ButtonDefaultBorderThickness">1</Thickness>
-  <Thickness x:Key="ButtonDefaultPadding">10 2</Thickness>
-  <x:Double x:Key="ButtonDefaultFontSize">13</x:Double>
-  <FontWeight x:Key="ButtonDefaultFontWeight">400</FontWeight>
-  <SolidColorBrush x:Key="ButtonDefaultBackground" Color="{DynamicResource ButtonDefaultBackgroundColor}" />
-  <SolidColorBrush x:Key="ButtonDefaultPressedBackground" Color="{DynamicResource ButtonBackgroundActiveColor}" />
-  <LinearGradientBrush x:Key="ButtonDefaultBorder" StartPoint="0%,0%" EndPoint="0%,100%">
-    <GradientStop Offset="0" Color="{DynamicResource ButtonBorderTopColor}" />
-    <GradientStop Offset="1" Color="{DynamicResource ButtonBorderBottomColor}" />
-  </LinearGradientBrush>
-  <SolidColorBrush x:Key="ButtonDisabledBorder" Color="{DynamicResource ButtonBorderTopColor}" />
-  <SolidColorBrush x:Key="ButtonDisabledBackground" Color="{DynamicResource ButtonDefaultBackgroundColor}" Opacity="50" />
-  <SolidColorBrush x:Key="ButtonPrimaryForeground" Color="{DynamicResource ButtonPrimaryForegroundColor}" />
-  <SolidColorBrush x:Key="AccentDefault" Color="{DynamicResource SystemAccentColor}" />
-  <SolidColorBrush x:Key="AccentDefaultDark" Color="{DynamicResource SystemAccentColorDark1}" />
-  <SolidColorBrush x:Key="TabStripBorder" Color="{DynamicResource TabStripBorderColor}" />
-
-  <LinearGradientBrush x:Key="ButtonPrimaryBackground" StartPoint="0%,0%" EndPoint="0%,100%">
-    <GradientStop Offset="0" Color="{DynamicResource SystemAccentColorLight1}" />
-    <GradientStop Offset="1" Color="{DynamicResource SystemAccentColor}" />
-  </LinearGradientBrush>
-  <LinearGradientBrush x:Key="ButtonPrimaryPressedBackground" StartPoint="0%,0%" EndPoint="0%,100%">
-    <GradientStop Offset="0" Color="{DynamicResource SystemAccentColor}" />
-    <GradientStop Offset="1" Color="{DynamicResource SystemAccentColorDark1}" />
-  </LinearGradientBrush>
-  <VisualBrush x:Key="ButtonPrimaryBackgroundPrecise" Stretch="Fill">
+  <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
+  <VisualBrush x:Key="TempButtonPrimaryBackgroundPrecise" Stretch="Fill">
     <VisualBrush.Visual>
       <Panel>
-        <!-- <Rectangle Fill="{DynamicResource SystemAccentColor}" Width="20" Height="20" /> // might not have access to Logical tree where resources are defined-->
+        <!-- <Rectangle Fill="{StaticResource SystemAccentColor}" Width="20" Height="20" /> // might not have access to Logical tree where resources are defined-->
         <Rectangle Fill="#007aff" Width="20" Height="20" />
         <Rectangle>
           <Rectangle.Fill>
@@ -84,10 +83,10 @@
     </VisualBrush.Visual>
   </VisualBrush>
 
-  <VisualBrush x:Key="ButtonPrimaryPressedBackgroundPrecise" Stretch="Fill">
+  <VisualBrush x:Key="TempButtonPrimaryPressedBackgroundPrecise" Stretch="Fill">
     <VisualBrush.Visual>
       <Panel>
-        <!-- <Rectangle Fill="{DynamicResource AccentDefaultDark}" Width="20" Height="20" /> -->
+        <!-- <Rectangle Fill="{StaticResource ControlBackgroundAccentMidBrush}" Width="20" Height="20" /> -->
         <Rectangle Fill="#005FC6" Width="20" Height="20" />
         <Rectangle>
           <Rectangle.Fill>
@@ -103,5 +102,4 @@
       </Panel>
     </VisualBrush.Visual>
   </VisualBrush>
-
 </ResourceDictionary>

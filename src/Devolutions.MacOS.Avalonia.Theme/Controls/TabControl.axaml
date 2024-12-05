@@ -35,8 +35,8 @@
     <Setter Property="Background" Value="Transparent" />
 
     <Style Selector="^[TabStripPlacement=Top]">
-      <Setter Property="BorderBrush" Value="{DynamicResource PanelBorder}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource PanelBorderThickness}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderLowBrush}" />
+      <Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
       <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
       <Setter Property="Template">
         <ControlTemplate>
@@ -44,7 +44,8 @@
                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                   VerticalAlignment="{TemplateBinding VerticalAlignment}">
             <DockPanel>
-              <Border Name="PART_TabstripBorder"
+              <Border Name="PART_TabstripPanel"
+                      UseLayoutRounding="False"
                       DockPanel.Dock="{TemplateBinding TabStripPlacement}">
                 <ItemsPresenter Name="PART_ItemsPresenter"
                                 ItemsPanel="{TemplateBinding ItemsPanel}" />
@@ -63,11 +64,11 @@
         </ControlTemplate>
       </Setter>
       <Setter Property="Padding" Value="10 -10 10 10" />
-      <Style Selector="^/template/ Border#PART_TabstripBorder">
-        <Setter Property="Background" Value="{DynamicResource TabUnselectedColor}" />
+      <Style Selector="^/template/ Border#PART_TabstripPanel">
+        <Setter Property="Background" Value="{DynamicResource TabControlBackgroundBrush}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="BorderBrush" Value="{DynamicResource TabStripBorder}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ButtonDefaultBorderThickness}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderMidBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="ZIndex" Value="1" />
@@ -80,14 +81,14 @@
       </Style>
       <Style Selector="^/template/ ContentPresenter#PART_SelectedContentHost">
         <Setter Property="Padding" Value="20" />
-        <Setter Property="Background" Value="{DynamicResource PanelBackground}" />
+        <Setter Property="Background" Value="{DynamicResource LayoutBackgroundLowBrush}" />
         <Setter Property="VerticalAlignment" Value="Stretch" />
       </Style>
     </Style>
 
     <Style Selector="^[TabStripPlacement=Left], ^[TabStripPlacement=Right]">
-      <Setter Property="BorderBrush" Value="{DynamicResource PanelBorder}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource PanelBorderThickness}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderMidBrush}" />
+      <Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
       <Setter Property="CornerRadius" Value="0" />
       <Setter Property="Template">
         <ControlTemplate>
@@ -99,7 +100,7 @@
                   HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                   VerticalAlignment="{TemplateBinding VerticalAlignment}">
             <DockPanel>
-              <Border Name="PART_TabstripBorder"
+              <Border Name="PART_TabstripPanel"
                       DockPanel.Dock="{TemplateBinding TabStripPlacement}">
                 <ItemsPresenter Name="PART_ItemsPresenter"
                                 ItemsPanel="{TemplateBinding ItemsPanel}" />
@@ -118,8 +119,8 @@
       <Style Selector="^/template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
         <Setter Property="Orientation" Value="Vertical" />
       </Style>
-      <Style Selector="^/template/ Border#PART_TabstripBorder">
-        <Setter Property="Background" Value="{DynamicResource SidePanelBackground}" />
+      <Style Selector="^/template/ Border#PART_TabstripPanel">
+        <Setter Property="Background" Value="{DynamicResource LayoutBackgroundHighBrush}" />
         <Setter Property="Padding" Value="5 10" />
       </Style>
     </Style>
