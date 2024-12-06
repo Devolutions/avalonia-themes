@@ -11,8 +11,6 @@
   </Application.Resources>
 
   <Application.Styles>
-    <!-- <StyleInclude Source="avares://Avalonia.Themes.Simple/SimpleTheme.axaml" /> -->
-    <!-- <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" /> -->
     <StyleInclude Source="avares://Devolutions.MacOS.Avalonia.Theme/MacOSTheme.axaml" />
   </Application.Styles>
 </Application>

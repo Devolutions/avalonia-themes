@@ -11,8 +11,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.1" />
-        <PackageReference Include="Avalonia.Themes.Simple" Version="11.2.1"/>
+        <PackageReference Include="Avalonia" Version="11.2.1"/>
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1"/>
     </ItemGroup>
 </Project>
