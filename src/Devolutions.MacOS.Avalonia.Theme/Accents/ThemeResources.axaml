@@ -47,6 +47,7 @@
   </LinearGradientBrush>
   <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
                    Color="{StaticResource BackgroundColor}" Opacity="0.5" />
+  <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
   <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #bfbfbf</BoxShadows>
 
   <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
@@ -61,7 +62,8 @@
   <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{StaticResource ControlBorderLowColor}" />
 
   <!-- Button Resources -->
-  <Thickness x:Key="ButtonPadding">10 2</Thickness>
+  <Thickness x:Key="ButtonPadding">10 1 10 2</Thickness>
+  <Thickness x:Key="ButtonBorderThickness">0.5 0.5 0.5 1</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
 
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
@@ -110,4 +112,6 @@
   <Thickness x:Key="TabItemPadding">8 2</Thickness>
   <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{StaticResource TabControlBackgroundColor}" />
 
+  <!-- CheckBox Resources -->
+  <CornerRadius x:Key="CheckBoxCornerRadius">3</CornerRadius>
 </ResourceDictionary>
