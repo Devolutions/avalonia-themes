@@ -114,4 +114,11 @@
 
   <!-- CheckBox Resources -->
   <CornerRadius x:Key="CheckBoxCornerRadius">3</CornerRadius>
+  
+  <!-- DEVELOPMENT ONLY -->
+  <SolidColorBrush x:Key="TestGreen" Color="Green" />
+  <SolidColorBrush x:Key="TestRed" Color="Red" />
+  <SolidColorBrush x:Key="TestBlue" Color="Blue" />
+  <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
+
 </ResourceDictionary>
