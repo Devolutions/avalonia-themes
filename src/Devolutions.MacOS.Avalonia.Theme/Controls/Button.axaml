@@ -1,8 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-    <StackPanel>
-      <Button Content="Test" Margin="10" />
+    <StackPanel Width="110">
+      <Button Content="Cancel" Margin="10" />
       <Button Content="Test" Margin="10 " IsEnabled="False" />
       <Button Classes="Primary" Content="Open" Margin="10 " />
       <Button Classes="Primary" Content="Open" Margin="10 " IsEnabled="False" />
@@ -14,7 +14,7 @@
     <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -40,7 +40,7 @@
       <Style Selector="^:disabled">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
       </Style>
     </Style>
 

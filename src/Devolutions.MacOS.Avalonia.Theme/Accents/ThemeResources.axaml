@@ -6,13 +6,17 @@
   <Color x:Key="AccentForegroundColor">#ffffff</Color>
 
   <Color x:Key="ControlBorderHighColor">#4a000000</Color> <!-- 29% -->
-  <Color x:Key="ControlBorderLowColor">#29000000</Color> <!-- 16% -->
+  <Color x:Key="ControlBorderMidColor">#29000000</Color> <!-- 16% -->
+  <Color x:Key="ControlBorderLowColor">#14000000</Color> <!-- 8% -->
   <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
 
+  <Color x:Key="ControlBackgroundShadowColor">#bfbfbf</Color>
+
+  <CornerRadius x:Key="LayoutCornerRadius">5</CornerRadius>
   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
 
   <Thickness x:Key="BorderThickness">1</Thickness>
-  <Thickness x:Key="ControlBorderThickness">1</Thickness>
+  <Thickness x:Key="ControlBorderThickness">0.5</Thickness>
 
   <x:Double x:Key="FontSize">13</x:Double>
 
@@ -43,24 +47,24 @@
   </LinearGradientBrush>
   <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
                    Color="{StaticResource BackgroundColor}" Opacity="0.5" />
+  <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
+  <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #bfbfbf</BoxShadows>
+
   <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
     <GradientStop Offset="0" Color="{StaticResource ControlBorderLowColor}" />
-    <GradientStop Offset="1" Color="{StaticResource ControlBorderHighColor}" />
+    <GradientStop Offset="1" Color="{StaticResource ControlBorderMidColor}" />
   </LinearGradientBrush>
   <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-    <GradientStop Offset="0" Color="{StaticResource ControlBorderHighColor}" />
+    <GradientStop Offset="0" Color="{StaticResource ControlBorderMidColor}" />
     <GradientStop Offset="1" Color="{StaticResource ControlBorderLowColor}" />
   </LinearGradientBrush>
+  <SolidColorBrush x:Key="ControlBorderBrush" Color="{StaticResource ControlBorderMidColor}" />
   <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{StaticResource ControlBorderLowColor}" />
 
   <!-- Button Resources -->
-  <Thickness x:Key="ButtonPadding">10 2</Thickness>
+  <Thickness x:Key="ButtonPadding">10 1 10 2</Thickness>
+  <Thickness x:Key="ButtonBorderThickness">0.5 0.5 0.5 1</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
-
-  <!-- TabControl & TabItem Resources -->
-  <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
-  <Thickness x:Key="TabItemPadding">8 2</Thickness>
-  <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{StaticResource TabControlBackgroundColor}" />
 
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
   <VisualBrush x:Key="TempButtonPrimaryBackgroundPrecise" Stretch="Fill">
@@ -102,4 +106,12 @@
       </Panel>
     </VisualBrush.Visual>
   </VisualBrush>
+
+  <!-- TabControl & TabItem Resources -->
+  <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
+  <Thickness x:Key="TabItemPadding">8 2</Thickness>
+  <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{StaticResource TabControlBackgroundColor}" />
+
+  <!-- CheckBox Resources -->
+  <CornerRadius x:Key="CheckBoxCornerRadius">3</CornerRadius>
 </ResourceDictionary>
