@@ -4,8 +4,8 @@
     <StackPanel Width="110">
       <Button Content="Cancel" Margin="10" />
       <Button Content="Test" Margin="10 " IsEnabled="False" />
-      <Button Classes="Primary" Content="Open" Margin="10 " />
-      <Button Classes="Primary" Content="Open" Margin="10 " IsEnabled="False" />
+      <Button Classes="accent" Content="Open" Margin="10 " />
+      <Button Classes="accent" Content="Open" Margin="10 " IsEnabled="False" />
     </StackPanel>
   </Design.PreviewWith>
 
@@ -30,7 +30,7 @@
       <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderDisabledBrush}" />
     </Style>
 
-    <Style Selector="^.Primary">
+    <Style Selector="^.accent">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
       <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       <Setter Property="BorderThickness" Value="0" />
@@ -44,12 +44,12 @@
       </Style>
     </Style>
 
-    <Style Selector="^.PrimaryPrecise">
-      <Setter Property="Background" Value="{DynamicResource TempButtonPrimaryBackgroundPrecise}" />
+    <Style Selector="^.accentPrecise">
+      <Setter Property="Background" Value="{DynamicResource TempButtonaccentBackgroundPrecise}" />
       <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource TempButtonPrimaryPressedBackgroundPrecise}" />
+        <Setter Property="Background" Value="{DynamicResource TempButtonaccentPressedBackgroundPrecise}" />
       </Style>
       <Style Selector="^:disabled">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
