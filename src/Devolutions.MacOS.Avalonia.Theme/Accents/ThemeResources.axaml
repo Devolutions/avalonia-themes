@@ -16,7 +16,7 @@
   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
 
   <Thickness x:Key="BorderThickness">1</Thickness>
-  <Thickness x:Key="ControlBorderThickness">0.5</Thickness>
+  <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
 
   <x:Double x:Key="FontSize">13</x:Double>
 
@@ -63,7 +63,7 @@
 
   <!-- Button Resources -->
   <Thickness x:Key="ButtonPadding">10 1 10 2</Thickness>
-  <Thickness x:Key="ButtonBorderThickness">0.5 0.5 0.5 1</Thickness>
+  <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
 
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
