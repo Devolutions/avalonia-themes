@@ -14,6 +14,11 @@
         <PackageReference Include="Avalonia" Version="11.2.1"/>
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1"/>
     </ItemGroup>
+
+    <ItemGroup>
+        <AdditionalFiles Include="Converters/SelectedIndexToPopupOffsetConverter.cs" NamespaceName="Devolutions.MacOS.Avalonia.Theme.Converters" ClassName="IndexToOffsetConverters"/>
+        <AdditionalFiles Include="Converters/TotalWidthConverter.cs" NamespaceName="Devolutions.MacOS.Avalonia.Theme.Converters" ClassName="TotalWidthConverter"/>
+    </ItemGroup>
 </Project>
 
 

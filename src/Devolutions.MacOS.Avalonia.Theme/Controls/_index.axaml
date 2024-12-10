@@ -7,6 +7,8 @@
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="Button.axaml" />
         <MergeResourceInclude Source="CheckBox.axaml" />
+        <MergeResourceInclude Source="ComboBox.axaml" />
+        <MergeResourceInclude Source="ComboBoxItem.axaml" />
         <MergeResourceInclude Source="TabControl.axaml" />
         <MergeResourceInclude Source="TabItem.axaml" />
         <MergeResourceInclude Source="TextBlock.axaml" />

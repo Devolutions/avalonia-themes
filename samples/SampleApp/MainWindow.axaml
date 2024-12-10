@@ -34,6 +34,9 @@
     <TabItem Header="CheckBox">
       <demoPages:CheckBoxDemo />
     </TabItem>
+    <TabItem Header="ComboBox" IsSelected="True">
+      <demoPages:ComboBoxDemo />
+    </TabItem>
     <TabItem Header="TabControl">
       <demoPages:TabControlDemo />
     </TabItem>
