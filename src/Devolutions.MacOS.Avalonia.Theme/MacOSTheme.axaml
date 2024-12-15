@@ -1,12 +1,17 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:converters="clr-namespace:Devolutions.MacOS.Avalonia.Theme.Converters">
   <Styles.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
+        <MergeResourceInclude Source="/Accents/Icons.axaml" />
+        <!-- TODO: Theme variants not implemented yet - use Shared / Light / Dark for everything (cp. Semi.Avalonia for good example) -->
         <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
         <MergeResourceInclude Source="/Accents/Shared/ToggleSwitch.axaml" />
         <MergeResourceInclude Source="/Accents/Light/ToggleSwitch.axaml" />
       </ResourceDictionary.MergedDictionaries>
+      <converters:SelectedIndexToPopupOffsetConverter x:Key="SelectedIndexToPopupOffsetConverter" />
+      <converters:TotalWidthConverter x:Key="TotalWidthConverter" />
     </ResourceDictionary>
   </Styles.Resources>
 
