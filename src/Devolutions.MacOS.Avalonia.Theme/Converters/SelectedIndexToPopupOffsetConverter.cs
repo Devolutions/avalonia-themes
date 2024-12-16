@@ -8,7 +8,7 @@ public class SelectedIndexToPopupOffsetConverter : IMultiValueConverter
   public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
   {
     if (values is not [int index, int rowHeight, int initialBottomMargin, double maxDropDownHeight, int popupTrimHeight]
-        || index < 0) return 0D;
+        || index < 0) return 0d;
 
     var effectivePopupHeight = maxDropDownHeight - popupTrimHeight;
     double baseOffset = (index + 1) * -rowHeight - initialBottomMargin;
