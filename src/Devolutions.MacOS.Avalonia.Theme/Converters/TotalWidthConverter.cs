@@ -7,10 +7,9 @@ public class TotalWidthConverter : IMultiValueConverter
 {
   public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
   {
-    const double defaultWidth = 200;
-    if (values[0] is double width && values[1] is int sideMargin)
-      return width + 2 * sideMargin;
-    return defaultWidth;
+    if (values[0] is not double width || values[1] is not int sideMargin) return 200D;
+
+    return width + 2 * sideMargin;
   }
 
   public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
