@@ -12,6 +12,8 @@
       </ResourceDictionary.MergedDictionaries>
       <converters:SelectedIndexToPopupOffsetConverter x:Key="SelectedIndexToPopupOffsetConverter" />
       <converters:TotalWidthConverter x:Key="TotalWidthConverter" />
+      <converters:CharToMacOsPasswordCharConverter x:Key="CharToMacOsPasswordCharConverter" />
+      <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
     </ResourceDictionary>
   </Styles.Resources>
 
