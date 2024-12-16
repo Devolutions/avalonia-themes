@@ -7,7 +7,7 @@ public class TotalWidthConverter : IMultiValueConverter
 {
   public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
   {
-    if (values[0] is not double width || values[1] is not int sideMargin) return 200D;
+    if (values[0] is not double width || values[1] is not int sideMargin) return 200d;
 
     return width + 2 * sideMargin;
   }
