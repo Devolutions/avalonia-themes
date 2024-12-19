@@ -18,7 +18,8 @@
   <Thickness x:Key="BorderThickness">1</Thickness>
   <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
 
-  <x:Double x:Key="FontSize">13</x:Double>
+  <x:Double x:Key="ControlFontSize">13</x:Double>
+  <x:Double x:Key="PasswordHiddenFontSize">8</x:Double>
 
 
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{StaticResource ForegroundColor}" />
@@ -122,8 +123,8 @@
   <Thickness x:Key="ComboBoxItemMargin">2 0</Thickness>
   <Thickness x:Key="ComboBoxItemPadding">8 3</Thickness>
   <x:Int32 x:Key="ComboBoxItemHeight">22</x:Int32>
-  <Thickness x:Key="ComboBoxMargin">4</Thickness>
-  <x:Int32 x:Key="ComboBoxMarginBottom">4</x:Int32> <!-- must match ComboBoxMargin b value -->
+  <Thickness x:Key="ControlBoxShadowMargin">4</Thickness>
+  <x:Int32 x:Key="ControlBoxShadowMarginBottom">4</x:Int32> <!-- must match ControlBoxShadowMargin b value -->
   <x:Int32 x:Key="PopupTrimHeight">30</x:Int32> <!-- includes Margin, Padding, Shadow -->
   <x:Int32 x:Key="PopupSideMarginWidth">12</x:Int32> <!-- must match PopupMargin l/r values -->
   <Thickness x:Key="PopupMargin">12 1 12 29</Thickness> <!-- to accommodate shadow -->
@@ -131,6 +132,13 @@
   <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
   <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PopupBackgroundColor}" />
 
+  <!-- TextBox Resources -->
+  <Color x:Key="TextBoxClearBackgroundColor">#808080</Color>
+  <SolidColorBrush x:Key="TextBoxClearBackgroundBrush" Color="{StaticResource TextBoxClearBackgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxSelectionHighlightBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.3" />
+  <SolidColorBrush x:Key="TextBoxBorderFocusBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
+  <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
+                   Color="{StaticResource BackgroundColor}" Opacity="0.7" />
 
   <!-- DEVELOPMENT ONLY -->
   <SolidColorBrush x:Key="TestGreen" Color="Green" />

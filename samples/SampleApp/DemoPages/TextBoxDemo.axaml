@@ -1,0 +1,30 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.TextBoxDemo">
+  <ScrollViewer>
+
+    <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+      <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
+        <TextBlock>Name:</TextBlock>
+        <TextBox Watermark="Enter your name" />
+        <TextBlock>Password:</TextBlock>
+        <TextBox PasswordChar="*" Watermark="Enter your password" />
+        <TextBlock>Notes:</TextBlock>
+        <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+        <TextBox InnerLeftContent="http://" />
+        <TextBox InnerRightContent=".com" />
+        <TextBox
+          InnerLeftContent="http://"
+          InnerRightContent=".com" />
+        <TextBox Classes="clearButton">With 'Clear' button</TextBox>
+        <TextBox Watermark="Disabled" IsEnabled="False" />
+        <TextBox PasswordChar="*" Classes="revealPasswordButton">Reveal Password</TextBox>
+        <TextBox PasswordChar="*" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+      </StackPanel>
+    </Border>
+  </ScrollViewer>
+
+</UserControl>

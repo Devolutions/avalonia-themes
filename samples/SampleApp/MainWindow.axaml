@@ -34,11 +34,14 @@
     <TabItem Header="CheckBox">
       <demoPages:CheckBoxDemo />
     </TabItem>
-    <TabItem Header="ComboBox" IsSelected="True">
+    <TabItem Header="ComboBox">
       <demoPages:ComboBoxDemo />
     </TabItem>
     <TabItem Header="TabControl">
       <demoPages:TabControlDemo />
+    </TabItem>
+    <TabItem Header="TextBox" IsSelected="True">
+      <demoPages:TextBoxDemo />
     </TabItem>
     <TabItem Header="Toggle Switch [WIP]">
       <demoPages:ToggleSwitchDemo />
