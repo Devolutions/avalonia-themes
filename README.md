@@ -4,11 +4,32 @@ Custom Avalonia Themes developed by Devolutions
 ## MacOS Theme [Work in Progress]
 (Inspired by [@MikeCodesDotNET's earlier draft](https://github.com/AvaloniaUI/Avalonia/issues/14880#issuecomment-1985425341))
 
-- [Button](#button)
-- [CheckBox](#checkbox)
-- [ComboBox](#combobox)
-- [TabControl](#tabcontrol)
-- [TextBox](#textbox)
+- [Installation](#installation)
+- [Styled Components](#styled-components)
+  - [Button](#button)
+  - [CheckBox](#checkbox)
+  - [ComboBox](#combobox)
+  - [TabControl](#tabcontrol)
+  - [TextBox](#textbox)
+- [Next on our to-do list](#next-on-our-to-do-list)
+  - [TreeView](#treeview)
+  - [DataGrid](#datagrid)
+
+## Installation
+Install the Devolutions.MacOS.Avalonia.Theme package via NuGet:
+``` bash
+Install-Package Devolutions.MacOS.Avalonia.Theme
+```
+In your App.axaml, replace the existing theme (e.g., <FluentTheme /> or <SimpleTheme />) with the MacOS theme:
+``` xaml
+<Application ...>
+  <Application.Styles>
+     <StyleInclude Source="avares://Devolutions.MacOS.Avalonia.Theme/MacOSTheme.axaml" />
+  </Application.Styles>
+</Application>
+```
+
+## Styled Components
 
 ### Button
 <img src="https://github.com/user-attachments/assets/a9c2cc12-41dc-45c3-8bd2-b0452f7429de" alt="Buttons 2024-12-19" width="300">
@@ -24,3 +45,10 @@ Custom Avalonia Themes developed by Devolutions
 
 ### TextBox
 <img src="https://github.com/user-attachments/assets/132e6f83-17d9-4d9a-bfac-f1b5b5d510cf" alt="Buttons 2024-12-19" width="332">
+
+## Next on our to-do list
+
+### TreeView
+Coming soon ...
+
+### DataGrid
