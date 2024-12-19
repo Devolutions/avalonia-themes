@@ -29,7 +29,7 @@
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
     <Setter Property="CornerRadius" Value="{DynamicResource CheckBoxCornerRadius}" />
-    <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+    <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="FontStretch" Value="Condensed" />
     <Setter Property="Template">
       <ControlTemplate>

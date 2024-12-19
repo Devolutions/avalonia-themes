@@ -1,0 +1,240 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Design.PreviewWith>
+    <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+
+      <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
+        <TextBlock>Name:</TextBlock>
+        <TextBox Watermark="Enter your name">MyServer</TextBox>
+        <TextBlock>Password:</TextBlock>
+        <TextBox PasswordChar="*" Watermark="Enter your password" />
+        <TextBlock>Notes:</TextBlock>
+        <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+        <TextBox InnerLeftContent="http://" />
+        <TextBox InnerRightContent=".com" />
+        <TextBox
+          InnerLeftContent="http://"
+          InnerRightContent=".com" />
+        <TextBox Classes="clearButton">With 'Clear' button</TextBox>
+        <TextBox Watermark="Enter your name" IsEnabled="False" />
+        <TextBox PasswordChar="•" Classes="revealPasswordButton">Reveal Password</TextBox>
+        <TextBox PasswordChar="•" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <ControlTheme x:Key="FluentTextBoxButton" TargetType="Button">
+    <Setter Property="Focusable" Value="False" />
+    <Setter Property="Padding" Value="0" />
+    <Setter Property="Width" Value="13" />
+    <Setter Property="Height" Value="13" />
+    <Setter Property="Margin" Value="0 0 5 0" />
+    <Setter Property="TextElement.Foreground" Value="{DynamicResource TextControlButtonForeground}" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <ContentPresenter x:Name="PART_ContentPresenter"
+                            Background="{TemplateBinding Background}"
+                            CornerRadius="{TemplateBinding CornerRadius}"
+                            Content="{TemplateBinding Content}"
+                            Padding="{TemplateBinding Padding}" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+
+    <Style Selector="^:disabled /template/ ContentPresenter">
+      <Setter Property="Opacity" Value="0" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="FluentTextBoxToggleButton"
+                TargetType="ToggleButton"
+                BasedOn="{StaticResource FluentTextBoxButton}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="ToggleButton">
+          <ContentPresenter x:Name="PART_ContentPresenter"
+                            Background="{TemplateBinding Background}"
+                            Content="{TemplateBinding Content}"
+                            Padding="{TemplateBinding Padding}" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+    <Setter Property="CaretBrush" Value="{DynamicResource SystemAccentColor}" />
+    <Setter Property="FontSize">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource RevealPasswordToFontSizeConverter}">
+          <Binding RelativeSource="{RelativeSource Self}" Path="PasswordChar" />
+          <Binding RelativeSource="{RelativeSource Self}" Path="RevealPassword" />
+          <Binding Source="{StaticResource ControlFontSize}" />
+          <Binding Source="{StaticResource PasswordHiddenFontSize}" />
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="SelectionBrush" Value="{DynamicResource TextBoxSelectionHighlightBrush}" />
+    <!-- <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" /> TODO: make this a style? Class: rounded true/false -->
+    <Setter Property="MinHeight" Value="27" />
+    <Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
+    <Setter Property="Padding" Value="3 3 3 2 " />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors>
+          <Panel>
+            <Border Name="PART_BorderElement"
+                    Background="{TemplateBinding Background}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    Padding="3">
+              <Border Name="InnerBorderElement"
+                      BoxShadow="{DynamicResource ButtonBorderBoxShadow}"
+                      Background="{DynamicResource ControlBackgroundHighBrush}">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                  <ContentPresenter Name="PrefixContent"
+                                    Grid.Column="0"
+                                    Content="{TemplateBinding InnerLeftContent}"
+                                    Padding="3 3 3 2">
+                    <ContentPresenter.IsVisible>
+                      <Binding RelativeSource="{RelativeSource Self}" Path="Content"
+                               Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
+                    </ContentPresenter.IsVisible>
+                  </ContentPresenter>
+                  <DockPanel x:Name="PART_InnerDockPanel"
+                             Grid.Column="1"
+                             Margin="{TemplateBinding Padding}">
+                    <ScrollViewer Name="PART_ScrollViewer"
+                                  HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                                  VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+                                  IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                                  AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                                  BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}">
+                      <Panel>
+                        <TextBlock Name="PART_Watermark"
+                                   Foreground="{DynamicResource ForegroundLowBrush}"
+                                   FontSize="{DynamicResource ControlFontSize}"
+                                   Text="{TemplateBinding Watermark}"
+                                   TextAlignment="{TemplateBinding TextAlignment}"
+                                   TextWrapping="{TemplateBinding TextWrapping}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                          <TextBlock.IsVisible>
+                            <MultiBinding Converter="{x:Static BoolConverters.And}">
+                              <Binding ElementName="PART_TextPresenter" Path="PreeditText"
+                                       Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+                              <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Text"
+                                       Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+                            </MultiBinding>
+                          </TextBlock.IsVisible>
+                        </TextBlock>
+                        <TextPresenter Name="PART_TextPresenter"
+                                       Text="{TemplateBinding Text, Mode=TwoWay}"
+                                       CaretBlinkInterval="{TemplateBinding CaretBlinkInterval}"
+                                       CaretIndex="{TemplateBinding CaretIndex}"
+                                       SelectionStart="{TemplateBinding SelectionStart}"
+                                       SelectionEnd="{TemplateBinding SelectionEnd}"
+                                       TextAlignment="{TemplateBinding TextAlignment}"
+                                       TextWrapping="{TemplateBinding TextWrapping}"
+                                       LineHeight="{TemplateBinding LineHeight}"
+                                       LetterSpacing="{TemplateBinding LetterSpacing}"
+                                       RevealPassword="{TemplateBinding RevealPassword}"
+                                       SelectionBrush="{TemplateBinding SelectionBrush}"
+                                       SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                                       CaretBrush="{TemplateBinding CaretBrush}"
+                                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                       VerticalAlignment="Center">
+                          <TextPresenter.PasswordChar>
+                            <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="PasswordChar"
+                                     Converter="{StaticResource CharToMacOsPasswordCharConverter}" />
+                          </TextPresenter.PasswordChar>
+                        </TextPresenter>
+                      </Panel>
+                      <ScrollViewer.Styles>
+                        <Style Selector="ScrollContentPresenter#PART_ContentPresenter">
+                          <Setter Property="Cursor" Value="IBeam" />
+                        </Style>
+                      </ScrollViewer.Styles>
+                    </ScrollViewer>
+                  </DockPanel>
+                  <ContentPresenter Name="SuffixContent"
+                                    Grid.Column="2"
+                                    Padding="3 3 3 2"
+                                    Content="{TemplateBinding InnerRightContent}">
+                    <ContentPresenter.IsVisible>
+                      <Binding RelativeSource="{RelativeSource Self}" Path="Content"
+                               Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
+                    </ContentPresenter.IsVisible>
+                  </ContentPresenter>
+                </Grid>
+              </Border>
+            </Border>
+          </Panel>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Disabled State -->
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+
+      <Style Selector="^ /template/ Border#InnerBorderElement">
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundDisabledHighBrush}" />
+      </Style>
+    </Style>
+
+    <!-- Focused State -->
+    <Style Selector="^:focus">
+      <Style Selector="^ /template/ Border#PART_BorderElement">
+        <Setter Property="Background" Value="{DynamicResource TextBoxBorderFocusBrush}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^:error /template/ Border#PART_BorderElement">
+      <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
+    </Style>
+
+    <Style Selector="^.revealPasswordButton[AcceptsReturn=False][IsReadOnly=False]:not(TextBox:empty)">
+      <Setter Property="InnerRightContent">
+        <Template>
+          <ToggleButton Name="PasswordRevealButton"
+                        Theme="{StaticResource FluentTextBoxToggleButton}"
+                        IsChecked="{Binding $parent[TextBox].RevealPassword, Mode=TwoWay}"
+                        ClipToBounds="True">
+            <Panel>
+              <PathIcon Data="{StaticResource PasswordRevealPath}"
+                        Height="9" Width="12"
+                        IsVisible="{Binding !$parent[ToggleButton].IsChecked}" />
+              <PathIcon Data="{StaticResource PasswordHidePath}"
+                        Height="12" Width="12"
+                        IsVisible="{Binding $parent[ToggleButton].IsChecked}" />
+            </Panel>
+          </ToggleButton>
+        </Template>
+      </Setter>
+    </Style>
+
+    <Style Selector="^[AcceptsReturn=True] /template/ TextPresenter#PART_TextPresenter">
+      <Setter Property="VerticalAlignment" Value="Top" />
+    </Style>
+
+    <Style Selector="^.clearButton[AcceptsReturn=False][IsReadOnly=False]:focus:not(TextBox:empty)">
+      <Setter Property="InnerRightContent">
+        <Template>
+          <Button Theme="{StaticResource FluentTextBoxButton}"
+                  Command="{Binding $parent[TextBox].Clear}"
+                  ClipToBounds="True"
+                  Background="{DynamicResource TextBoxClearBackgroundBrush}"
+                  CornerRadius="7">
+            <PathIcon Data="{StaticResource XShapePath}" Height="5" Width="5"
+                      Foreground="{DynamicResource ControlForegroundAccentHighBrush}" />
+          </Button>
+        </Template>
+      </Setter>
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>
