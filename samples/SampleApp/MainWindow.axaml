@@ -7,6 +7,8 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SampleApp.MainWindow"
         Title="SampleApp">
+  <!-- xmlns:vm="using:SampleApp.DemoPages"  -->
+  <!-- x:DataType="vm:TreeViewDemoViewModel" -->
 
   <!-- TODO: move the margins into the theme ?? -->
   <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
@@ -28,12 +30,16 @@
     <TabItem Header="TabControl">
       <demoPages:TabControlDemo />
     </TabItem>
-    <TabItem Header="TextBox" IsSelected="True">
+    <TabItem Header="TextBox">
       <demoPages:TextBoxDemo />
     </TabItem>
     <TabItem Header="Toggle Switch [WIP]">
       <demoPages:ToggleSwitchDemo />
     </TabItem>
+    <TabItem Header="TreeView" IsSelected="True">
+      <demoPages:TreeViewDemo />
+    </TabItem>
+
 
     <TabItem>
       <TabItem.Header>
