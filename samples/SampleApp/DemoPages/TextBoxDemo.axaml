@@ -6,25 +6,27 @@
              x:Class="SampleApp.DemoPages.TextBoxDemo">
   <ScrollViewer>
 
-    <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
-      <TextBlock>Name:</TextBlock>
-      <TextBox Watermark="Enter your name" />
-      <TextBlock>Password:</TextBlock>
-      <TextBox PasswordChar="*" Watermark="Enter your password" />
-      <TextBlock>Notes:</TextBlock>
-      <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
-      <TextBox InnerLeftContent="http://" />
-      <TextBox InnerRightContent=".com" />
-      <TextBox
-        InnerLeftContent="http://"
-        InnerRightContent=".com" />
-      <TextBox Classes="clearButton">With 'Clear' button</TextBox>
-      <TextBox Watermark="Enter your name" IsEnabled="False" />
-      <TextBox PasswordChar="*" Classes="revealPasswordButton">Reveal Password</TextBox>
-      <TextBox PasswordChar="*" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
-      <TextBox Watermark="Floating Watermark" UseFloatingWatermark="True" />
-      <TextBox Watermark="Floating Watermark" UseFloatingWatermark="True">Content</TextBox>
-    </StackPanel>
+    <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+      <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
+        <TextBlock>Name:</TextBlock>
+        <TextBox Watermark="Enter your name" />
+        <TextBlock>Password:</TextBlock>
+        <TextBox PasswordChar="*" Watermark="Enter your password" />
+        <TextBlock>Notes:</TextBlock>
+        <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+        <TextBox InnerLeftContent="http://" />
+        <TextBox InnerRightContent=".com" />
+        <TextBox
+          InnerLeftContent="http://"
+          InnerRightContent=".com" />
+        <TextBox Classes="clearButton">With 'Clear' button</TextBox>
+        <TextBox Watermark="Enter your name" IsEnabled="False" />
+        <TextBox PasswordChar="*" Classes="revealPasswordButton">Reveal Password</TextBox>
+        <TextBox PasswordChar="*" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+        <TextBox Watermark="Floating Watermark" UseFloatingWatermark="True" />
+        <TextBox Watermark="Floating Watermark" UseFloatingWatermark="True">Content</TextBox>
+      </StackPanel>
+    </Border>
   </ScrollViewer>
 
 </UserControl>

@@ -58,7 +58,7 @@
     <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+    <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Padding" Value="8 1 10 2" />
@@ -72,7 +72,7 @@
           <Border Name="border"
                   Background="{TemplateBinding Background}"
                   BoxShadow="{DynamicResource ButtonBorderBoxShadow}"
-                  Margin="{DynamicResource ComboBoxMargin}"
+                  Margin="{DynamicResource ControlBoxShadowMargin}"
                   CornerRadius="{TemplateBinding CornerRadius}">
             <Grid ColumnDefinitions="*,Auto">
               <TextBlock Name="PlaceholderTextBlock"
@@ -150,7 +150,7 @@
               <MultiBinding Converter="{StaticResource SelectedIndexToPopupOffsetConverter}">
                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="SelectedIndex" />
                 <Binding Source="{StaticResource ComboBoxItemHeight}" />
-                <Binding Source="{StaticResource ComboBoxMarginBottom}" />
+                <Binding Source="{StaticResource ControlBoxShadowMarginBottom}" />
                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="MaxDropDownHeight" />
                 <Binding Source="{StaticResource PopupTrimHeight}" />
               </MultiBinding>
