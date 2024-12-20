@@ -32,19 +32,19 @@ In your App.axaml, replace the existing theme (e.g., <FluentTheme /> or <SimpleT
 ## Styled Components
 
 ### Button
-<video width="50%" controls source src="https://github.com/user-attachments/assets/4dddd7a3-ac49-49f7-aba1-88f0e0df0240" type="video/mp4"> Your browser does not support the video tag. </video>
+<img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons 2024-12-19" width="300">
 
 ### CheckBox
-https://github.com/user-attachments/assets/4b2d3e5b-1f44-4007-adba-805a75012b97
+<img src="https://github.com/user-attachments/assets/30182450-b339-49d4-9aab-96cef627d0ca" alt="Buttons 2024-12-19" width="723">
 
 ### ComboBox
-https://github.com/user-attachments/assets/ceaf88f8-f2ba-477c-873b-afe669f5c6e3
+<img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="Buttons 2024-12-19" width="461">
 
 ### TabControl
-https://github.com/user-attachments/assets/2ad9fcf3-fbd1-4086-8abd-5973d8cd9593
+<img src="https://github.com/user-attachments/assets/4f88ce2c-59f9-4f85-b2db-a47fe0301472" alt="Buttons 2024-12-19" width="515">
 
 ### TextBox
-https://github.com/user-attachments/assets/7bbfa22d-664b-41b4-9134-a8213c82d215
+<img src="https://github.com/user-attachments/assets/4c14fdcd-f41d-41f0-aa39-1b37d7f5ab26" alt="Buttons 2024-12-19" width="332">
 
 
 ## Next on our to-do list
