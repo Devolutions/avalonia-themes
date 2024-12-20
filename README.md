@@ -1,6 +1,13 @@
 # avalonia-themes
 Custom Avalonia Themes developed by Devolutions
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Build Status](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml/badge.svg?branch=master)](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml)
+[![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.MacOS.Avalonia.Theme)](https://www.nuget.org/packages/Devolutions.MacOS.Avalonia.Theme)
+![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.MacOS.Avalonia.Theme)
+
+
+
 ## MacOS Theme [Work in Progress]
 (Inspired by [@MikeCodesDotNET's earlier draft](https://github.com/AvaloniaUI/Avalonia/issues/14880#issuecomment-1985425341))
 
@@ -35,7 +42,11 @@ Install the Devolutions.MacOS.Avalonia.Theme package via [NuGet](https://www.nug
 ``` bash
 Install-Package Devolutions.MacOS.Avalonia.Theme
 ```
-In your App.axaml, replace the existing theme (e.g., <FluentTheme /> or <SimpleTheme />) with the macOS theme:
+or .NET
+```bash
+dotnet add package Devolutions.MacOS.Avalonia.Theme
+```
+In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the macOS theme:
 ``` xaml
 <Application ...>
   <Application.Styles>
