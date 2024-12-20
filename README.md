@@ -197,8 +197,3 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>WindowNotificationManager</h3> ||
 ||||
 
-
-### TreeView
-Coming soon ...
-
-### DataGrid
