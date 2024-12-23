@@ -138,7 +138,7 @@
   <SolidColorBrush x:Key="TextBoxSelectionHighlightBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.3" />
   <SolidColorBrush x:Key="TextBoxBorderFocusBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
   <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
-                   Color="{StaticResource BackgroundColor}" Opacity="0.7" />
+                   Color="{StaticResource BackgroundColor}" Opacity="0.5" />
 
   <!-- DEVELOPMENT ONLY -->
   <SolidColorBrush x:Key="TestGreen" Color="Green" />

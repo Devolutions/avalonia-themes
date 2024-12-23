@@ -88,13 +88,13 @@
       <ControlTemplate>
         <DataValidationErrors>
           <Panel>
-            <Border Name="PART_BorderElement"
-                    Background="{TemplateBinding Background}"
+            <Border Name="FocusBorderElement"
                     CornerRadius="{TemplateBinding CornerRadius}"
                     Padding="3">
-              <Border Name="InnerBorderElement"
+              <Border Name="PART_BorderElement"
+                      BorderThickness="1"
                       BoxShadow="{DynamicResource ButtonBorderBoxShadow}"
-                      Background="{DynamicResource ControlBackgroundHighBrush}">
+                      Background="{TemplateBinding Background}">
                 <Grid ColumnDefinitions="Auto,*,Auto">
                   <ContentPresenter Name="PrefixContent"
                                     Grid.Column="0"
@@ -189,7 +189,7 @@
 
     <!-- Focused State -->
     <Style Selector="^:focus">
-      <Style Selector="^ /template/ Border#PART_BorderElement">
+      <Style Selector="^ /template/ Border#FocusBorderElement">
         <Setter Property="Background" Value="{DynamicResource TextBoxBorderFocusBrush}" />
       </Style>
     </Style>
