@@ -1,5 +1,8 @@
+[![image](https://github.com/user-attachments/assets/6a7bca22-bd0c-45cc-b847-8ea0b7776a6f)](https://devolutions.net/)
+
+
 # avalonia-themes
-Custom Avalonia Themes developed by Devolutions
+Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build Status](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml/badge.svg?branch=master)](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml)
@@ -7,15 +10,16 @@ Custom Avalonia Themes developed by Devolutions
 ![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.MacOS.Avalonia.Theme)
 
 
-
 ## MacOS Theme [Work in Progress]
 (Inspired by [@MikeCodesDotNET's earlier draft](https://github.com/AvaloniaUI/Avalonia/issues/14880#issuecomment-1985425341))
+
+![image](https://github.com/user-attachments/assets/0eed0f84-62dc-4c66-869c-ae170373c104)
 
 This theme is currently based on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent), 
 both as a fallback for any controls not covered yet and as starting point for our (somewhat simplified) 
 style definitions targeting AppKit macOS look.
 
-While we are currently prioritizing controls for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/),
+While we are prioritizing controls for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/) initially,
 the goal is to create a theme that helps all of the Avalonia community to bring a native look to their macOS apps. 
 
 - [Installation](#installation)
