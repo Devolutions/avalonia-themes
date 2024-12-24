@@ -69,7 +69,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>AutoCompleteBox</h3> ||
 ||||
 |✅ | <h3>Button</h3> ||
-|| <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons demo" width="300"> ||
+|| <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons demo" max-width="300"> ||
 || <h3>ButtonSpinner</h3> ||
 ||||
 || <h3>Calendar</h3> ||
@@ -87,9 +87,9 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>Carousel</h3> ||
 ||||
 |✅ | <h3>CheckBox</h3> ||
-|| <img src="https://github.com/user-attachments/assets/30182450-b339-49d4-9aab-96cef627d0ca" alt="CheckBox demo" width="723"> ||
+|| <img src="https://github.com/user-attachments/assets/30182450-b339-49d4-9aab-96cef627d0ca" alt="CheckBox demo" max-width="723"> ||
 |✅ | <h3>ComboBox</h3> ||
-|| <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" width="461"> | [ScrollBar](#scrollbar) not done yet |
+|| <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" width="max-461"> | [ScrollBar](#scrollbar) not done yet |
 || <h3>ComboBoxItem</h3> ||
 ||||
 || <h3>ContextMenu</h3> ||
@@ -169,13 +169,13 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>SplitView</h3> ||
 ||||
 |✅ | <h3>TabControl</h3> <h4>TabItem<h4> ||
-|| <img src="https://github.com/user-attachments/assets/4f88ce2c-59f9-4f85-b2db-a47fe0301472" alt="TabControl demo" width="515"> |Vertical tabs may still need some work|
+|| <img src="https://github.com/user-attachments/assets/4f88ce2c-59f9-4f85-b2db-a47fe0301472" alt="TabControl demo" max-width="515"> |Vertical tabs may still need some work|
 || <h3>TabStrip</h3> ||
 ||||
 || <h3>TabStripItem</h3> ||
 ||||
 |✅ | <h3>TextBox</h3> ||
-|| <img src="https://github.com/user-attachments/assets/4c14fdcd-f41d-41f0-aa39-1b37d7f5ab26" alt="TextBox demo" width="332"> | [ScrollBar](#scrollbar) for multiline text input not done yet <br /> <br />There appears to be no easy way for styling the caret thickness and margin    |
+|| <img src="https://github.com/user-attachments/assets/4c14fdcd-f41d-41f0-aa39-1b37d7f5ab26" alt="TextBox demo" max-width="332"> | [ScrollBar](#scrollbar) for multiline text input not done yet <br /> <br />There appears to be no easy way for styling the caret thickness and margin    |
 || <h3>TextSelectionHandle</h3> ||
 ||||
 || <h3>ThemeVariantScope</h3> ||
