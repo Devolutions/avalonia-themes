@@ -14,6 +14,8 @@
         <MergeResourceInclude Source="TextBox.axaml" />
         <MergeResourceInclude Source="TextBlock.axaml" />
         <MergeResourceInclude Source="ToggleSwitch.axaml" />
+        <MergeResourceInclude Source="TreeView.axaml" />
+        <MergeResourceInclude Source="TreeViewItem.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Styles.Resources>

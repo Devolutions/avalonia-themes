@@ -9,11 +9,15 @@ public class TreeViewDemoViewModel
   {
     Nodes = new ObservableCollection<TreeViewNode>
     {
-      new("Animals", new ObservableCollection<TreeViewNode>
+      new("MacOS UI elements", new ObservableCollection<TreeViewNode>
       {
-        new("Mammals", new ObservableCollection<TreeViewNode>
+        new("Button", new ObservableCollection<TreeViewNode>
         {
-          new("Lion"), new("Cat"), new("Zebra")
+          new("Button comparison"), new("default button")
+        }),
+        new("CheckBox", new ObservableCollection<TreeViewNode>
+        {
+          new("CheckBox.psd")
         })
       })
     };
