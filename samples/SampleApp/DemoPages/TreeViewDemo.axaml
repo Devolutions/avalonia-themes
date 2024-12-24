@@ -4,20 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:SampleApp.DemoPages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SampleApp.DemoPages.TreeViewDemo"
-             x:DataType="vm:TreeViewDemoViewModel">
+             x:Class="SampleApp.DemoPages.TreeViewDemo">
 
-  <Design.DataContext>
-    <vm:TreeViewDemoViewModel />
-  </Design.DataContext>
-
-  <StackPanel>
-    <TreeView ItemsSource="{Binding Nodes}">
-      <TreeView.ItemTemplate>
-        <TreeDataTemplate ItemsSource="{Binding SubNodes}">
-          <TextBlock Text="{Binding Title}" />
-        </TreeDataTemplate>
-      </TreeView.ItemTemplate>
-    </TreeView>
-  </StackPanel>
+  <TreeView>
+    <TreeViewItem Header="Level 1" IsExpanded="True">
+      <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+        <TreeViewItem Header="Level 3.1" />
+        <TreeViewItem Header="Level 3.2" IsSelected="True">
+          <TreeViewItem Header="Level 4" />
+        </TreeViewItem>
+      </TreeViewItem>
+      <TreeViewItem Header="Level 2.2" IsEnabled="False" />
+    </TreeViewItem>
+  </TreeView>
 </UserControl>
