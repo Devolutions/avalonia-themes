@@ -2,22 +2,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:SampleApp.DemoPages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="SampleApp.DemoPages.TreeViewDemo"
-             x:DataType="vm:TreeViewDemoViewModel">
+             x:Class="SampleApp.DemoPages.TreeViewDemo">
 
-  <Design.DataContext>
-    <vm:TreeViewDemoViewModel />
-  </Design.DataContext>
-
-  <StackPanel>
-    <TreeView ItemsSource="{Binding Nodes}">
-      <TreeView.ItemTemplate>
-        <TreeDataTemplate ItemsSource="{Binding SubNodes}">
-          <TextBlock Text="{Binding Title}" />
-        </TreeDataTemplate>
-      </TreeView.ItemTemplate>
-    </TreeView>
-  </StackPanel>
+  <TreeView>
+    <TreeViewItem Header="Level 1" IsExpanded="True">
+      <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+        <TreeViewItem Header="Level 3.1" />
+        <TreeViewItem Header="Level 3.2" IsSelected="True">
+          <TreeViewItem>
+            <TreeViewItem.Header>
+              <StackPanel Orientation="Horizontal">
+                <TextBlock>Icon</TextBlock>
+                <TextBlock>Level 4</TextBlock>
+              </StackPanel>
+            </TreeViewItem.Header>
+            <TreeViewItem Header="Level 4.1" />
+            <TreeViewItem Header="Level 4.2" />
+          </TreeViewItem>
+        </TreeViewItem>
+      </TreeViewItem>
+      <TreeViewItem Header="Level 2.2" IsEnabled="False" />
+    </TreeViewItem>
+  </TreeView>
 </UserControl>
