@@ -99,25 +99,7 @@
         </StackPanel>
       </ControlTemplate>
     </Setter>
-
-    <!--  PointerOver state  -->
-    <Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover">
-      <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundPointerOver}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrushPointerOver}" />
-    </Style>
-    <Style Selector="^ /template/ Border#PART_LayoutRoot:pointerover > ContentPresenter#PART_HeaderPresenter">
-      <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundPointerOver}" />
-    </Style>
-
-    <!--  Pressed state  -->
-    <Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover">
-      <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundPressed}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrushPressed}" />
-    </Style>
-    <Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover > ContentPresenter#PART_HeaderPresenter">
-      <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundPressed}" />
-    </Style>
-
+    
     <!--  Disabled state  -->
     <Style Selector="^:disabled /template/ Border#PART_LayoutRoot">
       <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundDisabled}" />
