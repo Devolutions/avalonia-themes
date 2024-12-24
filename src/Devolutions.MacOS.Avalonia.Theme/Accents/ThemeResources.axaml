@@ -22,7 +22,7 @@
   <x:Double x:Key="PasswordHiddenFontSize">8</x:Double>
 
 
-  <SolidColorBrush x:Key="ForegroundHighBrush" Color="{StaticResource ForegroundColor}" />
+  <SolidColorBrush x:Key="ForegroundHighBrush" Color="{StaticResource ForegroundColor}" Opacity="0.85" />
   <SolidColorBrush x:Key="ForegroundMidBrush" Color="{StaticResource ForegroundColor}" Opacity="0.5" />
   <SolidColorBrush x:Key="ForegroundLowBrush" Color="{StaticResource ForegroundColor}" Opacity="0.25" />
 
@@ -139,6 +139,13 @@
   <SolidColorBrush x:Key="TextBoxBorderFocusBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
   <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
                    Color="{StaticResource BackgroundColor}" Opacity="0.5" />
+
+  <!-- TreeView Resources -->
+  <SolidColorBrush x:Key="TreeViewItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" />
+  <SolidColorBrush x:Key="TreeViewItemForegroundSelected" Color="{StaticResource AccentForegroundColor}" />
+  <x:Double x:Key="TreeViewItemChevronSize">8</x:Double>
+  <Thickness x:Key="TreeViewItemChevronMargin">14, 0, 4, 0</Thickness>
+
 
   <!-- DEVELOPMENT ONLY -->
   <SolidColorBrush x:Key="TestGreen" Color="Green" />
