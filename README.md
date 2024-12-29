@@ -13,7 +13,8 @@ Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 ## MacOS Theme [Work in Progress]
 (Inspired by [@MikeCodesDotNET's earlier draft](https://github.com/AvaloniaUI/Avalonia/issues/14880#issuecomment-1985425341))
 
-![image](https://github.com/user-attachments/assets/0eed0f84-62dc-4c66-869c-ae170373c104)
+![image](https://github.com/user-attachments/assets/33d9a103-936f-4db3-b5cc-520a5ccdaf60)
+
 
 This theme is currently based on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent), 
 both as a fallback for any controls not covered yet and as starting point for our (somewhat simplified) 
@@ -175,7 +176,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>TabStripItem</h3> ||
 ||||
 |✅ | <h3>TextBox</h3> ||
-|| <img src="https://github.com/user-attachments/assets/4c14fdcd-f41d-41f0-aa39-1b37d7f5ab26" alt="TextBox demo" max-width="332"> | [ScrollBar](#scrollbar) for multiline text input not done yet <br /> <br />There appears to be no easy way for styling the caret thickness and margin    |
+|| <img src="https://github.com/user-attachments/assets/47930d85-ec80-44b4-802d-6fe72d81bee4" alt="TextBox demo" max-width="332"> | [ScrollBar](#scrollbar) for multiline text input not done yet <br /> <br />There appears to be no easy way for styling the caret thickness and margin    |
 || <h3>TextSelectionHandle</h3> ||
 ||||
 || <h3>ThemeVariantScope</h3> ||
