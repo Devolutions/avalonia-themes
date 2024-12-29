@@ -99,7 +99,7 @@
                   <ContentPresenter Name="PrefixContent"
                                     Grid.Column="0"
                                     Content="{TemplateBinding InnerLeftContent}"
-                                    Padding="3 3 3 2">
+                                    Padding="3 2 3 1">
                     <ContentPresenter.IsVisible>
                       <Binding RelativeSource="{RelativeSource Self}" Path="Content"
                                Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
@@ -163,7 +163,7 @@
                   </DockPanel>
                   <ContentPresenter Name="SuffixContent"
                                     Grid.Column="2"
-                                    Padding="3 3 3 2"
+                                    Padding="3 2 3 1"
                                     Content="{TemplateBinding InnerRightContent}">
                     <ContentPresenter.IsVisible>
                       <Binding RelativeSource="{RelativeSource Self}" Path="Content"
