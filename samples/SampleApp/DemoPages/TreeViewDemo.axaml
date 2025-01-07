@@ -5,9 +5,9 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.TreeViewDemo">
 
-  <StackPanel Orientation="Horizontal" Spacing="30">
+  <StackPanel Orientation="Horizontal" Spacing="30" VerticalAlignment="Top">
     <TreeView Width="150">
-      <TreeViewItem Header="Level 1" IsExpanded="True">
+      <TreeViewItem Header="Level 1.1" IsExpanded="True">
         <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
           <TreeViewItem Header="Level 3.1" />
           <TreeViewItem Header="Level 3.2">
@@ -26,8 +26,8 @@
         <TreeViewItem Header="Level 2.2" IsEnabled="False" />
       </TreeViewItem>
     </TreeView>
-    <TreeView Width="150">
-      <TreeViewItem Header="Level 1" IsExpanded="True">
+    <TreeView Width="150" Height="160" Classes="AlternatingRowColor" BorderBrush="LightGray" BorderThickness="1">
+      <TreeViewItem Header="Level 1.1" >
         <TreeViewItem Header="Level 2.1" />
         <TreeViewItem Header="Level 2.2" />
         <TreeViewItem Header="Level 2.3" />

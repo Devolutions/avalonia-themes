@@ -20,6 +20,11 @@
         <AdditionalFiles Include="Converters/SelectedIndexToPopupOffsetConverter.cs" NamespaceName="Devolutions.MacOS.Avalonia.Theme.Converters" ClassName="IndexToOffsetConverters"/>
         <AdditionalFiles Include="Converters/TotalWidthConverter.cs" NamespaceName="Devolutions.MacOS.Avalonia.Theme.Converters" ClassName="TotalWidthConverter"/>
     </ItemGroup>
+
+    <ItemGroup>
+        <AvaloniaResource Include="Accents/Assets/**"/>
+    </ItemGroup>
+
 </Project>
 
 

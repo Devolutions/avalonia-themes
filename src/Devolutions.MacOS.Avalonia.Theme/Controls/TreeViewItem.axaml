@@ -109,9 +109,9 @@
       </ControlTemplate>
     </Setter>
 
-    <Style Selector="^:nth-child(even)">
-      <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundAlternating}" />
-    </Style>
+    <!-- <Style Selector="^:nth-child(even)"> -->
+    <!--   <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundAlternating}" /> -->
+    <!-- </Style> -->
 
     <!--  Disabled state  -->
     <Style Selector="^:disabled /template/ Border#PART_LayoutRoot">
