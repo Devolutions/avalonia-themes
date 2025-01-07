@@ -28,12 +28,16 @@
     <TabItem Header="TabControl">
       <demoPages:TabControlDemo />
     </TabItem>
-    <TabItem Header="TextBox" IsSelected="True">
+    <TabItem Header="TextBox">
       <demoPages:TextBoxDemo />
     </TabItem>
     <TabItem Header="Toggle Switch [WIP]">
       <demoPages:ToggleSwitchDemo />
     </TabItem>
+    <TabItem Header="TreeView" IsSelected="True">
+      <demoPages:TreeViewDemo />
+    </TabItem>
+
 
     <TabItem>
       <TabItem.Header>

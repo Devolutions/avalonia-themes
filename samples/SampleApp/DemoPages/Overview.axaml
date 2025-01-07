@@ -21,10 +21,10 @@
       <TabItem Header="Tab 1">
         <StackPanel Orientation="Horizontal" Spacing="20">
           <StackPanel>
-            <TextBox Watermark="Enter your name" />
-            <TextBox
-              InnerLeftContent="http://"
-              InnerRightContent=".com" />
+            <TextBox Watermark="Name" />
+            <TextBox Watermark="YourDomain"
+                     InnerLeftContent="http://"
+                     InnerRightContent=".com" />
             <TextBox Classes="clearButton">With 'Clear' button</TextBox>
             <TextBox Watermark="Disabled" IsEnabled="False" />
             <TextBox PasswordChar="*" Classes="revealPasswordButton">Reveal Password</TextBox>
