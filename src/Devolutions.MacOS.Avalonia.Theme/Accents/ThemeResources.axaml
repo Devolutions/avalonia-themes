@@ -149,17 +149,16 @@
   <x:Double x:Key="TreeViewItemIndent">15</x:Double>
   <Thickness x:Key="TreeViewItemChevronMargin">14, 0, 4, 0</Thickness>
 
+  <ImageBrush x:Key="StripedBackgroundBrush"
+              Source="avares://Devolutions.MacOS.Avalonia.Theme/Accents/Assets/Alternating_Row_Background_Light.png"
+              TileMode="Tile"
+              Stretch="None"
+              DestinationRect="0 0 40 40" />
 
   <!-- DEVELOPMENT ONLY -->
   <SolidColorBrush x:Key="TestGreen" Color="Green" />
   <SolidColorBrush x:Key="TestRed" Color="Red" />
   <SolidColorBrush x:Key="TestBlue" Color="Blue" />
   <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
-
-  <ImageBrush x:Key="StripedBackgroundBrush"
-              Source="avares://Devolutions.MacOS.Avalonia.Theme/Accents/Assets/Alternating_Row_Background_Light.png"
-              TileMode="Tile"
-              Stretch="None"
-              DestinationRect="0 0 40 40" />
 
 </ResourceDictionary>

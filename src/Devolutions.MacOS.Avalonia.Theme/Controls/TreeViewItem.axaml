@@ -68,7 +68,7 @@
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
     <Setter Property="MinHeight" Value="20" />
-    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}"></Setter>
+    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -109,10 +109,6 @@
         </StackPanel>
       </ControlTemplate>
     </Setter>
-
-    <!-- <Style Selector="^:nth-child(even)"> -->
-    <!--   <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundAlternating}" /> -->
-    <!-- </Style> -->
 
     <!--  Disabled state  -->
     <Style Selector="^:disabled /template/ Border#PART_LayoutRoot">
