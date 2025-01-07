@@ -5,24 +5,46 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.TreeViewDemo">
 
-  <TreeView>
-    <TreeViewItem Header="Level 1" IsExpanded="True">
-      <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
-        <TreeViewItem Header="Level 3.1" />
-        <TreeViewItem Header="Level 3.2" IsSelected="True">
-          <TreeViewItem>
-            <TreeViewItem.Header>
-              <StackPanel Orientation="Horizontal">
-                <TextBlock>Icon</TextBlock>
-                <TextBlock>Level 4</TextBlock>
-              </StackPanel>
-            </TreeViewItem.Header>
+  <StackPanel Orientation="Horizontal" Spacing="30">
+    <TreeView Width="150">
+      <TreeViewItem Header="Level 1" IsExpanded="True">
+        <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+          <TreeViewItem Header="Level 3.1" />
+          <TreeViewItem Header="Level 3.2">
+            <TreeViewItem>
+              <TreeViewItem.Header>
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock>Icon</TextBlock>
+                  <TextBlock>Level 4</TextBlock>
+                </StackPanel>
+              </TreeViewItem.Header>
+              <TreeViewItem Header="Level 4.1" />
+              <TreeViewItem Header="Level 4.2" />
+            </TreeViewItem>
+          </TreeViewItem>
+        </TreeViewItem>
+        <TreeViewItem Header="Level 2.2" IsEnabled="False" />
+      </TreeViewItem>
+    </TreeView>
+    <TreeView Width="150">
+      <TreeViewItem Header="Level 1" IsExpanded="True">
+        <TreeViewItem Header="Level 2.1" />
+        <TreeViewItem Header="Level 2.2" />
+        <TreeViewItem Header="Level 2.3" />
+        <TreeViewItem Header="Level 2.4" />
+        <TreeViewItem Header="Level 2.5" />
+        <TreeViewItem Header="Level 2.6" />
+        <TreeViewItem Header="Level 2.7">
+          <TreeViewItem Header="Level 3.1" />
+          <TreeViewItem Header="Level 3.2" IsSelected="True" />
+          <TreeViewItem Header="Level 3.3">
             <TreeViewItem Header="Level 4.1" />
             <TreeViewItem Header="Level 4.2" />
           </TreeViewItem>
         </TreeViewItem>
+        <TreeViewItem Header="Level 2.8" IsEnabled="False" />
       </TreeViewItem>
-      <TreeViewItem Header="Level 2.2" IsEnabled="False" />
-    </TreeViewItem>
-  </TreeView>
+      <TreeViewItem Header="Level 1.2" />
+    </TreeView>
+  </StackPanel>
 </UserControl>
