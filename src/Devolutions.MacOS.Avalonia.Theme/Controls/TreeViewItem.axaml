@@ -68,6 +68,7 @@
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
     <Setter Property="MinHeight" Value="20" />
+    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}"></Setter>
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
