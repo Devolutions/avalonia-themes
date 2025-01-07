@@ -26,6 +26,7 @@
 
     <ItemGroup>
         <AdditionalFiles Include="Assets/Padlock.svg" NamespaceName="SampleApp" ClassName="Padlock"/>
+        <AdditionalFiles Include="Assets/Folder.svg" NamespaceName="SampleApp" ClassName="Folder"/>
     </ItemGroup>
 
     <!-- Temporary link for development. 

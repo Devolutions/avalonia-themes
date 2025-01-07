@@ -5,46 +5,111 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.TreeViewDemo">
 
+
   <StackPanel Orientation="Horizontal" Spacing="30" VerticalAlignment="Top">
     <TreeView Width="150">
       <TreeViewItem Header="Level 1.1" IsExpanded="True">
         <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
           <TreeViewItem Header="Level 3.1" />
           <TreeViewItem Header="Level 3.2">
-            <TreeViewItem>
-              <TreeViewItem.Header>
-                <StackPanel Orientation="Horizontal">
-                  <TextBlock>Icon</TextBlock>
-                  <TextBlock>Level 4</TextBlock>
-                </StackPanel>
-              </TreeViewItem.Header>
-              <TreeViewItem Header="Level 4.1" />
-              <TreeViewItem Header="Level 4.2" />
-            </TreeViewItem>
+            <TreeViewItem Header="Level 4.1" />
+            <TreeViewItem Header="Level 4.2" />
+            <TreeViewItem Header="Level 4.3" />
+
           </TreeViewItem>
         </TreeViewItem>
         <TreeViewItem Header="Level 2.2" IsEnabled="False" />
       </TreeViewItem>
     </TreeView>
-    <TreeView Width="150" Height="160" Classes="AlternatingRowColor" BorderBrush="LightGray" BorderThickness="1">
-      <TreeViewItem Header="Level 1.1" >
-        <TreeViewItem Header="Level 2.1" />
-        <TreeViewItem Header="Level 2.2" />
-        <TreeViewItem Header="Level 2.3" />
-        <TreeViewItem Header="Level 2.4" />
-        <TreeViewItem Header="Level 2.5" />
-        <TreeViewItem Header="Level 2.6" />
-        <TreeViewItem Header="Level 2.7">
-          <TreeViewItem Header="Level 3.1" />
-          <TreeViewItem Header="Level 3.2" IsSelected="True" />
-          <TreeViewItem Header="Level 3.3">
-            <TreeViewItem Header="Level 4.1" />
-            <TreeViewItem Header="Level 4.2" />
+
+    <!-- With icons -->
+    <TreeView Width="150">
+      <TreeViewItem IsExpanded="True">
+        <TreeViewItem.Header>
+          <StackPanel Orientation="Horizontal" Spacing="5">
+            <Image Source="{StaticResource FolderIcon}" Width="16" Height="16" />
+            <TextBlock>Level 1.1</TextBlock>
+          </StackPanel>
+        </TreeViewItem.Header>
+        <TreeViewItem IsExpanded="True">
+          <TreeViewItem.Header>
+            <StackPanel Orientation="Horizontal" Spacing="5">
+              <Image Source="{StaticResource FolderIcon}" Width="16" Height="16" />
+              <TextBlock>Level 2.1</TextBlock>
+            </StackPanel>
+          </TreeViewItem.Header>
+          <TreeViewItem>
+            <TreeViewItem.Header>
+              <StackPanel Orientation="Horizontal" Spacing="5">
+                <Image Source="{StaticResource FolderIcon}" Width="16" Height="16" />
+                <TextBlock>Level 3.1</TextBlock>
+              </StackPanel>
+            </TreeViewItem.Header>
+          </TreeViewItem>
+          <TreeViewItem>
+            <TreeViewItem.Header>
+              <StackPanel Orientation="Horizontal" Spacing="5">
+                <Image Source="{StaticResource FolderIcon}" Width="16" Height="16" />
+                <TextBlock>Level 3.2</TextBlock>
+              </StackPanel>
+            </TreeViewItem.Header>
+          </TreeViewItem>
+          <TreeViewItem>
+            <TreeViewItem.Header>
+              <StackPanel Orientation="Horizontal" Spacing="5">
+                <Image Source="{StaticResource FolderIcon}" Width="16" Height="16" />
+                <TextBlock>Level 3.3</TextBlock>
+              </StackPanel>
+            </TreeViewItem.Header>
+            <TreeViewItem>
+              <TreeViewItem.Header>
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                  <Image Source="{StaticResource FolderIcon}" Width="16" Height="16" />
+                  <TextBlock>Level 4.1</TextBlock>
+                </StackPanel>
+              </TreeViewItem.Header>
+            </TreeViewItem>
+            <TreeViewItem>
+              <TreeViewItem.Header>
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                  <Image Source="{StaticResource FolderIcon}" Width="16" Height="16" />
+                  <TextBlock>Level 4.2</TextBlock>
+                </StackPanel>
+              </TreeViewItem.Header>
+            </TreeViewItem>
+            <TreeViewItem IsEnabled="False" />
           </TreeViewItem>
         </TreeViewItem>
-        <TreeViewItem Header="Level 2.8" IsEnabled="False" />
       </TreeViewItem>
-      <TreeViewItem Header="Level 1.2" />
     </TreeView>
+
+    <!-- With alternating row colour & scrolling -->
+    <StackPanel Spacing="20">
+
+      <TreeView Width="150" Height="160" Classes="AlternatingRowColor" BorderBrush="LightGray" BorderThickness="1">
+        <TreeViewItem Header="Level 1.1">
+          <TreeViewItem Header="Level 2.1" />
+          <TreeViewItem Header="Level 2.2" />
+          <TreeViewItem Header="Level 2.3" />
+          <TreeViewItem Header="Level 2.4" />
+          <TreeViewItem Header="Level 2.5" />
+          <TreeViewItem Header="Level 2.6" />
+          <TreeViewItem Header="Level 2.7">
+            <TreeViewItem Header="Level 3.1" />
+            <TreeViewItem Header="Level 3.2" IsSelected="True" />
+            <TreeViewItem Header="Level 3.3">
+              <TreeViewItem Header="Level 4.1" />
+              <TreeViewItem Header="Level 4.2" />
+            </TreeViewItem>
+          </TreeViewItem>
+          <TreeViewItem Header="Level 2.8" IsEnabled="False" />
+        </TreeViewItem>
+        <TreeViewItem Header="Level 1.2" />
+      </TreeView>
+      <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
+        For alternating row colour use: <LineBreak />
+        <TextBlock Classes="code" FontSize="13" Text="Classes=&quot;AlternatingRowColor&quot;" />
+      </TextBlock>
+    </StackPanel>
   </StackPanel>
 </UserControl>
