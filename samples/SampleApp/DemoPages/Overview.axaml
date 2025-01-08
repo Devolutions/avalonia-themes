@@ -5,7 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.Overview">
   <StackPanel Margin="10">
-    <TextBlock Classes="h1" Text="Devolutions MacOS Theme Sampler" />
+    <TextBlock Classes="h1" Text="{Binding $parent[Window].Title}" />
     <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap">
       Elements in this sampler are styled with a partial
       <TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />
@@ -17,6 +17,21 @@
       also still be references to colour &amp; other resources provided by Fluent.
       We still need to research what the drawbacks to this approach might be ...
     </TextBlock>
+    <StackPanel Spacing="8">
+      <NumericUpDown x:Name="red" Minimum="0" Maximum="255" Value="0" FormatString="{}{0:0.}" Foreground="Red" />
+      <NumericUpDown x:Name="green" Minimum="0" Maximum="255" Value="0" FormatString="{}{0:0.}" Foreground="Green" />
+      <NumericUpDown x:Name="blue" Minimum="0" Maximum="255" Value="0" FormatString="{}{0:0.}" Foreground="Blue" />
+      <TextBlock Text="{Binding #red.Value}" />
+      <TextBlock>
+        <TextBlock.Text>
+          <MultiBinding StringFormat="(r: {0:0.}, g: {1:0.}, b: {2:0.})">
+            <Binding Path="Value" ElementName="red" />
+            <Binding Path="Value" ElementName="green" />
+            <Binding Path="Value" ElementName="blue" />
+          </MultiBinding>
+        </TextBlock.Text>
+      </TextBlock>
+    </StackPanel>
     <TabControl TabStripPlacement="Top" Margin="0 25 0 0">
       <TabItem Header="Tab 1">
         <StackPanel Orientation="Horizontal" Spacing="20">
