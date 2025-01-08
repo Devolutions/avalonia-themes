@@ -123,8 +123,8 @@
   <Thickness x:Key="ComboBoxItemMargin">2 0</Thickness>
   <Thickness x:Key="ComboBoxItemPadding">8 3</Thickness>
   <x:Int32 x:Key="ComboBoxItemHeight">22</x:Int32>
-  <Thickness x:Key="ControlBoxShadowMargin">4</Thickness>
-  <x:Int32 x:Key="ControlBoxShadowMarginBottom">4</x:Int32> <!-- must match ControlBoxShadowMargin b value -->
+  <Thickness x:Key="ComboBoxShadowMargin">4</Thickness>
+  <x:Int32 x:Key="ComboBoxShadowMarginBottom">4</x:Int32> <!-- must match ComboBoxShadowMargin b value -->
   <x:Int32 x:Key="PopupTrimHeight">30</x:Int32> <!-- includes Margin, Padding, Shadow -->
   <x:Int32 x:Key="PopupSideMarginWidth">12</x:Int32> <!-- must match PopupMargin l/r values -->
   <Thickness x:Key="PopupMargin">12 1 12 29</Thickness> <!-- to accommodate shadow -->

@@ -72,7 +72,7 @@
           <Border Name="border"
                   Background="{TemplateBinding Background}"
                   BoxShadow="{DynamicResource ButtonBorderBoxShadow}"
-                  Margin="{DynamicResource ControlBoxShadowMargin}"
+                  Margin="{DynamicResource ComboBoxShadowMargin}"
                   CornerRadius="{TemplateBinding CornerRadius}">
             <Grid ColumnDefinitions="*,Auto">
               <TextBlock Name="PlaceholderTextBlock"
@@ -150,7 +150,7 @@
               <MultiBinding Converter="{StaticResource SelectedIndexToPopupOffsetConverter}">
                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="SelectedIndex" />
                 <Binding Source="{StaticResource ComboBoxItemHeight}" />
-                <Binding Source="{StaticResource ControlBoxShadowMarginBottom}" />
+                <Binding Source="{StaticResource ComboBoxShadowMarginBottom}" />
                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="MaxDropDownHeight" />
                 <Binding Source="{StaticResource PopupTrimHeight}" />
               </MultiBinding>
