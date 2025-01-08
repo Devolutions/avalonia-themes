@@ -121,13 +121,15 @@
 
   <!-- ComboBox & ComboBoxItem Resources -->
   <Thickness x:Key="ComboBoxItemMargin">2 0</Thickness>
-  <Thickness x:Key="ComboBoxItemPadding">8 3</Thickness>
+  <Thickness x:Key="ComboBoxItemPadding">5 3</Thickness>
   <x:Int32 x:Key="ComboBoxItemHeight">22</x:Int32>
   <Thickness x:Key="ComboBoxShadowMargin">4</Thickness>
-  <x:Int32 x:Key="ComboBoxShadowMarginBottom">4</x:Int32> <!-- must match ComboBoxShadowMargin b value -->
+  <!-- InitialFirstItemDistance must match ComboBoxShadowMargin.bottom + PopupPadding.top -->
+  <x:Int32 x:Key="InitialFirstItemDistance">9</x:Int32>
   <x:Int32 x:Key="PopupTrimHeight">30</x:Int32> <!-- includes Margin, Padding, Shadow -->
   <x:Int32 x:Key="PopupSideMarginWidth">12</x:Int32> <!-- must match PopupMargin l/r values -->
   <Thickness x:Key="PopupMargin">12 1 12 29</Thickness> <!-- to accommodate shadow -->
+  <Thickness x:Key="PopupPadding">3 5</Thickness>
   <BoxShadows x:Key="PopupShadow">0 0 1 0 #66000000, 0 0 1.5 00 #4D000000, 0 7 22 0 #40000000</BoxShadows>
   <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
   <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{StaticResource PopupBackgroundColor}" />

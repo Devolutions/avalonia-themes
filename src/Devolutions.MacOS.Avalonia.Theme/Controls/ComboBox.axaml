@@ -139,7 +139,7 @@
                  Placement="AnchorAndGravity"
                  PlacementAnchor="Bottom"
                  PlacementGravity="Bottom"
-                 HorizontalOffset="-10">
+                 HorizontalOffset="-13">
             <Popup.MinWidth>
               <MultiBinding Converter="{StaticResource TotalWidthConverter}">
                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width" />
@@ -150,7 +150,7 @@
               <MultiBinding Converter="{StaticResource SelectedIndexToPopupOffsetConverter}">
                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="SelectedIndex" />
                 <Binding Source="{StaticResource ComboBoxItemHeight}" />
-                <Binding Source="{StaticResource ComboBoxShadowMarginBottom}" />
+                <Binding Source="{StaticResource InitialFirstItemDistance}" />
                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="MaxDropDownHeight" />
                 <Binding Source="{StaticResource PopupTrimHeight}" />
               </MultiBinding>
@@ -158,6 +158,7 @@
             <Border Background="{DynamicResource PopupBackgroundBrush}"
                     CornerRadius="{DynamicResource LayoutCornerRadius}"
                     Margin="{DynamicResource PopupMargin}"
+                    Padding="{DynamicResource PopupPadding}"
                     BoxShadow="{DynamicResource PopupShadow}">
               <ScrollViewer
                 HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
