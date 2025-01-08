@@ -64,7 +64,7 @@
   <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{StaticResource ControlBorderLowColor}" />
 
   <!-- Button Resources (& button-like parts of other controls) -->
-  <Thickness x:Key="ButtonPadding">10 1 10 2</Thickness>
+  <Thickness x:Key="ButtonPadding">10 1.4 10 2.6</Thickness>
   <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
   <BoxShadows x:Key="ButtonBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
