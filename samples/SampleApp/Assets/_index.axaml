@@ -5,5 +5,7 @@
   <!-- Each asset listed here also needs to be registered in `SampleApp.csproj` as `<AdditionalFiles ...>` -->
   <SKPictureImage x:Key="PadlockIcon" Source="{x:Static local:Padlock.Picture}" />
   <SKPictureImage x:Key="FolderIcon" Source="{x:Static local:Folder.Picture}" />
+  <SKPictureImage x:Key="ComputerIcon" Source="{x:Static local:Computer.Picture}" />
+  <SKPictureImage x:Key="UserIcon" Source="{x:Static local:User.Picture}" />
 
 </ResourceDictionary>

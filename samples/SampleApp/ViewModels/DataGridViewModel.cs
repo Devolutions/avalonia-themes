@@ -9,14 +9,14 @@ public class DataGridViewModel : ObservableObject
 {
   public DataGridViewModel()
   {
-    var people = new List<Person>
+    var items = new List<DataGridItem>
     {
-      new("Neil", "Armstrong"),
-      new("Buzz", "Lightyear"),
-      new("James", "Kirk")
+      new("computer", "PDQ-VM", "PDQ-VM$", "6/26/2023"),
+      new("user", "AD TEST Guy2", "ADGuysam", "5/2/2023"),
+      new("user", "krbtgt", "krbtgt", "11/10/2021")
     };
-    People = new ObservableCollection<Person>(people);
+    Items = new ObservableCollection<DataGridItem>(items);
   }
 
-  public ObservableCollection<Person> People { get; }
+  public ObservableCollection<DataGridItem> Items { get; }
 }

@@ -11,8 +11,25 @@
     <vm:DataGridViewModel />
   </Design.DataContext>
 
-  <DataGrid Margin="20" ItemsSource="{Binding People}"
-            AutoGenerateColumns="True" IsReadOnly="True"
-            GridLinesVisibility="All"
-            BorderThickness="1" BorderBrush="Gray" />
+  <DataGrid Margin="20" ItemsSource="{Binding Items}"
+            IsReadOnly="True"
+            CanUserResizeColumns="True"
+            CanUserReorderColumns="True"
+            CanUserSortColumns="True"
+            GridLinesVisibility="None"
+            BorderThickness="1" BorderBrush="Gray">
+    <DataGrid.Columns>
+      <DataGridTemplateColumn Header="">
+        <DataGridTemplateColumn.CellTemplate>
+          <DataTemplate>
+            <Image Source="{StaticResource ComputerIcon}" Width="20" Height="20" />
+          </DataTemplate>
+        </DataGridTemplateColumn.CellTemplate>
+      </DataGridTemplateColumn>
+      <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" />
+      <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" />
+      <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" />
+      <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" />
+    </DataGrid.Columns>
+  </DataGrid>
 </UserControl>
