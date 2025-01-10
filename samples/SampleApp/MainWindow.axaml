@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:SampleApp.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SampleApp.MainWindow"
-        Title="SampleApp">
+        Title="Devolutions MacOS Theme Sampler">
 
   <!-- TODO: move the margins into the theme ?? -->
   <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
