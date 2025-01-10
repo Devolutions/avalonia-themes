@@ -37,9 +37,10 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
       - [TreeViewItem](#treeviewitem)
   - 🚧 In progress
     - DataGrid
+    - Dark mode
   - 🔮 Next on the road map ...
     - Menu
-    - Dark mode
+    
 
 
 ## Installation
