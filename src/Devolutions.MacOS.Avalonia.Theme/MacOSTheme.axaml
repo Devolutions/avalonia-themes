@@ -14,6 +14,7 @@
       <converters:TotalWidthConverter x:Key="TotalWidthConverter" />
       <converters:CharToMacOsPasswordCharConverter x:Key="CharToMacOsPasswordCharConverter" />
       <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
+      <converters:BooleanToChoiceConverter x:Key="BooleanToChoiceConverter" />
     </ResourceDictionary>
   </Styles.Resources>
 
@@ -21,7 +22,6 @@
        NOTE: Simple does not give access to System colours 
        See https://github.com/AvaloniaUI/Avalonia/pull/11097 for how it's getting the colours (if we ever want to make this independent of Fluent) -->
   <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" />
-  <StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml" />
 
   <!-- Themed Controls -->
   <StyleInclude Source="/Controls/_index.axaml" />

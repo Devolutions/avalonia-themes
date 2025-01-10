@@ -12,11 +12,12 @@
   </Design.DataContext>
 
   <DataGrid Margin="20" ItemsSource="{Binding Items}"
-            IsReadOnly="True"
+            IsReadOnly="False"
             CanUserResizeColumns="True"
             CanUserReorderColumns="True"
             CanUserSortColumns="True"
             GridLinesVisibility="None"
+            Focusable="False"
             BorderThickness="1" BorderBrush="Gray">
     <DataGrid.Columns>
       <DataGridTemplateColumn Header="">
@@ -29,7 +30,7 @@
       <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" />
       <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" />
       <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" />
-      <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" />
+      <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" />
     </DataGrid.Columns>
   </DataGrid>
 </UserControl>
