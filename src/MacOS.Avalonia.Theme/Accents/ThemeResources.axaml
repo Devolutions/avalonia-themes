@@ -149,7 +149,7 @@
   <Thickness x:Key="TreeViewItemChevronMargin">14, 0, 4, 0</Thickness>
 
   <ImageBrush x:Key="StripedBackgroundBrush"
-              Source="avares://Devolutions.MacOS.Avalonia.Theme/Accents/Assets/Alternating_Row_Background_Light.png"
+              Source="avares://MacOS.Avalonia.Theme/Accents/Assets/Alternating_Row_Background_Light.png"
               TileMode="Tile"
               Stretch="None"
               DestinationRect="0 0 40 40" />
