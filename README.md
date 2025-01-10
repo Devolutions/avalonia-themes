@@ -32,14 +32,15 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
       - [ComboBoxItem](#comboboxitem)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
-    - [TextBox](#textbox) 
+    - [TextBox](#textbox)
+    - [TreeView](#treeview)
+      - [TreeViewItem](#treeviewitem)
   - 🚧 In progress
-    - TreeView
-    - TreeViewItem
-  - 🔮 Next on the road map ...
     - DataGrid
-    - Menu
     - Dark mode
+  - 🔮 Next on the road map ...
+    - Menu
+    
 
 
 ## Installation
@@ -193,10 +194,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>TransitioningContentControl</h3> ||
 ||||
-|| <h3>TreeView</h3> ||
-||||
-|| <h3>TreeViewItem</h3> ||
-||||
+|✅ | <h3>TreeView</h3> <h4>TreeViewItem<h4> ||
+|| <img src="https://github.com/user-attachments/assets/0f1981ae-d001-49f9-8ee3-fda47ec2a461" alt="TabControl demo" max-width="515"> ||
 || <h3>Window</h3> ||
 ||||
 || <h3>WindowNotificationManager</h3> ||
