@@ -14,6 +14,7 @@
       <converters:TotalWidthConverter x:Key="TotalWidthConverter" />
       <converters:CharToMacOsPasswordCharConverter x:Key="CharToMacOsPasswordCharConverter" />
       <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
+      <converters:BooleanToChoiceConverter x:Key="BooleanToChoiceConverter" />
     </ResourceDictionary>
   </Styles.Resources>
 

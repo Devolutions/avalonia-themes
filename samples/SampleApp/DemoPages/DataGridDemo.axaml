@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SampleApp.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.DataGridDemo"
+             x:DataType="vm:DataGridViewModel">
+
+  <Design.DataContext>
+    <vm:DataGridViewModel />
+  </Design.DataContext>
+
+  <DataGrid Margin="20" ItemsSource="{Binding Items}"
+            IsReadOnly="False"
+            CanUserResizeColumns="True"
+            CanUserReorderColumns="True"
+            CanUserSortColumns="True"
+            GridLinesVisibility="None"
+            Focusable="False"
+            BorderThickness="1" BorderBrush="Gray">
+    <DataGrid.Columns>
+      <DataGridTemplateColumn Header="">
+        <DataGridTemplateColumn.CellTemplate>
+          <DataTemplate>
+            <Image Source="{StaticResource ComputerIcon}" Width="20" Height="20" />
+          </DataTemplate>
+        </DataGridTemplateColumn.CellTemplate>
+      </DataGridTemplateColumn>
+      <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" />
+      <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" />
+      <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" />
+      <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" />
+    </DataGrid.Columns>
+  </DataGrid>
+</UserControl>

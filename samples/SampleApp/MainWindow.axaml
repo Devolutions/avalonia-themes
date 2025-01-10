@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:demoPages="clr-namespace:SampleApp.DemoPages"
         xmlns:experiments="clr-namespace:SampleApp.Experiments"
+        xmlns:vm="clr-namespace:SampleApp.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SampleApp.MainWindow"
         Title="SampleApp">
@@ -25,6 +26,13 @@
     <TabItem Header="ComboBox">
       <demoPages:ComboBoxDemo />
     </TabItem>
+    <TabItem Header="DataGrid" IsSelected="True">
+      <demoPages:DataGridDemo>
+        <demoPages:DataGridDemo.DataContext>
+          <vm:DataGridViewModel />
+        </demoPages:DataGridDemo.DataContext>
+      </demoPages:DataGridDemo>
+    </TabItem>
     <TabItem Header="TabControl">
       <demoPages:TabControlDemo />
     </TabItem>
@@ -34,7 +42,7 @@
     <TabItem Header="Toggle Switch [WIP]">
       <demoPages:ToggleSwitchDemo />
     </TabItem>
-    <TabItem Header="TreeView" IsSelected="True">
+    <TabItem Header="TreeView">
       <demoPages:TreeViewDemo />
     </TabItem>
 
