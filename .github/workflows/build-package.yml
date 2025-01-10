@@ -97,7 +97,7 @@ jobs:
         shell: pwsh
         run: |
           $PackageVersion = '${{ needs.preflight.outputs.package-version }}'
-          $csprojPath = "src\Devolutions.MacOS.Avalonia.Theme\Devolutions.MacOS.Avalonia.Theme.csproj"
+          $csprojPath = "src\MacOS.Avalonia.Theme\MacOS.Avalonia.Theme.csproj"
           $csprojContent = Get-Content $csprojPath -Raw
           $csprojContent = $csprojContent -Replace '(<Version>).*?(</Version>)', "<Version>$PackageVersion</Version>"
           Set-Content -Path $csprojPath -Value $csprojContent -Encoding UTF8
@@ -105,7 +105,7 @@ jobs:
       - name: Build nuget package
         shell: pwsh
         run: |
-          & dotnet pack .\src\Devolutions.MacOS.Avalonia.Theme -o package
+          & dotnet pack .\src\MacOS.Avalonia.Theme -o package
 
       - name: Code sign nuget contents
         shell: pwsh

@@ -1,7 +1,7 @@
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace Devolutions.MacOS.Avalonia.Theme.Converters;
+namespace MacOS.Avalonia.Theme.Converters;
 
 public class TotalWidthConverter : IMultiValueConverter
 {
