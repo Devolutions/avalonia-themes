@@ -196,7 +196,8 @@
   <!-- DataGrid Resources -->
   <SolidColorBrush x:Key="DataGridItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="DataGridForegroundSelectedBrush" Color="{StaticResource AccentForegroundColor}" />
-  <x:Double x:Key="PasswordHiddenFontSizeDataGridColumnHeaderFontSize">11</x:Double>
+  <x:Double x:Key="DataGridColumnHeaderFontSize">11</x:Double>
+  <x:Double x:Key="DataGridSortChevronSize">7</x:Double>
 
   <!-- DEVELOPMENT ONLY -->
   <SolidColorBrush x:Key="TestGreen" Color="Green" />
