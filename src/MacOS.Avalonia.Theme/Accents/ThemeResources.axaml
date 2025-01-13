@@ -120,7 +120,7 @@
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
 
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
-  <VisualBrush x:Key="TempButtonaccentBackgroundPrecise" Stretch="Fill">
+  <VisualBrush x:Key="TempButtonAccentBackgroundPrecise" Stretch="Fill">
     <VisualBrush.Visual>
       <Panel>
         <!-- <Rectangle Fill="{StaticResource SystemAccentColor}" Width="20" Height="20" /> // might not have access to Logical tree where resources are defined-->
@@ -140,7 +140,7 @@
     </VisualBrush.Visual>
   </VisualBrush>
 
-  <VisualBrush x:Key="TempButtonaccentPressedBackgroundPrecise" Stretch="Fill">
+  <VisualBrush x:Key="TempButtonAccentPressedBackgroundPrecise" Stretch="Fill">
     <VisualBrush.Visual>
       <Panel>
         <!-- <Rectangle Fill="{StaticResource ControlBackgroundAccentMidBrush}" Width="20" Height="20" /> -->
