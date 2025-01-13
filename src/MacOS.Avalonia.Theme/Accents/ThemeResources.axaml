@@ -180,7 +180,7 @@
   <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource PopupBackgroundColor}" />
 
   <!-- TextBox Resources -->
-  <SolidColorBrush x:Key="TextBoxClearBackgroundBrush" Color="{StaticResource TextBoxClearBackgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxClearBackgroundBrush" Color="{DynamicResource TextBoxClearBackgroundColor}" />
   <SolidColorBrush x:Key="TextBoxSelectionHighlightBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.3" />
   <SolidColorBrush x:Key="TextBoxBorderFocusBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
   <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
