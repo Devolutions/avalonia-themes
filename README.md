@@ -30,13 +30,14 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [CheckBox](#checkbox)
     - [ComboBox](#combobox)
       - [ComboBoxItem](#comboboxitem)
+    - [DataGrid](#datagrid)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
     - [TextBox](#textbox)
     - [TreeView](#treeview)
       - [TreeViewItem](#treeviewitem)
+    - Very basic dark mode support
   - 🚧 In progress
-    - DataGrid
     - Dark mode
   - 🔮 Next on the road map ...
     - Menu
@@ -96,6 +97,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>ContextMenu</h3> ||
 ||||
+|| <h3>DataGrid</h3> ||
+|| <img src="https://github.com/user-attachments/assets/5acca5bd-1232-419e-bcae-828616d8004b" alt="DataGrid demo" max-width="552">   | The editable field still has an issue, forcing the row to be slightly higher than the others |
 || <h3>DataValidationErrors</h3> ||
 ||||
 || <h3>DatePicker</h3> ||
