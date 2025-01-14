@@ -90,6 +90,8 @@
   <SolidColorBrush x:Key="ControlBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.9" />
   <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
   <SolidColorBrush x:Key="ControlBackgroundAccentBrush" Color="{StaticResource SystemAccentColor}" />
+  <SolidColorBrush x:Key="ControlBackgroundAccentInactiveBrush" Color="{DynamicResource ForegroundColor}"
+                   Opacity="0.14" />
   <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
     <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
     <GradientStop Offset="1" Color="{StaticResource SystemAccentColor}" />
@@ -98,6 +100,7 @@
     <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
     <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
   </LinearGradientBrush>
+  <SolidColorBrush x:Key="ControlBackgroundAccentInactiveRaisedBrush" Color="{DynamicResource BackgroundColor}" />
   <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
                    Color="{DynamicResource BackgroundColor}" Opacity="0.5" />
   <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
