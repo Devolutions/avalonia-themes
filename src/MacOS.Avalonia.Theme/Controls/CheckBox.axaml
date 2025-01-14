@@ -44,12 +44,12 @@
                   CornerRadius="{TemplateBinding CornerRadius}"
                   BoxShadow="{DynamicResource ControlBackgroundRecessedShadow}">
             <Panel>
-              <Path Name="checkMark"
+              <Path Name="CheckMark"
                     Width="10"
                     Height="10"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
-                    Data="M 1145.607177734375,430 C1145.607177734375,430 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1138,434.5538330078125 1138,434.5538330078125 1138,434.5538330078125 1141.482177734375,438 1141.482177734375,438 1141.482177734375,438 1141.96875,437.9375 1141.96875,437.9375 1141.96875,437.9375 1147,431.34619140625 1147,431.34619140625 1147,431.34619140625 1145.607177734375,430 1145.607177734375,430 z"
+                    Data="{DynamicResource CheckMarkPath}"
                     Fill="{DynamicResource AccentForegroundColor}"
                     FlowDirection="LeftToRight"
                     Stretch="Fill" />
@@ -77,7 +77,7 @@
         </Grid>
       </ControlTemplate>
     </Setter>
-    <Style Selector="^ /template/ Path#checkMark">
+    <Style Selector="^ /template/ Path#CheckMark">
       <Setter Property="IsVisible" Value="False" />
     </Style>
     <Style Selector="^ /template/ Rectangle#indeterminateMark">
@@ -89,7 +89,7 @@
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
       </Style>
-      <Style Selector="^/template/ Path#checkMark">
+      <Style Selector="^/template/ Path#CheckMark">
         <Setter Property="IsVisible" Value="True" />
       </Style>
     </Style>
@@ -116,7 +116,7 @@
           <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
           <Setter Property="BoxShadow" Value="{DynamicResource ControlBackgroundRecessedShadow}" />
         </Style>
-        <Style Selector="^/template/ Path#checkMark">
+        <Style Selector="^/template/ Path#CheckMark">
           <Setter Property="IsVisible" Value="True" />
           <Setter Property="Fill" Value="{DynamicResource ForegroundLowBrush}" />
         </Style>

@@ -21,12 +21,12 @@
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border Name="PART_RootPanel"
+        <Border Name="RootPanel"
                 CornerRadius="{TemplateBinding CornerRadius}"
                 Background="Transparent">
           <StackPanel Orientation="Horizontal"
                       Margin="{TemplateBinding Padding}">
-            <Path Name="checkMark"
+            <Path Name="CheckMark"
                   Width="10"
                   Height="10"
                   HorizontalAlignment="Center"
@@ -48,14 +48,14 @@
         </Border>
       </ControlTemplate>
     </Setter>
-    <Style Selector="^:selected /template/ Path#checkMark">
+    <Style Selector="^:selected /template/ Path#CheckMark">
       <Setter Property="Fill" Value="{DynamicResource ForegroundHighBrush}" />
     </Style>
     <Style Selector="^:pointerover">
-      <Style Selector="^ /template/ Border#PART_RootPanel">
+      <Style Selector="^ /template/ Border#RootPanel">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
       </Style>
-      <Style Selector="^:selected /template/ Path#checkMark">
+      <Style Selector="^:selected /template/ Path#CheckMark">
         <Setter Property="Fill" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       </Style>
       <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
