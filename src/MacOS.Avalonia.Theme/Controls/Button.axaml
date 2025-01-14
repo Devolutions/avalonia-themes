@@ -45,11 +45,11 @@
     </Style>
 
     <Style Selector="^.accentPrecise">
-      <Setter Property="Background" Value="{DynamicResource TempButtonaccentBackgroundPrecise}" />
+      <Setter Property="Background" Value="{DynamicResource TempButtonAccentBackgroundPrecise}" />
       <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       <Setter Property="BorderThickness" Value="0" />
       <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource TempButtonaccentPressedBackgroundPrecise}" />
+        <Setter Property="Background" Value="{DynamicResource TempButtonAccentPressedBackgroundPrecise}" />
       </Style>
       <Style Selector="^:disabled">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
