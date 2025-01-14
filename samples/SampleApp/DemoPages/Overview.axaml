@@ -6,6 +6,7 @@
              x:Class="SampleApp.DemoPages.Overview">
   <StackPanel Margin="10">
     <TextBlock Classes="h1" Text="{Binding $parent[Window].Title}" />
+    <TextBlock Text="{Binding $parent[Window].IsActive}" />
     <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap">
       Elements in this sampler are styled with a partial
       <TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />
