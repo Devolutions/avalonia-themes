@@ -52,18 +52,18 @@
     <Style Selector="^[TabStripPlacement=Top], ^[TabStripPlacement=Bottom]">
       <Setter Property="Template">
         <ControlTemplate>
-          <StackPanel Name="PART_RootElement" Orientation="Horizontal">
+          <StackPanel Orientation="Horizontal">
             <!-- POTENTIALLY FRAGILE HACK (TODO: test with different user font size settings ...?)
                The TextBlock as divider works better than Rectangle, because the pipe character is anti-aliased.
                A better option might be to track the selected tab in code-behind and attach a property addressing the 
-               tab to the right of it somehow ... TODO: ??? -->
-            <TextBlock Name="PART_Divider"
+               tab to the right of it somehow ... Or check DataGrid ColumnHeader - that works fine with Rectangle TODO: ??? -->
+            <TextBlock Name="TabDivider"
                        Foreground="{DynamicResource ForegroundLowBrush}"
                        VerticalAlignment="Center"
                        Margin="{DynamicResource TabItemDividerMargin}">
               |
             </TextBlock>
-            <!-- <Rectangle Name="PART_Divider" -->
+            <!-- <Rectangle Name="TabDivider" -->
             <!--            Height="14" -->
             <!--            Width="1" -->
             <!--            Fill="{DynamicResource ForegroundLowBrush}" -->
@@ -82,13 +82,10 @@
           </StackPanel>
         </ControlTemplate>
       </Setter>
-      <Style Selector="^:nth-child(1) /template/ TextBlock#PART_Divider">
+      <Style Selector="^:nth-child(1) /template/ TextBlock#TabDivider">
         <Setter Property="Foreground" Value="Transparent" />
       </Style>
-      <!-- <Style Selector="^:nth-child(1) /template/ Rectangle#PART_Divider"> -->
-      <!--   <Setter Property="Fill" Value="Transparent" /> -->
-      <!-- </Style> -->
-      <Style Selector="^:selected /template/ TextBlock#PART_Divider">
+      <Style Selector="^:selected /template/ TextBlock#TabDivider">
         <Setter Property="Foreground" Value="Transparent" />
       </Style>
       <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
