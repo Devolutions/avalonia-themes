@@ -36,7 +36,16 @@
     </Style>
 
     <Style Selector="^.accent">
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
+      <!-- <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" /> -->
+      <Setter Property="Background">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundAccentInactiveRaisedBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
       <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderAccentBrush}" />
       <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderAccentThickness}" />
