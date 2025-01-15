@@ -237,7 +237,9 @@
   <!-- <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" /> -->
 
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
-
+  <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                   Opacity="0.85" />
+  
   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
   <SolidColorBrush x:Key="ControlBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.9" />
