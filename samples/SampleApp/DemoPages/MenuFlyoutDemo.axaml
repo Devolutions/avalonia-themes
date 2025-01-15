@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.MenuFlyoutDemo">
+
+  <Panel Margin="20">
+    <TextBlock x:Name="MenuTrigger" HorizontalAlignment="Left" VerticalAlignment="Top" Height="20"
+               Text="Right-click me">
+      <FlyoutBase.AttachedFlyout>
+        <MenuFlyout Placement="RightEdgeAlignedTop">
+          <MenuItem Header="Open session" />
+          <MenuItem Header="Open with parameters">
+            <MenuItem Header="User" />
+            <MenuItem Header="Computer" />
+            <MenuItem Header="Group" />
+          </MenuItem>
+          <MenuItem Header="View password" />
+          <MenuItem Header="Copy password" />
+          <MenuItem Header="-" />
+          <MenuItem Header="Focus session" />
+        </MenuFlyout>
+      </FlyoutBase.AttachedFlyout>
+    </TextBlock>
+  </Panel>
+
+</UserControl>

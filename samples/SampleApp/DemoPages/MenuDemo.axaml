@@ -1,0 +1,210 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.MenuDemo">
+  <Panel>
+    <Panel.Styles>
+      <Style Selector="MenuItem Image">
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Height" Value="15" />
+      </Style>
+
+      <Style Selector="MenuItem > StackPanel">
+        <Setter Property="Spacing" Value="10" />
+        <Setter Property="Orientation" Value="Horizontal" />
+      </Style>
+    </Panel.Styles>
+
+
+    <DockPanel>
+      <Menu DockPanel.Dock="Top">
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="File" />
+            </StackPanel>
+          </MenuItem.Header>
+          <MenuItem Header="Menu Item">
+            <MenuItem.Icon>
+              <Image Source="{StaticResource FolderIcon}" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Menu Item">
+            <MenuItem.Icon>
+              <Image Source="{StaticResource FolderIcon}" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Big Icon">
+            <MenuItem.Icon>
+              <Image Source="{StaticResource FolderIcon}" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Copy">
+            <MenuItem.Icon>
+              <PathIcon Data="{StaticResource PasswordRevealPath}" />
+            </MenuItem.Icon>
+          </MenuItem>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True" Header="Test">
+          <MenuItem.Icon>
+            <PathIcon Data="{StaticResource PasswordRevealPath}"
+                      Height="9" Width="12" />
+          </MenuItem.Icon>
+        </MenuItem>
+
+        <MenuItem IsEnabled="False">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem>
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+      </Menu>
+
+      <Menu DockPanel.Dock="Bottom">
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+          <MenuItem Header="Menu Item">
+            <MenuItem.Icon>
+              <Image Source="{StaticResource FolderIcon}" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Menu Item">
+            <MenuItem.Icon>
+              <Image Source="{StaticResource FolderIcon}" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Big Icon">
+            <MenuItem.Icon>
+              <Image Source="{StaticResource FolderIcon}" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Copy">
+            <MenuItem.Icon>
+              <PathIcon Data="{StaticResource PasswordRevealPath}" />
+            </MenuItem.Icon>
+          </MenuItem>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True" Header="Test">
+          <MenuItem.Icon>
+            <PathIcon Data="{StaticResource PasswordRevealPath}"
+                      Height="9" Width="12" />
+          </MenuItem.Icon>
+        </MenuItem>
+
+        <MenuItem IsEnabled="False">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem IsEnabled="True">
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+
+        <MenuItem>
+          <MenuItem.Header>
+            <StackPanel>
+              <Image Source="{StaticResource FolderIcon}" />
+              <TextBlock Text="Menu Item" />
+            </StackPanel>
+          </MenuItem.Header>
+        </MenuItem>
+      </Menu>
+
+      <Border Background="Silver" />
+    </DockPanel>
+  </Panel>
+
+</UserControl>

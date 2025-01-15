@@ -26,12 +26,21 @@
     <TabItem Header="ComboBox">
       <demoPages:ComboBoxDemo />
     </TabItem>
-    <TabItem Header="DataGrid" IsSelected="True">
+    <TabItem Header="ContextMenu" IsSelected="True">
+      <demoPages:ContextMenuDemo />
+    </TabItem>
+    <TabItem Header="DataGrid">
       <demoPages:DataGridDemo>
         <demoPages:DataGridDemo.DataContext>
           <vm:DataGridViewModel />
         </demoPages:DataGridDemo.DataContext>
       </demoPages:DataGridDemo>
+    </TabItem>
+    <TabItem Header="Menu">
+      <demoPages:MenuDemo />
+    </TabItem>
+    <TabItem Header="MenuFlyout">
+      <demoPages:MenuFlyoutDemo />
     </TabItem>
     <TabItem Header="TabControl">
       <demoPages:TabControlDemo />
