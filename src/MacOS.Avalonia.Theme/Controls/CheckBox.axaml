@@ -1,21 +1,37 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Design.PreviewWith>
-    <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
-      <Border Background="{DynamicResource LayoutBackgroundLowBrush}" Margin="5">
-        <StackPanel Margin="10">
-          <CheckBox IsChecked="True">Emulate 3 buttons</CheckBox>
-          <CheckBox IsChecked="False">Swap mouse bu</CheckBox>
-          <CheckBox IsChecked="True" IsEnabled="False">Auto scale with</CheckBox>
-          <CheckBox IsEnabled="False">Unchecked disabled </CheckBox>
-          <CheckBox IsThreeState="True" IsChecked="{x:Null}">Unknown by default</CheckBox>
-          <CheckBox IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False">
-            Indeterminate
-          </CheckBox>
-          <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
-        </StackPanel>
+    <StackPanel>
+      <StackPanel Margin="20">
+        <Border Height="60" BorderBrush="LightGray" BorderThickness="1">
+          <StackPanel Orientation="Horizontal" Spacing="20">
+            <CheckBox>Default</CheckBox>
+            <CheckBox VerticalAlignment="Top">Top</CheckBox>
+            <CheckBox VerticalAlignment="Bottom">Bottom</CheckBox>
+            <CheckBox VerticalContentAlignment="Top" MaxWidth="80">Default long text</CheckBox>
+            <CheckBox VerticalAlignment="Top" VerticalContentAlignment="Top" MaxWidth="80">Top long text</CheckBox>
+            <CheckBox VerticalAlignment="Bottom" VerticalContentAlignment="Top" MaxWidth="80">Bottom long text</CheckBox>
+          </StackPanel>
+        </Border>
+      </StackPanel>
+      <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+        <Border Background="{DynamicResource LayoutBackgroundLowBrush}" Margin="5">
+          <StackPanel Margin="10">
+            <CheckBox IsChecked="True">Emulate 3 buttons</CheckBox>
+            <CheckBox IsChecked="False">Swap mouse bu</CheckBox>
+            <CheckBox IsChecked="True" IsEnabled="False">Auto scale with</CheckBox>
+            <CheckBox IsEnabled="False">Unchecked disabled </CheckBox>
+            <CheckBox IsThreeState="True" IsChecked="{x:Null}">Unknown by default</CheckBox>
+            <CheckBox IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False">
+              Indeterminate
+            </CheckBox>
+            <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
+          </StackPanel>
+        </Border>
       </Border>
-    </Border>
+
+
+    </StackPanel>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type CheckBox}"
@@ -25,7 +41,8 @@
     <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
     <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
     <Setter Property="Padding" Value="6 0,0,0" />
-    <Setter Property="VerticalContentAlignment" Value="Top" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="HorizontalContentAlignment" Value="Left" />
     <Setter Property="CornerRadius" Value="{DynamicResource CheckBoxCornerRadius}" />
@@ -37,7 +54,7 @@
           <Border Name="border"
                   Width="14"
                   Height="14"
-                  VerticalAlignment="Top"
+                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                   Background="{TemplateBinding Background}"
                   BorderBrush="{TemplateBinding BorderBrush}"
                   BorderThickness="{TemplateBinding BorderThickness}"
