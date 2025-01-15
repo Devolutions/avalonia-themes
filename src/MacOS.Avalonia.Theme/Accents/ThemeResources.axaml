@@ -84,6 +84,8 @@
   <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" />
 
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{StaticResource AccentForegroundColor}" />
+  <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                   Opacity="0.85" />
 
   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource BackgroundColor}" />
   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
@@ -120,6 +122,7 @@
   <!-- Button Resources (& button-like parts of other controls) -->
   <Thickness x:Key="ButtonPadding">10 1.4 10 2.6</Thickness>
   <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
+  <Thickness x:Key="ButtonBorderAccentThickness">0</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
 
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
