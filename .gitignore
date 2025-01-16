@@ -9,5 +9,9 @@ riderModule.iml
 .idea
 *.sln.DotSettings.user
 
+# VS Code
+.vs
+
+
 # macOS
 .DS_Store
