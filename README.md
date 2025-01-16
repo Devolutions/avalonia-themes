@@ -39,8 +39,9 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - Very basic dark mode support
   - 🚧 In progress
     - Dark mode
-  - 🔮 Next on the road map ...
     - Menu
+  - 🔮 Next on the road map ...
+    - ScrollBar
     
 
 
