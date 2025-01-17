@@ -10,15 +10,17 @@
     <Setter Property="MinHeight" Value="{DynamicResource MenuFlyoutThemeMinHeight}" />
     <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
     <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-    <Setter Property="CornerRadius" Value="{DynamicResource OverlayCornerRadius}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource LayoutCornerRadius}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="LayoutRoot"
+                Margin="{StaticResource PopupMargin}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                Padding="{DynamicResource FlyoutBorderThemePadding}"
-                CornerRadius="{TemplateBinding CornerRadius}">
+                Padding="{DynamicResource MenuFlyoutPadding}"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                BoxShadow="{DynamicResource PopupShadow}">
           <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
                         Theme="{StaticResource FluentMenuScrollViewer}"
                         VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">

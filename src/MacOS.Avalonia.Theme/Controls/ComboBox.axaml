@@ -31,7 +31,7 @@
   <ControlTheme x:Key="PopUpToggleButton" TargetType="ToggleButton">
     <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
     <Setter Property="BorderThickness" Value="0" />
-    <Setter Property="CornerRadius" Value="4" />
+    <Setter Property="CornerRadius" Value="{StaticResource SelectionCornerRadius}" />
     <Setter Property="Template">
       <ControlTemplate>
         <ContentPresenter x:Name="PART_ContentPresenter"
