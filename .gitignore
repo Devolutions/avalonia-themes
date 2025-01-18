@@ -12,6 +12,8 @@ riderModule.iml
 # VS Code
 .vs
 
+# local
+global.json
 
 # macOS
 .DS_Store
