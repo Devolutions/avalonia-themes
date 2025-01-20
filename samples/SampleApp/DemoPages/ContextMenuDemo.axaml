@@ -8,11 +8,17 @@
   <Border Background="LightGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
     <Border.ContextMenu>
       <ContextMenu>
-        <MenuItem Header="Copy" />
-        <MenuItem Header="Paste" />
+        <MenuItem Header="Standard _Menu Item" />
+        <MenuItem Header="Disabled" IsEnabled="False" />
+        <Separator />
+        <MenuItem Header="Menu with _Submenu">
+          <MenuItem Header="Submenu _1" />
+          <MenuItem Header="Submenu _2" />
+        </MenuItem>
       </ContextMenu>
     </Border.ContextMenu>
     <TextBlock Margin="10">Right-click anywhere in this space</TextBlock>
   </Border>
+
 
 </UserControl>

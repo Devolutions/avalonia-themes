@@ -141,7 +141,6 @@
                     MinHeight="{DynamicResource MenuFlyoutThemeMinHeight}"
                     HorizontalAlignment="Stretch"
                     BoxShadow="{DynamicResource PopupShadow}"
-
                     CornerRadius="{DynamicResource LayoutCornerRadius}">
               <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}">
                 <ItemsPresenter Name="PART_ItemsPresenter"
@@ -178,20 +177,6 @@
         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
       </Style>
     </Style>
-
-    <!--  Listen for PART_LayoutRoot:pointerover, so it will not be triggered when subitem is pressed  -->
-    <!-- <Style Selector="^:pressed /template/ Border#PART_LayoutRoot:pointerover"> -->
-    <!--   <Setter Property="Background" Value="{DynamicResource MenuFlyoutItemBackgroundPressed}" /> -->
-    <!--   <Style Selector="^ ContentPresenter#PART_HeaderPresenter"> -->
-    <!--     <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemForegroundPressed}" /> -->
-    <!--   </Style> -->
-    <!--   <Style Selector="^ TextBlock#PART_InputGestureText"> -->
-    <!--     <Setter Property="Foreground" Value="{DynamicResource MenuFlyoutItemKeyboardAcceleratorTextForegroundPressed}" /> -->
-    <!--   </Style> -->
-    <!--   <Style Selector="^ Path#PART_ChevronPath"> -->
-    <!--     <Setter Property="Fill" Value="{DynamicResource MenuFlyoutSubItemChevronPressed}" /> -->
-    <!--   </Style> -->
-    <!-- </Style> -->
 
     <Style Selector="^:disabled">
       <Style Selector="^">

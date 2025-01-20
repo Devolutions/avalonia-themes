@@ -20,9 +20,12 @@
                 BorderThickness="{TemplateBinding BorderThickness}"
                 Padding="{DynamicResource MenuFlyoutPadding}"
                 CornerRadius="{TemplateBinding CornerRadius}"
-                BoxShadow="{DynamicResource PopupShadow}">
-          <ScrollViewer HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
-                        Theme="{StaticResource FluentMenuScrollViewer}"
+                BoxShadow="{DynamicResource PopupShadow}"
+                MaxWidth="{TemplateBinding MaxWidth}"
+                MinHeight="{TemplateBinding MinHeight}"
+                HorizontalAlignment="{TemplateBinding HorizontalAlignment}">
+          <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}"
+                        HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
                         VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}">
             <ItemsPresenter Name="PART_ItemsPresenter"
                             ItemsPanel="{TemplateBinding ItemsPanel}"
