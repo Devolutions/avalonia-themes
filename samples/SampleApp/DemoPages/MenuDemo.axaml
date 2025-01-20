@@ -4,207 +4,91 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.MenuDemo">
-  <Panel>
-    <Panel.Styles>
-      <Style Selector="MenuItem Image">
-        <Setter Property="Width" Value="15" />
-        <Setter Property="Height" Value="15" />
-      </Style>
 
-      <Style Selector="MenuItem > StackPanel">
-        <Setter Property="Spacing" Value="10" />
-        <Setter Property="Orientation" Value="Horizontal" />
-      </Style>
-    </Panel.Styles>
-
-
-    <DockPanel>
-      <Menu DockPanel.Dock="Top">
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="File" />
-            </StackPanel>
-          </MenuItem.Header>
-          <MenuItem Header="Menu Item">
-            <MenuItem.Icon>
-              <Image Source="{StaticResource FolderIcon}" />
-            </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Menu Item">
-            <MenuItem.Icon>
-              <Image Source="{StaticResource FolderIcon}" />
-            </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Big Icon">
-            <MenuItem.Icon>
-              <Image Source="{StaticResource FolderIcon}" />
-            </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Copy">
-            <MenuItem.Icon>
-              <PathIcon Data="{StaticResource PasswordRevealPath}" />
-            </MenuItem.Icon>
-          </MenuItem>
+  <DockPanel>
+    <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
+      <MenuItem Header="File">
+        <MenuItem Header="Open session" InputGesture="&#x2318;+O" />
+        <MenuItem Header="Open with parameters">
+          <MenuItem Header="Open (embedded/tabbed)" />
+          <MenuItem Header="Open embedded SFTP connection" />
+          <MenuItem Header="Open embedded SCP connection" InputGesture="&#x2318;+S" IsEnabled="False" />
+          <MenuItem Header="-" />
+          <MenuItem Header="Open (select credentials)..." />
         </MenuItem>
-
-        <MenuItem IsEnabled="True" Header="Test">
+        <MenuItem Header="View password" />
+        <MenuItem Header="Copy name" />
+        <MenuItem Header="Copy password" />
+        <MenuItem Header="-" />
+        <MenuItem Header="Focus session" />
+        <MenuItem Header="Edit" IsEnabled="False">
+          <MenuItem Header="Dummy1" />
+          <MenuItem Header="Dummy2" />
+        </MenuItem>
+        <MenuItem Header="Toggle Options">
+          <MenuItem Header="Option 1" ToggleType="CheckBox" />
+          <MenuItem Header="Option 2" ToggleType="CheckBox" IsChecked="True" />
+        </MenuItem>
+      </MenuItem>
+      <MenuItem Header="Edit">
+        <MenuItem Header="Menu Item">
           <MenuItem.Icon>
-            <PathIcon Data="{StaticResource PasswordRevealPath}"
-                      Height="9" Width="12" />
+            <Image Source="{StaticResource FolderIcon}" />
           </MenuItem.Icon>
         </MenuItem>
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="-" />
+        <MenuItem Header="Menu Item" />
+      </MenuItem>
+    </Menu>
 
-        <MenuItem IsEnabled="False">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
+    <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+      <MenuItem Header="File">
+        <MenuItem Header="Open session" InputGesture="&#x2318;+O" />
+        <MenuItem Header="Open with parameters">
+          <MenuItem Header="Open (embedded/tabbed)" />
+          <MenuItem Header="Open embedded SFTP connection" />
+          <MenuItem Header="Open embedded SCP connection" InputGesture="&#x2318;+S" IsEnabled="False" />
+          <MenuItem Header="-" />
+          <MenuItem Header="Open (select credentials)..." />
         </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
+        <MenuItem Header="View password" />
+        <MenuItem Header="Copy name" />
+        <MenuItem Header="Copy password" />
+        <MenuItem Header="-" />
+        <MenuItem Header="Focus session" />
+        <MenuItem Header="Edit" IsEnabled="False">
+          <MenuItem Header="Dummy1" />
+          <MenuItem Header="Dummy2" />
         </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
+        <MenuItem Header="Toggle Options">
+          <MenuItem Header="Option 1" ToggleType="CheckBox" />
+          <MenuItem Header="Option 2" ToggleType="CheckBox" IsChecked="True" />
         </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-
-        <MenuItem>
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-      </Menu>
-
-      <Menu DockPanel.Dock="Bottom">
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-          <MenuItem Header="Menu Item">
-            <MenuItem.Icon>
-              <Image Source="{StaticResource FolderIcon}" />
-            </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Menu Item">
-            <MenuItem.Icon>
-              <Image Source="{StaticResource FolderIcon}" />
-            </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Big Icon">
-            <MenuItem.Icon>
-              <Image Source="{StaticResource FolderIcon}" />
-            </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Copy">
-            <MenuItem.Icon>
-              <PathIcon Data="{StaticResource PasswordRevealPath}" />
-            </MenuItem.Icon>
-          </MenuItem>
-        </MenuItem>
-
-        <MenuItem IsEnabled="True" Header="Test">
+      </MenuItem>
+      <MenuItem Header="Edit">
+        <MenuItem Header="Menu Item">
           <MenuItem.Icon>
-            <PathIcon Data="{StaticResource PasswordRevealPath}"
-                      Height="9" Width="12" />
+            <Image Source="{StaticResource FolderIcon}" />
           </MenuItem.Icon>
         </MenuItem>
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="-" />
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="-" />
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="Menu Item" />
+      </MenuItem>
+      <MenuItem Header="Short Menu (not working yet!)">
+        <MenuItem Header="Menu Item" />
+        <MenuItem Header="Menu Item" />
+      </MenuItem>
+    </Menu>
 
-        <MenuItem IsEnabled="False">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-
-        <MenuItem IsEnabled="True">
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-
-        <MenuItem>
-          <MenuItem.Header>
-            <StackPanel>
-              <Image Source="{StaticResource FolderIcon}" />
-              <TextBlock Text="Menu Item" />
-            </StackPanel>
-          </MenuItem.Header>
-        </MenuItem>
-      </Menu>
-
-      <Border Background="Silver" />
-    </DockPanel>
-  </Panel>
+    <Border Background="Gainsboro" />
+  </DockPanel>
 
 </UserControl>
