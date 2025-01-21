@@ -14,7 +14,7 @@
         </MenuItem>
         <MenuItem Header="Disabled" IsEnabled="False" />
       </Menu>
-      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom">
+      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove">
         <MenuItem Header="_Standard">
           <MenuItem Header="_Standard" />
           <MenuItem Header="_Standard" />

@@ -25,4 +25,5 @@
 
   <!-- Themed Controls -->
   <StyleInclude Source="/Controls/_index.axaml" />
+  <StyleInclude Source="/Accents/Styles.axaml" />
 </Styles>
