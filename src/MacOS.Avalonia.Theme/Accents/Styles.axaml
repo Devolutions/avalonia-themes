@@ -3,6 +3,9 @@
 
   <Style Selector="Menu.OpenAbove Popup">
     <Setter Property="Placement" Value="TopEdgeAlignedLeft" />
-    <Setter Property="VerticalOffset" Value="29" />
+    <Setter Property="VerticalOffset" Value="{DynamicResource MenuPopupAboveVerticalOffset}" />
+    <Style Selector="^ Border">
+      <Setter Property="Margin" Value="{DynamicResource MenuPopupAboveMargin}" />
+    </Style>
   </Style>
 </Styles>

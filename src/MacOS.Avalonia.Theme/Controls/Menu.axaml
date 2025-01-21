@@ -29,8 +29,6 @@
     </DockPanel>
   </Design.PreviewWith>
 
-  <x:Double x:Key="MenuBarHeight">32</x:Double>
-
   <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
     <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
     <Setter Property="Background" Value="Transparent" />
@@ -59,6 +57,7 @@
                    IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
                    Placement="BottomEdgeAlignedLeft"
                    HorizontalOffset="{DynamicResource MenuPopupHorizontalOffset}"
+                   VerticalOffset="{DynamicResource MenuPopupBelowVerticalOffset}"
                    OverlayInputPassThroughElement="{Binding $parent[Menu]}">
               <Border Margin="{StaticResource PopupMargin} "
                       Background="{DynamicResource PopupBackgroundBrush}"
@@ -94,8 +93,8 @@
 
   <ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
     <Setter Property="Background" Value="Transparent" />
-    <Setter Property="Height" Value="{DynamicResource MenuBarHeight}" />
     <Setter Property="ItemContainerTheme" Value="{StaticResource FluentTopLevelMenuItem}" />
+    <Setter Property="Padding" Value="{DynamicResource MenuBarPadding}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Background="{TemplateBinding Background}"
