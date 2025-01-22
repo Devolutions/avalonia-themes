@@ -3,27 +3,47 @@
 
   <Design.PreviewWith>
     <DockPanel Height="200">
-      <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
+      <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Classes="IconOnly">
         <MenuItem Header="_Standard">
+          <MenuItem.Icon>
+            <Image Source="{StaticResource FolderIcon}" />
+          </MenuItem.Icon>
           <MenuItem Header="_Standard" />
           <MenuItem Header="_Standard" />
         </MenuItem>
         <MenuItem Header="Selected" IsSelected="True">
+          <MenuItem.Icon>
+            <Image Source="{StaticResource FolderIcon}" />
+          </MenuItem.Icon>
           <MenuItem Header="_Standard" />
           <MenuItem Header="_Standard" />
         </MenuItem>
-        <MenuItem Header="Disabled" IsEnabled="False" />
+        <MenuItem Header="Disabled" IsEnabled="False">
+          <MenuItem.Icon>
+            <Image Source="{StaticResource FolderIcon}" />
+          </MenuItem.Icon>
+        </MenuItem>
       </Menu>
       <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove">
         <MenuItem Header="_Standard">
+          <MenuItem.Icon>
+            <Image Source="{StaticResource FolderIcon}" />
+          </MenuItem.Icon>
           <MenuItem Header="_Standard" />
           <MenuItem Header="_Standard" />
         </MenuItem>
         <MenuItem Header="Selected" IsSelected="True">
+          <MenuItem.Icon>
+            <Image Source="{StaticResource FolderIcon}" />
+          </MenuItem.Icon>
           <MenuItem Header="_Standard" />
           <MenuItem Header="_Standard" />
         </MenuItem>
-        <MenuItem Header="Disabled" IsEnabled="False" />
+        <MenuItem Header="Disabled" IsEnabled="False">
+          <MenuItem.Icon>
+            <Image Source="{StaticResource FolderIcon}" />
+          </MenuItem.Icon>
+        </MenuItem>
       </Menu>
       <Border Background="Gainsboro" />
     </DockPanel>
@@ -43,13 +63,37 @@
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{StaticResource SelectionCornerRadius}">
           <Panel>
-            <ContentPresenter Name="PART_HeaderPresenter"
-                              Content="{TemplateBinding Header}"
-                              ContentTemplate="{TemplateBinding HeaderTemplate}"
-                              VerticalAlignment="Center"
-                              HorizontalAlignment="Stretch"
-                              RecognizesAccessKey="True"
-                              Margin="{TemplateBinding Padding}" />
+            <StackPanel>
+              <StackPanel.Orientation>
+                <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="ToolBarStyle">
+                  <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                  <Binding Source="{x:Static Orientation.Vertical}" />
+                  <Binding Source="{x:Static Orientation.Horizontal}" />
+                </MultiBinding>
+              </StackPanel.Orientation>
+              <ContentPresenter Name="PART_IconPresenter"
+                                Content="{TemplateBinding Icon}"
+                                Width="15"
+                                Height="15"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center" />
+              <ContentPresenter Name="PART_HeaderPresenter"
+                                Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Stretch"
+                                RecognizesAccessKey="True"
+                                Margin="{TemplateBinding Padding}">
+                <ContentPresenter.IsVisible>
+                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="IconOnly">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                    <Binding Source="{x:False}" />
+                    <Binding Source="{x:True}" />
+                  </MultiBinding>
+                </ContentPresenter.IsVisible>
+              </ContentPresenter>
+
+            </StackPanel>
             <Popup Name="PART_Popup"
                    WindowManagerAddShadowHint="False"
                    MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
@@ -79,7 +123,7 @@
         </Border>
       </ControlTemplate>
     </Setter>
-
+    
     <Style Selector="^:open">
       <Style Selector="^ /template/ Border#PART_LayoutRoot">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
