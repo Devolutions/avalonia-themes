@@ -1,7 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-  <Style Selector="Menu.OpenAbove Popup">
+  <Style Selector="Menu.OpenAbove > MenuItem > Border > Panel > Popup">
     <Setter Property="Placement" Value="TopEdgeAlignedLeft" />
     <Setter Property="VerticalOffset" Value="{DynamicResource MenuPopupAboveVerticalOffset}" />
     <Style Selector="^ Border">
