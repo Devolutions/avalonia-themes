@@ -3,7 +3,7 @@
 
   <Design.PreviewWith>
     <DockPanel Height="200">
-      <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Classes="IconOnly">
+      <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Classes="IconOnly LabelBelowIcon">
         <MenuItem Header="_Standard">
           <MenuItem.Icon>
             <Image Source="{StaticResource FolderIcon}" />
@@ -24,7 +24,7 @@
           </MenuItem.Icon>
         </MenuItem>
       </Menu>
-      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove">
+      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove LabelBelowIcon">
         <MenuItem Header="_Standard">
           <MenuItem.Icon>
             <Image Source="{StaticResource FolderIcon}" />
@@ -65,7 +65,7 @@
           <Panel>
             <StackPanel>
               <StackPanel.Orientation>
-                <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="ToolBarStyle">
+                <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="LabelBelowIcon">
                   <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                   <Binding Source="{x:Static Orientation.Vertical}" />
                   <Binding Source="{x:Static Orientation.Horizontal}" />
@@ -76,7 +76,16 @@
                                 Width="15"
                                 Height="15"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Center" />
+                                HorizontalAlignment="Center"
+                                ToolTip.Tip="{TemplateBinding Header}">
+                <ToolTip.ServiceEnabled>
+                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="IconOnly">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                    <Binding Source="{x:True}" />
+                    <Binding Source="{x:False}" />
+                  </MultiBinding>
+                </ToolTip.ServiceEnabled>
+              </ContentPresenter>
               <ContentPresenter Name="PART_HeaderPresenter"
                                 Content="{TemplateBinding Header}"
                                 ContentTemplate="{TemplateBinding HeaderTemplate}"
@@ -123,7 +132,7 @@
         </Border>
       </ControlTemplate>
     </Setter>
-    
+
     <Style Selector="^:open">
       <Style Selector="^ /template/ Border#PART_LayoutRoot">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
