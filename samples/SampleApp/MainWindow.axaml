@@ -39,6 +39,9 @@
     <TabItem Header="Menu" IsSelected="True">
       <demoPages:MenuDemo />
     </TabItem>
+    <TabItem Header="GridSplitter" IsSelected="True">
+      <demoPages:GridSplitterDemo />
+    </TabItem>
     <TabItem Header="MenuFlyout">
       <demoPages:MenuFlyoutDemo />
     </TabItem>

@@ -9,6 +9,8 @@
       <Color x:Key="ControlBorderMidColor">#29000000</Color> <!-- 16% -->
       <Color x:Key="ControlBorderLowColor">#14000000</Color> <!-- 8% -->
 
+      <Color x:Key="GridSplitterLineColor">#b2b2b2</Color>
+
       <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
       <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
       <Color x:Key="TextBoxClearBackgroundColor">#808080</Color>
@@ -17,6 +19,7 @@
       <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
       <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
 
+      <SolidColorBrush x:Key="LayoutBorderHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
       <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
       <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
 
@@ -41,6 +44,8 @@
       <Color x:Key="ControlBorderMidColor">#29ffffff</Color> <!-- 16% -->
       <Color x:Key="ControlBorderLowColor">#14ffffff</Color> <!-- 8% -->
 
+      <Color x:Key="GridSplitterLineColor">#757575</Color>
+
       <Color x:Key="TabControlBackgroundColor">#131313</Color>
       <Color x:Key="PopupBackgroundColor">#242424</Color>
       <Color x:Key="TextBoxClearBackgroundColor">#7F7F7F</Color>
@@ -48,6 +53,7 @@
       <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
       <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.09" />
 
+      <SolidColorBrush x:Key="LayoutBorderHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
       <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
       <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
 
