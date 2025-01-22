@@ -83,7 +83,7 @@
           <MenuItem Header="Menu Item" />
           <MenuItem Header="Menu Item" />
         </MenuItem>
-        <MenuItem Header="Short Menu (not working yet!)">
+        <MenuItem Header="Short Menu">
           <MenuItem Header="Menu Item" />
           <MenuItem Header="Menu Item" />
         </MenuItem>
