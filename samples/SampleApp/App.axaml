@@ -2,14 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SampleApp.App">
 
-  <Application.Resources>
-    <ResourceDictionary>
-      <ResourceDictionary.MergedDictionaries>
-        <ResourceInclude Source="/Assets/_index.axaml" />
-      </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-  </Application.Resources>
-
   <Application.Styles>
     <!-- <FluentTheme /> -->
     <StyleInclude Source="avares://MacOS.Avalonia.Theme/MacOSTheme.axaml" />

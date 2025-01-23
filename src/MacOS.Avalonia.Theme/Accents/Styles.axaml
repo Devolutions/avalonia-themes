@@ -8,4 +8,13 @@
       <Setter Property="Margin" Value="{DynamicResource MenuPopupAboveMargin}" />
     </Style>
   </Style>
+
+  <Style Selector="Svg:disabled">
+    <Setter Property="(Svg.Css)">
+      <Setter.Value>
+        <Binding Source="{StaticResource SvgIconDisabledColorBrush}"
+                 Converter="{StaticResource ColorToCssFillConverter}" />
+      </Setter.Value>
+    </Setter>
+  </Style>
 </Styles>

@@ -133,6 +133,10 @@
       </ControlTemplate>
     </Setter>
 
+    <!-- Not working -> handled in Styles.axaml -->
+    <!-- <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter Svg"> -->
+    <!--   <Setter Property="(Svg.Css)" Value=".st0 {fill : #9500C3; }" /> -->
+    <!-- </Style> -->
     <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter:empty">
       <Setter Property="IsVisible" Value="False" />
       <Setter Property="Width" Value="0" />
@@ -145,9 +149,17 @@
       </Style>
     </Style>
 
-    <Style Selector="^:disabled /template/ ContentPresenter#PART_HeaderPresenter">
-      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+    <Style Selector="^:disabled">
+      <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+      </Style>
+      <!-- Not working -> handled in Styles.axaml -->
+      <!-- <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter Svg:disabled"> -->
+      <!--   <Setter Property="(Svg.Css)" Value=".st0 {fill : #dddddd; }" /> -->
+      <!-- </Style> -->
     </Style>
+
+
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">

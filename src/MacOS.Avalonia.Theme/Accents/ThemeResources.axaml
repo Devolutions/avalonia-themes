@@ -10,6 +10,7 @@
       <Color x:Key="ControlBorderLowColor">#14000000</Color> <!-- 8% -->
 
       <Color x:Key="GridSplitterLineColor">#b2b2b2</Color>
+      <Color x:Key="SvgIconDisabledColor">#b2b2b2</Color>
 
       <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
       <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
@@ -45,6 +46,7 @@
       <Color x:Key="ControlBorderLowColor">#14ffffff</Color> <!-- 8% -->
 
       <Color x:Key="GridSplitterLineColor">#757575</Color>
+      <Color x:Key="SvgIconDisabledColor">#757575</Color>
 
       <Color x:Key="TabControlBackgroundColor">#131313</Color>
       <Color x:Key="PopupBackgroundColor">#242424</Color>
@@ -227,6 +229,7 @@
   <Thickness x:Key="MenuInputGestureTextMargin">24,0,0,0</Thickness>
   <Thickness x:Key="MenuItemPadding">9 4 7 2</Thickness>
   <SolidColorBrush x:Key="SeparatorBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
+  <SolidColorBrush x:Key="SvgIconDisabledColorBrush" Color="{DynamicResource SvgIconDisabledColor}" />
   <Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>
 
 
