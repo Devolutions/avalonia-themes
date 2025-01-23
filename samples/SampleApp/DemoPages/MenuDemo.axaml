@@ -5,7 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.MenuDemo">
 
-  <Border BorderBrush="Silver" BorderThickness="1" Height="300" Width="500">
+  <Border BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
     <DockPanel>
       <Menu DockPanel.Dock="Top" VerticalAlignment="Top">
         <MenuItem Header="File">
@@ -44,52 +44,137 @@
         </MenuItem>
       </Menu>
 
-      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove">
-        <MenuItem Header="File">
-          <MenuItem Header="Open session" InputGesture="&#x2318;+O" />
-          <MenuItem Header="Open with parameters">
-            <MenuItem Header="Open (embedded/tabbed)" />
-            <MenuItem Header="Open embedded SFTP connection" />
-            <MenuItem Header="Open embedded SCP connection" InputGesture="&#x2318;+S" IsEnabled="False" />
-            <MenuItem Header="-" />
-            <MenuItem Header="Open (select credentials)..." />
-          </MenuItem>
-          <MenuItem Header="View password" />
-          <MenuItem Header="Copy name" />
-          <MenuItem Header="Copy password" />
-          <MenuItem Header="-" />
-          <MenuItem Header="Focus session" />
-          <MenuItem Header="Edit" IsEnabled="False">
-            <MenuItem Header="Dummy1" />
-            <MenuItem Header="Dummy2" />
-          </MenuItem>
-          <MenuItem Header="Toggle Options">
-            <MenuItem Header="Option 1" ToggleType="CheckBox" />
-            <MenuItem Header="Option 2" ToggleType="CheckBox" IsChecked="True" />
-          </MenuItem>
-        </MenuItem>
-        <MenuItem Header="Edit">
-          <MenuItem Header="Menu Item">
-            <MenuItem.Icon>
-              <Image Source="{StaticResource FolderIcon}" />
-            </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Menu Item" />
-          <MenuItem Header="Menu Item" />
-          <MenuItem Header="-" />
-          <MenuItem Header="Menu Item" />
-          <MenuItem Header="Menu Item" />
-          <MenuItem Header="-" />
-          <MenuItem Header="Menu Item" />
-          <MenuItem Header="Menu Item" />
-        </MenuItem>
-        <MenuItem Header="Short Menu">
-          <MenuItem Header="Menu Item" />
-          <MenuItem Header="Menu Item" />
-        </MenuItem>
-      </Menu>
+      <!-- <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove"> -->
+      <!--   <MenuItem Header="File"> -->
+      <!--     <MenuItem Header="Open session" InputGesture="&#x2318;+O" /> -->
+      <!--     <MenuItem Header="Open with parameters"> -->
+      <!--       <MenuItem Header="Open (embedded/tabbed)" /> -->
+      <!--       <MenuItem Header="Open embedded SFTP connection" /> -->
+      <!--       <MenuItem Header="Open embedded SCP connection" InputGesture="&#x2318;+S" IsEnabled="False" /> -->
+      <!--       <MenuItem Header="-" /> -->
+      <!--       <MenuItem Header="Open (select credentials)..." /> -->
+      <!--     </MenuItem> -->
+      <!--     <MenuItem Header="View password" /> -->
+      <!--     <MenuItem Header="Copy name" /> -->
+      <!--     <MenuItem Header="Copy password" /> -->
+      <!--     <MenuItem Header="-" /> -->
+      <!--     <MenuItem Header="Focus session" /> -->
+      <!--     <MenuItem Header="Edit" IsEnabled="False"> -->
+      <!--       <MenuItem Header="Dummy1" /> -->
+      <!--       <MenuItem Header="Dummy2" /> -->
+      <!--     </MenuItem> -->
+      <!--     <MenuItem Header="Toggle Options"> -->
+      <!--       <MenuItem Header="Option 1" ToggleType="CheckBox" /> -->
+      <!--       <MenuItem Header="Option 2" ToggleType="CheckBox" IsChecked="True" /> -->
+      <!--     </MenuItem> -->
+      <!--   </MenuItem> -->
+      <!--   <MenuItem Header="Edit"> -->
+      <!--     <MenuItem Header="Menu Item"> -->
+      <!--       <MenuItem.Icon> -->
+      <!--         <Image Source="{StaticResource FolderIcon}" /> -->
+      <!--       </MenuItem.Icon> -->
+      <!--     </MenuItem> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--     <MenuItem Header="-" /> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--     <MenuItem Header="-" /> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--   </MenuItem> -->
+      <!--   <MenuItem Header="Short Menu"> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--     <MenuItem Header="Menu Item" /> -->
+      <!--   </MenuItem> -->
+      <!-- </Menu> -->
 
-      <Border Background="Gainsboro" />
+      <Border Background="Gainsboro">
+        <DockPanel>
+          <DockPanel DockPanel.Dock="Top">
+            <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Classes=" LabelBelowIcon">
+              <MenuItem Header="_Standard">
+                <MenuItem.Icon>
+                  <Image Source="{StaticResource FolderIcon}" />
+                </MenuItem.Icon>
+                <MenuItem Header="_Standard" />
+                <MenuItem Header="_Standard" />
+              </MenuItem>
+              <MenuItem Header="Selected" IsSelected="True">
+                <MenuItem.Icon>
+                  <Image Source="{StaticResource FolderIcon}" />
+                </MenuItem.Icon>
+                <MenuItem Header="_Standard" />
+                <MenuItem Header="_Standard" />
+              </MenuItem>
+              <MenuItem Header="Disabled" IsEnabled="False">
+                <MenuItem.Icon>
+                  <Image Source="{StaticResource FolderIcon}" />
+                </MenuItem.Icon>
+              </MenuItem>
+            </Menu>
+            <Menu DockPanel.Dock="Right" VerticalAlignment="Top" HorizontalAlignment="Right"
+                  Classes="LabelBelowIcon">
+              <MenuItem Header="_Standard">
+                <MenuItem.Icon>
+                  <Image Source="{StaticResource FolderIcon}" />
+                </MenuItem.Icon>
+                <MenuItem Header="_Standard" />
+                <MenuItem Header="_Standard" />
+              </MenuItem>
+              <MenuItem Header="Selected" IsSelected="True">
+                <MenuItem.Icon>
+                  <Image Source="{StaticResource PadlockIcon}" />
+                </MenuItem.Icon>
+                <MenuItem Header="_Standard" />
+                <MenuItem Header="_Standard" />
+              </MenuItem>
+              <MenuItem Header="Disabled" IsEnabled="False">
+                <MenuItem.Icon>
+                  <Svg Path="/Assets/User.svg" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Selected" IsSelected="True">
+                <MenuItem.Icon>
+                  <Svg Path="/Assets/User.svg" />
+                </MenuItem.Icon>
+                <MenuItem Header="_Standard" />
+                <MenuItem Header="_Standard" />
+              </MenuItem>
+              <MenuItem Header="Selected" IsSelected="True">
+                <MenuItem.Icon>
+                  <Svg Path="/Assets/User.svg" Css=".st0 { fill: #FF0000; }" />
+                </MenuItem.Icon>
+                <MenuItem Header="_Standard" />
+                <MenuItem Header="_Standard" />
+              </MenuItem>
+
+            </Menu>
+          </DockPanel>
+          <Menu Name="BottomIconMenu" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove IconOnly">
+            <MenuItem Header="_Standard">
+              <MenuItem.Icon>
+                <Image Source="{StaticResource FolderIcon}" />
+              </MenuItem.Icon>
+              <MenuItem Header="_Standard" />
+              <MenuItem Header="_Standard" />
+            </MenuItem>
+            <MenuItem Header="Selected" IsSelected="True">
+              <MenuItem.Icon>
+                <Image Source="{StaticResource FolderIcon}" />
+              </MenuItem.Icon>
+              <MenuItem Header="_Standard" />
+              <MenuItem Header="_Standard" />
+            </MenuItem>
+            <MenuItem Header="Disabled" IsEnabled="False">
+              <MenuItem.Icon>
+                <Image Source="{StaticResource FolderIcon}" />
+              </MenuItem.Icon>
+            </MenuItem>
+          </Menu>
+          <Border Background="White" />
+        </DockPanel>
+      </Border>
     </DockPanel>
   </Border>
 </UserControl>
