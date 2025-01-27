@@ -9,6 +9,11 @@
     </Style>
   </Style>
 
+  <Style Selector="MenuItem Svg">
+    <Setter Property="Width" Value="15" />
+    <Setter Property="Height" Value="15" />
+  </Style>
+
   <Style Selector="Svg:disabled">
     <Setter Property="(Svg.Css)">
       <Setter.Value>

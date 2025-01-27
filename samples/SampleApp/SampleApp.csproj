@@ -27,50 +27,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Remove="Assets\Add.svg"/>
-        <AvaloniaResource Include="Assets\Add.svg"/>
-        <None Remove="Assets\AddThin.svg"/>
-        <AvaloniaResource Include="Assets\AddThin.svg"/>
-        <None Remove="Assets\Computer.svg"/>
-        <AvaloniaResource Include="Assets/Computer.svg"/>
-        <None Remove="Assets\CopyHost.svg"/>
-        <AvaloniaResource Include="Assets\CopyHost.svg"/>
-        <None Remove="Assets\CopyName.svg"/>
-        <AvaloniaResource Include="Assets\CopyName.svg"/>
-        <None Remove="Assets\CopyPassword.svg"/>
-        <AvaloniaResource Include="Assets\CopyPassword.svg"/>
-        <None Remove="Assets\CopyUserName.svg"/>
-        <AvaloniaResource Include="Assets\CopyUserName.svg"/>
-        <None Remove="Assets\CopyUserNamePassword.svg"/>
-        <AvaloniaResource Include="Assets\CopyUserNamePassword.svg"/>
-        <None Remove="Assets\Details.svg"/>
-        <AvaloniaResource Include="Assets\Details.svg"/>
-        <None Remove="Assets\DisableUser.svg"/>
-        <AvaloniaResource Include="Assets\DisableUser.svg"/>
-        <None Remove="Assets\EnableUser.svg"/>
-        <AvaloniaResource Include="Assets\EnableUser.svg"/>
-        <None Remove="Assets\Folder.svg"/>
-        <AvaloniaResource Include="Assets/Folder.svg"/>
-        <None Remove="Assets\Help.svg"/>
-        <AvaloniaResource Include="Assets\Help.svg"/>
-        <None Remove="Assets\HorizontalLine.svg"/>
-        <AvaloniaResource Include="Assets\HorizontalLine.svg"/>
-        <None Remove="Assets\More.svg"/>
-        <AvaloniaResource Include="Assets\More.svg"/>
-        <None Remove="Assets\Padlock.svg"/>
-        <AvaloniaResource Include="Assets/Padlock.svg"/>
-        <None Remove="Assets\PrivateKey.svg"/>
-        <AvaloniaResource Include="Assets\PrivateKey.svg"/>
-        <None Remove="Assets\Properties.svg"/>
-        <AvaloniaResource Include="Assets\Properties.svg"/>
-        <None Remove="Assets\ResetPassword.svg"/>
-        <AvaloniaResource Include="Assets\ResetPassword.svg"/>
-        <None Remove="Assets\UnlockUser.svg"/>
-        <AvaloniaResource Include="Assets\UnlockUser.svg"/>
-        <None Remove="Assets\User.svg"/>
-        <AvaloniaResource Include="Assets/User.svg"/>
-
-
+        <None Remove="Assets\**"/>
+        <AvaloniaResource Include="Assets\**"/>
     </ItemGroup>
 
     <!-- Temporary link for development. 

@@ -227,10 +227,12 @@
   <Thickness x:Key="MenuFlyoutSeparatorThemePadding">8,5,8,5</Thickness>
   <Thickness x:Key="MenuIconPresenterMargin">0,0,4,0</Thickness>
   <Thickness x:Key="MenuInputGestureTextMargin">24,0,0,0</Thickness>
+  <Thickness x:Key="MenuTextBelowIconMargin">0 4 0 0</Thickness>
   <Thickness x:Key="MenuItemPadding">9 4 7 2</Thickness>
   <SolidColorBrush x:Key="SeparatorBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
   <SolidColorBrush x:Key="SvgIconDisabledColorBrush" Color="{DynamicResource SvgIconDisabledColor}" />
   <Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>
+  <x:Double x:Key="MenuHeaderFontSizeSmall">10</x:Double>
 
 
   <!-- DEVELOPMENT ONLY -->

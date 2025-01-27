@@ -12,6 +12,14 @@
     <Style Selector="Menu.OnWhite Svg:not(:disabled)">
       <Setter Property="(Svg.Css)" Value=".st0 {fill : #3B86EA; }" />
     </Style>
+    <Style Selector="Menu.Icons25 Svg">
+      <Setter Property="Width" Value="25" />
+      <Setter Property="Height" Value="25" />
+    </Style>
+    <Style Selector="Menu.Icons15 Svg">
+      <Setter Property="Width" Value="15" />
+      <Setter Property="Height" Value="15" />
+    </Style>
   </UserControl.Styles>
 
   <Border BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
@@ -65,44 +73,40 @@
       <Border Background="Gainsboro">
         <DockPanel>
           <DockPanel DockPanel.Dock="Top">
-            <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Classes=" LabelBelowIcon OnGray">
-              <MenuItem Header="_Standard">
+            <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Classes=" LabelBelowIcon OnGray Icons25">
+              <MenuItem Header="Copy name">
                 <MenuItem.Icon>
-                  <Svg Path="/Assets/ResetPassword.svg" />
+                  <Svg Path="/Assets/CopyName.svg" />
                 </MenuItem.Icon>
-                <MenuItem Header="_Standard" />
-                <MenuItem Header="_Standard" />
+                <MenuItem Header="Menu Item" />
+                <MenuItem Header="Menu Item" />
               </MenuItem>
-              <MenuItem Header="Selected" IsSelected="True">
+              <MenuItem Header="Copy username and password" IsSelected="True">
                 <MenuItem.Icon>
-                  <Svg Path="/Assets/Properties.svg" />
+                  <Svg Path="/Assets/CopyUserNamePassword.svg" />
                 </MenuItem.Icon>
-                <MenuItem Header="_Standard" />
-                <MenuItem Header="_Standard" />
               </MenuItem>
-              <MenuItem Header="Disabled" IsEnabled="False">
+              <MenuItem Header="Copy username" IsEnabled="False">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/Details.svg" />
                 </MenuItem.Icon>
               </MenuItem>
             </Menu>
-            <Menu DockPanel.Dock="Right" VerticalAlignment="Top" HorizontalAlignment="Right"
-                  Classes="LabelBelowIcon">
-              <MenuItem Header="_Standard" IsEnabled="False">
+            <Menu DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Right"
+                  Classes="LabelBelowIcon Icons15">
+              <MenuItem Header="Group" IsEnabled="False">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/EnableUser.svg" />
                 </MenuItem.Icon>
-                <MenuItem Header="_Standard" />
-                <MenuItem Header="_Standard" />
+                <MenuItem Header="Menu Item" />
+                <MenuItem Header="Menu Item" />
               </MenuItem>
-              <MenuItem Header="Selected" IsSelected="True">
+              <MenuItem Header="Share">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/DisableUser.svg" />
                 </MenuItem.Icon>
-                <MenuItem Header="_Standard" />
-                <MenuItem Header="_Standard" />
               </MenuItem>
-              <MenuItem Header="Disabled" IsEnabled="False">
+              <MenuItem Header="Add Tags" IsEnabled="False">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/UnlockUser.svg" />
                 </MenuItem.Icon>
@@ -110,46 +114,44 @@
             </Menu>
 
           </DockPanel>
-          <Menu Name="BottomIconMenu" DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove IconOnly">
+          <Menu Name="BottomIconMenu"
+                DockPanel.Dock="Bottom"
+                VerticalAlignment="Bottom"
+                Classes="OpenAbove IconOnly LabelBelowIcon">
             <MenuItem Header="Selected" IsSelected="True">
               <MenuItem.Icon>
                 <Svg Path="/Assets/Add.svg" />
               </MenuItem.Icon>
-              <MenuItem Header="_Standard" />
-              <MenuItem Header="_Standard" />
+              <MenuItem Header="Menu Item" />
+              <MenuItem Header="Menu Item" />
             </MenuItem>
-            <MenuItem Header="Disabled" IsEnabled="False">
+            <MenuItem Header="Enable User" IsEnabled="False">
               <MenuItem.Icon>
                 <Svg Path="/Assets/EnableUser.svg" />
               </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Selected">
+            <MenuItem Header="Disable User">
               <MenuItem.Icon>
                 <Svg Path="/Assets/DisableUser.svg" />
               </MenuItem.Icon>
-              <MenuItem Header="_Standard" />
-              <MenuItem Header="_Standard" />
             </MenuItem>
-            <MenuItem Header="Selected">
+            <MenuItem Header="Unlock User">
               <MenuItem.Icon>
                 <Svg Path="/Assets/UnlockUser.svg" />
               </MenuItem.Icon>
-              <MenuItem Header="_Standard" />
-              <MenuItem Header="_Standard" />
             </MenuItem>
-            <MenuItem Header="_Standard">
+            <MenuItem Header="More">
               <MenuItem.Icon>
                 <Svg Path="/Assets/More.svg" />
               </MenuItem.Icon>
-              <MenuItem Header="_Standard" />
-              <MenuItem Header="_Standard" />
+              <MenuItem Header="Menu Item" />
+              <MenuItem Header="Menu Item" />
             </MenuItem>
-            <MenuItem Header="_Standard">
+            <MenuItem Header="Private Key">
               <MenuItem.Icon>
                 <Svg Path="/Assets/PrivateKey.svg" />
               </MenuItem.Icon>
-              <MenuItem Header="_Standard" />
-              <MenuItem Header="_Standard" />
+
             </MenuItem>
           </Menu>
           <Border Background="White" />

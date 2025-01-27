@@ -4,45 +4,42 @@
   <Design.PreviewWith>
     <DockPanel Height="200">
       <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Classes="IconOnly LabelBelowIcon">
-        <MenuItem Header="_Standard">
+        <MenuItem Header="Add">
           <MenuItem.Icon>
-            <Image Source="{StaticResource FolderIcon}" />
+            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
           </MenuItem.Icon>
-          <MenuItem Header="_Standard" />
-          <MenuItem Header="_Standard" />
+          <MenuItem Header="User" />
+          <MenuItem Header="Group" />
         </MenuItem>
-        <MenuItem Header="Selected" IsSelected="True">
+        <MenuItem Header="Test">
           <MenuItem.Icon>
-            <Image Source="{StaticResource FolderIcon}" />
+            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
           </MenuItem.Icon>
-          <MenuItem Header="_Standard" />
-          <MenuItem Header="_Standard" />
         </MenuItem>
         <MenuItem Header="Disabled" IsEnabled="False">
           <MenuItem.Icon>
-            <Image Source="{StaticResource FolderIcon}" />
+            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
           </MenuItem.Icon>
         </MenuItem>
       </Menu>
       <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove LabelBelowIcon">
         <MenuItem Header="_Standard">
           <MenuItem.Icon>
-            <Image Source="{StaticResource FolderIcon}" />
+            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
           </MenuItem.Icon>
           <MenuItem Header="_Standard" />
           <MenuItem Header="_Standard" />
         </MenuItem>
         <MenuItem Header="Selected" IsSelected="True">
           <MenuItem.Icon>
-            <Image Source="{StaticResource FolderIcon}" />
+            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
           </MenuItem.Icon>
-          <MenuItem Header="_Standard" />
-          <MenuItem Header="_Standard" />
         </MenuItem>
         <MenuItem Header="Disabled" IsEnabled="False">
           <MenuItem.Icon>
-            <Image Source="{StaticResource FolderIcon}" />
+            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
           </MenuItem.Icon>
+          <MenuItem Header="_Standard" />
         </MenuItem>
       </Menu>
       <Border Background="Gainsboro" />
@@ -50,7 +47,15 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
-    <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+    <Setter Property="FontSize">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="LabelBelowIcon">
+          <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+          <Binding Source="{StaticResource MenuHeaderFontSizeSmall}" />
+          <Binding Source="{StaticResource ControlFontSize}" />
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
@@ -58,10 +63,12 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_LayoutRoot"
+                Margin="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{StaticResource SelectionCornerRadius}">
+                CornerRadius="{StaticResource SelectionCornerRadius}"
+                VerticalAlignment="Center">
           <Panel>
             <StackPanel>
               <StackPanel.Orientation>
@@ -71,28 +78,58 @@
                   <Binding Source="{x:Static Orientation.Horizontal}" />
                 </MultiBinding>
               </StackPanel.Orientation>
-              <ContentPresenter Name="PART_IconPresenter"
-                                Content="{TemplateBinding Icon}"
-                                Width="15"
-                                Height="15"
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Center"
-                                ToolTip.Tip="{TemplateBinding Header}">
-                <ToolTip.ServiceEnabled>
-                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="IconOnly">
-                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
-                    <Binding Source="{x:True}" />
-                    <Binding Source="{x:False}" />
-                  </MultiBinding>
-                </ToolTip.ServiceEnabled>
-              </ContentPresenter>
+              <StackPanel
+                Orientation="Horizontal"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                ToolTip.Tip="{TemplateBinding Header}">
+                <ContentPresenter Name="PART_IconPresenter"
+                                  Content="{TemplateBinding Icon}">
+                  <ToolTip.ServiceEnabled>
+                    <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="IconOnly">
+                      <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                      <Binding Source="{x:True}" />
+                      <Binding Source="{x:False}" />
+                    </MultiBinding>
+                  </ToolTip.ServiceEnabled>
+                </ContentPresenter>
+                <Panel Name="PART_ChevronPanel">
+                  <Border Name="PART_ChevronBorder" Margin="3 0 0 0 ">
+                    <Path Name="PART_ChevronPath"
+                          Data="{StaticResource ChevronPath}"
+                          Width="{StaticResource TreeViewItemChevronSize}"
+                          Height="{StaticResource TreeViewItemChevronSize}"
+                          Fill="{TemplateBinding Foreground}"
+                          Stretch="Uniform"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center">
+                      <Path.RenderTransform>
+                        <TransformGroup>
+                          <RotateTransform Angle="180" />
+                        </TransformGroup>
+                      </Path.RenderTransform>
+                      <Path.IsVisible>
+                        <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                      ConverterParameter="LabelBelowIcon">
+                          <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                          <Binding Source="{x:True}" />
+                          <Binding Source="{x:False}" />
+                        </MultiBinding>
+                      </Path.IsVisible>
+                    </Path>
+                  </Border>
+                </Panel>
+              </StackPanel>
               <ContentPresenter Name="PART_HeaderPresenter"
                                 Content="{TemplateBinding Header}"
                                 ContentTemplate="{TemplateBinding HeaderTemplate}"
                                 VerticalAlignment="Center"
-                                HorizontalAlignment="Stretch"
-                                RecognizesAccessKey="True"
-                                Margin="{TemplateBinding Padding}">
+                                HorizontalAlignment="Center"
+                                MaxWidth="85"
+                                TextWrapping="Wrap"
+                                HorizontalContentAlignment="Center"
+                                TextAlignment="Center"
+                                RecognizesAccessKey="True">
                 <ContentPresenter.IsVisible>
                   <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="IconOnly">
                     <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
@@ -100,6 +137,12 @@
                     <Binding Source="{x:True}" />
                   </MultiBinding>
                 </ContentPresenter.IsVisible>
+                <ContentPresenter.Margin>
+                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="LabelBelowIcon">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                    <Binding Source="{StaticResource MenuTextBelowIconMargin }" />
+                  </MultiBinding>
+                </ContentPresenter.Margin>
               </ContentPresenter>
 
             </StackPanel>
@@ -149,9 +192,16 @@
       </Style>
     </Style>
 
+    <Style Selector="^:empty /template/ Panel#PART_ChevronPanel">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+
     <Style Selector="^:disabled">
       <Style Selector="^ /template/ ContentPresenter#PART_HeaderPresenter">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+      </Style>
+      <Style Selector="^ /template/ Path#PART_ChevronPath">
+        <Setter Property="Fill" Value="{DynamicResource ForegroundLowBrush}" />
       </Style>
       <!-- Not working -> handled in Styles.axaml -->
       <!-- <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter Svg:disabled"> -->
