@@ -15,6 +15,9 @@
       <converters:CharToMacOsPasswordCharConverter x:Key="CharToMacOsPasswordCharConverter" />
       <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
       <converters:BooleanToChoiceConverter x:Key="BooleanToChoiceConverter" />
+      <converters:ClassToChoiceConverter x:Key="ClassToChoiceConverter" />
+      <converters:ColorToCssFillConverter x:Key="ColorToCssFillConverter" />
+      <!-- <converters:HasClassConverter x:Key="HasClassConverter" /> -->
     </ResourceDictionary>
   </Styles.Resources>
 
@@ -25,4 +28,5 @@
 
   <!-- Themed Controls -->
   <StyleInclude Source="/Controls/_index.axaml" />
+  <StyleInclude Source="/Accents/Styles.axaml" />
 </Styles>
