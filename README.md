@@ -31,6 +31,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [ComboBox](#combobox)
       - [ComboBoxItem](#comboboxitem)
     - [DataGrid](#datagrid)
+    - [Menu](#menu)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
     - [TextBox](#textbox)
@@ -39,7 +40,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - Very basic dark mode support
   - 🚧 In progress
     - Dark mode
-    - Menu
+    - ScrollBar
   - 🔮 Next on the road map ...
     - ScrollBar
     
@@ -133,7 +134,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>ManagedFileChooser</h3> ||
 ||||
 || <h3>Menu</h3> ||
-||||
+|| <img src="https://github.com/user-attachments/assets/243f2f45-b0d7-4afd-b0d7-16caa237365a" alt="Menu demo" max-width="529"> ||
 || <h3>MenuFlyoutPresenter</h3> ||
 ||||
 || <h3>MenuItem</h3> ||
