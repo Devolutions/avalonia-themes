@@ -17,6 +17,7 @@
       <converters:BooleanToChoiceConverter x:Key="BooleanToChoiceConverter" />
       <converters:ClassToChoiceConverter x:Key="ClassToChoiceConverter" />
       <converters:ColorToCssFillConverter x:Key="ColorToCssFillConverter" />
+      <converters:ThicknessToSelectiveThicknessConverter x:Key="ThicknessToSelectiveThicknessConverter" />
       <!-- <converters:HasClassConverter x:Key="HasClassConverter" /> -->
     </ResourceDictionary>
   </Styles.Resources>

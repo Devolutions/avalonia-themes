@@ -1,0 +1,98 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.ScrollViewerDemo">
+  <Border Padding="10">
+    <StackPanel>
+      <Grid ColumnDefinitions="Auto, 420, 420" RowDefinitions="Auto, 320, 320">
+        <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">Default</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Classes="code">BorderThickness="0" Background="Transparent"</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Default</TextBlock>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="#dddddd" BorderThickness="1" Width="400" Height="300">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 ">
+            <StackPanel Background="white">
+              <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
+              <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
+              <TextBlock>-rw-r--r--@  1 jdoe  staff    6148 28 Jan 14:27 .DS_Store</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     534 27 Jan 15:29 Add.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     506 27 Jan 15:29 AddThin.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     536 27 Jan 15:29 Computer.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     909 27 Jan 15:29 CopyHost.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     795 27 Jan 15:29 CopyName.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     986 27 Jan 15:29 CopyPassword.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1169 27 Jan 15:29 CopyUserName.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1189 27 Jan 15:29 CopyUserNamePassword.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     749 27 Jan 15:29 Details.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     888 27 Jan 15:29 DisableUser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     777 27 Jan 15:29 EnableUser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     368 27 Jan 15:29 Folder.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     880 27 Jan 15:29 Help.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     488 27 Jan 15:29 HorizontalLine.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     564 27 Jan 15:29 More.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     579 27 Jan 15:29 Padlock.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     715 27 Jan 15:29 PasswordAnalyser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1013 27 Jan 15:29 PrivateKey.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1275 27 Jan 15:29 Properties.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     820 27 Jan 15:29 ResetPassword.svg</TextBlock>
+              <TextBlock>-rw-r--r--@  1 jdoe  staff  147049 28 Jan 14:27 SampleImage.jpg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     729 27 Jan 15:29 UnlockUser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     561 27 Jan 15:29 User.svg</TextBlock>
+            </StackPanel>
+          </ScrollViewer>
+        </Border>
+        <ScrollViewer Grid.Row="1" Grid.Column="2" Width="400" Height="300" HorizontalScrollBarVisibility="Auto"
+                      BorderThickness="0" Background="Transparent">
+          <Image Width="800" Height="600"
+                 Source="avares://SampleApp/Assets/SampleImage.jpg" />
+        </ScrollViewer>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Classes="code" VerticalAlignment="Center">AllowAutoHide="False"</TextBlock>
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="#dddddd" BorderThickness="1" Width="400" Height="300">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 " AllowAutoHide="False">
+            <StackPanel Background="white">
+              <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
+              <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
+              <TextBlock>-rw-r--r--@  1 jdoe  staff    6148 28 Jan 14:27 .DS_Store</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     534 27 Jan 15:29 Add.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     506 27 Jan 15:29 AddThin.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     536 27 Jan 15:29 Computer.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     909 27 Jan 15:29 CopyHost.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     795 27 Jan 15:29 CopyName.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     986 27 Jan 15:29 CopyPassword.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1169 27 Jan 15:29 CopyUserName.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1189 27 Jan 15:29 CopyUserNamePassword.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     749 27 Jan 15:29 Details.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     888 27 Jan 15:29 DisableUser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     777 27 Jan 15:29 EnableUser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     368 27 Jan 15:29 Folder.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     880 27 Jan 15:29 Help.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     488 27 Jan 15:29 HorizontalLine.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     564 27 Jan 15:29 More.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     579 27 Jan 15:29 Padlock.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     715 27 Jan 15:29 PasswordAnalyser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1013 27 Jan 15:29 PrivateKey.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff    1275 27 Jan 15:29 Properties.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     820 27 Jan 15:29 ResetPassword.svg</TextBlock>
+              <TextBlock>-rw-r--r--@  1 jdoe  staff  147049 28 Jan 14:27 SampleImage.jpg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     729 27 Jan 15:29 UnlockUser.svg</TextBlock>
+              <TextBlock>-rw-r--r--   1 jdoe  staff     561 27 Jan 15:29 User.svg</TextBlock>
+            </StackPanel>
+          </ScrollViewer>
+        </Border>
+        <ScrollViewer Grid.Row="2" Grid.Column="2" Width="400" Height="300" HorizontalScrollBarVisibility="Auto"
+                      AllowAutoHide="False"
+                      BorderThickness="0" Background="Transparent">
+          <Image Width="800" Height="600"
+                 Source="avares://SampleApp/Assets/SampleImage.jpg" />
+        </ScrollViewer>
+      </Grid>
+      <TextBlock TextWrapping="Wrap">
+        <Bold>Note:</Bold> MacOS hides scrollbars completely (depending on user settings), but they re-appear on scroll events.
+        Since Avalonia ScrollBars only expand on pointerOver hiding them completely would be a bit confusing, so the Thumb sliders
+        remain visible even when <TextBlock Classes="code" Text="AllowAutoHide=&quot;True&quot;" />.
+      </TextBlock>
+    </StackPanel>
+  </Border>
+</UserControl>

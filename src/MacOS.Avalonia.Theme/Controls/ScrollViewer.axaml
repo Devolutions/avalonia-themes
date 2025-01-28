@@ -3,7 +3,7 @@
   <Design.PreviewWith>
     <ScrollViewer Width="200" Height="200"
                   HorizontalScrollBarVisibility="Auto">
-      <StackPanel Spacing="20" Width="210">
+      <StackPanel Spacing="20" Width="210" Background="White">
         <TextBlock>Item 1</TextBlock>
         <TextBlock>Item 2</TextBlock>
         <TextBlock>Item 3</TextBlock>
@@ -18,14 +18,16 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ScrollViewer}" TargetType="ScrollViewer">
-    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="Background" Value="{DynamicResource ScrollBarTrackBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ScrollBarTrackBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+
     <Setter Property="Template">
       <ControlTemplate>
         <Grid ColumnDefinitions="*,Auto" RowDefinitions="*,Auto">
           <ScrollContentPresenter Name="PART_ContentPresenter"
-                                  Grid.Row="0"
-                                  Grid.Column="0"
-                                  Background="{TemplateBinding Background}"
+                                  Grid.Row="0" Grid.RowSpan="2"
+                                  Grid.Column="0" Grid.ColumnSpan="2"
                                   HorizontalSnapPointsType="{TemplateBinding HorizontalSnapPointsType}"
                                   VerticalSnapPointsType="{TemplateBinding VerticalSnapPointsType}"
                                   HorizontalSnapPointsAlignment="{TemplateBinding HorizontalSnapPointsAlignment}"
@@ -40,31 +42,49 @@
             </ScrollContentPresenter.GestureRecognizers>
           </ScrollContentPresenter>
           <ScrollBar Name="PART_HorizontalScrollBar"
+                     Grid.Row="1"
+                     Grid.Column="0" Grid.ColumnSpan="2"
                      Orientation="Horizontal"
-                     Grid.Row="1" />
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     BorderThickness="{TemplateBinding BorderThickness}" />
           <ScrollBar Name="PART_VerticalScrollBar"
+                     Grid.Row="0" Grid.RowSpan="2"
+                     Grid.Column="1"
                      Orientation="Vertical"
-                     Grid.Column="1" />
-          <Panel x:Name="PART_ScrollBarsSeparator"
-                 Grid.Row="1"
-                 Grid.Column="1"
-                 Background="{DynamicResource ScrollViewerScrollBarsSeparatorBackground}"
-                 Opacity="0">
-            <Panel.Transitions>
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     BorderThickness="{TemplateBinding BorderThickness}" />
+          <Border x:Name="PART_ScrollBarsSeparator"
+                  Grid.Row="1"
+                  Grid.Column="1"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness, 
+                    Converter={StaticResource ThicknessToSelectiveThicknessConverter}, 
+                    ConverterParameter={StaticResource ScrollBarSeparatorBorderFactors}}"
+                  Opacity="0">
+            <Border.Transitions>
               <Transitions>
                 <DoubleTransition Property="Opacity" Duration="0:0:0.1" />
               </Transitions>
-            </Panel.Transitions>
-          </Panel>
+            </Border.Transitions>
+          </Border>
         </Grid>
       </ControlTemplate>
     </Setter>
-    <Style Selector="^[IsExpanded=true] /template/ Panel#PART_ScrollBarsSeparator">
-      <Setter Property="Opacity" Value="1" />
-    </Style>
-    <Style Selector="^[AllowAutoHide=True] /template/ ScrollContentPresenter#PART_ContentPresenter">
-      <Setter Property="Grid.ColumnSpan" Value="2" />
-      <Setter Property="Grid.RowSpan" Value="2" />
+
+
+    <Style Selector="^[AllowAutoHide=False]">
+      <Style Selector="^ /template/ Border#PART_ScrollBarsSeparator">
+        <Setter Property="Opacity" Value="1" />
+      </Style>
+      <Style Selector="^ /template/ ScrollBar#PART_VerticalScrollBar">
+        <Setter Property="Grid.RowSpan" Value="1" />
+      </Style>
+      <Style Selector="^ /template/ ScrollBar#PART_HorizontalScrollBar">
+        <Setter Property="Grid.ColumnSpan" Value="1" />
+      </Style>
     </Style>
   </ControlTheme>
 </ResourceDictionary>
