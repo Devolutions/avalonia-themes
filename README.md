@@ -199,7 +199,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>TransitioningContentControl</h3> ||
 ||||
 |✅ | <h3>TreeView</h3> <h4>TreeViewItem<h4> ||
-|| <img src="https://github.com/user-attachments/assets/0f1981ae-d001-49f9-8ee3-fda47ec2a461" alt="TabControl demo" max-width="515"> | Striped background currently cannot be rendered with rounded corners & breaks when default TreeViewItem height is altered (see comment in ThemeResources.axaml)|
+|| <img src="https://github.com/user-attachments/assets/0f1981ae-d001-49f9-8ee3-fda47ec2a461" alt="TabControl demo" max-width="515"> | Use `Classes="MacOS_Theme_AlternatingRowColor" to achieve striped background.  (Cannot currently be rendered with rounded corners & breaks when default TreeViewItem height is altered (see comment in ThemeResources.axaml))|
 || <h3>Window</h3> ||
 ||||
 || <h3>WindowNotificationManager</h3> ||

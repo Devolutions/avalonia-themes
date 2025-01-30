@@ -1,7 +1,7 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-  <Style Selector="Menu.OpenAbove > MenuItem > Border > Panel > Popup">
+  <Style Selector="Menu.MacOS_Theme_MenuOpensAbove > MenuItem > Border > Panel > Popup">
     <Setter Property="Placement" Value="TopEdgeAlignedLeft" />
     <Setter Property="VerticalOffset" Value="{DynamicResource MenuPopupAboveVerticalOffset}" />
     <Style Selector="^ Border">
@@ -22,4 +22,9 @@
       </Setter.Value>
     </Setter>
   </Style>
+
+  <!-- Custom Classes used as ConverterParameters in Template styles - declared here to make them available to the IDE's parser to avoid false error highlighting -->
+  <Style Selector=".MacOS_Theme_MenuLabelBelowIcon" />
+  <Style Selector=".MacOS_Theme_MenuItemIconOnly" />
+
 </Styles>
