@@ -3,7 +3,8 @@
 
   <Design.PreviewWith>
     <DockPanel Height="200">
-      <Menu DockPanel.Dock="Top" VerticalAlignment="Top" Classes="IconOnly LabelBelowIcon">
+      <Menu DockPanel.Dock="Top" VerticalAlignment="Top"
+            Classes="MacOS_Theme_MenuItemIconOnly MacOS_Theme_MenuLabelBelowIcon">
         <MenuItem Header="Add">
           <MenuItem.Icon>
             <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
@@ -22,7 +23,8 @@
           </MenuItem.Icon>
         </MenuItem>
       </Menu>
-      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Classes="OpenAbove LabelBelowIcon">
+      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom"
+            Classes="MacOS_Theme_MenuOpensAbove MacOS_Theme_MenuLabelBelowIcon">
         <MenuItem Header="_Standard">
           <MenuItem.Icon>
             <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
@@ -49,7 +51,8 @@
   <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
     <Setter Property="FontSize">
       <Setter.Value>
-        <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="LabelBelowIcon">
+        <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                      ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
           <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
           <Binding Source="{StaticResource MenuHeaderFontSizeSmall}" />
           <Binding Source="{StaticResource ControlFontSize}" />
@@ -72,7 +75,8 @@
           <Panel>
             <StackPanel>
               <StackPanel.Orientation>
-                <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="LabelBelowIcon">
+                <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                              ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                   <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                   <Binding Source="{x:Static Orientation.Vertical}" />
                   <Binding Source="{x:Static Orientation.Horizontal}" />
@@ -86,7 +90,8 @@
                 <ContentPresenter Name="PART_IconPresenter"
                                   Content="{TemplateBinding Icon}">
                   <ToolTip.ServiceEnabled>
-                    <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="IconOnly">
+                    <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                  ConverterParameter="MacOS_Theme_MenuItemIconOnly">
                       <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                       <Binding Source="{x:True}" />
                       <Binding Source="{x:False}" />
@@ -110,7 +115,7 @@
                       </Path.RenderTransform>
                       <Path.IsVisible>
                         <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
-                                      ConverterParameter="LabelBelowIcon">
+                                      ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                           <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                           <Binding Source="{x:True}" />
                           <Binding Source="{x:False}" />
@@ -131,14 +136,16 @@
                                 TextAlignment="Center"
                                 RecognizesAccessKey="True">
                 <ContentPresenter.IsVisible>
-                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="IconOnly">
+                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                ConverterParameter="MacOS_Theme_MenuItemIconOnly">
                     <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                     <Binding Source="{x:False}" />
                     <Binding Source="{x:True}" />
                   </MultiBinding>
                 </ContentPresenter.IsVisible>
                 <ContentPresenter.Margin>
-                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}" ConverterParameter="LabelBelowIcon">
+                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                     <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                     <Binding Source="{StaticResource MenuTextBelowIconMargin }" />
                   </MultiBinding>

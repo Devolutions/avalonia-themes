@@ -86,7 +86,7 @@
     <!-- With alternating row colour & scrolling -->
     <StackPanel Spacing="20">
 
-      <TreeView Width="150" Height="160" Classes="AlternatingRowColor" BorderBrush="LightGray" BorderThickness="1">
+      <TreeView Width="150" Height="160" Classes="MacOS_Theme_AlternatingRowColor" BorderBrush="LightGray" BorderThickness="1">
         <TreeViewItem Header="Level 1.1">
           <TreeViewItem Header="Level 2.1" />
           <TreeViewItem Header="Level 2.2" />
@@ -108,7 +108,7 @@
       </TreeView>
       <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
         For alternating row colour use: <LineBreak />
-        <TextBlock Classes="code" FontSize="13" Text="Classes=&quot;AlternatingRowColor&quot;" />
+        <TextBlock Classes="code" FontSize="13" Text="Classes=&quot;MacOS_Theme_AlternatingRowColor&quot;" />
       </TextBlock>
     </StackPanel>
   </StackPanel>

@@ -73,7 +73,8 @@
       <Border Background="Gainsboro">
         <DockPanel>
           <DockPanel DockPanel.Dock="Top">
-            <Menu DockPanel.Dock="Left" VerticalAlignment="Top" Classes=" LabelBelowIcon OnGray Icons25">
+            <Menu DockPanel.Dock="Left" VerticalAlignment="Top"
+                  Classes=" MacOS_Theme_MenuLabelBelowIcon OnGray Icons25">
               <MenuItem Header="Copy name">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/CopyName.svg" />
@@ -93,7 +94,7 @@
               </MenuItem>
             </Menu>
             <Menu DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Right"
-                  Classes="LabelBelowIcon Icons15">
+                  Classes="MacOS_Theme_MenuLabelBelowIcon Icons15">
               <MenuItem Header="Group" IsEnabled="False">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/EnableUser.svg" />
@@ -117,7 +118,7 @@
           <Menu Name="BottomIconMenu"
                 DockPanel.Dock="Bottom"
                 VerticalAlignment="Bottom"
-                Classes="OpenAbove IconOnly LabelBelowIcon">
+                Classes="MacOS_Theme_MenuOpensAbove MacOS_Theme_MenuItemIconOnly MacOS_Theme_MenuLabelBelowIcon">
             <MenuItem Header="Selected" IsSelected="True">
               <MenuItem.Icon>
                 <Svg Path="/Assets/Add.svg" />

@@ -44,7 +44,7 @@
       </ControlTemplate>
     </Setter>
 
-    <Style Selector="^.AlternatingRowColor /template/ Panel#BackgroundPanel">
+    <Style Selector="^.MacOS_Theme_AlternatingRowColor /template/ Panel#BackgroundPanel">
       <Setter Property="Background" Value="{DynamicResource StripedBackgroundBrush}" />
     </Style>
   </ControlTheme>
