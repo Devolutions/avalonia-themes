@@ -30,7 +30,10 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [CheckBox](#checkbox)
     - [ComboBox](#combobox)
       - [ComboBoxItem](#comboboxitem)
+    - [ContextMenu](#contextmenu)
     - [DataGrid](#datagrid)
+    - [MenuFlyoutPresenter](#menuflyoutpresenter)
+    - [MenuItem](#menuitem)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
     - [TextBox](#textbox)
@@ -40,8 +43,10 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
   - 🚧 In progress
     - Dark mode
     - Menu
-  - 🔮 Next on the road map ...
     - ScrollBar
+    - GridSplitter
+  - 🔮 Next on the road map ...
+    - ToolTip
     
 
 
@@ -93,11 +98,11 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |✅ | <h3>CheckBox</h3> ||
 || <img src="https://github.com/user-attachments/assets/30182450-b339-49d4-9aab-96cef627d0ca" alt="CheckBox demo" max-width="723"> ||
 |✅ | <h3>ComboBox</h3> ||
-|| <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" width="max-461"> | [ScrollBar](#scrollbar) not done yet |
+|| <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" max-width="461"> | [ScrollBar](#scrollbar) not done yet |
 || <h3>ComboBoxItem</h3> ||
 ||||
 || <h3>ContextMenu</h3> ||
-||||
+|| <img src="https://github.com/user-attachments/assets/72a2c409-da86-4ff9-8bac-2be7c0ef2b7d" alt="ComboBox demo" max-width="316"> ||
 || <h3>DataGrid</h3> ||
 || <img src="https://github.com/user-attachments/assets/5acca5bd-1232-419e-bcae-828616d8004b" alt="DataGrid demo" max-width="552">   | The editable field still has an issue, forcing the row to be slightly higher than the others |
 || <h3>DataValidationErrors</h3> ||
@@ -135,9 +140,9 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>Menu</h3> ||
 ||||
 || <h3>MenuFlyoutPresenter</h3> ||
-||||
+|| <img src="https://github.com/user-attachments/assets/085eca28-d703-44e4-9392-35bb7b0ffc57" alt="MenuFlyout demo" max-width="586"><br /><img src="https://github.com/user-attachments/assets/fccf7dac-6b17-49ad-ad59-c7393f97532b" alt="MenuFlyout demo" max-width="586"> ||
 || <h3>MenuItem</h3> ||
-||||
+|| See [MenuFlyoutPresenter](#menuflyoutpresenter), [ContextMenu](#contextmenu) ||
 || <h3>MenuScrollViewer</h3> ||
 ||||
 || <h3>NotificationCard</h3> ||
