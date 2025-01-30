@@ -23,7 +23,7 @@
       <DataGridTemplateColumn Header="">
         <DataGridTemplateColumn.CellTemplate>
           <DataTemplate>
-            <Image Source="{StaticResource ComputerIcon}" Width="20" Height="20" />
+            <Svg Path="/Assets/Computer.svg" Width="20" Height="20" Css=".st0 {fill: #3B86EA}" />
           </DataTemplate>
         </DataGridTemplateColumn.CellTemplate>
       </DataGridTemplateColumn>
