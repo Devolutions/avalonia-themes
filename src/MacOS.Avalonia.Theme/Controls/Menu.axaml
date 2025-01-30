@@ -185,7 +185,7 @@
 
     <!-- Not working -> handled in Styles.axaml -->
     <!-- <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter Svg"> -->
-    <!--   <Setter Property="(Svg.Css)" Value=".st0 {fill : #9500C3; }" /> -->
+    <!--   <Setter Property="Css" Value=".st0 {fill : #9500C3; }" /> -->
     <!-- </Style> -->
     <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter:empty">
       <Setter Property="IsVisible" Value="False" />
@@ -212,7 +212,7 @@
       </Style>
       <!-- Not working -> handled in Styles.axaml -->
       <!-- <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter Svg:disabled"> -->
-      <!--   <Setter Property="(Svg.Css)" Value=".st0 {fill : #dddddd; }" /> -->
+      <!--   <Setter Property="Css" Value=".st0 {fill : #dddddd; }" /> -->
       <!-- </Style> -->
     </Style>
 

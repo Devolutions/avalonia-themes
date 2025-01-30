@@ -15,7 +15,7 @@
   </Style>
 
   <Style Selector="Svg:disabled">
-    <Setter Property="(Svg.Css)">
+    <Setter Property="Css">
       <Setter.Value>
         <Binding Source="{StaticResource SvgIconDisabledColorBrush}"
                  Converter="{StaticResource ColorToCssFillConverter}" />

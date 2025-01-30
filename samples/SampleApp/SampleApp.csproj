@@ -20,9 +20,6 @@
     <ItemGroup>
         <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0.2"/>
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
-        <!--        TODO: Check if you need these three ...  -->
-        <PackageReference Include="Svg.SourceGenerator.Skia" Version="2.0.0.4"/>
-        <PackageReference Include="Avalonia.Controls.Skia" Version="11.2.0.2"/>
         <!-- <PackageReference Include="MacOS.Avalonia.Theme" Version="2024.12.4" /> -->
     </ItemGroup>
 
