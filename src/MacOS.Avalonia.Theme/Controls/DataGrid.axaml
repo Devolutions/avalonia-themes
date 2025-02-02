@@ -539,6 +539,10 @@
     <Setter Property="HorizontalGridLinesBrush" Value="{DynamicResource DataGridGridLinesBrush}" />
     <Setter Property="VerticalGridLinesBrush" Value="{DynamicResource DataGridGridLinesBrush}" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="ScrollBar.Background" Value="{DynamicResource ScrollBarTrackBrush}" />
+    <Setter Property="ScrollBar.BorderBrush" Value="{DynamicResource ScrollBarTrackBorderBrush}" />
+    <Setter Property="ScrollBar.BorderThickness" Value="1" />
+    <Setter Property="ScrollBar.AllowAutoHide" Value="False" />
     <Setter Property="DropLocationIndicatorTemplate">
       <Template>
         <Rectangle Fill="{DynamicResource DataGridDropLocationIndicatorBackground}"
@@ -576,23 +580,37 @@
                                          IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_RowsPresenter}" />
               </DataGridRowsPresenter.GestureRecognizers>
             </DataGridRowsPresenter>
-            <Rectangle Name="PART_BottomRightCorner"
-                       Fill="{DynamicResource DataGridScrollBarsSeparatorBackground}"
-                       Grid.Column="2"
-                       Grid.Row="2" />
+            <Border x:Name="PART_ScrollBarsSeparator"
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness, 
+                      Converter={StaticResource ThicknessToSelectiveThicknessConverter}, 
+                      ConverterParameter={StaticResource ScrollBarSeparatorBorderFactors}}"
+                    IsVisible="{TemplateBinding ScrollBar.AllowAutoHide, Converter={x:Static BoolConverters.Not}}" />
             <ScrollBar Name="PART_VerticalScrollbar"
                        Orientation="Vertical"
                        Grid.Column="2"
                        Grid.Row="1"
+                       Background="{TemplateBinding ScrollBar.Background}"
+                       BorderBrush="{TemplateBinding ScrollBar.BorderBrush}"
+                       BorderThickness="{TemplateBinding ScrollBar.BorderThickness}"
+                       AllowAutoHide="{TemplateBinding ScrollBar.AllowAutoHide}"
                        Width="{DynamicResource ScrollBarSize}" />
 
-            <Grid Grid.Column="1"
+            <Grid Name="HorizontalScrollbarGrid"
+                  Grid.Column="1"
                   Grid.Row="2"
                   ColumnDefinitions="Auto,*">
               <Rectangle Name="PART_FrozenColumnScrollBarSpacer" />
               <ScrollBar Name="PART_HorizontalScrollbar"
                          Grid.Column="1"
                          Orientation="Horizontal"
+                         Background="{TemplateBinding ScrollBar.Background}"
+                         BorderBrush="{TemplateBinding ScrollBar.BorderBrush}"
+                         BorderThickness="{TemplateBinding ScrollBar.BorderThickness}"
+                         AllowAutoHide="{TemplateBinding ScrollBar.AllowAutoHide}"
                          Height="{DynamicResource ScrollBarSize}" />
             </Grid>
             <Border x:Name="PART_DisabledVisualElement"
