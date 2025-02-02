@@ -108,7 +108,8 @@
                          Text="{TemplateBinding InputGesture, Converter={StaticResource KeyGestureConverter}}"
                          HorizontalAlignment="Right"
                          VerticalAlignment="Center"
-                         Foreground="{DynamicResource ForegroundMidLowBrush}" />
+                         Foreground="{DynamicResource ForegroundMidLowBrush}"
+                         IsVisible="{TemplateBinding InputGesture, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
               <!-- Not sure why `TemplateBinding Foreground` doesn't work with the PART_ChevronPath Fill (won't pick up any changes) -->
               <Path Name="PART_ChevronPath"
                     Grid.Column="3"

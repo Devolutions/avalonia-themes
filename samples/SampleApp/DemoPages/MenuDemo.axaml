@@ -12,19 +12,36 @@
     <Style Selector="Menu.OnWhite Svg:not(:disabled)">
       <Setter Property="Css" Value=".st0 {fill : #3B86EA; }" />
     </Style>
-    <Style Selector="Menu.Icons25 Svg">
-      <Setter Property="Width" Value="25" />
-      <Setter Property="Height" Value="25" />
+
+    <Style Selector="Menu.Icons25 > MenuItem">
+      <Style Selector="^ > ContentPresenter#PART_HeaderPresenter">
+        <Setter Property="MinWidth" Value="56" />
+        <Setter Property="MaxWidth" Value="56" />
+      </Style>
+      <Style Selector="^.LongTitle ContentPresenter#PART_HeaderPresenter">
+        <Setter Property="MaxWidth" Value="75" />
+      </Style>
+      <Style Selector="^ Svg">
+        <Setter Property="Width" Value="25" />
+        <Setter Property="Height" Value="25" />
+      </Style>
     </Style>
-    <Style Selector="Menu.Icons15 Svg">
-      <Setter Property="Width" Value="15" />
-      <Setter Property="Height" Value="15" />
+
+    <Style Selector="Menu.Icons15 > MenuItem">
+      <Style Selector="^ > ContentPresenter#PART_HeaderPresenter">
+        <Setter Property="MinWidth" Value="44" />
+        <Setter Property="MaxWidth" Value="66" />
+      </Style>
+      <Style Selector="^ Svg">
+        <Setter Property="Width" Value="15" />
+        <Setter Property="Height" Value="15" />
+      </Style>
     </Style>
   </UserControl.Styles>
 
   <Border BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
     <DockPanel>
-      <Menu Classes="OnWhite" DockPanel.Dock="Top" VerticalAlignment="Top">
+      <Menu Name="MainMenu" Classes="OnWhite" DockPanel.Dock="Top" VerticalAlignment="Top">
         <MenuItem Header="File">
           <MenuItem Header="Open session" InputGesture="&#x2318;+O" />
           <MenuItem Header="Open with parameters">
@@ -59,6 +76,7 @@
           <MenuItem Header="-" />
           <MenuItem Header="Menu Item" />
         </MenuItem>
+        <MenuItem Header="-" />
         <MenuItem Header="Help">
           <MenuItem.Icon>
             <Svg Path="/Assets/Help.svg" />
@@ -73,8 +91,14 @@
       <Border Background="Gainsboro">
         <DockPanel>
           <DockPanel DockPanel.Dock="Top">
-            <Menu DockPanel.Dock="Left" VerticalAlignment="Top"
+            <Menu Name="LargeToolbar" DockPanel.Dock="Left" VerticalAlignment="Top"
                   Classes=" MacOS_Theme_MenuLabelBelowIcon OnGray Icons25">
+              <MenuItem Header="Focus session">
+                <MenuItem.Icon>
+                  <Svg Path="/Assets/Details.svg" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="-" />
               <MenuItem Header="Copy name">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/CopyName.svg" />
@@ -82,18 +106,19 @@
                 <MenuItem Header="Menu Item" />
                 <MenuItem Header="Menu Item" />
               </MenuItem>
-              <MenuItem Header="Copy username and password" IsSelected="True">
+
+              <MenuItem Header="Copy username and password" Classes="LongTitle">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/CopyUserNamePassword.svg" />
                 </MenuItem.Icon>
               </MenuItem>
               <MenuItem Header="Copy username" IsEnabled="False">
                 <MenuItem.Icon>
-                  <Svg Path="/Assets/Details.svg" />
+                  <Svg Path="/Assets/CopyUserName.svg" />
                 </MenuItem.Icon>
               </MenuItem>
             </Menu>
-            <Menu DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Right"
+            <Menu Name="SmallToolbar" DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Right"
                   Classes="MacOS_Theme_MenuLabelBelowIcon Icons15">
               <MenuItem Header="Group" IsEnabled="False">
                 <MenuItem.Icon>
@@ -107,7 +132,7 @@
                   <Svg Path="/Assets/DisableUser.svg" />
                 </MenuItem.Icon>
               </MenuItem>
-              <MenuItem Header="Add Tags" IsEnabled="False">
+              <MenuItem Header="Add Tags">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/UnlockUser.svg" />
                 </MenuItem.Icon>
@@ -118,29 +143,36 @@
           <Menu Name="BottomIconMenu"
                 DockPanel.Dock="Bottom"
                 VerticalAlignment="Bottom"
+                BorderBrush="{DynamicResource SeparatorBrush}"
+                BorderThickness="1"
+                Padding="0"
                 Classes="MacOS_Theme_MenuOpensAbove MacOS_Theme_MenuItemIconOnly MacOS_Theme_MenuLabelBelowIcon">
-            <MenuItem Header="Selected" IsSelected="True">
+            <MenuItem Header="Add" IsSelected="True">
               <MenuItem.Icon>
                 <Svg Path="/Assets/Add.svg" />
               </MenuItem.Icon>
               <MenuItem Header="Menu Item" />
               <MenuItem Header="Menu Item" />
             </MenuItem>
+            <MenuItem Header="-" />
             <MenuItem Header="Enable User" IsEnabled="False">
               <MenuItem.Icon>
                 <Svg Path="/Assets/EnableUser.svg" />
               </MenuItem.Icon>
             </MenuItem>
+            <MenuItem Header="-" />
             <MenuItem Header="Disable User">
               <MenuItem.Icon>
                 <Svg Path="/Assets/DisableUser.svg" />
               </MenuItem.Icon>
             </MenuItem>
+            <MenuItem Header="-" />
             <MenuItem Header="Unlock User">
               <MenuItem.Icon>
                 <Svg Path="/Assets/UnlockUser.svg" />
               </MenuItem.Icon>
             </MenuItem>
+            <MenuItem Header="-" />
             <MenuItem Header="More">
               <MenuItem.Icon>
                 <Svg Path="/Assets/More.svg" />
@@ -148,12 +180,13 @@
               <MenuItem Header="Menu Item" />
               <MenuItem Header="Menu Item" />
             </MenuItem>
+            <MenuItem Header="-" />
             <MenuItem Header="Private Key">
               <MenuItem.Icon>
                 <Svg Path="/Assets/PrivateKey.svg" />
               </MenuItem.Icon>
-
             </MenuItem>
+            <MenuItem Header="-" />
           </Menu>
           <Border Background="White" />
         </DockPanel>

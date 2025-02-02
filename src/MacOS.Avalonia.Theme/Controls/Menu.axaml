@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
 
   <Design.PreviewWith>
     <DockPanel Height="200">
@@ -12,6 +13,7 @@
           <MenuItem Header="User" />
           <MenuItem Header="Group" />
         </MenuItem>
+        <MenuItem Header="-" />
         <MenuItem Header="Test">
           <MenuItem.Icon>
             <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
@@ -32,7 +34,13 @@
           <MenuItem Header="_Standard" />
           <MenuItem Header="_Standard" />
         </MenuItem>
-        <MenuItem Header="Selected" IsSelected="True">
+        <MenuItem Header="-" />
+        <MenuItem Header="Focus session" IsSelected="True">
+          <MenuItem.Icon>
+            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+          </MenuItem.Icon>
+        </MenuItem>
+        <MenuItem Header="Copy username and password" IsSelected="True">
           <MenuItem.Icon>
             <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
           </MenuItem.Icon>
@@ -59,10 +67,18 @@
         </MultiBinding>
       </Setter.Value>
     </Setter>
+    <Setter Property="Padding">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                      ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
+          <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+          <Binding Source="{StaticResource MenuToolBarItemPadding}" />
+          <Binding Source="{StaticResource MenuItemPadding}" />
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
-    <!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
-    <Setter Property="Padding" Value="{DynamicResource MenuItemPadding}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_LayoutRoot"
@@ -71,7 +87,7 @@
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{StaticResource SelectionCornerRadius}"
-                VerticalAlignment="Center">
+                VerticalAlignment="Top">
           <Panel>
             <StackPanel>
               <StackPanel.Orientation>
@@ -128,9 +144,10 @@
               <ContentPresenter Name="PART_HeaderPresenter"
                                 Content="{TemplateBinding Header}"
                                 ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                MinWidth="{TemplateBinding MinWidth}"
+                                MaxWidth="{TemplateBinding MaxWidth}"
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Center"
-                                MaxWidth="85"
                                 TextWrapping="Wrap"
                                 HorizontalContentAlignment="Center"
                                 TextAlignment="Center"
@@ -191,6 +208,19 @@
       <Setter Property="IsVisible" Value="False" />
       <Setter Property="Width" Value="0" />
       <Setter Property="Height" Value="0" />
+    </Style>
+
+    <Style Selector="^:separator">
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Separator
+            Height="{x:Static sys:Double.NaN}"
+            Width="{DynamicResource MenuFlyoutSeparatorThemeHeight}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Stretch"
+            Margin="4 1 4 1" />
+        </ControlTemplate>
+      </Setter>
     </Style>
 
     <Style Selector="^:open">
