@@ -229,6 +229,7 @@
   <Thickness x:Key="MenuInputGestureTextMargin">24,0,0,0</Thickness>
   <Thickness x:Key="MenuTextBelowIconMargin">0 4 0 0</Thickness>
   <Thickness x:Key="MenuItemPadding">9 4 7 2</Thickness>
+  <Thickness x:Key="MenuToolBarItemPadding">4</Thickness>
   <SolidColorBrush x:Key="SeparatorBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
   <SolidColorBrush x:Key="SvgIconDisabledColorBrush" Color="{DynamicResource SvgIconDisabledColor}" />
   <Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>
