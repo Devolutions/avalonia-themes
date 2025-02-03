@@ -82,7 +82,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_LayoutRoot"
-                Margin="{TemplateBinding Padding}"
+                Padding="{TemplateBinding Padding}"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -247,8 +247,6 @@
       <!--   <Setter Property="Css" Value=".st0 {fill : #dddddd; }" /> -->
       <!-- </Style> -->
     </Style>
-
-
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
