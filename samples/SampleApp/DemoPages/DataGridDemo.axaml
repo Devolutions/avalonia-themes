@@ -18,7 +18,7 @@
             CanUserSortColumns="True"
             GridLinesVisibility="None"
             Focusable="False"
-            BorderThickness="1" BorderBrush="Gray">
+            BorderThickness="1" BorderBrush="#dddddd">
     <DataGrid.Columns>
       <DataGridTemplateColumn Header="">
         <DataGridTemplateColumn.CellTemplate>

@@ -15,6 +15,8 @@
         <MergeResourceInclude Source="Menu.axaml" />
         <MergeResourceInclude Source="MenuFlyoutPresenter.axaml" />
         <MergeResourceInclude Source="MenuItem.axaml" />
+        <MergeResourceInclude Source="ScrollBar.axaml" />
+        <MergeResourceInclude Source="ScrollViewer.axaml" />
         <MergeResourceInclude Source="Separator.axaml" />
         <MergeResourceInclude Source="TabControl.axaml" />
         <MergeResourceInclude Source="TabItem.axaml" />

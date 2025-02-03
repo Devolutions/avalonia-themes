@@ -187,7 +187,9 @@
                       HorizontalAlignment="Stretch"
                       BoxShadow="{DynamicResource PopupShadow}"
                       CornerRadius="{DynamicResource LayoutCornerRadius}">
-                <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}">
+                <ScrollViewer Theme="{StaticResource FluentMenuScrollViewer}"
+                              BorderThickness="0"
+                              Background="Transparent">
                   <ItemsPresenter Name="PART_ItemsPresenter"
                                   ItemsPanel="{TemplateBinding ItemsPanel}"
                                   Margin="{DynamicResource MenuFlyoutScrollerMargin}"
