@@ -32,8 +32,13 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
       - [ComboBoxItem](#comboboxitem)
     - [ContextMenu](#contextmenu)
     - [DataGrid](#datagrid)
+    - [GridSplitter](#gridsplitter)
+    - [Menu](#menu)
     - [MenuFlyoutPresenter](#menuflyoutpresenter)
     - [MenuItem](#menuitem)
+    - [ScrollViewer](#scrollviewer)
+      - [ScrollBar](#scrollbar)
+    - [Separator](#separator) 
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
     - [TextBox](#textbox)
@@ -98,12 +103,12 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |✅ | <h3>CheckBox</h3> ||
 || <img src="https://github.com/user-attachments/assets/30182450-b339-49d4-9aab-96cef627d0ca" alt="CheckBox demo" max-width="723"> ||
 |✅ | <h3>ComboBox</h3> ||
-|| <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" max-width="461"> | [ScrollBar](#scrollbar) not done yet |
+|| <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" max-width="461"> |  |
 || <h3>ComboBoxItem</h3> ||
 ||||
-|| <h3>ContextMenu</h3> ||
+|✅ | <h3>ContextMenu</h3> ||
 || <img src="https://github.com/user-attachments/assets/72a2c409-da86-4ff9-8bac-2be7c0ef2b7d" alt="ComboBox demo" max-width="316"> ||
-|| <h3>DataGrid</h3> ||
+|✅ | <h3>DataGrid</h3> ||
 || <img src="https://github.com/user-attachments/assets/5acca5bd-1232-419e-bcae-828616d8004b" alt="DataGrid demo" max-width="552">   | The editable field still has an issue, forcing the row to be slightly higher than the others |
 || <h3>DataValidationErrors</h3> ||
 ||||
@@ -121,8 +126,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>FlyoutPresenter</h3> ||
 ||||
-|| <h3>GridSplitter</h3> ||
-||||
+|✅ | <h3>GridSplitter</h3> ||
+|| <img src="https://github.com/user-attachments/assets/df3b0ff0-9f71-4a06-b579-4411949bee1a" alt="GridSplitter" max-width="513"> ||
 || <h3>HeaderedContentControl</h3> ||
 ||||
 || <h3>HyperlinkButton</h3> ||
@@ -137,12 +142,12 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>ManagedFileChooser</h3> ||
 ||||
-|| <h3>Menu</h3> ||
-||||
-|| <h3>MenuFlyoutPresenter</h3> ||
+|✅ | <h3>Menu</h3> ||
+|| <img max-width="264" alt="Main menu" src="https://github.com/user-attachments/assets/d3b70c05-9bdc-4437-ba8f-9e098b7b7123" /><br /><img max-width="341" alt="Large toolbar" src="https://github.com/user-attachments/assets/791a9d1c-3272-4229-9db4-4bf20399a0d0" /><br /><img max-width="155" alt="Small toolbar" src="https://github.com/user-attachments/assets/2f433c00-7965-4ffa-a3c5-1fc5712b2f48" /><br /><img max-width="236" alt="Bottom toolbar" src="https://github.com/user-attachments/assets/bfc4a22a-6a12-4197-aef5-cc044ba3e7a4" /> | Use: <ul><li>`Classes="MacOS_Theme_MenuOpensAbove"` for bottom-placed menus</li><li>`Classes="MacOS_Theme_MenuLabelBelowIcon"` for toolbar-style menus</li><li>`Classes="MacOS_Theme_MenuItemIconOnly"` to hide labels completely</li></ul> |
+|✅ | <h3>MenuFlyoutPresenter</h3> ||
 || <img src="https://github.com/user-attachments/assets/085eca28-d703-44e4-9392-35bb7b0ffc57" alt="MenuFlyout demo" max-width="586"><br /><img src="https://github.com/user-attachments/assets/fccf7dac-6b17-49ad-ad59-c7393f97532b" alt="MenuFlyout demo" max-width="586"> ||
-|| <h3>MenuItem</h3> ||
-|| See [MenuFlyoutPresenter](#menuflyoutpresenter), [ContextMenu](#contextmenu) ||
+|✅ | <h3>MenuItem</h3> ||
+|| See [Menu](#menu), [MenuFlyoutPresenter](#menuflyoutpresenter), [ContextMenu](#contextmenu) ||
 || <h3>MenuScrollViewer</h3> ||
 ||||
 || <h3>NotificationCard</h3> ||
@@ -165,14 +170,12 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>RepeatButton</h3> ||
 ||||
-|| <h3>ScrollBar</h3> ||
-||||
-|| <h3>ScrollViewer</h3> ||
-||||
+|✅ | <h3>ScrollViewer</h3> <h3>ScrollBar</h3> ||
+|| Default:<br /><img max-width="415" alt="ScrollViewer - default" src="https://github.com/user-attachments/assets/71bbd1ea-c2ec-44b6-a943-6f51dd0a3e65" /><br />`AllowAutoHide="False"`:<br /><img max-width="418" alt="ScrollViewer - AllowAutoHide false" src="https://github.com/user-attachments/assets/60116d7d-90a0-49b2-9736-f9d7715e89e8" /><br />`BorderThickness="0" Background="Transparent"`:<br /><img max-width="414" alt="ScrollViewer - transparent" src="https://github.com/user-attachments/assets/72736b28-7890-49e2-b566-5e31a0b6b994" /> ||
 || <h3>SelectableTextBlock</h3> ||
 ||||
-|| <h3>Separator</h3> ||
-||||
+|✅ | <h3>Separator</h3> ||
+|| See [Menu](#menu), [MenuFlyoutPresenter](#menuflyoutpresenter), [ContextMenu](#contextmenu) ||
 || <h3>Slider</h3> ||
 ||||
 || <h3>SplitButton</h3> ||
@@ -186,7 +189,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>TabStripItem</h3> ||
 ||||
 |✅ | <h3>TextBox</h3> ||
-|| <img src="https://github.com/user-attachments/assets/47930d85-ec80-44b4-802d-6fe72d81bee4" alt="TextBox demo" max-width="332"> | [ScrollBar](#scrollbar) for multiline text input not done yet <br /> <br />There appears to be no easy way for styling the caret thickness and margin    |
+|| <img src="https://github.com/user-attachments/assets/47930d85-ec80-44b4-802d-6fe72d81bee4" alt="TextBox demo" max-width="332"> | There appears to be no easy way for styling the caret thickness and margin    |
 || <h3>TextSelectionHandle</h3> ||
 ||||
 || <h3>ThemeVariantScope</h3> ||
