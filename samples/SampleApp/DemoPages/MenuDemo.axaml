@@ -138,8 +138,8 @@
                 </MenuItem.Icon>
               </MenuItem>
             </Menu>
-
           </DockPanel>
+
           <Menu Name="BottomIconMenu"
                 DockPanel.Dock="Bottom"
                 VerticalAlignment="Bottom"
@@ -188,7 +188,17 @@
             </MenuItem>
             <MenuItem Header="-" />
           </Menu>
-          <Border Background="White" />
+          <Border Background="White" Padding="15">
+            <TextBlock FontSize="12" LineSpacing="2" TextWrapping="Wrap">
+              <Bold>Use the following classes for menu styling:</Bold><LineBreak /><LineBreak />
+              • <TextBlock Classes="code" Text="MacOS_Theme_MenuLabelBelowIcon" /> for a toolbar-style menu
+              <LineBreak />
+              • <TextBlock Classes="code" Text="MacOS_Theme_MenuItemIconOnly" /> for a toolbar-style menu without labels (Header content appears in a ToolTip instead)
+              <LineBreak /><LineBreak />
+              • <TextBlock Classes="code" Text="MacOS_Theme_MenuOpensAbove" /> for bottom-placed menus, opening upwards
+              <LineBreak />
+            </TextBlock>
+          </Border>
         </DockPanel>
       </Border>
     </DockPanel>
