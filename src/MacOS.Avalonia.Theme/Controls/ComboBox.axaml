@@ -34,7 +34,7 @@
     <Setter Property="CornerRadius" Value="{StaticResource SelectionCornerRadius}" />
     <Setter Property="Template">
       <ControlTemplate>
-        <ContentPresenter x:Name="PART_ContentPresenter"
+        <ContentPresenter Name="PART_ContentPresenter"
                           Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"

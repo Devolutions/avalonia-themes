@@ -35,7 +35,7 @@
                 Height="{TemplateBinding Height}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
-          <Path x:Name="ChevronPath"
+          <Path Name="ChevronPath"
                 Data="{StaticResource ChevronPath}"
                 Fill="{TemplateBinding Foreground}"
                 Stretch="Uniform"

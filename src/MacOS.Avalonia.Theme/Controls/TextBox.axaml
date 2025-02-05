@@ -34,7 +34,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="Button">
-          <ContentPresenter x:Name="PART_ContentPresenter"
+          <ContentPresenter Name="PART_ContentPresenter"
                             Background="{TemplateBinding Background}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             Content="{TemplateBinding Content}"
@@ -54,7 +54,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="ToggleButton">
-          <ContentPresenter x:Name="PART_ContentPresenter"
+          <ContentPresenter Name="PART_ContentPresenter"
                             Background="{TemplateBinding Background}"
                             Content="{TemplateBinding Content}"
                             Padding="{TemplateBinding Padding}" />
@@ -107,7 +107,7 @@
                                Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
                     </ContentPresenter.IsVisible>
                   </ContentPresenter>
-                  <DockPanel x:Name="PART_InnerDockPanel"
+                  <DockPanel Name="PART_InnerDockPanel"
                              Grid.Column="1"
                              Margin="2 2 3 1 ">
                     <ScrollViewer Name="PART_ScrollViewer"

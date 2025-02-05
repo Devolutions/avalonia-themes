@@ -112,14 +112,14 @@
     <Setter Property="MinHeight" Value="23" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border x:Name="CellBorder"
+        <Border Name="CellBorder"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{TemplateBinding CornerRadius}">
-          <Grid x:Name="PART_CellRoot" ColumnDefinitions="*,Auto">
+          <Grid Name="PART_CellRoot" ColumnDefinitions="*,Auto">
 
-            <Rectangle x:Name="CurrencyVisual"
+            <Rectangle Name="CurrencyVisual"
                        IsVisible="False"
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"
@@ -127,7 +127,7 @@
                        IsHitTestVisible="False"
                        Stroke="{DynamicResource DataGridCurrencyVisualPrimaryBrush}"
                        StrokeThickness="1" />
-            <Grid Grid.Column="0" x:Name="FocusVisual" IsHitTestVisible="False"
+            <Grid Grid.Column="0" Name="FocusVisual" IsHitTestVisible="False"
                   IsVisible="False">
               <Rectangle HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
@@ -151,7 +151,7 @@
                               ContentTemplate="{TemplateBinding ContentTemplate}"
                               Foreground="{TemplateBinding Foreground}" />
 
-            <Rectangle Grid.Column="0" x:Name="InvalidVisualElement"
+            <Rectangle Grid.Column="0" Name="InvalidVisualElement"
                        IsVisible="False"
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"
@@ -188,7 +188,7 @@
     <Setter Property="MinHeight" Value="28" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border x:Name="HeaderBorder"
+        <Border Name="HeaderBorder"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -204,7 +204,7 @@
                   <ColumnDefinition Width="Auto" MinWidth="{DynamicResource DataGridSortIconMinWidth}" />
                 </Grid.ColumnDefinitions>
 
-                <ContentPresenter x:Name="PART_ContentPresenter"
+                <ContentPresenter Name="PART_ContentPresenter"
                                   Content="{TemplateBinding Content}"
                                   ContentTemplate="{TemplateBinding ContentTemplate}" />
 
@@ -227,16 +227,16 @@
                        Fill="{TemplateBinding SeparatorBrush}"
                        IsVisible="{TemplateBinding AreSeparatorsVisible}" />
 
-            <Grid x:Name="FocusVisual" IsHitTestVisible="False"
+            <Grid Name="FocusVisual" IsHitTestVisible="False"
                   IsVisible="False">
-              <Rectangle x:Name="FocusVisualPrimary"
+              <Rectangle Name="FocusVisualPrimary"
                          HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
                          Fill="Transparent"
                          IsHitTestVisible="False"
                          Stroke="{DynamicResource DataGridCellFocusVisualPrimaryBrush}"
                          StrokeThickness="2" />
-              <Rectangle x:Name="FocusVisualSecondary"
+              <Rectangle Name="FocusVisualSecondary"
                          Margin="2"
                          HorizontalAlignment="Stretch"
                          VerticalAlignment="Stretch"
@@ -293,7 +293,7 @@
                 BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid x:Name="TopLeftHeaderRoot"
+        <Grid Name="TopLeftHeaderRoot"
               RowDefinitions="*,*,Auto">
           <Border Grid.RowSpan="2"
                   BorderThickness="0,0,1,0"
@@ -314,7 +314,7 @@
     <Setter Property="AreSeparatorsVisible" Value="False" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid x:Name="PART_Root"
+        <Grid Name="PART_Root"
               RowDefinitions="*,*,Auto"
               ColumnDefinitions="Auto,*">
           <Border Grid.RowSpan="3"
@@ -322,16 +322,16 @@
                   BorderBrush="{TemplateBinding SeparatorBrush}"
                   BorderThickness="0,0,1,0">
             <Grid Background="{TemplateBinding Background}">
-              <Rectangle x:Name="RowInvalidVisualElement"
+              <Rectangle Name="RowInvalidVisualElement"
                          Opacity="0"
                          Fill="{DynamicResource DataGridRowInvalidBrush}"
                          Stretch="Fill" />
-              <Rectangle x:Name="BackgroundRectangle"
+              <Rectangle Name="BackgroundRectangle"
                          Fill="{DynamicResource DataGridRowBackgroundBrush}"
                          Stretch="Fill" />
             </Grid>
           </Border>
-          <Rectangle x:Name="HorizontalSeparator"
+          <Rectangle Name="HorizontalSeparator"
                      Grid.Row="2"
                      Grid.ColumnSpan="2"
                      Height="1"
@@ -355,7 +355,7 @@
     <Setter Property="Background" Value="{Binding $parent[DataGrid].RowBackground}" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border x:Name="RowBorder"
+        <Border Name="RowBorder"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}">
           <DataGridFrozenGrid Name="PART_Root"
@@ -368,7 +368,7 @@
                     CornerRadius="{DynamicResource ControlCornerRadius}"
                     Grid.RowSpan="2"
                     Grid.ColumnSpan="2" />
-            <Rectangle x:Name="InvalidVisualElement"
+            <Rectangle Name="InvalidVisualElement"
                        Opacity="0"
                        Grid.ColumnSpan="2"
                        Fill="{DynamicResource DataGridRowInvalidBrush}" />
@@ -477,7 +477,7 @@
                        Foreground="{TemplateBinding Foreground}" />
           </StackPanel>
 
-          <Rectangle x:Name="CurrencyVisual"
+          <Rectangle Name="CurrencyVisual"
                      Grid.ColumnSpan="5"
                      IsVisible="False"
                      HorizontalAlignment="Stretch"
@@ -486,7 +486,7 @@
                      IsHitTestVisible="False"
                      Stroke="{DynamicResource DataGridCurrencyVisualPrimaryBrush}"
                      StrokeThickness="1" />
-          <Grid x:Name="FocusVisual"
+          <Grid Name="FocusVisual"
                 Grid.ColumnSpan="5"
                 IsVisible="False"
                 IsHitTestVisible="False">
@@ -509,7 +509,7 @@
                              Grid.RowSpan="2"
                              DataGridFrozenGrid.IsFrozen="True" />
 
-          <Rectangle x:Name="PART_BottomGridLine"
+          <Rectangle Name="PART_BottomGridLine"
                      Grid.Row="1"
                      Grid.ColumnSpan="5"
                      Height="1" />
@@ -542,7 +542,7 @@
     </Setter>
     <Setter Property="Template">
       <ControlTemplate>
-        <Border x:Name="DataGridBorder"
+        <Border Name="DataGridBorder"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
@@ -571,7 +571,7 @@
                                          IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_RowsPresenter}" />
               </DataGridRowsPresenter.GestureRecognizers>
             </DataGridRowsPresenter>
-            <Border x:Name="PART_ScrollBarsSeparator"
+            <Border Name="PART_ScrollBarsSeparator"
                     Grid.Row="2"
                     Grid.Column="2"
                     Background="{TemplateBinding Background}"
@@ -604,7 +604,7 @@
                          AllowAutoHide="{TemplateBinding ScrollBar.AllowAutoHide}"
                          Height="{DynamicResource ScrollBarSize}" />
             </Grid>
-            <Border x:Name="PART_DisabledVisualElement"
+            <Border Name="PART_DisabledVisualElement"
                     Grid.ColumnSpan="3" Grid.Column="0"
                     Grid.Row="0" Grid.RowSpan="4"
                     IsHitTestVisible="False"

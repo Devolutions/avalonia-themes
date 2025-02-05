@@ -87,7 +87,7 @@
                               Theme="{StaticResource FluentMenuItemIconTheme}"
                               Margin="{DynamicResource MenuIconPresenterMargin}" />
 
-              <ContentControl x:Name="PART_IconPresenter"
+              <ContentControl Name="PART_IconPresenter"
                               Grid.Column="1"
                               IsVisible="False"
                               Theme="{StaticResource FluentMenuItemIconTheme}"
@@ -102,7 +102,7 @@
                                 VerticalAlignment="Center"
                                 HorizontalAlignment="Stretch"
                                 RecognizesAccessKey="True" />
-              <TextBlock x:Name="PART_InputGestureText"
+              <TextBlock Name="PART_InputGestureText"
                          Grid.Column="3"
                          Margin="{DynamicResource MenuInputGestureTextMargin}"
                          Text="{TemplateBinding InputGesture, Converter={StaticResource KeyGestureConverter}}"
@@ -244,7 +244,7 @@
           StretchDirection="DownOnly"
           HorizontalAlignment="Center"
           VerticalAlignment="Center">
-          <ContentPresenter x:Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
+          <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
         </Viewbox>
       </ControlTemplate>
     </Setter>

@@ -70,10 +70,10 @@
     <Style Selector="^:vertical">
       <Setter Property="Template">
         <ControlTemplate>
-          <Panel x:Name="Root">
-            <Border x:Name="VerticalRoot">
+          <Panel Name="Root">
+            <Border Name="VerticalRoot">
               <Grid RowDefinitions="Auto,*,Auto">
-                <Border x:Name="TrackBorder"
+                <Border Name="TrackBorder"
                         Grid.Row="0"
                         Grid.RowSpan="3"
                         Background="{TemplateBinding Background}"
@@ -132,10 +132,10 @@
     <Style Selector="^:horizontal">
       <Setter Property="Template">
         <ControlTemplate>
-          <Panel x:Name="Root">
-            <Border x:Name="HorizontalRoot">
+          <Panel Name="Root">
+            <Border Name="HorizontalRoot">
               <Grid ColumnDefinitions="Auto,*,Auto">
-                <Border x:Name="TrackBorder"
+                <Border Name="TrackBorder"
                         Grid.Column="0"
                         Grid.ColumnSpan="3"
                         Background="{TemplateBinding Background}"
