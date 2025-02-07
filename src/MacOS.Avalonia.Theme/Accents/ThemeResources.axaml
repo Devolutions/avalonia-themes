@@ -113,7 +113,7 @@
   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
   <SolidColorBrush x:Key="ControlBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.9" />
   <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
-  <SolidColorBrush x:Key="ControlBackgroundAccentBrush" Color="{StaticResource SystemAccentColor}" />
+  <SolidColorBrush x:Key="ControlBackgroundAccentHighBrush" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="ControlBackgroundAccentMidBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.63" />
   <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
     <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
