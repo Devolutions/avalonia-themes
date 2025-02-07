@@ -2,6 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime">
 
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
   <Design.PreviewWith>
     <Border Height="400" BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
       <Grid ColumnDefinitions="50, 1, 250">
