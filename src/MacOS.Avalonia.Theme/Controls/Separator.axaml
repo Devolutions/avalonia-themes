@@ -1,6 +1,10 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
   <ControlTheme x:Key="{x:Type Separator}" TargetType="Separator">
     <Setter Property="Background" Value="{DynamicResource SeparatorBrush}" />
     <Setter Property="Focusable" Value="False" />

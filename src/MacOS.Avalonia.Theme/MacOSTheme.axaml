@@ -1,33 +1,24 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:converters="clr-namespace:MacOS.Avalonia.Theme.Converters">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <Styles.Resources>
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="/Accents/Icons.axaml" />
-        <!-- TODO: Theme variants not implemented yet - use Shared / Light / Dark for everything (cp. Semi.Avalonia for good example) -->
+        <MergeResourceInclude Source="/Converters/_index.axaml" />
+        <MergeResourceInclude Source="/Controls/_index.axaml" />
         <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
+        <!-- TODO: Theme variants not handled consistently yet - use Shared / Light / Dark for everything (cp. Semi.Avalonia for good example) -->
         <MergeResourceInclude Source="/Accents/Shared/ToggleSwitch.axaml" />
         <MergeResourceInclude Source="/Accents/Light/ToggleSwitch.axaml" />
       </ResourceDictionary.MergedDictionaries>
-      <converters:SelectedIndexToPopupOffsetConverter x:Key="SelectedIndexToPopupOffsetConverter" />
-      <converters:TotalWidthConverter x:Key="TotalWidthConverter" />
-      <converters:CharToMacOsPasswordCharConverter x:Key="CharToMacOsPasswordCharConverter" />
-      <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
-      <converters:BooleanToChoiceConverter x:Key="BooleanToChoiceConverter" />
-      <converters:ClassToChoiceConverter x:Key="ClassToChoiceConverter" />
-      <converters:ColorToCssFillConverter x:Key="ColorToCssFillConverter" />
-      <converters:ThicknessToSelectiveThicknessConverter x:Key="ThicknessToSelectiveThicknessConverter" />
-      <!-- <converters:HasClassConverter x:Key="HasClassConverter" /> -->
     </ResourceDictionary>
   </Styles.Resources>
 
   <!-- Using Fluent Theme as a fallback for anything not defined in MacOS theme
-       NOTE: Simple does not give access to System colours 
+       NOTE: the Simple Theme does not give access to System colours 
        See https://github.com/AvaloniaUI/Avalonia/pull/11097 for how it's getting the colours (if we ever want to make this independent of Fluent) -->
   <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" />
 
   <!-- Themed Controls -->
-  <StyleInclude Source="/Controls/_index.axaml" />
   <StyleInclude Source="/Accents/Styles.axaml" />
 </Styles>

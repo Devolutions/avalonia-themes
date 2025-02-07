@@ -1,5 +1,10 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
   <Design.PreviewWith>
     <ScrollViewer Width="200" Height="200"
                   HorizontalScrollBarVisibility="Auto">
@@ -55,7 +60,7 @@
                      Background="{TemplateBinding Background}"
                      BorderBrush="{TemplateBinding BorderBrush}"
                      BorderThickness="{TemplateBinding BorderThickness}" />
-          <Border x:Name="PART_ScrollBarsSeparator"
+          <Border Name="PART_ScrollBarsSeparator"
                   Grid.Row="1"
                   Grid.Column="1"
                   Background="{TemplateBinding Background}"

@@ -1,6 +1,11 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
   <Design.PreviewWith>
     <Border Padding="20"
             MinWidth="300">
@@ -35,7 +40,7 @@
                 Height="{TemplateBinding Height}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
-          <Path x:Name="ChevronPath"
+          <Path Name="ChevronPath"
                 Data="{StaticResource ChevronPath}"
                 Fill="{TemplateBinding Foreground}"
                 Stretch="Uniform"

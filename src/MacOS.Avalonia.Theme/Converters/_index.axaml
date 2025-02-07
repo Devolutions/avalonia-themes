@@ -1,0 +1,13 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:MacOS.Avalonia.Theme.Converters">
+
+  <converters:SelectedIndexToPopupOffsetConverter x:Key="SelectedIndexToPopupOffsetConverter" />
+  <converters:TotalWidthConverter x:Key="TotalWidthConverter" />
+  <converters:CharToMacOsPasswordCharConverter x:Key="CharToMacOsPasswordCharConverter" />
+  <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
+  <converters:BooleanToChoiceConverter x:Key="BooleanToChoiceConverter" />
+  <converters:ClassToChoiceConverter x:Key="ClassToChoiceConverter" />
+  <converters:ColorToCssFillConverter x:Key="ColorToCssFillConverter" />
+  <converters:ThicknessToSelectiveThicknessConverter x:Key="ThicknessToSelectiveThicknessConverter" />
+</ResourceDictionary>

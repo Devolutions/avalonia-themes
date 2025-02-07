@@ -1,5 +1,10 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
   <Design.PreviewWith>
     <Border Margin="10" Background="{DynamicResource LayoutBackgroundHighBrush}">
       <StackPanel Margin="20" Height="400" Width="180">
@@ -34,7 +39,7 @@
     <Setter Property="CornerRadius" Value="{StaticResource SelectionCornerRadius}" />
     <Setter Property="Template">
       <ControlTemplate>
-        <ContentPresenter x:Name="PART_ContentPresenter"
+        <ContentPresenter Name="PART_ContentPresenter"
                           Background="{TemplateBinding Background}"
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="{TemplateBinding BorderThickness}"
