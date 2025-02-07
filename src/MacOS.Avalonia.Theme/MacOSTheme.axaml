@@ -15,7 +15,7 @@
   </Styles.Resources>
 
   <!-- Using Fluent Theme as a fallback for anything not defined in MacOS theme
-       NOTE: Simple does not give access to System colours 
+       NOTE: the Simple Theme does not give access to System colours 
        See https://github.com/AvaloniaUI/Avalonia/pull/11097 for how it's getting the colours (if we ever want to make this independent of Fluent) -->
   <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" />
 
