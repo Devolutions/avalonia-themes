@@ -41,6 +41,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [Separator](#separator) 
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
+    - [TextBlock](#textblock)
     - [TextBox](#textbox)
     - [TreeView](#treeview)
       - [TreeViewItem](#treeviewitem)
@@ -186,6 +187,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>TabStripItem</h3> ||
 ||||
+|✅ | <h3>TextBlock</h3> ||
+|| The theme sets the default `Foreground` color for `<TextBlock>` ||
 |✅ | <h3>TextBox</h3> ||
 || <img src="https://github.com/user-attachments/assets/47930d85-ec80-44b4-802d-6fe72d81bee4" alt="TextBox demo" max-width="332"> | There appears to be no easy way for styling the caret thickness and margin    |
 || <h3>TextSelectionHandle</h3> ||
