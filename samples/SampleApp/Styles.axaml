@@ -1,6 +1,15 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+  <Styles.Resources>
+    <x:Double x:Key="H1FontSize">16</x:Double>
+    <FontWeight x:Key="H1FontWeight">Bold</FontWeight>
+    <Thickness x:Key="H1Margins">0,0,0,10</Thickness>
+
+    <FontFamily x:Key="CodeFontFamily">"Courier New, Courier, monospace"</FontFamily>
+    <Color x:Key="CodeFontColor">SlateBlue</Color>
+  </Styles.Resources>
+
   <Style Selector="TextBlock.h1">
     <Setter Property="FontSize" Value="{DynamicResource H1FontSize}" />
     <Setter Property="FontWeight" Value="{DynamicResource H1FontWeight}" />
