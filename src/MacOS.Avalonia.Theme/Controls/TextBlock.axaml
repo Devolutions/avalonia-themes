@@ -8,24 +8,15 @@
   <!-- Styles currently only used in the app  -->
 
   <Design.PreviewWith>
-    <StackPanel>
-      <TextBlock Classes="h1">Heading</TextBlock>
-      <TextBlock>Standard Text with some <TextBlock Classes="code">Code</TextBlock> in the middle</TextBlock>
 
-    </StackPanel>
+    <TextBlock>Standard Text </TextBlock>
+
   </Design.PreviewWith>
-
-  <x:Double x:Key="H1FontSize">16</x:Double>
-  <FontWeight x:Key="H1FontWeight">Bold</FontWeight>
-  <Thickness x:Key="H1Margins">0,0,0,10</Thickness>
-
-  <FontFamily x:Key="CodeFontFamily">"Courier New, Courier, monospace"</FontFamily>
-  <Color x:Key="CodeFontColor">SlateBlue</Color>
 
   <ControlTheme x:Key="{x:Type TextBlock}"
                 TargetType="TextBlock">
     <Style Selector="^">
-      <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     </Style>
   </ControlTheme>
 </ResourceDictionary>
