@@ -1,0 +1,18 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style Selector="TextBlock.h1">
+    <Setter Property="FontSize" Value="{DynamicResource H1FontSize}" />
+    <Setter Property="FontWeight" Value="{DynamicResource H1FontWeight}" />
+    <Setter Property="Margin" Value="{DynamicResource H1Margins}" />
+  </Style>
+
+  <Style Selector="TextBlock.code">
+    <!-- AMP: <Span> or <Run> don't support padding, so not looking great with coloured background -->
+    <Setter Property="FontFamily" Value="{DynamicResource CodeFontFamily}" />
+    <Setter Property="Foreground" Value="{DynamicResource CodeFontColor}" />
+    <Setter Property="Background" Value="{DynamicResource LayoutBackgroundLowBrush}" />
+    <Setter Property="Padding" Value="2,2,1,1" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+</Styles>

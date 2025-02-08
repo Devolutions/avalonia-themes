@@ -24,18 +24,8 @@
 
   <ControlTheme x:Key="{x:Type TextBlock}"
                 TargetType="TextBlock">
-    <Style Selector="^.h1">
-      <Setter Property="FontSize" Value="{DynamicResource H1FontSize}" />
-      <Setter Property="FontWeight" Value="{DynamicResource H1FontWeight}" />
-      <Setter Property="Margin" Value="{DynamicResource H1Margins}" />
-    </Style>
-    <Style Selector="^.code">
-      <!-- AMP: <Span> or <Run> don't support padding, so not looking great with coloured background -->
-      <Setter Property="FontFamily" Value="{DynamicResource CodeFontFamily}" />
-      <Setter Property="Foreground" Value="{DynamicResource CodeFontColor}" />
-      <Setter Property="Background" Value="{DynamicResource LayoutBackgroundLowBrush}" />
-      <Setter Property="Padding" Value="2,2,1,1" />
-      <Setter Property="VerticalAlignment" Value="Center" />
+    <Style Selector="^">
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
     </Style>
   </ControlTheme>
 </ResourceDictionary>
