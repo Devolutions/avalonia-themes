@@ -88,7 +88,6 @@
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ScrollViewer.AllowAutoHide" Value="False" />
-    <Setter Property="ScrollViewer.BorderThickness" Value="0" />
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
@@ -116,7 +115,6 @@
                              Margin="2 2 3 1 ">
                     <ScrollViewer Name="PART_ScrollViewer"
                                   Margin="0 0 -4 0"
-                                  BorderThickness="{TemplateBinding (ScrollViewer.BorderThickness)}"
                                   HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                                   VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
                                   IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
