@@ -10,6 +10,10 @@
     <Color x:Key="CodeFontColor">SlateBlue</Color>
   </Styles.Resources>
 
+  <Style Selector="Panel.mainControl">
+    <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
+  </Style>
+
   <Style Selector="TextBlock.h1">
     <Setter Property="FontSize" Value="{DynamicResource H1FontSize}" />
     <Setter Property="FontWeight" Value="{DynamicResource H1FontWeight}" />
