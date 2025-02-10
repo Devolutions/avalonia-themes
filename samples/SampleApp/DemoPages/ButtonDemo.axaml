@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.ButtonDemo">
+
   <StackPanel>
     <Border Margin="20 0">
-
       <Grid ColumnDefinitions="100, 72, 40, 72, Auto" RowDefinitions="50, 50, 50" Margin="20">
         <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Default</TextBlock>
         <Button Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Content="Cancel" />

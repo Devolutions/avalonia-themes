@@ -5,33 +5,33 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.Experiments.SystemColoursDemo">
   <Grid RowDefinitions="25, 25, 25, 25, 25, 25, 25" ColumnDefinitions="Auto, 30, Auto">
-    <TextBlock Grid.Row="0" Grid.Column="0">SystemAccentColor</TextBlock>
-    <TextBlock Grid.Row="1" Grid.Column="0">SystemAccentColorDark1</TextBlock>
-    <TextBlock Grid.Row="2" Grid.Column="0">SystemAccentColorDark2</TextBlock>
-    <TextBlock Grid.Row="3" Grid.Column="0">SystemAccentColorDark3</TextBlock>
-    <TextBlock Grid.Row="4" Grid.Column="0">SystemAccentColorLight1</TextBlock>
-    <TextBlock Grid.Row="5" Grid.Column="0">SystemAccentColorLight2</TextBlock>
-    <TextBlock Grid.Row="6" Grid.Column="0">SystemAccentColorLight3</TextBlock>
-    <TextBlock Grid.Row="0" Grid.Column="2">#007AFF</TextBlock>
-    <TextBlock Grid.Row="1" Grid.Column="2">#005FC6</TextBlock>
-    <TextBlock Grid.Row="2" Grid.Column="2">#004B9D</TextBlock>
-    <TextBlock Grid.Row="3" Grid.Column="2">#00336A</TextBlock>
-    <TextBlock Grid.Row="4" Grid.Column="2">#4EA3FF</TextBlock>
-    <TextBlock Grid.Row="5" Grid.Column="2">#8CC3FF</TextBlock>
-    <TextBlock Grid.Row="6" Grid.Column="2">#CEE5FF</TextBlock>
-    <Rectangle Grid.Row="0" Grid.Column="1" Fill="{StaticResource SystemAccentColor}" Width="20"
+    <TextBlock Grid.Row="0" Grid.Column="0">SystemAccentColorLight3</TextBlock>
+    <TextBlock Grid.Row="1" Grid.Column="0">SystemAccentColorLight2</TextBlock>
+    <TextBlock Grid.Row="2" Grid.Column="0">SystemAccentColorLight1</TextBlock>
+    <TextBlock Grid.Row="3" Grid.Column="0">SystemAccentColor</TextBlock>
+    <TextBlock Grid.Row="4" Grid.Column="0">SystemAccentColorDark1</TextBlock>
+    <TextBlock Grid.Row="5" Grid.Column="0">SystemAccentColorDark2</TextBlock>
+    <TextBlock Grid.Row="6" Grid.Column="0">SystemAccentColorDark3</TextBlock>
+    <TextBlock Grid.Row="0" Grid.Column="2">#CEE5FF</TextBlock>
+    <TextBlock Grid.Row="1" Grid.Column="2">#8CC3FF</TextBlock>
+    <TextBlock Grid.Row="2" Grid.Column="2">#4EA3FF</TextBlock>
+    <TextBlock Grid.Row="3" Grid.Column="2">#007AFF</TextBlock>
+    <TextBlock Grid.Row="4" Grid.Column="2">#005FC6</TextBlock>
+    <TextBlock Grid.Row="5" Grid.Column="2">#004B9D</TextBlock>
+    <TextBlock Grid.Row="6" Grid.Column="2">#00336A</TextBlock>
+    <Rectangle Grid.Row="0" Grid.Column="1" Fill="{StaticResource SystemAccentColorLight3}" Width="20"
                Height="20" />
-    <Rectangle Grid.Row="1" Grid.Column="1" Fill="{StaticResource SystemAccentColorDark1}" Width="20"
+    <Rectangle Grid.Row="1" Grid.Column="1" Fill="{StaticResource SystemAccentColorLight2}" Width="20"
                Height="20" />
-    <Rectangle Grid.Row="2" Grid.Column="1" Fill="{StaticResource SystemAccentColorDark2}" Width="20"
+    <Rectangle Grid.Row="2" Grid.Column="1" Fill="{StaticResource SystemAccentColorLight1}" Width="20"
                Height="20" />
-    <Rectangle Grid.Row="3" Grid.Column="1" Fill="{StaticResource SystemAccentColorDark3}" Width="20"
+    <Rectangle Grid.Row="3" Grid.Column="1" Fill="{StaticResource SystemAccentColor}" Width="20"
                Height="20" />
-    <Rectangle Grid.Row="4" Grid.Column="1" Fill="{StaticResource SystemAccentColorLight1}" Width="20"
+    <Rectangle Grid.Row="4" Grid.Column="1" Fill="{StaticResource SystemAccentColorDark1}" Width="20"
                Height="20" />
-    <Rectangle Grid.Row="5" Grid.Column="1" Fill="{StaticResource SystemAccentColorLight2}" Width="20"
+    <Rectangle Grid.Row="5" Grid.Column="1" Fill="{StaticResource SystemAccentColorDark2}" Width="20"
                Height="20" />
-    <Rectangle Grid.Row="6" Grid.Column="1" Fill="{StaticResource SystemAccentColorLight3}" Width="20"
+    <Rectangle Grid.Row="6" Grid.Column="1" Fill="{StaticResource SystemAccentColorDark3}" Width="20"
                Height="20" />
   </Grid>
 </UserControl>
