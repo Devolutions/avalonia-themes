@@ -93,7 +93,9 @@
     <!-- With alternating row colour & scrolling -->
     <StackPanel Spacing="20">
 
-      <TreeView Width="150" Height="160" Classes="MacOS_Theme_AlternatingRowColor" BorderBrush="LightGray"
+      <TreeView Width="150" Height="160" Classes="MacOS_Theme_AlternatingRowColor"
+                Background="White"
+                BorderBrush="LightGray"
                 BorderThickness="1">
         <TreeViewItem Header="Level 1.1">
           <TreeViewItem Header="Level 2.1" />

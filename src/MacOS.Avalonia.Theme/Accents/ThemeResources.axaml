@@ -255,6 +255,7 @@
   <x:Double x:Key="ScrollBarMinLength">10</x:Double>
   <SolidColorBrush x:Key="ScrollBarTrackBrush" Color="{DynamicResource ScrollBarTrackColor}" />
   <SolidColorBrush x:Key="ScrollBarTrackBorderBrush" Color="{DynamicResource ScrollBarTrackBorderColor}" />
+  <Thickness x:Key="ScrollBarTrackBorderThickness">1</Thickness>
   <Thickness x:Key="ScrollBarSeparatorBorderFactors">0 0 1 1</Thickness>
   <Thickness x:Key="ScrollBarTrackHorizontalBorderFactors">0 1 0 1</Thickness>
   <Thickness x:Key="ScrollBarTrackVerticalBorderFactors">1 0 1 0</Thickness>

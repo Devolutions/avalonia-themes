@@ -8,9 +8,10 @@
     <StackPanel>
       <Grid ColumnDefinitions="Auto, 420, 420" RowDefinitions="Auto, 320, 320">
         <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">Default</TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Classes="code">BorderThickness="0" Background="Transparent"</TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Classes="code">Classes="MacOS_TransparentTrack"</TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Default</TextBlock>
-        <Border Grid.Row="1" Grid.Column="1" BorderBrush="#dddddd" BorderThickness="1" Width="400" Height="300">
+        <Border Grid.Row="1" Grid.Column="1" Background="White" BorderBrush="#dddddd" BorderThickness="1" Width="400"
+                Height="300">
           <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 ">
             <StackPanel Background="white">
               <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
@@ -42,11 +43,13 @@
             </StackPanel>
           </ScrollViewer>
         </Border>
-        <ScrollViewer Grid.Row="1" Grid.Column="2" Width="400" Height="300" HorizontalScrollBarVisibility="Auto"
-                      BorderThickness="0" Background="Transparent">
-          <Image Width="800" Height="600"
-                 Source="avares://SampleApp/Assets/SampleImage.jpg" />
-        </ScrollViewer>
+
+        <Border Grid.Row="1" Grid.Column="2" BorderBrush="#dddddd" BorderThickness="1" Width="400" Height="300">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" Classes="MacOS_TransparentTrack">
+            <Image Width="800" Height="600"
+                   Source="avares://SampleApp/Assets/SampleImage.jpg" />
+          </ScrollViewer>
+        </Border>
 
         <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Classes="code" VerticalAlignment="Center">AllowAutoHide="False"</TextBlock>
         <Border Grid.Row="2" Grid.Column="1" BorderBrush="#dddddd" BorderThickness="1" Width="400" Height="300">
@@ -81,12 +84,13 @@
             </StackPanel>
           </ScrollViewer>
         </Border>
-        <ScrollViewer Grid.Row="2" Grid.Column="2" Width="400" Height="300" HorizontalScrollBarVisibility="Auto"
-                      AllowAutoHide="False"
-                      BorderThickness="0" Background="Transparent">
-          <Image Width="800" Height="600"
-                 Source="avares://SampleApp/Assets/SampleImage.jpg" />
-        </ScrollViewer>
+
+        <Border Grid.Row="2" Grid.Column="2" BorderBrush="#dddddd" BorderThickness="1" Width="400" Height="300">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" Classes="MacOS_TransparentTrack" AllowAutoHide="False">
+            <Image Width="800" Height="600"
+                   Source="avares://SampleApp/Assets/SampleImage.jpg" />
+          </ScrollViewer>
+        </Border>
       </Grid>
       <TextBlock TextWrapping="Wrap">
         <Bold>Note:</Bold> MacOS hides scrollbars completely (depending on user settings), but they re-appear on scroll events.

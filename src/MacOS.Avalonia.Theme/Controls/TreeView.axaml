@@ -4,7 +4,7 @@
   <ResourceDictionary.MergedDictionaries>
     <ResourceInclude Source="/Accents/ThemeResources.axaml" />
   </ResourceDictionary.MergedDictionaries>
-  
+
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
@@ -28,7 +28,8 @@
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border BorderBrush="{TemplateBinding BorderBrush}"
+        <Border Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 CornerRadius="{TemplateBinding CornerRadius}">
           <ScrollViewer

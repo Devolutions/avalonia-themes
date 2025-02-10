@@ -169,7 +169,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>RepeatButton</h3> ||
 ||||
 |✅ | <h3>ScrollViewer</h3> <h3>ScrollBar</h3> ||
-|| Default:<br /><img max-width="415" alt="ScrollViewer - default" src="https://github.com/user-attachments/assets/71bbd1ea-c2ec-44b6-a943-6f51dd0a3e65" /><br />`AllowAutoHide="False"`:<br /><img max-width="418" alt="ScrollViewer - AllowAutoHide false" src="https://github.com/user-attachments/assets/60116d7d-90a0-49b2-9736-f9d7715e89e8" /><br />`BorderThickness="0" Background="Transparent"`:<br /><img max-width="414" alt="ScrollViewer - transparent" src="https://github.com/user-attachments/assets/72736b28-7890-49e2-b566-5e31a0b6b994" /> ||
+|| Default:<br /><img max-width="415" alt="ScrollViewer - default" src="https://github.com/user-attachments/assets/71bbd1ea-c2ec-44b6-a943-6f51dd0a3e65" /><br />`AllowAutoHide="False"`:<br /><img max-width="418" alt="ScrollViewer - AllowAutoHide false" src="https://github.com/user-attachments/assets/60116d7d-90a0-49b2-9736-f9d7715e89e8" /> | Note that even with `AllowAutoHide="True"` the scrollbars won't completely hide. This is intentional, since scrolling events will not trigger a 'show' (only moving the pointer directly over the track area will) - so completely hiding would be confusing. <br /><br />Mousing over one of the track areas will make the thumb bar grow wider and darker and the track appears. To suppress this behaviour (e.g. on images) use `Classes="MacOS_TransparentTrack"` |
 || <h3>SelectableTextBlock</h3> ||
 ||||
 |✅ | <h3>Separator</h3> ||

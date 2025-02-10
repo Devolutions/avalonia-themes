@@ -166,8 +166,7 @@
                     Padding="{DynamicResource PopupPadding}"
                     BoxShadow="{DynamicResource PopupShadow}">
               <ScrollViewer
-                BorderThickness="0"
-                Background="Transparent"
+                Classes="MacOS_TransparentTrack"
                 HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
                 VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
                 IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}">
