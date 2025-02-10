@@ -51,9 +51,6 @@
     <TabItem Header="TabControl">
       <demoPages:TabControlDemo />
     </TabItem>
-    <TabItem Header="TextBlock">
-      <demoPages:TextBlockDemo />
-    </TabItem>
     <TabItem Header="TextBox">
       <demoPages:TextBoxDemo />
     </TabItem>

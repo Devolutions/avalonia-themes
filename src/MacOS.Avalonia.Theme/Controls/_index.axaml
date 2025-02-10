@@ -18,7 +18,6 @@
     <MergeResourceInclude Source="TabControl.axaml" />
     <MergeResourceInclude Source="TabItem.axaml" />
     <MergeResourceInclude Source="TextBox.axaml" />
-    <MergeResourceInclude Source="TextBlock.axaml" />
     <MergeResourceInclude Source="ToggleSwitch.axaml" />
     <MergeResourceInclude Source="TreeView.axaml" />
     <MergeResourceInclude Source="TreeViewItem.axaml" />
