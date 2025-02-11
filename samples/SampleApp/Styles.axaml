@@ -11,7 +11,7 @@
   </Styles.Resources>
 
   <Style Selector="Panel.mainControl">
-    <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
+    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
   </Style>
 
   <Style Selector="TextBlock.h1">
