@@ -6,46 +6,34 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <StackPanel>
-      <StackPanel Margin="20">
-        <Border Height="60" BorderBrush="LightGray" BorderThickness="1">
-          <StackPanel Orientation="Horizontal" Spacing="20">
-            <CheckBox>Default</CheckBox>
-            <CheckBox VerticalAlignment="Top">Top</CheckBox>
-            <CheckBox VerticalAlignment="Bottom">Bottom</CheckBox>
-            <CheckBox VerticalContentAlignment="Top" MaxWidth="80">Default long text</CheckBox>
-            <CheckBox VerticalAlignment="Top" VerticalContentAlignment="Top" MaxWidth="80">Top long text</CheckBox>
-            <CheckBox VerticalAlignment="Bottom" VerticalContentAlignment="Top" MaxWidth="80">Bottom long text</CheckBox>
-          </StackPanel>
+    <ThemeVariantScope RequestedThemeVariant="Dark">
+      <StackPanel>
+        <Border Background="#212121">
+          <Border Background="{DynamicResource LayoutBackgroundLowBrush}" Margin="5">
+            <StackPanel Margin="10">
+              <CheckBox IsChecked="True">Emulate 3 buttons</CheckBox>
+              <CheckBox IsChecked="False">Swap mouse bu</CheckBox>
+              <CheckBox IsChecked="True" IsEnabled="False">Auto scale with</CheckBox>
+              <CheckBox IsEnabled="False">Unchecked disabled </CheckBox>
+              <CheckBox IsThreeState="True" IsChecked="{x:Null}">Unknown by default</CheckBox>
+              <CheckBox IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False">
+                Indeterminate
+              </CheckBox>
+              <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
+            </StackPanel>
+          </Border>
         </Border>
       </StackPanel>
-      <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
-        <Border Background="{DynamicResource LayoutBackgroundLowBrush}" Margin="5">
-          <StackPanel Margin="10">
-            <CheckBox IsChecked="True">Emulate 3 buttons</CheckBox>
-            <CheckBox IsChecked="False">Swap mouse bu</CheckBox>
-            <CheckBox IsChecked="True" IsEnabled="False">Auto scale with</CheckBox>
-            <CheckBox IsEnabled="False">Unchecked disabled </CheckBox>
-            <CheckBox IsThreeState="True" IsChecked="{x:Null}">Unknown by default</CheckBox>
-            <CheckBox IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False">
-              Indeterminate
-            </CheckBox>
-            <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
-          </StackPanel>
-        </Border>
-      </Border>
-
-
-    </StackPanel>
+    </ThemeVariantScope>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type CheckBox}"
                 TargetType="CheckBox">
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
-    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource CheckBoxBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
     <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
-    <Setter Property="Padding" Value="6 0,0,0" />
+    <Setter Property="Padding" Value="6 0 0 0" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalAlignment" Value="Left" />
@@ -67,8 +55,8 @@
                   BoxShadow="{DynamicResource ControlBackgroundRecessedShadow}">
             <Panel>
               <Path Name="CheckMark"
-                    Width="10"
-                    Height="10"
+                    Width="9"
+                    Height="9"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Data="{DynamicResource CheckMarkPath}"
@@ -108,7 +96,8 @@
     <Style Selector="^:checked">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
       <Style Selector="^/template/ Border#border">
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderAccentBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderAccentThickness}" />
         <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
       </Style>
       <Style Selector="^/template/ Path#CheckMark">
@@ -118,7 +107,8 @@
     <Style Selector="^:indeterminate">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
       <Style Selector="^/template/ Border#border">
-        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderAccentBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderAccentThickness}" />
         <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
       </Style>
       <Style Selector="^/template/ Rectangle#indeterminateMark">

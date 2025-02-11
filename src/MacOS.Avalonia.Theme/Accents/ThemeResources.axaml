@@ -35,16 +35,19 @@
 
       <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush" Color="{DynamicResource BackgroundColor}"
                        Opacity="0.5" />
-
-      <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="Transparent" />
+      <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #bfbfbf</BoxShadows>
 
       <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
       <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
+
+      <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundHighBrush" />
 
       <BoxShadows x:Key="ButtonBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ButtonBorderDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
       <Thickness x:Key="ButtonBorderAccentThickness">0</Thickness>
+      <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
+      <Thickness x:Key="ControlBorderAccentThickness">0</Thickness>
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -55,6 +58,11 @@
 
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.04" />
+
+      <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
+        <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
+      </LinearGradientBrush>
 
       <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
         <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
@@ -109,16 +117,19 @@
 
       <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
-
-      <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="{DynamicResource SystemAccentColorLight1}" />
+      <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #ff0000</BoxShadows>
 
       <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
       <SolidColorBrush x:Key="ScrollBarPointerOverThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
+
+      <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundRecessedBrush" />
 
       <BoxShadows x:Key="ButtonBorderBoxShadow">0 0.5 2.5 0 #4dffffff, 0 0 0 0.5 #03ffffff</BoxShadows>
       <BoxShadows x:Key="ButtonBorderDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 1 0.6 0</Thickness>
       <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
+      <Thickness x:Key="ControlBorderThickness">0 0.6 0 0</Thickness>
+      <Thickness x:Key="ControlBorderAccentThickness">0 0.6 0 0</Thickness>
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -128,6 +139,11 @@
                   DestinationRect="0 0 40 44" />
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.15" />
+
+      <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
+        <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
+      </LinearGradientBrush>
 
       <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
         <GradientStop Offset="0" Color="{DynamicResource ControlBorderMidColor}" />
@@ -143,8 +159,8 @@
         <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
       </LinearGradientBrush>
       <LinearGradientBrush x:Key="ControlBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
-        <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
+        <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
+        <GradientStop Offset="1" Color="{StaticResource SystemAccentColor}" />
       </LinearGradientBrush>
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
@@ -157,7 +173,6 @@
   <CornerRadius x:Key="SelectionCornerRadius">4</CornerRadius>
 
   <Thickness x:Key="BorderThickness">1</Thickness>
-  <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
 
   <x:Double x:Key="ControlFontSize">13</x:Double>
   <x:Double x:Key="PasswordHiddenFontSize">8</x:Double>
@@ -176,8 +191,9 @@
   <SolidColorBrush x:Key="ControlBackgroundAccentHighBrush" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="ControlBackgroundAccentMidBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.63" />
 
+  <SolidColorBrush x:Key="ControlBorderAccentBrush" Color="{DynamicResource SystemAccentColorLight1}" />
+
   <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
-  <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #bfbfbf</BoxShadows>
 
   <SolidColorBrush x:Key="ControlBorderBrush" Color="{DynamicResource ControlBorderMidColor}" />
   <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{DynamicResource ControlBorderLowColor}" />
@@ -185,6 +201,7 @@
   <!-- Button Resources (& button-like parts of other controls) -->
   <Thickness x:Key="ButtonPadding">10 1.4 10 2.6</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
+  <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="{DynamicResource SystemAccentColorLight1}" />
 
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
   <VisualBrush x:Key="TempButtonAccentBackgroundPrecise" Stretch="Fill">
