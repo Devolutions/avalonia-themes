@@ -33,8 +33,10 @@
       <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
       <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
 
-      <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
-                       Color="{DynamicResource BackgroundColor}" Opacity="0.5" />
+      <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush" Color="{DynamicResource BackgroundColor}"
+                       Opacity="0.5" />
+
+      <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="Transparent" />
 
       <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
       <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
@@ -42,6 +44,7 @@
       <BoxShadows x:Key="ButtonBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ButtonBorderDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
+      <Thickness x:Key="ButtonBorderAccentThickness">0</Thickness>
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -60,6 +63,15 @@
       <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
         <GradientStop Offset="0" Color="{DynamicResource ControlBorderMidColor}" />
         <GradientStop Offset="1" Color="{DynamicResource ControlBorderLowColor}" />
+      </LinearGradientBrush>
+
+      <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
+        <GradientStop Offset="1" Color="{StaticResource SystemAccentColor}" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="ControlBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
+        <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
       </LinearGradientBrush>
     </ResourceDictionary>
 
@@ -98,12 +110,15 @@
       <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
 
+      <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="{DynamicResource SystemAccentColorLight1}" />
+
       <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
       <SolidColorBrush x:Key="ScrollBarPointerOverThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
 
       <BoxShadows x:Key="ButtonBorderBoxShadow">0 0.5 2.5 0 #4dffffff, 0 0 0 0.5 #03ffffff</BoxShadows>
       <BoxShadows x:Key="ButtonBorderDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 1 0.6 0</Thickness>
+      <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -123,6 +138,14 @@
         <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
       </LinearGradientBrush>
 
+      <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
+        <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
+      </LinearGradientBrush>
+      <LinearGradientBrush x:Key="ControlBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+        <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
+        <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
+      </LinearGradientBrush>
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
@@ -152,14 +175,7 @@
   <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
   <SolidColorBrush x:Key="ControlBackgroundAccentHighBrush" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="ControlBackgroundAccentMidBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.63" />
-  <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-    <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
-    <GradientStop Offset="1" Color="{StaticResource SystemAccentColor}" />
-  </LinearGradientBrush>
-  <LinearGradientBrush x:Key="ControlBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-    <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
-    <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
-  </LinearGradientBrush>
+
   <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
   <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #bfbfbf</BoxShadows>
 
