@@ -35,7 +35,8 @@
 
   <ControlTheme x:Key="PopUpToggleButton" TargetType="ToggleButton">
     <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
-    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderAccentBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderAccentThickness}" />
     <Setter Property="CornerRadius" Value="{StaticResource SelectionCornerRadius}" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -52,9 +53,12 @@
                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
       </ControlTemplate>
     </Setter>
-    <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="Transparent" />
-      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+    <Style Selector="^:disabled">
+      <Setter Property="BorderThickness" Value="0" />
+      <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+      </Style>
     </Style>
   </ControlTheme>
 
@@ -76,7 +80,9 @@
         <Panel>
           <Border Name="border"
                   Background="{TemplateBinding Background}"
-                  BoxShadow="{DynamicResource ButtonBorderBoxShadow}"
+                  BorderThickness="{DynamicResource ButtonBorderThickness}"
+                  BorderBrush="{DynamicResource ControlBorderRaisedBrush}"
+                  BoxShadow="{DynamicResource ControlBorderBoxShadow}"
                   Margin="{DynamicResource ComboBoxShadowMargin}"
                   CornerRadius="{TemplateBinding CornerRadius}">
             <Grid ColumnDefinitions="*,Auto">
@@ -161,6 +167,8 @@
               </MultiBinding>
             </Popup.VerticalOffset>
             <Border Background="{DynamicResource PopupBackgroundBrush}"
+                    BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
+                    BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThickness}"
                     CornerRadius="{DynamicResource LayoutCornerRadius}"
                     Margin="{DynamicResource PopupMargin}"
                     Padding="{DynamicResource PopupPadding}"
@@ -183,7 +191,7 @@
       <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
       <Style Selector="^ /template/ Border#border">
-        <Setter Property="BoxShadow" Value="{DynamicResource ButtonBorderDisabledBoxShadow}" />
+        <Setter Property="BoxShadow" Value="{DynamicResource ComboBoxDisabledBoxShadow}" />
       </Style>
       <Style Selector="^ /template/ Path">
         <Setter Property="Fill" Value="{DynamicResource ForegroundLowBrush}" />

@@ -98,7 +98,7 @@
               <Border Name="PART_BorderElement"
                       BorderThickness="1"
                       BorderBrush="Transparent"
-                      BoxShadow="{DynamicResource ButtonBorderBoxShadow}"
+                      BoxShadow="{DynamicResource ControlBorderBoxShadow}"
                       Background="{TemplateBinding Background}">
                 <Grid ColumnDefinitions="Auto,*,Auto">
                   <ContentPresenter Name="PrefixContent"
