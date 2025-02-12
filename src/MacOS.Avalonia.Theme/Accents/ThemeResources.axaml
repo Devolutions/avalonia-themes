@@ -25,6 +25,8 @@
 
       <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" Opacity="1" />
 
+      <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
+
       <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.12" />
       <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
       <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
@@ -86,6 +88,8 @@
       <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="TransparentBrush" />
       <Thickness x:Key="MenuFlyoutPresenterBorderThickness">0</Thickness>
 
+      <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundLowBrush" />
+
     </ResourceDictionary>
 
     <ResourceDictionary x:Key="Dark">
@@ -111,6 +115,8 @@
       <Color x:Key="ScrollBarTrackBorderColor">#262626</Color>
 
       <SolidColorBrush x:Key="BackgroundBrush" Color="#212121" />
+
+      <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
 
       <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
       <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
@@ -144,7 +150,7 @@
                   Stretch="None"
                   DestinationRect="0 0 40 44" />
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
-                       Color="{DynamicResource ForegroundColor}" Opacity="0.15" />
+                       Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
 
       <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
         <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
@@ -172,6 +178,8 @@
       <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="ControlBorderBrush" />
       <Thickness x:Key="MenuFlyoutPresenterBorderThickness">1</Thickness>
 
+      <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundMidBrush" />
+
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
@@ -190,7 +198,7 @@
   <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
 
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.85" />
-  <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
+  <!-- <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" /> -->
   <SolidColorBrush x:Key="ForegroundMidLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.34" />
   <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" />
 
