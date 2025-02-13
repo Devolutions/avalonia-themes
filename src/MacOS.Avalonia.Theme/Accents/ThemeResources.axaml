@@ -44,6 +44,7 @@
 
       <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
       <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
+      <x:Double x:Key="ScrollBarThumbOpacity">0.33</x:Double>
 
       <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundHighBrush" />
 
@@ -115,8 +116,8 @@
       <Color x:Key="PopupBackgroundColor">#262626</Color>
       <Color x:Key="TextBoxClearBackgroundColor">#7F7F7F</Color>
 
-      <Color x:Key="ScrollBarTrackColor">#0b0b0b</Color>
-      <Color x:Key="ScrollBarTrackBorderColor">#262626</Color>
+      <Color x:Key="ScrollBarTrackColor">#2c2c2c</Color>
+      <Color x:Key="ScrollBarTrackBorderColor">#3f3f3f</Color>
 
       <Color x:Key="DefaultIconColor">#b8b8b8</Color>
 
@@ -137,8 +138,9 @@
       <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #ff0000</BoxShadows>
       <BoxShadows x:Key="PopupShadow">0 0 1 0 #66000000, 0 0 1.5 00 #4d000000, 0 7 22 0 #40000000</BoxShadows>
 
-      <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
-      <SolidColorBrush x:Key="ScrollBarPointerOverThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
+      <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
+      <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
+      <x:Double x:Key="ScrollBarThumbOpacity">0.6</x:Double>
 
       <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundRecessedBrush" />
 

@@ -80,7 +80,7 @@
     </Setter>
 
 
-    <Style Selector="^.MacOS_TransparentTrack">
+    <Style Selector="^.MacOS_TransparentTrack[AllowAutoHide=True]">
       <Style
         Selector="^ /template/ Border#PART_ScrollBarsSeparator">
         <Setter Property="Background" Value="Transparent" />
