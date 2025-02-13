@@ -82,7 +82,7 @@
       </Setter.Value>
     </Setter>
     <Setter Property="Background" Value="Transparent" />
-    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource MenuItemForegroundBrush}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="PART_LayoutRoot"
