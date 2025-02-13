@@ -28,6 +28,7 @@
       <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" Opacity="1" />
 
       <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
+      <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" />
 
       <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.12" />
       <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
@@ -54,6 +55,7 @@
       <Thickness x:Key="ButtonBorderAccentThickness">0</Thickness>
       <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
       <Thickness x:Key="ControlBorderAccentThickness">0</Thickness>
+      <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0</Thickness>
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -95,6 +97,8 @@
 
       <StaticResource x:Key="MenuItemForegroundBrush" ResourceKey="ForegroundHighBrush" />
 
+      <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundHighBrush" />
+
     </ResourceDictionary>
 
     <ResourceDictionary x:Key="Dark">
@@ -112,7 +116,7 @@
       <Color x:Key="GridSplitterLineColor">#30ffffff</Color> <!-- 19% -->
       <Color x:Key="SvgIconDisabledColor">#757575</Color>
 
-      <Color x:Key="TabControlBackgroundColor">#131313</Color>
+      <Color x:Key="TabControlBackgroundColor">#282828</Color>
       <Color x:Key="PopupBackgroundColor">#262626</Color>
       <Color x:Key="TextBoxClearBackgroundColor">#7F7F7F</Color>
 
@@ -124,6 +128,7 @@
       <SolidColorBrush x:Key="BackgroundBrush" Color="#212121" />
 
       <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
+      <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.35" />
 
       <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
       <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
@@ -150,6 +155,7 @@
       <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
       <Thickness x:Key="ControlBorderThickness">0 0.6 0 0</Thickness>
       <Thickness x:Key="ControlBorderAccentThickness">0 0.6 0 0</Thickness>
+      <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0.6</Thickness>
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -189,6 +195,8 @@
       <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundMidBrush" />
 
       <StaticResource x:Key="MenuItemForegroundBrush" ResourceKey="ForegroundMidBrush" />
+      
+      <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundLowBrush" />
 
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
@@ -210,7 +218,7 @@
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.85" />
   <!-- <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" /> -->
   <SolidColorBrush x:Key="ForegroundMidLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.34" />
-  <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" />
+  <!-- <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" /> -->
 
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
 
