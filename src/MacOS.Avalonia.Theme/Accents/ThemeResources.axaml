@@ -18,7 +18,8 @@
 
       <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
       <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
-      <Color x:Key="TextBoxClearBackgroundColor">#808080</Color>
+      <Color x:Key="TextBoxBackgroundColor">#ffffff</Color>
+      <Color x:Key="TextBoxClearButtonBackgroundColor">#808080</Color>
 
       <Color x:Key="ScrollBarTrackColor">#fbfbfb</Color>
       <Color x:Key="ScrollBarTrackBorderColor">#d6d6d6</Color>
@@ -49,6 +50,7 @@
 
       <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundHighBrush" />
 
+      <BoxShadows x:Key="TextBoxBorderShadows">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ControlBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
@@ -118,7 +120,8 @@
 
       <Color x:Key="TabControlBackgroundColor">#282828</Color>
       <Color x:Key="PopupBackgroundColor">#262626</Color>
-      <Color x:Key="TextBoxClearBackgroundColor">#7F7F7F</Color>
+      <Color x:Key="TextBoxBackgroundColor">#2c2c2c</Color>
+      <Color x:Key="TextBoxClearButtonBackgroundColor">#7F7F7F</Color>
 
       <Color x:Key="ScrollBarTrackColor">#2c2c2c</Color>
       <Color x:Key="ScrollBarTrackBorderColor">#3f3f3f</Color>
@@ -149,6 +152,7 @@
 
       <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundRecessedBrush" />
 
+      <BoxShadows x:Key="TextBoxBorderShadows">0 1 1 0 #4dffffff</BoxShadows>
       <BoxShadows x:Key="ControlBorderBoxShadow">0 0 Transparent</BoxShadows>
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 1 0.6 0</Thickness>
@@ -195,7 +199,7 @@
       <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundMidBrush" />
 
       <StaticResource x:Key="MenuItemForegroundBrush" ResourceKey="ForegroundMidBrush" />
-      
+
       <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundLowBrush" />
 
     </ResourceDictionary>
@@ -305,9 +309,11 @@
   <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource PopupBackgroundColor}" />
 
   <!-- TextBox Resources -->
-  <SolidColorBrush x:Key="TextBoxClearBackgroundBrush" Color="{DynamicResource TextBoxClearBackgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxClearButtonBackgroundBrush"
+                   Color="{DynamicResource TextBoxClearButtonBackgroundColor}" />
   <SolidColorBrush x:Key="TextBoxSelectionHighlightBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.3" />
   <SolidColorBrush x:Key="TextBoxBorderFocusBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
+  <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
   <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
                    Color="{DynamicResource BackgroundColor}" Opacity="0.5" />
 

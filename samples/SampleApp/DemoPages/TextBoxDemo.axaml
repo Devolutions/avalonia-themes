@@ -4,9 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.TextBoxDemo">
-  <ScrollViewer>
 
-    <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+  <UserControl.Styles>
+    <Style Selector="TextBlock">
+      <Setter Property="Margin" Value="3 0 0 0" />
+    </Style>
+  </UserControl.Styles>
+
+  <ScrollViewer>
+    <Border Margin="20"
+            BorderBrush="{DynamicResource LayoutBorderMidBrush}"
+            BorderThickness="{DynamicResource BorderThickness}"
+            CornerRadius="{DynamicResource LayoutCornerRadius}"
+            Background="{DynamicResource LayoutBackgroundLowBrush}">
       <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
         <TextBlock>Name:</TextBlock>
         <TextBox Watermark="Enter your name" />
