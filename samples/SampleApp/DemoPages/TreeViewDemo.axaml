@@ -13,66 +13,47 @@
     </Style>
   </UserControl.Styles>
 
-  <StackPanel Orientation="Horizontal" Spacing="30" VerticalAlignment="Top">
-    <TreeView Width="150">
-      <TreeViewItem Header="Level 1.1" IsExpanded="True">
-        <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
-          <TreeViewItem Header="Level 3.1" />
-          <TreeViewItem Header="Level 3.2">
-            <TreeViewItem Header="Level 4.1" />
-            <TreeViewItem Header="Level 4.2" />
-            <TreeViewItem Header="Level 4.3" />
+  <Border Margin="20"
+          BorderBrush="{DynamicResource LayoutBorderMidBrush}"
+          BorderThickness="{DynamicResource BorderThickness}"
+          CornerRadius="{DynamicResource LayoutCornerRadius}">
+    <StackPanel Orientation="Horizontal" Spacing="30" VerticalAlignment="Top" Margin="10">
+      <TreeView Width="150">
+        <TreeViewItem Header="Level 1.1" IsExpanded="True">
+          <TreeViewItem Header="Level 2.1" IsSelected="True" IsExpanded="True">
+            <TreeViewItem Header="Level 3.1" />
+            <TreeViewItem Header="Level 3.2">
+              <TreeViewItem Header="Level 4.1" />
+              <TreeViewItem Header="Level 4.2" />
+              <TreeViewItem Header="Level 4.3" />
 
+            </TreeViewItem>
           </TreeViewItem>
+          <TreeViewItem Header="Level 2.2" IsEnabled="False" />
         </TreeViewItem>
-        <TreeViewItem Header="Level 2.2" IsEnabled="False" />
-      </TreeViewItem>
-    </TreeView>
+      </TreeView>
 
-    <!-- With icons -->
-    <TreeView Width="150">
-      <TreeViewItem IsExpanded="True">
-        <TreeViewItem.Header>
-          <StackPanel Orientation="Horizontal" Spacing="5">
-            <Svg Path="/Assets/Folder.svg" />
-            <TextBlock>Level 1.1</TextBlock>
-          </StackPanel>
-        </TreeViewItem.Header>
+      <!-- With icons -->
+      <TreeView Width="150">
         <TreeViewItem IsExpanded="True">
           <TreeViewItem.Header>
             <StackPanel Orientation="Horizontal" Spacing="5">
               <Svg Path="/Assets/Folder.svg" />
-              <TextBlock>Level 2.1</TextBlock>
+              <TextBlock>Level 1.1</TextBlock>
             </StackPanel>
           </TreeViewItem.Header>
-          <TreeViewItem>
+          <TreeViewItem IsExpanded="True">
             <TreeViewItem.Header>
               <StackPanel Orientation="Horizontal" Spacing="5">
                 <Svg Path="/Assets/Folder.svg" />
-                <TextBlock>Level 3.1</TextBlock>
-              </StackPanel>
-            </TreeViewItem.Header>
-          </TreeViewItem>
-          <TreeViewItem>
-            <TreeViewItem.Header>
-              <StackPanel Orientation="Horizontal" Spacing="5">
-                <Svg Path="/Assets/Folder.svg" />
-                <TextBlock>Level 3.2</TextBlock>
-              </StackPanel>
-            </TreeViewItem.Header>
-          </TreeViewItem>
-          <TreeViewItem>
-            <TreeViewItem.Header>
-              <StackPanel Orientation="Horizontal" Spacing="5">
-                <Svg Path="/Assets/Folder.svg" />
-                <TextBlock>Level 3.3</TextBlock>
+                <TextBlock>Level 2.1</TextBlock>
               </StackPanel>
             </TreeViewItem.Header>
             <TreeViewItem>
               <TreeViewItem.Header>
                 <StackPanel Orientation="Horizontal" Spacing="5">
                   <Svg Path="/Assets/Folder.svg" />
-                  <TextBlock>Level 4.1</TextBlock>
+                  <TextBlock>Level 3.1</TextBlock>
                 </StackPanel>
               </TreeViewItem.Header>
             </TreeViewItem>
@@ -80,46 +61,70 @@
               <TreeViewItem.Header>
                 <StackPanel Orientation="Horizontal" Spacing="5">
                   <Svg Path="/Assets/Folder.svg" />
-                  <TextBlock>Level 4.2</TextBlock>
+                  <TextBlock>Level 3.2</TextBlock>
                 </StackPanel>
               </TreeViewItem.Header>
             </TreeViewItem>
-            <TreeViewItem IsEnabled="False" />
-          </TreeViewItem>
-        </TreeViewItem>
-      </TreeViewItem>
-    </TreeView>
-
-    <!-- With alternating row colour & scrolling -->
-    <StackPanel Spacing="20">
-
-      <TreeView Width="150" Height="160" Classes="MacOS_Theme_AlternatingRowColor"
-                Background="White"
-                BorderBrush="LightGray"
-                BorderThickness="1">
-        <TreeViewItem Header="Level 1.1">
-          <TreeViewItem Header="Level 2.1" />
-          <TreeViewItem Header="Level 2.2" />
-          <TreeViewItem Header="Level 2.3" />
-          <TreeViewItem Header="Level 2.4" />
-          <TreeViewItem Header="Level 2.5" />
-          <TreeViewItem Header="Level 2.6" />
-          <TreeViewItem Header="Level 2.7">
-            <TreeViewItem Header="Level 3.1" />
-            <TreeViewItem Header="Level 3.2" IsSelected="True" />
-            <TreeViewItem Header="Level 3.3">
-              <TreeViewItem Header="Level 4.1" />
-              <TreeViewItem Header="Level 4.2" />
+            <TreeViewItem>
+              <TreeViewItem.Header>
+                <StackPanel Orientation="Horizontal" Spacing="5">
+                  <Svg Path="/Assets/Folder.svg" />
+                  <TextBlock>Level 3.3</TextBlock>
+                </StackPanel>
+              </TreeViewItem.Header>
+              <TreeViewItem>
+                <TreeViewItem.Header>
+                  <StackPanel Orientation="Horizontal" Spacing="5">
+                    <Svg Path="/Assets/Folder.svg" />
+                    <TextBlock>Level 4.1</TextBlock>
+                  </StackPanel>
+                </TreeViewItem.Header>
+              </TreeViewItem>
+              <TreeViewItem>
+                <TreeViewItem.Header>
+                  <StackPanel Orientation="Horizontal" Spacing="5">
+                    <Svg Path="/Assets/Folder.svg" />
+                    <TextBlock>Level 4.2</TextBlock>
+                  </StackPanel>
+                </TreeViewItem.Header>
+              </TreeViewItem>
+              <TreeViewItem IsEnabled="False" />
             </TreeViewItem>
           </TreeViewItem>
-          <TreeViewItem Header="Level 2.8" IsEnabled="False" />
         </TreeViewItem>
-        <TreeViewItem Header="Level 1.2" />
       </TreeView>
-      <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
-        For alternating row colour use: <LineBreak />
-        <TextBlock Classes="code" FontSize="13" Text="Classes=&quot;MacOS_Theme_AlternatingRowColor&quot;" />
-      </TextBlock>
+
+      <!-- With alternating row colour & scrolling -->
+      <StackPanel Spacing="20">
+
+        <TreeView Width="150" Height="160" Classes="MacOS_Theme_AlternatingRowColor"
+                  Background="{DynamicResource BackgroundBrush}"
+                  BorderBrush="{DynamicResource LayoutBorderHighBrush}"
+                  BorderThickness="1">
+          <TreeViewItem Header="Level 1.1">
+            <TreeViewItem Header="Level 2.1" />
+            <TreeViewItem Header="Level 2.2" />
+            <TreeViewItem Header="Level 2.3" />
+            <TreeViewItem Header="Level 2.4" />
+            <TreeViewItem Header="Level 2.5" />
+            <TreeViewItem Header="Level 2.6" />
+            <TreeViewItem Header="Level 2.7">
+              <TreeViewItem Header="Level 3.1" />
+              <TreeViewItem Header="Level 3.2" IsSelected="True" />
+              <TreeViewItem Header="Level 3.3">
+                <TreeViewItem Header="Level 4.1" />
+                <TreeViewItem Header="Level 4.2" />
+              </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Level 2.8" IsEnabled="False" />
+          </TreeViewItem>
+          <TreeViewItem Header="Level 1.2" />
+        </TreeView>
+        <TextBlock TextWrapping="Wrap" HorizontalAlignment="Center">
+          For alternating row colour use: <LineBreak />
+          <TextBlock Classes="code" FontSize="13" Text="Classes=&quot;MacOS_Theme_AlternatingRowColor&quot;" />
+        </TextBlock>
+      </StackPanel>
     </StackPanel>
-  </StackPanel>
+  </Border>
 </UserControl>
