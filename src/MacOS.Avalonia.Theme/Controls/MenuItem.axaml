@@ -137,6 +137,8 @@
                  IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}">
             <Border Margin="{StaticResource PopupMargin} "
                     Background="{DynamicResource PopupBackgroundBrush}"
+                    BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
+                    BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThickness}"
                     Padding="{DynamicResource MenuFlyoutPadding}"
                     MaxWidth="{DynamicResource FlyoutThemeMaxWidth}"
                     MinHeight="{DynamicResource MenuFlyoutThemeMinHeight}"

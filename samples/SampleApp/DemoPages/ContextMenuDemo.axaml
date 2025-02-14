@@ -5,7 +5,10 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.ContextMenuDemo">
 
-  <Border Background="LightGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20">
+  <!-- <Border Background="LightGray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="20"> -->
+  <Border Margin="20" Background="{DynamicResource LayoutBackgroundLowBrush}"
+          BorderBrush="{DynamicResource LayoutBorderMidBrush}" BorderThickness="{DynamicResource BorderThickness}"
+          CornerRadius="{DynamicResource LayoutCornerRadius}">
     <Border.ContextMenu>
       <ContextMenu>
         <MenuItem Header="Standard _Menu Item" />

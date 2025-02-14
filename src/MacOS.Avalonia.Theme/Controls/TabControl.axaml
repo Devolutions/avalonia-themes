@@ -6,30 +6,37 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <StackPanel Orientation="Horizontal">
-      <Border Width="500">
-        <TabControl TabStripPlacement="Left" Margin="5">
-          <TabItem Header="Tab 1">
-            <TextBlock Text="Content 1" />
-          </TabItem>
-          <TabItem Header="Tab 2">
-            <TextBlock Text="Content 2" />
-          </TabItem>
-          <TabItem Header="Tab3" IsEnabled="False" />
-        </TabControl>
+    <ThemeVariantScope RequestedThemeVariant="Dark">
+      <Border Background="#212121">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+          <Border Width="500">
+            <TabControl TabStripPlacement="Left" Margin="5">
+              <TabItem Header="Tab 1">
+                <TextBlock Text="Vertical tab view" />
+              </TabItem>
+              <TabItem Header="Tab 2">
+                <TextBlock Text="Content 2" />
+              </TabItem>
+              <TabItem Header="Tab3" IsEnabled="False" />
+            </TabControl>
+          </Border>
+          <Border Width="500">
+            <TabControl TabStripPlacement="Top" Margin="5">
+              <TabItem Header="General">
+                <TextBlock Text="Horizontal tab view" />
+              </TabItem>
+              <TabItem Header="Settings">
+                <TextBlock Text="Content 2" />
+              </TabItem>
+              <TabItem Header="Disabled Tab" IsEnabled="False" />
+              <TabItem Header="Advanced">
+                <TextBlock Text="Content 3" />
+              </TabItem>
+            </TabControl>
+          </Border>
+        </StackPanel>
       </Border>
-      <Border Width="500">
-        <TabControl TabStripPlacement="Top" Margin="5">
-          <TabItem Header="General">
-            <TextBlock Text="Content bla alsdflas skjdf sdkjfsdlf" />
-          </TabItem>
-          <TabItem Header="Settings">
-            <TextBlock Text="Content 2" />
-          </TabItem>
-          <TabItem Header="Advanced" IsEnabled="False" />
-        </TabControl>
-      </Border>
-    </StackPanel>
+    </ThemeVariantScope>
   </Design.PreviewWith>
 
   <Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
@@ -73,7 +80,7 @@
         <Setter Property="Background" Value="{DynamicResource TabControlBackgroundBrush}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderMidBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+        <Setter Property="BorderThickness" Value="0 1 0 0.6" />
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
         <Setter Property="Padding" Value="0" />
         <Setter Property="ZIndex" Value="1" />
@@ -106,7 +113,9 @@
                   VerticalAlignment="{TemplateBinding VerticalAlignment}">
             <DockPanel>
               <Border Name="TabstripPanel"
-                      DockPanel.Dock="{TemplateBinding TabStripPlacement}">
+                      DockPanel.Dock="{TemplateBinding TabStripPlacement}"
+                      Background="{DynamicResource TabStripVerticalBackgroundBrush}"
+                      Padding="5 10">
                 <ItemsPresenter Name="PART_ItemsPresenter"
                                 ItemsPanel="{TemplateBinding ItemsPanel}" />
               </Border>
@@ -120,14 +129,10 @@
           </Border>
         </ControlTemplate>
       </Setter>
-      <Style Selector="^/template/ Border#RootElement" />
       <Style Selector="^/template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
         <Setter Property="Orientation" Value="Vertical" />
       </Style>
-      <Style Selector="^/template/ Border#TabstripPanel">
-        <Setter Property="Background" Value="{DynamicResource LayoutBackgroundHighBrush}" />
-        <Setter Property="Padding" Value="5 10" />
-      </Style>
+
     </Style>
 
   </ControlTheme>

@@ -7,8 +7,12 @@
     <Thickness x:Key="H1Margins">0,0,0,10</Thickness>
 
     <FontFamily x:Key="CodeFontFamily">"Courier New, Courier, monospace"</FontFamily>
-    <Color x:Key="CodeFontColor">SlateBlue</Color>
+    <Color x:Key="CodeFontColor">#23b4c8</Color>
   </Styles.Resources>
+
+  <Style Selector="Panel.mainControl">
+    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+  </Style>
 
   <Style Selector="TextBlock.h1">
     <Setter Property="FontSize" Value="{DynamicResource H1FontSize}" />

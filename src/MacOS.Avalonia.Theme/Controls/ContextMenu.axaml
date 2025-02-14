@@ -6,7 +6,7 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <Border Background="{DynamicResource SystemAccentColor}"
+    <Border Background="{DynamicResource BackgroundBrush}"
             Margin="16"
             Padding="48"
             Width="400"
@@ -30,14 +30,14 @@
           </MenuItem>
         </ContextMenu>
       </Border.ContextMenu>
-      <TextBlock Text="Defined in XAML" />
+      <TextBlock Text="Test" />
     </Border>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu">
     <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}" />
     <Setter Property="BorderBrush" Value="{DynamicResource MenuFlyoutPresenterBorderBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThemeThickness}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThickness}" />
     <Setter Property="Padding" Value="{DynamicResource MenuFlyoutPresenterThemePadding}" />
     <Setter Property="Focusable" Value="True" />
     <Setter Property="MaxWidth" Value="{DynamicResource FlyoutThemeMaxWidth}" />

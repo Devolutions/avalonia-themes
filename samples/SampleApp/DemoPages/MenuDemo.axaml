@@ -37,9 +37,16 @@
         <Setter Property="Height" Value="15" />
       </Style>
     </Style>
+
+    <Style Selector="Menu#MainMenu > MenuItem">
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    </Style>
   </UserControl.Styles>
 
-  <Border BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
+  <Border BorderBrush="{DynamicResource LayoutBorderMidBrush}"
+          BorderThickness="{DynamicResource BorderThickness}"
+          CornerRadius="{DynamicResource LayoutCornerRadius}"
+          Margin="20">
     <DockPanel>
       <Menu Name="MainMenu" Classes="OnWhite" DockPanel.Dock="Top" VerticalAlignment="Top">
         <MenuItem Header="File">
@@ -88,7 +95,9 @@
         </MenuItem>
       </Menu>
 
-      <Border Background="Gainsboro">
+      <Border Background="{DynamicResource LayoutBackgroundLowBrush}"
+              BorderBrush="{DynamicResource ControlBorderRaisedBrush}"
+              BorderThickness="0 1">
         <DockPanel>
           <DockPanel DockPanel.Dock="Top">
             <Menu Name="LargeToolbar" DockPanel.Dock="Left" VerticalAlignment="Top"
@@ -130,6 +139,13 @@
               <MenuItem Header="Share">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/DisableUser.svg" />
+                </MenuItem.Icon>
+              </MenuItem>
+              <MenuItem Header="Custom color!">
+                <MenuItem.Icon>
+                  <Svg Path="/Assets/DisableUser.svg"
+                       Css="{Binding Source={StaticResource TestGreen},
+                       Converter={StaticResource ColorToCssFillConverter}, ConverterParameter='.st0'}" />
                 </MenuItem.Icon>
               </MenuItem>
               <MenuItem Header="Add Tags">
@@ -188,7 +204,7 @@
             </MenuItem>
             <MenuItem Header="-" />
           </Menu>
-          <Border Background="White" Padding="15">
+          <Border Background="{DynamicResource BackgroundBrush}" Padding="15">
             <TextBlock FontSize="12" LineSpacing="2" TextWrapping="Wrap">
               <Bold>Use the following classes for menu styling:</Bold><LineBreak /><LineBreak />
               • <TextBlock Classes="code" Text="MacOS_Theme_MenuLabelBelowIcon" /> for a toolbar-style menu

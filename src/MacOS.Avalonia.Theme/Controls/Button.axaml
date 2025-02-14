@@ -38,13 +38,15 @@
     <Style Selector="^.accent">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
       <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
-      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderAccentBrush}" />
+      <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderAccentThickness}" />
       <Style Selector="^:pressed">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRecessedBrush}" />
       </Style>
       <Style Selector="^:disabled">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
         <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
       </Style>
     </Style>

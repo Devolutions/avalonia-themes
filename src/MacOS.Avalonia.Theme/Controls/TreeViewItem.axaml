@@ -32,7 +32,7 @@
     <Setter Property="Margin" Value="0" />
     <Setter Property="Width" Value="{StaticResource TreeViewItemChevronSize}" />
     <Setter Property="Height" Value="{StaticResource TreeViewItemChevronSize}" />
-    <Setter Property="Foreground" Value="{StaticResource ForegroundMidBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundMidBrush}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Background="Transparent"

@@ -14,6 +14,15 @@
     <Setter Property="Height" Value="15" />
   </Style>
 
+  <Style Selector="Svg">
+    <Setter Property="Css">
+      <Setter.Value>
+        <Binding Source="{StaticResource DefaultIconFillBrush}"
+                 Converter="{StaticResource ColorToCssFillConverter}" ConverterParameter='.st0' />
+      </Setter.Value>
+    </Setter>
+  </Style>
+
   <Style Selector="Svg:disabled">
     <Setter Property="Css">
       <Setter.Value>

@@ -117,7 +117,7 @@
                   <Thumb Theme="{StaticResource ScrollBarThumbTheme}"
                          Width="{DynamicResource ScrollBarThumbWidth}"
                          MinHeight="{DynamicResource ScrollBarMinLength}"
-                         Opacity="0.33">
+                         Opacity="0.6">
                     <Thumb.Transitions>
                       <Transitions>
                         <DoubleTransition Property="Opacity" Duration="0:0:0.4" />

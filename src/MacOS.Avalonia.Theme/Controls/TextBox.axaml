@@ -6,26 +6,29 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
-
-      <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
-        <TextBlock>Name:</TextBlock>
-        <TextBox Watermark="Enter your name">MyServer</TextBox>
-        <TextBlock>Password:</TextBlock>
-        <TextBox PasswordChar="*" Watermark="Enter your password" />
-        <TextBlock>Notes:</TextBlock>
-        <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
-        <TextBox InnerLeftContent="http://" />
-        <TextBox InnerRightContent=".com" />
-        <TextBox
-          InnerLeftContent="http://"
-          InnerRightContent=".com" />
-        <TextBox Classes="clearButton">With 'Clear' button</TextBox>
-        <TextBox Watermark="Enter your name" IsEnabled="False" />
-        <TextBox PasswordChar="•" Classes="revealPasswordButton">Reveal Password</TextBox>
-        <TextBox PasswordChar="•" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
-      </StackPanel>
-    </Border>
+    <ThemeVariantScope RequestedThemeVariant="Dark">
+      <Border Background="#212121">
+        <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+          <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
+            <TextBlock>Name:</TextBlock>
+            <TextBox Watermark="Enter your name">MyServer</TextBox>
+            <TextBlock>Password:</TextBlock>
+            <TextBox PasswordChar="*" Watermark="Enter your password" />
+            <TextBlock>Notes:</TextBlock>
+            <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+            <TextBox InnerLeftContent="http://" />
+            <TextBox InnerRightContent=".com" />
+            <TextBox
+              InnerLeftContent="http://"
+              InnerRightContent=".com" />
+            <TextBox Classes="clearButton">With 'Clear' button</TextBox>
+            <TextBox Watermark="Enter your name" IsEnabled="False" />
+            <TextBox PasswordChar="•" Classes="revealPasswordButton">Reveal Password</TextBox>
+            <TextBox PasswordChar="•" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+          </StackPanel>
+        </Border>
+      </Border>
+    </ThemeVariantScope>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="FluentTextBoxButton" TargetType="Button">
@@ -69,7 +72,7 @@
 
   <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
-    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
     <Setter Property="CaretBrush" Value="{DynamicResource SystemAccentColor}" />
     <Setter Property="FontSize">
       <Setter.Value>
@@ -98,7 +101,7 @@
               <Border Name="PART_BorderElement"
                       BorderThickness="1"
                       BorderBrush="Transparent"
-                      BoxShadow="{DynamicResource ButtonBorderBoxShadow}"
+                      BoxShadow="{DynamicResource TextBoxBorderShadows}"
                       Background="{TemplateBinding Background}">
                 <Grid ColumnDefinitions="Auto,*,Auto">
                   <ContentPresenter Name="PrefixContent"
@@ -237,7 +240,7 @@
           <Button Theme="{StaticResource FluentTextBoxButton}"
                   Command="{Binding $parent[TextBox].Clear}"
                   ClipToBounds="True"
-                  Background="{DynamicResource TextBoxClearBackgroundBrush}"
+                  Background="{DynamicResource TextBoxClearButtonBackgroundBrush}"
                   CornerRadius="7">
             <PathIcon Data="{StaticResource XShapePath}" Height="5" Width="5"
                       Foreground="{DynamicResource ControlForegroundAccentHighBrush}" />

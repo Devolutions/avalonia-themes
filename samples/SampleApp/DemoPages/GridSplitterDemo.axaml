@@ -7,7 +7,7 @@
 
   <Border BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
     <Grid ColumnDefinitions="250, 1, *">
-      <Border Grid.Column="0" Background="{DynamicResource LayoutBackgroundHighBrush}">
+      <Border Grid.Column="0" Background="{DynamicResource LayoutBackgroundLowBrush}">
         <ScrollViewer>
           <Border Height="2000" />
         </ScrollViewer>

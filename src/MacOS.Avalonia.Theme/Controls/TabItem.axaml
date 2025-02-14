@@ -6,30 +6,64 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <StackPanel Orientation="Horizontal" Margin="10">
-      <Border Width="500">
-        <TabControl TabStripPlacement="Left">
-          <TabItem Header="Tab One">
-            <TextBlock Text="Content 1" />
-          </TabItem>
-          <TabItem Header="Tab Two">
-            <TextBlock Text="Content 2" />
-          </TabItem>
-          <TabItem Header="Disabled Tab" IsEnabled="False" />
-        </TabControl>
+    <ThemeVariantScope RequestedThemeVariant="Dark">
+      <Border Background="#212121">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+          <Border Width="500">
+            <TabControl TabStripPlacement="Left" Margin="5">
+              <TabItem Header="Tab 1">
+                <!-- <TextBlock Text="Vertical tab view" /> -->
+                <Border Background="Beige">
+                  <StackPanel Orientation="Horizontal">
+                    <Border Background="White" BorderBrush="red" BorderThickness="3" Padding="20">
+                      <Panel>
+                        <Border Background="LightGray"
+                                Width="100"
+                                Height="100"
+                                Margin="-10"
+                                ZIndex="1">
+                          <Border.Effect>
+                            <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.7" />
+                          </Border.Effect>
+                        </Border>
+                      </Panel>
+                    </Border>
+                    <Border Background="White"
+                            BorderBrush="Red"
+                            VerticalAlignment="Top"
+                            BorderThickness="3">
+                      <Border Width="50"
+                              Height="50"
+                              Background="LightGray"
+                              BoxShadow="10 10 15 Black"> <!-- X, Y, Blur, Color -->
+                      </Border>
+                    </Border>
+                  </StackPanel>
+                </Border>
+              </TabItem>
+              <TabItem Header="Tab 2">
+                <TextBlock Text="Content 2" />
+              </TabItem>
+              <TabItem Header="Tab3" IsEnabled="False" />
+            </TabControl>
+          </Border>
+          <Border Width="500">
+            <TabControl TabStripPlacement="Top" Margin="5">
+              <TabItem Header="General">
+                <TextBlock Text="Horizontal tab view" />
+              </TabItem>
+              <TabItem Header="Settings">
+                <TextBlock Text="Content 2" />
+              </TabItem>
+              <TabItem Header="Disabled Tab" IsEnabled="False" />
+              <TabItem Header="Advanced">
+                <TextBlock Text="Content 3" />
+              </TabItem>
+            </TabControl>
+          </Border>
+        </StackPanel>
       </Border>
-      <Border Width="500">
-        <TabControl>
-          <TabItem Header="Tab 1">
-            <TextBlock Text="Content 1" />
-          </TabItem>
-          <TabItem Header="Tab 2">
-            <TextBlock Text="Content 2" />
-          </TabItem>
-          <TabItem Header="Disabled Tab" IsEnabled="False" />
-        </TabControl>
-      </Border>
-    </StackPanel>
+    </ThemeVariantScope>
   </Design.PreviewWith>
 
   <!-- Shifting the divider right up to the left neighbour -->
@@ -43,7 +77,7 @@
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />

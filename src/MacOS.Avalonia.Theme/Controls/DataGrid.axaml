@@ -99,7 +99,7 @@
 
   <!-- Cell -->
   <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
-    <Setter Property="Background" Value="{DynamicResource DataGridCellBackgroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
     <Setter Property="Foreground">
       <Setter.Value>
         <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
@@ -182,7 +182,7 @@
   <!-- ColumnHeader -->
   <ControlTheme x:Key="{x:Type DataGridColumnHeader}" TargetType="DataGridColumnHeader">
     <Setter Property="Foreground" Value="{DynamicResource ForegroundMidBrush}" />
-    <Setter Property="Background" Value="{DynamicResource DataGridColumnHeaderBackgroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="SeparatorBrush" Value="{DynamicResource DataGridGridLinesBrush}" />
@@ -217,7 +217,7 @@
                       Width="{DynamicResource DataGridSortChevronSize}"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center"
-                      Fill="{DynamicResource ForegroundLowBrush}"
+                      Fill="{DynamicResource SortIconForegroundBrush}"
                       Stretch="Uniform" />
               </Grid>
             </Panel>
@@ -271,7 +271,7 @@
       <Style Selector="^ /template/ Path#SortIcon">
         <Setter Property="IsVisible" Value="True" />
         <Setter Property="Data" Value="{StaticResource ChevronPath}" />
-        <Setter Property="Fill" Value="{StaticResource ForegroundLowBrush}" />
+        <!-- <Setter Property="Fill" Value="{DynamicResource ForegroundLowBrush}" /> -->
       </Style>
     </Style>
 
@@ -281,7 +281,7 @@
       <Style Selector="^ /template/ Path#SortIcon">
         <Setter Property="IsVisible" Value="True" />
         <Setter Property="Data" Value="{StaticResource ChevronPath}" />
-        <Setter Property="Fill" Value="{StaticResource ForegroundLowBrush}" />
+        <!-- <Setter Property="Fill" Value="{DynamicResource ForegroundLowBrush}" /> -->
         <Setter Property="RenderTransform">
           <TransformGroup>
             <RotateTransform Angle="180" />
