@@ -44,9 +44,8 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [TextBox](#textbox)
     - [TreeView](#treeview)
       - [TreeViewItem](#treeviewitem)
-    - Very basic dark mode support
+    - Dark mode support
   - 🚧 In progress
-    - Dark mode
     - Inactive window behaviour
   - 🔮 Next on the road map ...
     - ToolTip
