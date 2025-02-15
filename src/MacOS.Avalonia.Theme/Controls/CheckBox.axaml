@@ -128,15 +128,6 @@
             </MultiBinding>
           </Setter.Value>
         </Setter>
-        <Setter Property="BorderThickness">
-          <Setter.Value>
-            <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-              <Binding Source="{StaticResource ControlBorderAccentThickness}" />
-              <Binding Source="{StaticResource ControlBorderThickness}" />
-            </MultiBinding>
-          </Setter.Value>
-        </Setter>
         <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
       </Style>
       <Style Selector="^/template/ Path#CheckMark">
@@ -160,15 +151,6 @@
               <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
               <Binding Source="{StaticResource ControlBorderAccentBrush}" />
               <Binding Source="{StaticResource ControlBorderBrush}" />
-            </MultiBinding>
-          </Setter.Value>
-        </Setter>
-        <Setter Property="BorderThickness">
-          <Setter.Value>
-            <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-              <Binding Source="{StaticResource ControlBorderAccentThickness}" />
-              <Binding Source="{StaticResource ControlBorderThickness}" />
             </MultiBinding>
           </Setter.Value>
         </Setter>

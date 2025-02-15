@@ -36,7 +36,6 @@
     </Style>
 
     <Style Selector="^.accent">
-      <!-- <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" /> -->
       <Setter Property="Background">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
@@ -55,15 +54,6 @@
           </MultiBinding>
         </Setter.Value>
       </Setter>
-      <Setter Property="BorderThickness">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource ButtonBorderAccentThickness}" />
-            <Binding Source="{StaticResource ButtonBorderThickness}" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
       <Setter Property="BorderBrush">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
@@ -74,7 +64,7 @@
         </Setter.Value>
       </Setter>
       <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRecessedBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundAccentRecessedBrush}" />
       </Style>
       <Style Selector="^:disabled">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
