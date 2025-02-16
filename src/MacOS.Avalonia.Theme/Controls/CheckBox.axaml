@@ -60,16 +60,31 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Data="{DynamicResource CheckMarkPath}"
-                    Fill="{DynamicResource AccentForegroundColor}"
                     FlowDirection="LeftToRight"
-                    Stretch="Fill" />
+                    Stretch="Fill">
+                <Path.Fill>
+                  <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+                    <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                    <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                  </MultiBinding>
+                </Path.Fill>
+              </Path>
               <Rectangle Name="indeterminateMark"
                          Width="8"
                          Height="2"
                          HorizontalAlignment="Center"
                          VerticalAlignment="Center"
-                         Fill="{DynamicResource AccentForegroundColor}"
-                         Stretch="Uniform" />
+
+                         Stretch="Uniform">
+                <Rectangle.Fill>
+                  <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+                    <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                    <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                  </MultiBinding>
+                </Rectangle.Fill>
+              </Rectangle>
             </Panel>
           </Border>
           <ContentPresenter Name="PART_ContentPresenter"
@@ -94,10 +109,25 @@
       <Setter Property="IsVisible" Value="False" />
     </Style>
     <Style Selector="^:checked">
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
       <Style Selector="^/template/ Border#border">
-        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderAccentBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderAccentThickness}" />
+        <Setter Property="BorderBrush">
+          <Setter.Value>
+            <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+              <Binding Source="{StaticResource ControlBorderAccentBrush}" />
+              <Binding Source="{StaticResource ControlBorderBrush}" />
+            </MultiBinding>
+          </Setter.Value>
+        </Setter>
         <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
       </Style>
       <Style Selector="^/template/ Path#CheckMark">
@@ -105,10 +135,25 @@
       </Style>
     </Style>
     <Style Selector="^:indeterminate">
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
       <Style Selector="^/template/ Border#border">
-        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderAccentBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderAccentThickness}" />
+        <Setter Property="BorderBrush">
+          <Setter.Value>
+            <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+              <Binding Source="{StaticResource ControlBorderAccentBrush}" />
+              <Binding Source="{StaticResource ControlBorderBrush}" />
+            </MultiBinding>
+          </Setter.Value>
+        </Setter>
         <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
       </Style>
       <Style Selector="^/template/ Rectangle#indeterminateMark">
