@@ -15,6 +15,8 @@
 
       <Color x:Key="GridSplitterLineColor">#4D000000</Color> <!-- 30% -->
       <Color x:Key="SvgIconDisabledColor">#b2b2b2</Color>
+      <Color x:Key="ToolTipBackgroundColor">#e1e1e1</Color>
+      <Color x:Key="ToolTipBorderColor">Transparent</Color>
 
       <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
       <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
@@ -28,6 +30,7 @@
 
       <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" Opacity="1" />
 
+      <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
       <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
       <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" />
 
@@ -53,11 +56,14 @@
       <BoxShadows x:Key="TextBoxBorderShadows">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ControlBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
+      <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #66000000, 0 7 17 0 #30000000</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
       <Thickness x:Key="ButtonBorderAccentThickness">0</Thickness>
       <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
       <Thickness x:Key="ControlBorderAccentThickness">0</Thickness>
       <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0</Thickness>
+      <Thickness x:Key="ToolTipBorderThickness">0</Thickness>
+
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -117,6 +123,8 @@
 
       <Color x:Key="GridSplitterLineColor">#30ffffff</Color> <!-- 19% -->
       <Color x:Key="SvgIconDisabledColor">#757575</Color>
+      <Color x:Key="ToolTipBackgroundColor">#2a2a2a</Color>
+      <Color x:Key="ToolTipBorderColor">#4a4a4a</Color>
 
       <Color x:Key="TabControlBackgroundColor">#282828</Color>
       <Color x:Key="PopupBackgroundColor">#262626</Color>
@@ -130,6 +138,7 @@
 
       <SolidColorBrush x:Key="BackgroundBrush" Color="#212121" />
 
+      <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
       <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
       <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.35" />
 
@@ -155,11 +164,14 @@
       <BoxShadows x:Key="TextBoxBorderShadows">0 1 1 0 #4dffffff</BoxShadows>
       <BoxShadows x:Key="ControlBorderBoxShadow">0 0 Transparent</BoxShadows>
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
+      <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #ff000000</BoxShadows>
+
       <Thickness x:Key="ButtonBorderThickness">0.6 1 0.6 0</Thickness>
       <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
       <Thickness x:Key="ControlBorderThickness">0 0.6 0 0</Thickness>
       <Thickness x:Key="ControlBorderAccentThickness">0 0.6 0 0</Thickness>
       <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0.6</Thickness>
+      <Thickness x:Key="ToolTipBorderThickness">0.6</Thickness>
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
@@ -362,6 +374,13 @@
   <Thickness x:Key="ScrollBarSeparatorBorderFactors">0 0 1 1</Thickness>
   <Thickness x:Key="ScrollBarTrackHorizontalBorderFactors">0 1 0 1</Thickness>
   <Thickness x:Key="ScrollBarTrackVerticalBorderFactors">1 0 1 0</Thickness>
+
+  <!-- ToolTip Resources -->
+  <x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
+  <CornerRadius x:Key="ToolTipCornerRadius">0 0 1 0</CornerRadius>
+  <Thickness x:Key="ToolTipPadding">5 2 4 2</Thickness>
+  <x:Double x:Key="ToolTipFontSize">11</x:Double>
+
 
   <!-- DEVELOPMENT ONLY -->
   <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->

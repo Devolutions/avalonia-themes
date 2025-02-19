@@ -61,6 +61,9 @@
       <TabItem Header="TreeView">
         <demoPages:TreeViewDemo />
       </TabItem>
+      <TabItem Header="ToolTip" IsSelected="True">
+        <demoPages:ToolTipDemo />
+      </TabItem>
 
 
       <TabItem>
