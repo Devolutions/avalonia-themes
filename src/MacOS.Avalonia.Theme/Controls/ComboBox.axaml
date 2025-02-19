@@ -34,9 +34,25 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="PopUpToggleButton" TargetType="ToggleButton">
-    <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderAccentBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderAccentThickness}" />
+    <Setter Property="Background">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+          <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+          <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+          <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="BorderBrush">
+      <Setter.Value>
+        <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+          <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+          <Binding Source="{StaticResource ControlBorderAccentBrush}" />
+          <Binding Source="{StaticResource ControlBorderBrush}" />
+        </MultiBinding>
+      </Setter.Value>
+    </Setter>
+    <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
     <Setter Property="CornerRadius" Value="{StaticResource SelectionCornerRadius}" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -119,15 +135,28 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Data="{DynamicResource ChevronPath}"
-                        Fill="{DynamicResource ControlForegroundAccentHighBrush}"
-                        Stretch="Uniform" />
+                        Stretch="Uniform">
+                    <Path.Fill>
+                      <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+                        <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+                        <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                        <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                      </MultiBinding>
+                    </Path.Fill>
+                  </Path>
                   <Path Grid.Row="1" Width="9"
                         Height="4.5"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Data="{DynamicResource ChevronPath}"
-                        Fill="{DynamicResource ControlForegroundAccentHighBrush}"
                         Stretch="Uniform">
+                    <Path.Fill>
+                      <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+                        <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+                        <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                        <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                      </MultiBinding>
+                    </Path.Fill>
                     <Path.RenderTransform>
                       <TransformGroup>
                         <!-- <RotateTransform Angle="180" CenterY="0.8" CenterX="-0.8" /> -->

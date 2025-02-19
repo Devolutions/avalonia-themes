@@ -28,6 +28,8 @@
 
       <Color x:Key="DefaultIconColor">#000000</Color>
 
+      <Color x:Key="TransparentColor">Transparent</Color>
+
       <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" Opacity="1" />
 
       <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
@@ -58,9 +60,7 @@
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
       <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #66000000, 0 7 17 0 #30000000</BoxShadows>
       <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
-      <Thickness x:Key="ButtonBorderAccentThickness">0</Thickness>
       <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
-      <Thickness x:Key="ControlBorderAccentThickness">0</Thickness>
       <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0</Thickness>
       <Thickness x:Key="ToolTipBorderThickness">0</Thickness>
 
@@ -75,28 +75,19 @@
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.04" />
 
-      <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
-        <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
-      </LinearGradientBrush>
+      <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderLowColor" />
+      <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderMidColor" />
 
-      <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
-        <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
-      </LinearGradientBrush>
-      <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{DynamicResource ControlBorderMidColor}" />
-        <GradientStop Offset="1" Color="{DynamicResource ControlBorderLowColor}" />
-      </LinearGradientBrush>
+      <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderMidColor" />
+      <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderLowColor" />
 
-      <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
-        <GradientStop Offset="1" Color="{StaticResource SystemAccentColor}" />
-      </LinearGradientBrush>
-      <LinearGradientBrush x:Key="ControlBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
-        <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
-      </LinearGradientBrush>
+      <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColorLight1" />
+      <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColor" />
+
+      <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColor" />
+      <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColorDark1" />
+
+      <StaticResource x:Key="ControlBorderAccentColor" ResourceKey="TransparentColor" />
 
       <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="TransparentBrush" />
       <Thickness x:Key="MenuFlyoutPresenterBorderThickness">0</Thickness>
@@ -166,10 +157,9 @@
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
       <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #ff000000</BoxShadows>
 
-      <Thickness x:Key="ButtonBorderThickness">0.6 1 0.6 0</Thickness>
+      <Thickness x:Key="ButtonBorderThickness">0 1 0 0</Thickness>
       <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
       <Thickness x:Key="ControlBorderThickness">0 0.6 0 0</Thickness>
-      <Thickness x:Key="ControlBorderAccentThickness">0 0.6 0 0</Thickness>
       <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0.6</Thickness>
       <Thickness x:Key="ToolTipBorderThickness">0.6</Thickness>
 
@@ -182,28 +172,19 @@
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
 
-      <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
-        <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
-      </LinearGradientBrush>
+      <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderMidColor" />
+      <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderLowColor" />
 
-      <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{DynamicResource ControlBorderMidColor}" />
-        <GradientStop Offset="1" Color="{DynamicResource ControlBorderLowColor}" />
-      </LinearGradientBrush>
-      <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
-        <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
-      </LinearGradientBrush>
+      <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderLowColor" />
+      <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderMidColor" />
 
-      <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{StaticResource SystemAccentColor}" />
-        <GradientStop Offset="1" Color="{StaticResource SystemAccentColorDark1}" />
-      </LinearGradientBrush>
-      <LinearGradientBrush x:Key="ControlBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-        <GradientStop Offset="0" Color="{StaticResource SystemAccentColorLight1}" />
-        <GradientStop Offset="1" Color="{StaticResource SystemAccentColor}" />
-      </LinearGradientBrush>
+      <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColor" />
+      <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColorDark1" />
+
+      <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColorLight1" />
+      <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColor" />
+
+      <StaticResource x:Key="ControlBorderAccentColor" ResourceKey="SystemAccentColorLight1" />
 
       <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="ControlBorderBrush" />
       <Thickness x:Key="MenuFlyoutPresenterBorderThickness">1</Thickness>
@@ -219,6 +200,31 @@
 
 
   <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
+
+  <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource AccentButtonTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource AccentButtonBottomColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ButtonBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBackgroundAccentRecessedTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBackgroundAccentRecessedBottomColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBorderRaisedTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBorderRaisedBottomColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBorderRecessedTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBorderRecessedBottomColor}" />
+  </LinearGradientBrush>
 
   <CornerRadius x:Key="LayoutCornerRadius">5</CornerRadius>
   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
@@ -236,7 +242,11 @@
   <SolidColorBrush x:Key="ForegroundMidLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.34" />
   <!-- <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" /> -->
 
+  <SolidColorBrush x:Key="SelectionInActiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.15" />
+
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
+  <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                   Opacity="0.85" />
 
   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
@@ -245,7 +255,7 @@
   <SolidColorBrush x:Key="ControlBackgroundAccentHighBrush" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="ControlBackgroundAccentMidBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.63" />
 
-  <SolidColorBrush x:Key="ControlBorderAccentBrush" Color="{DynamicResource SystemAccentColorLight1}" />
+  <SolidColorBrush x:Key="ControlBorderAccentBrush" Color="{DynamicResource ControlBorderAccentColor}" />
 
   <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
 
@@ -257,7 +267,7 @@
   <!-- Button Resources (& button-like parts of other controls) -->
   <Thickness x:Key="ButtonPadding">10 1.4 10 2.6</Thickness>
   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
-  <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="{DynamicResource SystemAccentColorLight1}" />
+  <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="{DynamicResource ControlBorderAccentColor}" />
 
   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
   <VisualBrush x:Key="TempButtonAccentBackgroundPrecise" Stretch="Fill">

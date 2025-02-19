@@ -36,12 +36,35 @@
     </Style>
 
     <Style Selector="^.accent">
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
-      <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderAccentBrush}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderAccentThickness}" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Foreground">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+            <Binding Source="{StaticResource ForegroundHighBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="BorderBrush">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource ButtonBorderAccentBrush}" />
+            <Binding Source="{StaticResource ControlBorderRaisedBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
       <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRecessedBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundAccentRecessedBrush}" />
       </Style>
       <Style Selector="^:disabled">
         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
