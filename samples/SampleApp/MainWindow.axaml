@@ -30,7 +30,7 @@
       <TabItem Header="ContextMenu">
         <demoPages:ContextMenuDemo />
       </TabItem>
-      <TabItem Header="DataGrid">
+      <TabItem Header="DataGrid" IsSelected="True">
         <demoPages:DataGridDemo>
           <demoPages:DataGridDemo.DataContext>
             <vm:DataGridViewModel />
@@ -61,7 +61,7 @@
       <TabItem Header="TreeView">
         <demoPages:TreeViewDemo />
       </TabItem>
-      <TabItem Header="ToolTip" IsSelected="True">
+      <TabItem Header="ToolTip">
         <demoPages:ToolTipDemo />
       </TabItem>
 
