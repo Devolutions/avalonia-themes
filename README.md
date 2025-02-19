@@ -42,13 +42,15 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
     - [TextBox](#textbox)
+    - [ToolTip](#tooltip)
     - [TreeView](#treeview)
       - [TreeViewItem](#treeviewitem)
     - Dark mode support
-  - 🚧 In progress
-    - Inactive window behaviour
+    - Limited inactive window behaviour (Accent colours switch to subdued look)
+  - 🚧 In progress ...
+    - small improvements & fixes, some code cleanup
   - 🔮 Next on the road map ...
-    - ToolTip
+    - no immediate plans
     
 
 
@@ -199,8 +201,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>ToggleSwitch</h3> ||
 ||||
-|| <h3>ToolTip</h3> ||
-||||
+|✅ | <h3>ToolTip</h3> ||
+|| <img src="https://github.com/user-attachments/assets/92d9e28e-c955-4643-9d50-ee785f19bbb9" alt="ToolTip demo - light" max-width="150"><br /><img src="https://github.com/user-attachments/assets/1de29b7a-25e8-4f41-985d-fb2e4f687c1b" alt="ToolTip demo - dark" max-width="150"> ||
 || <h3>TransitioningContentControl</h3> ||
 ||||
 |✅ | <h3>TreeView</h3> <h4>TreeViewItem<h4> ||
