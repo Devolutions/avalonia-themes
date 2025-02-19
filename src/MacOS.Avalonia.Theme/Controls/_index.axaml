@@ -22,6 +22,5 @@
     <MergeResourceInclude Source="ToolTip.axaml" />
     <MergeResourceInclude Source="TreeView.axaml" />
     <MergeResourceInclude Source="TreeViewItem.axaml" />
-    <MergeResourceInclude Source="Window.axaml" />
   </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
