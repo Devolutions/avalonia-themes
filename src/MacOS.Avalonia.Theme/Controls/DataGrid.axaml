@@ -103,7 +103,10 @@
     <Setter Property="Foreground">
       <Setter.Value>
         <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-          <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGridRow}" Path="IsSelected" />
+          <MultiBinding Converter="{x:Static BoolConverters.And}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGridRow}" Path="IsSelected" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+          </MultiBinding>
           <Binding Source="{StaticResource DataGridForegroundSelectedBrush}" />
           <Binding Source="{StaticResource ForegroundHighBrush}" />
         </MultiBinding>
@@ -408,7 +411,15 @@
     </Style>
 
     <Style Selector="^:selected /template/ Border#ItemBorder">
-      <Setter Property="Background" Value="{DynamicResource DataGridItemBackgroundSelected}" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource DataGridItemBackgroundSelected}" />
+            <Binding Source="{StaticResource SelectionInActiveWindow}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
     </Style>
   </ControlTheme>
 

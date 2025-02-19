@@ -74,16 +74,16 @@
 
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.04" />
-      
+
       <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderLowColor" />
       <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderMidColor" />
-      
+
       <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderMidColor" />
       <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderLowColor" />
-      
+
       <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColorLight1" />
       <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColor" />
-      
+
       <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColor" />
       <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColorDark1" />
 
@@ -156,7 +156,7 @@
       <BoxShadows x:Key="ControlBorderBoxShadow">0 0 Transparent</BoxShadows>
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
       <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #ff000000</BoxShadows>
-      
+
       <Thickness x:Key="ButtonBorderThickness">0 1 0 0</Thickness>
       <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
       <Thickness x:Key="ControlBorderThickness">0 0.6 0 0</Thickness>
@@ -171,16 +171,16 @@
                   DestinationRect="0 0 40 44" />
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
                        Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
-      
+
       <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderMidColor" />
       <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderLowColor" />
-      
+
       <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderLowColor" />
       <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderMidColor" />
-      
+
       <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColor" />
       <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColorDark1" />
-      
+
       <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColorLight1" />
       <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColor" />
 
@@ -241,6 +241,8 @@
   <!-- <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" /> -->
   <SolidColorBrush x:Key="ForegroundMidLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.34" />
   <!-- <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" /> -->
+
+  <SolidColorBrush x:Key="SelectionInActiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.15" />
 
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
   <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}"
