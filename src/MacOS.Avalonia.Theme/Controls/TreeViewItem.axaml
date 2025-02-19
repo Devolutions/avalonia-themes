@@ -124,14 +124,38 @@
 
     <!--  Selected state  -->
     <Style Selector="^:selected /template/ Border#PART_LayoutRoot">
-      <Setter Property="Background" Value="{DynamicResource TreeViewItemBackgroundSelected}" />
+      <Setter Property="Background">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource TreeViewItemBackgroundSelected}" />
+            <Binding Source="{StaticResource SelectionInActiveWindow}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
       <Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrushSelected}" />
     </Style>
     <Style Selector="^:selected /template/ ContentPresenter#PART_HeaderPresenter">
-      <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelected}" />
+      <Setter Property="Foreground">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource TreeViewItemForegroundSelected}" />
+            <Binding Source="{StaticResource ForegroundHighBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
     </Style>
     <Style Selector="^:selected /template/ ToggleButton#PART_ExpandCollapseChevron">
-      <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundSelected}" />
+      <Setter Property="Foreground">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+            <Binding Source="{StaticResource TreeViewItemForegroundSelected}" />
+            <Binding Source="{StaticResource ForegroundHighBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
     </Style>
 
     <!--  Disabled Selected state  -->
