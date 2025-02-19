@@ -1,0 +1,27 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.ToolTipDemo">
+
+  <Panel Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+    <StackPanel Orientation="Horizontal" Spacing="50">
+      <StackPanel>
+        <Svg Path="/Assets/Help.svg" ToolTip.Tip="Tool Tip" Width="32" HorizontalAlignment="Left"
+             VerticalAlignment="Top" />
+        <TextBlock Margin="1">Hover over the question mark <LineBreak /> to see a tool tip above text</TextBlock>
+      </StackPanel>
+      <StackPanel Spacing="10">
+        <ToolTip Opacity="1" HorizontalAlignment="Left">Text Content</ToolTip>
+        <ToolTip Opacity="1">Very long text content which should exceed the maximum with of the tooltip and wrap.</ToolTip>
+        <ToolTip Opacity="1" HorizontalAlignment="Left">
+          <StackPanel>
+            <TextBlock>Multi-line</TextBlock>
+            <TextBlock>ToolTip Content</TextBlock>
+          </StackPanel>
+        </ToolTip>
+      </StackPanel>
+    </StackPanel>
+  </Panel>
+</UserControl>
