@@ -127,9 +127,10 @@
       <Setter Property="Background">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource TreeViewItemBackgroundSelected}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource SelectionInActiveWindow}" />
+            <Binding Source="{StaticResource TreeViewItemBackgroundSelected}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -139,9 +140,10 @@
       <Setter Property="Foreground">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource TreeViewItemForegroundSelected}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource ForegroundHighBrush}" />
+            <Binding Source="{StaticResource TreeViewItemForegroundSelected}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -150,9 +152,10 @@
       <Setter Property="Foreground">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource TreeViewItemForegroundSelected}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource ForegroundHighBrush}" />
+            <Binding Source="{StaticResource TreeViewItemForegroundSelected}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
