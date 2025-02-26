@@ -32,5 +32,6 @@
          (To use the published nuget, uncomment PackageReference above (update version) or install with Nuget manager) -->
     <ItemGroup>
         <ProjectReference Include="..\..\src\MacOS.Avalonia.Theme\MacOS.Avalonia.Theme.csproj"/>
+        <ProjectReference Include="..\..\src\DevExpress.Avalonia.Theme\DevExpress.Avalonia.Theme.csproj"/>
     </ItemGroup>
 </Project>
