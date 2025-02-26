@@ -64,9 +64,10 @@
                     Stretch="Fill">
                 <Path.Fill>
                   <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-                    <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                             Converter="{x:Static BoolConverters.Not}" />
                     <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                    <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
                   </MultiBinding>
                 </Path.Fill>
               </Path>
@@ -79,9 +80,10 @@
                          Stretch="Uniform">
                 <Rectangle.Fill>
                   <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-                    <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                             Converter="{x:Static BoolConverters.Not}" />
                     <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                    <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
                   </MultiBinding>
                 </Rectangle.Fill>
               </Rectangle>
@@ -112,9 +114,10 @@
       <Setter Property="Background">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -122,9 +125,10 @@
         <Setter Property="BorderBrush">
           <Setter.Value>
             <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-              <Binding Source="{StaticResource ControlBorderAccentBrush}" />
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                       Converter="{x:Static BoolConverters.Not}" />
               <Binding Source="{StaticResource ControlBorderBrush}" />
+              <Binding Source="{StaticResource ControlBorderAccentBrush}" />
             </MultiBinding>
           </Setter.Value>
         </Setter>
@@ -138,9 +142,10 @@
       <Setter Property="Background">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
@@ -148,9 +153,10 @@
         <Setter Property="BorderBrush">
           <Setter.Value>
             <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-              <Binding Source="{StaticResource ControlBorderAccentBrush}" />
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                       Converter="{x:Static BoolConverters.Not}" />
               <Binding Source="{StaticResource ControlBorderBrush}" />
+              <Binding Source="{StaticResource ControlBorderAccentBrush}" />
             </MultiBinding>
           </Setter.Value>
         </Setter>

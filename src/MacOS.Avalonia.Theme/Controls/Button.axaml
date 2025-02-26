@@ -39,27 +39,30 @@
       <Setter Property="Background">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
       <Setter Property="Foreground">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource ForegroundHighBrush}" />
+            <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
       <Setter Property="BorderBrush">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
-            <Binding Source="{StaticResource ButtonBorderAccentBrush}" />
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
             <Binding Source="{StaticResource ControlBorderRaisedBrush}" />
+            <Binding Source="{StaticResource ButtonBorderAccentBrush}" />
           </MultiBinding>
         </Setter.Value>
       </Setter>
