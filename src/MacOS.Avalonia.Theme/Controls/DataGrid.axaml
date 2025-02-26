@@ -102,15 +102,20 @@
     <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
     <Setter Property="Foreground">
       <Setter.Value>
-        <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-          <MultiBinding Converter="{x:Static BoolConverters.Or}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGridRow}" Path="IsSelected"
-                     Converter="{x:Static BoolConverters.Not}" />
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
-                     Converter="{x:Static BoolConverters.Not}" />
+        <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}" ConverterParameter="Foreground White">
+          <MultiBinding Converter="{x:Static BoolConverters.And}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGridRow}" Path="IsSelected" />
+            <MultiBinding Converter="{x:Static BoolConverters.Or}">
+              <MultiBinding Converter="{StaticResource IsUnsetConverter}">
+                <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" />
+              </MultiBinding>
+              <MultiBinding Converter="{StaticResource IsExplicitlyTrueConverter}">
+                <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive" />
+              </MultiBinding>
+            </MultiBinding>
           </MultiBinding>
-          <Binding Source="{StaticResource ForegroundHighBrush}" />
           <Binding Source="{StaticResource DataGridForegroundSelectedBrush}" />
+          <Binding Source="{StaticResource ForegroundHighBrush}" />
         </MultiBinding>
       </Setter.Value>
     </Setter>
