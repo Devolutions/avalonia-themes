@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <!-- FontFamily should be inherited from Window normally. Adding this for RDM where the views are embedded into the native app without a Window -->
-  <Style Selector="TextBox">
+  <Style Selector="TextBlock">
     <Setter Property="FontFamily" Value="{StaticResource MacOsThemeFontFamily}" />
   </Style>
 
