@@ -7,6 +7,8 @@
   <converters:CharToMacOsPasswordCharConverter x:Key="CharToMacOsPasswordCharConverter" />
   <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
   <converters:BooleanToChoiceConverter x:Key="BooleanToChoiceConverter" />
+  <converters:IsUnsetConverter x:Key="IsUnsetConverter" />
+  <converters:IsExplicitlyTrueConverter x:Key="IsExplicitlyTrueConverter" />
   <converters:ClassToChoiceConverter x:Key="ClassToChoiceConverter" />
   <converters:ColorToCssFillConverter x:Key="ColorToCssFillConverter" />
   <converters:ThicknessToSelectiveThicknessConverter x:Key="ThicknessToSelectiveThicknessConverter" />
