@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: "nuget"
+    directory: "/" # Root directory where the solution file is located
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "nuget"
+    directory: "/src/MacOS.Avalonia.Theme"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "nuget"
+    directory: "/samples/SampleApp"
+    schedule:
+      interval: "daily"
