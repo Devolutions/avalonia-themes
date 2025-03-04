@@ -1,16 +1,23 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
   <Design.PreviewWith>
-    <Border Width="600">
+    <Border Width="600" Background="{DynamicResource LayoutBackgroundLowBrush}">
       <TabControl TabStripPlacement="Top" Margin="5">
-        <TabItem Header="Properties">
-          <TextBlock Text="Horizontal tab view" />
+        <TabItem Header="General">
+          <StackPanel Orientation="Horizontal" Spacing="30">
+            <TextBlock Text="Company" VerticalAlignment="Center" />
+            <TextBox Width="200" VerticalAlignment="Center" />
+          </StackPanel>
         </TabItem>
-        <TabItem Header="Member of">
+        <TabItem Header="Communication">
           <TextBlock Text="Content 2" />
         </TabItem>
-        <TabItem Header="Attributes">
+        <TabItem Header="Contact Details">
           <TextBlock Text="Content 3" />
         </TabItem>
         <TabItem Header="Disabled" IsEnabled="False" />
@@ -18,27 +25,36 @@
     </Border>
   </Design.PreviewWith>
 
-
-  <Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>
-
   <ControlTheme x:Key="{x:Type TabControl}" TargetType="TabControl">
     <Setter Property="Margin" Value="0" />
-    <Setter Property="Padding" Value="{DynamicResource TabItemMargin}" />
-    <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
+    <Setter Property="Padding" Value="25 20" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TabControlBorderBrush}" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Border BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{TemplateBinding CornerRadius}"
-                Background="{TemplateBinding Background}"
-                HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                VerticalAlignment="{TemplateBinding VerticalAlignment}">
+        <Border
+          BorderThickness="{TemplateBinding BorderThickness}"
+          CornerRadius="{TemplateBinding CornerRadius}"
+          Background="Transparent"
+          HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+          VerticalAlignment="{TemplateBinding VerticalAlignment}">
           <DockPanel>
-            <ItemsPresenter Name="PART_ItemsPresenter"
-                            ItemsPanel="{TemplateBinding ItemsPanel}"
-                            DockPanel.Dock="{TemplateBinding TabStripPlacement}" />
+            <Grid DockPanel.Dock="{TemplateBinding TabStripPlacement}"
+                  ColumnDefinitions="Auto, *">
+              <ItemsPresenter Name="PART_ItemsPresenter"
+                              Grid.Column="0"
+                              ItemsPanel="{TemplateBinding ItemsPanel}" />
+              <Border Name="CardBorderBeyondTheTabs"
+                      Grid.Column="1"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Bottom"
+                      BorderBrush="{TemplateBinding BorderBrush}"
+                      BorderThickness="0 0 0 1" />
+            </Grid>
             <ContentPresenter Name="PART_SelectedContentHost"
-                              Margin="{TemplateBinding Padding}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="1 0 1 1"
+                              CornerRadius="0 0 5 5"
+                              Padding="{TemplateBinding Padding}"
                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                               Content="{TemplateBinding SelectedContent}"
@@ -48,14 +64,36 @@
       </ControlTemplate>
     </Setter>
 
-    <Style Selector="^[TabStripPlacement=Left] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
-      <Setter Property="Orientation" Value="Vertical" />
+    <Style Selector="^[TabStripPlacement=Left]">
+      <Style Selector="^ /template/ Border#CardBorderBeyondTheTabs">
+        <Setter Property="BorderThickness" Value="0" />
+      </Style>
+      <Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
+        <Setter Property="Orientation" Value="Vertical" />
+      </Style>
+      <Style Selector="^ /template/ ContentPresenter#PART_SelectedContentHost">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="0 5 5 0" />
+      </Style>
     </Style>
-    <Style Selector="^[TabStripPlacement=Right] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
-      <Setter Property="Orientation" Value="Vertical" />
+
+    <Style Selector="^[TabStripPlacement=Right]">
+      <Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
+        <Setter Property="Orientation" Value="Vertical" />
+      </Style>
+      <Style Selector="^ /template/ Border#CardBorderBeyondTheTabs">
+        <Setter Property="BorderThickness" Value="0" />
+      </Style>
     </Style>
-    <Style Selector="^[TabStripPlacement=Top] /template/ ItemsPresenter#PART_ItemsPresenter">
-      <Setter Property="Margin" Value="{DynamicResource TabControlTopPlacementItemMargin}" />
+
+    <Style Selector="^[TabStripPlacement=Bottom]">
+      <Style Selector="^ /template/ Border#CardBorderBeyondTheTabs">
+        <Setter Property="BorderThickness" Value="0" />
+      </Style>
+      <Style Selector="^ /template/ ContentPresenter#PART_SelectedContentHost">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="5 5 0 0" />
+      </Style>
     </Style>
   </ControlTheme>
 </ResourceDictionary>

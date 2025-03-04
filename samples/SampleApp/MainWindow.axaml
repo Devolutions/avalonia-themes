@@ -3,18 +3,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:demoPages="clr-namespace:SampleApp.DemoPages"
-        xmlns:viewModels="clr-namespace:SampleApp.ViewModels"
         xmlns:experiments="clr-namespace:SampleApp.Experiments"
+        xmlns:vm="clr-namespace:SampleApp.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SampleApp.MainWindow"
-        Title="Devolutions MacOS Theme Sampler"
-        Width="1300"
-        Height="800">
+        Title="Devolutions MacOS Theme Sampler">
 
   <!-- TODO: move the margins into the theme ?? -->
-  <!-- <StackPanel> -->
-  <!--   <Button>Test</Button> -->
-  <!-- </StackPanel> -->
   <Panel Classes="mainControl">
     <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
       <TabItem IsSelected="True">
@@ -38,7 +33,7 @@
       <TabItem Header="DataGrid">
         <demoPages:DataGridDemo>
           <demoPages:DataGridDemo.DataContext>
-            <viewModels:DataGridViewModel />
+            <vm:DataGridViewModel />
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
@@ -54,7 +49,7 @@
       <TabItem Header="ScrollViewer">
         <demoPages:ScrollViewerDemo />
       </TabItem>
-      <TabItem Header="TabControl" IsSelected="True">
+      <TabItem Header="TabControl">
         <demoPages:TabControlDemo />
       </TabItem>
       <TabItem Header="TextBox">
