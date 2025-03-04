@@ -144,8 +144,7 @@
               <MenuItem Header="Custom color!">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/DisableUser.svg"
-                       Css="{Binding Source={StaticResource TestGreen},
-                       Converter={StaticResource ColorToCssFillConverter}, ConverterParameter='.st0'}" />
+                       Css=".st0 {fill : #008800}" />
                 </MenuItem.Icon>
               </MenuItem>
               <MenuItem Header="Add Tags">
