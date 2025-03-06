@@ -30,6 +30,8 @@
 
   <SolidColorBrush x:Key="TabControlBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
   <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
+  <SolidColorBrush x:Key="TabItemBorderSelectedBrush" Color="{StaticResource SystemAccentColor}" />
+
   <Thickness x:Key="TabItemHeaderPadding">10 4</Thickness>
   <Thickness x:Key="FirstTabItemHeaderPadding">6 4 10 4</Thickness>
 
