@@ -1,0 +1,37 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+
+
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <Color x:Key="BackgroundColor">#ffffff</Color>
+      <Color x:Key="ForegroundColor">#000000</Color>
+
+      <Color x:Key="ControlBorderLowColorSolid">#dbdbdb</Color>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="Dark">
+      <Color x:Key="BackgroundColor">#000000</Color>
+      <Color x:Key="ForegroundColor">#ffffff</Color>
+
+      <Color x:Key="ControlBorderLowColorSolid">#454545</Color>
+
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+
+  <FontFamily x:Key="MacOsThemeFontFamily">Segoe UI, SF Pro, Helvetica Neue, Helvetica, Arial, sans-serif</FontFamily>
+  <system:Double x:Key="ControlContentThemeFontSize">13</system:Double>
+
+  <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
+
+  <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
+
+
+  <SolidColorBrush x:Key="TabControlBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
+  <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
+  <Thickness x:Key="TabItemHeaderPadding">10 4</Thickness>
+  <Thickness x:Key="FirstTabItemHeaderPadding">6 4 10 4</Thickness>
+
+
+</ResourceDictionary>

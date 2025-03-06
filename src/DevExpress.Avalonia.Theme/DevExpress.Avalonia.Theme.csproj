@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Version>1.0.0.0</Version>
+        <Company>Devolutions</Company>
+        <Description>Devolutions Avalonia DevExpress Theme</Description>
+        <PackageProjectUrl>https://github.com/Devolutions/avalonia-themes</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.2.3"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.3"/>
+        <PackageReference Include="FluentAvaloniaUI" Version="2.2.0"/>
+    </ItemGroup>
+</Project>
