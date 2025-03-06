@@ -10,14 +10,13 @@
       <TabControl TabStripPlacement="Top" Margin="5">
         <TabItem Header="General">
           <StackPanel Orientation="Horizontal" Spacing="30">
-            <TextBlock Text="Company" VerticalAlignment="Center" />
-            <TextBox Width="200" VerticalAlignment="Center" />
+            <TextBlock Text="Remote Desktop Size" VerticalAlignment="Center" />
           </StackPanel>
         </TabItem>
-        <TabItem Header="Communication">
+        <TabItem Header="Display">
           <TextBlock Text="Content 2" />
         </TabItem>
-        <TabItem Header="Contact Details">
+        <TabItem Header="Local Resources">
           <TextBlock Text="Content 3" />
         </TabItem>
         <TabItem Header="Disabled" IsEnabled="False" />
@@ -27,8 +26,6 @@
 
   <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
     <Setter Property="ClipToBounds" Value="False" />
-    <Setter Property="FontSize" Value="13" />
-    <Setter Property="FontWeight" Value="Regular" />
     <Setter Property="Background" Value="Aqua" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TabControlBorderBrush}" />
@@ -104,6 +101,7 @@
                     BorderBrush="{DynamicResource TabItemBorderSelectedBrush}"
                     BorderThickness="0 2 0 0" />
             <Border Name="CenterContent" Grid.Row="1" Grid.Column="1"
+                    Height="25"
                     Padding="{DynamicResource TabItemHeaderPadding}">
               <Panel>
                 <TextBlock
