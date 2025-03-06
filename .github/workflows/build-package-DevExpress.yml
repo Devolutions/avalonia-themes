@@ -18,7 +18,7 @@ on:
         type: boolean
         default: true
   schedule:
-    - cron: '32 5 * * 1' # 05:32 AM UTC every Monday
+    - cron: '37 5 * * 1' # 05:37 AM UTC every Monday
 
 jobs:
   preflight:
@@ -97,7 +97,7 @@ jobs:
         shell: pwsh
         run: |
           $PackageVersion = '${{ needs.preflight.outputs.package-version }}'
-          $csprojPath = "src\MacOS.Avalonia.Theme\MacOS.Avalonia.Theme.csproj"
+          $csprojPath = "src\DevExpress.Avalonia.Theme\DevExpress.Avalonia.Theme.csproj"
           $csprojContent = Get-Content $csprojPath -Raw
           $csprojContent = $csprojContent -Replace '(<Version>).*?(</Version>)', "<Version>$PackageVersion</Version>"
           Set-Content -Path $csprojPath -Value $csprojContent -Encoding UTF8
@@ -105,7 +105,7 @@ jobs:
       - name: Build nuget package
         shell: pwsh
         run: |
-          & dotnet pack .\src\MacOS.Avalonia.Theme -o package
+          & dotnet pack .\src\DevExpress.Avalonia.Theme -o package
 
       - name: Code sign nuget contents
         shell: pwsh
