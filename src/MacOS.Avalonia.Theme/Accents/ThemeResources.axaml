@@ -234,7 +234,7 @@
   <Thickness x:Key="BorderThickness">1</Thickness>
 
   <x:Double x:Key="ControlFontSize">13</x:Double>
-  <x:Double x:Key="PasswordHiddenFontSize">8</x:Double>
+  <x:Double x:Key="PasswordHiddenFontSize">11</x:Double>
 
   <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
 
