@@ -6,29 +6,29 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <ThemeVariantScope RequestedThemeVariant="Dark">
-      <Border Background="#212121">
-        <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
-          <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
-            <TextBlock>Name:</TextBlock>
-            <TextBox Watermark="Enter your name">MyServer</TextBox>
-            <TextBlock>Password:</TextBlock>
-            <TextBox PasswordChar="*" Watermark="Enter your password" />
-            <TextBlock>Notes:</TextBlock>
-            <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
-            <TextBox InnerLeftContent="http://" />
-            <TextBox InnerRightContent=".com" />
-            <TextBox
-              InnerLeftContent="http://"
-              InnerRightContent=".com" />
-            <TextBox Classes="clearButton">With 'Clear' button</TextBox>
-            <TextBox Watermark="Enter your name" IsEnabled="False" />
-            <TextBox PasswordChar="•" Classes="revealPasswordButton">Reveal Password</TextBox>
-            <TextBox PasswordChar="•" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
-          </StackPanel>
-        </Border>
+    <!-- <ThemeVariantScope RequestedThemeVariant="Dark"> -->
+    <Border Background="#f0f0f0"> 
+      <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+        <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
+          <TextBlock>Name:</TextBlock>
+          <TextBox Watermark="Enter your name">MyServer</TextBox>
+          <TextBlock>Password:</TextBlock>
+          <TextBox PasswordChar="*" Watermark="Enter your password" />
+          <TextBlock>Notes:</TextBlock>
+          <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+          <TextBox InnerLeftContent="http://" />
+          <TextBox InnerRightContent=".com" />
+          <TextBox
+            InnerLeftContent="http://"
+            InnerRightContent=".com" />
+          <TextBox Classes="clearButton">With 'Clear' button</TextBox>
+          <TextBox Watermark="Enter your name" IsEnabled="False" />
+          <TextBox PasswordChar="•" Classes="revealPasswordButton">Reveal Password</TextBox>
+          <TextBox PasswordChar="•" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+        </StackPanel>
       </Border>
-    </ThemeVariantScope>
+    </Border>
+    <!-- </ThemeVariantScope> -->
   </Design.PreviewWith>
 
   <MenuFlyout x:Key="DefaultTextBoxContextFlyout">
