@@ -80,7 +80,16 @@
                     HorizontalAlignment="Right"
                     VerticalAlignment="Stretch"
                     BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="1 0 0 0 " />
+                    BorderThickness="1 0 0 0 ">
+              <Border.IsVisible>
+                <MultiBinding Converter="{StaticResource TabBorderVisibilityConverter}"
+                              ConverterParameter="LeftBorder">
+                  <Binding Path="$parent[TabItem]" />
+                  <Binding Path="$parent[TabControl]" />
+                  <Binding Path="$parent[TabControl].SelectedIndex" />
+                </MultiBinding>
+              </Border.IsVisible>
+            </Border>
             <Border Name="FirstTabLeftBorder"
                     Grid.Row="1" Grid.Column="0"
                     Grid.RowSpan="2"
@@ -128,7 +137,16 @@
                     HorizontalAlignment="Left"
                     VerticalAlignment="Stretch"
                     BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="0 0 1 0 " />
+                    BorderThickness="0 0 1 0 ">
+              <Border.IsVisible>
+                <MultiBinding Converter="{StaticResource TabBorderVisibilityConverter}"
+                              ConverterParameter="RightBorder">
+                  <Binding Path="$parent[TabItem]" />
+                  <Binding Path="$parent[TabControl]" />
+                  <Binding Path="$parent[TabControl].SelectedIndex" />
+                </MultiBinding>
+              </Border.IsVisible>
+            </Border>
             <Border Name="BottomLeftCorner"
                     Grid.Row="2" Grid.Column="0"
                     Width="4"
