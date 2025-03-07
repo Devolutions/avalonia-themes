@@ -37,8 +37,14 @@ public class TabBorderVisibilityConverter : IMultiValueConverter
 
     switch (parameter)
     {
+      case "LeftBorder":
+        return !isFirstTab && (isLeftOfSelectedTab || isSelected);
+        break;
       case "BottomLeftCorner":
         return !isFirstTab && (isLeftOfSelectedTab || isSelected);
+        break;
+      case "RightBorder":
+        return isLastTab || isRightOfSelectedTab || isSelected;
         break;
       case "BottomRightCorner":
         return isLastTab || isRightOfSelectedTab || isSelected;

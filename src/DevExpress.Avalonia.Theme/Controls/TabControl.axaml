@@ -42,12 +42,14 @@
                   ColumnDefinitions="Auto, *">
               <ItemsPresenter Name="PART_ItemsPresenter"
                               Grid.Column="0"
+                              VerticalAlignment="Bottom"
                               ItemsPanel="{TemplateBinding ItemsPanel}" />
               <Border Name="CardBorderBeyondTheTabs"
                       Grid.Column="1"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Bottom"
                       BorderBrush="{TemplateBinding BorderBrush}"
+                      Margin="7 0 0 0"
                       BorderThickness="0 0 0 1" />
             </Grid>
             <ContentPresenter Name="PART_SelectedContentHost"
