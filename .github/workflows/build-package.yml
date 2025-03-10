@@ -18,7 +18,7 @@ on:
         type: boolean
         default: true
   schedule:
-    - cron: '37 5 * * 1' # 05:37 AM UTC every Monday
+    - cron: '32 5 * * 1' # 05:32 AM UTC every Monday
 
 jobs:
   preflight:
@@ -97,40 +97,55 @@ jobs:
         shell: pwsh
         run: |
           $PackageVersion = '${{ needs.preflight.outputs.package-version }}'
-          $csprojPath = "src\DevExpress.Avalonia.Theme\DevExpress.Avalonia.Theme.csproj"
-          $csprojContent = Get-Content $csprojPath -Raw
-          $csprojContent = $csprojContent -Replace '(<Version>).*?(</Version>)', "<Version>$PackageVersion</Version>"
-          Set-Content -Path $csprojPath -Value $csprojContent -Encoding UTF8
+          $ProjectDirs = @(
+            ".\src\MacOS.Avalonia.Theme",
+            ".\src\DevExpress.Avalonia.Theme"
+          )
+          foreach ($ProjectDir in $ProjectDirs) {
+            $csprojPath = (Get-Item "$ProjectDir\*.csproj" | Select-Object -First 1).FullName
+            $csprojContent = Get-Content $csprojPath -Raw
+            $csprojContent = $csprojContent -Replace '(<Version>).*?(</Version>)', "<Version>$PackageVersion</Version>"
+            Set-Content -Path $csprojPath -Value $csprojContent -Encoding UTF8
+          }
 
-      - name: Build nuget package
+      - name: Build nuget packages
         shell: pwsh
         run: |
-          & dotnet pack .\src\DevExpress.Avalonia.Theme -o package
+          $ProjectDirs = @(
+            ".\src\MacOS.Avalonia.Theme",
+            ".\src\DevExpress.Avalonia.Theme"
+          )
+          foreach ($ProjectDir in $ProjectDirs) {
+            & dotnet pack $ProjectDir -o package
+          }
 
       - name: Code sign nuget contents
         shell: pwsh
         run: |
           Set-PSDebug -Trace 1
-          $NugetBaseName = $(Get-Item ./package/*.nupkg).BaseName
-          $PackedFile = "./package/${NugetBaseName}.nupkg"
-          $UnpackedDir = "./package/${NugetBaseName}"
-          $OutputDirectory = $(Get-Item $PackedFile).Directory.FullName
-          Expand-Archive -Path $PackedFile -Destination $UnpackedDir -Force
-          $Params = @('sign',
-            '-kvt', '${{ secrets.AZURE_TENANT_ID }}',
-            '-kvu', '${{ secrets.CODE_SIGNING_KEYVAULT_URL }}',
-            '-kvi', '${{ secrets.CODE_SIGNING_CLIENT_ID }}',
-            '-kvs', '${{ secrets.CODE_SIGNING_CLIENT_SECRET }}',
-            '-kvc', '${{ secrets.CODE_SIGNING_CERTIFICATE_NAME }}',
-            '-tr', '${{ vars.CODE_SIGNING_TIMESTAMP_SERVER }}',
-            '-v')
-          Get-ChildItem "$UnpackedDir\lib" -Include @("*.dll") -Recurse | ForEach-Object {
-            AzureSignTool @Params $_.FullName
+          $NugetPackages = Get-Item ./package/*.nupkg
+          foreach ($Package in $NugetPackages) {
+            $NugetBaseName = $Package.BaseName
+            $PackedFile = $Package.FullName
+            $UnpackedDir = "./package/${NugetBaseName}"
+            $OutputDirectory = $Package.Directory.FullName
+            Expand-Archive -Path $PackedFile -Destination $UnpackedDir -Force
+            $Params = @('sign',
+              '-kvt', '${{ secrets.AZURE_TENANT_ID }}',
+              '-kvu', '${{ secrets.CODE_SIGNING_KEYVAULT_URL }}',
+              '-kvi', '${{ secrets.CODE_SIGNING_CLIENT_ID }}',
+              '-kvs', '${{ secrets.CODE_SIGNING_CLIENT_SECRET }}',
+              '-kvc', '${{ secrets.CODE_SIGNING_CERTIFICATE_NAME }}',
+              '-tr', '${{ vars.CODE_SIGNING_TIMESTAMP_SERVER }}',
+              '-v')
+            Get-ChildItem "$UnpackedDir\lib" -Include @("*.dll") -Recurse | ForEach-Object {
+              AzureSignTool @Params $_.FullName
+            }
+            Remove-Item $PackedFile -ErrorAction SilentlyContinue | Out-Null
+            Compress-Archive -Path "$UnpackedDir\*" -Destination $PackedFile -CompressionLevel Optimal
           }
-          Remove-Item $PackedFile -ErrorAction SilentlyContinue | Out-Null
-          Compress-Archive -Path "$UnpackedDir\*" -Destination $PackedFile -CompressionLevel Optimal
-
-      - name: Upload nuget package
+  
+      - name: Upload nuget packages
         uses: actions/upload-artifact@v4.3.6
         with:
           name: package-nupkg
@@ -156,17 +171,19 @@ jobs:
           $DryRun = [System.Boolean]::Parse('${{ needs.preflight.outputs.dry-run }}')
           $NugetPackage = (Get-Item ./package/*.nupkg) | Resolve-Path -Relative
 
-          $PushArgs = @(
-            'nuget', 'push', "$NugetPackage",
-            '--api-key', '${{ secrets.NUGET_API_KEY }}',
-            '--source', 'https://api.nuget.org/v3/index.json',
-            '--skip-duplicate', '--no-symbols'
-          )
-          Write-Host "dotnet $($PushArgs -Join ' ')"
-          if ($DryRun) {
-            Write-Host "Dry Run: skipping nuget.org publishing!"
-          } else {
-            & 'dotnet' $PushArgs
+          foreach ($NugetPackage in $NugetPackages) {
+            $PushArgs = @(
+              'nuget', 'push', "$NugetPackage",
+              '--api-key', '${{ secrets.NUGET_API_KEY }}',
+              '--source', 'https://api.nuget.org/v3/index.json',
+              '--skip-duplicate', '--no-symbols'
+            )
+            Write-Host "dotnet $($PushArgs -Join ' ')"
+            if ($DryRun) {
+              Write-Host "Dry Run: skipping nuget.org publishing!"
+            } else {
+              & 'dotnet' $PushArgs
+            }
           }
 
       - name: Create GitHub release
