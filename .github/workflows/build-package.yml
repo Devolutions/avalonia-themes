@@ -7,6 +7,14 @@ on:
         description: 'release version'
         default: "latest"
         required: true
+      target-package:
+        type: choice
+        description: target package to build
+        required: true
+        options:
+          - all
+          - MacOS
+          - DevExpress
       skip-publish:
         description: 'Skip publishing'
         required: true
@@ -27,6 +35,7 @@ jobs:
     outputs:
       package-env: ${{ steps.info.outputs.package-env }}
       package-version: ${{ steps.info.outputs.package-version }}
+      package-list: ${{ steps.info.outputs.package-list }}
       skip-publish: ${{ steps.info.outputs.skip-publish }}
       dry-run: ${{ steps.info.outputs.dry-run }}
 
@@ -60,8 +69,16 @@ jobs:
             throw "invalid version format: $PackageVersion, expected: 1.2.3.4"
           }
 
+          $TargetPackage = '${{ inputs.target-package }}'
+          if ([string]::IsNullOrEmpty($TargetPackage) -or $TargetPackage -eq 'all') {
+            $PackageList = "MacOS,DevExpress"
+          } else {
+            $PackageList = $TargetPackage
+          }
+
           echo "package-env=$PackageEnv" >> $Env:GITHUB_OUTPUT
           echo "package-version=$PackageVersion" >> $Env:GITHUB_OUTPUT
+          echo "package-list=$PackageList" >> $Env:GITHUB_OUTPUT
           echo "skip-publish=$($SkipPublish.ToString().ToLower())" >> $Env:GITHUB_OUTPUT
           echo "dry-run=$($DryRun.ToString().ToLower())" >> $Env:GITHUB_OUTPUT
 
@@ -97,10 +114,8 @@ jobs:
         shell: pwsh
         run: |
           $PackageVersion = '${{ needs.preflight.outputs.package-version }}'
-          $ProjectDirs = @(
-            ".\src\MacOS.Avalonia.Theme",
-            ".\src\DevExpress.Avalonia.Theme"
-          )
+          $PackageList = '${{ needs.preflight.outputs.package-list }}'
+          $ProjectDirs = @($PackageList -Split ',' | ForEach-Object { ".\src\$_.Avalonia.Theme" })
           foreach ($ProjectDir in $ProjectDirs) {
             $csprojPath = (Get-Item "$ProjectDir\*.csproj" | Select-Object -First 1).FullName
             $csprojContent = Get-Content $csprojPath -Raw
@@ -111,10 +126,8 @@ jobs:
       - name: Build nuget packages
         shell: pwsh
         run: |
-          $ProjectDirs = @(
-            ".\src\MacOS.Avalonia.Theme",
-            ".\src\DevExpress.Avalonia.Theme"
-          )
+          $PackageList = '${{ needs.preflight.outputs.package-list }}'
+          $ProjectDirs = @($PackageList -Split ',' | ForEach-Object { ".\src\$_.Avalonia.Theme" })
           foreach ($ProjectDir in $ProjectDirs) {
             & dotnet pack $ProjectDir -o package
           }
@@ -122,7 +135,6 @@ jobs:
       - name: Code sign nuget contents
         shell: pwsh
         run: |
-          Set-PSDebug -Trace 1
           $NugetPackages = Get-Item ./package/*.nupkg
           foreach ($Package in $NugetPackages) {
             $NugetBaseName = $Package.BaseName
@@ -184,31 +196,4 @@ jobs:
             } else {
               & 'dotnet' $PushArgs
             }
-          }
-
-      - name: Create GitHub release
-        shell: pwsh
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        working-directory: package
-        run: |
-          $PackageVersion = '${{ needs.preflight.outputs.package-version }}'
-          $DryRun = [System.Boolean]::Parse('${{ needs.preflight.outputs.dry-run }}')
-
-          $HashPath = 'checksums'
-          $Files = Get-Item * | % { Get-FileHash -Algorithm SHA256 $_.FullName }
-          $Files | % { "$($_.Hash)  $(Split-Path $_.Path -Leaf)" } | Out-File -FilePath $HashPath -Append -Encoding ASCII
-
-          echo "::group::checksums"
-          Get-Content $HashPath
-          echo "::endgroup::"
-
-          $ReleaseTag = "v$PackageVersion"
-          $ReleaseTitle = "Devolutions Avalonia Themes v${PackageVersion}"
-          $Repository = $Env:GITHUB_REPOSITORY
-
-          if ($DryRun) {
-            Write-Host "Dry Run: skipping GitHub release!"
-          } else {
-            & gh release create $ReleaseTag --repo $Repository --title $ReleaseTitle ./*
           }
