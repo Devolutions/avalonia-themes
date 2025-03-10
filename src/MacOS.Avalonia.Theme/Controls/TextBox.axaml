@@ -11,7 +11,7 @@
       <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
         <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
           <TextBlock>Name:</TextBlock>
-          <TextBox Watermark="Enter your name">MyServer</TextBox>
+          <TextBox Watermark="Enter your name">Anna</TextBox>
           <TextBlock>Password:</TextBlock>
           <TextBox PasswordChar="*" Watermark="Enter your password" />
           <TextBlock>Notes:</TextBlock>
@@ -120,13 +120,15 @@
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
-          <Panel>
+          <Border Padding="3">
+            <Panel>
             <Border Name="PART_BorderElement"
                     Height="{TemplateBinding Height}"
                     BorderThickness="1"
                     BorderBrush="Transparent"
                     BoxShadow="{DynamicResource TextBoxBorderShadows}"
-                    Background="{TemplateBinding Background}">
+                    Background="{TemplateBinding Background}"
+                    Padding="2 0 2 0 ">
               <Grid ColumnDefinitions="Auto,*,Auto">
                 <ContentPresenter Name="PrefixContent"
                                   Grid.Column="0"
@@ -207,9 +209,11 @@
             </Border>
             <Border Name="FocusBorderElement"
                     Height="{TemplateBinding Height}"
+                    Margin="-3"
                     BorderThickness="3"
                     CornerRadius="3" />
-          </Panel>
+            </Panel>
+          </Border>
         </DataValidationErrors>
       </ControlTemplate>
     </Setter>
