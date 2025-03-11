@@ -1,6 +1,5 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
   <ResourceDictionary.ThemeDictionaries>
@@ -8,14 +7,23 @@
       <Color x:Key="BackgroundColor">#ffffff</Color>
       <Color x:Key="ForegroundColor">#000000</Color>
 
-      <Color x:Key="ControlBorderLowColorSolid">#dbdbdb</Color>
+      <Color x:Key="ControlBorderLowColorSolid">#e7e7e7</Color>
+      <Color x:Key="ControlBorderMidColorSolid">#dbdbdb</Color>
+
+      <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
+
     </ResourceDictionary>
 
+    <!-- TODO: Darkmode colours just roughly -->
     <ResourceDictionary x:Key="Dark">
       <Color x:Key="BackgroundColor">#000000</Color>
       <Color x:Key="ForegroundColor">#ffffff</Color>
 
-      <Color x:Key="ControlBorderLowColorSolid">#454545</Color>
+      <Color x:Key="ControlBorderLowColorSolid">#343434</Color>
+      <Color x:Key="ControlBorderMidColorSolid">#454545</Color>
+
+      <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
+
 
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
@@ -23,15 +31,24 @@
 
   <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
   <x:Double x:Key="ControlFontSize">12</x:Double>
+  <x:Double x:Key="PasswordHiddenFontSize">10</x:Double>
+
 
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
+  <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
 
   <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
 
 
-  <SolidColorBrush x:Key="TabControlBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
+  <SolidColorBrush x:Key="TabControlBorderBrush" Color="{DynamicResource ControlBorderMidColorSolid}" />
   <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
   <SolidColorBrush x:Key="TabItemBorderSelectedBrush" Color="{StaticResource SystemAccentColor}" />
+
+  <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
+  <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="#a8a8a8" />
+  <SolidColorBrush x:Key="TextBoxBottomBorderSelectedBrush" Color="{StaticResource SystemAccentColor}" />
+  <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
 
   <Thickness x:Key="TabItemHeaderPadding">4 0</Thickness>
   <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
