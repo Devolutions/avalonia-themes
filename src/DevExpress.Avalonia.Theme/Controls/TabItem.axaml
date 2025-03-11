@@ -115,6 +115,7 @@
               <Panel>
                 <TextBlock
                   Name="ReserveWidthForSelectedTabText"
+                  FontFamily="{TemplateBinding FontFamily}"
                   FontSize="13"
                   FontWeight="Bold"
                   Foreground="Transparent"
@@ -124,7 +125,8 @@
                   Text="{TemplateBinding Header}" />
                 <ContentPresenter
                   Name="PART_ContentPresenter"
-                  FontSize="12"
+                  FontFamily="{TemplateBinding FontFamily}"
+                  FontSize="{StaticResource ControlFontSize}"
                   HorizontalAlignment="Left"
                   VerticalAlignment="Center"
                   Content="{TemplateBinding Header}"

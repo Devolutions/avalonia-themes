@@ -4,5 +4,7 @@
   <ResourceDictionary.MergedDictionaries>
     <MergeResourceInclude Source="TabControl.axaml" />
     <MergeResourceInclude Source="TabItem.axaml" />
+    <MergeResourceInclude Source="TextBox.axaml" />
+    <MergeResourceInclude Source="Window.axaml" />
   </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

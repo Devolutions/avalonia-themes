@@ -20,8 +20,9 @@
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
-  <FontFamily x:Key="MacOsThemeFontFamily">Segoe UI, SF Pro, Helvetica Neue, Helvetica, Arial, sans-serif</FontFamily>
-  <system:Double x:Key="ControlContentThemeFontSize">13</system:Double>
+
+  <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
+  <x:Double x:Key="ControlFontSize">12</x:Double>
 
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
 
