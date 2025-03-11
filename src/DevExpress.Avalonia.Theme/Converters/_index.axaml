@@ -2,5 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:DevExpress.Avalonia.Theme.Converters">
 
+  <converters:CharToDevExpressPasswordCharConverter x:Key="CharToDevExpressPasswordCharConverter" />
+  <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
   <converters:TabBorderVisibilityConverter x:Key="TabBorderVisibilityConverter" />
 </ResourceDictionary>

@@ -14,4 +14,7 @@
 
   <!-- Using Fluent Theme as a fallback for anything not defined in DevExpress theme -->
   <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" />
+
+  <!-- Themed Controls -->
+  <StyleInclude Source="/Accents/Styles.axaml" />
 </Styles>
