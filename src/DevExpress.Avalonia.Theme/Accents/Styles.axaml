@@ -5,5 +5,4 @@
   <Style Selector="TextBlock">
     <Setter Property="FontFamily" Value="{StaticResource DevExpressThemeFontFamily}" />
   </Style>
-
 </Styles>

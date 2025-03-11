@@ -28,6 +28,7 @@
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
+  <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
 
   <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
   <x:Double x:Key="ControlFontSize">12</x:Double>
@@ -39,7 +40,6 @@
 
   <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
 
-
   <SolidColorBrush x:Key="TabControlBorderBrush" Color="{DynamicResource ControlBorderMidColorSolid}" />
   <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
   <SolidColorBrush x:Key="TabItemBorderSelectedBrush" Color="{StaticResource SystemAccentColor}" />
@@ -49,6 +49,11 @@
   <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="#a8a8a8" />
   <SolidColorBrush x:Key="TextBoxBottomBorderSelectedBrush" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
+
+  <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+  <SolidColorBrush x:Key="ComboBoxItemSelectedBackgroundBrush" Color="{StaticResource SystemAccentColor}"
+                   Opacity="0.07" />
+  <SolidColorBrush x:Key="ComboBoxItemSelectedBorderBrush" Color="{StaticResource SystemAccentColor}" />
 
   <Thickness x:Key="TabItemHeaderPadding">4 0</Thickness>
   <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
