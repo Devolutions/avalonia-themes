@@ -26,6 +26,7 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type TabControl}" TargetType="TabControl">
+    <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="Margin" Value="0" />
     <Setter Property="Padding" Value="25 20" />
     <Setter Property="BorderBrush" Value="{DynamicResource TabControlBorderBrush}" />
@@ -53,6 +54,7 @@
                       BorderThickness="0 0 0 1" />
             </Grid>
             <ContentPresenter Name="PART_SelectedContentHost"
+                              FontSize="{TemplateBinding FontSize}"
                               BorderBrush="{TemplateBinding BorderBrush}"
                               BorderThickness="1 0 1 1"
                               CornerRadius="0 0 1 1"

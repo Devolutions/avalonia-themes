@@ -4,7 +4,6 @@
   <!-- FontFamily should be inherited from Window normally. Adding this for RDM where the views are embedded into the native app without a Window -->
   <Style Selector="TextBlock">
     <Setter Property="FontFamily" Value="{StaticResource DevExpressThemeFontFamily}" />
-    <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
   </Style>
 
 </Styles>
