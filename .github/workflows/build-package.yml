@@ -181,7 +181,7 @@ jobs:
         shell: pwsh
         run: |
           $DryRun = [System.Boolean]::Parse('${{ needs.preflight.outputs.dry-run }}')
-          $NugetPackage = (Get-Item ./package/*.nupkg) | Resolve-Path -Relative
+          $NugetPackages = (Get-Item ./package/*.nupkg) | Resolve-Path -Relative
 
           foreach ($NugetPackage in $NugetPackages) {
             $PushArgs = @(
