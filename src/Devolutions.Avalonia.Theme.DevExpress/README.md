@@ -3,9 +3,9 @@
 Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-<!-- [![Build Status](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml/badge.svg?branch=master)](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml)
+[![Build Status](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml/badge.svg?branch=master)](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml)
 [![NuGet Version](https://img.shields.io/nuget/vpre/DevExpress.Avalonia.Theme)](https://www.nuget.org/packages/DevExpress.Avalonia.Theme)
-![NuGet Downloads](https://img.shields.io/nuget/dt/DevExpress.Avalonia.Theme) -->
+![NuGet Downloads](https://img.shields.io/nuget/dt/DevExpress.Avalonia.Theme)
 
 
 ## DevExpress Theme [Work in Progress]
@@ -19,15 +19,15 @@ While we are prioritizing controls for [Devolutions Remote Desktop Manager](http
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
   - ✅ Available in the current build
+    - [ComboBox](#combobox)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
-    - Dark mode support
+    - [TextBox](#textbox)
   - 🚧 In progress ...
-    - small improvements & fixes, some code cleanup
+    - Dark mode support
   - 🔮 Next on the road map ...
-    - TextBox
-    - ComboBox
     - Buttons
+    - ScrollViewer/ScrollBar
     
 
 
@@ -78,10 +78,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>CheckBox</h3> ||
 ||||
-|| <h3>ComboBox</h3> ||
-||||
-|| <h3>ComboBoxItem</h3> ||
-||||
+|✅ | <h3>ComboBox</h3> <h4>ComboBoxItem</h4> ||
+|| <img src="https://github.com/user-attachments/assets/f0e107c0-a4b2-4eec-bc0b-789e0f90cad6" alt="ComboBox demo" max-width="232"> ||
 || <h3>ContextMenu</h3> ||
 ||||
 || <h3>DataGrid</h3> ||
@@ -146,7 +144,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>RepeatButton</h3> ||
 ||||
-|| <h3>ScrollViewer</h3> <h3>ScrollBar</h3> ||
+|| <h3>ScrollViewer</h3> <h4>ScrollBar</h4> ||
 ||||
 || <h3>SelectableTextBlock</h3> ||
 ||||
@@ -159,13 +157,13 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>SplitView</h3> ||
 ||||
 |✅ | <h3>TabControl</h3> <h4>TabItem<h4> ||
-|| <img src="https://github.com/user-attachments/assets/21864dbb-1058-4656-99dd-c24fde76d4e4" alt="Buttons demo" max-width="198"> ||
+|| <img src="https://github.com/user-attachments/assets/21864dbb-1058-4656-99dd-c24fde76d4e4" alt="TabControl demo" max-width="198"> ||
 || <h3>TabStrip</h3> ||
 ||||
 || <h3>TabStripItem</h3> ||
 ||||
-|| <h3>TextBox</h3> ||
-||||
+|✅ | <h3>TextBox</h3> ||
+|| <img src="https://github.com/user-attachments/assets/9eab4003-be77-488e-9a58-f3ad38e3fe39"  alt="TextBox demo" max-width="322"> ||
 || <h3>TextSelectionHandle</h3> ||
 ||||
 || <h3>ThemeVariantScope</h3> ||
