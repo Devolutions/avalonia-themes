@@ -70,7 +70,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="Button">
-          <ContentPresenter x:Name="PART_ContentPresenter"
+          <ContentPresenter Name="PART_ContentPresenter"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
@@ -97,7 +97,7 @@
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="ToggleButton">
-          <ContentPresenter x:Name="PART_ContentPresenter"
+          <ContentPresenter Name="PART_ContentPresenter"
                             Background="{TemplateBinding Background}"
                             Content="{TemplateBinding Content}"
                             Padding="{TemplateBinding Padding}" />
@@ -157,7 +157,7 @@
                 <ContentPresenter Grid.Column="0"
                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                   Content="{TemplateBinding InnerLeftContent}" />
-                <DockPanel x:Name="PART_InnerDockPanel"
+                <DockPanel Name="PART_InnerDockPanel"
                            Grid.Column="1">
                   <TextBlock Name="PART_FloatingWatermark"
                              Foreground="{DynamicResource SystemAccentColor}"
