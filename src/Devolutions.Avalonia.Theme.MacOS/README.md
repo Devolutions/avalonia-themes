@@ -25,6 +25,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
 - [Styled Controls](#styled-controls)
   - ✅ Available in the current build
     - [Button](#button)
+    - [ButtonSpinner](#buttonspinner)
     - [CheckBox](#checkbox)
     - [ComboBox](#combobox)
       - [ComboBoxItem](#comboboxitem)
@@ -34,6 +35,8 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [Menu](#menu)
     - [MenuFlyoutPresenter](#menuflyoutpresenter)
     - [MenuItem](#menuitem)
+    - [NumericUpDown](#numericupdown)
+      - [ButtonSpinner](#buttonspinner)
     - [ScrollViewer](#scrollviewer)
       - [ScrollBar](#scrollbar)
     - [Separator](#separator) 
@@ -48,7 +51,6 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
   - 🚧 In progress ...
     - small improvements & fixes, some code cleanup
   - 🔮 Next on the road map ...
-    - NumericUpDown
     - AutoCompleteBox
     
 
@@ -82,8 +84,6 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 |✅ | <h3>Button</h3> ||
 || <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons demo" max-width="300"> ||
-|| <h3>ButtonSpinner</h3> ||
-||||
 || <h3>Calendar</h3> ||
 ||||
 || <h3>CalendarButton</h3> ||
@@ -150,8 +150,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>NotificationCard</h3> ||
 ||||
-|| <h3>NumericUpDown</h3> ||
-||||
+|| <h3>NumericUpDown</h3> <h3>ButtonSpinner</h3> ||
+|| <img src="https://github.com/user-attachments/assets/a58375d7-1987-4182-b7f2-03f2bf499193" alt="NumericUpDown demo" max-width="170"> ||
 || <h3>OverlayPopupHost</h3> ||
 ||||
 || <h3>PathIcon</h3> ||
