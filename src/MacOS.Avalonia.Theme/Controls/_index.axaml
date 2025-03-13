@@ -3,6 +3,7 @@
 
   <ResourceDictionary.MergedDictionaries>
     <MergeResourceInclude Source="Button.axaml" />
+    <MergeResourceInclude Source="ButtonSpinner.axaml" />
     <MergeResourceInclude Source="CheckBox.axaml" />
     <MergeResourceInclude Source="ComboBox.axaml" />
     <MergeResourceInclude Source="ComboBoxItem.axaml" />
@@ -12,6 +13,7 @@
     <MergeResourceInclude Source="Menu.axaml" />
     <MergeResourceInclude Source="MenuFlyoutPresenter.axaml" />
     <MergeResourceInclude Source="MenuItem.axaml" />
+    <MergeResourceInclude Source="NumericUpDown.axaml" />
     <MergeResourceInclude Source="ScrollBar.axaml" />
     <MergeResourceInclude Source="ScrollViewer.axaml" />
     <MergeResourceInclude Source="Separator.axaml" />

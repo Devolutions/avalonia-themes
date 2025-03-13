@@ -1,0 +1,178 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="using:System">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <StackPanel Spacing="20" Width="100">
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Increment="1"
+                       Watermark="Days" />
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Increment="0.5"
+                       Value="10" />
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Value="5"
+                       Increment="0.5"
+                       IsEnabled="False" />
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Value="5"
+                       Increment="0.5"
+                       IsReadOnly="True" />
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Increment="0.5"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"
+                       ButtonSpinnerLocation="Left"
+                       Watermark="Enter text" />
+        <NumericUpDown ButtonSpinnerLocation="Right">
+          <NumericUpDown.InnerLeftContent>
+            <Button Content="X" />
+          </NumericUpDown.InnerLeftContent>
+          <NumericUpDown.InnerRightContent>
+            <TextBlock Text="m"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center" />
+          </NumericUpDown.InnerRightContent>
+        </NumericUpDown>
+        <NumericUpDown>
+          <DataValidationErrors.Error>
+            <sys:Exception>
+              <x:Arguments>
+                <x:String>Error</x:String>
+              </x:Arguments>
+            </sys:Exception>
+          </DataValidationErrors.Error>
+        </NumericUpDown>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <ControlTheme x:Key="FluentButtonSpinnerRepeatButton" TargetType="RepeatButton">
+    <Setter Property="MinWidth" Value="14" />
+    <Setter Property="MinHeight" Value="10" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter x:Name="PART_ContentPresenter"
+                          Foreground="{TemplateBinding Foreground}"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          CornerRadius="{TemplateBinding CornerRadius}"
+                          Content="{TemplateBinding Content}"
+                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                          Padding="0"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center" />
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    <Setter Property="Padding" Value=" 0" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors>
+          <Border Background="Transparent"
+                  MinHeight="{TemplateBinding MinHeight}">
+            <DockPanel>
+              <StackPanel Name="PART_SpinnerPanel"
+                          TabIndex="2"
+                          DockPanel.Dock="Right"
+                          VerticalAlignment="Center"
+                          IsVisible="{TemplateBinding ShowButtonSpinner}">
+                <RepeatButton Name="PART_IncreaseButton"
+                              IsTabStop="{TemplateBinding IsTabStop}"
+                              Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
+                              Background="{DynamicResource BackgroundBrush}"
+                              BorderBrush="{DynamicResource ControlBorderRaisedBrush}"
+                              BorderThickness="{DynamicResource ButtonBorderThickness}"
+                              CornerRadius="5 5 0 0"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              VerticalContentAlignment="Center"
+                              HorizontalContentAlignment="Center">
+                  <Path Width="9"
+                        Height="4.5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="{DynamicResource ChevronPath}"
+                        Stretch="Uniform"
+                        Fill="{TemplateBinding Foreground}">
+                    <Path.RenderTransform>
+                      <TranslateTransform X="1" />
+                    </Path.RenderTransform>
+                  </Path>
+                </RepeatButton>
+
+                <RepeatButton Name="PART_DecreaseButton"
+                              IsTabStop="{TemplateBinding IsTabStop}"
+                              Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
+                              Background="{DynamicResource BackgroundBrush}"
+                              BorderBrush="{DynamicResource ControlBorderRaisedBrush}"
+                              BorderThickness="{DynamicResource ButtonBorderThickness}"
+                              CornerRadius="0 0 5 5"
+                              VerticalAlignment="Center"
+                              VerticalContentAlignment="Center">
+                  <Path Width="9"
+                        Height="4.5"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="{DynamicResource ChevronPath}"
+                        Stretch="Uniform"
+                        Fill="{TemplateBinding Foreground}">
+                    <Path.RenderTransform>
+                      <TransformGroup>
+                        <ScaleTransform ScaleY="-1" />
+                        <TranslateTransform X="1" />
+                      </TransformGroup>
+                    </Path.RenderTransform>
+                  </Path>
+                </RepeatButton>
+              </StackPanel>
+
+              <ContentPresenter Name="PART_ContentPresenter"
+                                TabIndex="1"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Content="{TemplateBinding Content}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Padding="{TemplateBinding Padding}" />
+            </DockPanel>
+          </Border>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^ /template/ StackPanel#PART_SpinnerPanel RepeatButton#PART_IncreaseButton:disabled Path">
+      <Setter Property="Fill" Value="{DynamicResource ControlBorderHighColor}" />
+    </Style>
+    <Style Selector="^ /template/ StackPanel#PART_SpinnerPanel RepeatButton#PART_DecreaseButton:disabled Path">
+      <Setter Property="Fill" Value="{DynamicResource ControlBorderHighColor}" />
+    </Style>
+
+    <Style Selector="^:left">
+      <Style Selector="^ /template/ StackPanel#PART_SpinnerPanel">
+        <Setter Property="DockPanel.Dock" Value="Left" />
+      </Style>
+    </Style>
+
+  </ControlTheme>
+</ResourceDictionary>
