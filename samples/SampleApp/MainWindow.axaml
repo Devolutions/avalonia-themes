@@ -46,6 +46,9 @@
       <TabItem Header="MenuFlyout">
         <demoPages:MenuFlyoutDemo />
       </TabItem>
+      <TabItem Header="NumericUpDown" IsSelected="True">
+        <demoPages:NumericUpDownDemo />
+      </TabItem>
       <TabItem Header="ScrollViewer">
         <demoPages:ScrollViewerDemo />
       </TabItem>
