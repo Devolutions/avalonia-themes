@@ -1,12 +1,43 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="140" d:DesignHeight="150"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
              x:Class="SampleApp.DemoPages.NumericUpDownDemo">
 
-  <StackPanel Margin="20" Width="120">
-    <TextBlock Margin="0 5">Number of items:</TextBlock>
-    <NumericUpDown Value="10" />
-  </StackPanel>
+  <Border Padding="20">
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
+          ColumnDefinitions="Auto, 60"
+          HorizontalAlignment="Left">
+      <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="12">Watermark:</TextBlock>
+      <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="12">0 - 10 only:</TextBlock>
+      <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="12">Disabled:</TextBlock>
+      <TextBlock Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" Margin="12">Read-only:</TextBlock>
+      <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" Margin="12 5 12 12">Error:</TextBlock>
+      <NumericUpDown Grid.Row="0" Grid.Column="1"
+                     Increment="1"
+                     Watermark="Days" />
+      <NumericUpDown Grid.Row="1" Grid.Column="1" Minimum="0"
+                     Maximum="10"
+                     Increment="0.5"
+                     Value="10" />
+      <NumericUpDown Grid.Row="2" Grid.Column="1" Minimum="0"
+                     Maximum="10"
+                     Value="5"
+                     Increment="0.5"
+                     IsEnabled="False" />
+      <NumericUpDown Grid.Row="3" Grid.Column="1" Minimum="0"
+                     Maximum="10"
+                     Value="5"
+                     Increment="0.5"
+                     IsReadOnly="True" />
+      <NumericUpDown Grid.Row="4" Grid.Column="1">
+        <DataValidationErrors.Error>
+          <system:Exception>
+            <x:Arguments>
+              <x:String>Error</x:String>
+            </x:Arguments>
+          </system:Exception>
+        </DataValidationErrors.Error>
+      </NumericUpDown>
+    </Grid>
+  </Border>
 </UserControl>

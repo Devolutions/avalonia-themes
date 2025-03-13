@@ -97,6 +97,8 @@
   <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
     <Setter Property="CaretBrush" Value="{DynamicResource SystemAccentColor}" />
     <Setter Property="FontSize">
       <Setter.Value>
@@ -111,7 +113,7 @@
     <Setter Property="SelectionBrush" Value="{DynamicResource TextBoxSelectionHighlightBrush}" />
     <!-- <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" /> TODO: make this a style? Class: rounded true/false -->
     <Setter Property="MinHeight" Value="27" />
-    <Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
+    <Setter Property="MinWidth" Value="27" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
