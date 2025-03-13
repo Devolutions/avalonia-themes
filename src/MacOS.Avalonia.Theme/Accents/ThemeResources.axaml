@@ -22,6 +22,7 @@
       <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
       <Color x:Key="TextBoxBackgroundColor">#ffffff</Color>
       <Color x:Key="TextBoxClearButtonBackgroundColor">#808080</Color>
+      <Color x:Key="ButtonSpinnerButtonPressedColor">#e9e9e9</Color>
 
       <Color x:Key="ScrollBarTrackColor">#fbfbfb</Color>
       <Color x:Key="ScrollBarTrackBorderColor">#d6d6d6</Color>
@@ -121,6 +122,7 @@
       <Color x:Key="PopupBackgroundColor">#262626</Color>
       <Color x:Key="TextBoxBackgroundColor">#2c2c2c</Color>
       <Color x:Key="TextBoxClearButtonBackgroundColor">#7F7F7F</Color>
+      <Color x:Key="ButtonSpinnerButtonPressedColor">#808080</Color>
 
       <Color x:Key="ScrollBarTrackColor">#2c2c2c</Color>
       <Color x:Key="ScrollBarTrackBorderColor">#3f3f3f</Color>
@@ -391,6 +393,9 @@
   <CornerRadius x:Key="ToolTipCornerRadius">0 0 1 0</CornerRadius>
   <Thickness x:Key="ToolTipPadding">5 2 4 2</Thickness>
   <x:Double x:Key="ToolTipFontSize">11</x:Double>
+
+  <!-- ButtonSpinner Resources -->
+  <SolidColorBrush x:Key="ButtonSpinnerButtonPressedBrush" Color="{DynamicResource ButtonSpinnerButtonPressedColor}" />
 
 
   <!-- DEVELOPMENT ONLY -->

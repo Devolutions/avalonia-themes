@@ -77,7 +77,7 @@
     </Setter>
 
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
+      <Setter Property="Background" Value="{DynamicResource ButtonSpinnerButtonPressedBrush}" />
     </Style>
   </ControlTheme>
 
@@ -101,7 +101,7 @@
                 <RepeatButton Name="PART_IncreaseButton"
                               IsTabStop="{TemplateBinding IsTabStop}"
                               Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
-                              Background="{DynamicResource BackgroundBrush}"
+                              Background="{DynamicResource ControlBackgroundHighColor}"
                               BorderBrush="{DynamicResource ControlBorderRaisedBrush}"
                               BorderThickness="{DynamicResource ButtonBorderThickness}"
                               CornerRadius="5 5 0 0"
@@ -125,7 +125,7 @@
                 <RepeatButton Name="PART_DecreaseButton"
                               IsTabStop="{TemplateBinding IsTabStop}"
                               Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
-                              Background="{DynamicResource BackgroundBrush}"
+                              Background="{DynamicResource ControlBackgroundHighColor}"
                               BorderBrush="{DynamicResource ControlBorderRaisedBrush}"
                               BorderThickness="{DynamicResource ButtonBorderThickness}"
                               CornerRadius="0 0 5 5"
