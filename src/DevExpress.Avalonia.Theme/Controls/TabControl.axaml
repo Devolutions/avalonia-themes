@@ -29,7 +29,7 @@
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="Margin" Value="0" />
     <Setter Property="Padding" Value="25 20" />
-    <Setter Property="BorderBrush" Value="{DynamicResource TabControlBorderBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderMidBrush}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border

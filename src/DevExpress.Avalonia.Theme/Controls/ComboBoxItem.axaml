@@ -65,7 +65,7 @@
             <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
               <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ItemsPresenter}" Path="IsPointerOver" />
               <Binding Source="{StaticResource ComboBoxItemBackgroundBrush}" />
-              <Binding Source="{StaticResource ComboBoxItemSelectedBackgroundBrush}" />
+              <Binding Source="{StaticResource ControlBackgroundSelectedBrush}" />
             </MultiBinding>
           </Setter.Value>
         </Setter>
@@ -76,7 +76,7 @@
             <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
               <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ItemsPresenter}" Path="IsPointerOver" />
               <Binding Source="{StaticResource TransparentBrush}" />
-              <Binding Source="{StaticResource ComboBoxItemSelectedBorderBrush}" />
+              <Binding Source="{StaticResource ControlBorderSelectedBrush}" />
             </MultiBinding>
           </Setter.Value>
         </Setter>
@@ -86,10 +86,10 @@
     <!--  PointerOver state  -->
     <Style Selector="^:pointerover">
       <Style Selector="^ /template/ Border#LayoutRoot">
-        <Setter Property="Background" Value="{DynamicResource ComboBoxItemSelectedBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
       </Style>
       <Style Selector="^ /template/ Border#SelectionHighlight">
-        <Setter Property="Background" Value="{DynamicResource ComboBoxItemSelectedBorderBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBorderSelectedBrush}" />
       </Style>
     </Style>
 

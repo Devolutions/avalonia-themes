@@ -1,93 +1,120 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    x:ClassModifier="internal">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
   <Design.PreviewWith>
-    <Border Padding="20">
-      <StackPanel Spacing="20">
-        <Button Content="Click Me!" />
-        <Button Classes="accent" Content="Click Me!" />
-      </StackPanel>
+    <Border Padding="20" Background="#f0f0f0">
+      <Grid ColumnDefinitions="91, 2, 75" RowDefinitions="Auto, 10, Auto">
+        <Button Grid.Row="0" Grid.Column="0" Classes="accent" Content="Select" />
+        <Button Grid.Row="0" Grid.Column="2" Content="Cancel" />
+        <Button Grid.Row="2" Grid.Column="0" Classes="accent" Content="Disabled" IsEnabled="False" />
+        <Button Grid.Row="2" Grid.Column="2" Content="Disabled" IsEnabled="False" />
+      </Grid>
     </Border>
   </Design.PreviewWith>
 
-  <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
-    <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
-    <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThemeThickness}" />
+  <ControlTheme x:Key="{x:Type Button}"
+                TargetType="Button">
+    <Setter Property="MinHeight" Value="27" />
+    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
-    <Setter Property="HorizontalAlignment" Value="Left" />
-    <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="RenderTransform" Value="none" />
-    <Setter Property="Transitions">
-      <Transitions>
-        <TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
-      </Transitions>
-    </Setter>
-
+    <Setter Property="Padding" Value="5 0 5 0 " />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="FontSize" Value="11" />
+    <Setter Property="FontWeight" Value="Light" />
     <Setter Property="Template">
       <ControlTemplate>
-        <ContentPresenter x:Name="PART_ContentPresenter"
-                          Background="{TemplateBinding Background}"
-                          BorderBrush="{TemplateBinding BorderBrush}"
-                          BorderThickness="{TemplateBinding BorderThickness}"
-                          CornerRadius="{TemplateBinding CornerRadius}"
-                          Content="{TemplateBinding Content}"
-                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                          Padding="{TemplateBinding Padding}"
-                          RecognizesAccessKey="True"
-                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+        <Panel>
+          <Border Name="BackgroundElement"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}" />
+          <Border Name="ButtonActiveElement"
+                  Background="Transparent"
+                  BorderBrush="{DynamicResource TransparentBrush}"
+                  BorderThickness="2"
+                  CornerRadius="{TemplateBinding CornerRadius}" />
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Content="{TemplateBinding Content}"
+                            Foreground="{TemplateBinding Foreground}"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            FontSize="{TemplateBinding FontSize}"
+                            FontWeight="{TemplateBinding FontWeight}" />
+        </Panel>
       </ControlTemplate>
     </Setter>
 
-    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPointerOver}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrushPointerOver}" />
-      <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPointerOver}" />
+    <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
+      <Setter Property="Background" Value="{DynamicResource ButtonPointerOverBrushTransparent}" />
     </Style>
-
     <Style Selector="^:pressed">
-      <Setter Property="RenderTransform" Value="scale(0.98)" />
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+      <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+      </Style>
     </Style>
-
-    <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource ButtonBackgroundPressed}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrushPressed}" />
-      <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundPressed}" />
-    </Style>
-
-    <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource ButtonBackgroundDisabled}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrushDisabled}" />
-      <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />
+    <Style Selector="^:focus, ^:focus-visible">
+      <Style Selector="^ /template/ Border#ButtonActiveElement">
+        <Setter Property="BorderBrush">
+          <Setter.Value>
+            <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                       Converter="{x:Static BoolConverters.Not}" />
+              <Binding Source="{StaticResource ControlBorderRaisedBrush}" />
+              <Binding Source="{StaticResource ControlBackgroundAccentBrush}" />
+            </MultiBinding>
+          </Setter.Value>
+        </Setter>
+      </Style>
     </Style>
 
     <Style Selector="^.accent">
-      <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="{DynamicResource AccentButtonBackground}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource AccentButtonForeground}" />
-      </Style>
+      <Setter Property="Background">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
+            <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundAccentBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="Foreground">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
+            <Binding Source="{StaticResource ForegroundHighBrush}" />
+            <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
+      <Setter Property="BorderBrush">
+        <Setter.Value>
+          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                     Converter="{x:Static BoolConverters.Not}" />
+            <Binding Source="{StaticResource ControlBorderRaisedBrush}" />
+            <Binding Source="{StaticResource ControlBackgroundAccentBrush}" />
+          </MultiBinding>
+        </Setter.Value>
+      </Setter>
 
-      <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundPointerOver}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrushPointerOver}" />
-        <Setter Property="Foreground" Value="{DynamicResource AccentButtonForegroundPointerOver}" />
-      </Style>
-
-      <Style Selector="^:pressed  /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundPressed}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrushPressed}" />
-        <Setter Property="Foreground" Value="{DynamicResource AccentButtonForegroundPressed}" />
-      </Style>
-
-      <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Background" Value="{DynamicResource AccentButtonBackgroundDisabled}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource AccentButtonBorderBrushDisabled}" />
-        <Setter Property="Foreground" Value="{DynamicResource AccentButtonForegroundDisabled}" />
-      </Style>
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabledBrush}" />
+      <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderMidBrush}" />
     </Style>
   </ControlTheme>
 </ResourceDictionary>
