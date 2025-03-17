@@ -85,6 +85,9 @@
       <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColorLight1" />
       <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColor" />
 
+      <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                       Opacity="0.05" />
+
       <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColor" />
       <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColorDark1" />
 
@@ -183,6 +186,9 @@
       <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColor" />
       <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColorDark1" />
 
+      <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                       Opacity="0.37" />
+
       <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColorLight1" />
       <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColor" />
 
@@ -254,7 +260,6 @@
   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
   <SolidColorBrush x:Key="ControlBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.9" />
-  <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
   <SolidColorBrush x:Key="ControlBackgroundAccentHighBrush" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="ControlBackgroundAccentMidBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.63" />
 
