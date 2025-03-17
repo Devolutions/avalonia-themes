@@ -19,6 +19,7 @@ While we are prioritizing controls for [Devolutions Remote Desktop Manager](http
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
   - ✅ Available in the current build
+    - [Buttons](#buttons)
     - [ComboBox](#combobox)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
@@ -26,7 +27,6 @@ While we are prioritizing controls for [Devolutions Remote Desktop Manager](http
   - 🚧 In progress ...
     - Dark mode support
   - 🔮 Next on the road map ...
-    - Buttons
     - ScrollViewer/ScrollBar
     
 
@@ -59,7 +59,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>AutoCompleteBox</h3> ||
 ||||
 || <h3>Button</h3> ||
-||||
+||  <img src="https://github.com/user-attachments/assets/58571893-927e-4e4a-92b3-7d0b7ced4f68" alt="Button demo" max-width="182"> ||
 || <h3>ButtonSpinner</h3> ||
 ||||
 || <h3>Calendar</h3> ||
