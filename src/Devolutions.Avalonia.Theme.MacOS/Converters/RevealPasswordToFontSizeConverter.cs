@@ -1,7 +1,7 @@
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace DevExpress.Avalonia.Theme.Converters;
+namespace Devolutions.Avalonia.Theme.MacOS.Converters;
 
 public class RevealPasswordToFontSizeConverter : IMultiValueConverter
 {

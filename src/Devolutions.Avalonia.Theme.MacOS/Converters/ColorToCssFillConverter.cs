@@ -2,7 +2,7 @@ using System.Globalization;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
 
-namespace MacOS.Avalonia.Theme.Converters;
+namespace Devolutions.Avalonia.Theme.MacOS.Converters;
 
 /// <summary>
 ///   Converts a Brush and CSS class(es) into a CSS string for SVG styling.

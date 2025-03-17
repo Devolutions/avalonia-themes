@@ -115,7 +115,7 @@ jobs:
         run: |
           $PackageVersion = '${{ needs.preflight.outputs.package-version }}'
           $PackageList = '${{ needs.preflight.outputs.package-list }}'
-          $ProjectDirs = @($PackageList -Split ',' | ForEach-Object { ".\src\$_.Avalonia.Theme" })
+          $ProjectDirs = @($PackageList -Split ',' | ForEach-Object { ".\src\Devolutions.Avalonia.Theme.$_" })
           foreach ($ProjectDir in $ProjectDirs) {
             $csprojPath = (Get-Item "$ProjectDir\*.csproj" | Select-Object -First 1).FullName
             $csprojContent = Get-Content $csprojPath -Raw
@@ -127,7 +127,7 @@ jobs:
         shell: pwsh
         run: |
           $PackageList = '${{ needs.preflight.outputs.package-list }}'
-          $ProjectDirs = @($PackageList -Split ',' | ForEach-Object { ".\src\$_.Avalonia.Theme" })
+          $ProjectDirs = @($PackageList -Split ',' | ForEach-Object { ".\src\Devolutions.Avalonia.Theme.$_" })
           foreach ($ProjectDir in $ProjectDirs) {
             & dotnet pack $ProjectDir -o package
           }
