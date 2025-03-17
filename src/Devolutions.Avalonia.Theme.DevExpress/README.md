@@ -4,8 +4,8 @@ Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build Status](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml/badge.svg?branch=master)](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml)
-[![NuGet Version](https://img.shields.io/nuget/vpre/DevExpress.Avalonia.Theme)](https://www.nuget.org/packages/DevExpress.Avalonia.Theme)
-![NuGet Downloads](https://img.shields.io/nuget/dt/DevExpress.Avalonia.Theme)
+[![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.Avalonia.Theme.DevExpress)](https://www.nuget.org/packages/Devolutions.Avalonia.Theme.DevExpress)
+![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.Avalonia.Theme.DevExpress)
 
 
 ## DevExpress Theme [Work in Progress]
@@ -32,19 +32,19 @@ While we are prioritizing controls for [Devolutions Remote Desktop Manager](http
 
 
 ## Installation
-Install the DevExpress.Avalonia.Theme package via [NuGet](https://www.nuget.org/packages/DevExpress.Avalonia.Theme):
+Install the Devolutions.Avalonia.Theme.DevExpress package via [NuGet](https://www.nuget.org/packages/Devolutions.Avalonia.Theme.DevExpress):
 ``` bash
-Install-Package DevExpress.Avalonia.Theme
+Install-Package Devolutions.Avalonia.Theme.DevExpress
 ```
 or .NET
 ```bash
-dotnet add package DevExpress.Avalonia.Theme
+dotnet add package Devolutions.Avalonia.Theme.DevExpress
 ```
 In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the macOS theme:
 ``` xaml
 <Application ...>
   <Application.Styles>
-     <StyleInclude Source="avares://DevExpress.Avalonia.Theme/MacOSTheme.axaml" />
+     <StyleInclude Source="avares://Devolutions.Avalonia.Theme.DevExpress/DevExpressTheme.axaml" />
   </Application.Styles>
 </Application>
 ```
