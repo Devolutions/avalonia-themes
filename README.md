@@ -5,5 +5,6 @@
 Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 
 ➡️ [MacOS Theme](https://github.com/Devolutions/avalonia-themes/blob/master/src/Devolutions.Avalonia.Theme.MacOS/README.md)
+
 ➡️ [DevExpress Theme](https://github.com/Devolutions/avalonia-themes/blob/master/src/Devolutions.Avalonia.Theme.DevExpress/README.md)
 
