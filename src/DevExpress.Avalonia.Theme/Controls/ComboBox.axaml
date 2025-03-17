@@ -157,18 +157,18 @@
     <!--  Focused State  -->
     <Style Selector="^:focus">
       <Style Selector="^ /template/ Border#BottomBorderElement">
-        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBottomBorderSelectedBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderSelectedBrush}" />
         <Setter Property="BorderThickness" Value="0 0 0 1.6" />
       </Style>
     </Style>
 
     <Style Selector="^:dropdownopen">
       <Style Selector="^ /template/ Border#BottomBorderElement">
-        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBottomBorderSelectedBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderSelectedBrush}" />
         <Setter Property="BorderThickness" Value="0 0 0 1.6" />
       </Style>
       <Style Selector="^ /template/ Border#DropDownGlyphBackground">
-        <Setter Property="Background" Value="{DynamicResource ComboBoxItemSelectedBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
       </Style>
     </Style>
 
