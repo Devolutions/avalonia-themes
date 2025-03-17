@@ -3,7 +3,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data.Converters;
 
-namespace MacOS.Avalonia.Theme.Converters;
+namespace Devolutions.Avalonia.Theme.MacOS.Converters;
 
 public class ClassToChoiceConverter : IMultiValueConverter
 {

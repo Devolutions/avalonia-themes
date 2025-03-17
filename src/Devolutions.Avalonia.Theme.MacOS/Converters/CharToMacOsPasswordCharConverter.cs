@@ -1,7 +1,7 @@
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace MacOS.Avalonia.Theme.Converters;
+namespace Devolutions.Avalonia.Theme.MacOS.Converters;
 
 public class CharToMacOsPasswordCharConverter : IValueConverter
 {

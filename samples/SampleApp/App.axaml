@@ -4,8 +4,8 @@
 
   <Application.Styles>
     <!-- <FluentTheme /> -->
-    <StyleInclude Source="avares://MacOS.Avalonia.Theme/MacOSTheme.axaml" />
-    <!-- <StyleInclude Source="avares://DevExpress.Avalonia.Theme/DevExpressTheme.axaml" /> -->
+    <StyleInclude Source="avares://Devolutions.Avalonia.Theme.MacOS/MacOSTheme.axaml" />
+    <!-- <StyleInclude Source="avares://Devolutions.Avalonia.Theme.DevExpress/DevExpressTheme.axaml" /> -->
     <StyleInclude Source="/Styles.axaml" />
   </Application.Styles>
 </Application>

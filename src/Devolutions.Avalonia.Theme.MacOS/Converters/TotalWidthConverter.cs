@@ -1,15 +1,15 @@
 using System.Globalization;
-using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace DevExpress.Avalonia.Theme.Converters;
+namespace Devolutions.Avalonia.Theme.MacOS.Converters;
 
-public class BooleanToChoiceConverter : IMultiValueConverter
+public class TotalWidthConverter : IMultiValueConverter
 {
   public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
   {
-    var selectedChoice = values[0] is true ? values[1] : values[2];
-    return selectedChoice ?? AvaloniaProperty.UnsetValue;
+    if (values[0] is not double width || values[1] is not int sideMargin) return 200d;
+
+    return width + 2 * sideMargin;
   }
 
   public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

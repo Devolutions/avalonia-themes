@@ -2,7 +2,7 @@ using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace MacOS.Avalonia.Theme.Converters;
+namespace Devolutions.Avalonia.Theme.DevExpress.Converters;
 
 public class BooleanToChoiceConverter : IMultiValueConverter
 {
