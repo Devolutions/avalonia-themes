@@ -2,7 +2,7 @@ using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace Devolutions.Avalonia.Theme.MacOS.Converters;
+namespace Devolutions.AvaloniaTheme.MacOS.Converters;
 
 public class ThicknessToSelectiveThicknessConverter : IValueConverter
 {

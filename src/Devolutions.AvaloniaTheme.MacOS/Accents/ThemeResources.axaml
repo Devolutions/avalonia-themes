@@ -68,7 +68,7 @@
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
-                  Source="avares://Devolutions.Avalonia.Theme.MacOS/Accents/Assets/Alternating_Row_Background_Light.png"
+                  Source="avares://Devolutions.AvaloniaTheme.MacOS/Accents/Assets/Alternating_Row_Background_Light.png"
                   TileMode="Tile"
                   Stretch="None"
                   DestinationRect="0 0 40 44" />
@@ -170,7 +170,7 @@
 
       <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
       <ImageBrush x:Key="StripedBackgroundBrush"
-                  Source="avares://Devolutions.Avalonia.Theme.MacOS/Accents/Assets/Alternating_Row_Background_Dark.png"
+                  Source="avares://Devolutions.AvaloniaTheme.MacOS/Accents/Assets/Alternating_Row_Background_Dark.png"
                   TileMode="Tile"
                   Stretch="None"
                   DestinationRect="0 0 40 44" />

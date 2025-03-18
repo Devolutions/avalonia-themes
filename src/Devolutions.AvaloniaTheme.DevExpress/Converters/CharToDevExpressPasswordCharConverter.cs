@@ -1,7 +1,7 @@
 using System.Globalization;
 using Avalonia.Data.Converters;
 
-namespace Devolutions.Avalonia.Theme.DevExpress.Converters;
+namespace Devolutions.AvaloniaTheme.DevExpress.Converters;
 
 public class CharToDevExpressPasswordCharConverter : IValueConverter
 {
