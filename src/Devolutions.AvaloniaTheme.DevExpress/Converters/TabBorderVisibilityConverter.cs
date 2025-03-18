@@ -2,7 +2,7 @@ using System.Globalization;
 using Avalonia.Controls;
 using Avalonia.Data.Converters;
 
-namespace Devolutions.Avalonia.Theme.DevExpress.Converters;
+namespace Devolutions.AvaloniaTheme.DevExpress.Converters;
 
 /// <summary>
 ///   Takes a TabItem, its parent TabControl and the name of a Border element and returns a boolean to indicate if the
