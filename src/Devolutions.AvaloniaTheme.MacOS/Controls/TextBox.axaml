@@ -97,8 +97,8 @@
   <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource TransparentBrush}" />
-    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="0.6" />
     <Setter Property="CaretBrush" Value="{DynamicResource SystemAccentColor}" />
     <Setter Property="FontSize">
       <Setter.Value>
@@ -128,7 +128,6 @@
                       Height="{TemplateBinding Height}"
                       BorderThickness="{TemplateBinding BorderThickness}"
                       BorderBrush="{TemplateBinding BorderBrush}"
-                      BoxShadow="{DynamicResource TextBoxBorderShadows}"
                       Background="{TemplateBinding Background}"
                       Padding="2 0 2 0 ">
                 <Grid ColumnDefinitions="Auto,*,Auto">
@@ -209,6 +208,18 @@
                   </ContentPresenter>
                 </Grid>
               </Border>
+              <Border Name="BottomBorder"
+                      Height="{TemplateBinding Height}"
+                      BorderThickness="0 0 0 0.6"
+                      BorderBrush="{DynamicResource TextBoxBottomBorderBrush}"
+                      BoxShadow="{DynamicResource TextBoxBorderShadows}"
+                      Margin="0.6 0  " />
+              <Border Name="BottomBorderShaddow"
+                      Height="{TemplateBinding Height}"
+                      BorderThickness="0 0 0 0.6"
+                      BorderBrush="{TemplateBinding BorderBrush}"
+                      BoxShadow="{DynamicResource TextBoxBorderShadows}"
+                      Margin="0.6 0 0.6 -0.6 " />
               <Border Name="FocusBorderElement"
                       Height="{TemplateBinding Height}"
                       Margin="-3"
