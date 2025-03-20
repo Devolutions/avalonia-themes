@@ -115,7 +115,7 @@
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="MinHeight" Value="26" />
     <Setter Property="MinWidth" Value="26" />
-    <Setter Property="Padding" Value="5 0 5 0" />
+    <Setter Property="Padding" Value="10 3" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
@@ -173,6 +173,7 @@
                     <Panel>
                       <TextBlock Name="PART_Watermark"
                                  Opacity="0.5"
+                                 FontSize="{DynamicResource ControlFontSize}"
                                  Text="{TemplateBinding Watermark}"
                                  TextAlignment="{TemplateBinding TextAlignment}"
                                  TextWrapping="{TemplateBinding TextWrapping}"

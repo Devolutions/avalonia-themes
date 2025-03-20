@@ -77,8 +77,8 @@
 
   <SolidColorBrush x:Key="ComboBoxDropDownBorderBrushTransparent" Color="{DynamicResource ForegroundColor}"
                    Opacity="0.28" />
-  <Thickness x:Key="ComboBoxPadding">5,0,5,0</Thickness>
-  <x:Double x:Key="ComboBoxMinHeight">23</x:Double>
+  <Thickness x:Key="ComboBoxPadding">10,0,10,0</Thickness>
+  <x:Double x:Key="ComboBoxMinHeight">24</x:Double>
   <BoxShadows x:Key="ComboBoxDropDownShadow"> 0 3 7 0 #30000000</BoxShadows>
 
 

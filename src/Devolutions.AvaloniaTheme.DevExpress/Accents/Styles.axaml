@@ -5,4 +5,47 @@
   <Style Selector="TextBlock, AccessText">
     <Setter Property="FontFamily" Value="{StaticResource DevExpressThemeFontFamily}" />
   </Style>
+
+  <Style Selector="TextBlock">
+    <Setter Property="FontSize" Value="12" />
+  </Style>
+
+  <Style Selector="TextBlock.SectionTitle">
+    <Setter Property="FontWeight" Value="Bold" />
+    <Setter Property="FontSize" Value="14" />
+  </Style>
+
+  <Style Selector="CheckBox">
+    <Setter Property="MinHeight" Value="1" />
+    <Setter Property="Height" Value="30" />
+    <Setter Property="Padding" Value="5 5" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+  </Style>
+
+  <Style Selector="AutoCompleteBox">
+    <Setter Property="FontSize" Value="12" />
+    <Setter Property="MinHeight" Value="1" />
+    <Setter Property="Padding" Value="10 3" />
+  </Style>
+
+  <Style Selector="AutoCompleteBox ListBoxItem">
+    <Setter Property="FontSize" Value="12" />
+    <Setter Property="MinHeight" Value="1" />
+    <Setter Property="Height" Value="26" />
+    <Setter Property="Padding" Value="10 2" />
+  </Style>
+
+  <Style Selector="DataGrid">
+    <Setter Property="RowHeight" Value="22" />
+    <Setter Property="ColumnHeaderHeight" Value="22" />
+  </Style>
+
+  <Style Selector="DataGridColumnHeader">
+    <Setter Property="Background" Value="{DynamicResource MainControlBackground}" />
+    <Setter Property="MinHeight" Value="22" />
+  </Style>
+
+  <Style Selector="DataGridRow:nth-child(even)">
+    <Setter Property="Background" Value="{DynamicResource DataGridRowAlternatingBackgroundBrush}" />
+  </Style>
 </Styles>

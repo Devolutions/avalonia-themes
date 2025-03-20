@@ -25,17 +25,17 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
-    <Setter Property="FontSize" Value="11" />
+    <Setter Property="FontSize" Value="12" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
-    <Setter Property="Padding" Value="8 0 5 0" />
+    <Setter Property="Padding" Value="10 3 " />
     <Setter Property="CornerRadius" Value="3" />
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border Name="LayoutRoot"
                 Background="Transparent"
-                MinHeight="27"
+                MinHeight="24"
                 CornerRadius="{TemplateBinding CornerRadius}"
                 Padding="0 7 0 5">
           <StackPanel Orientation="Horizontal">
