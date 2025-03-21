@@ -1,11 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-  <!-- FontFamily should be inherited from Window normally. Adding this for RDM where the views are embedded into the native app without a Window -->
-  <Style Selector="TextBlock, AccessText">
-    <Setter Property="FontFamily" Value="{StaticResource MacOsThemeFontFamily}" />
-  </Style>
-
   <Style Selector="Menu.MacOS_Theme_MenuOpensAbove > MenuItem > Border > Panel > Popup">
     <Setter Property="Placement" Value="TopEdgeAlignedLeft" />
     <Setter Property="VerticalOffset" Value="{DynamicResource MenuPopupAboveVerticalOffset}" />
