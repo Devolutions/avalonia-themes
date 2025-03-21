@@ -247,6 +247,7 @@
 
   <Thickness x:Key="BorderThickness">1</Thickness>
 
+  <x:Double x:Key="DefaultFontSize">13</x:Double>
   <x:Double x:Key="ControlFontSize">13</x:Double>
   <x:Double x:Key="PasswordHiddenFontSize">11</x:Double>
 

@@ -17,7 +17,8 @@
         <ToolTip Opacity="1">Very long text content which should exceed the maximum with of the tooltip and wrap.</ToolTip>
         <ToolTip Opacity="1" HorizontalAlignment="Left">
           <StackPanel>
-            <TextBlock>Multi-line</TextBlock>
+            <TextBlock>Complex</TextBlock>
+            <Svg Path="/Assets/CopyUserNamePassword.svg" Width="16" />
             <TextBlock>ToolTip Content</TextBlock>
           </StackPanel>
         </ToolTip>

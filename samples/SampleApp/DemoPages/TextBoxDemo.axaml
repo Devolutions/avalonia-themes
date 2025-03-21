@@ -6,7 +6,7 @@
              x:Class="SampleApp.DemoPages.TextBoxDemo">
 
   <UserControl.Styles>
-    <Style Selector="TextBlock.Label">
+    <Style Selector="Label">
       <Setter Property="Margin" Value="3 0 0 0" />
     </Style>
   </UserControl.Styles>
@@ -18,11 +18,11 @@
             CornerRadius="{DynamicResource LayoutCornerRadius}"
             Background="{DynamicResource LayoutBackgroundLowBrush}">
       <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
-        <TextBlock Classes="Label">Name:</TextBlock>
+        <Label>_Name:</Label>
         <TextBox Watermark="Enter your name" />
-        <TextBlock Classes="Label">Password:</TextBlock>
+        <Label>Password:</Label>
         <TextBox PasswordChar="*" Watermark="Enter your password" />
-        <TextBlock Classes="Label">Notes:</TextBlock>
+        <Label>Notes:</Label>
         <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
         <TextBox InnerLeftContent="http://" />
         <TextBox InnerRightContent=".com" />
