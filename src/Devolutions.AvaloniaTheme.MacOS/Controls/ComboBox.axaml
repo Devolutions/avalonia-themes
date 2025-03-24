@@ -139,7 +139,7 @@
                     </TransformGroup>
                   </StackPanel.RenderTransform>
                   <Path Width="9"
-                        Height="4.5"
+                        Height="4.4"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Data="{DynamicResource ChevronPath}"
@@ -154,7 +154,7 @@
                     </Path.Fill>
                   </Path>
                   <Path Width="9"
-                        Height="4.5"
+                        Height="4.4"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Data="{DynamicResource ChevronPath}"
