@@ -1,15 +1,6 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-  <!-- FontFamily should be inherited from Window normally. Adding this for RDM where the views are embedded into the native app without a Window -->
-  <Style Selector="TextBlock, AccessText">
-    <Setter Property="FontFamily" Value="{StaticResource DevExpressThemeFontFamily}" />
-  </Style>
-
-  <Style Selector="TextBlock">
-    <Setter Property="FontSize" Value="12" />
-  </Style>
-
   <Style Selector="TextBlock.SectionTitle">
     <Setter Property="FontWeight" Value="Bold" />
     <Setter Property="FontSize" Value="14" />
@@ -23,13 +14,11 @@
   </Style>
 
   <Style Selector="AutoCompleteBox">
-    <Setter Property="FontSize" Value="12" />
     <Setter Property="MinHeight" Value="1" />
     <Setter Property="Padding" Value="10 3" />
   </Style>
 
   <Style Selector="AutoCompleteBox ListBoxItem">
-    <Setter Property="FontSize" Value="12" />
     <Setter Property="MinHeight" Value="1" />
     <Setter Property="Height" Value="26" />
     <Setter Property="Padding" Value="10 2" />
