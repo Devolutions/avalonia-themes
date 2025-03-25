@@ -27,7 +27,7 @@
     <Setter Property="Padding" Value="5 0 5 0 " />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="FontSize" Value="12" />
+    <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="FontWeight" Value="Light" />
     <Setter Property="Template">
       <ControlTemplate>

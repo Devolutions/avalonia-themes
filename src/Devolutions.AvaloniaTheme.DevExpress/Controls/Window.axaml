@@ -5,7 +5,8 @@
     <Setter Property="Background" Value="{DynamicResource SystemRegionBrush}" />
     <Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
     <Setter Property="TopLevel.SystemBarColor" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
-    <Setter Property="Foreground" Value="{DynamicResource SystemControlForegroundBaseHighBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
     <Setter Property="FontFamily" Value="{StaticResource DevExpressThemeFontFamily}" />
     <Setter Property="Template">
       <ControlTemplate>
