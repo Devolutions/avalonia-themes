@@ -87,4 +87,12 @@
   <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
 
 
+  <!-- DEVELOPMENT ONLY -->
+  <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
+
+  <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
+  <SolidColorBrush x:Key="TestRed" Color="Red" />
+  <SolidColorBrush x:Key="TestBlue" Color="Blue" />
+  <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
+
 </ResourceDictionary>
