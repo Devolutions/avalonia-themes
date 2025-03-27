@@ -10,6 +10,7 @@
       <Color x:Key="AccentForegroundColor">#ffffff</Color>
 
       <Color x:Key="ControlBackgroundHighColor">#ffffff</Color>
+      <Color x:Key="ControlBackgroundMidColor">#eaeaea</Color>
 
       <Color x:Key="ControlBorderLowColorSolid">#e7e7e7</Color>
       <Color x:Key="ControlBorderMidColorSolid">#dbdbdb</Color>
@@ -40,6 +41,8 @@
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
+  <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
+
   <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
 
   <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
@@ -55,9 +58,11 @@
 
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
+  <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ControlBackgroundMidColor}" />
   <SolidColorBrush x:Key="ControlBackgroundAccentBrush" Color="{DynamicResource SystemAccentColor}" />
   <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.07" />
   <SolidColorBrush x:Key="ControlBorderMidBrush" Color="{DynamicResource ControlBorderMidColorSolid}" />
+  <SolidColorBrush x:Key="ControlBorderBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.11" />
   <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
     <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColorSolid}" />
     <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColorSolid}" />
@@ -75,16 +80,27 @@
   <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
 
   <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
-
   <SolidColorBrush x:Key="ComboBoxDropDownBorderBrushTransparent" Color="{DynamicResource ForegroundColor}"
                    Opacity="0.28" />
   <Thickness x:Key="ComboBoxPadding">10,0,10,0</Thickness>
   <x:Double x:Key="ComboBoxMinHeight">24</x:Double>
   <BoxShadows x:Key="ComboBoxDropDownShadow"> 0 3 7 0 #30000000</BoxShadows>
 
+  <SolidColorBrush x:Key="CheckBoxBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+  <SolidColorBrush x:Key="CheckBoxForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.56" />
+  <SolidColorBrush x:Key="CheckBoxCheckedBackgroundDisabledBrush" Color="{DynamicResource ForegroundColor}"
+                   Opacity="0.2" />
 
   <Thickness x:Key="TabItemHeaderPadding">4 0</Thickness>
   <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
 
+
+  <!-- DEVELOPMENT ONLY -->
+  <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
+
+  <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
+  <SolidColorBrush x:Key="TestRed" Color="Red" />
+  <SolidColorBrush x:Key="TestBlue" Color="Blue" />
+  <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
 
 </ResourceDictionary>

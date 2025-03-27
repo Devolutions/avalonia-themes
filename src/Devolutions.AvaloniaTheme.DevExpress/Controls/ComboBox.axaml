@@ -108,7 +108,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         Foreground="{DynamicResource ForegroundHighBrush}"
-                        Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z" />
+                        Data="{StaticResource ChevronPath}" />
             </Border>
 
             <Popup Name="PART_Popup"

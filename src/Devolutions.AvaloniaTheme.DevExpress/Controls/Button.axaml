@@ -6,14 +6,20 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <Border Padding="20" Background="#f0f0f0">
-      <Grid ColumnDefinitions="91, 2, 75" RowDefinitions="Auto, 10, Auto">
-        <Button Grid.Row="0" Grid.Column="0" Classes="accent" Content="Select" />
-        <Button Grid.Row="0" Grid.Column="2" Content="Cancel" />
-        <Button Grid.Row="2" Grid.Column="0" Classes="accent" Content="Disabled" IsEnabled="False" />
-        <Button Grid.Row="2" Grid.Column="2" Content="Disabled" IsEnabled="False" />
-      </Grid>
-    </Border>
+    <StackPanel Spacing="20">
+      <Border Padding="20" Background="#f0f0f0">
+        <Grid ColumnDefinitions="91, 2, 75" RowDefinitions="Auto, 10, Auto">
+          <Button Grid.Row="0" Grid.Column="0" Classes="accent" Content="test" />
+          <Button Grid.Row="0" Grid.Column="2" Content="Cancel" />
+          <Button Grid.Row="2" Grid.Column="0" Classes="accent" Content="Disabled" IsEnabled="False" />
+          <Button Grid.Row="2" Grid.Column="2" Content="Disabled" IsEnabled="False" />
+        </Grid>
+      </Border>
+      <CheckBox IsEnabled="False">Birthday focussed</CheckBox>
+
+
+    </StackPanel>
+
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type Button}"

@@ -6,13 +6,6 @@
     <Setter Property="FontSize" Value="14" />
   </Style>
 
-  <Style Selector="CheckBox">
-    <Setter Property="MinHeight" Value="1" />
-    <Setter Property="Height" Value="30" />
-    <Setter Property="Padding" Value="5 5" />
-    <Setter Property="VerticalContentAlignment" Value="Center" />
-  </Style>
-
   <Style Selector="AutoCompleteBox">
     <Setter Property="MinHeight" Value="1" />
     <Setter Property="Padding" Value="10 3" />
