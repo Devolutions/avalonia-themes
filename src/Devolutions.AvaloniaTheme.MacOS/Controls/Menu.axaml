@@ -131,17 +131,16 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     ToolTip.Tip="{TemplateBinding Header}">
+                    <ToolTip.ServiceEnabled>
+                      <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                    ConverterParameter="MacOS_Theme_MenuItemIconOnly">
+                        <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                        <Binding Source="{x:True}" />
+                        <Binding Source="{x:False}" />
+                      </MultiBinding>
+                    </ToolTip.ServiceEnabled>
                     <ContentPresenter Name="PART_IconPresenter"
-                                      Content="{TemplateBinding Icon}">
-                      <ToolTip.ServiceEnabled>
-                        <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
-                                      ConverterParameter="MacOS_Theme_MenuItemIconOnly">
-                          <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
-                          <Binding Source="{x:True}" />
-                          <Binding Source="{x:False}" />
-                        </MultiBinding>
-                      </ToolTip.ServiceEnabled>
-                    </ContentPresenter>
+                                      Content="{TemplateBinding Icon}" />
                     <Panel Name="PART_ChevronPanel">
                       <Border Name="PART_ChevronBorder" Margin="3 0 0 0 ">
                         <Path Name="PART_ChevronPath"
