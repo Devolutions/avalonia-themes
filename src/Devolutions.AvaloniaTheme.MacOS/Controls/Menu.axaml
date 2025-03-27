@@ -90,7 +90,6 @@
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="{StaticResource SelectionCornerRadius}"
                 VerticalAlignment="Top">
           <Panel>
             <StackPanel>
@@ -102,49 +101,76 @@
                   <Binding Source="{x:Static Orientation.Horizontal}" />
                 </MultiBinding>
               </StackPanel.Orientation>
-              <StackPanel
-                Orientation="Horizontal"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                ToolTip.Tip="{TemplateBinding Header}">
-                <ContentPresenter Name="PART_IconPresenter"
-                                  Content="{TemplateBinding Icon}">
-                  <ToolTip.ServiceEnabled>
-                    <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
-                                  ConverterParameter="MacOS_Theme_MenuItemIconOnly">
-                      <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
-                      <Binding Source="{x:True}" />
-                      <Binding Source="{x:False}" />
-                    </MultiBinding>
-                  </ToolTip.ServiceEnabled>
-                </ContentPresenter>
-                <Panel Name="PART_ChevronPanel">
-                  <Border Name="PART_ChevronBorder" Margin="3 0 0 0 ">
-                    <Path Name="PART_ChevronPath"
-                          Data="{StaticResource ChevronPath}"
-                          Width="{StaticResource TreeViewItemChevronSize}"
-                          Height="{StaticResource TreeViewItemChevronSize}"
-                          Fill="{TemplateBinding Foreground}"
-                          Stretch="Uniform"
-                          HorizontalAlignment="Center"
-                          VerticalAlignment="Center">
-                      <Path.RenderTransform>
-                        <TransformGroup>
-                          <RotateTransform Angle="180" />
-                        </TransformGroup>
-                      </Path.RenderTransform>
-                      <Path.IsVisible>
+              <Border Name="FlexiblePaddingIconBorder"
+                      HorizontalAlignment="Center"
+                      Background="Transparent">
+                <Border.Padding>
+                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                    <Binding Source="{StaticResource MenuToolBarItemIconPadding}" />
+                    <Binding Source="{StaticResource MenuItemIconPadding}" />
+                  </MultiBinding>
+                </Border.Padding>
+                <Panel>
+                  <Border Name="ItemActiveBackground"
+                          Background="Transparent"
+                          CornerRadius="{StaticResource SelectionCornerRadius}"
+                          Margin="{DynamicResource MenuToolBarItemActiveBackgroundMargin}">
+                    <Border.IsVisible>
+                      <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                    ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
+                        <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                        <Binding Source="{x:True}" />
+                        <Binding Source="{x:False}" />
+                      </MultiBinding>
+                    </Border.IsVisible>
+                  </Border>
+                  <StackPanel
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    ToolTip.Tip="{TemplateBinding Header}">
+                    <ContentPresenter Name="PART_IconPresenter"
+                                      Content="{TemplateBinding Icon}">
+                      <ToolTip.ServiceEnabled>
                         <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
-                                      ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
+                                      ConverterParameter="MacOS_Theme_MenuItemIconOnly">
                           <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                           <Binding Source="{x:True}" />
                           <Binding Source="{x:False}" />
                         </MultiBinding>
-                      </Path.IsVisible>
-                    </Path>
-                  </Border>
+                      </ToolTip.ServiceEnabled>
+                    </ContentPresenter>
+                    <Panel Name="PART_ChevronPanel">
+                      <Border Name="PART_ChevronBorder" Margin="3 0 0 0 ">
+                        <Path Name="PART_ChevronPath"
+                              Data="{StaticResource ChevronPath}"
+                              Width="{StaticResource TreeViewItemChevronSize}"
+                              Height="{StaticResource TreeViewItemChevronSize}"
+                              Fill="{TemplateBinding Foreground}"
+                              Stretch="Uniform"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center">
+                          <Path.RenderTransform>
+                            <TransformGroup>
+                              <RotateTransform Angle="180" />
+                            </TransformGroup>
+                          </Path.RenderTransform>
+                          <Path.IsVisible>
+                            <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                                          ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
+                              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                              <Binding Source="{x:True}" />
+                              <Binding Source="{x:False}" />
+                            </MultiBinding>
+                          </Path.IsVisible>
+                        </Path>
+                      </Border>
+                    </Panel>
+                  </StackPanel>
                 </Panel>
-              </StackPanel>
+              </Border>
               <ContentPresenter Name="PART_HeaderPresenter"
                                 Content="{TemplateBinding Header}"
                                 ContentTemplate="{TemplateBinding HeaderTemplate}"
@@ -164,13 +190,6 @@
                     <Binding Source="{x:True}" />
                   </MultiBinding>
                 </ContentPresenter.IsVisible>
-                <ContentPresenter.Margin>
-                  <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
-                                ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
-                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
-                    <Binding Source="{StaticResource MenuTextBelowIconMargin }" />
-                  </MultiBinding>
-                </ContentPresenter.Margin>
               </ContentPresenter>
 
             </StackPanel>
@@ -229,10 +248,14 @@
       </Setter>
     </Style>
 
-    <Style Selector="^:open">
-      <Style Selector="^ /template/ Border#PART_LayoutRoot">
+    <Style Selector="^:open, ^:pointerover">
+      <Style Selector="^ /template/ Border#ItemActiveBackground">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
       </Style>
+    </Style>
+
+    <Style Selector="^:empty /template/ Border#ItemActiveBackground">
+      <Setter Property="Margin" Value="-13 -4" />
     </Style>
 
     <Style Selector="^:empty /template/ Panel#PART_ChevronPanel">

@@ -37,7 +37,7 @@
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
-      <TabItem Header="Menu">
+      <TabItem Header="Menu" IsSelected="True">
         <demoPages:MenuDemo />
       </TabItem>
       <TabItem Header="GridSplitter">
@@ -46,7 +46,7 @@
       <TabItem Header="MenuFlyout">
         <demoPages:MenuFlyoutDemo />
       </TabItem>
-      <TabItem Header="NumericUpDown" IsSelected="True">
+      <TabItem Header="NumericUpDown">
         <demoPages:NumericUpDownDemo />
       </TabItem>
       <TabItem Header="ScrollViewer">
