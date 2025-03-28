@@ -14,7 +14,7 @@
     </Style>
 
     <Style Selector="Menu.Icons25 > MenuItem">
-      <Style Selector="^ > ContentPresenter#PART_HeaderPresenter">
+      <Style Selector="^ ContentPresenter#PART_HeaderPresenter">
         <Setter Property="MinWidth" Value="56" />
         <Setter Property="MaxWidth" Value="56" />
       </Style>
@@ -28,7 +28,7 @@
     </Style>
 
     <Style Selector="Menu.Icons15 > MenuItem">
-      <Style Selector="^ > ContentPresenter#PART_HeaderPresenter">
+      <Style Selector="^ ContentPresenter#PART_HeaderPresenter">
         <Setter Property="MinWidth" Value="44" />
         <Setter Property="MaxWidth" Value="66" />
       </Style>
