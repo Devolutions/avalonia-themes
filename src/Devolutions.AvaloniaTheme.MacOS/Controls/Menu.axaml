@@ -254,6 +254,12 @@
       </Style>
     </Style>
 
+    <Style Selector="^:pressed">
+      <Style Selector="^ /template/ Border#ItemActiveBackground">
+        <Setter Property="Background" Value="{DynamicResource LayoutBackgroundHighBrush}" />
+      </Style>
+    </Style>
+
     <Style Selector="^:empty /template/ Border#ItemActiveBackground">
       <Setter Property="Margin" Value="-13 -4" />
     </Style>
