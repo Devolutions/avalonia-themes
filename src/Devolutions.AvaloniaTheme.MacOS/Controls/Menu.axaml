@@ -60,6 +60,8 @@
     </DockPanel>
   </Design.PreviewWith>
 
+  <!-- TODO: Consider refactoring with separate ControlThemes for the different Menu types 
+       (instead of multiple individual variations on the property level) -->
   <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
     <Setter Property="FontSize">
       <Setter.Value>
@@ -92,6 +94,19 @@
                 BorderThickness="{TemplateBinding BorderThickness}"
                 VerticalAlignment="Top">
           <Panel>
+            <Border Name="MenuItemActiveBackground"
+                    Background="Transparent"
+                    CornerRadius="{StaticResource SelectionCornerRadius}"
+                    Margin="{DynamicResource MenuItemActiveBackgroundMargin}">
+              <Border.IsVisible>
+                <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                              ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
+                  <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                  <Binding Source="{x:False}" />
+                  <Binding Source="{x:True}" />
+                </MultiBinding>
+              </Border.IsVisible>
+            </Border>
             <StackPanel>
               <StackPanel.Orientation>
                 <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
@@ -113,7 +128,7 @@
                   </MultiBinding>
                 </Border.Padding>
                 <Panel>
-                  <Border Name="ItemActiveBackground"
+                  <Border Name="ToolBarItemActiveBackground"
                           Background="Transparent"
                           CornerRadius="{StaticResource SelectionCornerRadius}"
                           Margin="{DynamicResource MenuToolBarItemActiveBackgroundMargin}">
@@ -180,7 +195,8 @@
                                 TextWrapping="Wrap"
                                 HorizontalContentAlignment="Center"
                                 TextAlignment="Center"
-                                RecognizesAccessKey="True">
+                                RecognizesAccessKey="True"
+                                Classes="TopLevelMenuItem">
                 <ContentPresenter.IsVisible>
                   <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
                                 ConverterParameter="MacOS_Theme_MenuItemIconOnly">
@@ -199,8 +215,15 @@
                    IsOpen="{TemplateBinding IsSubMenuOpen, Mode=TwoWay}"
                    Placement="BottomEdgeAlignedLeft"
                    HorizontalOffset="{DynamicResource MenuPopupHorizontalOffset}"
-                   VerticalOffset="{DynamicResource MenuPopupBelowVerticalOffset}"
                    OverlayInputPassThroughElement="{Binding $parent[Menu]}">
+              <Popup.VerticalOffset>
+                <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
+                              ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
+                  <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
+                  <Binding Source="{StaticResource MenuToolBarPopupVerticalOffset}" />
+                  <Binding Source="{StaticResource MenuPopupVerticalOffset}" />
+                </MultiBinding>
+              </Popup.VerticalOffset>
               <Border Margin="{StaticResource PopupMargin} "
                       Background="{DynamicResource PopupBackgroundBrush}"
                       BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
@@ -248,18 +271,30 @@
     </Style>
 
     <Style Selector="^:open, ^:pointerover">
-      <Style Selector="^ /template/ Border#ItemActiveBackground">
+      <Style Selector="^ /template/ Border#MenuItemActiveBackground">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
       </Style>
     </Style>
 
     <Style Selector="^:pressed">
-      <Style Selector="^ /template/ Border#ItemActiveBackground">
+      <Style Selector="^ /template/ Border#MenuItemActiveBackground">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundHighBrush}" />
       </Style>
     </Style>
 
-    <Style Selector="^:empty /template/ Border#ItemActiveBackground">
+    <Style Selector="^:open, ^:pointerover">
+      <Style Selector="^ /template/ Border#ToolBarItemActiveBackground">
+        <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^:pressed">
+      <Style Selector="^ /template/ Border#ToolBarItemActiveBackground">
+        <Setter Property="Background" Value="{DynamicResource LayoutBackgroundHighBrush}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^:empty /template/ Border#ToolBarItemActiveBackground">
       <Setter Property="Margin" Value="-13 -4" />
     </Style>
 

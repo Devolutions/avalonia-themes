@@ -14,11 +14,11 @@
     </Style>
 
     <Style Selector="Menu.Icons25 > MenuItem">
-      <Style Selector="^ ContentPresenter#PART_HeaderPresenter">
+      <Style Selector="^ ContentPresenter#PART_HeaderPresenter.TopLevelMenuItem">
         <Setter Property="MinWidth" Value="56" />
-        <Setter Property="MaxWidth" Value="56" />
+        <Setter Property="MaxWidth" Value="66" />
       </Style>
-      <Style Selector="^.LongTitle ContentPresenter#PART_HeaderPresenter">
+      <Style Selector="^.LongTitle ContentPresenter#PART_HeaderPresenter.TopLevelMenuItem">
         <Setter Property="MaxWidth" Value="75" />
       </Style>
       <Style Selector="^ Svg">
@@ -28,7 +28,7 @@
     </Style>
 
     <Style Selector="Menu.Icons15 > MenuItem">
-      <Style Selector="^ ContentPresenter#PART_HeaderPresenter">
+      <Style Selector="^ ContentPresenter#PART_HeaderPresenter.TopLevelMenuItem">
         <Setter Property="MinWidth" Value="44" />
         <Setter Property="MaxWidth" Value="66" />
       </Style>
@@ -106,13 +106,15 @@
                 <MenuItem.Icon>
                   <Svg Path="/Assets/Details.svg" />
                 </MenuItem.Icon>
+                <MenuItem Header="Menu Item 1" />
+                <MenuItem Header="Menu Item" />
               </MenuItem>
               <MenuItem Header="-" />
               <MenuItem Header="Copy name">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/CopyName.svg" />
                 </MenuItem.Icon>
-                <MenuItem Header="Menu Item" />
+                <MenuItem Header="Longer Menu Item" />
                 <MenuItem Header="Menu Item" />
               </MenuItem>
 
@@ -129,11 +131,18 @@
             </Menu>
             <Menu Name="SmallToolbar" DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Right"
                   Classes="MacOS_Theme_MenuLabelBelowIcon Icons15">
-              <MenuItem Header="Group" IsEnabled="False">
+              <MenuItem Header="Testing" IsEnabled="False">
                 <MenuItem.Icon>
                   <Svg Path="/Assets/EnableUser.svg" />
                 </MenuItem.Icon>
                 <MenuItem Header="Menu Item" />
+                <MenuItem Header="Menu Item" />
+              </MenuItem>
+              <MenuItem Header="Group">
+                <MenuItem.Icon>
+                  <Svg Path="/Assets/EnableUser.svg" />
+                </MenuItem.Icon>
+                <MenuItem Header="Longer Menu Item" />
                 <MenuItem Header="Menu Item" />
               </MenuItem>
               <MenuItem Header="Share">
@@ -211,7 +220,9 @@
               • <TextBlock Classes="code" Text="MacOS_Theme_MenuItemIconOnly" /> for a toolbar-style menu without labels (Header content appears in a ToolTip instead)
               <LineBreak /><LineBreak />
               • <TextBlock Classes="code" Text="MacOS_Theme_MenuOpensAbove" /> for bottom-placed menus, opening upwards
-              <LineBreak />
+              <LineBreak /><LineBreak />
+              • <TextBlock Classes="code" Text="ContentPresenter#PART_HeaderPresenter" /> of the top-level menu items has a class
+              <TextBlock Classes="code" Text="TopLevelMenuItem" /> attached that allows easier styling without affecting sub-menu items. E.g. setting MaxWidth to force long names to wrap
             </TextBlock>
           </Border>
         </DockPanel>
