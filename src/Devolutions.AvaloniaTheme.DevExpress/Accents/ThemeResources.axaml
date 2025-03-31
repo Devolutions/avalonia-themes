@@ -5,6 +5,8 @@
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Light">
       <Color x:Key="BackgroundColor">#ffffff</Color>
+      <Color x:Key="BorderColor">#dadada</Color>
+      <Color x:Key="SystemRegionColor">#f0f0f0</Color>
       <Color x:Key="ForegroundColor">#000000</Color>
 
       <Color x:Key="AccentForegroundColor">#ffffff</Color>
@@ -18,13 +20,20 @@
       <Color x:Key="ButtonForegroundDisabledColorSolid">#bdbdbd</Color>
 
       <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
-
+      
+      <Color x:Key='DataGridForegroundColor'>#000</Color>
+      <Color x:Key='DataGridSelectedRowColor'>#cde8ff</Color>
+      
+      <Color x:Key='TextBoxBackgroundColor'>#fff</Color>
+      <Color x:Key='TextBoxBorderBottomColor'>#9f9f9f</Color>
     </ResourceDictionary>
 
     <!-- TODO: Darkmode colours just roughly -->
     <ResourceDictionary x:Key="Dark">
-      <Color x:Key="BackgroundColor">#000000</Color>
-      <Color x:Key="ForegroundColor">#ffffff</Color>
+      <Color x:Key="BackgroundColor">#202020</Color>
+      <Color x:Key="BorderColor">#404040</Color>
+      <Color x:Key="SystemRegionColor">#202020</Color>
+      <Color x:Key="ForegroundColor">#f5f5f5</Color>
 
       <Color x:Key="AccentForegroundColor">#deecf9</Color>
 
@@ -37,19 +46,27 @@
 
       <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
 
-
+      <Color x:Key='DataGridForegroundColor'>#f5f5f5</Color>
+      <Color x:Key='DataGridSelectedRowColor'>#3c3c3c</Color>
+      
+      <Color x:Key='TextBoxBackgroundColor'>#202020</Color>
+      <Color x:Key='TextBoxBorderBottomColor'>#666666</Color>
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
   <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
 
   <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
+  <SolidColorBrush x:Key="SystemRegionBrush" Color="{DynamicResource SystemRegionColor}" />
 
   <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
   <x:Double x:Key="DefaultFontSize">12</x:Double>
   <x:Double x:Key="ControlFontSize">12</x:Double>
   <x:Double x:Key="PasswordHiddenFontSize">10</x:Double>
 
+  <SolidColorBrush x:Key="Foreground" Color="{DynamicResource ForegroundColor}" />
+  <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+  <SolidColorBrush x:Key="BorderBrush" Color="{DynamicResource BorderColor}" />
 
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
   <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
@@ -74,9 +91,9 @@
 
   <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
 
-  <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
   <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
-  <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="#a8a8a8" />
+  <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource TextBoxBorderBottomColor}" />
   <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
 
   <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
@@ -93,6 +110,11 @@
 
   <Thickness x:Key="TabItemHeaderPadding">4 0</Thickness>
   <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
+  
+  <SolidColorBrush x:Key="DataGridForeground" Color="{DynamicResource DataGridForegroundColor}" />
+  <SolidColorBrush x:Key="DataGridSelectedRowFill" Color="{DynamicResource DataGridSelectedRowColor}" />
+  
+  <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
 
 
   <!-- DEVELOPMENT ONLY -->
