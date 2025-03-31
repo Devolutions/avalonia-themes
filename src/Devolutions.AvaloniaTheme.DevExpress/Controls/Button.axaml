@@ -34,7 +34,7 @@
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
-    <Setter Property="FontWeight" Value="Light" />
+    <Setter Property="FontWeight" Value="SemiLight" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel>

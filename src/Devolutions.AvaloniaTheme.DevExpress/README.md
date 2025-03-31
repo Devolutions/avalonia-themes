@@ -12,7 +12,7 @@ Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 
 This theme is currently based on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent), 
 both as a fallback for any controls not covered yet and as starting point for our (somewhat simplified) 
-style definitions targeting AppKit macOS look.
+style definitions targeting DevExpress Winforms look.
 
 While we are prioritizing controls for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/), we welcome contributions from the Avalonia community to add more DevExpress-style controls. 
 
