@@ -15,7 +15,7 @@
         <PackageReference Include="Avalonia" Version="11.2.6" />
         <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.5" />
         <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0.2"/>
-        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.5" />
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.6" />
     </ItemGroup>
 
     <ItemGroup>
