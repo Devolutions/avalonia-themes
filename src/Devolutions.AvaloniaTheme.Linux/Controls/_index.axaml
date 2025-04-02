@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.MergedDictionaries>
+    <MergeResourceInclude Source="ButtonSpinner.axaml" />
+    <MergeResourceInclude Source="EmbeddableControlRoot.axaml" />
+    <MergeResourceInclude Source="NumericUpDown.axaml" />
+    <MergeResourceInclude Source="TextBox.axaml" />
+    <MergeResourceInclude Source="Window.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
