@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{8D46
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devolutions.AvaloniaTheme.DevExpress", "src\Devolutions.AvaloniaTheme.DevExpress\Devolutions.AvaloniaTheme.DevExpress.csproj", "{DDDC64A4-451A-4496-841C-30C3C4BA62AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devolutions.AvaloniaTheme.Linux", "src\Devolutions.AvaloniaTheme.Linux\Devolutions.AvaloniaTheme.Linux.csproj", "{2B21E358-E385-44C8-B346-8654E9D61377}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +30,15 @@ Global
 		{DDDC64A4-451A-4496-841C-30C3C4BA62AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDDC64A4-451A-4496-841C-30C3C4BA62AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDDC64A4-451A-4496-841C-30C3C4BA62AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B21E358-E385-44C8-B346-8654E9D61377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B21E358-E385-44C8-B346-8654E9D61377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B21E358-E385-44C8-B346-8654E9D61377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B21E358-E385-44C8-B346-8654E9D61377}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{052424E1-48F3-4D8E-A780-DEB4D33B4482} = {7756B42B-13EB-4DC9-BA61-11997466D93C}
 		{8FB0A38F-D80A-45A1-9796-FD22FDB14064} = {8D46D8D5-74CA-4EC1-ACA9-1AF9E5A92550}
 		{DDDC64A4-451A-4496-841C-30C3C4BA62AE} = {7756B42B-13EB-4DC9-BA61-11997466D93C}
+		{2B21E358-E385-44C8-B346-8654E9D61377} = {7756B42B-13EB-4DC9-BA61-11997466D93C}
 	EndGlobalSection
 EndGlobal

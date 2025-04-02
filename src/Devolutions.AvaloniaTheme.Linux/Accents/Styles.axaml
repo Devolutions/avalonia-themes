@@ -1,0 +1,67 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Design.PreviewWith>
+    <Window RequestedThemeVariant="Dark">
+      <Border Padding="20" MinWidth="300">
+        <StackPanel>
+          <NumericUpDown />
+          <ListBox Width="200" Height="200" />
+        </StackPanel>
+      </Border>
+    </Window>
+  </Design.PreviewWith>
+
+  <StyleInclude Source="Styles.DataGrid.axaml" />
+
+  <!-- ~1~ <Style Selector=":is(ContextMenu)"> @1@ -->
+  <!-- ~1~     <Setter Property="FontFamily" Value="{DynamicResource OpenSans}" /> @1@ -->
+  <!-- ~1~     <Setter Property="FontSize" Value="13" /> @1@ -->
+  <!-- ~1~ </Style> @1@ -->
+  <!-- -->
+  <!-- <Style Selector=":is(Window), :is(controls|DialogLayout), :is(avaloniaUi|BaseAvaloniaView)"> -->
+  <!--   <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" /> -->
+  <!-- </Style> -->
+
+  <Style Selector=":is(ListBox), :is(NumericUpDown)">
+    <Setter Property="Background" Value="{DynamicResource InputBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+  </Style>
+
+  <Style Selector=":is(Button)">
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+
+    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+    </Style>
+
+    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+    </Style>
+  </Style>
+
+  <!-- <Style Selector="StackPanel.formFooter > Button, controls|DialogFooter > Button"> -->
+  <!--   <Setter Property="TabIndex" Value="2147483647" /> -->
+  <!--   <Setter Property="MinWidth" Value="85" /> -->
+  <!-- </Style> -->
+  <!-- -->
+  <!-- <Style Selector="controls|DialogLayout"> -->
+  <!--   <Style Selector="^ Border#DialogLayout_FooterBorder"> -->
+  <!--     <Style Selector="^ :is(Button)"> -->
+  <!--       <Style Selector="^ controls|SvgIcon"> -->
+  <!--         <Setter Property="Margin" Value="-4, 0" /> -->
+  <!--       </Style> -->
+  <!--     </Style> -->
+  <!--   </Style> -->
+  <!-- </Style> -->
+
+  <Style Selector="TabControl">
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+
+    <Style Selector="^ TabItem">
+      <Setter Property="FontSize" Value="14" />
+      <Setter Property="FontWeight" Value="Light" />
+    </Style>
+  </Style>
+</Styles>

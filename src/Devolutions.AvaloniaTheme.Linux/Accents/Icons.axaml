@@ -1,0 +1,6 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <StreamGeometry x:Key="ButtonSpinnerIncreaseButtonIcon">M 0 0 M 32 32 M 11 16 L 22 16 22 17 11 17 M 16 11 L 16 16 17 16 17 11 M 16 17 L 16 22 17 22 17 17</StreamGeometry>
+  <StreamGeometry x:Key="ButtonSpinnerDecreaseButtonIcon">M 0 0 M 32 32 M 11 16 L 22 16 22 17 11 17</StreamGeometry>
+</ResourceDictionary>

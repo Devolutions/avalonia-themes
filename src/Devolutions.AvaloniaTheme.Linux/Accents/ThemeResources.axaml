@@ -1,0 +1,86 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key='Light'>
+      <Color x:Key='Background'>#ffffff</Color>
+      <Color x:Key='Border'>#d1d1d1</Color>
+      <Color x:Key='InputBackground'>#ffffff</Color>
+      <Color x:Key='InputBorder'>#d1d1d1</Color>
+      <Color x:Key='InputDisabledBackground'>#fcfcfc</Color>
+      <Color x:Key='InputDisabledForeground'>#e1e1e1</Color>
+      <Color x:Key='RepeatButtonBackgroundDisabledColor'>#ffffff</Color>
+
+      <Color x:Key='ButtonBackground'>#ffffff</Color>
+      <Color x:Key='ButtonBackgroundHover'>#f5f5f5</Color>
+      <Color x:Key='ButtonBackgroundActive'>#d6d6d6</Color>
+    </ResourceDictionary>
+    <ResourceDictionary x:Key='Dark'>
+      <SolidColorBrush x:Key="DataGridRowAlternatingBackgroundBrush" Color="#252525" />
+      <Color x:Key='SystemAltHighColor'>#1f1f1f</Color>
+      <Color x:Key='SystemBaseMediumColor'>#f5f5f5</Color>
+      <Color x:Key='Background'>#2c2c2c</Color>
+      <Color x:Key='Border'>#181818</Color>
+      <Color x:Key='InputBackground'>#282828</Color>
+      <Color x:Key='InputBorder'>#181818</Color>
+      <Color x:Key='InputDisabledForeground'>#474747</Color>
+      <Color x:Key='InputDisabledBackground'>#2c2c2c</Color>
+      <Color x:Key='RepeatButtonBackgroundDisabledColor'>#00000000</Color>
+
+      <Color x:Key='ButtonBackground'>#373737</Color>
+      <Color x:Key='ButtonBackgroundHover'>#3c3c3c</Color>
+      <Color x:Key='ButtonBackgroundActive'>#151515</Color>
+
+      <Color x:Key="BetterListView_GridBorderColor">#393939</Color>
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+
+  <FontFamily x:Key="LinuxThemeFontFamily">sans-serif</FontFamily>
+
+  <!-- <StyleInclude Source="/Assets/Linux/DataGrid.axaml" /> -->
+  <!-- -->
+  <!-- <ResourceDictionary.MergedDictionaries> -->
+  <!--   <MergeResourceInclude Source="/Assets/Linux/TextBox.axaml" /> -->
+  <!--   <MergeResourceInclude Source="/Assets/Linux/ButtonSpinner.axaml" /> -->
+  <!--   <MergeResourceInclude Source="/Assets/Linux/NumericUpDown.axaml" /> -->
+  <!-- </ResourceDictionary.MergedDictionaries> -->
+
+  <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource Background}" />
+  <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />
+
+  <SolidColorBrush x:Key='BackgroundBrush' Color="{DynamicResource Background}" />
+
+  <SolidColorBrush x:Key='InputBackgroundBrush' Color="{DynamicResource InputBackground}" />
+  <SolidColorBrush x:Key='InputBorderBrush' Color="{DynamicResource InputBorder}" />
+  <SolidColorBrush x:Key='InputDisabledBackgroundBrush' Color="{DynamicResource InputDisabledBackground}" />
+  <SolidColorBrush x:Key='InputDisabledForegroundBrush' Color="{DynamicResource InputDisabledForeground}" />
+
+  <SolidColorBrush x:Key='TextControlBorderBrush' Color="{DynamicResource InputBorder}" />
+  <SolidColorBrush x:Key='TextControlBackground' Color="{DynamicResource InputBackground}" />
+  <SolidColorBrush x:Key='TextControlBackgroundFocused' Color="{DynamicResource InputBackground}" />
+
+  <SolidColorBrush x:Key='ButtonBackgroundBrush' Color="{DynamicResource ButtonBackground}" />
+  <SolidColorBrush x:Key='ButtonBackgroundPointerOver' Color="{DynamicResource ButtonBackgroundHover}" />
+  <SolidColorBrush x:Key='ButtonBackgroundPressed' Color="{DynamicResource ButtonBackgroundActive}" />
+  <SolidColorBrush x:Key='ButtonBackgroundDisabled' Color="{DynamicResource InputDisabledBackground}" />
+  <SolidColorBrush x:Key='ButtonForegroundDisabled' Color="{DynamicResource InputDisabledForeground}" />
+  <SolidColorBrush x:Key='ButtonBorderBrushDisabled' Color="{DynamicResource InputBorder}" />
+
+  <SolidColorBrush x:Key='RepeatButtonBackgroundDisabled' Color="{DynamicResource RepeatButtonBackgroundDisabledColor}" />
+  <SolidColorBrush x:Key='RepeatButtonForegroundDisabled' Color="{DynamicResource InputDisabledForeground}" />
+
+  <SolidColorBrush x:Key='TableBorderBrush' Color="{DynamicResource InputBorder}" />
+
+  <Thickness x:Key='ButtonPadding'>12,6</Thickness>
+
+  <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
+
+  <!-- DEVELOPMENT ONLY -->
+  <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
+
+  <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
+  <SolidColorBrush x:Key="TestRed" Color="Red" />
+  <SolidColorBrush x:Key="TestBlue" Color="Blue" />
+  <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
+
+</ResourceDictionary>
