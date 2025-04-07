@@ -6,7 +6,7 @@
     <!-- <FluentTheme /> -->
     <!-- <StyleInclude Source="avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" /> -->
     <!-- <StyleInclude Source="avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" /> -->
-    <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" />
+    <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux.Yaru/LinuxYaruTheme.axaml" />
     <StyleInclude Source="/Styles.axaml" />
   </Application.Styles>
 </Application>

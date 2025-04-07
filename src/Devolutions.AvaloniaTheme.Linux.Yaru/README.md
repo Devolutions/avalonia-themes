@@ -4,10 +4,10 @@ Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build Status](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml/badge.svg?branch=master)](https://github.com/Devolutions/avalonia-themes/actions/workflows/build-package.yml)
-[![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.AvaloniaTheme.Linux)](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.Linux)
-![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.AvaloniaTheme.Linux)
+[![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.AvaloniaTheme.Linux.Yaru)](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.Linux.Yaru)
+![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.AvaloniaTheme.Linux.Yaru)
 
-## Linux Theme [Work in Progress]
+## Linux Yaru Theme [Work in Progress]
 
 This theme is currently based
 on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent),
@@ -26,25 +26,25 @@ net/remote-desktop-manager/), we welcome contributions from the Avalonia communi
 
 ## Installation
 
-Install the Devolutions.AvaloniaTheme.Linux package
-via [NuGet](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.Linux):
+Install the Devolutions.AvaloniaTheme.Linux.Yaru package
+via [NuGet](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.Linux.Yaru):
 
 ``` bash
-Install-Package Devolutions.AvaloniaTheme.Linux
+Install-Package Devolutions.AvaloniaTheme.Linux.Yaru
 ```
 
 or .NET
 
 ```bash
-dotnet add package Devolutions.AvaloniaTheme.Linux
+dotnet add package Devolutions.AvaloniaTheme.Linux.Yaru
 ```
 
-In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the macOS theme:
+YaruIn your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the macOS theme:
 
 ``` xaml
 <Application ...>
   <Application.Styles>
-     <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" />
+     <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux.Yaru/LinuxYaruTheme.axaml" />
   </Application.Styles>
 </Application>
 ```

@@ -2,14 +2,14 @@
     <PropertyGroup>
         <Version>1.0.0.0</Version>
         <Company>Devolutions</Company>
-        <Description>Devolutions Avalonia Linux Theme</Description>
-        <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
+        <Description>Devolutions Avalonia Linux Yaru Theme</Description>
+        <PackageId>Devolutions.AvaloniaTheme.Linux.Yaru</PackageId>
         <PackageProjectUrl>https://github.com/Devolutions/avalonia-themes</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <RootNamespace>Devolutions.AvaloniaThemes.Linux</RootNamespace>
+        <RootNamespace>Devolutions.AvaloniaThemes.Linux.Yaru</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

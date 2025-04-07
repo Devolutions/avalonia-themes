@@ -6,7 +6,7 @@
     <Setter Property="TopLevel.SystemBarColor" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
-    <Setter Property="FontFamily" Value="{StaticResource LinuxThemeFontFamily}" />
+    <Setter Property="FontFamily" Value="{StaticResource LinuxYaruThemeFontFamily}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel>

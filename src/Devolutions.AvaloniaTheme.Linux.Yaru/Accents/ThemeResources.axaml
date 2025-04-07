@@ -35,15 +35,7 @@
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
-  <FontFamily x:Key="LinuxThemeFontFamily">sans-serif</FontFamily>
-
-  <!-- <StyleInclude Source="/Assets/Linux/DataGrid.axaml" /> -->
-  <!-- -->
-  <!-- <ResourceDictionary.MergedDictionaries> -->
-  <!--   <MergeResourceInclude Source="/Assets/Linux/TextBox.axaml" /> -->
-  <!--   <MergeResourceInclude Source="/Assets/Linux/ButtonSpinner.axaml" /> -->
-  <!--   <MergeResourceInclude Source="/Assets/Linux/NumericUpDown.axaml" /> -->
-  <!-- </ResourceDictionary.MergedDictionaries> -->
+  <FontFamily x:Key="LinuxYaruThemeFontFamily">sans-serif</FontFamily>
 
   <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource Background}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />

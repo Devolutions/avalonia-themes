@@ -3,7 +3,7 @@
         <Version>1.0.0.0</Version>
         <Company>Devolutions</Company>
         <Description>Devolutions Avalonia Linux Theme</Description>
-        <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
+        <PackageId>Devolutions.AvaloniaTheme.Linux.Yaru</PackageId>
         <PackageProjectUrl>https://github.com/Devolutions/avalonia-themes/src</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <TargetFramework>net9.0</TargetFramework>
