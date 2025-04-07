@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net9.0</TargetFramework>
@@ -33,5 +33,6 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.MacOS\Devolutions.AvaloniaTheme.MacOS.csproj"/>
         <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.DevExpress\Devolutions.AvaloniaTheme.DevExpress.csproj"/>
+        <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.Linux.Yaru\Devolutions.AvaloniaTheme.Linux.Yaru.csproj"/>
     </ItemGroup>
 </Project>
