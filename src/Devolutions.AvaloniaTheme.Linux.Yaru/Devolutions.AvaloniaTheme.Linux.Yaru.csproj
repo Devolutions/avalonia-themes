@@ -4,7 +4,7 @@
         <Company>Devolutions</Company>
         <Description>Devolutions Avalonia Linux Yaru Theme</Description>
         <PackageId>Devolutions.AvaloniaTheme.Linux.Yaru</PackageId>
-        <PackageProjectUrl>https://github.com/Devolutions/avalonia-themes</PackageProjectUrl>
+        <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
