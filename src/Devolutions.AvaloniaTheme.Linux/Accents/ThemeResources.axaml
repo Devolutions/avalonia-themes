@@ -35,7 +35,7 @@
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
-  <FontFamily x:Key="LinuxYaruThemeFontFamily">sans-serif</FontFamily>
+  <FontFamily x:Key="LinuxThemeFontFamily">sans-serif</FontFamily>
 
   <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource Background}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />

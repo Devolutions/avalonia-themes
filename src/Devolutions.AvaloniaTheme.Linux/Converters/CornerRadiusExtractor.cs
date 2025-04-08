@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace Devolutions.AvaloniaTheme.Linux.Yaru.Converters;
+namespace Devolutions.AvaloniaTheme.Linux.Converters;
 
 public static class Converters
 {
