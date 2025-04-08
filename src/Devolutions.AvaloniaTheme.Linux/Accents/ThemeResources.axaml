@@ -35,7 +35,7 @@
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
-  <FontFamily x:Key="LinuxThemeFontFamily">sans-serif</FontFamily>
+  <FontFamily x:Key="LinuxThemeFontFamily">avares://Devolutions.AvaloniaTheme.Linux/Accents/Assets/Fonts/OpenSans/static/OpenSans-VariableFont_wdth,wght.ttf#Open Sans</FontFamily>
 
   <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource Background}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />
