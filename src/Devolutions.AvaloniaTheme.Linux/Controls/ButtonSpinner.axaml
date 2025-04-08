@@ -74,15 +74,15 @@
     </Style>
 
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundDisabled}" />
-      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}" />
+      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundDisabledBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabledBrush}" />
     </Style>
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
     <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
     <Setter Property="Padding" Value="10, 0" />
-    <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
+    <Setter Property="Background" Value="{DynamicResource TextControlBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
     <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
@@ -171,7 +171,7 @@
       </Style>
     </Style>
     <Style Selector="^ /template/ RepeatButton:disabled PathIcon">
-      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}" />
+      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabledBrush}" />
     </Style>
     <Style Selector="^ /template/ TextBox:pointerover Border#PART_BorderElement">
       <Setter Property="BorderBrush" Value="Transparent" />
