@@ -50,6 +50,7 @@
   </ResourceDictionary.ThemeDictionaries>
 
   <FontFamily x:Key="LinuxThemeFontFamily">avares://Devolutions.AvaloniaTheme.Linux/Accents/Assets/Fonts/OpenSans/static/OpenSans-VariableFont_wdth,wght.ttf#Open Sans</FontFamily>
+  <x:Double x:Key="DefaultFontSize">13</x:Double>
 
   <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource BackgroundColor}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />
