@@ -59,7 +59,7 @@
                        Color="{DynamicResource SystemChromeMediumLowColor}" />
 
     </ResourceDictionary>
-    <ResourceDictionary x:Key="Default">
+    <ResourceDictionary x:Key="Light">
       <SolidColorBrush x:Key="DataGridColumnHeaderForegroundBrush"
                        Color="{DynamicResource DataGridColumnHeaderForegroundColor}" />
       <SolidColorBrush x:Key="DataGridColumnHeaderBackgroundBrush"
