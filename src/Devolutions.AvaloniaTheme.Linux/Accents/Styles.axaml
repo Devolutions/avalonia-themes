@@ -12,8 +12,6 @@
     </Window>
   </Design.PreviewWith>
 
-  <StyleInclude Source="Styles.DataGrid.axaml" />
-
   <!-- ~1~ <Style Selector=":is(ContextMenu)"> @1@ -->
   <!-- ~1~     <Setter Property="FontFamily" Value="{DynamicResource OpenSans}" /> @1@ -->
   <!-- ~1~     <Setter Property="FontSize" Value="13" /> @1@ -->
