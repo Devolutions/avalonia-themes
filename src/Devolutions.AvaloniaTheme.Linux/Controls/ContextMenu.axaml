@@ -1,0 +1,55 @@
+<!-- 
+    Based from: 
+    https://github.com/AvaloniaUI/Avalonia/blob/603a2bdb43b7e8b2d1c8919f9d0669af7b33f117/src/Avalonia.Themes.Fluent/Controls/ContextMenu.xaml
+-->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal">
+  <Design.PreviewWith>
+    <Border Background="{DynamicResource SystemAccentColor}"
+            Margin="16"
+            Padding="48"
+            Width="400"
+            Height="200">
+      <Border.ContextMenu>
+        <ContextMenu>
+          <MenuItem Header="Standard _Menu Item" />
+          <MenuItem Header="Disabled" IsEnabled="False" />
+          <Separator />
+          <MenuItem Header="Menu with _Submenu">
+            <MenuItem Header="Submenu _1" />
+            <MenuItem Header="Submenu _2" />
+          </MenuItem>
+          <MenuItem Header="Menu Item with _Icon" />
+          <MenuItem Header="Menu Item with _Checkbox">
+            <MenuItem.Icon>
+              <CheckBox BorderThickness="0"
+                        IsHitTestVisible="False"
+                        IsChecked="True" />
+            </MenuItem.Icon>
+          </MenuItem>
+        </ContextMenu>
+      </Border.ContextMenu>
+      <TextBlock Text="Defined in XAML" />
+    </Border>
+  </Design.PreviewWith>
+
+  <Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>
+  <Thickness x:Key="MenuIconPresenterMargin">4 0 10 0</Thickness>
+
+  <ControlTheme x:Key="{x:Type Separator}" TargetType="Separator" BasedOn="{StaticResource {x:Type Separator}}">
+    <Setter Property="Margin" Value="0" />
+    <Setter Property="Background" Value="{DynamicResource Border}" />
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type MenuItem}" TargetType="MenuItem" BasedOn="{StaticResource {x:Type MenuItem}}">
+    <Setter Property="Padding" Value="4 6 10 6" />
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu" BasedOn="{StaticResource {x:Type ContextMenu}}">
+    <Setter Property="Background" Value="{DynamicResource ScrollControlBackground}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
+    <Setter Property="FontSize" Value="13" />
+    <Setter Property="FontFamily" Value="{DynamicResource OpenSans}" />
+  </ControlTheme>
+</ResourceDictionary>

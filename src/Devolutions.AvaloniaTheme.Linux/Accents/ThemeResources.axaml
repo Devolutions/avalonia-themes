@@ -3,65 +3,77 @@
 
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key='Light'>
-      <Color x:Key='Background'>#ffffff</Color>
+      <Color x:Key='ForegroundHighColor'>#050505</Color>
+      <Color x:Key='BackgroundColor'>#ffffff</Color>
       <Color x:Key='Border'>#d1d1d1</Color>
-      <Color x:Key='InputBackground'>#ffffff</Color>
-      <Color x:Key='InputBorder'>#d1d1d1</Color>
-      <Color x:Key='InputDisabledBackground'>#fcfcfc</Color>
-      <Color x:Key='InputDisabledForeground'>#e1e1e1</Color>
-      <Color x:Key='RepeatButtonBackgroundDisabledColor'>#ffffff</Color>
+
+      <Color x:Key='InputBackgroundColor'>#ffffff</Color>
+      <Color x:Key='InputBorderColor'>#d1d1d1</Color>
+      <Color x:Key='InputDisabledBackgroundColor'>#fcfcfc</Color>
+      <Color x:Key='InputDisabledForegroundColor'>#e1e1e1</Color>
 
       <Color x:Key='ButtonBackground'>#ffffff</Color>
-      <Color x:Key='ButtonBackgroundHover'>#f5f5f5</Color>
-      <Color x:Key='ButtonBackgroundActive'>#d6d6d6</Color>
-    </ResourceDictionary>
-    <ResourceDictionary x:Key='Dark'>
-      <SolidColorBrush x:Key="DataGridRowAlternatingBackgroundBrush" Color="#252525" />
-      <Color x:Key='SystemAltHighColor'>#1f1f1f</Color>
-      <Color x:Key='SystemBaseMediumColor'>#f5f5f5</Color>
-      <Color x:Key='Background'>#2c2c2c</Color>
-      <Color x:Key='Border'>#181818</Color>
-      <Color x:Key='InputBackground'>#282828</Color>
-      <Color x:Key='InputBorder'>#181818</Color>
-      <Color x:Key='InputDisabledForeground'>#474747</Color>
-      <Color x:Key='InputDisabledBackground'>#2c2c2c</Color>
-      <Color x:Key='RepeatButtonBackgroundDisabledColor'>#00000000</Color>
+      <Color x:Key='ButtonBackgroundHoverColor'>#f5f5f5</Color>
+      <Color x:Key='ButtonBackgroundActiveColor'>#d6d6d6</Color>
 
-      <Color x:Key='ButtonBackground'>#373737</Color>
-      <Color x:Key='ButtonBackgroundHover'>#3c3c3c</Color>
-      <Color x:Key='ButtonBackgroundActive'>#151515</Color>
+      <Color x:Key='DataGridColumnHeaderBackgroundColor'>#d1d1d1</Color>
+      <Color x:Key='DataGridColumnHeaderForegroundColor'>#101010</Color>
+
+      <Color x:Key='RepeatButtonBackgroundDisabledColor'>#ffffff</Color>
 
       <Color x:Key="BetterListView_GridBorderColor">#393939</Color>
+      <SolidColorBrush x:Key="DataGridRowAlternatingBackgroundBrush" Color="#252525" />
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key='Dark'>
+      <Color x:Key='ForegroundHighColor'>#fcfcfc</Color>
+      <Color x:Key='BackgroundColor'>#2c2c2c</Color>
+      <Color x:Key='Border'>#181818</Color>
+
+      <Color x:Key='InputBackgroundColor'>#282828</Color>
+      <Color x:Key='InputBorderColor'>#181818</Color>
+      <Color x:Key='InputDisabledForegroundColor'>#474747</Color>
+      <Color x:Key='InputDisabledBackgroundColor'>#2c2c2c</Color>
+
+      <Color x:Key='ButtonBackground'>#373737</Color>
+      <Color x:Key='ButtonBackgroundHoverColor'>#3c3c3c</Color>
+      <Color x:Key='ButtonBackgroundActiveColor'>#151515</Color>
+
+      <Color x:Key='RepeatButtonBackgroundDisabledColor'>#00000000</Color>
+
+      <Color x:Key='DataGridColumnHeaderBackgroundColor'>#1f1f1f</Color>
+      <Color x:Key='DataGridColumnHeaderForegroundColor'>#f5f5f5</Color>
+
+      <Color x:Key="BetterListView_GridBorderColor">#393939</Color>
+      <SolidColorBrush x:Key="DataGridRowAlternatingBackgroundBrush" Color="#252525" />
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
-  <FontFamily x:Key="LinuxThemeFontFamily">sans-serif</FontFamily>
+  <FontFamily x:Key="LinuxThemeFontFamily">avares://Devolutions.AvaloniaTheme.Linux/Accents/Assets/Fonts/OpenSans/static/OpenSans-VariableFont_wdth,wght.ttf#Open Sans</FontFamily>
+  <x:Double x:Key="DefaultFontSize">13</x:Double>
 
-  <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource Background}" />
+  <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource BackgroundColor}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />
 
-  <SolidColorBrush x:Key='BackgroundBrush' Color="{DynamicResource Background}" />
+  <SolidColorBrush x:Key='ForegroundHighBrush' Color="{DynamicResource ForegroundHighColor}" />
+  <SolidColorBrush x:Key='BackgroundBrush' Color="{DynamicResource BackgroundColor}" />
 
-  <SolidColorBrush x:Key='InputBackgroundBrush' Color="{DynamicResource InputBackground}" />
-  <SolidColorBrush x:Key='InputBorderBrush' Color="{DynamicResource InputBorder}" />
-  <SolidColorBrush x:Key='InputDisabledBackgroundBrush' Color="{DynamicResource InputDisabledBackground}" />
-  <SolidColorBrush x:Key='InputDisabledForegroundBrush' Color="{DynamicResource InputDisabledForeground}" />
+  <SolidColorBrush x:Key='InputBackgroundBrush' Color="{DynamicResource InputBackgroundColor}" />
+  <SolidColorBrush x:Key='InputBorderBrush' Color="{DynamicResource InputBorderColor}" />
+  <SolidColorBrush x:Key='InputDisabledBackgroundBrush' Color="{DynamicResource InputDisabledBackgroundColor}" />
+  <SolidColorBrush x:Key='InputDisabledForegroundBrush' Color="{DynamicResource InputDisabledForegroundColor}" />
 
-  <SolidColorBrush x:Key='TextControlBorderBrush' Color="{DynamicResource InputBorder}" />
-  <SolidColorBrush x:Key='TextControlBackground' Color="{DynamicResource InputBackground}" />
-  <SolidColorBrush x:Key='TextControlBackgroundFocused' Color="{DynamicResource InputBackground}" />
+  <SolidColorBrush x:Key='TextControlBorderBrush' Color="{DynamicResource InputBorderColor}" />
+  <SolidColorBrush x:Key='TextControlBackgroundBrush' Color="{DynamicResource InputBackgroundColor}" />
+  <SolidColorBrush x:Key='TextControlBackgroundFocusedBrush' Color="{DynamicResource InputBackgroundColor}" />
 
   <SolidColorBrush x:Key='ButtonBackgroundBrush' Color="{DynamicResource ButtonBackground}" />
-  <SolidColorBrush x:Key='ButtonBackgroundPointerOver' Color="{DynamicResource ButtonBackgroundHover}" />
-  <SolidColorBrush x:Key='ButtonBackgroundPressed' Color="{DynamicResource ButtonBackgroundActive}" />
-  <SolidColorBrush x:Key='ButtonBackgroundDisabled' Color="{DynamicResource InputDisabledBackground}" />
-  <SolidColorBrush x:Key='ButtonForegroundDisabled' Color="{DynamicResource InputDisabledForeground}" />
-  <SolidColorBrush x:Key='ButtonBorderBrushDisabled' Color="{DynamicResource InputBorder}" />
 
-  <SolidColorBrush x:Key='RepeatButtonBackgroundDisabled' Color="{DynamicResource RepeatButtonBackgroundDisabledColor}" />
-  <SolidColorBrush x:Key='RepeatButtonForegroundDisabled' Color="{DynamicResource InputDisabledForeground}" />
+  <SolidColorBrush x:Key='RepeatButtonBackgroundDisabledBrush'
+                   Color="{DynamicResource RepeatButtonBackgroundDisabledColor}" />
+  <SolidColorBrush x:Key='RepeatButtonForegroundDisabledBrush' Color="{DynamicResource InputDisabledForegroundColor}" />
 
-  <SolidColorBrush x:Key='TableBorderBrush' Color="{DynamicResource InputBorder}" />
+  <SolidColorBrush x:Key='TableBorderBrush' Color="{DynamicResource InputBorderColor}" />
 
   <Thickness x:Key='ButtonPadding'>12,6</Thickness>
 

@@ -17,4 +17,8 @@
         <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.6" />
         <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.6" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Accents\Assets\Fonts\" />
+    </ItemGroup>
 </Project>
