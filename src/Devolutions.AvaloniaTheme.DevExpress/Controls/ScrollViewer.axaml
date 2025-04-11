@@ -1,8 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
- 
+
   <Design.PreviewWith>
-    <ScrollViewer Width="200" Height="200"
+    <ScrollViewer Width="200" Height="400"
                   HorizontalScrollBarVisibility="Auto">
       <StackPanel Spacing="20" Width="210">
         <TextBlock>Item 1</TextBlock>
@@ -34,22 +34,23 @@
                                   Padding="{TemplateBinding Padding}"
                                   ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}">
             <ScrollContentPresenter.GestureRecognizers>
-              <ScrollGestureRecognizer CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
-                                       CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
-                                       IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}"/>
+              <ScrollGestureRecognizer
+                CanHorizontallyScroll="{Binding CanHorizontallyScroll, ElementName=PART_ContentPresenter}"
+                CanVerticallyScroll="{Binding CanVerticallyScroll, ElementName=PART_ContentPresenter}"
+                IsScrollInertiaEnabled="{Binding (ScrollViewer.IsScrollInertiaEnabled), ElementName=PART_ContentPresenter}" />
             </ScrollContentPresenter.GestureRecognizers>
           </ScrollContentPresenter>
           <ScrollBar Name="PART_HorizontalScrollBar"
                      Orientation="Horizontal"
-                     Grid.Row="1"/>
+                     Grid.Row="1" />
           <ScrollBar Name="PART_VerticalScrollBar"
                      Orientation="Vertical"
-                     Grid.Column="1"/>
+                     Grid.Column="1" />
           <Panel x:Name="PART_ScrollBarsSeparator"
                  Grid.Row="1"
                  Grid.Column="1"
-                 Background="{DynamicResource ScrollViewerScrollBarsSeparatorBackground}"
-                 Opacity="0">
+                 Background="{DynamicResource ScrollBarBackgroundBrush}"
+                 Opacity="1">
             <Panel.Transitions>
               <Transitions>
                 <DoubleTransition Property="Opacity" Duration="0:0:0.1" />
