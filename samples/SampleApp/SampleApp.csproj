@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
         <TargetFramework>net9.0</TargetFramework>
@@ -9,8 +9,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.6" />
-        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.6" />
+        <PackageReference Include="Avalonia" Version="11.2.7" />
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.7" />
         <PackageReference Include="Avalonia.Desktop" Version="11.2.6" />
         <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.6" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
