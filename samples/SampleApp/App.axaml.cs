@@ -18,9 +18,14 @@ public class App : Application
   
   public override void Initialize()
   {
-    Styles.Add(themeStylesContainer);
-    
     AvaloniaXamlLoader.Load(this);
+    
+    if (!Avalonia.Controls.Design.IsDesignMode)
+    {
+      Styles.Clear();
+      Styles.Add(themeStylesContainer);
+    }
+    
     this.linuxYaruStyles = this.Resources["LinuxYaruStyles"] as Styles;
     this.devExpressStyles = this.Resources["DevExpressStyles"] as Styles;
     this.macOsStyles = this.Resources["MacOsStyles"] as Styles;
@@ -28,24 +33,28 @@ public class App : Application
     GC.KeepAlive(typeof(Avalonia.Svg.Skia.Svg).Assembly);
     GC.KeepAlive(typeof(SvgImageExtension).Assembly);
 
-    Theme theme;
-    if (OperatingSystem.IsWindows())
+    if (!Avalonia.Controls.Design.IsDesignMode)
     {
-      theme = new DevExpressTheme();
-    } else if (OperatingSystem.IsMacOS())
-    {
-      theme = new MacOsTheme();
-    }
-    else if (OperatingSystem.IsLinux())
-    {
-      theme = new LinuxYaruTheme();
-    }
-    else
-    {
-      theme = new MacOsTheme();
-    }
+      Theme theme;
+      if (OperatingSystem.IsWindows())
+      {
+        theme = new DevExpressTheme();
+      }
+      else if (OperatingSystem.IsMacOS())
+      {
+        theme = new MacOsTheme();
+      }
+      else if (OperatingSystem.IsLinux())
+      {
+        theme = new LinuxYaruTheme();
+      }
+      else
+      {
+        theme = new MacOsTheme();
+      }
     
-    SetTheme(theme);
+      SetTheme(theme);
+    }
   }
 
   public static void SetTheme(Theme theme)
