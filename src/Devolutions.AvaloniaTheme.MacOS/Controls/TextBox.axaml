@@ -122,8 +122,8 @@
     <Setter Property="SelectionBrush" Value="{DynamicResource TextBoxSelectionHighlightBrush}" />
     <!-- <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" /> TODO: make this a style? Class: rounded true/false -->
     <Setter Property="CornerRadius" Value="0" />
-    <Setter Property="MinHeight" Value="27" />
-    <Setter Property="MinWidth" Value="27" />
+    <Setter Property="MinHeight" Value="19" />
+    <Setter Property="MinWidth" Value="19" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
