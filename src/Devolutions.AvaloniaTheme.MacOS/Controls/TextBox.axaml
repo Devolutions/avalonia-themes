@@ -28,7 +28,7 @@
             <TextBlock>Custom Height:</TextBlock>
             <StackPanel Orientation="Horizontal">
               <TextBox Watermark="Type here" Height="30" Width="250" VerticalContentAlignment="Center" />
-              <!-- <Button Content="..." Height="30" Width="30" /> -->
+              <Button Content="..." Height="30" Width="30" />
             </StackPanel>
           </StackPanel>
         </Border>
