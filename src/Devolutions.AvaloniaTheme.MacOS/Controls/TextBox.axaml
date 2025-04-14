@@ -15,16 +15,9 @@
             <TextBlock>Password:</TextBlock>
             <TextBox PasswordChar="*" Watermark="Enter your password" />
             <TextBlock>Notes:</TextBlock>
-            <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" >We need to improve the UX of the network scanner, customers have asked for something more similar to Angry IP scanner.
-
-              There are a few other excellent tools with great UI to use for inspiration here, such as Fing and LanSweeper (we should research this as well).
-
-              Our scan actually does a lot more than Angry IP, but visually does not represent this very well, here are my thoughts on how we can improve our UI and make it even better than Angry IP:
-
-              Allow selecting the Network Interface to use to to scan, and better detect the “correct” default network interface, AngryIP has button “IP↑“ that lets you select the interface,
-
-              We could scan all network or only specific networks, this could go in hand with selecting a remote Gateway and an interface on the remote gateway to scan as well.
-              </TextBox>
+            <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap">
+              Note: explicitly styling TextBlock causes massive problems, because there are so many dynamically created TextBlocks in controls' ContentPresenters (i.e. they only get created if the content provided is a simple string, and therefore they are not a part of the logical tree and do not receive the local template styling anymore if there is a general TextBlock rule, and cannot easily overwritten then - except with hard-coded styles rather than template bindings ...
+            </TextBox>
             <TextBox InnerLeftContent="http://" />
             <TextBox InnerRightContent=".com" />
             <TextBox
