@@ -146,7 +146,8 @@
                   <ContentPresenter Name="PrefixContent"
                                     Grid.Column="0"
                                     Content="{TemplateBinding InnerLeftContent}"
-                                    Padding="3 2 3 1">
+                                    Padding="3 2 3 1"
+                                    VerticalAlignment="Center">
                     <ContentPresenter.IsVisible>
                       <Binding RelativeSource="{RelativeSource Self}" Path="Content"
                                Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
@@ -170,7 +171,7 @@
                                    TextAlignment="{TemplateBinding TextAlignment}"
                                    TextWrapping="{TemplateBinding TextWrapping}"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                   VerticalAlignment="Center">
                           <TextBlock.IsVisible>
                             <MultiBinding Converter="{x:Static BoolConverters.And}">
                               <Binding ElementName="PART_TextPresenter" Path="PreeditText"
@@ -212,7 +213,8 @@
                   <ContentPresenter Name="SuffixContent"
                                     Grid.Column="2"
                                     Padding="3 2 3 1"
-                                    Content="{TemplateBinding InnerRightContent}">
+                                    Content="{TemplateBinding InnerRightContent}"
+                                    VerticalAlignment="Center">
                     <ContentPresenter.IsVisible>
                       <Binding RelativeSource="{RelativeSource Self}" Path="Content"
                                Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
