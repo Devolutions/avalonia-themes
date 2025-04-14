@@ -1,0 +1,16 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal">
+  <Design.PreviewWith>
+      <Button />
+  </Design.PreviewWith>
+
+  <ControlTheme x:Key="{x:Type Button}" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+    <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ButtonBackgroundDisabledBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabledBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderDisabledBrush}" />
+    </Style>
+  </ControlTheme>
+
+</ResourceDictionary>

@@ -5,7 +5,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-                    xmlns:converters="clr-namespace:Devolutions.AvaloniaTheme.Linux.Converters">
+                    xmlns:c="clr-namespace:Devolutions.AvaloniaTheme.Linux.Converters"
+                    x:ClassModifier="internal">
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
@@ -24,20 +25,20 @@
           <NumericUpDown.InnerLeftContent>
             <TextBlock Text="m"
                        TextAlignment="Center"
-                       VerticalAlignment="Center" />
+                       VerticalAlignment="Center"/>
           </NumericUpDown.InnerLeftContent>
           <NumericUpDown.InnerRightContent>
-            <Button Content="X" />
+            <Button Content="X"/>
           </NumericUpDown.InnerRightContent>
         </NumericUpDown>
         <NumericUpDown ButtonSpinnerLocation="Right">
           <NumericUpDown.InnerLeftContent>
-            <Button Content="X" />
+            <Button Content="X"/>
           </NumericUpDown.InnerLeftContent>
           <NumericUpDown.InnerRightContent>
             <TextBlock Text="m"
                        TextAlignment="Center"
-                       VerticalAlignment="Center" />
+                       VerticalAlignment="Center"/>
           </NumericUpDown.InnerRightContent>
         </NumericUpDown>
         <NumericUpDown>
@@ -55,13 +56,14 @@
 
   <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
     <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-    <Setter Property="Background" Value="{DynamicResource TextControlBackgroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
     <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-    <Setter Property="MinHeight" Value="{DynamicResource TextControlThemeMinHeight}" />
-    <Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
+    <Setter Property="Height" Value="{DynamicResource InputDefaultHeight}" />
+    <Setter Property="MinWidth" Value="{DynamicResource NumericUpDownMinWidth}" />
     <Setter Property="Padding" Value="{DynamicResource TextControlThemePadding}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+    <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
@@ -72,58 +74,62 @@
                            BorderThickness="{TemplateBinding BorderThickness}"
                            BorderBrush="{TemplateBinding BorderBrush}"
                            CornerRadius="{TemplateBinding CornerRadius}"
+                           MinWidth="{TemplateBinding MinWidth}"
+                           MinHeight="{TemplateBinding MinHeight}"
                            IsTabStop="False"
                            Padding="0"
-                           MinWidth="0"
                            HorizontalContentAlignment="Stretch"
                            VerticalContentAlignment="Stretch"
                            AllowSpin="{TemplateBinding AllowSpin}"
                            ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
                            ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
-              <TextBox Name="PART_TextBox"
-                       Classes="no-focus-border"
-                       Background="Transparent"
-                       BorderBrush="Transparent"
-                       Margin="-1"
-                       Padding="2 0"
-                       MinWidth="0"
-                       Foreground="{TemplateBinding Foreground}"
-                       Watermark="{TemplateBinding Watermark}"
-                       IsReadOnly="{TemplateBinding IsReadOnly}"
-                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                       Text="{TemplateBinding Text}"
-                       TextAlignment="{TemplateBinding TextAlignment}"
-                       AcceptsReturn="False"
-                       TextWrapping="NoWrap"
-                       Focusable="{TemplateBinding Focusable}"
-                       InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
-                       InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}" />
+            <TextBox Name="PART_TextBox"
+                     Classes="no-focus-border"
+                     Background="Transparent"
+                     BorderBrush="Transparent"
+                     Margin="-1"
+                     Padding="{TemplateBinding Padding}"
+                     MinWidth="0"
+                     Foreground="{TemplateBinding Foreground}"
+                     Watermark="{TemplateBinding Watermark}"
+                     IsReadOnly="{TemplateBinding IsReadOnly}"
+                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                     Text="{TemplateBinding Text}"
+                     TextAlignment="{TemplateBinding TextAlignment}"
+                     AcceptsReturn="False"
+                     TextWrapping="NoWrap"
+                     Focusable="{TemplateBinding Focusable}"
+                     InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
+                     InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}"/>
             </ButtonSpinner>
             <Border Name="PART_FocusBorder"
-                    Margin="0"
-                    Background="Transparent"
-                    IsHitTestVisible="False"
-                    CornerRadius="{DynamicResource ControlCornerRadius}" />
+                  Margin="0"
+                  Background="Transparent"
+                  IsHitTestVisible="False"
+                  CornerRadius="{DynamicResource ControlCornerRadius}"
+            />
           </Panel>
         </DataValidationErrors>
       </ControlTemplate>
     </Setter>
     <!-- Focused State -->
     <Style Selector="^:focus-within /template/ Border#PART_FocusBorder">
-      <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}"/>
+        <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
     </Style>
-
+    
     <Style Selector="^[ButtonSpinnerLocation=Left] /template/ TextBox">
-      <Setter
-        Property="CornerRadius"
-        Value="{TemplateBinding CornerRadius, Converter={x:Static converters:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static converters:CornerRadiusSubset.Right}}" />
+        <Setter 
+            Property="CornerRadius" 
+            Value="{TemplateBinding CornerRadius, Converter={x:Static c:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Right}}"
+        />
     </Style>
     <Style Selector="^[ButtonSpinnerLocation=Right] /template/ TextBox">
-      <Setter
-        Property="CornerRadius"
-        Value="{TemplateBinding CornerRadius, Converter={x:Static converters:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static converters:CornerRadiusSubset.Left}}" />
+        <Setter 
+            Property="CornerRadius" 
+            Value="{TemplateBinding CornerRadius, Converter={x:Static c:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Left}}"
+        />
     </Style>
   </ControlTheme>
 </ResourceDictionary>

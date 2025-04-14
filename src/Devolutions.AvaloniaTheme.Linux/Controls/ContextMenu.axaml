@@ -49,7 +49,7 @@
   <ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu" BasedOn="{StaticResource {x:Type ContextMenu}}">
     <Setter Property="Background" Value="{DynamicResource ScrollControlBackground}" />
     <Setter Property="BorderBrush" Value="{DynamicResource Border}" />
-    <Setter Property="FontSize" Value="13" />
+    <!-- <Setter Property="FontSize" Value="13" /> -->
     <Setter Property="FontFamily" Value="{DynamicResource OpenSans}" />
   </ControlTheme>
 </ResourceDictionary>

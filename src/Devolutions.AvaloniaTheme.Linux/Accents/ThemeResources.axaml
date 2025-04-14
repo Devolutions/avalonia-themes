@@ -49,8 +49,8 @@
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
-  <FontFamily x:Key="LinuxThemeFontFamily">avares://Devolutions.AvaloniaTheme.Linux/Accents/Assets/Fonts/OpenSans/static/OpenSans-VariableFont_wdth,wght.ttf#Open Sans</FontFamily>
-  <x:Double x:Key="DefaultFontSize">13</x:Double>
+  <FontFamily x:Key="DefaultFontFamily">Open Sans, sanserif</FontFamily>
+  <x:Double x:Key="DefaultFontSize">14</x:Double>
 
   <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource BackgroundColor}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />
@@ -68,16 +68,22 @@
   <SolidColorBrush x:Key='TextControlBackgroundFocusedBrush' Color="{DynamicResource InputBackgroundColor}" />
 
   <SolidColorBrush x:Key='ButtonBackgroundBrush' Color="{DynamicResource ButtonBackground}" />
-
-  <SolidColorBrush x:Key='RepeatButtonBackgroundDisabledBrush'
-                   Color="{DynamicResource RepeatButtonBackgroundDisabledColor}" />
+  <SolidColorBrush x:Key='ButtonBackgroundPointerOver' Color="{DynamicResource ButtonBackgroundHoverColor}" />
+  <SolidColorBrush x:Key='ButtonBackgroundPressed' Color="{DynamicResource ButtonBackgroundActiveColor}" />
+  <StaticResource x:Key='ButtonBackgroundDisabledBrush' ResourceKey='InputDisabledBackgroundBrush' />
+  <StaticResource x:Key='ButtonForegroundDisabledBrush' ResourceKey='InputDisabledForegroundBrush' />
+  <StaticResource x:Key='ButtonBorderDisabledBrush' ResourceKey='InputBorderBrush' />
+            
+  <SolidColorBrush x:Key='RepeatButtonBackgroundDisabledBrush' Color="{DynamicResource RepeatButtonBackgroundDisabledColor}" />
   <SolidColorBrush x:Key='RepeatButtonForegroundDisabledBrush' Color="{DynamicResource InputDisabledForegroundColor}" />
 
   <SolidColorBrush x:Key='TableBorderBrush' Color="{DynamicResource InputBorderColor}" />
 
   <Thickness x:Key='ButtonPadding'>12,6</Thickness>
-
   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
+  <x:Double x:Key="InputDefaultHeight">34</x:Double>
+  
+  <x:Double x:Key="NumericUpDownMinWidth">96</x:Double>
 
   <!-- DEVELOPMENT ONLY -->
   <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->

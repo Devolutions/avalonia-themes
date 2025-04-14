@@ -12,15 +12,6 @@
     </Window>
   </Design.PreviewWith>
 
-  <!-- ~1~ <Style Selector=":is(ContextMenu)"> @1@ -->
-  <!-- ~1~     <Setter Property="FontFamily" Value="{DynamicResource OpenSans}" /> @1@ -->
-  <!-- ~1~     <Setter Property="FontSize" Value="13" /> @1@ -->
-  <!-- ~1~ </Style> @1@ -->
-  <!-- -->
-  <!-- <Style Selector=":is(Window), :is(controls|DialogLayout), :is(avaloniaUi|BaseAvaloniaView)"> -->
-  <!--   <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" /> -->
-  <!-- </Style> -->
-
   <Style Selector=":is(ListBox), :is(NumericUpDown)">
     <Setter Property="Background" Value="{DynamicResource InputBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
