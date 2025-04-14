@@ -39,7 +39,7 @@
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
-      <TabItem Header="Menu" IsSelected="True">
+      <TabItem Header="Menu">
         <demoPages:MenuDemo />
       </TabItem>
       <TabItem Header="GridSplitter">
