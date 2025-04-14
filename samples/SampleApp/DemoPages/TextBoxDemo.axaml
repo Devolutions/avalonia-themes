@@ -5,12 +5,6 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
              x:Class="SampleApp.DemoPages.TextBoxDemo">
 
-  <UserControl.Styles>
-    <Style Selector="Label">
-      <Setter Property="Margin" Value="3 0 0 0" />
-    </Style>
-  </UserControl.Styles>
-
   <ScrollViewer>
     <Border Margin="20"
             BorderBrush="{DynamicResource LayoutBorderMidBrush}"
