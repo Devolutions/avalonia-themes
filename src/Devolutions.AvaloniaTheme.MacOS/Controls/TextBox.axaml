@@ -6,7 +6,7 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <ThemeVariantScope RequestedThemeVariant="Dark">
+    <ThemeVariantScope RequestedThemeVariant="Light">
       <Border Background="{DynamicResource BackgroundBrush}">
         <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
           <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
@@ -219,6 +219,7 @@
               <Border Name="BottomBorderShadow"
                       BorderThickness="0 0 0 0.6"
                       BorderBrush="{TemplateBinding BorderBrush}"
+                      CornerRadius="{TemplateBinding CornerRadius}"
                       BoxShadow="{DynamicResource TextBoxBorderShadows}"
                       Margin="0.6 0 0.6 -0.6 " />
               <Border Name="FocusBorderElement"
