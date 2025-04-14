@@ -4,7 +4,7 @@
              x:Class="SampleApp.DemoPages.NumericUpDownDemo">
 
   <Border Padding="20">
-    <Grid RowDefinitions="50, 50, 50, 50, 50"
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto"
           ColumnDefinitions="Auto, 120"
           HorizontalAlignment="Left">
       <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="12">Watermark:</TextBlock>
