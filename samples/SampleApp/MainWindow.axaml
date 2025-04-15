@@ -5,8 +5,10 @@
         xmlns:demoPages="clr-namespace:SampleApp.DemoPages"
         xmlns:experiments="clr-namespace:SampleApp.Experiments"
         xmlns:vm="clr-namespace:SampleApp.ViewModels"
+        xmlns:sampleApp="clr-namespace:SampleApp"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SampleApp.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
         Title="Devolutions MacOS Theme Sampler">
 
   <!-- TODO: move the margins into the theme ?? -->
@@ -37,7 +39,7 @@
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
-      <TabItem Header="Menu" IsSelected="True">
+      <TabItem Header="Menu">
         <demoPages:MenuDemo />
       </TabItem>
       <TabItem Header="GridSplitter">
@@ -67,8 +69,7 @@
       <TabItem Header="ToolTip">
         <demoPages:ToolTipDemo />
       </TabItem>
-
-
+      
       <TabItem>
         <TabItem.Header>
           <StackPanel Orientation="Horizontal">
@@ -84,6 +85,38 @@
             <experiments:ToggleButtonExperiments />
           </TabItem>
         </TabControl>
+      </TabItem>
+      
+      <TabItem Header="Settings">
+        <TabItem.Template>
+          <ControlTemplate>
+            <Button x:Name="SettingsButton" Content="Settings">
+              <Button.Flyout>
+                <Flyout>
+                  <StackPanel Width="152" Spacing="8">
+                    <ComboBox x:Name="ThemeVariants"
+                              HorizontalAlignment="Stretch"
+                              DisplayMemberBinding="{Binding Key, x:DataType=ThemeVariant}"
+                              SelectedIndex="0"
+                              SelectionChanged="ThemeVariants_OnSelectionChanged">
+                      <ComboBox.Items>
+                        <ThemeVariant>Default</ThemeVariant>
+                        <ThemeVariant>Light</ThemeVariant>
+                        <ThemeVariant>Dark</ThemeVariant>
+                      </ComboBox.Items>
+                    </ComboBox>
+                    <ComboBox x:Name="Themes"
+                              HorizontalAlignment="Stretch"
+                              DisplayMemberBinding="{Binding Name, x:DataType=sampleApp:Theme}"
+                              ItemsSource="{Binding AvailableThemes}"
+                              SelectedItem="{Binding CurrentTheme}"
+                              SelectionChanged="Themes_OnSelectionChanged" />
+                  </StackPanel>
+                </Flyout>
+              </Button.Flyout>
+            </Button>
+          </ControlTemplate>
+        </TabItem.Template>
       </TabItem>
     </TabControl>
   </Panel>

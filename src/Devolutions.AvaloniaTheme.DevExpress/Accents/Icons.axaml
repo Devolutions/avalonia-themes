@@ -5,4 +5,5 @@
   <StreamGeometry x:Key="CheckMarkPath">M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z</StreamGeometry>
   <StreamGeometry x:Key="CheckMarkPathFat">M5.5,9.6l-3.8-3.8c-.4-.4-1,.6-1.4,1-.4.4-1.4,1-1,1.4l5.5,5.5c.4.4,1,.4,1.4,0L18.2,1.7c.4-.4-.6-1-1-1.4-.4-.4-1-1.4-1.4-1L5.5,9.6Z</StreamGeometry>
   <StreamGeometry x:Key="CheckMarkIndeterminatePath">M1536 1536v-1024h-1024v1024h1024z</StreamGeometry>
+  <StreamGeometry x:Key="ScrollBarLineButtonPath">M139.51,112.86l-64.84,112.3c-9.3,16.11,2.33,36.25,20.93,36.25h129.67c18.61,0,30.23-20.14,20.93-36.25l-64.84-112.3c-9.3-16.11-32.56-16.11-41.86,0Z</StreamGeometry>
 </ResourceDictionary>

@@ -6,34 +6,43 @@
   </ResourceDictionary.MergedDictionaries>
 
   <Design.PreviewWith>
-    <!-- <ThemeVariantScope RequestedThemeVariant="Dark"> -->
-    <Border Background="#f0f0f0">
-      <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
-        <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
-          <TextBlock>Name:</TextBlock>
-          <TextBox Watermark="Enter your name">Anna</TextBox>
-          <TextBlock>Password:</TextBlock>
-          <TextBox PasswordChar="*" Watermark="Enter your password" />
-          <TextBlock>Notes:</TextBlock>
-          <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
-          <TextBox InnerLeftContent="http://" />
-          <TextBox InnerRightContent=".com" />
-          <TextBox
-            InnerLeftContent="http://"
-            InnerRightContent=".com" />
-          <TextBox Classes="clearButton">With 'Clear' button</TextBox>
-          <TextBox Watermark="Enter your name" IsEnabled="False" />
-          <TextBox PasswordChar="•" Classes="revealPasswordButton">Reveal Password</TextBox>
-          <TextBox PasswordChar="•" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
-          <TextBlock>Custom Height:</TextBlock>
-          <StackPanel Orientation="Horizontal">
-            <TextBox Watermark="Type here" Height="30" Width="250" VerticalContentAlignment="Center" />
-            <Button Content="..." Height="30" Width="30" />
+    <ThemeVariantScope RequestedThemeVariant="Light">
+      <Border Background="{DynamicResource BackgroundBrush}">
+        <Border Background="{DynamicResource LayoutBackgroundLowBrush}">
+          <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
+            <TextBlock>Name:</TextBlock>
+            <TextBox Watermark="Enter your name">Anna</TextBox>
+            <TextBlock>Password:</TextBlock>
+            <TextBox PasswordChar="*" Watermark="Enter your password" />
+            <TextBlock>Notes:</TextBlock>
+            <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" >We need to improve the UX of the network scanner, customers have asked for something more similar to Angry IP scanner.
+
+              There are a few other excellent tools with great UI to use for inspiration here, such as Fing and LanSweeper (we should research this as well).
+
+              Our scan actually does a lot more than Angry IP, but visually does not represent this very well, here are my thoughts on how we can improve our UI and make it even better than Angry IP:
+
+              Allow selecting the Network Interface to use to to scan, and better detect the “correct” default network interface, AngryIP has button “IP↑“ that lets you select the interface,
+
+              We could scan all network or only specific networks, this could go in hand with selecting a remote Gateway and an interface on the remote gateway to scan as well.
+              </TextBox>
+            <TextBox InnerLeftContent="http://" />
+            <TextBox InnerRightContent=".com" />
+            <TextBox
+              InnerLeftContent="http://"
+              InnerRightContent=".com" />
+            <TextBox Classes="clearButton">With 'Clear' button</TextBox>
+            <TextBox Watermark="Enter your name" IsEnabled="False" />
+            <TextBox PasswordChar="•" Classes="revealPasswordButton">Reveal Password</TextBox>
+            <TextBox PasswordChar="•" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+            <TextBlock>Custom Height:</TextBlock>
+            <StackPanel Orientation="Horizontal" Spacing="5">
+              <TextBox Watermark="Type here" Height="30" Width="250" VerticalContentAlignment="Center" />
+              <Button Content="..." Height="30" Width="30" />
+            </StackPanel>
           </StackPanel>
-        </StackPanel>
+        </Border>
       </Border>
-    </Border>
-    <!-- </ThemeVariantScope> -->
+    </ThemeVariantScope>
   </Design.PreviewWith>
 
   <MenuFlyout x:Key="DefaultTextBoxContextFlyout">
@@ -112,29 +121,33 @@
     </Setter>
     <Setter Property="SelectionBrush" Value="{DynamicResource TextBoxSelectionHighlightBrush}" />
     <!-- <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" /> TODO: make this a style? Class: rounded true/false -->
-    <Setter Property="MinHeight" Value="27" />
-    <Setter Property="MinWidth" Value="27" />
+    <Setter Property="CornerRadius" Value="0" />
+    <Setter Property="MinHeight" Value="19" />
+    <Setter Property="MinWidth" Value="19" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
             Value="{OnFormFactor Desktop={StaticResource DefaultTextBoxContextFlyout}, Mobile={StaticResource HorizontalTextBoxContextFlyout}}" />
     <Setter Property="ScrollViewer.AllowAutoHide" Value="False" />
     <Setter Property="Template">
       <ControlTemplate>
-        <DataValidationErrors>
-          <Border Padding="3">
-            <Panel>
+        <DataValidationErrors ClipToBounds="False">
+          <Border ClipToBounds="False">
+            <Panel ClipToBounds="False">
               <Border Name="PART_BorderElement"
                       Height="{TemplateBinding Height}"
                       BorderThickness="{TemplateBinding BorderThickness}"
                       BorderBrush="{TemplateBinding BorderBrush}"
                       Background="{TemplateBinding Background}"
+                      CornerRadius="{TemplateBinding CornerRadius}"
                       Padding="2 0 2 0 ">
                 <Grid ColumnDefinitions="Auto,*,Auto">
                   <ContentPresenter Name="PrefixContent"
                                     Grid.Column="0"
                                     Content="{TemplateBinding InnerLeftContent}"
-                                    Padding="3 2 3 1">
+                                    Padding="3 2 3 1"
+                                    VerticalAlignment="Center">
                     <ContentPresenter.IsVisible>
                       <Binding RelativeSource="{RelativeSource Self}" Path="Content"
                                Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
@@ -158,7 +171,7 @@
                                    TextAlignment="{TemplateBinding TextAlignment}"
                                    TextWrapping="{TemplateBinding TextWrapping}"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                   VerticalAlignment="Center">
                           <TextBlock.IsVisible>
                             <MultiBinding Converter="{x:Static BoolConverters.And}">
                               <Binding ElementName="PART_TextPresenter" Path="PreeditText"
@@ -200,7 +213,8 @@
                   <ContentPresenter Name="SuffixContent"
                                     Grid.Column="2"
                                     Padding="3 2 3 1"
-                                    Content="{TemplateBinding InnerRightContent}">
+                                    Content="{TemplateBinding InnerRightContent}"
+                                    VerticalAlignment="Center">
                     <ContentPresenter.IsVisible>
                       <Binding RelativeSource="{RelativeSource Self}" Path="Content"
                                Converter="{x:Static StringConverters.IsNotNullOrEmpty}" />
@@ -209,22 +223,21 @@
                 </Grid>
               </Border>
               <Border Name="BottomBorder"
-                      Height="{TemplateBinding Height}"
                       BorderThickness="0 0 0 0.6"
                       BorderBrush="{DynamicResource TextBoxBottomBorderBrush}"
                       BoxShadow="{DynamicResource TextBoxBorderShadows}"
+                      CornerRadius="{TemplateBinding CornerRadius}"
                       Margin="0.6 0  " />
-              <Border Name="BottomBorderShaddow"
-                      Height="{TemplateBinding Height}"
+              <Border Name="BottomBorderShadow"
                       BorderThickness="0 0 0 0.6"
                       BorderBrush="{TemplateBinding BorderBrush}"
+                      CornerRadius="{TemplateBinding CornerRadius}"
                       BoxShadow="{DynamicResource TextBoxBorderShadows}"
                       Margin="0.6 0 0.6 -0.6 " />
               <Border Name="FocusBorderElement"
-                      Height="{TemplateBinding Height}"
                       Margin="-3"
-                      BorderThickness="3"
-                      CornerRadius="3" />
+                      BorderThickness="3.5"
+                      CornerRadius="2" />
             </Panel>
           </Border>
         </DataValidationErrors>
@@ -244,6 +257,9 @@
     <Style Selector="^:focus">
       <Style Selector="^ /template/ Border#FocusBorderElement">
         <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderFocusBrush}" />
+      </Style>
+      <Style Selector="^ /template/ Border#BottomBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource SystemAccentColor}" />
       </Style>
     </Style>
 

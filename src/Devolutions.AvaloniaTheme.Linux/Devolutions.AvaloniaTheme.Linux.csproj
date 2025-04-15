@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>0.2.0-dev</Version>
     <Company>Devolutions</Company>
-    <Description>Devolutions Avalonia Linux  Theme</Description>
+    <Description>Devolutions Avalonia Linux Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
     <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
