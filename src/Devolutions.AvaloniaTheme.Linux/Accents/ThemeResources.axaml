@@ -51,6 +51,8 @@
 
   <FontFamily x:Key="DefaultFontFamily">Open Sans, sanserif</FontFamily>
   <x:Double x:Key="DefaultFontSize">14</x:Double>
+  
+  <x:Double x:Key="TextControlMinHeight">34</x:Double>
 
   <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource BackgroundColor}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />

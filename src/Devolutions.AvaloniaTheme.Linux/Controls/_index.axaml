@@ -7,6 +7,7 @@
     <MergeResourceInclude Source="ContextMenu.axaml" />
     <MergeResourceInclude Source="DataGrid.axaml" />
     <MergeResourceInclude Source="EmbeddableControlRoot.axaml" />
+    <MergeResourceInclude Source="ListBox.axaml" />
     <MergeResourceInclude Source="NumericUpDown.axaml" />
     <MergeResourceInclude Source="TabItem.axaml" />
     <MergeResourceInclude Source="TextBox.axaml" />

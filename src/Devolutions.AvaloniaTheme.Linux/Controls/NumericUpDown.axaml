@@ -56,9 +56,9 @@
 
   <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
     <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-    <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
+    <Setter Property="Background" Value="{DynamicResource InputBackgroundBrush}" />
     <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
     <Setter Property="Height" Value="{DynamicResource InputDefaultHeight}" />
     <Setter Property="MinWidth" Value="{DynamicResource NumericUpDownMinWidth}" />
     <Setter Property="Padding" Value="{DynamicResource TextControlThemePadding}" />
