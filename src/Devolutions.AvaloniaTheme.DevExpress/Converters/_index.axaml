@@ -6,4 +6,5 @@
   <converters:CharToDevExpressPasswordCharConverter x:Key="CharToDevExpressPasswordCharConverter" />
   <converters:RevealPasswordToFontSizeConverter x:Key="RevealPasswordToFontSizeConverter" />
   <converters:TabBorderVisibilityConverter x:Key="TabBorderVisibilityConverter" />
+  <converters:ThicknessToSelectiveThicknessConverter x:Key="ThicknessToSelectiveThicknessConverter" />
 </ResourceDictionary>

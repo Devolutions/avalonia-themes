@@ -2,19 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
              x:Class="SampleApp.DemoPages.ScrollViewerDemo">
   <Border Padding="10">
     <StackPanel>
-      <Grid ColumnDefinitions="Auto, 420, 420" RowDefinitions="Auto, 320, 320">
+      <Grid ColumnDefinitions="Auto, 400, 400" RowDefinitions="Auto, 320, 320">
         <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">Default</TextBlock>
         <TextBlock Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Classes="code">Classes="MacOS_TransparentTrack"</TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">Default</TextBlock>
         <Border Grid.Row="1" Grid.Column="1" Background="{DynamicResource BackgroundBrush}"
-                BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1" Width="400"
+                BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1" Width="380"
                 Height="300">
-          <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 ">
-            <StackPanel Background="{DynamicResource BackgroundBrush}">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5">
+            <StackPanel Background="{DynamicResource BackgroundBrush}" Width="400">
               <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
               <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
               <TextBlock>-rw-r--r--@  1 jdoe  staff    6148 28 Jan 14:27 .DS_Store</TextBlock>
@@ -46,7 +46,7 @@
         </Border>
 
         <Border Grid.Row="1" Grid.Column="2" BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1"
-                Width="400" Height="300">
+                Width="380" Height="300">
           <ScrollViewer HorizontalScrollBarVisibility="Auto" Classes="MacOS_TransparentTrack">
             <Image Width="800" Height="600"
                    Source="avares://SampleApp/Assets/SampleImage.jpg" />
@@ -54,10 +54,11 @@
         </Border>
 
         <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Classes="code" VerticalAlignment="Center">AllowAutoHide="False"</TextBlock>
-        <Border Grid.Row="2" Grid.Column="1" BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1"
-                Width="400" Height="300">
-          <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 " AllowAutoHide="False">
-            <StackPanel Background="{DynamicResource BackgroundBrush}">
+        <Border Grid.Row="2" Grid.Column="1" Background="{DynamicResource BackgroundBrush}"
+                BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1" Width="380"
+                Height="300">
+          <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5" AllowAutoHide="False">
+            <StackPanel Background="{DynamicResource BackgroundBrush}" Width="400">
               <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
               <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
               <TextBlock>-rw-r--r--@  1 jdoe  staff    6148 28 Jan 14:27 .DS_Store</TextBlock>
@@ -87,9 +88,8 @@
             </StackPanel>
           </ScrollViewer>
         </Border>
-
         <Border Grid.Row="2" Grid.Column="2" BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1"
-                Width="400" Height="300">
+                Width="380" Height="300">
           <ScrollViewer HorizontalScrollBarVisibility="Auto" Classes="MacOS_TransparentTrack" AllowAutoHide="False">
             <Image Width="800" Height="600"
                    Source="avares://SampleApp/Assets/SampleImage.jpg" />
@@ -100,6 +100,9 @@
         <Bold>Note:</Bold> MacOS hides scrollbars completely (depending on user settings), but they re-appear on scroll events.
         Since Avalonia ScrollBars only expand on pointerOver hiding them completely would be a bit confusing, so the Thumb sliders
         remain visible even when <TextBlock Classes="code" Text="AllowAutoHide=&quot;True&quot;" />.
+      </TextBlock>
+      <TextBlock TextWrapping="Wrap">
+        <Bold>Note:</Bold> ScrollViewer content needs explicit width to avoid cutting off the right edge.
       </TextBlock>
     </StackPanel>
   </Border>
