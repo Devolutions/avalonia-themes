@@ -5,51 +5,68 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="using:System"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaTheme.Linux.Converters"
+                    xmlns:c="clr-namespace:Devolutions.AvaloniaThemes.Linux.Converters"
                     xmlns:avaloniaConverters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
                     x:ClassModifier="internal">
   <Design.PreviewWith>
-      <StackPanel Spacing="20">
-        <ButtonSpinner Content="Right spinner" />
-        <ButtonSpinner 
-            Content="Right spinner half-disabled"
-            ValidSpinDirection="Increase"
-        />
-        <ButtonSpinner ButtonSpinnerLocation="Left"
-                       Content="Left spinner" />
-        <ButtonSpinner ButtonSpinnerLocation="Left"
-                       Content="Left spinner" />
-        <ButtonSpinner BorderThickness="2"
-                       BorderBrush="Blue"
-                       Content="Right Border" />
-        <ButtonSpinner ButtonSpinnerLocation="Left"
-                       BorderThickness="2"
-                       BorderBrush="Blue"
-                       Content="Left Border" />
-        <ButtonSpinner Content="Right disabled"
-                       AllowSpin="False"/>
-        <ButtonSpinner ButtonSpinnerLocation="Left"
-                       Content="Left disabled"
-                       AllowSpin="False"/>
-        <ButtonSpinner ShowButtonSpinner="False"
-                       Content="Hide spinner" />
-        <ButtonSpinner Content="Error">
-          <DataValidationErrors.Error>
-            <sys:Exception>
-              <x:Arguments>
-                <x:String>Error</x:String>
-              </x:Arguments>
-            </sys:Exception>
-          </DataValidationErrors.Error>
-        </ButtonSpinner>
-      </StackPanel>
+    <ThemeVariantScope RequestedThemeVariant="Light">
+        <StackPanel Spacing="20">
+            <ButtonSpinner Content="Right spinner" />
+            <ButtonSpinner 
+                Content="Right spinner half-disabled"
+                ValidSpinDirection="Increase"
+            />
+            <ButtonSpinner ButtonSpinnerLocation="Left"
+                           Content="Left spinner" />
+            <ButtonSpinner ButtonSpinnerLocation="Left"
+                           Content="Left spinner" />
+            <ButtonSpinner BorderThickness="2"
+                           BorderBrush="Blue"
+                           Content="Right Border" />
+            <ButtonSpinner ButtonSpinnerLocation="Left"
+                           BorderThickness="2"
+                           BorderBrush="Blue"
+                           Content="Left Border" />
+            <ButtonSpinner Content="Right disabled"
+                           AllowSpin="False"/>
+            <ButtonSpinner ButtonSpinnerLocation="Left"
+                           Content="Left disabled"
+                           AllowSpin="False"/>
+            <ButtonSpinner ShowButtonSpinner="False"
+                           Content="Hide spinner" />
+            <ButtonSpinner Content="Error">
+              <DataValidationErrors.Error>
+                <sys:Exception>
+                  <x:Arguments>
+                    <x:String>Error</x:String>
+                  </x:Arguments>
+                </sys:Exception>
+              </DataValidationErrors.Error>
+            </ButtonSpinner>
+          </StackPanel>
+      </ThemeVariantScope>
   </Design.PreviewWith>
 
   <avaloniaConverters:MarginMultiplierConverter x:Key="ButtonSpinnerLeftThickness" Indent="1" Left="True" />
   <avaloniaConverters:MarginMultiplierConverter x:Key="ButtonSpinnerRightThickness" Indent="1" Right="True" />
   <avaloniaConverters:MarginMultiplierConverter x:Key="ButtonSpinnerReverseBorderOffset" Indent="-1" Top="True" Bottom="True" />
 
-  <ControlTheme x:Key="FluentButtonSpinnerRepeatButton" TargetType="RepeatButton">
+  <ControlTheme x:Key="ButtonSpinnerRepeatButtonPathIcon" TargetType="PathIcon" BasedOn="{StaticResource {x:Type PathIcon}}">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border 
+          Background="{TemplateBinding Background}" 
+          BoxShadow="{Binding BoxShadow, RelativeSource={RelativeSource FindAncestor, AncestorType=ContentPresenter}, Mode=OneWay}"
+        >
+          <Viewbox Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+            <Path Fill="{TemplateBinding Foreground}" Data="{TemplateBinding Data}" Stretch="Uniform" />
+          </Viewbox>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+  
+  <ControlTheme x:Key="ButtonSpinnerRepeatButton" TargetType="RepeatButton">
     <Setter Property="Template">
       <ControlTemplate>
         <ContentPresenter x:Name="PART_ContentPresenter"
@@ -60,23 +77,25 @@
                           BorderThickness="{TemplateBinding BorderThickness}"
                           Content="{TemplateBinding Content}"
                           ContentTemplate="{TemplateBinding ContentTemplate}"
+                          Theme="{StaticResource ButtonSpinnerRepeatButtonPathIcon}"
                           Padding="{TemplateBinding Padding}"
                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                           VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
       </ControlTemplate>
     </Setter>
-  
+    
     <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPointerOver}" />
+      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundHover}" />
     </Style>
-  
+    
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundPressed}" />
+      <Setter Property="BoxShadow" Value="inset 1 2 3 1 #15000000" />
     </Style>
 
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundDisabledBrush}" />
-      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabledBrush}" />
+      <Setter Property="Background" Value="{DynamicResource RepeatButtonBackgroundDisabled}" />
+      <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}" />
     </Style>
   </ControlTheme>
 
@@ -84,7 +103,7 @@
     <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
     <Setter Property="Padding" Value="10, 0" />
     <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorder}" />
     <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="MinHeight" Value="{DynamicResource TextControlThemeMinHeight}" />
@@ -108,7 +127,7 @@
                           IsVisible="{TemplateBinding ShowButtonSpinner}">
                 <RepeatButton Name="PART_DecreaseButton"
                               IsTabStop="{TemplateBinding IsTabStop}"
-                              Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
+                              Theme="{StaticResource ButtonSpinnerRepeatButton}"
                               Background="{TemplateBinding Background}"
                               Foreground="{TemplateBinding Foreground}"
                               BorderBrush="{TemplateBinding BorderBrush}"
@@ -117,26 +136,48 @@
                               VerticalContentAlignment="Center"
                               MinWidth="32"
                               MinHeight="0">
-                  <PathIcon Width="32"
-                            Height="32"
-                            Foreground="{TemplateBinding Foreground}"
-                            Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
-                </RepeatButton>
-                <RepeatButton Name="PART_IncreaseButton"
-                              IsTabStop="{TemplateBinding IsTabStop}"
-                              Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
-                              Background="{TemplateBinding Background}"
-                              Foreground="{TemplateBinding Foreground}"
-                              BorderBrush="{TemplateBinding BorderBrush}"
-                              BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerLeftThickness}}"
-                              VerticalAlignment="Stretch"
-                              VerticalContentAlignment="Center"
-                              MinWidth="32"
-                              MinHeight="0">
+                  <Panel>
+                    <PathIcon Name="IncreaseIconShadow"
+                              Width="32"
+                              Height="32"
+                              Foreground="{DynamicResource RepeatButtonIconShadow}"
+                              Margin="0 -1 0 1"
+                              Padding="0 -1 0 1"
+                              Theme="{StaticResource ButtonSpinnerRepeatButtonPathIcon}"
+                              Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
                     <PathIcon Width="32"
                               Height="32"
                               Foreground="{TemplateBinding Foreground}"
+                              Theme="{StaticResource ButtonSpinnerRepeatButtonPathIcon}"
+                              Data="{StaticResource ButtonSpinnerDecreaseButtonIcon}" />
+                  </Panel>
+                </RepeatButton>
+                <RepeatButton Name="PART_IncreaseButton"
+                              IsTabStop="{TemplateBinding IsTabStop}"
+                              Theme="{StaticResource ButtonSpinnerRepeatButton}"
+                              Background="{TemplateBinding Background}"
+                              Foreground="{TemplateBinding Foreground}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerLeftThickness}}"
+                              VerticalAlignment="Stretch"
+                              VerticalContentAlignment="Center"
+                              MinWidth="32"
+                              MinHeight="0">
+                  <Panel>
+                    <PathIcon Name="DecreaseIconShadow"
+                              Width="32"
+                              Height="32"
+                              Foreground="{DynamicResource RepeatButtonIconShadow}"
+                              Margin="0 -1 0 1"
+                              Padding="0 -1 0 1"
+                              Theme="{StaticResource ButtonSpinnerRepeatButtonPathIcon}"
                               Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}" />
+                    <PathIcon Width="32"
+                              Height="32"
+                              Foreground="{TemplateBinding Foreground}"
+                              Theme="{StaticResource ButtonSpinnerRepeatButtonPathIcon}"
+                              Data="{StaticResource ButtonSpinnerIncreaseButtonIcon}" />
+                  </Panel>
                 </RepeatButton>
               </StackPanel>
 
@@ -153,6 +194,7 @@
         </DataValidationErrors>
       </ControlTemplate>
     </Setter>
+    
     <Style Selector="^:left">
       <Style Selector="^ /template/ StackPanel#PART_SpinnerPanel">
         <Setter Property="DockPanel.Dock" Value="Left"/>
@@ -175,9 +217,48 @@
             />
         </Style>
     </Style>
-    <Style Selector="^ /template/ RepeatButton:disabled PathIcon">
-        <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}"/>
+    
+    <Style Selector="^ /template/ RepeatButton">
+      <Style Selector="^ PathIcon#IncreaseIconShadow">
+        <Setter Property="IsVisible" Value="True" />
+      </Style>
+      <Style Selector="^ PathIcon#DecreaseIconShadow">
+        <Setter Property="IsVisible" Value="True" />
+      </Style>
+      
+      <Style Selector="^:disabled">
+        <Style Selector="^ PathIcon">
+          <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}"/>
+        </Style>
+        
+        <Style Selector="^ PathIcon#IncreaseIconShadow">
+          <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="^ PathIcon#DecreaseIconShadow">
+          <Setter Property="IsVisible" Value="False" />
+        </Style>
+      </Style>
     </Style>
+    
+    <!-- <Style Selector="^ /template/ RepeatButton:disabled PathIcon"> -->
+    <!--     <Setter Property="Foreground" Value="{DynamicResource RepeatButtonForegroundDisabled}"/> -->
+    <!-- -->
+    <!--     <Style Selector="^#IncreaseIconShadow"> -->
+    <!--       <Setter Property="IsVisible" Value="False" /> -->
+    <!--     </Style> -->
+    <!--     <Style Selector="^#DecreaseIconShadow"> -->
+    <!--       <Setter Property="IsVisible" Value="False" /> -->
+    <!--     </Style> -->
+    <!-- </Style> -->
+    
+    <!-- <Style Selector="^:disabled /template/ PathIcon#IncreaseIconShadow"> -->
+    <!--   <Setter Property="IsVisible" Value="False" /> -->
+    <!-- </Style> -->
+    <!-- -->
+    <!-- <Style Selector="^:disabled /template/ PathIcon#DecreaseIconShadow"> -->
+    <!--   <Setter Property="IsVisible" Value="False" /> -->
+    <!-- </Style> -->
+    
     <Style Selector="^ /template/ TextBox:pointerover Border#PART_BorderElement">
         <Setter Property="BorderBrush" Value="Transparent" />
         <Setter Property="Background" Value="Transparent" />

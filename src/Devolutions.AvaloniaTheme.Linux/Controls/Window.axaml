@@ -2,10 +2,10 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <ControlTheme x:Key="{x:Type Window}" TargetType="Window">
-    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource Background}" />
     <Setter Property="TransparencyBackgroundFallback" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
     <Setter Property="TopLevel.SystemBarColor" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
-    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHigh}" />
     <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
     <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}" />
     <Setter Property="Template">

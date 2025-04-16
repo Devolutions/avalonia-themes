@@ -2,8 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal">
   
-  <ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox" BasedOn="{x:Type ListBox}">
-    <Setter Property="Background" Value="{DynamicResource InputBackgroundBrush}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+  <ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}">
+    <Setter Property="Background" Value="{DynamicResource ScrollControlBackground}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
   </ControlTheme>
 </ResourceDictionary>

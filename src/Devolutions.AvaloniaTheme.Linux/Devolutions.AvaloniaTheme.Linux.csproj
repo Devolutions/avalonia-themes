@@ -1,6 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>0.2.0-dev</Version>
+    <Version>0.2.0-dev26</Version>
     <Company>Devolutions</Company>
     <Description>Devolutions Avalonia Linux Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
@@ -12,8 +12,8 @@
     <RootNamespace>Devolutions.AvaloniaThemes.Linux</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="*" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="*" />
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="*" />
+    <PackageReference Include="Avalonia" Version="[11.2.0,)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
   </ItemGroup>
 </Project>

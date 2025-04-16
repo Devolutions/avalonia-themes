@@ -1,0 +1,90 @@
+<!-- 
+    Based from: 
+    https://github.com/AvaloniaUI/Avalonia/blob/603a2bdb43b7e8b2d1c8919f9d0669af7b33f117/src/Avalonia.Themes.Fluent/Controls/TabControl.xaml
+-->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:ClassModifier="internal">
+    <Design.PreviewWith>
+        <Border Width="400">
+            <TabControl>
+                <TabItem Header="Arch">
+                    <Border Background="AntiqueWhite" Height="100">
+                        <TextBlock Text="Content" Foreground="Black" FontSize="20" />
+                    </Border>
+                </TabItem>
+                <TabItem Header="Leaf">
+                    <Border Background="Green" Height="100" />
+                </TabItem>
+                <TabItem Header="Disabled" IsEnabled="False" />
+            </TabControl>
+        </Border>
+    </Design.PreviewWith>
+
+    <Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 0</Thickness>
+
+    <ControlTheme x:Key="TabPaneTheme" TargetType="TabControl">
+        <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+        <Setter Property="BorderThickness" Value="1" />
+        
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Background="{TemplateBinding Background}"
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}">
+                    <DockPanel>
+                        <Border Name="PART_ItemsPresenterBorder"
+                                DockPanel.Dock="{TemplateBinding TabStripPlacement}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="0 0 0 1"
+                                Padding="4, 0, 4, -1"
+                                CornerRadius="0">
+                            <ItemsPresenter Name="PART_ItemsPresenter"
+                                            ItemsPanel="{TemplateBinding ItemsPanel}" />
+                        </Border>
+                        <ContentPresenter Name="PART_SelectedContentHost"
+                                          Margin="{TemplateBinding Padding}"
+                                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Content="{TemplateBinding SelectedContent}"
+                                          ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
+                    </DockPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <Style Selector="^[TabStripPlacement=Left] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
+            <Setter Property="Orientation" Value="Vertical" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Right] /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
+            <Setter Property="Orientation" Value="Vertical" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Top] /template/ ItemsPresenter#PART_ItemsPresenter">
+            <Setter Property="Margin" Value="{DynamicResource TabControlTopPlacementItemMargin}" />
+        </Style>
+
+        <Style
+            Selector="^[TabStripPlacement=Top] /template/ ItemsPresenter#PART_ItemsPresenter Border#PART_SelectedPipe">
+            <Setter Property="Height" Value="3" />
+            <Setter Property="CornerRadius" Value="0" />
+        </Style>
+
+        <Style Selector="^[TabStripPlacement=Left] /template/ Border#PART_ItemsPresenterBorder">
+            <Setter Property="BorderThickness" Value="0 0 1 0" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Right] /template/ Border#PART_ItemsPresenterBorder">
+            <Setter Property="BorderThickness" Value="1 0 0 0" />
+        </Style>
+        <Style Selector="^[TabStripPlacement=Bottom] /template/ Border#PART_ItemsPresenterBorder">
+            <Setter Property="BorderThickness" Value="0 1 0 0" />
+        </Style>
+    </ControlTheme>
+
+    <StaticResource x:Key="{x:Type TabControl}" ResourceKey="TabPaneTheme" />
+</ResourceDictionary>

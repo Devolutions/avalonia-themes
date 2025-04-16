@@ -5,7 +5,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaTheme.Linux.Converters"
+                    xmlns:c="clr-namespace:Devolutions.AvaloniaThemes.Linux.Converters"
                     x:ClassModifier="internal">
   <Design.PreviewWith>
     <Border Padding="20">
@@ -56,9 +56,9 @@
 
   <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
     <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-    <Setter Property="Background" Value="{DynamicResource InputBackgroundBrush}" />
+    <Setter Property="Background" Value="{DynamicResource InputBackground}" />
     <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
     <Setter Property="Height" Value="{DynamicResource InputDefaultHeight}" />
     <Setter Property="MinWidth" Value="{DynamicResource NumericUpDownMinWidth}" />
     <Setter Property="Padding" Value="{DynamicResource TextControlThemePadding}" />
@@ -115,7 +115,7 @@
     </Setter>
     <!-- Focused State -->
     <Style Selector="^:focus-within /template/ Border#PART_FocusBorder">
-        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderFocused}"/>
         <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
     </Style>
     

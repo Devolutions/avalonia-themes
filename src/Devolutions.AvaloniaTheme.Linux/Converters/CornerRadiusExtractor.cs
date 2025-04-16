@@ -1,7 +1,7 @@
+namespace Devolutions.AvaloniaThemes.Linux.Converters;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-namespace Devolutions.AvaloniaTheme.Linux.Converters;
 
 public static class Converters
 {
@@ -13,7 +13,7 @@ public static class Converters
         CornerRadiusSubset.Right => new CornerRadius(0, cornerRadius.TopRight, cornerRadius.BottomRight, 0),
         CornerRadiusSubset.Top => new CornerRadius(cornerRadius.TopLeft, cornerRadius.TopRight, 0, 0),
         CornerRadiusSubset.Bottom => new CornerRadius(0, 0, cornerRadius.BottomRight, cornerRadius.BottomLeft),
-        _ => cornerRadius
+        _ => cornerRadius,
       });
 }
 
@@ -22,5 +22,5 @@ public enum CornerRadiusSubset
   Left,
   Right,
   Top,
-  Bottom
+  Bottom,
 }
