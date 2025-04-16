@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>0.2.0-dev26</Version>
+    <Version>0.2.0-dev28</Version>
     <Company>Devolutions</Company>
     <Description>Devolutions Avalonia Linux Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>

@@ -24,7 +24,7 @@
     <Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 0</Thickness>
 
     <ControlTheme x:Key="TabPaneTheme" TargetType="TabControl">
-        <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
         <Setter Property="BorderThickness" Value="1" />
         
         <Setter Property="Padding" Value="10" />
