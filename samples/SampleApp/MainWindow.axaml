@@ -6,10 +6,12 @@
         xmlns:experiments="clr-namespace:SampleApp.Experiments"
         xmlns:vm="clr-namespace:SampleApp.ViewModels"
         xmlns:sampleApp="clr-namespace:SampleApp"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
+        Width="1250"
+        Height="800"
         x:Class="SampleApp.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Title="Devolutions MacOS Theme Sampler">
+        Title="Devolutions Theme Sampler">
 
   <!-- TODO: move the margins into the theme ?? -->
   <Panel Classes="mainControl">
