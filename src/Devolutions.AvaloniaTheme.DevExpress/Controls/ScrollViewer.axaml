@@ -2,20 +2,76 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <Design.PreviewWith>
-    <ScrollViewer Width="200" Height="400"
-                  HorizontalScrollBarVisibility="Auto">
-      <StackPanel Spacing="20" Width="210">
-        <TextBlock>Item 1</TextBlock>
-        <TextBlock>Item 2</TextBlock>
-        <TextBlock>Item 3</TextBlock>
-        <TextBlock>Item 4</TextBlock>
-        <TextBlock>Item 5</TextBlock>
-        <TextBlock>Item 6</TextBlock>
-        <TextBlock>Item 7</TextBlock>
-        <TextBlock>Item 8</TextBlock>
-        <TextBlock>Item 9</TextBlock>
-      </StackPanel>
-    </ScrollViewer>
+    <StackPanel Spacing="20" Margin="10">
+      <Border Background="{DynamicResource BackgroundBrush}"
+              BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1" Width="330"
+              Height="300">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5">
+          <StackPanel Background="{DynamicResource BackgroundBrush}">
+            <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
+            <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
+            <TextBlock>-rw-r--r--@  1 jdoe  staff    6148 28 Jan 14:27 .DS_Store</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     534 27 Jan 15:29 Add.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     506 27 Jan 15:29 AddThin.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     536 27 Jan 15:29 Computer.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     909 27 Jan 15:29 CopyHost.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     795 27 Jan 15:29 CopyName.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     986 27 Jan 15:29 CopyPassword.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1169 27 Jan 15:29 CopyUserName.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1189 27 Jan 15:29 CopyUserNamePassword.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     749 27 Jan 15:29 Details.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     888 27 Jan 15:29 DisableUser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     777 27 Jan 15:29 EnableUser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     368 27 Jan 15:29 Folder.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     880 27 Jan 15:29 Help.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     488 27 Jan 15:29 HorizontalLine.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     564 27 Jan 15:29 More.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     579 27 Jan 15:29 Padlock.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     715 27 Jan 15:29 PasswordAnalyser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1013 27 Jan 15:29 PrivateKey.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1275 27 Jan 15:29 Properties.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     820 27 Jan 15:29 ResetPassword.svg</TextBlock>
+            <TextBlock>-rw-r--r--@  1 jdoe  staff  147049 28 Jan 14:27 SampleImage.jpg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     729 27 Jan 15:29 UnlockUser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     561 27 Jan 15:29 User.svg</TextBlock>
+          </StackPanel>
+        </ScrollViewer>
+      </Border>
+      <Border Background="{DynamicResource BackgroundBrush}"
+              BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1" Width="330"
+              Height="300">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 " AllowAutoHide="False">
+          <StackPanel Background="{DynamicResource BackgroundBrush}">
+            <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
+            <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
+            <TextBlock>-rw-r--r--@  1 jdoe  staff    6148 28 Jan 14:27 .DS_Store</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     534 27 Jan 15:29 Add.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     506 27 Jan 15:29 AddThin.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     536 27 Jan 15:29 Computer.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     909 27 Jan 15:29 CopyHost.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     795 27 Jan 15:29 CopyName.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     986 27 Jan 15:29 CopyPassword.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1169 27 Jan 15:29 CopyUserName.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1189 27 Jan 15:29 CopyUserNamePassword.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     749 27 Jan 15:29 Details.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     888 27 Jan 15:29 DisableUser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     777 27 Jan 15:29 EnableUser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     368 27 Jan 15:29 Folder.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     880 27 Jan 15:29 Help.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     488 27 Jan 15:29 HorizontalLine.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     564 27 Jan 15:29 More.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     579 27 Jan 15:29 Padlock.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     715 27 Jan 15:29 PasswordAnalyser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1013 27 Jan 15:29 PrivateKey.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff    1275 27 Jan 15:29 Properties.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     820 27 Jan 15:29 ResetPassword.svg</TextBlock>
+            <TextBlock>-rw-r--r--@  1 jdoe  staff  147049 28 Jan 14:27 SampleImage.jpg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     729 27 Jan 15:29 UnlockUser.svg</TextBlock>
+            <TextBlock>-rw-r--r--   1 jdoe  staff     561 27 Jan 15:29 User.svg</TextBlock>
+          </StackPanel>
+        </ScrollViewer>
+      </Border>
+    </StackPanel>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ScrollViewer}" TargetType="ScrollViewer">
@@ -62,10 +118,6 @@
     </Setter>
     <Style Selector="^[IsExpanded=true] /template/ Panel#PART_ScrollBarsSeparator">
       <Setter Property="Opacity" Value="1" />
-    </Style>
-    <Style Selector="^[AllowAutoHide=True] /template/ ScrollContentPresenter#PART_ContentPresenter">
-      <Setter Property="Grid.ColumnSpan" Value="2" />
-      <Setter Property="Grid.RowSpan" Value="2" />
     </Style>
   </ControlTheme>
 </ResourceDictionary>

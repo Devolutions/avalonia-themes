@@ -11,7 +11,9 @@
         <TextBlock>Password:</TextBlock>
         <TextBox PasswordChar="*" Watermark="Enter your password" />
         <TextBlock>Notes:</TextBlock>
-        <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap" />
+        <TextBox Height="100" AcceptsReturn="True" TextWrapping="Wrap">
+          Note: explicitly styling TextBlock causes massive problems, because there are so many dynamically created TextBlocks in controls' ContentPresenters (i.e. they only get created if the content provided is a simple string, and therefore they are not a part of the logical tree and do not receive the local template styling anymore if there is a general TextBlock rule, and cannot easily overwritten then - except with hard-coded styles rather than template bindings ...
+        </TextBox>
         <TextBox InnerLeftContent="http://" />
         <TextBox InnerRightContent=".com" />
         <TextBox
@@ -151,20 +153,28 @@
               MinWidth="{TemplateBinding MinWidth}"
               MinHeight="{TemplateBinding MinHeight}" />
             <Border
-              Margin="{TemplateBinding BorderThickness}"
-              Padding="{TemplateBinding Padding}">
+              Margin="{TemplateBinding BorderThickness}">
               <Grid ColumnDefinitions="Auto,*,Auto">
-                <ContentPresenter Grid.Column="0"
+                <ContentPresenter Name="PrefixContent"
+                                  Grid.Column="0"
                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                  Content="{TemplateBinding InnerLeftContent}" />
+                                  Content="{TemplateBinding InnerLeftContent}"
+                                  Padding="{Binding 
+                                            Padding, 
+                                            RelativeSource={RelativeSource TemplatedParent}, 
+                                            Converter={StaticResource ThicknessToSelectiveThicknessConverter},
+                                            ConverterParameter={StaticResource TextBoxPrefixPaddingFactors}}"
+                                  IsVisible="{Binding Content, RelativeSource={RelativeSource Self}, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
                 <ScrollViewer Name="PART_ScrollViewer"
                               Grid.Column="1"
+                              Margin="0 2 2 2"
                               HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
                               VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
                               IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
                               AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
                               BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}">
-                  <Panel>
+                  <Panel
+                    Margin="{TemplateBinding Padding}">
                     <TextBlock Name="PART_Watermark"
                                Opacity="0.5"
                                FontSize="{DynamicResource ControlFontSize}"
@@ -210,9 +220,16 @@
                     </Style>
                   </ScrollViewer.Styles>
                 </ScrollViewer>
-                <ContentPresenter Grid.Column="2"
+                <ContentPresenter Name="SufixContent"
+                                  Grid.Column="2"
                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                  Content="{TemplateBinding InnerRightContent}" />
+                                  Padding="{Binding 
+                                            Padding, 
+                                            RelativeSource={RelativeSource TemplatedParent}, 
+                                            Converter={StaticResource ThicknessToSelectiveThicknessConverter},
+                                            ConverterParameter={StaticResource TextBoxSufixPaddingFactors}}"
+                                  Content="{TemplateBinding InnerRightContent}"
+                                  IsVisible="{Binding Content, RelativeSource={RelativeSource Self}, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
               </Grid>
             </Border>
           </Panel>
@@ -232,6 +249,10 @@
       <Style Selector="^ /template/ Border#BottomBorderElement">
         <Setter Property="IsVisible" Value="False" />
       </Style>
+
+      <Style Selector="^ /template/ TextBlock#PART_Watermark, ^ /template/ TextBlock#PART_FloatingWatermark">
+        <Setter Property="Foreground" Value="{DynamicResource TextControlPlaceholderForegroundDisabled}" />
+      </Style>
     </Style>
 
 
@@ -246,6 +267,7 @@
     <Style Selector="^:error /template/ Border#PART_BorderElement">
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
     </Style>
+
 
     <Style Selector="^.revealPasswordButton[AcceptsReturn=False][IsReadOnly=False]:not(TextBox:empty)">
       <Setter Property="InnerRightContent">

@@ -99,6 +99,8 @@
   <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
   <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource TextBoxBorderBottomColor}" />
   <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
+  <Thickness x:Key="TextBoxPrefixPaddingFactors">1 1 0 1</Thickness>
+  <Thickness x:Key="TextBoxSufixPaddingFactors">0 1 1 1</Thickness>
 
   <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
   <SolidColorBrush x:Key="ComboBoxDropDownBorderBrushTransparent" Color="{DynamicResource ForegroundColor}"
