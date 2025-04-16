@@ -17,8 +17,7 @@
             CanUserReorderColumns="True"
             CanUserSortColumns="True"
             GridLinesVisibility="None"
-            Focusable="False"
-            BorderThickness="1" BorderBrush="#888888">
+            Focusable="False">
     <DataGrid.Columns>
       <DataGridTemplateColumn Header="">
         <DataGridTemplateColumn.CellTemplate>

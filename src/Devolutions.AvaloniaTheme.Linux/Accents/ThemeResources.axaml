@@ -4,7 +4,8 @@
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key='Light'>
       <Color x:Key='ForegroundHighColor'>#050505</Color>
-      <Color x:Key='BackgroundColor'>#ffffff</Color>
+      <Color x:Key='BackgroundColor'>#fafafa</Color>
+      <Color x:Key='ScrollControlBackgroundColor'>#fcfcfc</Color>
       <Color x:Key='Border'>#d1d1d1</Color>
 
       <Color x:Key='InputBackgroundColor'>#ffffff</Color>
@@ -12,22 +13,31 @@
       <Color x:Key='InputDisabledBackgroundColor'>#fcfcfc</Color>
       <Color x:Key='InputDisabledForegroundColor'>#e1e1e1</Color>
 
-      <Color x:Key='ButtonBackground'>#ffffff</Color>
+      <Color x:Key='CheckboxPressedColor'>#bdbdbd</Color>
+      
+      <Color x:Key='ButtonBackgroundColor'>#ffffff</Color>
       <Color x:Key='ButtonBackgroundHoverColor'>#f5f5f5</Color>
       <Color x:Key='ButtonBackgroundActiveColor'>#d6d6d6</Color>
 
       <Color x:Key='DataGridColumnHeaderBackgroundColor'>#d1d1d1</Color>
       <Color x:Key='DataGridColumnHeaderForegroundColor'>#101010</Color>
 
+      <Color x:Key='RepeatButtonIconShadowColor'>#fefefe</Color>
+      <Color x:Key='RepeatButtonBackgroundHoverColor'>#f5f5f5</Color>
+      <Color x:Key='RepeatButtonBackgroundPressedColor'>#e6e6e6</Color>
       <Color x:Key='RepeatButtonBackgroundDisabledColor'>#ffffff</Color>
-
-      <Color x:Key="BetterListView_GridBorderColor">#393939</Color>
-      <SolidColorBrush x:Key="DataGridRowAlternatingBackgroundBrush" Color="#252525" />
+      
+      <SolidColorBrush x:Key="DataGridRowBackgroundBrush" Color="#fafafa" />
+      <SolidColorBrush x:Key="DataGridAlternatingRowBackgroundBrush" Color="#f2f6fb" />
     </ResourceDictionary>
 
     <ResourceDictionary x:Key='Dark'>
+      <Color x:Key='SystemAltHighColor'>#1f1f1f</Color>
+      <Color x:Key='SystemBaseMediumColor'>#f5f5f5</Color>
+      
       <Color x:Key='ForegroundHighColor'>#fcfcfc</Color>
       <Color x:Key='BackgroundColor'>#2c2c2c</Color>
+      <Color x:Key='ScrollControlBackgroundColor'>#272727</Color>
       <Color x:Key='Border'>#181818</Color>
 
       <Color x:Key='InputBackgroundColor'>#282828</Color>
@@ -35,52 +45,87 @@
       <Color x:Key='InputDisabledForegroundColor'>#474747</Color>
       <Color x:Key='InputDisabledBackgroundColor'>#2c2c2c</Color>
 
-      <Color x:Key='ButtonBackground'>#373737</Color>
+      <Color x:Key='CheckboxPressedColor'>#1b1b1b</Color>
+      
+      <Color x:Key='ButtonBackgroundColor'>#373737</Color>
       <Color x:Key='ButtonBackgroundHoverColor'>#3c3c3c</Color>
       <Color x:Key='ButtonBackgroundActiveColor'>#151515</Color>
-
+      
+      <Color x:Key='RepeatButtonIconShadowColor'>#090909</Color>
+      <Color x:Key='RepeatButtonBackgroundHoverColor'>#313131</Color>
+      <Color x:Key='RepeatButtonBackgroundPressedColor'>#232323</Color>
       <Color x:Key='RepeatButtonBackgroundDisabledColor'>#00000000</Color>
 
       <Color x:Key='DataGridColumnHeaderBackgroundColor'>#1f1f1f</Color>
       <Color x:Key='DataGridColumnHeaderForegroundColor'>#f5f5f5</Color>
-
-      <Color x:Key="BetterListView_GridBorderColor">#393939</Color>
-      <SolidColorBrush x:Key="DataGridRowAlternatingBackgroundBrush" Color="#252525" />
+      
+      <SolidColorBrush x:Key="DataGridRowBackgroundBrush" Color="#252525" />
+      <SolidColorBrush x:Key="DataGridAlternatingRowBackgroundBrush" Color="#2c2c2c" />
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
-  <FontFamily x:Key="LinuxThemeFontFamily">avares://Devolutions.AvaloniaTheme.Linux/Accents/Assets/Fonts/OpenSans/static/OpenSans-VariableFont_wdth,wght.ttf#Open Sans</FontFamily>
-  <x:Double x:Key="DefaultFontSize">13</x:Double>
+  <FontFamily x:Key="DefaultFontFamily">Open Sans, sanserif</FontFamily>
+  <x:Double x:Key="DefaultFontSize">14</x:Double>
+  
+  <Thickness x:Key="TextControlThemePadding">8,6,6,5</Thickness>
+  <x:Double x:Key="TextControlThemeMinHeight">34</x:Double>
 
-  <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource BackgroundColor}" />
+  <SolidColorBrush x:Key='ScrollControlBackground' Color="{DynamicResource ScrollControlBackgroundColor}" />
   <SolidColorBrush x:Key='ScrollControlBorder' Color="{DynamicResource Border}" />
 
-  <SolidColorBrush x:Key='ForegroundHighBrush' Color="{DynamicResource ForegroundHighColor}" />
-  <SolidColorBrush x:Key='BackgroundBrush' Color="{DynamicResource BackgroundColor}" />
+  <SolidColorBrush x:Key='ForegroundHigh' Color="{DynamicResource ForegroundHighColor}" />
+  <SolidColorBrush x:Key='Background' Color="{DynamicResource BackgroundColor}" />
 
-  <SolidColorBrush x:Key='InputBackgroundBrush' Color="{DynamicResource InputBackgroundColor}" />
-  <SolidColorBrush x:Key='InputBorderBrush' Color="{DynamicResource InputBorderColor}" />
-  <SolidColorBrush x:Key='InputDisabledBackgroundBrush' Color="{DynamicResource InputDisabledBackgroundColor}" />
-  <SolidColorBrush x:Key='InputDisabledForegroundBrush' Color="{DynamicResource InputDisabledForegroundColor}" />
+  <SolidColorBrush x:Key='InputBackground' Color="{DynamicResource InputBackgroundColor}" />
+  <SolidColorBrush x:Key='InputBorder' Color="{DynamicResource InputBorderColor}" />
+  <SolidColorBrush x:Key='InputDisabledBackground' Color="{DynamicResource InputDisabledBackgroundColor}" />
+  <SolidColorBrush x:Key='InputDisabledForeground' Color="{DynamicResource InputDisabledForegroundColor}" />
 
-  <SolidColorBrush x:Key='TextControlBorderBrush' Color="{DynamicResource InputBorderColor}" />
-  <SolidColorBrush x:Key='TextControlBackgroundBrush' Color="{DynamicResource InputBackgroundColor}" />
-  <SolidColorBrush x:Key='TextControlBackgroundFocusedBrush' Color="{DynamicResource InputBackgroundColor}" />
+  <SolidColorBrush x:Key='TextControlBorder' Color="{DynamicResource InputBorderColor}" />
+  <SolidColorBrush x:Key='TextControlBackground' Color="{DynamicResource InputBackgroundColor}" />
+  <SolidColorBrush x:Key='TextControlBackgroundFocused' Color="{DynamicResource InputBackgroundColor}" />
+  
+  <StaticResource x:Key='CheckBoxBorderBrushUnchecked' ResourceKey='InputBorder' />
+  <StaticResource x:Key='CheckBoxCheckBackgroundStrokeUnchecked' ResourceKey='InputBorder' />
+  <StaticResource x:Key='CheckBoxCheckBackgroundStrokeUncheckedPointerOver' ResourceKey='InputBorder' />
+  <SolidColorBrush x:Key='CheckBoxCheckBackgroundStrokeUncheckedPressed' Color="{DynamicResource CheckboxPressedColor}" />
+  <SolidColorBrush x:Key='CheckBoxCheckBackgroundFillUncheckedPressed' Color="{DynamicResource CheckboxPressedColor}" />
+  
+  <SolidColorBrush x:Key='ButtonBackground' Color="{DynamicResource ButtonBackgroundColor}" />
+  <SolidColorBrush x:Key='ButtonBackgroundPointerOver' Color="{DynamicResource ButtonBackgroundHoverColor}" />
+  <SolidColorBrush x:Key='ButtonBackgroundPressed' Color="{DynamicResource ButtonBackgroundActiveColor}" />
+  <StaticResource x:Key='ButtonBackgroundDisabled' ResourceKey='InputDisabledBackground' />
+  <StaticResource x:Key='ButtonForegroundDisabled' ResourceKey='InputDisabledForeground' />
+  <StaticResource x:Key='ButtonBorderDisabled' ResourceKey='InputBorder' />
+  
+  <StaticResource x:Key='ComboBoxBackground' ResourceKey='ButtonBackground' />
+  <StaticResource x:Key='ComboBoxBorderBrush' ResourceKey='InputBorder' />
+  <StaticResource x:Key='ComboBoxBackgroundPointerOver' ResourceKey='ButtonBackgroundPointerOver' />
+  <StaticResource x:Key='ComboBoxBorderBrushPointerOver' ResourceKey='InputBorder' />
+  <StaticResource x:Key='ComboBoxBackgroundPressed' ResourceKey='ComboBoxBackgroundPointerOver' />
+  <StaticResource x:Key='ComboBoxBorderBrushPressed' ResourceKey='ComboBoxBorderBrushPointerOver' />
+  <StaticResource x:Key='ComboBoxBackgroundDisabled' ResourceKey='InputDisabledBackground' />
+  <StaticResource x:Key='ComboBoxForegroundDisabled' ResourceKey='InputDisabledForeground' />
+  <StaticResource x:Key='ComboBoxBorderBrushDisabled' ResourceKey='InputBorder' />
+            
+  <SolidColorBrush x:Key='RepeatButtonIconShadow' Color="{DynamicResource RepeatButtonIconShadowColor}" />
+  <SolidColorBrush x:Key='RepeatButtonBackgroundHover' Color="{DynamicResource RepeatButtonBackgroundHoverColor}" />
+  <SolidColorBrush x:Key='RepeatButtonBackgroundPressed' Color="{DynamicResource RepeatButtonBackgroundPressedColor}" />
+  <SolidColorBrush x:Key='RepeatButtonBackgroundDisabled' Color="{DynamicResource RepeatButtonBackgroundDisabledColor}" />
+  <SolidColorBrush x:Key='RepeatButtonForegroundDisabled' Color="{DynamicResource InputDisabledForegroundColor}" />
 
-  <SolidColorBrush x:Key='ButtonBackgroundBrush' Color="{DynamicResource ButtonBackground}" />
+  <SolidColorBrush x:Key='TableBorder' Color="{DynamicResource InputBorderColor}" />
 
-  <SolidColorBrush x:Key='RepeatButtonBackgroundDisabledBrush'
-                   Color="{DynamicResource RepeatButtonBackgroundDisabledColor}" />
-  <SolidColorBrush x:Key='RepeatButtonForegroundDisabledBrush' Color="{DynamicResource InputDisabledForegroundColor}" />
-
-  <SolidColorBrush x:Key='TableBorderBrush' Color="{DynamicResource InputBorderColor}" />
-
+  <Thickness x:Key='TabItemMargin'>10</Thickness>
+  
   <Thickness x:Key='ButtonPadding'>12,6</Thickness>
-
   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
+  <x:Double x:Key="InputDefaultHeight">34</x:Double>
+  
+  <x:Double x:Key="NumericUpDownMinWidth">96</x:Double>
 
   <!-- DEVELOPMENT ONLY -->
-  <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
+  <!-- <SolidColorBrush x:Key="Background" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
 
   <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
   <SolidColorBrush x:Key="TestRed" Color="Red" />

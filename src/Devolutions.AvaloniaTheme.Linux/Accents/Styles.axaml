@@ -12,29 +12,28 @@
     </Window>
   </Design.PreviewWith>
 
-  <!-- ~1~ <Style Selector=":is(ContextMenu)"> @1@ -->
-  <!-- ~1~     <Setter Property="FontFamily" Value="{DynamicResource OpenSans}" /> @1@ -->
-  <!-- ~1~     <Setter Property="FontSize" Value="13" /> @1@ -->
-  <!-- ~1~ </Style> @1@ -->
-  <!-- -->
-  <!-- <Style Selector=":is(Window), :is(controls|DialogLayout), :is(avaloniaUi|BaseAvaloniaView)"> -->
-  <!--   <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" /> -->
-  <!-- </Style> -->
-
   <Style Selector=":is(ListBox), :is(NumericUpDown)">
-    <Setter Property="Background" Value="{DynamicResource InputBackgroundBrush}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+    <Setter Property="Background" Value="{DynamicResource InputBackground}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
   </Style>
 
   <Style Selector=":is(Button)">
-    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
 
     <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
     </Style>
 
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
-      <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
+    </Style>
+    
+    <Style Selector="^ TextBlock">
+      <Setter Property="Padding" Value="0 0 0 1" />
+    </Style>
+    
+    <Style Selector="^ AccessText">
+      <Setter Property="Margin" Value="0 0 0 1" />
     </Style>
   </Style>
 
@@ -54,7 +53,7 @@
   <!-- </Style> -->
 
   <Style Selector="TabControl">
-    <Setter Property="BorderBrush" Value="{DynamicResource InputBorderBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
     <Setter Property="BorderThickness" Value="1" />
 
     <Style Selector="^ TabItem">
