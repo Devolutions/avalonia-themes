@@ -12,10 +12,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.7" />
-        <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.2.7" />
-        <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.7" />
-        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.7" />
+        <PackageReference Include="Avalonia" Version="[11.2.0,)"/>
+        <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)"/>
+        <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.8]"/>
     </ItemGroup>
 
     <ItemGroup>
