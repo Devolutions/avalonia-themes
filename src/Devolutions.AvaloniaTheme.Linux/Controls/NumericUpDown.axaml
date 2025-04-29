@@ -115,7 +115,7 @@
     </Setter>
     <!-- Focused State -->
     <Style Selector="^:focus-within /template/ Border#PART_FocusBorder">
-        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderFocused}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}"/>
         <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
     </Style>
     
