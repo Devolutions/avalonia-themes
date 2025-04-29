@@ -1,6 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
+  <SolidColorBrush x:Key="ButtonPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
 
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Light">
@@ -28,6 +28,9 @@
       <Color x:Key='TextBoxBorderBottomColor'>#9f9f9f</Color>
 
       <Color x:Key='ScrollBarThumbColor'>#9f9f9f</Color>
+      
+      <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
+      <StaticResource x:Key="ButtonPointerOverFocusPressedBrush" ResourceKey="ButtonPointerOverBrushTransparent" />
     </ResourceDictionary>
 
     <!-- TODO: Darkmode colours just roughly -->
@@ -55,6 +58,10 @@
       <Color x:Key='TextBoxBorderBottomColor'>#666666</Color>
 
       <Color x:Key='ScrollBarThumbColor'>#808080</Color>
+      
+      <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="#202020" />
+      <SolidColorBrush x:Key="ButtonPointerOverBrushTransparent" Color="#4f4f4f" />
+      <SolidColorBrush x:Key="ButtonPointerOverFocusPressedBrush" Color="Transparent" />
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
@@ -78,7 +85,6 @@
   <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
 
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
-  <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ControlBackgroundMidColor}" />
   <SolidColorBrush x:Key="ControlBackgroundAccentBrush" Color="{DynamicResource SystemAccentColor}" />
   <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.07" />
@@ -91,7 +97,6 @@
   <SolidColorBrush x:Key="ControlBorderSelectedBrush" Color="{DynamicResource SystemAccentColor}" />
 
   <SolidColorBrush x:Key="ButtonForegroundDisabledBrush" Color="{DynamicResource ButtonForegroundDisabledColorSolid}" />
-  <SolidColorBrush x:Key="ButtonPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
 
   <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
 

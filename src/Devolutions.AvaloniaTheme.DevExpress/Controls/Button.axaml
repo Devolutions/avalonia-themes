@@ -83,6 +83,10 @@
         </Setter>
       </Style>
     </Style>
+    
+    <Style Selector="^:focus /template/ Border#ButtonActiveElement, ^:focus-within /template/ Border#ButtonActiveElement">
+      <Setter Property="Background" Value="{DynamicResource ButtonPointerOverFocusPressedBrush}" />
+    </Style>
 
     <Style Selector="^.accent">
       <Setter Property="Background">
@@ -90,7 +94,7 @@
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
             <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
                      Converter="{x:Static BoolConverters.Not}" />
-            <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
+            <Binding Source="{DynamicResource ControlBackgroundHighBrush}" />
             <Binding Source="{StaticResource ControlBackgroundAccentBrush}" />
           </MultiBinding>
         </Setter.Value>
