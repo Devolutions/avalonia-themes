@@ -103,11 +103,10 @@
               <PathIcon Name="DropDownGlyph"
                         UseLayoutRounding="False"
                         IsHitTestVisible="False"
-                        Height="8"
-                        Width="8"
+                        Width="9"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="{DynamicResource ForegroundHighBrush}"
+                        Foreground="{DynamicResource ForegroundColor}"
                         Data="{StaticResource ChevronPath}" />
             </Border>
 
@@ -169,6 +168,9 @@
       </Style>
       <Style Selector="^ /template/ Border#DropDownGlyphBackground">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+      </Style>
+      <Style Selector="^ /template/ PathIcon#DropDownGlyph">
+        <Setter Property="Foreground" Value="#939393" />
       </Style>
     </Style>
 
