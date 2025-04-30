@@ -10,6 +10,7 @@
       <Color x:Key="ForegroundColor">#000000</Color>
 
       <Color x:Key="AccentForegroundColor">#ffffff</Color>
+      <Color x:Key="ErrorTextColor">#C50500</Color>
 
       <Color x:Key="ControlBackgroundHighColor">#ffffff</Color>
       <Color x:Key="ControlBackgroundMidColor">#eaeaea</Color>
@@ -38,6 +39,7 @@
       <Color x:Key="ForegroundColor">#f5f5f5</Color>
 
       <Color x:Key="AccentForegroundColor">#deecf9</Color>
+      <Color x:Key="ErrorTextColor">#ed7083</Color>
 
       <Color x:Key="ControlBackgroundHighColor">#595959</Color>
 
@@ -74,6 +76,8 @@
 
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
   <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
+
+  <SolidColorBrush x:Key="SystemControlErrorTextForegroundBrush" Color="{DynamicResource ErrorTextColor}" />
 
   <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
 
