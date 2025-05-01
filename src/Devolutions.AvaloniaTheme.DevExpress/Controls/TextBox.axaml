@@ -115,9 +115,9 @@
     <Setter Property="SelectionBrush" Value="{DynamicResource TextSelectionColorSolid}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="MinHeight" Value="26" />
-    <Setter Property="MinWidth" Value="26" />
-    <Setter Property="Padding" Value="10 3" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
+    <Setter Property="MinWidth" Value="{DynamicResource TextBasedInputMinHeight}" />
+    <Setter Property="Padding" Value="10 2 10 2.5" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
