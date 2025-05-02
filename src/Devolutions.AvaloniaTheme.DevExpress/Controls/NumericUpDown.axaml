@@ -1,21 +1,21 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
-                    x:ClassModifier="internal">
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
         <NumericUpDown Minimum="0"
                        Maximum="10"
                        Increment="0.5"
-                       Watermark="Enter text" />
+                       Watermark="Days" />
         <NumericUpDown Minimum="0"
                        Maximum="10"
                        Increment="0.5"
                        VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Center"
                        ButtonSpinnerLocation="Left"
-                       Watermark="Enter text" />
+                       Watermark="Mins" />
         <NumericUpDown ButtonSpinnerLocation="Left">
           <NumericUpDown.InnerLeftContent>
             <TextBlock Text="m"
@@ -50,50 +50,51 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
-    <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-    <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-    <Setter Property="MinHeight" Value="{DynamicResource TextControlThemeMinHeight}" />
-    <Setter Property="MinWidth" Value="{DynamicResource TextControlThemeMinWidth}" />
-    <Setter Property="Padding" Value="{DynamicResource TextControlThemePadding}" />
-    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+    <Setter Property="TextAlignment" Value="Right" />
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
-          <ButtonSpinner Name="PART_Spinner"
-                         Background="{TemplateBinding Background}"
-                         BorderThickness="{TemplateBinding BorderThickness}"
-                         BorderBrush="{TemplateBinding BorderBrush}"
-                         CornerRadius="{TemplateBinding CornerRadius}"
-                         IsTabStop="False"
-                         Padding="0"
-                         MinWidth="0"
-                         HorizontalContentAlignment="Stretch"
-                         VerticalContentAlignment="Stretch"
-                         AllowSpin="{TemplateBinding AllowSpin}"
-                         ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
-                         ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
+
+          <!-- TODO: InnerLeftContent and InnerRightContent should be swapped if ButtonSpinnerLocation="Left" - write a converter ...-->
+          <!-- -->
+          <Panel>
             <TextBox Name="PART_TextBox"
-                     Background="Transparent"
-                     BorderBrush="Transparent"
-                     Margin="-1"
-                     Padding="{TemplateBinding Padding}"
-                     MinWidth="0"
-                     Foreground="{TemplateBinding Foreground}"
                      Watermark="{TemplateBinding Watermark}"
                      IsReadOnly="{TemplateBinding IsReadOnly}"
-                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                      Text="{TemplateBinding Text}"
                      TextAlignment="{TemplateBinding TextAlignment}"
+                     Padding="5 0 0  0"
                      AcceptsReturn="False"
                      TextWrapping="NoWrap"
-                     InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
-                     InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}" />
-          </ButtonSpinner>
+                     InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}">
+              <TextBox.InnerRightContent>
+                <ButtonSpinner Name="PART_Spinner"
+                               Background="{TemplateBinding Background}"
+                               BorderThickness="{TemplateBinding BorderThickness}"
+                               BorderBrush="{TemplateBinding BorderBrush}"
+                               CornerRadius="{TemplateBinding CornerRadius}"
+                               IsTabStop="False"
+                               HorizontalContentAlignment="Stretch"
+                               VerticalContentAlignment="Stretch"
+                               AllowSpin="{TemplateBinding AllowSpin}"
+                               ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
+                               ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}" />
+              </TextBox.InnerRightContent>
+            </TextBox>
+            <Border
+              Name="ErrorBorder"
+              BorderBrush="{StaticResource SystemControlErrorTextForegroundBrush}"
+              BorderThickness="1"
+              CornerRadius="{DynamicResource ControlCornerRadius}"
+              IsVisible="False" />
+          </Panel>
         </DataValidationErrors>
       </ControlTemplate>
     </Setter>
+
+    <Style Selector="^:error /template/ Border#ErrorBorder">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+
   </ControlTheme>
 </ResourceDictionary>
