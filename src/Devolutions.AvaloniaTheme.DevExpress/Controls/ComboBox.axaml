@@ -46,7 +46,7 @@
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
     <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
-    <Setter Property="MinHeight" Value="{DynamicResource ComboBoxMinHeight}" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
@@ -172,6 +172,10 @@
       <Style Selector="^ /template/ PathIcon#DropDownGlyph">
         <Setter Property="Foreground" Value="#939393" />
       </Style>
+    </Style>
+
+    <Style Selector="^ /template/ Border#DropDownGlyphBackground:pointerover">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
     </Style>
 
     <!--  Disabled State  -->

@@ -62,10 +62,14 @@
       <Style Selector="^ /template/ Border#LayoutRoot">
         <Setter Property="Background">
           <Setter.Value>
-            <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+            <MultiBinding Converter="{StaticResource BooleanAndThemeToChoiceConverter}">
               <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ItemsPresenter}" Path="IsPointerOver" />
               <Binding Source="{StaticResource ComboBoxItemBackgroundBrush}" />
-              <Binding Source="{StaticResource ControlBackgroundSelectedBrush}" />
+              <Binding Source="{StaticResource ComboBoxItemBackgroundBrush}" />
+              <Binding Source="{StaticResource ControlBackgroundSelectedBrushLight}" />
+              <Binding Source="{StaticResource ControlBackgroundSelectedBrushDark}" />
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Application}"
+                       Path="ActualThemeVariant" />
             </MultiBinding>
           </Setter.Value>
         </Setter>

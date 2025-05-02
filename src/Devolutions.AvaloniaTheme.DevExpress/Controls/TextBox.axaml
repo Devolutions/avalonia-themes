@@ -111,13 +111,15 @@
   <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox">
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1 1 1 0" />
     <Setter Property="CaretBrush" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="SelectionBrush" Value="{DynamicResource TextSelectionColorSolid}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="MinHeight" Value="26" />
-    <Setter Property="MinWidth" Value="26" />
-    <Setter Property="Padding" Value="10 3" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
+    <Setter Property="MinWidth" Value="{DynamicResource TextBasedInputMinHeight}" />
+    <Setter Property="Padding" Value="10 2 10 2.5" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
@@ -139,8 +141,8 @@
             <Border
               Name="PART_BorderElement"
               Background="{TemplateBinding Background}"
-              BorderBrush="{DynamicResource TextBoxBorderBrush}"
-              BorderThickness="1 1 1 0"
+              BorderBrush="{TemplateBinding BorderBrush}"
+              BorderThickness="{TemplateBinding BorderThickness}"
               CornerRadius="{TemplateBinding CornerRadius}"
               MinWidth="{TemplateBinding MinWidth}"
               MinHeight="{TemplateBinding MinHeight}" />
@@ -152,6 +154,12 @@
               CornerRadius="{TemplateBinding CornerRadius}"
               MinWidth="{TemplateBinding MinWidth}"
               MinHeight="{TemplateBinding MinHeight}" />
+            <Border
+              Name="ErrorBorder"
+              BorderBrush="{StaticResource SystemControlErrorTextForegroundBrush}"
+              BorderThickness="1"
+              CornerRadius="{DynamicResource ControlCornerRadius}"
+              IsVisible="False" />
             <Border
               Margin="{TemplateBinding BorderThickness}">
               <Grid ColumnDefinitions="Auto,*,Auto">
@@ -264,19 +272,9 @@
       </Style>
     </Style>
 
-    <Style Selector="^:error">
-      <Style Selector="^ /template/ Border#PART_BorderElement">
-        <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
-        <Setter Property="BorderThickness" Value="1" />
-      </Style>
-      <Style Selector="^ /template/ Border#BottomBorderElement">
-        <Setter Property="IsVisible" Value="False" />
-      </Style>
-      <Style Selector="^:focus /template/ Border#BottomBorderElement">
-        <Setter Property="IsVisible" Value="True" />
-      </Style>
+    <Style Selector="^:error /template/ Border#ErrorBorder">
+      <Setter Property="IsVisible" Value="True" />
     </Style>
-
 
     <Style Selector="^.revealPasswordButton[AcceptsReturn=False][IsReadOnly=False]:not(TextBox:empty)">
       <Setter Property="InnerRightContent">

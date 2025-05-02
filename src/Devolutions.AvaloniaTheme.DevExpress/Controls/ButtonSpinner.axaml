@@ -1,0 +1,132 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="using:System"
+                    xmlns:converters="using:Avalonia.Controls.Converters">
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <StackPanel Spacing="20">
+        <ButtonSpinner Content="Right spinner" />
+        <ButtonSpinner ButtonSpinnerLocation="Left"
+                       Content="Left spinner" />
+        <ButtonSpinner BorderThickness="2"
+                       BorderBrush="Blue"
+                       Content="Right Border" />
+        <ButtonSpinner ButtonSpinnerLocation="Left"
+                       BorderThickness="2"
+                       BorderBrush="Blue"
+                       Content="Left Border" />
+        <ButtonSpinner Content="Right disabled"
+                       AllowSpin="False" />
+        <ButtonSpinner ButtonSpinnerLocation="Left"
+                       Content="Left disabled"
+                       AllowSpin="False" />
+        <ButtonSpinner ShowButtonSpinner="False"
+                       Content="Hide spinner" />
+        <ButtonSpinner Content="Error">
+          <DataValidationErrors.Error>
+            <sys:Exception>
+              <x:Arguments>
+                <x:String>Error</x:String>
+              </x:Arguments>
+            </sys:Exception>
+          </DataValidationErrors.Error>
+        </ButtonSpinner>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <converters:MarginMultiplierConverter x:Key="ButtonSpinnerLeftThickness" Indent="1" Left="True" />
+  <converters:MarginMultiplierConverter x:Key="ButtonSpinnerRightThickness" Indent="1" Right="True" />
+
+  <ControlTheme x:Key="FluentButtonSpinnerRepeatButton" TargetType="RepeatButton">
+    <Setter Property="CornerRadius" Value="5" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter x:Name="PART_ContentPresenter"
+                          Background="{TemplateBinding Background}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          CornerRadius="{TemplateBinding CornerRadius}"
+                          Content="{TemplateBinding Content}"
+                          ContentTemplate="{TemplateBinding ContentTemplate}"
+                          Padding="{TemplateBinding Padding}"
+                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+      </ControlTemplate>
+    </Setter>
+    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type ButtonSpinner}" TargetType="ButtonSpinner">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+    <Setter Property="Padding" Value="5 0" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors>
+          <Border Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}"
+                  Margin="0 0 3 0">
+            <StackPanel Name="PART_SpinnerPanel"
+                        TabIndex="2"
+                        DockPanel.Dock="Right"
+                        Orientation="Vertical"
+                        VerticalAlignment="Center"
+                        IsVisible="{TemplateBinding ShowButtonSpinner}">
+              <RepeatButton Name="PART_IncreaseButton"
+                            IsTabStop="{TemplateBinding IsTabStop}"
+                            Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerLeftThickness}}"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Foreground="{TemplateBinding Foreground}"
+                            Padding="{TemplateBinding Padding}">
+                <PathIcon
+                  Width="9"
+                  Height="9"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"
+                  Foreground="{TemplateBinding Foreground}"
+                  RenderTransform="scaleY(-1)"
+                  Data="{StaticResource ChevronPath}" />
+              </RepeatButton>
+
+              <RepeatButton Name="PART_DecreaseButton"
+                            IsTabStop="{TemplateBinding IsTabStop}"
+                            Theme="{StaticResource FluentButtonSpinnerRepeatButton}"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness, Converter={StaticResource ButtonSpinnerLeftThickness}}"
+                            VerticalAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            Foreground="{TemplateBinding Foreground}"
+                            Margin="0 -1 0 0 "
+                            Padding="{TemplateBinding Padding}">
+                <PathIcon Width="9"
+                          Height="9"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Foreground="{DynamicResource ForegroundColor}"
+                          Data="{StaticResource ChevronPath}" />
+              </RepeatButton>
+            </StackPanel>
+          </Border>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^ /template/ RepeatButton:disabled PathIcon, ^ /template/ RepeatButton:pressed PathIcon">
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundDisabledBrush}" />
+    </Style>
+  </ControlTheme>
+
+</ResourceDictionary>

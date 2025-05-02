@@ -1,0 +1,100 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <StackPanel Spacing="20">
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Increment="0.5"
+                       Watermark="Days" />
+        <NumericUpDown Minimum="0"
+                       Maximum="10"
+                       Increment="0.5"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"
+                       ButtonSpinnerLocation="Left"
+                       Watermark="Mins" />
+        <NumericUpDown ButtonSpinnerLocation="Left">
+          <NumericUpDown.InnerLeftContent>
+            <TextBlock Text="m"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center" />
+          </NumericUpDown.InnerLeftContent>
+          <NumericUpDown.InnerRightContent>
+            <Button Content="X" />
+          </NumericUpDown.InnerRightContent>
+        </NumericUpDown>
+        <NumericUpDown ButtonSpinnerLocation="Right">
+          <NumericUpDown.InnerLeftContent>
+            <Button Content="X" />
+          </NumericUpDown.InnerLeftContent>
+          <NumericUpDown.InnerRightContent>
+            <TextBlock Text="m"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center" />
+          </NumericUpDown.InnerRightContent>
+        </NumericUpDown>
+        <NumericUpDown>
+          <DataValidationErrors.Error>
+            <sys:Exception>
+              <x:Arguments>
+                <x:String>Error</x:String>
+              </x:Arguments>
+            </sys:Exception>
+          </DataValidationErrors.Error>
+        </NumericUpDown>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
+    <Setter Property="TextAlignment" Value="Right" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors>
+
+          <!-- TODO: InnerLeftContent and InnerRightContent should be swapped if ButtonSpinnerLocation="Left" - write a converter ...-->
+          <!-- -->
+          <Panel>
+            <TextBox Name="PART_TextBox"
+                     Watermark="{TemplateBinding Watermark}"
+                     IsReadOnly="{TemplateBinding IsReadOnly}"
+                     Text="{TemplateBinding Text}"
+                     TextAlignment="{TemplateBinding TextAlignment}"
+                     Padding="5 0 0  0"
+                     AcceptsReturn="False"
+                     TextWrapping="NoWrap"
+                     InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}">
+              <TextBox.InnerRightContent>
+                <ButtonSpinner Name="PART_Spinner"
+                               Background="{TemplateBinding Background}"
+                               BorderThickness="{TemplateBinding BorderThickness}"
+                               BorderBrush="{TemplateBinding BorderBrush}"
+                               CornerRadius="{TemplateBinding CornerRadius}"
+                               IsTabStop="False"
+                               HorizontalContentAlignment="Stretch"
+                               VerticalContentAlignment="Stretch"
+                               AllowSpin="{TemplateBinding AllowSpin}"
+                               ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
+                               ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}" />
+              </TextBox.InnerRightContent>
+            </TextBox>
+            <Border
+              Name="ErrorBorder"
+              BorderBrush="{StaticResource SystemControlErrorTextForegroundBrush}"
+              BorderThickness="1"
+              CornerRadius="{DynamicResource ControlCornerRadius}"
+              IsVisible="False" />
+          </Panel>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:error /template/ Border#ErrorBorder">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+
+  </ControlTheme>
+</ResourceDictionary>
