@@ -20,6 +20,10 @@ public class App : Application
   {
     AvaloniaXamlLoader.Load(this);
     
+#if DEBUG
+    this.AttachDeveloperTools();
+#endif
+
     if (!Avalonia.Controls.Design.IsDesignMode)
     {
       Styles.Clear();
