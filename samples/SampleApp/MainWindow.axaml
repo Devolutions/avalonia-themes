@@ -68,6 +68,13 @@
       <TabItem Header="Toggle Switch [WIP]">
         <demoPages:ToggleSwitchDemo />
       </TabItem>
+      <TabItem Header="TreeDataGrid" IsSelected="True">
+        <demoPages:TreeDataGridDemo>
+          <demoPages:TreeDataGridDemo.DataContext>
+            <vm:TreeDataGridViewModel />
+          </demoPages:TreeDataGridDemo.DataContext>
+        </demoPages:TreeDataGridDemo>
+      </TabItem>
       <TabItem Header="TreeView">
         <demoPages:TreeViewDemo />
       </TabItem>
