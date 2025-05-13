@@ -1,8 +1,8 @@
+namespace Devolutions.AvaloniaControls.Converters;
+
 using System.Globalization;
 using Avalonia;
 using Avalonia.Data.Converters;
-
-namespace Devolutions.AvaloniaTheme.MacOS.Converters;
 
 /// <summary>
 ///   Takes a _single_ input and returns a boolean if it is unset.
@@ -17,13 +17,9 @@ namespace Devolutions.AvaloniaTheme.MacOS.Converters;
 /// </remarks>
 public class IsUnsetConverter : IMultiValueConverter
 {
-  public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
-  {
-    return values[0] == AvaloniaProperty.UnsetValue;
-  }
+    public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture) =>
+        values[0] == AvaloniaProperty.UnsetValue;
 
-  public object ConvertBack(IList<object?> values, Type targetType, object? parameter, CultureInfo culture)
-  {
-    throw new NotImplementedException();
-  }
+    public object ConvertBack(IList<object?> values, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotImplementedException();
 }

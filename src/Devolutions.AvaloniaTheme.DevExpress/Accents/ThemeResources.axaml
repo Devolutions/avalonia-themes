@@ -2,165 +2,166 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
 
-  <ResourceDictionary.ThemeDictionaries>
-    <ResourceDictionary x:Key="Light">
-      <Color x:Key="BackgroundColor">#ffffff</Color>
-      <Color x:Key="BorderColor">#dadada</Color>
-      <Color x:Key="SystemRegionColor">#f0f0f0</Color>
-      <Color x:Key="ForegroundColor">#000000</Color>
+   <ResourceDictionary.ThemeDictionaries>
+      <ResourceDictionary x:Key="Light">
+         <Color x:Key="BackgroundColor">#ffffff</Color>
+         <Color x:Key="BorderColor">#dadada</Color>
+         <Color x:Key="SystemRegionColor">#f0f0f0</Color>
+         <Color x:Key="ForegroundColor">#000000</Color>
 
-      <Color x:Key="AccentForegroundColor">#ffffff</Color>
-      <Color x:Key="ErrorTextColor">#C50500</Color>
+         <Color x:Key="AccentForegroundColor">#ffffff</Color>
+         <Color x:Key="ErrorTextColor">#C50500</Color>
 
-      <Color x:Key="ControlBackgroundHighColor">#ffffff</Color>
-      <Color x:Key="ControlBackgroundMidColor">#eaeaea</Color>
+         <Color x:Key="ControlBackgroundHighColor">#ffffff</Color>
+         <Color x:Key="ControlBackgroundMidColor">#eaeaea</Color>
 
-      <Color x:Key="ControlBorderLowColorSolid">#e7e7e7</Color>
-      <Color x:Key="ControlBorderMidColorSolid">#dbdbdb</Color>
+         <Color x:Key="ControlBorderLowColorSolid">#e7e7e7</Color>
+         <Color x:Key="ControlBorderMidColorSolid">#dbdbdb</Color>
 
-      <Color x:Key="ButtonForegroundDisabledColorSolid">#bdbdbd</Color>
+         <Color x:Key="ButtonForegroundDisabledColorSolid">#bdbdbd</Color>
 
-      <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
+         <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
 
-      <Color x:Key='DataGridForegroundColor'>#000</Color>
-      <Color x:Key='DataGridSelectedRowColor'>#cde8ff</Color>
+         <Color x:Key='DataGridForegroundColor'>#000</Color>
+         <Color x:Key='DataGridSelectedRowColor'>#cde8ff</Color>
 
-      <Color x:Key='TextBoxBackgroundColor'>#fff</Color>
-      <Color x:Key='TextBoxBorderBottomColor'>#9f9f9f</Color>
+         <Color x:Key='TextBoxBackgroundColor'>#fff</Color>
+         <Color x:Key='TextBoxBorderBottomColor'>#9f9f9f</Color>
 
-      <Color x:Key='ScrollBarThumbColor'>#9f9f9f</Color>
+         <Color x:Key='ScrollBarThumbColor'>#9f9f9f</Color>
 
-      <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}"
-                       Opacity="0.07" />
+         <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.07" />
 
-    </ResourceDictionary>
+      </ResourceDictionary>
 
-    <!-- TODO: Darkmode colours just roughly -->
-    <ResourceDictionary x:Key="Dark">
-      <Color x:Key="BackgroundColor">#202020</Color>
-      <Color x:Key="BorderColor">#404040</Color>
-      <Color x:Key="SystemRegionColor">#202020</Color>
-      <Color x:Key="ForegroundColor">#f5f5f5</Color>
+      <!-- TODO: Darkmode colours just roughly -->
+      <ResourceDictionary x:Key="Dark">
+         <Color x:Key="BackgroundColor">#202020</Color>
+         <Color x:Key="BorderColor">#404040</Color>
+         <Color x:Key="SystemRegionColor">#202020</Color>
+         <Color x:Key="ForegroundColor">#f5f5f5</Color>
 
-      <Color x:Key="AccentForegroundColor">#deecf9</Color>
-      <Color x:Key="ErrorTextColor">#ed7083</Color>
+         <Color x:Key="AccentForegroundColor">#deecf9</Color>
+         <Color x:Key="ErrorTextColor">#ed7083</Color>
 
-      <Color x:Key="ControlBackgroundHighColor">#595959</Color>
+         <Color x:Key="ControlBackgroundHighColor">#595959</Color>
 
-      <Color x:Key="ControlBorderLowColorSolid">#343434</Color>
-      <Color x:Key="ControlBorderMidColorSolid">#454545</Color>
+         <Color x:Key="ControlBorderLowColorSolid">#343434</Color>
+         <Color x:Key="ControlBorderMidColorSolid">#454545</Color>
 
-      <Color x:Key="ButtonForegroundDisabledColorSolid">#656565</Color>
+         <Color x:Key="ButtonForegroundDisabledColorSolid">#656565</Color>
 
-      <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
+         <Color x:Key="TextSelectionColorSolid">#A3C7EB</Color>
 
-      <Color x:Key='DataGridForegroundColor'>#f5f5f5</Color>
-      <Color x:Key='DataGridSelectedRowColor'>#3c3c3c</Color>
+         <Color x:Key='DataGridForegroundColor'>#f5f5f5</Color>
+         <Color x:Key='DataGridSelectedRowColor'>#3c3c3c</Color>
 
-      <Color x:Key='TextBoxBackgroundColor'>#202020</Color>
-      <Color x:Key='TextBoxBorderBottomColor'>#666666</Color>
+         <Color x:Key='TextBoxBackgroundColor'>#202020</Color>
+         <Color x:Key='TextBoxBorderBottomColor'>#666666</Color>
 
-      <Color x:Key='ScrollBarThumbColor'>#808080</Color>
+         <Color x:Key='ScrollBarThumbColor'>#808080</Color>
 
-      <Color x:Key='ControlBackgroundSelectedColor'>#21ffffff</Color>
-      <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource ControlBackgroundSelectedColor}" />
+         <Color x:Key='ControlBackgroundSelectedColor'>#21ffffff</Color>
+         <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource ControlBackgroundSelectedColor}" />
 
-    </ResourceDictionary>
-  </ResourceDictionary.ThemeDictionaries>
+      </ResourceDictionary>
+   </ResourceDictionary.ThemeDictionaries>
 
-  <!-- Theme-specific brushes that must be accessible as StaticResource -->
-  <!-- TODO: Is there really no way to define a static resource referencing brushes within the theme dictionaries?? -->
+   <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
 
-  <SolidColorBrush x:Key="ControlBackgroundSelectedBrushLight" Color="{DynamicResource SystemAccentColor}"
-                   Opacity="0.07" />
-  <SolidColorBrush x:Key="ControlBackgroundSelectedBrushDark" Color="{DynamicResource ControlBackgroundSelectedColor}" />
+   <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
+   <SolidColorBrush x:Key="SystemRegionBrush" Color="{DynamicResource SystemRegionColor}" />
 
-  <!-- ••••••• -->
+   <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
+   <x:Double x:Key="DefaultFontSize">12</x:Double>
+   <x:Double x:Key="ControlFontSize">12</x:Double>
+   <x:Double x:Key="PasswordHiddenFontSize">10</x:Double>
 
-  <CornerRadius x:Key="ControlCornerRadius">3</CornerRadius>
+   <SolidColorBrush x:Key="Foreground" Color="{DynamicResource ForegroundColor}" />
+   <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+   <SolidColorBrush x:Key="BorderBrush" Color="{DynamicResource BorderColor}" />
 
-  <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
-  <SolidColorBrush x:Key="SystemRegionBrush" Color="{DynamicResource SystemRegionColor}" />
+   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
+   <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
 
-  <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
-  <x:Double x:Key="DefaultFontSize">12</x:Double>
-  <x:Double x:Key="ControlFontSize">12</x:Double>
-  <x:Double x:Key="PasswordHiddenFontSize">10</x:Double>
+   <SolidColorBrush x:Key="SystemControlErrorTextForegroundBrush" Color="{DynamicResource ErrorTextColor}" />
 
-  <SolidColorBrush x:Key="Foreground" Color="{DynamicResource ForegroundColor}" />
-  <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" />
-  <SolidColorBrush x:Key="BorderBrush" Color="{DynamicResource BorderColor}" />
+   <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
 
-  <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
-  <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
+   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
+   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
+   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ControlBackgroundMidColor}" />
+   <SolidColorBrush x:Key="ControlBackgroundAccentBrush" Color="{DynamicResource SystemAccentColor}" />
 
-  <SolidColorBrush x:Key="SystemControlErrorTextForegroundBrush" Color="{DynamicResource ErrorTextColor}" />
+   <SolidColorBrush x:Key="ControlBorderMidBrush" Color="{DynamicResource ControlBorderMidColorSolid}" />
+   <SolidColorBrush x:Key="ControlBorderBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.11" />
+   <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+      <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColorSolid}" />
+      <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColorSolid}" />
+   </LinearGradientBrush>
+   <SolidColorBrush x:Key="ControlBorderSelectedBrush" Color="{DynamicResource SystemAccentColor}" />
 
-  <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
+   <SolidColorBrush x:Key="ButtonForegroundDisabledBrush" Color="{DynamicResource ButtonForegroundDisabledColorSolid}" />
+   <SolidColorBrush x:Key="ButtonPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
+   <SolidColorBrush x:Key="ButtonAccentPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
 
-  <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
-  <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
-  <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ControlBackgroundMidColor}" />
-  <SolidColorBrush x:Key="ControlBackgroundAccentBrush" Color="{DynamicResource SystemAccentColor}" />
+   <SolidColorBrush x:Key="SplitButtonBackground" Color="{DynamicResource ControlBackgroundHighColor}" />
+   <StaticResource x:Key="SplitButtonForeground" ResourceKey="ForegroundHighBrush" />
+   <StaticResource x:Key="SplitButtonBorderBrush" ResourceKey="ControlBorderRaisedBrush" />
+   <Thickness x:Key="SplitButtonBorderThemeThickness">1</Thickness>
+   <Thickness x:Key="ButtonPadding">5, 0</Thickness>
 
-  <SolidColorBrush x:Key="ControlBorderMidBrush" Color="{DynamicResource ControlBorderMidColorSolid}" />
-  <SolidColorBrush x:Key="ControlBorderBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.11" />
-  <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-    <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColorSolid}" />
-    <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColorSolid}" />
-  </LinearGradientBrush>
-  <SolidColorBrush x:Key="ControlBorderSelectedBrush" Color="{DynamicResource SystemAccentColor}" />
+   <StaticResource x:Key="SplitButtonBackgroundPointerOver" ResourceKey="ButtonPointerOverBrushTransparent" />
+   <StaticResource x:Key="SplitButtonBorderBrushPointerOver" ResourceKey="SplitButtonBorderBrush" />
+   <StaticResource x:Key="SplitButtonForegroundPointerOver" ResourceKey="SplitButtonForeground" />
 
-  <SolidColorBrush x:Key="ButtonForegroundDisabledBrush" Color="{DynamicResource ButtonForegroundDisabledColorSolid}" />
-  <SolidColorBrush x:Key="ButtonPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.06" />
+   <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
 
-  <SolidColorBrush x:Key="TabItemPointerOverBrushTransparent" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
+   <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
+   <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
+   <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource TextBoxBorderBottomColor}" />
+   <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
+   <Thickness x:Key="TextBoxPrefixPaddingFactors">1 1 0 1</Thickness>
+   <Thickness x:Key="TextBoxSufixPaddingFactors">0 1 1 1</Thickness>
 
-  <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
-  <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
-  <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource TextBoxBorderBottomColor}" />
-  <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
-  <Thickness x:Key="TextBoxPrefixPaddingFactors">1 1 0 1</Thickness>
-  <Thickness x:Key="TextBoxSufixPaddingFactors">0 1 1 1</Thickness>
+   <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+   <SolidColorBrush x:Key="ComboBoxDropDownBorderBrushTransparent" Color="{DynamicResource ForegroundColor}"
+                    Opacity="0.28" />
+   <Thickness x:Key="ComboBoxPadding">10,0,10,0</Thickness>
+   <x:Double x:Key="TextBasedInputMinHeight">23</x:Double>
+   <BoxShadows x:Key="ComboBoxDropDownShadow"> 0 3 7 0 #30000000</BoxShadows>
 
-  <SolidColorBrush x:Key="ComboBoxItemBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
-  <SolidColorBrush x:Key="ComboBoxDropDownBorderBrushTransparent" Color="{DynamicResource ForegroundColor}"
-                   Opacity="0.28" />
-  <Thickness x:Key="ComboBoxPadding">10,0,10,0</Thickness>
-  <x:Double x:Key="TextBasedInputMinHeight">23</x:Double>
-  <BoxShadows x:Key="ComboBoxDropDownShadow"> 0 3 7 0 #30000000</BoxShadows>
+   <SolidColorBrush x:Key="CheckBoxBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
+   <SolidColorBrush x:Key="CheckBoxForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.56" />
+   <SolidColorBrush x:Key="CheckBoxCheckedBackgroundDisabledBrush" Color="{DynamicResource ForegroundColor}"
+                    Opacity="0.2" />
 
-  <SolidColorBrush x:Key="CheckBoxBackgroundBrush" Color="{DynamicResource BackgroundColor}" />
-  <SolidColorBrush x:Key="CheckBoxForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.56" />
-  <SolidColorBrush x:Key="CheckBoxCheckedBackgroundDisabledBrush" Color="{DynamicResource ForegroundColor}"
-                   Opacity="0.2" />
+   <Thickness x:Key="TabItemHeaderPadding">4 0</Thickness>
+   <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
 
-  <Thickness x:Key="TabItemHeaderPadding">4 0</Thickness>
-  <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
+   <SolidColorBrush x:Key="DataGridForeground" Color="{DynamicResource DataGridForegroundColor}" />
+   <SolidColorBrush x:Key="DataGridSelectedRowFill" Color="{DynamicResource DataGridSelectedRowColor}" />
 
-  <SolidColorBrush x:Key="DataGridForeground" Color="{DynamicResource DataGridForegroundColor}" />
-  <SolidColorBrush x:Key="DataGridSelectedRowFill" Color="{DynamicResource DataGridSelectedRowColor}" />
+   <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
 
-  <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
+   <x:Double x:Key="OpacityVisible">1</x:Double>
+   <x:Double x:Key="OpacityHidden">0</x:Double>
 
-  <x:Double x:Key="OpacityVisible">1</x:Double>
-  <x:Double x:Key="OpacityHidden">0</x:Double>
+   <x:Double x:Key="ScrollBarSize">17.4</x:Double>
+   <SolidColorBrush x:Key="ScrollBarBackgroundBrush" Color="{DynamicResource SystemRegionColor}" />
+   <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ScrollBarThumbColor}" />
+   <CornerRadius x:Key="ScrollBarThumbCornerRadius">2</CornerRadius>
+   <CornerRadius x:Key="ScrollBarThumbExpandedCornerRadius">4</CornerRadius>
+   <TransformOperations x:Key="VerticalScrollThumbShrinkTransform">scaleX(0.4)</TransformOperations>
+   <TransformOperations x:Key="HorizontalScrollThumbShrinkTransform">scaleY(0.4)</TransformOperations>
+   <TransformOperations x:Key="NoTransform">none</TransformOperations>
 
-  <x:Double x:Key="ScrollBarSize">17.4</x:Double>
-  <SolidColorBrush x:Key="ScrollBarBackgroundBrush" Color="{DynamicResource SystemRegionColor}" />
-  <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ScrollBarThumbColor}" />
-  <CornerRadius x:Key="ScrollBarThumbCornerRadius">2</CornerRadius>
-  <CornerRadius x:Key="ScrollBarThumbExpandedCornerRadius">4</CornerRadius>
-  <TransformOperations x:Key="VerticalScrollThumbShrinkTransform">scaleX(0.4)</TransformOperations>
-  <TransformOperations x:Key="HorizontalScrollThumbShrinkTransform">scaleY(0.4)</TransformOperations>
-  <TransformOperations x:Key="NoTransform">none</TransformOperations>
+   <!-- DEVELOPMENT ONLY -->
+   <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
 
-  <!-- DEVELOPMENT ONLY -->
-  <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
-
-  <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
-  <SolidColorBrush x:Key="TestRed" Color="Red" />
-  <SolidColorBrush x:Key="TestBlue" Color="Blue" />
-  <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
+   <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
+   <SolidColorBrush x:Key="TestRed" Color="Red" />
+   <SolidColorBrush x:Key="TestBlue" Color="Blue" />
+   <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
 
 </ResourceDictionary>

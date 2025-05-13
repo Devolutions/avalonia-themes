@@ -1,94 +1,70 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary
+   xmlns="https://github.com/avaloniaui"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:ex="clr-namespace:Devolutions.AvaloniaControls.MarkupExtensions;assembly=Devolutions.AvaloniaControls">
 
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+   <ResourceDictionary.MergedDictionaries>
+      <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+   </ResourceDictionary.MergedDictionaries>
 
-  <Design.PreviewWith>
-    <StackPanel Width="110">
-      <Button Content="Cancel" Margin="10" />
-      <Button Content="Test" Margin="10 " IsEnabled="False" />
-      <Button Classes="accent" Content="Open" Margin="10 " />
-      <Button Classes="accent" Content="Open" Margin="10 " IsEnabled="False" />
-    </StackPanel>
-  </Design.PreviewWith>
+   <Design.PreviewWith>
+      <StackPanel Width="110">
+         <Button Content="Cancel" Margin="10" />
+         <Button Content="Test" Margin="10 " IsEnabled="False" />
+         <Button Classes="accent" Content="Open" Margin="10 " />
+         <Button Classes="accent" Content="Open" Margin="10 " IsEnabled="False" />
+      </StackPanel>
+   </Design.PreviewWith>
 
-  <ControlTheme x:Key="{x:Type Button}"
-                TargetType="Button">
-    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
-    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
-    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
-    <Setter Property="HorizontalContentAlignment" Value="Center" />
-    <Setter Property="VerticalContentAlignment" Value="Center" />
-    <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
-    <Setter Property="FontWeight" Value="{DynamicResource ButtonFontWeight}" />
-    <Style Selector="^:pressed">
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundActiveHighBrush}" />
-    </Style>
-    <Style Selector="^:disabled">
-      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderDisabledBrush}" />
-    </Style>
-
-    <Style Selector="^.accent">
-      <Setter Property="Background">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
-                     Converter="{x:Static BoolConverters.Not}" />
-            <Binding Source="{StaticResource ControlBackgroundHighBrush}" />
-            <Binding Source="{StaticResource ControlBackgroundAccentRaisedBrush}" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
-      <Setter Property="Foreground">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
-                     Converter="{x:Static BoolConverters.Not}" />
-            <Binding Source="{StaticResource ForegroundHighBrush}" />
-            <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
-      <Setter Property="BorderBrush">
-        <Setter.Value>
-          <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
-                     Converter="{x:Static BoolConverters.Not}" />
-            <Binding Source="{StaticResource ControlBorderRaisedBrush}" />
-            <Binding Source="{StaticResource ButtonBorderAccentBrush}" />
-          </MultiBinding>
-        </Setter.Value>
-      </Setter>
+   <ControlTheme x:Key="{x:Type Button}"
+                 TargetType="Button">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
+      <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+      <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+      <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+      <Setter Property="HorizontalContentAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
+      <Setter Property="FontWeight" Value="{DynamicResource ButtonFontWeight}" />
       <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundAccentRecessedBrush}" />
+         <Setter Property="Background" Value="{DynamicResource ControlBackgroundActiveHighBrush}" />
       </Style>
       <Style Selector="^:disabled">
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
-        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+         <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderDisabledBrush}" />
       </Style>
-    </Style>
 
-    <Style Selector="^.accentPrecise">
-      <Setter Property="Background" Value="{DynamicResource TempButtonAccentBackgroundPrecise}" />
-      <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
-      <Setter Property="BorderThickness" Value="0" />
-      <Style Selector="^:pressed">
-        <Setter Property="Background" Value="{DynamicResource TempButtonAccentPressedBackgroundPrecise}" />
+      <Style Selector="^.accent">
+         <Setter Property="Background" Value="{ex:WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
+         <Setter Property="Foreground" Value="{ex:WindowActiveResourceToggler ControlForegroundAccentHighBrush, ForegroundHighBrush}" />
+         <Setter Property="BorderBrush" Value="{ex:WindowActiveResourceToggler ButtonBorderAccentBrush, ControlBorderRaisedBrush}" />
+
+         <Style Selector="^:pressed">
+            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundAccentRecessedBrush}" />
+         </Style>
+         <Style Selector="^:disabled">
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
+            <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+         </Style>
       </Style>
-      <Style Selector="^:disabled">
-        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
-        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+
+      <Style Selector="^.accentPrecise">
+         <Setter Property="Background" Value="{DynamicResource TempButtonAccentBackgroundPrecise}" />
+         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
+         <Setter Property="BorderThickness" Value="0" />
+         <Style Selector="^:pressed">
+            <Setter Property="Background" Value="{DynamicResource TempButtonAccentPressedBackgroundPrecise}" />
+         </Style>
+         <Style Selector="^:disabled">
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+            <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
+         </Style>
       </Style>
-    </Style>
-  </ControlTheme>
+   </ControlTheme>
 </ResourceDictionary>

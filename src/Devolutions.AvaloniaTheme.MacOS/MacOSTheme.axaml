@@ -4,7 +4,6 @@
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="/Accents/Icons.axaml" />
-        <MergeResourceInclude Source="/Converters/_index.axaml" />
         <MergeResourceInclude Source="/Controls/_index.axaml" />
         <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
         <!-- TODO: Theme variants not handled consistently yet - use Shared / Light / Dark for everything (cp. Semi.Avalonia for good example) -->

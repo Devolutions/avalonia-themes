@@ -1,8 +1,8 @@
+namespace Devolutions.AvaloniaControls.Converters;
+
 using System.Globalization;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
-
-namespace Devolutions.AvaloniaTheme.MacOS.Converters;
 
 /// <summary>
 ///   Converts a Brush and CSS class(es) into a CSS string for SVG styling.
@@ -16,24 +16,22 @@ namespace Devolutions.AvaloniaTheme.MacOS.Converters;
 /// </remarks>
 public class ColorToCssFillConverter : IValueConverter
 {
-  public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
-  {
-    if (value is not SolidColorBrush brush) return ".st0 {fill : #000000; }";
+    public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
+    {
+        if (value is not SolidColorBrush brush) return ".st0 {fill : #000000; }";
 
-    var classes = parameter as string ?? ".st0, .st1, .st2, .st3";
+        var classes = parameter as string ?? ".st0, .st1, .st2, .st3";
 
-    return $"{classes} {{fill : {RemoveAlphaChannel(brush.Color)}; }}";
-  }
+        return $"{classes} {{fill : {RemoveAlphaChannel(brush.Color)}; }}";
+    }
 
-  public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
-  {
-    throw new NotImplementedException();
-  }
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture) =>
+        throw new NotImplementedException();
 
-  private string RemoveAlphaChannel(Color argbColor)
-  {
-    var hexString = argbColor.ToString();
-    if (hexString.Length != 9) return hexString;
-    return "#" + hexString.Substring(3);
-  }
+    private string RemoveAlphaChannel(Color argbColor)
+    {
+        var hexString = argbColor.ToString();
+        if (hexString.Length != 9) return hexString;
+        return "#" + hexString.Substring(3);
+    }
 }
