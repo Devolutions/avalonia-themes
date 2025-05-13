@@ -1,8 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Input;
 using Avalonia.Styling;
-using AvaloniaUI.DiagnosticsSupport;
 
 namespace SampleApp;
 
@@ -11,6 +11,9 @@ public partial class MainWindow : Window
   public MainWindow()
   {
     InitializeComponent();
+#if DEBUG
+    this.AttachDevTools(new KeyGesture(Key.F10));
+#endif
   }
 
   private void Themes_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
