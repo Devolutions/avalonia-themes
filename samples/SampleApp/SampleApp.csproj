@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+        <!-- Prevent automatic attachment of regular free dev tools to avoid duplicate mapping of F12 key -->
         <AvaloniaNameGeneratorAttachDevTools>false</AvaloniaNameGeneratorAttachDevTools>
     </PropertyGroup>
 

@@ -1,3 +1,4 @@
+using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -12,7 +13,20 @@ public partial class MainWindow : Window
   {
     InitializeComponent();
 #if DEBUG
-    this.AttachDevTools(new KeyGesture(Key.F10));
+    bool useAccelerate = Environment.GetEnvironmentVariable("USE_AVALONIA_ACCELERATE_TOOLS")?.ToLowerInvariant() == "true";
+    
+    if (useAccelerate)
+    {
+      // Enable Accelerate dev tools (AvaloniaUI.DiagnosticsSupport) - requiring a licence to use
+      (Application.Current as App)?.AttachDeveloperTools(); 
+      // Enable original free dev tools (Avalonia.Diagnostics) as an additional option available on F10
+      this.AttachDevTools(new KeyGesture(Key.F10));
+    }
+    else
+    {
+      // Enable original free dev tools (Avalonia.Diagnostics)
+      this.AttachDevTools(); 
+    }
 #endif
   }
 
