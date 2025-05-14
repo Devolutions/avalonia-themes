@@ -202,14 +202,14 @@
          <Style Selector="^ /template/ RepeatButton#PART_DecreaseButton">
             <Setter
                Property="CornerRadius"
-               Value="{TemplateBinding CornerRadius, Converter={x:Static c:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Left}}" />
+               Value="{TemplateBinding CornerRadius, Converter={x:Static c:DevoConverters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Left}}" />
          </Style>
       </Style>
       <Style Selector="^:right">
          <Style Selector="^ /template/ RepeatButton#PART_IncreaseButton">
             <Setter
                Property="CornerRadius"
-               Value="{TemplateBinding CornerRadius, Converter={x:Static c:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Right}}" />
+               Value="{TemplateBinding CornerRadius, Converter={x:Static c:DevoConverters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Right}}" />
          </Style>
       </Style>
 

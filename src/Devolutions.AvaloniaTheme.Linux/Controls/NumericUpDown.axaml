@@ -129,12 +129,12 @@
       <Style Selector="^[ButtonSpinnerLocation=Left] /template/ TextBox">
          <Setter
             Property="CornerRadius"
-            Value="{TemplateBinding CornerRadius, Converter={x:Static c:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Right}}" />
+            Value="{TemplateBinding CornerRadius, Converter={x:Static c:DevoConverters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Right}}" />
       </Style>
       <Style Selector="^[ButtonSpinnerLocation=Right] /template/ TextBox">
          <Setter
             Property="CornerRadius"
-            Value="{TemplateBinding CornerRadius, Converter={x:Static c:Converters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Left}}" />
+            Value="{TemplateBinding CornerRadius, Converter={x:Static c:DevoConverters.CornerRadiusExtractor}, ConverterParameter={x:Static c:CornerRadiusSubset.Left}}" />
       </Style>
    </ControlTheme>
 </ResourceDictionary>

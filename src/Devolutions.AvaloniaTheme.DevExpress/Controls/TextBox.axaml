@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls">
+                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls"
+                    xmlns:converters="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Converters">
 
    <Design.PreviewWith>
       <!-- <ThemeVariantScope RequestedThemeVariant="Dark"> -->
@@ -127,7 +128,7 @@
               Value="{OnFormFactor Desktop={StaticResource DefaultTextBoxContextFlyout}, Mobile={StaticResource HorizontalTextBoxContextFlyout}}" />
       <Setter Property="FontSize">
          <Setter.Value>
-            <MultiBinding Converter="{x:Static c:MultiConverters.RevealPasswordToFontSizeConverter}">
+            <MultiBinding Converter="{x:Static c:DevoMultiConverters.RevealPasswordToFontSizeConverter}">
                <Binding RelativeSource="{RelativeSource Self}" Path="PasswordChar" />
                <Binding RelativeSource="{RelativeSource Self}" Path="RevealPassword" />
                <Binding Source="{StaticResource ControlFontSize}" />
@@ -171,7 +172,7 @@
                                           Padding="{Binding 
                                             Padding, 
                                             RelativeSource={RelativeSource TemplatedParent}, 
-                                            Converter={x:Static  c:Converters.ThicknessToSelectiveThicknessConverter},
+                                            Converter={x:Static  c:DevoConverters.ThicknessToSelectiveThicknessConverter},
                                             ConverterParameter={StaticResource TextBoxPrefixPaddingFactors}}"
                                           IsVisible="{Binding Content, RelativeSource={RelativeSource Self}, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
                         <ScrollViewer Name="PART_ScrollViewer"
@@ -219,7 +220,7 @@
                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
                                  <TextPresenter.PasswordChar>
                                     <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="PasswordChar"
-                                             Converter="{x:Static c:Converters.CharToDevExpressPasswordCharConverter}" />
+                                             Converter="{x:Static converters:DevExpressConverters.CharToDevExpressPasswordCharConverter}" />
                                  </TextPresenter.PasswordChar>
                               </TextPresenter>
                            </Panel>
@@ -235,7 +236,7 @@
                                           Padding="{Binding 
                                             Padding, 
                                             RelativeSource={RelativeSource TemplatedParent}, 
-                                            Converter={x:Static c:Converters.ThicknessToSelectiveThicknessConverter},
+                                            Converter={x:Static c:DevoConverters.ThicknessToSelectiveThicknessConverter},
                                             ConverterParameter={StaticResource TextBoxSufixPaddingFactors}}"
                                           Content="{TemplateBinding InnerRightContent}"
                                           IsVisible="{Binding Content, RelativeSource={RelativeSource Self}, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />

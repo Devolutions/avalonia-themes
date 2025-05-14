@@ -28,7 +28,7 @@ public class WindowActiveBindingTogglerExtension : MarkupExtension
         this.toggleBindingExtension ??= new BindingTogglerExtension(
             new MultiBinding
             {
-                Converter = MultiConverters.FirstNonNullValueMultiConverter,
+                Converter = DevoMultiConverters.FirstNonNullValueMultiConverter,
                 Bindings =
                 [
                     new Binding

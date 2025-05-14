@@ -16,9 +16,9 @@ public class BindingTogglerExtension : MarkupExtension
 
     public BindingTogglerExtension(IBinding conditionBinding, object whenTrueBinding, object whenFalseBinding)
     {
-        ConditionBinding = conditionBinding;
-        WhenTrueBinding = whenTrueBinding;
-        WhenFalseBinding = whenFalseBinding;
+        this.ConditionBinding = conditionBinding;
+        this.WhenTrueBinding = whenTrueBinding;
+        this.WhenFalseBinding = whenFalseBinding;
     }
 
     [ConstructorArgument("conditionBinding")]
@@ -38,23 +38,25 @@ public class BindingTogglerExtension : MarkupExtension
 
         if (targetType is not null)
         {
-            resolvedWhenTrueBinding ??= MarkupExtensionHelpers.GetBinding(WhenTrueBinding, targetType) ?? ObservableHelpers.Empty.ToBinding();
-            resolvedWhenFalseBinding ??= MarkupExtensionHelpers.GetBinding(WhenFalseBinding, targetType) ?? ObservableHelpers.Empty.ToBinding();
+            this.resolvedWhenTrueBinding ??=
+                MarkupExtensionHelpers.GetBinding(this.WhenTrueBinding, targetType) ?? ObservableHelpers.Empty.ToBinding();
+            this.resolvedWhenFalseBinding ??=
+                MarkupExtensionHelpers.GetBinding(this.WhenFalseBinding, targetType) ?? ObservableHelpers.Empty.ToBinding();
         }
         else
         {
-            resolvedWhenTrueBinding ??= MarkupExtensionHelpers.GetBinding<object?>(WhenTrueBinding) ?? ObservableHelpers.Empty.ToBinding();
-            resolvedWhenFalseBinding ??= MarkupExtensionHelpers.GetBinding<object?>(WhenFalseBinding) ?? ObservableHelpers.Empty.ToBinding();
+            this.resolvedWhenTrueBinding ??=
+                MarkupExtensionHelpers.GetBinding<object?>(this.WhenTrueBinding) ?? ObservableHelpers.Empty.ToBinding();
+            this.resolvedWhenFalseBinding ??=
+                MarkupExtensionHelpers.GetBinding<object?>(this.WhenFalseBinding) ?? ObservableHelpers.Empty.ToBinding();
         }
 
         return new MultiBinding
         {
-            Converter = MultiConverters.BooleanToChoiceConverter,
+            Converter = DevoMultiConverters.BooleanToChoiceConverter,
             Bindings =
             [
-                ConditionBinding,
-                resolvedWhenTrueBinding,
-                resolvedWhenFalseBinding,
+                this.ConditionBinding, this.resolvedWhenTrueBinding, this.resolvedWhenFalseBinding,
             ],
         };
     }

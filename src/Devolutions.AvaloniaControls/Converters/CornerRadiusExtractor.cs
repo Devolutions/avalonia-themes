@@ -3,7 +3,7 @@ namespace Devolutions.AvaloniaControls.Converters;
 using Avalonia;
 using Avalonia.Data.Converters;
 
-public static partial class Converters
+public static partial class DevoConverters
 {
     public static FuncValueConverter<CornerRadius, CornerRadiusSubset, CornerRadius> CornerRadiusExtractor { get; } =
         new(static (cornerRadius, subset) =>

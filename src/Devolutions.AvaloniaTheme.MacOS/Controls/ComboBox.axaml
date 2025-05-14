@@ -160,13 +160,13 @@
                   PlacementGravity="Bottom"
                   HorizontalOffset="-13">
                   <Popup.MinWidth>
-                     <MultiBinding Converter="{x:Static c:MultiConverters.TotalWidthConverter}">
+                     <MultiBinding Converter="{x:Static c:DevoMultiConverters.TotalWidthConverter}">
                         <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width" />
                         <Binding Source="{StaticResource PopupSideMarginWidth}" />
                      </MultiBinding>
                   </Popup.MinWidth>
                   <Popup.VerticalOffset>
-                     <MultiBinding Converter="{x:Static c:MultiConverters.SelectedIndexToPopupOffsetConverter}">
+                     <MultiBinding Converter="{x:Static c:DevoMultiConverters.SelectedIndexToPopupOffsetConverter}">
                         <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="SelectedIndex" />
                         <Binding Source="{StaticResource ComboBoxItemHeight}" />
                         <Binding Source="{StaticResource InitialFirstItemDistance}" />

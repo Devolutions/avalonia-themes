@@ -1,6 +1,7 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls">
+                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls"
+                    xmlns:converters="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Converters">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -105,7 +106,7 @@
       <Setter Property="CaretBrush" Value="{DynamicResource SystemAccentColor}" />
       <Setter Property="FontSize">
          <Setter.Value>
-            <MultiBinding Converter="{x:Static c:MultiConverters.RevealPasswordToFontSizeConverter}">
+            <MultiBinding Converter="{x:Static c:DevoMultiConverters.RevealPasswordToFontSizeConverter}">
                <Binding RelativeSource="{RelativeSource Self}" Path="PasswordChar" />
                <Binding RelativeSource="{RelativeSource Self}" Path="RevealPassword" />
                <Binding Source="{StaticResource ControlFontSize}" />
@@ -193,7 +194,7 @@
                                                    VerticalAlignment="Center">
                                        <TextPresenter.PasswordChar>
                                           <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="PasswordChar"
-                                                   Converter="{x:Static c:Converters.CharToMacOsPasswordCharConverter}" />
+                                                   Converter="{x:Static converters:MacOSConverters.CharToMacOsPasswordCharConverter}" />
                                        </TextPresenter.PasswordChar>
                                     </TextPresenter>
                                  </Panel>

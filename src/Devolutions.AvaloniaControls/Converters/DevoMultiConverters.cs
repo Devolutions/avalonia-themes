@@ -1,6 +1,6 @@
 namespace Devolutions.AvaloniaControls.Converters;
 
-public static class MultiConverters
+public static class DevoMultiConverters
 {
     public static readonly BooleanToChoiceConverter BooleanToChoiceConverter = new();
     public static readonly ClassToChoiceConverter ClassToChoiceConverter = new();

@@ -66,7 +66,7 @@
    <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
       <Setter Property="FontSize">
          <Setter.Value>
-            <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+            <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                           ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                <Binding Source="{StaticResource MenuHeaderFontSizeSmall}" />
@@ -76,7 +76,7 @@
       </Setter>
       <Setter Property="Padding">
          <Setter.Value>
-            <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+            <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                           ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                <Binding Source="{StaticResource MenuToolBarItemPadding}" />
@@ -100,7 +100,7 @@
                           CornerRadius="{StaticResource SelectionCornerRadius}"
                           Margin="{DynamicResource MenuItemActiveBackgroundMargin}">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                       ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                            <Binding Source="{x:False}" />
@@ -110,7 +110,7 @@
                   </Border>
                   <StackPanel>
                      <StackPanel.Orientation>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                       ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                            <Binding Source="{x:Static Orientation.Vertical}" />
@@ -121,7 +121,7 @@
                              HorizontalAlignment="Center"
                              Background="Transparent">
                         <Border.Padding>
-                           <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                           <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                          ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                               <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                               <Binding Source="{StaticResource MenuToolBarItemIconPadding}" />
@@ -134,7 +134,7 @@
                                    CornerRadius="{StaticResource SelectionCornerRadius}"
                                    Margin="{DynamicResource MenuToolBarItemActiveBackgroundMargin}">
                               <Border.IsVisible>
-                                 <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                                 <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                                ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                                     <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                                     <Binding Source="{x:True}" />
@@ -148,7 +148,7 @@
                               HorizontalAlignment="Center"
                               ToolTip.Tip="{TemplateBinding Header}">
                               <ToolTip.ServiceEnabled>
-                                 <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                                 <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                                ConverterParameter="MacOS_Theme_MenuItemIconOnly">
                                     <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                                     <Binding Source="{x:True}" />
@@ -173,7 +173,7 @@
                                           </TransformGroup>
                                        </Path.RenderTransform>
                                        <Path.IsVisible>
-                                          <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                                          <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                                         ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                                              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                                              <Binding Source="{x:True}" />
@@ -199,7 +199,7 @@
                                        RecognizesAccessKey="True"
                                        Classes="TopLevelMenuItem">
                         <ContentPresenter.IsVisible>
-                           <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                           <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                          ConverterParameter="MacOS_Theme_MenuItemIconOnly">
                               <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                               <Binding Source="{x:False}" />
@@ -218,7 +218,7 @@
                          HorizontalOffset="{DynamicResource MenuPopupHorizontalOffset}"
                          OverlayInputPassThroughElement="{Binding $parent[Menu]}">
                      <Popup.VerticalOffset>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.ClassToChoiceConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.ClassToChoiceConverter}"
                                       ConverterParameter="MacOS_Theme_MenuLabelBelowIcon">
                            <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Menu}" Path="Classes" />
                            <Binding Source="{StaticResource MenuToolBarPopupVerticalOffset}" />

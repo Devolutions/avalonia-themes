@@ -84,7 +84,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness,
-                           Converter={x:Static  c:Converters.ThicknessToSelectiveThicknessConverter},
+                           Converter={x:Static  c:DevoConverters.ThicknessToSelectiveThicknessConverter},
                            ConverterParameter={StaticResource ScrollBarTrackVerticalBorderFactors}}"
                                 Opacity="0">
                            <Border.Transitions>
@@ -147,7 +147,7 @@
                            Background="{TemplateBinding Background}"
                            BorderBrush="{TemplateBinding BorderBrush}"
                            BorderThickness="{TemplateBinding BorderThickness,
-                           Converter={x:Static  c:Converters.ThicknessToSelectiveThicknessConverter},
+                           Converter={x:Static  c:DevoConverters.ThicknessToSelectiveThicknessConverter},
                            ConverterParameter={StaticResource ScrollBarTrackHorizontalBorderFactors}}"
                            Opacity="0">
                            <Border.Transitions>

@@ -83,7 +83,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="1 0 0 0 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="LeftBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -142,7 +142,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="0 0 1 0 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="RightBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -160,7 +160,7 @@
                           BorderThickness="0 0 1 1   "
                           CornerRadius="0 0 4 0 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomLeftCorner">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -175,7 +175,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="0 0 0 1">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomLeftBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -196,7 +196,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="0 0 0 1">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomRightBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -213,7 +213,7 @@
                           BorderThickness="1 0 0 1"
                           CornerRadius="0 0 0 4 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:MultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomRightCorner">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />

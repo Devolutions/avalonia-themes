@@ -79,7 +79,7 @@
                   Classes.accent="{Binding 
                     Classes, 
                      RelativeSource={RelativeSource TemplatedParent}, 
-                     Converter={x:Static c:Converters.HasClass},
+                     Converter={x:Static c:DevoConverters.HasClass},
                      ConverterParameter=accent
                   }"
                   Theme="{StaticResource FluentSplitButtonComponent}"
@@ -114,7 +114,7 @@
                   Classes.accent="{Binding 
                      Classes, 
                      RelativeSource={RelativeSource TemplatedParent}, 
-                     Converter={x:Static c:Converters.HasClass},
+                     Converter={x:Static c:DevoConverters.HasClass},
                      ConverterParameter=accent
                   }"
                   Theme="{StaticResource FluentSplitButtonComponent}"

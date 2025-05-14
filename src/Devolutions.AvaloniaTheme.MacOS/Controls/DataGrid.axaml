@@ -573,7 +573,7 @@
                           IsVisible="{TemplateBinding ScrollBar.AllowAutoHide, Converter={x:Static BoolConverters.Not}}">
                      <Border.BorderThickness>
                         <Binding Source="{StaticResource ScrollBarTrackBorderThickness}"
-                                 Converter="{x:Static c:Converters.ThicknessToSelectiveThicknessConverter}"
+                                 Converter="{x:Static c:DevoConverters.ThicknessToSelectiveThicknessConverter}"
                                  ConverterParameter="{StaticResource ScrollBarSeparatorBorderFactors}" />
                      </Border.BorderThickness>
                   </Border>

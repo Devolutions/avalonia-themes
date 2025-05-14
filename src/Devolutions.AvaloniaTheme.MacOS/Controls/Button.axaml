@@ -16,8 +16,7 @@
       </StackPanel>
    </Design.PreviewWith>
 
-   <ControlTheme x:Key="{x:Type Button}"
-                 TargetType="Button">
+   <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
       <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
       <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />

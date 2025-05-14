@@ -1,4 +1,4 @@
-namespace Devolutions.AvaloniaControls.Converters;
+namespace Devolutions.AvaloniaTheme.DevExpress.Converters;
 
 using System.Globalization;
 using Avalonia.Data.Converters;

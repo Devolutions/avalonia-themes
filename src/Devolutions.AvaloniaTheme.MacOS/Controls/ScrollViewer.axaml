@@ -67,7 +67,7 @@
                        Opacity="0">
                   <Border.BorderThickness>
                      <Binding Source="{StaticResource ScrollBarTrackBorderThickness}"
-                              Converter="{x:Static c:Converters.ThicknessToSelectiveThicknessConverter}"
+                              Converter="{x:Static c:DevoConverters.ThicknessToSelectiveThicknessConverter}"
                               ConverterParameter="{StaticResource ScrollBarSeparatorBorderFactors}" />
                   </Border.BorderThickness>
                   <Border.Transitions>
