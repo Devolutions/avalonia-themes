@@ -229,8 +229,8 @@
                       BoxShadow="{DynamicResource TextBoxBorderShadows}"
                       Margin="0.6 0 0.6 -0.6 " />
               <Border Name="FocusBorderElement"
-                      Margin="-3"
-                      BorderThickness="3.5"
+                      Margin="{StaticResource FocusBorderMargin}"
+                      BorderThickness="{StaticResource FocusBorderThickness}"
                       CornerRadius="2" />
             </Panel>
           </Border>
@@ -250,7 +250,7 @@
     <!-- Focused State -->
     <Style Selector="^:focus">
       <Style Selector="^ /template/ Border#FocusBorderElement">
-        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderFocusBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource FocusBorderBrush}" />
       </Style>
       <Style Selector="^ /template/ Border#BottomBorder">
         <Setter Property="BorderBrush" Value="{DynamicResource SystemAccentColor}" />

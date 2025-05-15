@@ -83,6 +83,8 @@
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="Margin" Value="0" />
     <Setter Property="Padding" Value="{DynamicResource TabItemPadding}" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="ClipToBounds" Value="False" />
 
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
@@ -91,36 +93,50 @@
     <Style Selector="^[TabStripPlacement=Top], ^[TabStripPlacement=Bottom]">
       <Setter Property="Template">
         <ControlTemplate>
-          <StackPanel Orientation="Horizontal">
-            <!-- POTENTIALLY FRAGILE HACK (TODO: test with different user font size settings ...?)
-               The TextBlock as divider works better than Rectangle, because the pipe character is anti-aliased.
-               A better option might be to track the selected tab in code-behind and attach a property addressing the 
-               tab to the right of it somehow ... Or check DataGrid ColumnHeader - that works fine with Rectangle TODO: ??? -->
-            <TextBlock Name="TabDivider"
-                       Foreground="{DynamicResource ForegroundLowBrush}"
-                       VerticalAlignment="Center"
-                       Margin="{DynamicResource TabItemDividerMargin}">
-              |
-            </TextBlock>
-            <!-- <Rectangle Name="TabDivider" -->
-            <!--            Height="14" -->
-            <!--            Width="1" -->
-            <!--            Fill="{DynamicResource ForegroundLowBrush}" -->
-            <!--            VerticalAlignment="Center" /> -->
-            <ContentPresenter Name="PART_ContentPresenter"
-                              Padding="{TemplateBinding Padding}"
-                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                              Background="{TemplateBinding Background}"
-                              BorderBrush="{TemplateBinding BorderBrush}"
-                              BorderThickness="{TemplateBinding BorderThickness}"
-                              Content="{TemplateBinding Header}"
-                              ContentTemplate="{TemplateBinding HeaderTemplate}"
-                              CornerRadius="{TemplateBinding CornerRadius}"
-                              RecognizesAccessKey="True" />
-          </StackPanel>
+          <Panel>
+            <StackPanel Orientation="Horizontal">
+              <!-- POTENTIALLY FRAGILE HACK (TODO: test with different user font size settings ...?)
+                 The TextBlock as divider works better than Rectangle, because the pipe character is anti-aliased.
+                 A better option might be to track the selected tab in code-behind and attach a property addressing the 
+                 tab to the right of it somehow ... Or check DataGrid ColumnHeader - that works fine with Rectangle TODO: ??? -->
+              <TextBlock Name="TabDivider"
+                         Foreground="{DynamicResource ForegroundLowBrush}"
+                         VerticalAlignment="Center"
+                         Margin="{DynamicResource TabItemDividerMargin}">
+                |
+              </TextBlock>
+              <!-- <Rectangle Name="TabDivider" -->
+              <!--            Height="14" -->
+              <!--            Width="1" -->
+              <!--            Fill="{DynamicResource ForegroundLowBrush}" -->
+              <!--            VerticalAlignment="Center" /> -->
+              <ContentPresenter Name="PART_ContentPresenter"
+                                Padding="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                CornerRadius="{TemplateBinding CornerRadius}"
+                                RecognizesAccessKey="True" />
+            </StackPanel>
+            <Border Name="FocusBorderElement"
+                    Margin="-1 -3 -3 -3"
+                    BorderThickness="{StaticResource FocusBorderThickness}"
+                    CornerRadius="7" />
+          </Panel>
         </ControlTemplate>
       </Setter>
+          
+      <!-- Tabbing focus -->
+      <Style Selector="^:focus-visible">
+        <Style Selector="^ /template/ Border#FocusBorderElement">
+          <Setter Property="BorderBrush" Value="{DynamicResource FocusBorderBrush}" />
+        </Style>
+      </Style>
+      
       <Style Selector="^:nth-child(1) /template/ TextBlock#TabDivider">
         <Setter Property="Foreground" Value="Transparent" />
       </Style>
@@ -143,6 +159,10 @@
       <Setter Property="Padding" Value="8 4" />
       <Setter Property="Template">
         <ControlTemplate>
+          <Border Name="FocusBorderElement"
+                  Margin="{StaticResource FocusBorderMargin}"
+                  BorderThickness="{StaticResource FocusBorderThickness}"
+                  CornerRadius="7">
           <ContentPresenter Name="PART_ContentPresenter"
                             Padding="{TemplateBinding Padding}"
                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -154,8 +174,17 @@
                             ContentTemplate="{TemplateBinding HeaderTemplate}"
                             CornerRadius="{TemplateBinding CornerRadius}"
                             RecognizesAccessKey="True" />
+          </Border>
         </ControlTemplate>
       </Setter>
+      
+      <!-- Tabbing focus -->
+      <Style Selector="^:focus-visible">
+        <Style Selector="^ /template/ Border#FocusBorderElement">
+          <Setter Property="BorderBrush" Value="{DynamicResource FocusBorderBrush}" />
+        </Style>
+      </Style>
+      
       <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundMidBrush}" />
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />

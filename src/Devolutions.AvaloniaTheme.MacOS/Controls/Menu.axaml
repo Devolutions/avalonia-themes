@@ -63,6 +63,7 @@
   <!-- TODO: Consider refactoring with separate ControlThemes for the different Menu types 
        (instead of multiple individual variations on the property level) -->
   <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="FontSize">
       <Setter.Value>
         <MultiBinding Converter="{StaticResource ClassToChoiceConverter}"
@@ -270,7 +271,7 @@
       </Setter>
     </Style>
 
-    <Style Selector="^:open, ^:pointerover">
+    <Style Selector="^:open, ^:pointerover, ^:focus-visible">
       <Style Selector="^ /template/ Border#MenuItemActiveBackground">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
       </Style>
@@ -282,7 +283,7 @@
       </Style>
     </Style>
 
-    <Style Selector="^:open, ^:pointerover">
+    <Style Selector="^:open, ^:pointerover, ^:focus-visible">
       <Style Selector="^ /template/ Border#ToolBarItemActiveBackground">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
       </Style>
