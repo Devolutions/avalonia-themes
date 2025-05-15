@@ -71,6 +71,10 @@
       <TabItem Header="ToolTip">
         <demoPages:ToolTipDemo />
       </TabItem>
+      <TabItem Header="✜ Control Alignment">
+        <demoPages:ControlAlignment />
+      </TabItem>
+
       
       <TabItem>
         <TabItem.Header>
