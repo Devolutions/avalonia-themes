@@ -89,10 +89,11 @@
     <Setter Property="Focusable" Value="True" />
     <Setter Property="Template">
       <ControlTemplate>
-        <DataValidationErrors>
-          <Border Background="Transparent"
+        <DataValidationErrors ClipToBounds="False">
+          <Border ClipToBounds="False"
+                  Background="Transparent"
                   MinHeight="{TemplateBinding MinHeight}">
-            <DockPanel>
+            <DockPanel ClipToBounds="False">
               <StackPanel Name="PART_SpinnerPanel"
                           TabIndex="2"
                           DockPanel.Dock="Right"
@@ -149,6 +150,7 @@
               </StackPanel>
 
               <ContentPresenter Name="PART_ContentPresenter"
+                                ClipToBounds="False"
                                 TabIndex="1"
                                 ContentTemplate="{TemplateBinding ContentTemplate}"
                                 Content="{TemplateBinding Content}"

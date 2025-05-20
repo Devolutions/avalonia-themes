@@ -24,8 +24,42 @@
     <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="FontWeight" Value="{DynamicResource ButtonFontWeight}" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Panel>
+          <Border Name="BackgroundElement"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}" />
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Content="{TemplateBinding Content}"
+                            Foreground="{TemplateBinding Foreground}"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            FontSize="{TemplateBinding FontSize}"
+                            FontWeight="{TemplateBinding FontWeight}" />
+          <Border Name="FocusBorderElement"
+                  Margin="{StaticResource FocusBorderMargin}"
+                  BorderThickness="{StaticResource FocusBorderThickness}"
+                  CornerRadius="7" />
+        </Panel>
+      </ControlTemplate>
+    </Setter>
+    
+    <!-- Tabbing focus -->
+    <Style Selector="^:focus-visible">
+      <Style Selector="^ /template/ Border#FocusBorderElement">
+        <Setter Property="BorderBrush" Value="{DynamicResource FocusBorderBrush}" />
+      </Style>
+    </Style>
+
     <Style Selector="^:pressed">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundActiveHighBrush}" />
     </Style>

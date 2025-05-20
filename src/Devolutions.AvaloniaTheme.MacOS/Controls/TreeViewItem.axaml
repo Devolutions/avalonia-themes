@@ -73,12 +73,12 @@
     <Setter Property="MinHeight" Value="22" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
         <StackPanel>
           <Border Name="PART_LayoutRoot"
                   Classes="TreeViewItemLayoutRoot"
-                  Focusable="True"
                   Background="{TemplateBinding Background}"
                   BorderBrush="{TemplateBinding BorderBrush}"
                   BorderThickness="{TemplateBinding BorderThickness}"
@@ -122,8 +122,9 @@
       <Setter Property="Foreground" Value="{DynamicResource TreeViewItemForegroundDisabled}" />
     </Style>
 
-    <!--  Selected state  -->
-    <Style Selector="^:selected /template/ Border#PART_LayoutRoot">
+    <!--  Selected state = tabbing focus -->
+    <!-- TODO: the tabbing _behaviour_ is not quite right - the selected item doesn't get unselected and you can't tab to all items -->
+    <Style Selector="^:selected /template/ Border#PART_LayoutRoot, ^:focus-visible /template/ Border#PART_LayoutRoot">
       <Setter Property="Background">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
@@ -136,7 +137,7 @@
       </Setter>
       <Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrushSelected}" />
     </Style>
-    <Style Selector="^:selected /template/ ContentPresenter#PART_HeaderPresenter">
+    <Style Selector="^:selected /template/ ContentPresenter#PART_HeaderPresenter, ^:focus-visible /template/ ContentPresenter#PART_HeaderPresenter">
       <Setter Property="Foreground">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
@@ -148,7 +149,7 @@
         </Setter.Value>
       </Setter>
     </Style>
-    <Style Selector="^:selected /template/ ToggleButton#PART_ExpandCollapseChevron">
+    <Style Selector="^:selected /template/ ToggleButton#PART_ExpandCollapseChevron, ^:focus-visible /template/ ToggleButton#PART_ExpandCollapseChevron">
       <Setter Property="Foreground">
         <Setter.Value>
           <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
