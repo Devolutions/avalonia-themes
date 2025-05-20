@@ -6,7 +6,7 @@
              x:Class="SampleApp.DemoPages.TabControlDemo">
   <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
     <Border Width="500">
-      <TabControl TabStripPlacement="Left" Margin="5">
+      <TabControl TabStripPlacement="Left" >
         <TabItem Header="Tab 1">
           <TextBlock Text="Vertical tab view" />
         </TabItem>
@@ -17,7 +17,7 @@
       </TabControl>
     </Border>
     <Border Width="500">
-      <TabControl TabStripPlacement="Top" Margin="5">
+      <TabControl TabStripPlacement="Top" >
         <TabItem Header="General">
           <TextBlock Text="Horizontal tab view" />
         </TabItem>
