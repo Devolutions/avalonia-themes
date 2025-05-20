@@ -14,6 +14,7 @@ public class App : Application
   private Styles? linuxYaruStyles;
   private Styles? devExpressStyles;
   private Styles? macOsStyles;
+  private bool devToolsAttached = false;
   public static Theme? CurrentTheme { get; set; }
   
   public override void Initialize()
@@ -95,6 +96,14 @@ public class App : Application
     if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop) desktop.MainWindow = new MainWindow() { DataContext = new MainWindowViewModel() };
 
     base.OnFrameworkInitializationCompleted();
+  }
+
+  public void AttacheDevToolsOnce()
+  {
+    if (devToolsAttached) return;
+    
+    this.AttachDeveloperTools();
+    devToolsAttached = true;
   }
 }
 
