@@ -18,7 +18,7 @@
           <ComboBoxItem>Option 2</ComboBoxItem>
           <ComboBoxItem>Option 3</ComboBoxItem>
         </ComboBox>
-        <ComboBox MaxDropDownHeight="100" PlaceholderText="Chose one">
+        <ComboBox MaxDropDownHeight="100" PlaceholderText="Choose one">
           <ComboBoxItem>Option 1</ComboBoxItem>
           <ComboBoxItem>Option 2</ComboBoxItem>
           <ComboBoxItem>Option 3</ComboBoxItem>
@@ -89,7 +89,7 @@
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="VerticalAlignment" Value="Center" />
-    <Setter Property="Padding" Value="8 1 10 2" />
+    <Setter Property="Padding" Value="8 1 6 2" />
     <Setter Property="MinHeight" Value="20" />
     <Setter Property="PlaceholderForeground" Value="{DynamicResource ThemeForegroundBrush}" />
     <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
@@ -110,9 +110,9 @@
               <TextBlock Name="PlaceholderTextBlock"
                          Grid.Column="0"
                          Margin="{TemplateBinding Padding}"
+                         Foreground="{TemplateBinding Foreground}"
                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                         Foreground="{TemplateBinding Foreground}"
                          IsVisible="{TemplateBinding SelectionBoxItem,
                                                    Converter={x:Static ObjectConverters.IsNull}}"
                          Text="{TemplateBinding PlaceholderText}" />
