@@ -18,7 +18,7 @@ public partial class MainWindow : Window
     if (useAccelerate)
     {
       // Enable Accelerate dev tools (AvaloniaUI.DiagnosticsSupport) - requiring a licence to use
-      (Application.Current as App)?.AttachDeveloperTools(); 
+      (Application.Current as App)?.AttacheDevToolsOnce(); 
       // Enable original free dev tools (Avalonia.Diagnostics) as an additional option available on F10
       this.AttachDevTools(new KeyGesture(Key.F10));
     }
