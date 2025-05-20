@@ -45,72 +45,74 @@
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Grid ColumnDefinitions="Auto,*" MinHeight="20"
-              ClipToBounds="False">
-          <Border Name="FocusBorderElement"
-                  VerticalAlignment="Center"
-                  Margin="{StaticResource FocusBorderMargin}"
-                  BorderThickness="{StaticResource FocusBorderThickness}"
-                  CornerRadius="5" >
-            <Border Name="border"
-                            Width="14"
-                            Height="14"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="{TemplateBinding CornerRadius}"
-                            BoxShadow="{DynamicResource ControlBackgroundRecessedShadow}">
-              <Panel>
-                <Path Name="CheckMark"
-                      Width="9"
-                      Height="9"
-                      HorizontalAlignment="Center"
-                      VerticalAlignment="Center"
-                      Data="{DynamicResource CheckMarkPath}"
-                      FlowDirection="LeftToRight"
-                      Stretch="Fill">
-                  <Path.Fill>
-                    <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-                      <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
-                               Converter="{x:Static BoolConverters.Not}" />
-                      <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
-                      <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
-                    </MultiBinding>
-                  </Path.Fill>
-                </Path>
-                <Rectangle Name="indeterminateMark"
-                           Width="8"
-                           Height="2"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-
-                           Stretch="Uniform">
-                  <Rectangle.Fill>
-                    <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
-                      <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
-                               Converter="{x:Static BoolConverters.Not}" />
-                      <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
-                      <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
-                    </MultiBinding>
-                  </Rectangle.Fill>
-                </Rectangle>
-              </Panel>
+        <Panel Name="ReservedSpaceForFocus" 
+               Margin="{StaticResource InputControlsSpaceForFocusBorder}">
+          <Grid ColumnDefinitions="Auto,*" MinHeight="20"
+                ClipToBounds="False">
+            <Border Name="FocusBorderElement"
+                    VerticalAlignment="Center"
+                    Margin="{StaticResource FocusBorderMargin}"
+                    BorderThickness="{StaticResource FocusBorderThickness}"
+                    CornerRadius="5" >
+              <Border Name="border"
+                              Width="14"
+                              Height="14"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              CornerRadius="{TemplateBinding CornerRadius}"
+                              BoxShadow="{DynamicResource ControlBackgroundRecessedShadow}">
+                <Panel>
+                  <Path Name="CheckMark"
+                        Width="9"
+                        Height="9"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Data="{DynamicResource CheckMarkPath}"
+                        FlowDirection="LeftToRight"
+                        Stretch="Fill">
+                    <Path.Fill>
+                      <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+                        <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                                 Converter="{x:Static BoolConverters.Not}" />
+                        <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                        <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                      </MultiBinding>
+                    </Path.Fill>
+                  </Path>
+                  <Rectangle Name="indeterminateMark"
+                             Width="8"
+                             Height="2"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             Stretch="Uniform">
+                    <Rectangle.Fill>
+                      <MultiBinding Converter="{StaticResource BooleanToChoiceConverter}">
+                        <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=Window}" Path="IsActive"
+                                 Converter="{x:Static BoolConverters.Not}" />
+                        <Binding Source="{StaticResource ControlForegroundAccentInactiveHighBrush}" />
+                        <Binding Source="{StaticResource ControlForegroundAccentHighBrush}" />
+                      </MultiBinding>
+                    </Rectangle.Fill>
+                  </Rectangle>
+                </Panel>
+              </Border>
             </Border>
-          </Border>
-          <ContentPresenter Name="PART_ContentPresenter"
-                            Grid.Column="1"
-                            Margin="{TemplateBinding Padding}"
-                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                            Content="{TemplateBinding Content}"
-                            ContentTemplate="{TemplateBinding ContentTemplate}"
-                            IsVisible="{TemplateBinding Content,
-                                                        Converter={x:Static ObjectConverters.IsNotNull}}"
-                            RecognizesAccessKey="True"
-                            TextWrapping="Wrap"
-                            TextElement.Foreground="{TemplateBinding Foreground}" />
-        </Grid>
+            <ContentPresenter Name="PART_ContentPresenter"
+                              Grid.Column="1"
+                              Margin="{TemplateBinding Padding}"
+                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Content="{TemplateBinding Content}"
+                              ContentTemplate="{TemplateBinding ContentTemplate}"
+                              IsVisible="{TemplateBinding Content,
+                                                          Converter={x:Static ObjectConverters.IsNotNull}}"
+                              RecognizesAccessKey="True"
+                              TextWrapping="Wrap"
+                              TextElement.Foreground="{TemplateBinding Foreground}" />
+          </Grid>
+        </Panel>
       </ControlTemplate>
     </Setter>
     

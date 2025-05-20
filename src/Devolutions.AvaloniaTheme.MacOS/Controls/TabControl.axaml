@@ -62,6 +62,11 @@
                       ClipToBounds="False"
                       UseLayoutRounding="False"
                       DockPanel.Dock="{TemplateBinding TabStripPlacement}">
+                <Border.Margin>
+                  <Binding Source="{StaticResource InputControlsSpaceForFocusBorder}"
+                           Converter="{StaticResource ThicknessToSelectiveThicknessConverter}"
+                           ConverterParameter="{StaticResource TabControlSpaceForFocusFactors}" />
+                </Border.Margin>
                 <ItemsPresenter Name="PART_ItemsPresenter"
                                 ClipToBounds="False"
                                 ItemsPanel="{TemplateBinding ItemsPanel}" />

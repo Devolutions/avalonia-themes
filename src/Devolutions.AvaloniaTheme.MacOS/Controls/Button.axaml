@@ -31,7 +31,8 @@
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Panel>
+        <Panel Name="ReservedSpaceForFocus" 
+               Margin="{StaticResource InputControlsSpaceForFocusBorder}">
           <Border Name="BackgroundElement"
                   Background="{TemplateBinding Background}"
                   BorderBrush="{TemplateBinding BorderBrush}"

@@ -98,7 +98,8 @@
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="Template">
       <ControlTemplate>
-        <Panel ClipToBounds="False">
+        <Panel Name="ReservedSpaceForFocus" 
+               Margin="{StaticResource InputControlsSpaceForFocusBorder}">
           <Border Name="border"
                   Background="{TemplateBinding Background}"
                   BorderThickness="{DynamicResource ButtonBorderThickness}"
