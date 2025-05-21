@@ -1,32 +1,32 @@
 <Project Sdk="Microsoft.NET.Sdk">
-   <PropertyGroup>
-      <Version>0.1.0</Version>
-      <Company>Devolutions</Company>
-      <Description>Devolutions Avalonia Linux Theme</Description>
-      <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
-      <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
-      <PackageLicenseExpression>MIT</PackageLicenseExpression>
-      <TargetFramework>net9.0</TargetFramework>
-      <ImplicitUsings>enable</ImplicitUsings>
-      <Nullable>enable</Nullable>
-      <RootNamespace>Devolutions.AvaloniaThemes.Linux</RootNamespace>
-   </PropertyGroup>
-   <ItemGroup>
-      <PackageReference Include="Avalonia" Version="[11.2.0,)" />
-      <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
-      <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
-      <!-- 
+  <PropertyGroup>
+    <Version>0.1.0-dev2</Version>
+    <Company>Devolutions</Company>
+    <Description>Devolutions Avalonia Linux Theme</Description>
+    <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
+    <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Devolutions.AvaloniaThemes.Linux</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="[11.2.0,)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
+    <!-- 
             Avalonia.Svg.Skia 11.2.7.1 require at least 3.116, which is bugged atm on linux.
             https://github.com/mono/SkiaSharp/issues/3117
             [3.118,3.119] should work once released, but are just in preview so far.  
             This should be updated accordingly once out.
             - sbergerondrouin 2025-04-29 
           -->
-      <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,11.2.7.1)" />
-      <PackageReference Include="SkiaSharp" Version="[2.88.9,3.116.0)" />
-      <PackageReference Include="Devolutions.AvaloniaControls" Version="*" />
-   </ItemGroup>
-   <ItemGroup>
-      <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
-   </ItemGroup>
+    <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,11.2.7.1)" />
+    <PackageReference Include="SkiaSharp" Version="[2.88.9,3.116.0)" />
+    <PackageReference Include="Devolutions.AvaloniaControls" Version="*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
+  </ItemGroup>
 </Project>

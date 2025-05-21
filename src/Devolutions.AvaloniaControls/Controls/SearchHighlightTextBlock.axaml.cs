@@ -5,25 +5,25 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using System;
 
-public class SearchHighlightTextBox : ContentControl
+public class SearchHighlightTextBlock : ContentControl
 {
-    public static readonly DirectProperty<SearchHighlightTextBox, string> LeftTextProperty =
-        AvaloniaProperty.RegisterDirect<SearchHighlightTextBox, string>(nameof(LeftText), static o => o.leftText);
+    public static readonly DirectProperty<SearchHighlightTextBlock, string> LeftTextProperty =
+        AvaloniaProperty.RegisterDirect<SearchHighlightTextBlock, string>(nameof(LeftText), static o => o.leftText);
 
-    public static readonly DirectProperty<SearchHighlightTextBox, string> HighlightedTextProperty =
-        AvaloniaProperty.RegisterDirect<SearchHighlightTextBox, string>(nameof(HighlightedText), static o => o.highlightedText);
+    public static readonly DirectProperty<SearchHighlightTextBlock, string> HighlightedTextProperty =
+        AvaloniaProperty.RegisterDirect<SearchHighlightTextBlock, string>(nameof(HighlightedText), static o => o.highlightedText);
 
-    public static readonly DirectProperty<SearchHighlightTextBox, string> RightTextProperty =
-        AvaloniaProperty.RegisterDirect<SearchHighlightTextBox, string>(nameof(RightText), static o => o.rightText);
+    public static readonly DirectProperty<SearchHighlightTextBlock, string> RightTextProperty =
+        AvaloniaProperty.RegisterDirect<SearchHighlightTextBlock, string>(nameof(RightText), static o => o.rightText);
 
-    public static readonly DirectProperty<SearchHighlightTextBox, string?> SearchProperty =
-        AvaloniaProperty.RegisterDirect<SearchHighlightTextBox, string?>(nameof(Search), static o => o.Search, static (o, v) => o.Search = v);
+    public static readonly DirectProperty<SearchHighlightTextBlock, string?> SearchProperty =
+        AvaloniaProperty.RegisterDirect<SearchHighlightTextBlock, string?>(nameof(Search), static o => o.Search, static (o, v) => o.Search = v);
 
     public static readonly StyledProperty<IBrush?> HighlightBackgroundProperty =
-        AvaloniaProperty.Register<SearchHighlightTextBox, IBrush?>(nameof(HighlightBackground));
+        AvaloniaProperty.Register<SearchHighlightTextBlock, IBrush?>(nameof(HighlightBackground));
 
     public static readonly StyledProperty<IBrush?> HighlightForegroundProperty =
-        AvaloniaProperty.Register<SearchHighlightTextBox, IBrush?>(nameof(HighlightForeground));
+        AvaloniaProperty.Register<SearchHighlightTextBlock, IBrush?>(nameof(HighlightForeground));
 
     private string highlightedText = string.Empty;
 
@@ -33,7 +33,7 @@ public class SearchHighlightTextBox : ContentControl
 
     private string? search;
 
-    public SearchHighlightTextBox()
+    public SearchHighlightTextBlock()
     {
         this.GetObservable(ContentProperty).Subscribe(_ => this.ProcessHighlight());
         this.GetObservable(SearchProperty).Subscribe(_ => this.ProcessHighlight());

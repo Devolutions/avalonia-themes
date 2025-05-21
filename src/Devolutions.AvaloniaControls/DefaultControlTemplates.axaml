@@ -4,7 +4,7 @@
    <Styles.Resources>
       <ResourceDictionary>
          <ResourceDictionary.MergedDictionaries>
-            <MergeResourceInclude Source="Controls/SearchHighlightTextBox.axaml" />
+            <MergeResourceInclude Source="Controls/SearchHighlightTextBlock.axaml" />
             <MergeResourceInclude Source="Controls/EditableComboBox/EditableComboBox.axaml" />
          </ResourceDictionary.MergedDictionaries>
       </ResourceDictionary>

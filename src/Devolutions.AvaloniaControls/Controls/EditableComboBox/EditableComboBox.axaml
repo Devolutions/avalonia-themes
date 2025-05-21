@@ -48,7 +48,7 @@
          <ControlTemplate>
             <Border Name="PART_Background" Padding="{TemplateBinding Padding}">
                <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Stretch">
-                  <SearchHighlightTextBox
+                  <SearchHighlightTextBlock
                      Name="PART_Text"
                      Content="{TemplateBinding Value}"
                      Search="{TemplateBinding FilterHighlightText}"

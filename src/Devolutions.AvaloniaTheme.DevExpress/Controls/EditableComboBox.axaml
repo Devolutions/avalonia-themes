@@ -50,19 +50,19 @@
          <Setter Property="Background" Value="Transparent" />
       </Style>
 
-      <Style Selector="^:pointerover /template/ SearchHighlightTextBox#PART_Text">
+      <Style Selector="^:pointerover /template/ SearchHighlightTextBlock#PART_Text">
          <Setter Property="Foreground" Value="{DynamicResource EditableComboBoxItemHoverForegroundColor}" />
       </Style>
 
-      <Style Selector="^[IsSelected=True] /template/ SearchHighlightTextBox#PART_Text">
+      <Style Selector="^[IsSelected=True] /template/ SearchHighlightTextBlock#PART_Text">
          <Setter Property="Foreground" Value="{DynamicResource EditableComboBoxItemHoverForegroundColor}" />
       </Style>
 
-      <Style Selector="^:disabled /template/ SearchHighlightTextBox#PART_Text">
+      <Style Selector="^:disabled /template/ SearchHighlightTextBlock#PART_Text">
          <Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForegroundDisabled}" />
       </Style>
 
-      <Style Selector="^:pressed /template/ SearchHighlightTextBox#PART_Text">
+      <Style Selector="^:pressed /template/ SearchHighlightTextBlock#PART_Text">
          <Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForegroundPressed}" />
       </Style>
    </ControlTheme>
