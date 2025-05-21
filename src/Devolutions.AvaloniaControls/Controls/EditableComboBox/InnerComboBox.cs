@@ -214,6 +214,8 @@ public partial class EditableComboBox
         {
             if (this.IsDropDownOpen) return;
 
+            // TODO: Respect/implement all `KeyboardNavigation.TabNavigation` variants;
+            //       for now, we only specifically handle `Continue`, otherwise we don't handle the event and bubble up.
             var direction = e.Key.ToNavigationDirection(e.KeyModifiers);
             if (direction is NavigationDirection dir && (dir == NavigationDirection.Previous || dir == NavigationDirection.Next))
             {
@@ -241,6 +243,30 @@ public partial class EditableComboBox
                         return;
                     }
                 }
+
+                while (containerChild is not null && containerChild.FindAncestorOfType<Grid>() is { } grid)
+                {
+                    var index = -1;
+                    if (containerChild is Control control) index = grid.Children.IndexOf(control);
+
+                    var increment = dir == NavigationDirection.Previous ? -1 : 1;
+                    index += increment;
+                    for (; 0 <= index && index < grid.Children.Count; index += increment)
+                    {
+                        nextControl = grid.Children[index];
+                        if (nextControl is { Focusable: true, IsEffectivelyVisible: true, IsEffectivelyEnabled: true })
+                        {
+                            e.Handled = true;
+                            nextControl.Focus(NavigationMethod.Tab, e.KeyModifiers);
+                            return;
+                        }
+                    }
+
+                    containerChild = grid;
+                }
+
+                // this._innerTextBox.Focus(NavigationMethod.Tab, e.KeyModifiers);
+                // this._innerTextBox.TriggerOnKeyDown(new KeyEventArgs { Key = e.Key, KeyModifiers = e.KeyModifiers });
             }
 
             // Passthrough the rest instead of base, to handle on EditableComboBox instead

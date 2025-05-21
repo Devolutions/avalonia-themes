@@ -13,6 +13,11 @@ public partial class EditableComboBox
             this.SelectAll();
         }
 
+        public void TriggerOnKeyDown(KeyEventArgs e)
+        {
+            this.OnKeyDown(e);
+        }
+
         protected override void OnKeyDown(KeyEventArgs e)
         {
             if (e.Handled) return;
