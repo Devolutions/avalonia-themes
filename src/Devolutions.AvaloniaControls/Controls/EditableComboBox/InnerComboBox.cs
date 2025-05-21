@@ -216,6 +216,7 @@ public partial class EditableComboBox
 
             // TODO: Respect/implement all `KeyboardNavigation.TabNavigation` variants;
             //       for now, we only specifically handle `Continue`, otherwise we don't handle the event and bubble up.
+            //       - sbergerondrouin 2025-05-21
             var direction = e.Key.ToNavigationDirection(e.KeyModifiers);
             if (direction is NavigationDirection dir && (dir == NavigationDirection.Previous || dir == NavigationDirection.Next))
             {
