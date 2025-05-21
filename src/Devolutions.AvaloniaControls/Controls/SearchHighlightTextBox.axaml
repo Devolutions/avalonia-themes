@@ -1,0 +1,26 @@
+<ResourceDictionary
+   xmlns="https://github.com/avaloniaui"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:controls="clr-namespace:Devolutions.AvaloniaControls.Controls">
+   <Design.PreviewWith>
+      <controls:SearchHighlightTextBox
+         Search="t wi"
+         Content="Test with some stuff" />
+   </Design.PreviewWith>
+
+   <ControlTheme x:Key="{x:Type controls:SearchHighlightTextBox}" TargetType="controls:SearchHighlightTextBox">
+      <Setter Property="HighlightBackground" Value="#66FFFF00" />
+      <Setter Property="HighlightForeground" Value="{DynamicResource TextControlButtonForeground}" />
+      <Setter Property="Template">
+         <ControlTemplate>
+            <StackPanel Orientation="Horizontal">
+               <TextBlock Text="{TemplateBinding LeftText}" />
+               <TextBlock Text="{TemplateBinding HighlightedText}"
+                          Background="{TemplateBinding HighlightBackground}"
+                          Foreground="{TemplateBinding HighlightForeground}" />
+               <TextBlock Text="{TemplateBinding RightText}" />
+            </StackPanel>
+         </ControlTemplate>
+      </Setter>
+   </ControlTheme>
+</ResourceDictionary>

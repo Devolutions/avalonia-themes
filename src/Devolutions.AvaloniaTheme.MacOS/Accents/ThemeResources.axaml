@@ -106,6 +106,9 @@
 
          <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundHighBrush" />
 
+         <SolidColorBrush x:Key='ComboBoxDropDownBorderBrush'>#bababa</SolidColorBrush>
+         <BoxShadows x:Key='ComboBoxBoxShadow'>0 0 0 1 #99bababa</BoxShadows>
+         <SolidColorBrush x:Key='EditableComboBoxItemHoverBackground'>#2355d8</SolidColorBrush>
       </ResourceDictionary>
 
       <ResourceDictionary x:Key="Dark">
@@ -211,6 +214,9 @@
 
          <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundLowBrush" />
 
+         <SolidColorBrush x:Key='ComboBoxDropDownBorderBrush'>#525250</SolidColorBrush>
+         <BoxShadows x:Key='ComboBoxBoxShadow'>0 0 0 1 #050505</BoxShadows>
+         <SolidColorBrush x:Key='EditableComboBoxItemHoverBackground'>#214ac6</SolidColorBrush>
       </ResourceDictionary>
    </ResourceDictionary.ThemeDictionaries>
 

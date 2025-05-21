@@ -1,0 +1,355 @@
+<ResourceDictionary
+   xmlns="https://github.com/avaloniaui"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   x:ClassModifier="internal">
+   <Design.PreviewWith>
+      <StackPanel Width="400" Height="400" Spacing="20">
+         <EditableComboBox
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Watermark="test2">
+            <EditableComboBoxItem Value="test1" />
+            <EditableComboBoxItem Value="test2" />
+            <EditableComboBoxItem Value="test3" />
+         </EditableComboBox>
+
+         <EditableComboBox
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Watermark="test">
+            <EditableComboBox.InnerLeftContent>
+               <Label Content="A" />
+            </EditableComboBox.InnerLeftContent>
+            <EditableComboBox.InnerRightContent>
+               <Label Content="B" />
+            </EditableComboBox.InnerRightContent>
+
+            <EditableComboBoxItem Value="test1" />
+            <EditableComboBoxItem Value="test2" />
+            <EditableComboBoxItem Value="test3" />
+         </EditableComboBox>
+      </StackPanel>
+   </Design.PreviewWith>
+
+   <Thickness x:Key="EditableComboBoxBorderThickness">1</Thickness>
+   <Thickness x:Key="EditableComboBoxPadding">10,5,0,5</Thickness>
+   <Thickness x:Key="EditableComboBoxItemPadding">10,3</Thickness>
+   <x:Double x:Key="EditableComboBoxMinWidth">100</x:Double>
+   <x:Double x:Key="EditableComboBoxHeight">22</x:Double>
+   <x:Double x:Key="EditableComboBoxItemsHeight">28</x:Double>
+   <SolidColorBrush x:Key="ComboBoxBackgroundBorderBrushFocused" Color="{DynamicResource SystemAccentColor}" />
+
+   <ControlTheme x:Key="{x:Type EditableComboBoxItem}" TargetType="EditableComboBoxItem" BasedOn="{StaticResource {x:Type EditableComboBoxItem}}">
+      <Setter Property="IsHitTestVisible" Value="True" />
+      <Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForeground}" />
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Padding" Value="{DynamicResource EditableComboBoxItemPadding}" />
+
+      <Style
+         Selector="^:pointerover /template/ Border#PART_Background, ^[IsSelected=True] /template/ Border#PART_Background">
+         <Setter Property="Background" Value="Transparent" />
+      </Style>
+
+      <Style Selector="^:pointerover /template/ SearchHighlightTextBox#PART_Text">
+         <Setter Property="Foreground" Value="{DynamicResource EditableComboBoxItemHoverForegroundColor}" />
+      </Style>
+
+      <Style Selector="^[IsSelected=True] /template/ SearchHighlightTextBox#PART_Text">
+         <Setter Property="Foreground" Value="{DynamicResource EditableComboBoxItemHoverForegroundColor}" />
+      </Style>
+
+      <Style Selector="^:disabled /template/ SearchHighlightTextBox#PART_Text">
+         <Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForegroundDisabled}" />
+      </Style>
+
+      <Style Selector="^:pressed /template/ SearchHighlightTextBox#PART_Text">
+         <Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForegroundPressed}" />
+      </Style>
+   </ControlTheme>
+
+   <ControlTheme x:Key="{x:Type EditableComboBox+InnerTextBox}" TargetType="EditableComboBox+InnerTextBox">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderBrush" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Setter Property="CornerRadius" Value="0" />
+      <Setter Property="MinHeight" Value="0" />
+      <Setter Property="Margin"
+              Value="{Binding 
+            Padding, 
+            RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox},
+            Converter={x:Static DevoConverters.ThicknessExtractor}, 
+            ConverterParameter={x:Static ThicknessSubset.AllButRight}
+        }" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="FocusAdorner" Value="{x:Null}" />
+      <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+      <Setter Property="ContextFlyout"
+              Value="{OnFormFactor Desktop={StaticResource DefaultTextBoxContextFlyout}, Mobile={StaticResource HorizontalTextBoxContextFlyout}}" />
+      <Setter Property="Template">
+         <ControlTemplate>
+            <Grid ColumnDefinitions="Auto,*,Auto">
+               <DockPanel x:Name="PART_InnerDockPanel" Grid.Column="1" Margin="{TemplateBinding Padding}">
+                  <TextBlock
+                     Name="PART_FloatingWatermark"
+                     Foreground="{DynamicResource SystemAccentColor}"
+                     IsVisible="False"
+                     Text="{TemplateBinding Watermark}"
+                     DockPanel.Dock="Top" />
+                  <ScrollViewer
+                     Name="PART_ScrollViewer"
+                     HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
+                     VerticalScrollBarVisibility="{TemplateBinding (ScrollViewer.VerticalScrollBarVisibility)}"
+                     IsScrollChainingEnabled="{TemplateBinding (ScrollViewer.IsScrollChainingEnabled)}"
+                     AllowAutoHide="{TemplateBinding (ScrollViewer.AllowAutoHide)}"
+                     BringIntoViewOnFocusChange="{TemplateBinding (ScrollViewer.BringIntoViewOnFocusChange)}">
+                     <Panel>
+                        <TextBlock
+                           Name="PART_Watermark"
+                           Opacity="0.5"
+                           Text="{TemplateBinding Watermark}"
+                           TextAlignment="{TemplateBinding TextAlignment}"
+                           TextWrapping="{TemplateBinding TextWrapping}"
+                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                           <TextBlock.IsVisible>
+                              <MultiBinding Converter="{x:Static BoolConverters.And}">
+                                 <Binding ElementName="PART_TextPresenter" Path="PreeditText"
+                                          Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+                                 <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Text"
+                                          Converter="{x:Static StringConverters.IsNullOrEmpty}" />
+                              </MultiBinding>
+                           </TextBlock.IsVisible>
+                        </TextBlock>
+                        <TextPresenter
+                           Name="PART_TextPresenter"
+                           Text="{TemplateBinding Text, Mode=TwoWay}"
+                           CaretBlinkInterval="{TemplateBinding CaretBlinkInterval}"
+                           CaretIndex="{TemplateBinding CaretIndex}"
+                           SelectionStart="{TemplateBinding SelectionStart}"
+                           SelectionEnd="{TemplateBinding SelectionEnd}"
+                           TextAlignment="{TemplateBinding TextAlignment}"
+                           TextWrapping="{TemplateBinding TextWrapping}"
+                           LineHeight="{TemplateBinding LineHeight}"
+                           LetterSpacing="{TemplateBinding LetterSpacing}"
+                           PasswordChar="{TemplateBinding PasswordChar}"
+                           RevealPassword="{TemplateBinding RevealPassword}"
+                           SelectionBrush="{TemplateBinding SelectionBrush}"
+                           SelectionForegroundBrush="{TemplateBinding SelectionForegroundBrush}"
+                           CaretBrush="{TemplateBinding CaretBrush}"
+                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                     </Panel>
+                  </ScrollViewer>
+               </DockPanel>
+            </Grid>
+         </ControlTemplate>
+      </Setter>
+   </ControlTheme>
+
+   <ControlTheme x:Key="{x:Type EditableComboBox+InnerComboBox}"
+                 TargetType="EditableComboBox+InnerComboBox">
+      <Setter Property="FocusAdorner" Value="{x:Null}" />
+      <Setter Property="MaxDropDownHeight" Value="504" />
+      <Setter Property="Foreground"
+              Value="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="Background"
+              Value="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="BorderBrush"
+              Value="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="BorderThickness"
+              Value="{Binding BorderThickness, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="CornerRadius"
+              Value="{Binding CornerRadius, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="Padding"
+              Value="{Binding Padding, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="MinHeight"
+              Value="{Binding MinHeight, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="InnerLeftContent"
+              Value="{Binding InnerLeftContent, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="InnerRightContent"
+              Value="{Binding InnerRightContent, RelativeSource={RelativeSource FindAncestor, AncestorType=EditableComboBox}, Mode=OneWay}" />
+      <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+      <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+      <Setter Property="VerticalAlignment" Value="Stretch" />
+      <Setter Property="PlaceholderForeground" Value="{DynamicResource ComboBoxPlaceHolderForeground}" />
+      <Setter Property="Template">
+         <ControlTemplate>
+            <DataValidationErrors>
+               <Grid ColumnDefinitions="Auto,*,24,Auto" HorizontalAlignment="Stretch">
+                  <Border
+                     Name="BorderElement"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="4"
+                     Background="{TemplateBinding Background}"
+                     BorderBrush="{DynamicResource TextBoxBorderBrush}"
+                     BorderThickness="1 1 1 0"
+                     CornerRadius="{TemplateBinding CornerRadius}"
+                     MinWidth="{TemplateBinding MinWidth}"
+                     MinHeight="{TemplateBinding MinHeight}" />
+                  <Border
+                     Name="BottomBorderElement"
+                     Grid.Column="0"
+                     Grid.ColumnSpan="4"
+                     Background="Transparent"
+                     Margin="1 0"
+                     BorderBrush="{DynamicResource TextBoxBottomBorderBrush}"
+                     BorderThickness="0 0 0 1"
+                     CornerRadius="{TemplateBinding CornerRadius}"
+                     MinWidth="{TemplateBinding MinWidth}"
+                     MinHeight="{TemplateBinding MinHeight}" />
+
+                  <ItemsControl
+                     Grid.Column="0"
+                     Name="PART_InnerLeftContent"
+                     ItemsSource="{TemplateBinding InnerLeftContent}">
+                     <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                           <StackPanel Orientation="Horizontal" Margin="2 2 0 2" />
+                        </ItemsPanelTemplate>
+                     </ItemsControl.ItemsPanel>
+                  </ItemsControl>
+
+                  <ContentPresenter x:Name="PART_TextBoxPresenter" Grid.Column="1" />
+
+                  <Panel Grid.Column="2" Margin="0 0 1 0" HorizontalAlignment="Right" VerticalAlignment="Center"
+                         Width="17" Height="16">
+                     <Border
+                        Name="DropDownGlyphBackground"
+                        Background="Transparent"
+                        CornerRadius="{DynamicResource ControlCornerRadius}" />
+                     <PathIcon
+                        Name="DropDownGlyph"
+                        UseLayoutRounding="False"
+                        IsHitTestVisible="False"
+                        Height="8"
+                        Width="8"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Foreground="{DynamicResource ForegroundHighBrush}"
+                        Data="{StaticResource ChevronPath}" />
+                  </Panel>
+
+                  <ItemsControl
+                     Grid.Column="3"
+                     Name="PART_InnerRightContent"
+                     ItemsSource="{TemplateBinding InnerRightContent}">
+                     <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                           <StackPanel Orientation="Horizontal" Margin="0 2 2 2" />
+                        </ItemsPanelTemplate>
+                     </ItemsControl.ItemsPanel>
+                  </ItemsControl>
+
+                  <Popup
+                     Name="PART_Popup"
+                     WindowManagerAddShadowHint="False"
+                     IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+                     MinWidth="{AddBinding
+                        {Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}},
+                        12
+                     }"
+                     MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                     Placement="AnchorAndGravity"
+                     PlacementAnchor="BottomLeft"
+                     PlacementGravity="BottomRight"
+                     HorizontalAlignment="Stretch"
+                     HorizontalOffset="-6"
+                     VerticalOffset="0"
+                     IsLightDismissEnabled="True"
+                     OverlayDismissEventPassThrough="True"
+                     InheritsTransform="True">
+                     <Panel>
+                        <Border
+                           x:Name="PopupBorder"
+                           Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
+                           BorderBrush="{DynamicResource ComboBoxDropDownBorderBrush}"
+                           BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
+                           Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
+                           HorizontalAlignment="Stretch"
+                           BoxShadow="{DynamicResource EditableComboBoxBoxShadow}"
+                           Margin="6 0 6 6"
+                           CornerRadius="0">
+                           <ScrollViewer
+                              HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                              VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+                              IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}">
+                              <ItemsPresenter
+                                 Name="PART_ItemsPresenter"
+                                 Margin="{DynamicResource ComboBoxDropdownContentMargin}"
+                                 ItemsPanel="{TemplateBinding ItemsPanel}" />
+                           </ScrollViewer>
+                        </Border>
+                     </Panel>
+                  </Popup>
+               </Grid>
+            </DataValidationErrors>
+         </ControlTemplate>
+      </Setter>
+
+      <!-- Error State -->
+      <Style Selector="^:error /template/ Border#Background">
+         <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
+      </Style>
+
+      <!--  Focused State  -->
+      <Style Selector="^:focus-within">
+         <Style Selector="^ /template/ Border#BottomBorderElement">
+            <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderSelectedBrush}" />
+            <Setter Property="BorderThickness" Value="0 0 0 1.6" />
+         </Style>
+      </Style>
+
+      <Style Selector="^ /template/ Border#DropDownGlyphBackground:pointerover">
+         <Setter Property="Background" Value="{DynamicResource EditableComboBoxGlyphHoverBrush}" />
+      </Style>
+
+      <Style Selector="^:dropdownopen">
+         <Style Selector="^ /template/ Border#BottomBorderElement">
+            <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderSelectedBrush}" />
+            <Setter Property="BorderThickness" Value="0 0 0 1.6" />
+         </Style>
+         <Style Selector="^ /template/ Border#DropDownGlyphBackground">
+            <Setter Property="Background" Value="{DynamicResource EditableComboBoxGlyphPressedBrush}" />
+         </Style>
+         <Style Selector="^ /template/ PathIcon#DropDownGlyph">
+            <Setter Property="Opacity" Value="0.5" />
+         </Style>
+
+         <Style Selector="^:dropdown-open-from-top /template/ Popup#PART_Popup">
+            <Setter Property="VerticalOffset" Value="6" />
+         </Style>
+      </Style>
+
+      <!--  Disabled State  -->
+      <Style Selector="^:disabled">
+         <Style Selector="^ /template/ Border#Background">
+            <Setter Property="Background" Value="{DynamicResource ComboBoxBackgroundDisabled}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrushDisabled}" />
+         </Style>
+         <Style Selector="^ /template/ PathIcon#DropDownGlyph">
+            <Setter Property="Foreground" Value="{DynamicResource ComboBoxDropDownGlyphForegroundDisabled}" />
+         </Style>
+      </Style>
+   </ControlTheme>
+
+   <ControlTheme x:Key="{x:Type EditableComboBox}" TargetType="EditableComboBox"
+                 BasedOn="{StaticResource {x:Type EditableComboBox}}">
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+      <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
+      <Setter Property="CaretBrush" Value="{DynamicResource ForegroundHighBrush}" />
+      <Setter Property="SelectionBrush" Value="{DynamicResource TextSelectionBrush}" />
+      <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+      <Setter Property="Padding" Value="4 3 2 3" />
+      <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+
+      <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrush}" />
+      <Setter Property="BorderThickness" Value="{DynamicResource EditableComboBoxBorderThickness}" />
+      <Setter Property="Mode" Value="Immediate" />
+   </ControlTheme>
+</ResourceDictionary>

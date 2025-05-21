@@ -400,7 +400,7 @@
       </Style>
 
       <Style Selector="^:selected /template/ Border#ItemBorder">
-         <Setter Property="Background" Value="{ex:WindowActiveResourceToggler DataGridItemBackgroundSelected, SelectionInInactiveWindow}" />
+         <Setter Property="Background" Value="{WindowActiveResourceToggler DataGridItemBackgroundSelected, SelectionInInactiveWindow}" />
       </Style>
    </ControlTheme>
 

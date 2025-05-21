@@ -32,6 +32,11 @@
 
          <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.07" />
 
+         <Color x:Key="EditableComboBoxItemHoverForegroundColor">#0067c0</Color>
+         <Color x:Key="EditableComboBoxItemIconColor">#0088f2</Color>
+         <SolidColorBrush x:Key="EditableComboBoxGlyphHoverBrush" Color="{ChangeColorOpacity {DynamicResource SystemAccentColorLight2}, 0.25}" />
+         <SolidColorBrush x:Key="EditableComboBoxGlyphPressedBrush" Color="{ChangeColorOpacity {DynamicResource SystemAccentColorLight3}, 0.2}" />
+         <BoxShadows x:Key='EditableComboBoxBoxShadow'>0 0 5 0 #88666666</BoxShadows>
       </ResourceDictionary>
 
       <!-- TODO: Darkmode colours just roughly -->
@@ -64,6 +69,12 @@
          <Color x:Key='ControlBackgroundSelectedColor'>#21ffffff</Color>
          <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource ControlBackgroundSelectedColor}" />
 
+         <Color x:Key="EditableComboBoxItemHoverForegroundColor">#387ec4</Color>
+         <Color x:Key="EditableComboBoxItemIconColor">#0088f2</Color>
+         <SolidColorBrush x:Key="EditableComboBoxGlyphHoverBrush">#3c3c3c</SolidColorBrush>
+         <SolidColorBrush x:Key="EditableComboBoxGlyphPressedBrush" Color="#363636" />
+         <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="#404040" />
+         <BoxShadows x:Key='EditableComboBoxBoxShadow'>0 0 4 0 #88010101</BoxShadows>
       </ResourceDictionary>
    </ResourceDictionary.ThemeDictionaries>
 

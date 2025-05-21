@@ -1,15 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <LangVersion>default</LangVersion>
-    <PackageId>Devolutions.AvaloniaControls</PackageId>
-    <Version>0.1.0-dev12</Version>
-    <RootNamespace>Devolutions.AvaloniaControls</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="[11.2.0,)" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
-  </ItemGroup>
+   <PropertyGroup>
+      <TargetFramework>net9.0</TargetFramework>
+      <ImplicitUsings>enable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+      <LangVersion>13</LangVersion>
+      <PackageId>Devolutions.AvaloniaControls</PackageId>
+      <Version>0.1.0-dev12</Version>
+      <RootNamespace>Devolutions.AvaloniaControls</RootNamespace>
+   </PropertyGroup>
+   <ItemGroup>
+      <PackageReference Include="Avalonia" Version="[11.2.0,)" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
+      <PackageReference Include="System.Reactive" Version="*" />
+   </ItemGroup>
 </Project>
