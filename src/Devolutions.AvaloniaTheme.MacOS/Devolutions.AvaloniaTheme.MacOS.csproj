@@ -1,26 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Version>0.1.0-dev11</Version>
-    <Company>Devolutions</Company>
-    <Description>Devolutions Avalonia macOS Theme</Description>
-    <PackageId>Devolutions.AvaloniaTheme.MacOS</PackageId>
-    <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="[11.2.0,)" />
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
-    <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
-    <PackageReference Include="Devolutions.AvaloniaControls" Version="*" />
-  </ItemGroup>
-  <ItemGroup>
-    <AvaloniaResource Include="Accents/Assets/**" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
-  </ItemGroup>
+   <PropertyGroup>
+      <Version>0.1.0</Version>
+      <Company>Devolutions</Company>
+      <Description>Devolutions Avalonia macOS Theme</Description>
+      <PackageId>Devolutions.AvaloniaTheme.MacOS</PackageId>
+      <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <TargetFramework>net9.0</TargetFramework>
+      <ImplicitUsings>enable</ImplicitUsings>
+      <Nullable>enable</Nullable>
+   </PropertyGroup>
+   <ItemGroup>
+      <PackageReference Include="Avalonia" Version="[11.2.0,)" />
+      <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
+      <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
+      <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
+      <PackageReference Include="Devolutions.AvaloniaControls" Version="*" />
+   </ItemGroup>
+   <ItemGroup>
+      <AvaloniaResource Include="Accents/Assets/**" />
+   </ItemGroup>
+   <ItemGroup>
+      <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
+   </ItemGroup>
 </Project>
