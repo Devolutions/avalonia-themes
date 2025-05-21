@@ -5,14 +5,24 @@
     <Border Padding="20">
       <StackPanel Spacing="20">
         <TreeView>
-          <TreeViewItem Header="Root" IsExpanded="True">
-            <TreeViewItem Header="Child1"/>
-            <TreeViewItem Header="Child2"/>
+          <TreeViewItem Header="Another Test" IsExpanded="True">
+            <TreeViewItem Header="AnnaWindowsVM.localdomain" IsSelected="True"/>
+            <TreeViewItem Header="AnnaWindowsVM.localdomain"/>
+            <TreeViewItem Header="DEVOLUTIONS533.local"/>
+            <TreeViewItem Header="prl-local-ns-server.shared"/>
+          </TreeViewItem>
+          <TreeViewItem Header="Test" />
+          <TreeViewItem Header="TestData from Xavier">
+            <TreeViewItem Header="AnnaWindowsVM.localdomain"/>
+            <TreeViewItem Header="AnnaWindowsVM.localdomain"/>
+            <TreeViewItem Header="DEVOLUTIONS533.local"/>
+            <TreeViewItem Header="prl-local-ns-server.shared"/>
           </TreeViewItem>
         </TreeView>
       </StackPanel>
     </Border>
   </Design.PreviewWith>
+
 
   <ControlTheme x:Key="{x:Type TreeView}" TargetType="TreeView">
     <Setter Property="Background" Value="Transparent" />
