@@ -5,11 +5,11 @@
     <Nullable>enable</Nullable>
     <LangVersion>default</LangVersion>
     <PackageId>Devolutions.AvaloniaControls</PackageId>
-    <Version>0.1.0-dev11</Version>
+    <Version>0.1.0-dev12</Version>
     <RootNamespace>Devolutions.AvaloniaControls</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="[11.2.0,)" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
   </ItemGroup>
 </Project>

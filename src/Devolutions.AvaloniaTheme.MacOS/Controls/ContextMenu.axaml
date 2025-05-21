@@ -40,6 +40,7 @@
     <Setter Property="BorderThickness" Value="{DynamicResource MenuFlyoutPresenterBorderThickness}" />
     <Setter Property="Padding" Value="{DynamicResource MenuFlyoutPresenterThemePadding}" />
     <Setter Property="Focusable" Value="True" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="MaxWidth" Value="{DynamicResource FlyoutThemeMaxWidth}" />
     <Setter Property="MinHeight" Value="{DynamicResource MenuFlyoutThemeMinHeight}" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />

@@ -1,9 +1,7 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:collections="clr-namespace:Avalonia.Collections;assembly=Avalonia.Controls.DataGrid"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls"
-                    xmlns:ex="clr-namespace:Devolutions.AvaloniaControls.MarkupExtensions;assembly=Devolutions.AvaloniaControls">
-
+<ResourceDictionary
+   xmlns="https://github.com/avaloniaui"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   xmlns:collections="clr-namespace:Avalonia.Collections;assembly=Avalonia.Controls.DataGrid">
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
    </ResourceDictionary.MergedDictionaries>
@@ -102,7 +100,7 @@
    <!-- Cell -->
    <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
       <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
-      <Setter Property="Foreground" Value="{ex:WindowActiveResourceToggler DataGridForegroundSelectedBrush, ForegroundHighBrush}" />
+      <Setter Property="Foreground" Value="{WindowActiveResourceToggler DataGridForegroundSelectedBrush, ForegroundHighBrush}" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Stretch" />
       <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
@@ -573,7 +571,7 @@
                           IsVisible="{TemplateBinding ScrollBar.AllowAutoHide, Converter={x:Static BoolConverters.Not}}">
                      <Border.BorderThickness>
                         <Binding Source="{StaticResource ScrollBarTrackBorderThickness}"
-                                 Converter="{x:Static c:DevoConverters.ThicknessToSelectiveThicknessConverter}"
+                                 Converter="{x:Static DevoConverters.ThicknessToSelectiveThicknessConverter}"
                                  ConverterParameter="{StaticResource ScrollBarSeparatorBorderFactors}" />
                      </Border.BorderThickness>
                   </Border>

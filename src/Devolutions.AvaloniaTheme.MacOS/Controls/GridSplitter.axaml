@@ -29,6 +29,7 @@
 
   <ControlTheme x:Key="{x:Type GridSplitter}" TargetType="GridSplitter">
     <Setter Property="Focusable" Value="True" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="MinWidth" Value="10" />
     <Setter Property="MinHeight" Value="10" />
     <Setter Property="Background" Value="{DynamicResource GridSplitterLineColor}" />
@@ -57,6 +58,19 @@
       <Setter Property="VerticalAlignment" Value="Center" />
       <Setter Property="Width" Value="{x:Static sys:Double.NaN}" />
       <Setter Property="Height" Value="1" />
+    </Style>
+    
+    <!-- Tabbing focus -->
+    <Style Selector="^:focus-visible">
+      <Style Selector="^ /template/ Rectangle#VisualLineMarker">
+        <Setter Property="Fill" Value="{DynamicResource FocusBorderBrush}" />
+      </Style>
+      <Style Selector="^[ResizeDirection=Columns] /template/ Rectangle#VisualLineMarker">
+        <Setter Property="Width" Value="7" />
+      </Style>
+     <Style Selector="^[ResizeDirection=Rows] /template/ Rectangle#VisualLineMarker">
+        <Setter Property="Height" Value="3.5" />
+      </Style>
     </Style>
   </ControlTheme>
 </ResourceDictionary>

@@ -61,6 +61,7 @@
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <!--  Narrow padding should be used for mouse input, when non-narrow one should be used for touch input in future.  -->
     <Setter Property="Padding" Value="{DynamicResource MenuItemPadding}" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel>
@@ -164,7 +165,7 @@
     <Style Selector="^:icon /template/ ContentControl#PART_IconPresenter">
       <Setter Property="IsVisible" Value="True" />
     </Style>
-    <Style Selector="^:selected">
+    <Style Selector="^:selected, ^:focus-visible">
       <Style Selector="^ /template/ Border#PART_LayoutRoot">
         <Setter Property="Background" Value="{DynamicResource LayoutBackgroundMidBrush}" />
       </Style>

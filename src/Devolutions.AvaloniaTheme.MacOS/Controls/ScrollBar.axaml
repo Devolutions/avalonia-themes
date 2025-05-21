@@ -1,6 +1,6 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls">
+<ResourceDictionary
+   xmlns="https://github.com/avaloniaui"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -84,7 +84,7 @@
                                 Background="{TemplateBinding Background}"
                                 BorderBrush="{TemplateBinding BorderBrush}"
                                 BorderThickness="{TemplateBinding BorderThickness,
-                           Converter={x:Static  c:DevoConverters.ThicknessToSelectiveThicknessConverter},
+                           Converter={x:Static  DevoConverters.ThicknessToSelectiveThicknessConverter},
                            ConverterParameter={StaticResource ScrollBarTrackVerticalBorderFactors}}"
                                 Opacity="0">
                            <Border.Transitions>
@@ -147,7 +147,7 @@
                            Background="{TemplateBinding Background}"
                            BorderBrush="{TemplateBinding BorderBrush}"
                            BorderThickness="{TemplateBinding BorderThickness,
-                           Converter={x:Static  c:DevoConverters.ThicknessToSelectiveThicknessConverter},
+                           Converter={x:Static  DevoConverters.ThicknessToSelectiveThicknessConverter},
                            ConverterParameter={StaticResource ScrollBarTrackHorizontalBorderFactors}}"
                            Opacity="0">
                            <Border.Transitions>

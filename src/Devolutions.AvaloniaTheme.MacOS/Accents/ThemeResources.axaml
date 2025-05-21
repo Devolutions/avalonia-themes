@@ -249,6 +249,9 @@
 
    <Thickness x:Key="BorderThickness">1</Thickness>
 
+   <Thickness x:Key="InputControlsSpaceForFocusBorder">1.5</Thickness>
+   <Thickness x:Key="TabControlSpaceForFocusFactors">3</Thickness>
+
    <x:Double x:Key="DefaultFontSize">13</x:Double>
    <x:Double x:Key="ControlFontSize">13</x:Double>
    <x:Double x:Key="PasswordHiddenFontSize">11</x:Double>
@@ -280,6 +283,10 @@
 
    <SolidColorBrush x:Key="ControlBorderBrush" Color="{DynamicResource ControlBorderMidColor}" />
    <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{DynamicResource ControlBorderLowColor}" />
+
+   <SolidColorBrush x:Key="FocusBorderBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
+   <Thickness x:Key="FocusBorderThickness">3.5</Thickness>
+   <Thickness x:Key="FocusBorderMargin">-3</Thickness>
 
    <SolidColorBrush x:Key="DefaultIconFillBrush" Color="{DynamicResource DefaultIconColor}" />
 
@@ -353,7 +360,6 @@
    <SolidColorBrush x:Key="TextBoxClearButtonBackgroundBrush"
                     Color="{DynamicResource TextBoxClearButtonBackgroundColor}" />
    <SolidColorBrush x:Key="TextBoxSelectionHighlightBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.3" />
-   <SolidColorBrush x:Key="TextBoxBorderFocusBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
    <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
    <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
                     Color="{DynamicResource BackgroundColor}" Opacity="0.5" />

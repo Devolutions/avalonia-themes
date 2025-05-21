@@ -1,6 +1,5 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls"
                     xmlns:converters="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Converters">
 
    <Design.PreviewWith>
@@ -128,7 +127,7 @@
               Value="{OnFormFactor Desktop={StaticResource DefaultTextBoxContextFlyout}, Mobile={StaticResource HorizontalTextBoxContextFlyout}}" />
       <Setter Property="FontSize">
          <Setter.Value>
-            <MultiBinding Converter="{x:Static c:DevoMultiConverters.RevealPasswordToFontSizeConverter}">
+            <MultiBinding Converter="{x:Static DevoMultiConverters.RevealPasswordToFontSizeConverter}">
                <Binding RelativeSource="{RelativeSource Self}" Path="PasswordChar" />
                <Binding RelativeSource="{RelativeSource Self}" Path="RevealPassword" />
                <Binding Source="{StaticResource ControlFontSize}" />
@@ -172,7 +171,7 @@
                                           Padding="{Binding 
                                             Padding, 
                                             RelativeSource={RelativeSource TemplatedParent}, 
-                                            Converter={x:Static  c:DevoConverters.ThicknessToSelectiveThicknessConverter},
+                                            Converter={x:Static  DevoConverters.ThicknessToSelectiveThicknessConverter},
                                             ConverterParameter={StaticResource TextBoxPrefixPaddingFactors}}"
                                           IsVisible="{Binding Content, RelativeSource={RelativeSource Self}, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
                         <ScrollViewer Name="PART_ScrollViewer"
@@ -236,7 +235,7 @@
                                           Padding="{Binding 
                                             Padding, 
                                             RelativeSource={RelativeSource TemplatedParent}, 
-                                            Converter={x:Static c:DevoConverters.ThicknessToSelectiveThicknessConverter},
+                                            Converter={x:Static DevoConverters.ThicknessToSelectiveThicknessConverter},
                                             ConverterParameter={StaticResource TextBoxSufixPaddingFactors}}"
                                           Content="{TemplateBinding InnerRightContent}"
                                           IsVisible="{Binding Content, RelativeSource={RelativeSource Self}, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />

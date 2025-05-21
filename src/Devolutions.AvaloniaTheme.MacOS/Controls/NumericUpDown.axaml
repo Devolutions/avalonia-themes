@@ -60,37 +60,41 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
-        <DataValidationErrors>
-          <ButtonSpinner Name="PART_Spinner"
-                         Background="{TemplateBinding Background}"
-                         BorderThickness="{TemplateBinding BorderThickness}"
-                         BorderBrush="{TemplateBinding BorderBrush}"
-                         CornerRadius="{TemplateBinding CornerRadius}"
-                         IsTabStop="False"
-                         Padding="0"
-                         MinWidth="0"
-                         HorizontalContentAlignment="Stretch"
-                         VerticalContentAlignment="Stretch"
-                         AllowSpin="{TemplateBinding AllowSpin}"
-                         ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
-                         ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
-            <TextBox Name="PART_TextBox"
-                     Watermark="{TemplateBinding Watermark}"
-                     IsReadOnly="{TemplateBinding IsReadOnly}"
-                     IsEnabled="{TemplateBinding IsEnabled}"
-                     VerticalAlignment="Center"
-                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                     Text="{TemplateBinding Text}"
-                     TextAlignment="{TemplateBinding TextAlignment}"
-                     AcceptsReturn="False"
-                     TextWrapping="NoWrap"
-                     InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
-                     InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}" />
-          </ButtonSpinner>
-        </DataValidationErrors>
+          <DataValidationErrors ClipToBounds="False">
+            <ButtonSpinner Name="PART_Spinner"
+                           ClipToBounds="False"
+                           Background="{TemplateBinding Background}"
+                           BorderThickness="{TemplateBinding BorderThickness}"
+                           BorderBrush="{TemplateBinding BorderBrush}"
+                           CornerRadius="{TemplateBinding CornerRadius}"
+                           IsTabStop="False"
+                           Padding="0"
+                           MinWidth="0"
+                           HorizontalContentAlignment="Stretch"
+                           VerticalContentAlignment="Stretch"
+                           AllowSpin="{TemplateBinding AllowSpin}"
+                           ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
+                           ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
+              <TextBox Name="PART_TextBox"
+                       ClipToBounds="False"
+                       Watermark="{TemplateBinding Watermark}"
+                       IsReadOnly="{TemplateBinding IsReadOnly}"
+                       IsEnabled="{TemplateBinding IsEnabled}"
+                       VerticalAlignment="Center"
+                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                       HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                       Text="{TemplateBinding Text}"
+                       TextAlignment="{TemplateBinding TextAlignment}"
+                       AcceptsReturn="False"
+                       TextWrapping="NoWrap"
+                       InnerLeftContent="{Binding InnerLeftContent, RelativeSource={RelativeSource TemplatedParent}}"
+                       InnerRightContent="{Binding InnerRightContent, RelativeSource={RelativeSource TemplatedParent}}" />
+            </ButtonSpinner>
+          </DataValidationErrors>
       </ControlTemplate>
     </Setter>
 

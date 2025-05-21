@@ -10,7 +10,7 @@
 
    <Design.PreviewWith>
       <Border Margin="10" Background="{DynamicResource LayoutBackgroundHighBrush}">
-         <StackPanel Margin="20" Height="400" Width="180">
+         <StackPanel Margin="20" Height="400" Width="180" Spacing="5">
             <ComboBox SelectedIndex="2" MaxDropDownHeight="100">
                <ComboBoxItem>Option 1</ComboBoxItem>
                <ComboBoxItem>Option 2</ComboBoxItem>
@@ -21,7 +21,7 @@
                <ComboBoxItem>Option 2</ComboBoxItem>
                <ComboBoxItem>Option 3</ComboBoxItem>
             </ComboBox>
-            <ComboBox MaxDropDownHeight="100" PlaceholderText="Chose one">
+            <ComboBox MaxDropDownHeight="100" PlaceholderText="Choose one">
                <ComboBoxItem>Option 1</ComboBoxItem>
                <ComboBoxItem>Option 2</ComboBoxItem>
                <ComboBoxItem>Option 3</ComboBoxItem>
@@ -73,30 +73,33 @@
       <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="Padding" Value="8 1 10 2" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="Padding" Value="8 1 6 2" />
       <Setter Property="MinHeight" Value="20" />
       <Setter Property="PlaceholderForeground" Value="{DynamicResource ThemeForegroundBrush}" />
       <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
       <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+      <Setter Property="FocusAdorner" Value="{x:Null}" />
+      <Setter Property="ClipToBounds" Value="False" />
       <Setter Property="Template">
          <ControlTemplate>
-            <Panel>
+            <Panel Name="ReservedSpaceForFocus"
+                   Margin="{StaticResource InputControlsSpaceForFocusBorder}">
                <Border
                   Name="border"
                   Background="{TemplateBinding Background}"
                   BorderThickness="{DynamicResource ButtonBorderThickness}"
                   BorderBrush="{DynamicResource ControlBorderRaisedBrush}"
                   BoxShadow="{DynamicResource ControlBorderBoxShadow}"
-                  Margin="{DynamicResource ComboBoxShadowMargin}"
                   CornerRadius="{TemplateBinding CornerRadius}">
                   <Grid ColumnDefinitions="*,Auto">
                      <TextBlock
                         Name="PlaceholderTextBlock"
                         Grid.Column="0"
                         Margin="{TemplateBinding Padding}"
-                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                        Foreground="{TemplateBinding Foreground}"
+
                         IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}"
                         Text="{TemplateBinding PlaceholderText}" />
                      <ContentControl
@@ -148,6 +151,10 @@
                      </ToggleButton>
                   </Grid>
                </Border>
+               <Border Name="FocusBorderElement"
+                       Margin="{StaticResource FocusBorderMargin}"
+                       BorderThickness="{StaticResource FocusBorderThickness}"
+                       CornerRadius="7" />
                <Popup
                   Name="PART_Popup"
                   MaxHeight="{TemplateBinding MaxDropDownHeight}"
@@ -192,7 +199,12 @@
                </Popup>
             </Panel>
          </ControlTemplate>
-      </Setter>
+      </Setter><!-- Tabbing focus -->
+      <Style Selector="^:focus-visible">
+         <Style Selector="^ /template/ Border#FocusBorderElement">
+            <Setter Property="BorderBrush" Value="{DynamicResource FocusBorderBrush}" />
+         </Style>
+      </Style>
 
       <Style Selector="^:disabled">
          <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
