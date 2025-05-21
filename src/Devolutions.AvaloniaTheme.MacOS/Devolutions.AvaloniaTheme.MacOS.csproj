@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>0.1.0-dev10</Version>
+    <Version>0.1.0-dev11</Version>
     <Company>Devolutions</Company>
     <Description>Devolutions Avalonia macOS Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.MacOS</PackageId>

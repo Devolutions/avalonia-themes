@@ -245,7 +245,7 @@ public partial class EditableComboBox
                     }
                 }
 
-                while (containerChild is not null && containerChild.FindAncestorOfType<Grid>() is { } grid)
+                while (containerChild?.FindAncestorOfType<Grid>() is { } grid)
                 {
                     var index = -1;
                     if (containerChild is Control control) index = grid.Children.IndexOf(control);
@@ -265,9 +265,6 @@ public partial class EditableComboBox
 
                     containerChild = grid;
                 }
-
-                // this._innerTextBox.Focus(NavigationMethod.Tab, e.KeyModifiers);
-                // this._innerTextBox.TriggerOnKeyDown(new KeyEventArgs { Key = e.Key, KeyModifiers = e.KeyModifiers });
             }
 
             // Passthrough the rest instead of base, to handle on EditableComboBox instead
