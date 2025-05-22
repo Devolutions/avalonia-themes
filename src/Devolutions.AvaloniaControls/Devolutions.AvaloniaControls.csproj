@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <LangVersion>13</LangVersion>
     <PackageId>Devolutions.AvaloniaControls</PackageId>
-    <Version>0.1.0-dev2</Version>
+    <Version>0.1.0-dev3</Version>
     <RootNamespace>Devolutions.AvaloniaControls</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
