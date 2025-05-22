@@ -14,6 +14,8 @@
     <MergeResourceInclude Source="TabControl.axaml" />
     <MergeResourceInclude Source="TabItem.axaml" />
     <MergeResourceInclude Source="TextBox.axaml" />
+    <MergeResourceInclude Source="TreeView.axaml" />
+    <MergeResourceInclude Source="TreeViewItem.axaml" />
     <MergeResourceInclude Source="ContextMenu.axaml" />
     <MergeResourceInclude Source="Window.axaml" />
   </ResourceDictionary.MergedDictionaries>
