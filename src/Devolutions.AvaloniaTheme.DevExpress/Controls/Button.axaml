@@ -1,7 +1,6 @@
 <ResourceDictionary
    xmlns="https://github.com/avaloniaui"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   xmlns:ex="clr-namespace:Devolutions.AvaloniaControls.MarkupExtensions;assembly=Devolutions.AvaloniaControls">
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -72,14 +71,14 @@
       </Style>
       <Style Selector="^:focus, ^:focus-visible">
          <Style Selector="^ /template/ Border#ButtonActiveElement">
-            <Setter Property="BorderBrush" Value="{ex:WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
+            <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
          </Style>
       </Style>
 
       <Style Selector="^.accent">
-         <Setter Property="Background" Value="{ex:WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBackgroundHighBrush}" />
-         <Setter Property="Foreground" Value="{ex:WindowActiveResourceToggler ControlForegroundAccentHighBrush, ForegroundHighBrush}" />
-         <Setter Property="BorderBrush" Value="{ex:WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
+         <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBackgroundHighBrush}" />
+         <Setter Property="Foreground" Value="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ForegroundHighBrush}" />
+         <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
 
          <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
             <Setter Property="Background" Value="{DynamicResource ButtonAccentPointerOverBrushTransparent}" />

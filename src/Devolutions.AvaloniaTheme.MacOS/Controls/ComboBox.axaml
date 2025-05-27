@@ -1,8 +1,6 @@
 <ResourceDictionary
    xmlns="https://github.com/avaloniaui"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls"
-   xmlns:ex="clr-namespace:Devolutions.AvaloniaControls.MarkupExtensions;assembly=Devolutions.AvaloniaControls">
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -37,8 +35,8 @@
    </Design.PreviewWith>
 
    <ControlTheme x:Key="PopUpToggleButton" TargetType="ToggleButton">
-      <Setter Property="Background" Value="{ex:WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
-      <Setter Property="BorderBrush" Value="{ex:WindowActiveResourceToggler ControlBorderAccentBrush, ControlBorderBrush}" />
+      <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
+      <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBorderAccentBrush, ControlBorderBrush}" />
       <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
       <Setter Property="CornerRadius" Value="{StaticResource SelectionCornerRadius}" />
       <Setter Property="Template">
@@ -134,7 +132,7 @@
                                  VerticalAlignment="Center"
                                  Data="{DynamicResource ChevronPath}"
                                  Stretch="Uniform"
-                                 Fill="{ex:WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}" />
+                                 Fill="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}" />
 
                            <Path Width="9"
                                  Height="4.4"
@@ -142,7 +140,7 @@
                                  VerticalAlignment="Center"
                                  Data="{DynamicResource ChevronPath}"
                                  Stretch="Uniform"
-                                 Fill="{ex:WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}">
+                                 Fill="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}">
                               <Path.RenderTransform>
                                  <ScaleTransform ScaleY="-1" />
                               </Path.RenderTransform>
@@ -167,13 +165,13 @@
                   PlacementGravity="Bottom"
                   HorizontalOffset="-13">
                   <Popup.MinWidth>
-                     <MultiBinding Converter="{x:Static c:DevoMultiConverters.TotalWidthConverter}">
+                     <MultiBinding Converter="{x:Static DevoMultiConverters.TotalWidthConverter}">
                         <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width" />
                         <Binding Source="{StaticResource PopupSideMarginWidth}" />
                      </MultiBinding>
                   </Popup.MinWidth>
                   <Popup.VerticalOffset>
-                     <MultiBinding Converter="{x:Static c:DevoMultiConverters.SelectedIndexToPopupOffsetConverter}">
+                     <MultiBinding Converter="{x:Static DevoMultiConverters.SelectedIndexToPopupOffsetConverter}">
                         <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="SelectedIndex" />
                         <Binding Source="{StaticResource ComboBoxItemHeight}" />
                         <Binding Source="{StaticResource InitialFirstItemDistance}" />

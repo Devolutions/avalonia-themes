@@ -1,8 +1,7 @@
 <ResourceDictionary
    xmlns="https://github.com/avaloniaui"
    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
-   xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls">
+   xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -79,7 +78,7 @@
                   Classes.accent="{Binding 
                     Classes, 
                      RelativeSource={RelativeSource TemplatedParent}, 
-                     Converter={x:Static c:DevoConverters.HasClass},
+                     Converter={x:Static DevoConverters.HasClass},
                      ConverterParameter=accent
                   }"
                   Theme="{StaticResource FluentSplitButtonComponent}"
@@ -114,7 +113,7 @@
                   Classes.accent="{Binding 
                      Classes, 
                      RelativeSource={RelativeSource TemplatedParent}, 
-                     Converter={x:Static c:DevoConverters.HasClass},
+                     Converter={x:Static DevoConverters.HasClass},
                      ConverterParameter=accent
                   }"
                   Theme="{StaticResource FluentSplitButtonComponent}"

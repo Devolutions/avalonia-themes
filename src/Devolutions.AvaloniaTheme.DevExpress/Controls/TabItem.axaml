@@ -1,6 +1,5 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -83,7 +82,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="1 0 0 0 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="LeftBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -142,7 +141,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="0 0 1 0 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="RightBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -160,7 +159,7 @@
                           BorderThickness="0 0 1 1   "
                           CornerRadius="0 0 4 0 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomLeftCorner">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -175,7 +174,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="0 0 0 1">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomLeftBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -196,7 +195,7 @@
                           BorderBrush="{TemplateBinding BorderBrush}"
                           BorderThickness="0 0 0 1">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomRightBorder">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />
@@ -213,7 +212,7 @@
                           BorderThickness="1 0 0 1"
                           CornerRadius="0 0 0 4 ">
                      <Border.IsVisible>
-                        <MultiBinding Converter="{x:Static c:DevoMultiConverters.TabBorderVisibilityConverter}"
+                        <MultiBinding Converter="{x:Static DevoMultiConverters.TabBorderVisibilityConverter}"
                                       ConverterParameter="BottomRightCorner">
                            <Binding Path="$parent[TabItem]" />
                            <Binding Path="$parent[TabControl]" />

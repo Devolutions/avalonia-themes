@@ -1,6 +1,5 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
    <Design.PreviewWith>
       <Border Padding="20">
@@ -305,7 +304,7 @@
       <Style Selector="^ /template/ RepeatButton">
          <Setter Property="Opacity">
             <Setter.Value>
-               <MultiBinding Converter="{x:Static c:DevoMultiConverters.BooleanToChoiceConverter}">
+               <MultiBinding Converter="{x:Static DevoMultiConverters.BooleanToChoiceConverter}">
                   <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ScrollBar}" Path="AllowAutoHide" />
                   <Binding Source="{StaticResource OpacityHidden}" />
                   <Binding Source="{StaticResource OpacityVisible}" />
@@ -321,7 +320,7 @@
       <Style Selector="^ /template/ Thumb">
          <Setter Property="CornerRadius">
             <Setter.Value>
-               <MultiBinding Converter="{x:Static c:DevoMultiConverters.BooleanToChoiceConverter}">
+               <MultiBinding Converter="{x:Static DevoMultiConverters.BooleanToChoiceConverter}">
                   <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ScrollBar}" Path="AllowAutoHide" />
                   <Binding Source="{StaticResource ScrollBarThumbCornerRadius}" />
                   <Binding Source="{StaticResource ScrollBarThumbExpandedCornerRadius}" />
@@ -332,7 +331,7 @@
       <Style Selector="^:vertical /template/ Thumb">
          <Setter Property="RenderTransform">
             <Setter.Value>
-               <MultiBinding Converter="{x:Static c:DevoMultiConverters.BooleanToChoiceConverter}">
+               <MultiBinding Converter="{x:Static DevoMultiConverters.BooleanToChoiceConverter}">
                   <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ScrollBar}" Path="AllowAutoHide" />
                   <Binding Source="{StaticResource VerticalScrollThumbShrinkTransform}" />
                   <Binding Source="{StaticResource NoTransform}" />
@@ -343,7 +342,7 @@
       <Style Selector="^:horizontal /template/ Thumb">
          <Setter Property="RenderTransform">
             <Setter.Value>
-               <MultiBinding Converter="{x:Static c:DevoMultiConverters.BooleanToChoiceConverter}">
+               <MultiBinding Converter="{x:Static DevoMultiConverters.BooleanToChoiceConverter}">
                   <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ScrollBar}" Path="AllowAutoHide" />
                   <Binding Source="{StaticResource HorizontalScrollThumbShrinkTransform}" />
                   <Binding Source="{StaticResource NoTransform}" />

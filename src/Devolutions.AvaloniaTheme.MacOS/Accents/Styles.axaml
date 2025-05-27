@@ -1,6 +1,5 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:c="clr-namespace:Devolutions.AvaloniaControls.Converters;assembly=Devolutions.AvaloniaControls">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
    <Style Selector="Menu.MacOS_Theme_MenuOpensAbove > MenuItem > Border > Panel > Popup">
       <Setter Property="Placement" Value="TopEdgeAlignedLeft" />
@@ -18,7 +17,7 @@
    <Style Selector="Svg">
       <Setter Property="Css">
          <Setter.Value>
-            <Binding Source="{StaticResource DefaultIconFillBrush}" Converter="{x:Static c:DevoConverters.ColorToCssFillConverter}" ConverterParameter='.st0' />
+            <Binding Source="{StaticResource DefaultIconFillBrush}" Converter="{x:Static DevoConverters.ColorToCssFillConverter}" ConverterParameter='.st0' />
          </Setter.Value>
       </Setter>
    </Style>
@@ -26,7 +25,7 @@
    <Style Selector="Svg:disabled">
       <Setter Property="Css">
          <Setter.Value>
-            <Binding Source="{StaticResource SvgIconDisabledColorBrush}" Converter="{x:Static c:DevoConverters.ColorToCssFillConverter}" />
+            <Binding Source="{StaticResource SvgIconDisabledColorBrush}" Converter="{x:Static DevoConverters.ColorToCssFillConverter}" />
          </Setter.Value>
       </Setter>
    </Style>

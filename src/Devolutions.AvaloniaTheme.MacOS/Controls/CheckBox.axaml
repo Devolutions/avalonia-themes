@@ -1,7 +1,6 @@
 <ResourceDictionary
    xmlns="https://github.com/avaloniaui"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-   xmlns:ex="clr-namespace:Devolutions.AvaloniaControls.MarkupExtensions;assembly=Devolutions.AvaloniaControls">
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -75,7 +74,7 @@
                               Data="{DynamicResource CheckMarkPath}"
                               FlowDirection="LeftToRight"
                               Stretch="Fill"
-                              Fill="{ex:WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}" />
+                              Fill="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}" />
 
                            <Rectangle
                               Name="IndeterminateMark"
@@ -84,7 +83,7 @@
                               HorizontalAlignment="Center"
                               VerticalAlignment="Center"
                               Stretch="Uniform"
-                              Fill="{ex:WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}" />
+                              Fill="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ControlForegroundAccentInactiveHighBrush}" />
                         </Panel>
                      </Border>
                   </Border>
@@ -116,9 +115,9 @@
          <Setter Property="IsVisible" Value="False" />
       </Style>
       <Style Selector="^:checked">
-         <Setter Property="Background" Value="{ex:WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
+         <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
          <Style Selector="^/template/ Border#border">
-            <Setter Property="BorderBrush" Value="{ex:WindowActiveResourceToggler ControlBorderAccentBrush, ControlBorderBrush}" />
+            <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBorderAccentBrush, ControlBorderBrush}" />
             <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
          </Style>
          <Style Selector="^/template/ Path#CheckMark">
@@ -126,9 +125,9 @@
          </Style>
       </Style>
       <Style Selector="^:indeterminate">
-         <Setter Property="Background" Value="{ex:WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
+         <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
          <Style Selector="^/template/ Border#border">
-            <Setter Property="BorderBrush" Value="{ex:WindowActiveResourceToggler ControlBorderAccentBrush, ControlBorderBrush}" />
+            <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBorderAccentBrush, ControlBorderBrush}" />
             <Setter Property="BoxShadow" Value="0 0 Transparent" /> <!-- TODO: How do you set it to None? -->
          </Style>
          <Style Selector="^/template/ Rectangle#IndeterminateMark">

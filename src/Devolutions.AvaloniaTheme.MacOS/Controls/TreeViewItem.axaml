@@ -1,7 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
-                    xmlns:ex="clr-namespace:Devolutions.AvaloniaControls.MarkupExtensions;assembly=Devolutions.AvaloniaControls">
+                    xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls">
 
    <ResourceDictionary.MergedDictionaries>
       <ResourceInclude Source="/Accents/ThemeResources.axaml" />
@@ -129,14 +128,14 @@
       <!--  Selected state = tabbing focus -->
       <!-- TODO: the tabbing _behaviour_ is not quite right - the selected item doesn't get unselected and you can't tab to all items -->
       <Style Selector="^:selected /template/ Border#PART_LayoutRoot, ^:focus-visible /template/ Border#PART_LayoutRoot">
-         <Setter Property="Background" Value="{ex:WindowActiveResourceToggler TreeViewItemBackgroundSelected, SelectionInInactiveWindow}" />
+         <Setter Property="Background" Value="{WindowActiveResourceToggler TreeViewItemBackgroundSelected, SelectionInInactiveWindow}" />
          <Setter Property="BorderBrush" Value="{DynamicResource TreeViewItemBorderBrushSelected}" />
       </Style>
       <Style Selector="^:selected /template/ ContentPresenter#PART_HeaderPresenter, ^:focus-visible /template/ ContentPresenter#PART_HeaderPresenter">
-         <Setter Property="Foreground" Value="{ex:WindowActiveResourceToggler TreeViewItemForegroundSelected, ForegroundHighBrush}" />
+         <Setter Property="Foreground" Value="{WindowActiveResourceToggler TreeViewItemForegroundSelected, ForegroundHighBrush}" />
       </Style>
       <Style Selector="^:selected /template/ ToggleButton#PART_ExpandCollapseChevron, ^:focus-visible /template/ ToggleButton#PART_ExpandCollapseChevron">
-         <Setter Property="Foreground" Value="{ex:WindowActiveResourceToggler TreeViewItemForegroundSelected, ForegroundHighBrush}" />
+         <Setter Property="Foreground" Value="{WindowActiveResourceToggler TreeViewItemForegroundSelected, ForegroundHighBrush}" />
       </Style>
 
       <!--  Disabled Selected state  -->
