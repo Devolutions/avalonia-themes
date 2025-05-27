@@ -100,7 +100,16 @@
    <!-- Cell -->
    <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
       <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
-      <Setter Property="Foreground" Value="{WindowActiveResourceToggler DataGridForegroundSelectedBrush, ForegroundHighBrush}" />
+      <Setter
+         Property="Foreground"
+         Value="{DynamicResourceToggler
+            {AndBinding
+            {WindowIsActiveBinding},
+               {Binding IsSelected, RelativeSource={RelativeSource FindAncestor, AncestorType=DataGridRow}}
+            },
+            DataGridForegroundSelectedBrush,
+            ForegroundHighBrush
+         }" />
       <Setter Property="HorizontalContentAlignment" Value="Stretch" />
       <Setter Property="VerticalContentAlignment" Value="Stretch" />
       <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />

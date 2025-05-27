@@ -1,11 +1,6 @@
 namespace Devolutions.AvaloniaControls.MarkupExtensions;
 
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Data;
-using Avalonia.Data.Converters;
 using Avalonia.Markup.Xaml;
-using Converters;
 
 public class WindowActiveBindingTogglerExtension : MarkupExtension
 {
@@ -26,67 +21,7 @@ public class WindowActiveBindingTogglerExtension : MarkupExtension
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
         this.toggleBindingExtension ??= new BindingTogglerExtension(
-            new MultiBinding
-            {
-                Converter = DevoMultiConverters.FirstNonNullValueMultiConverter,
-                Bindings =
-                [
-                    new Binding
-                    {
-                        Path = "IsActive",
-                        Converter = BoolConverters.Not,
-                        RelativeSource = new RelativeSource
-                        {
-                            Mode = RelativeSourceMode.FindAncestor,
-                            AncestorType = typeof(INativeWindowAvaloniaHost<AvaloniaObject>),
-                        },
-                        Source = new Binding
-                        {
-                            RelativeSource = new RelativeSource
-                            {
-                                Mode = RelativeSourceMode.TemplatedParent,
-                            },
-                        },
-                    },
-                    new Binding
-                    {
-                        Path = "IsActive",
-                        Converter = BoolConverters.Not,
-                        RelativeSource = new RelativeSource
-                        {
-                            Mode = RelativeSourceMode.FindAncestor,
-                            AncestorType = typeof(INativeWindowAvaloniaHost<AvaloniaObject>),
-                        },
-                    },
-                    new Binding
-                    {
-                        Path = "IsActive",
-                        Converter = BoolConverters.Not,
-                        RelativeSource = new RelativeSource
-                        {
-                            Mode = RelativeSourceMode.FindAncestor,
-                            AncestorType = typeof(Window),
-                        },
-                        Source = new Binding
-                        {
-                            RelativeSource = new RelativeSource
-                            {
-                                Mode = RelativeSourceMode.TemplatedParent,
-                            },
-                        },
-                    },
-                    new Binding
-                    {
-                        Path = "IsActive",
-                        Converter = BoolConverters.Not,
-                        RelativeSource = new RelativeSource
-                        {
-                            Mode = RelativeSourceMode.FindAncestor,
-                            AncestorType = typeof(Window),
-                        },
-                    },
-                ],
-            },
+            WindowIsActiveBindingExtension.CreateIsActiveBinding(),
             this.WhenActiveBinding,
             this.WhenInactiveBinding
         );

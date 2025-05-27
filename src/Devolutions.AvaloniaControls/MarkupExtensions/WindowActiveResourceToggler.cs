@@ -24,8 +24,8 @@ public class WindowActiveResourceTogglerExtension : MarkupExtension
     public override object ProvideValue(IServiceProvider serviceProvider)
     {
         this.toggler ??= new WindowActiveBindingTogglerExtension(
-            Application.Current?.GetResourceObservable(this.InactiveResourceKey).ToBinding() ?? ObservableHelpers.Empty.ToBinding(),
-            Application.Current?.GetResourceObservable(this.ActiveResourceKey).ToBinding() ?? ObservableHelpers.Empty.ToBinding()
+            Application.Current?.GetResourceObservable(this.ActiveResourceKey).ToBinding() ?? ObservableHelpers.Empty.ToBinding(),
+            Application.Current?.GetResourceObservable(this.InactiveResourceKey).ToBinding() ?? ObservableHelpers.Empty.ToBinding()
         );
 
         return this.toggler.ProvideValue(serviceProvider);
