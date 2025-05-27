@@ -18,7 +18,7 @@
       <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.5.28,)" />
    </ItemGroup>
 
-   <ItemGroup>
+   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
       <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
    </ItemGroup>
 </Project>

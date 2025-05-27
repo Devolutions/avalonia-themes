@@ -20,7 +20,7 @@
    <ItemGroup>
       <AvaloniaResource Include="Accents/Assets/**" />
    </ItemGroup>
-   <ItemGroup>
+   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
       <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
    </ItemGroup>
 </Project>
