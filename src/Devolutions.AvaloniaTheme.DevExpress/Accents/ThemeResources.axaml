@@ -31,6 +31,7 @@
          <Color x:Key='ScrollBarThumbColor'>#9f9f9f</Color>
 
          <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.07" />
+         <SolidColorBrush x:Key="TreeViewItemBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.2" />
 
          <Color x:Key="EditableComboBoxItemHoverForegroundColor">#0067c0</Color>
          <Color x:Key="EditableComboBoxItemIconColor">#0088f2</Color>
@@ -68,7 +69,8 @@
 
          <Color x:Key='ControlBackgroundSelectedColor'>#21ffffff</Color>
          <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource ControlBackgroundSelectedColor}" />
-
+         <SolidColorBrush x:Key="TreeViewItemBackgroundSelectedBrush" Color="{DynamicResource ForegroundColor}"
+                          Opacity="0.13" />
          <Color x:Key="EditableComboBoxItemHoverForegroundColor">#387ec4</Color>
          <Color x:Key="EditableComboBoxItemIconColor">#0088f2</Color>
          <SolidColorBrush x:Key="EditableComboBoxGlyphHoverBrush">#3c3c3c</SolidColorBrush>
@@ -166,6 +168,11 @@
    <TransformOperations x:Key="VerticalScrollThumbShrinkTransform">scaleX(0.4)</TransformOperations>
    <TransformOperations x:Key="HorizontalScrollThumbShrinkTransform">scaleY(0.4)</TransformOperations>
    <TransformOperations x:Key="NoTransform">none</TransformOperations>
+
+   <x:Double x:Key="TreeViewItemMinHeight">22</x:Double>
+   <x:Double x:Key="TreeViewItemExpandCollapseChevronSize">12</x:Double>
+   <Thickness x:Key="TreeViewItemExpandCollapseChevronMargin">4 0 4 0</Thickness>
+   <Thickness x:Key="TreeViewItemTreeViewItemPaddingn">0 0 5 0</Thickness>
 
    <!-- DEVELOPMENT ONLY -->
    <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
