@@ -36,39 +36,35 @@ dotnet add package Devolutions.AvaloniaControls
 ```
 
 
-## Controls
+### Controls
 
-### EditableComboBox
-### SearchHighlightTextBlock
+- `EditableComboBox`
+- `SearchHighlightTextBlock`
 
-## Converters
+### Converters
 
-### ColorToCssFillConverter
-### CornerRadiusExtractor
-### HasClassConverter
-### ThicknessExtractor
+- `ColorToCssFillConverter`
+- `CornerRadiusExtractor`
+- `HasClassConverter`
+- `ThicknessExtractor`
 
-## MultiConverters
+### MultiConverters
 
-### BooleanToChoiceConverter
-### ClassToChoiceConverter
-### FirstNonNullValueMultiConverter
-### IsExplicitlyTrueConverter
-### IsUnsetConverter
+- `BooleanToChoiceConverter`
+- `ClassToChoiceConverter`
+- `FirstNonNullValueMultiConverter`
+- `IsExplicitlyTrueConverter`
+- `IsUnsetConverter`
 
-## MarkupExtensions
+### MarkupExtensions
 
-### AddBinding
-### MultiplyBinding
-
-### AndBinding
-### OrBinding
-
-### BindingToggler
-### DynamicResourceToggler
-
-### WindowActiveBindingToggler
-### WindowActiveResourceToggler
-### WindowIsActiveBinding
-
-### ChangeColorOpacity
+- `AddBinding`
+- `MultiplyBinding`
+- `AndBinding`
+- `OrBinding`
+- `BindingToggler`
+- `DynamicResourceToggler`
+- `WindowActiveBindingToggler`
+- `WindowActiveResourceToggler`
+- `WindowIsActiveBinding`
+- `ChangeColorOpacity`
