@@ -10,9 +10,11 @@ Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 
 ➡️ [Linux Theme](https://github.com/Devolutions/avalonia-themes/blob/master/src/Devolutions.AvaloniaTheme.Linux/README.md)
 
+➡️ [Avalonia Controls](https://github.com/Devolutions/avalonia-themes/blob/master/src/Devolutions.AvaloniaControls/README.md)
+
 # Sample App
 
-Contributers can use the SampleApp to test, debug and document styles for the various controls under each theme.
+Contributors can use the SampleApp to test, debug and document styles for the various controls under each theme.
 
 ## Debugging
 
