@@ -1,11 +1,11 @@
-using Avalonia.Controls;
-
 namespace SampleApp.DemoPages;
+
+using Avalonia.Controls;
 
 public partial class ComboBoxDemo : UserControl
 {
   public ComboBoxDemo()
   {
-    InitializeComponent();
+    this.InitializeComponent();
   }
 }

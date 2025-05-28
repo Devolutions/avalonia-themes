@@ -1,22 +1,22 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  
+
   <Design.PreviewWith>
     <Border Padding="20">
       <StackPanel Spacing="20">
         <TreeView>
           <TreeViewItem Header="Another Test" IsExpanded="True">
-            <TreeViewItem Header="AnnaWindowsVM.localdomain" IsSelected="True"/>
-            <TreeViewItem Header="AnnaWindowsVM.localdomain"/>
-            <TreeViewItem Header="DEVOLUTIONS533.local"/>
-            <TreeViewItem Header="prl-local-ns-server.shared"/>
+            <TreeViewItem Header="AnnaWindowsVM.localdomain" IsSelected="True" />
+            <TreeViewItem Header="AnnaWindowsVM.localdomain" />
+            <TreeViewItem Header="DEVOLUTIONS533.local" />
+            <TreeViewItem Header="prl-local-ns-server.shared" />
           </TreeViewItem>
           <TreeViewItem Header="Test" />
           <TreeViewItem Header="TestData from Xavier">
-            <TreeViewItem Header="AnnaWindowsVM.localdomain"/>
-            <TreeViewItem Header="AnnaWindowsVM.localdomain"/>
-            <TreeViewItem Header="DEVOLUTIONS533.local"/>
-            <TreeViewItem Header="prl-local-ns-server.shared"/>
+            <TreeViewItem Header="AnnaWindowsVM.localdomain" />
+            <TreeViewItem Header="AnnaWindowsVM.localdomain" />
+            <TreeViewItem Header="DEVOLUTIONS533.local" />
+            <TreeViewItem Header="prl-local-ns-server.shared" />
           </TreeViewItem>
         </TreeView>
       </StackPanel>

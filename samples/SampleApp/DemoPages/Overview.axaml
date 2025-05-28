@@ -4,99 +4,100 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.Overview">
-   <StackPanel Margin="10">
-      <TextBlock Classes="h1" Text="{Binding $parent[Window].Title}" />
-      <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap">
-         Elements in this sampler are styled with a partial
-         <TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />
-         theme, built upon <TextBlock Classes="code" FontSize="16" Text="Avalonia.Fluent" />. <LineBreak />
-         <LineBreak />
-         <Bold>Note:</Bold> at the moment the base theme is not just a
-         fallback for everything not implemented yet in the MacOS theme, but may in some instances provide
-         the base template to attach styles to (currently the case for buttons) and in most cases there may
-         also still be references to colour &amp; other resources provided by Fluent.
-         We still need to research what the drawbacks to this approach might be ...
-      </TextBlock>
-      <TabControl TabStripPlacement="Top" Margin="0 25 0 0">
-         <TabItem Header="Tab 1">
-            <StackPanel Orientation="Horizontal" Spacing="20">
-               <StackPanel>
-                  <TextBox Watermark="Name" />
-                  <TextBox Watermark="YourDomain"
-                           InnerLeftContent="http://"
-                           InnerRightContent=".com" />
-                  <TextBox Classes="clearButton">With 'Clear' button</TextBox>
-                  <TextBox Watermark="Disabled" IsEnabled="False" />
-                  <TextBox PasswordChar="*" Classes="revealPasswordButton">Reveal Password</TextBox>
-                  <TextBox PasswordChar="*" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
-               </StackPanel>
-               <StackPanel Margin="15 5">
-                  <CheckBox IsChecked="False">Unchecked</CheckBox>
-                  <CheckBox IsChecked="True">Checked</CheckBox>
-                  <CheckBox IsThreeState="True" IsChecked="{x:Null}">Partially checked</CheckBox>
-                  <CheckBox IsEnabled="False">Unchecked</CheckBox>
-                  <CheckBox IsChecked="True" IsEnabled="False">Checked</CheckBox>
-                  <CheckBox
-                     IsChecked="{x:Null}"
-                     IsEnabled="False"
-                     IsThreeState="True">
-                     Partially checked
-                  </CheckBox>
-               </StackPanel>
-               <StackPanel Orientation="Horizontal">
-                  <ComboBox PlaceholderText="Chose one" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="True">
-                     <ComboBoxItem>Option 1</ComboBoxItem>
-                     <ComboBoxItem>Option 2</ComboBoxItem>
-                     <ComboBoxItem>Option 3</ComboBoxItem>
-                     <ComboBoxItem>Option 4</ComboBoxItem>
-                  </ComboBox>
-                  <StackPanel>
-                     <ComboBox SelectedIndex="2" VerticalAlignment="Top" Margin="10 0 20 0">
-                        <ComboBoxItem>Option 1</ComboBoxItem>
-                        <ComboBoxItem>Option 2</ComboBoxItem>
-                        <ComboBoxItem>Option 3</ComboBoxItem>
-                        <ComboBoxItem>Option 4</ComboBoxItem>
-                     </ComboBox>
-                     <Border Margin="0 50">
-                        <ComboBox SelectedIndex="2" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="True">
-                           <ComboBoxItem>Option 1</ComboBoxItem>
-                           <ComboBoxItem>Option 2</ComboBoxItem>
-                           <ComboBoxItem>Option 3</ComboBoxItem>
-                           <ComboBoxItem>Option 4</ComboBoxItem>
-                        </ComboBox>
-                     </Border>
-                  </StackPanel>
-                  <StackPanel Width="100" HorizontalAlignment="Left">
-                     <Button Margin="5" Classes="accent" VerticalAlignment="Center">Ok</Button>
-                     <Button Margin="5" VerticalAlignment="Center" Content="Cancel" />
-                     <Button Margin="5" VerticalAlignment="Center" Classes="accent" IsEnabled="False">Submit</Button>
-                  </StackPanel>
-                  <StackPanel Width="200" HorizontalAlignment="Left" Spacing="5">
-                     <SplitButton Content="Splitted" Classes="accent">
-                        <SplitButton.Flyout>
-                           <MenuFlyout>
-                              <MenuItem Header="A" />
-                              <MenuItem Header="B" />
-                              <MenuItem Header="C" />
-                           </MenuFlyout>
-                        </SplitButton.Flyout>
-                     </SplitButton>
 
-                     <SplitButton Content="SplitButton">
-                        <SplitButton.Flyout>
-                           <Flyout>Hello</Flyout>
-                        </SplitButton.Flyout>
-                     </SplitButton>
-
-                     <SplitButton IsEnabled="False">Disabled</SplitButton>
-                  </StackPanel>
-               </StackPanel>
-
+  <StackPanel Margin="10">
+    <TextBlock Classes="h1" Text="{Binding $parent[Window].Title}" />
+    <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap">
+      Elements in this sampler are styled with a partial
+      <TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />
+      theme, built upon <TextBlock Classes="code" FontSize="16" Text="Avalonia.Fluent" />. <LineBreak />
+      <LineBreak />
+      <Bold>Note:</Bold> at the moment the base theme is not just a
+      fallback for everything not implemented yet in the MacOS theme, but may in some instances provide
+      the base template to attach styles to (currently the case for buttons) and in most cases there may
+      also still be references to colour &amp; other resources provided by Fluent.
+      We still need to research what the drawbacks to this approach might be ...
+    </TextBlock>
+    <TabControl TabStripPlacement="Top" Margin="0 25 0 0">
+      <TabItem Header="Tab 1">
+        <StackPanel Orientation="Horizontal" Spacing="20">
+          <StackPanel>
+            <TextBox Watermark="Name" />
+            <TextBox Watermark="YourDomain"
+                     InnerLeftContent="http://"
+                     InnerRightContent=".com" />
+            <TextBox Classes="clearButton">With 'Clear' button</TextBox>
+            <TextBox Watermark="Disabled" IsEnabled="False" />
+            <TextBox PasswordChar="*" Classes="revealPasswordButton">Reveal Password</TextBox>
+            <TextBox PasswordChar="*" Classes="revealPasswordButton" RevealPassword="True">Password Revealed</TextBox>
+          </StackPanel>
+          <StackPanel Margin="15 5">
+            <CheckBox IsChecked="False">Unchecked</CheckBox>
+            <CheckBox IsChecked="True">Checked</CheckBox>
+            <CheckBox IsThreeState="True" IsChecked="{x:Null}">Partially checked</CheckBox>
+            <CheckBox IsEnabled="False">Unchecked</CheckBox>
+            <CheckBox IsChecked="True" IsEnabled="False">Checked</CheckBox>
+            <CheckBox
+              IsChecked="{x:Null}"
+              IsEnabled="False"
+              IsThreeState="True">
+              Partially checked
+            </CheckBox>
+          </StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <ComboBox PlaceholderText="Chose one" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="True">
+              <ComboBoxItem>Option 1</ComboBoxItem>
+              <ComboBoxItem>Option 2</ComboBoxItem>
+              <ComboBoxItem>Option 3</ComboBoxItem>
+              <ComboBoxItem>Option 4</ComboBoxItem>
+            </ComboBox>
+            <StackPanel>
+              <ComboBox SelectedIndex="2" VerticalAlignment="Top" Margin="10 0 20 0">
+                <ComboBoxItem>Option 1</ComboBoxItem>
+                <ComboBoxItem>Option 2</ComboBoxItem>
+                <ComboBoxItem>Option 3</ComboBoxItem>
+                <ComboBoxItem>Option 4</ComboBoxItem>
+              </ComboBox>
+              <Border Margin="0 50">
+                <ComboBox SelectedIndex="2" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="True">
+                  <ComboBoxItem>Option 1</ComboBoxItem>
+                  <ComboBoxItem>Option 2</ComboBoxItem>
+                  <ComboBoxItem>Option 3</ComboBoxItem>
+                  <ComboBoxItem>Option 4</ComboBoxItem>
+                </ComboBox>
+              </Border>
             </StackPanel>
-         </TabItem>
-         <TabItem Header="Tab 2">Content 1</TabItem>
-         <TabItem Header="Tab 3" IsEnabled="False">Content 1</TabItem>
-         <TabItem Header="Tab 4">Content 1</TabItem>
-      </TabControl>
-   </StackPanel>
+            <StackPanel Width="100" HorizontalAlignment="Left">
+              <Button Margin="5" Classes="accent" VerticalAlignment="Center">Ok</Button>
+              <Button Margin="5" VerticalAlignment="Center" Content="Cancel" />
+              <Button Margin="5" VerticalAlignment="Center" Classes="accent" IsEnabled="False">Submit</Button>
+            </StackPanel>
+            <StackPanel Width="200" HorizontalAlignment="Left" Spacing="5">
+              <SplitButton Content="Splitted" Classes="accent">
+                <SplitButton.Flyout>
+                  <MenuFlyout>
+                    <MenuItem Header="A" />
+                    <MenuItem Header="B" />
+                    <MenuItem Header="C" />
+                  </MenuFlyout>
+                </SplitButton.Flyout>
+              </SplitButton>
+
+              <SplitButton Content="SplitButton">
+                <SplitButton.Flyout>
+                  <Flyout>Hello</Flyout>
+                </SplitButton.Flyout>
+              </SplitButton>
+
+              <SplitButton IsEnabled="False">Disabled</SplitButton>
+            </StackPanel>
+          </StackPanel>
+
+        </StackPanel>
+      </TabItem>
+      <TabItem Header="Tab 2">Content 1</TabItem>
+      <TabItem Header="Tab 3" IsEnabled="False">Content 1</TabItem>
+      <TabItem Header="Tab 4">Content 1</TabItem>
+    </TabControl>
+  </StackPanel>
 </UserControl>

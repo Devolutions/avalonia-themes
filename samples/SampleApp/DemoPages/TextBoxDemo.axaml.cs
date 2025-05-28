@@ -1,13 +1,13 @@
-using Avalonia.Controls;
-using SampleApp.ViewModels;
-
 namespace SampleApp.DemoPages;
+
+using Avalonia.Controls;
+using ViewModels;
 
 public partial class TextBoxDemo : UserControl
 {
   public TextBoxDemo()
   {
-    InitializeComponent();
-    DataContext = new TextBoxViewModel();
+    this.InitializeComponent();
+    this.DataContext = new TextBoxViewModel();
   }
 }

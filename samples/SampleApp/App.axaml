@@ -1,27 +1,28 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="SampleApp.App">
-    <Application.Resources>
-        <Styles x:Key="LinuxYaruStyles">
-            <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" />
-            <StyleInclude Source="/Styles.axaml" />
-        </Styles>
-        <Styles x:Key="DevExpressStyles">
-            <StyleInclude Source="avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" />
-            <StyleInclude Source="/Styles.axaml" />
-        </Styles>
-        <Styles x:Key="MacOsStyles">
-            <StyleInclude Source="avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" />
-            <StyleInclude Source="/Styles.axaml" />
-        </Styles>
-    </Application.Resources>
-    
-    <!-- KEPT FOR DESIGNER! -->
-    <Application.Styles>
-        <!-- <FluentTheme /> -->
-        <StyleInclude Source="avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" />
-        <!-- <StyleInclude Source="avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" /> -->
-        <!-- <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" /> -->
-        <StyleInclude Source="/Styles.axaml" />
-    </Application.Styles>
+
+  <Application.Resources>
+    <Styles x:Key="LinuxYaruStyles">
+      <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" />
+      <StyleInclude Source="/Styles.axaml" />
+    </Styles>
+    <Styles x:Key="DevExpressStyles">
+      <StyleInclude Source="avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" />
+      <StyleInclude Source="/Styles.axaml" />
+    </Styles>
+    <Styles x:Key="MacOsStyles">
+      <StyleInclude Source="avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" />
+      <StyleInclude Source="/Styles.axaml" />
+    </Styles>
+  </Application.Resources>
+
+  <!-- KEPT FOR DESIGNER! -->
+  <Application.Styles>
+    <!-- <FluentTheme /> -->
+    <StyleInclude Source="avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" />
+    <!-- <StyleInclude Source="avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" /> -->
+    <!-- <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" /> -->
+    <StyleInclude Source="/Styles.axaml" />
+  </Application.Styles>
 </Application>

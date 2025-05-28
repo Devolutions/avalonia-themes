@@ -1,56 +1,56 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-   <PropertyGroup>
-      <OutputType>WinExe</OutputType>
-      <TargetFramework>net9.0</TargetFramework>
-      <Nullable>enable</Nullable>
-      <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
-      <ApplicationManifest>app.manifest</ApplicationManifest>
-      <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
-   </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
 
-   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-      <!-- Prevent automatic attachment of regular free dev tools to avoid duplicate mapping of F12 key -->
-      <AvaloniaNameGeneratorAttachDevTools>false</AvaloniaNameGeneratorAttachDevTools>
-   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <!-- Prevent automatic attachment of regular free dev tools to avoid duplicate mapping of F12 key -->
+    <AvaloniaNameGeneratorAttachDevTools>false</AvaloniaNameGeneratorAttachDevTools>
+  </PropertyGroup>
 
-   <ItemGroup>
-      <PackageReference Include="Avalonia" Version="11.3.0" />
-      <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.0" />
-      <PackageReference Include="Avalonia.Desktop" Version="11.3.0" />
-      <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.0" />
-   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.0"/>
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.0"/>
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.0"/>
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.0"/>
+  </ItemGroup>
 
-   <ItemGroup>
-      <!--Add both, Classic and Accelerate Dev Tools-->
-      <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.0" />
-      <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.0.3">
-         <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
-         <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
-      </PackageReference>
-   </ItemGroup>
+  <ItemGroup>
+    <!--Add both, Classic and Accelerate Dev Tools-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.0"/>
+    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.0.3">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
 
-   <ItemGroup>
-      <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.7" /><!-- Frozen until fixed on linux -->
-      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-      <!-- <PackageReference Include="Devolutions.AvaloniaTheme.MacOS" Version="2024.12.4" /> -->
-   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.7"/><!-- Frozen until fixed on linux -->
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0"/>
+    <!-- <PackageReference Include="Devolutions.AvaloniaTheme.MacOS" Version="2024.12.4" /> -->
+  </ItemGroup>
 
-   <ItemGroup>
-      <None Remove="Assets\**" />
-      <AvaloniaResource Include="Assets\**" />
-   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\**"/>
+    <AvaloniaResource Include="Assets\**"/>
+  </ItemGroup>
 
-   <!-- Temporary link for development. 
-        (To use the published nuget, uncomment PackageReference above (update version) or install with Nuget manager) -->
-   <ItemGroup>
-      <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.MacOS\Devolutions.AvaloniaTheme.MacOS.csproj" />
-      <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.DevExpress\Devolutions.AvaloniaTheme.DevExpress.csproj" />
-      <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.Linux\Devolutions.AvaloniaTheme.Linux.csproj" />
-   </ItemGroup>
-   <ItemGroup>
-      <Compile Update="DemoPages\EditableComboBoxDemo.axaml.cs">
-         <DependentUpon>EditableComboBoxDemo.axaml</DependentUpon>
-         <SubType>Code</SubType>
-      </Compile>
-   </ItemGroup>
+  <!-- Temporary link for development. 
+       (To use the published nuget, uncomment PackageReference above (update version) or install with Nuget manager) -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.MacOS\Devolutions.AvaloniaTheme.MacOS.csproj"/>
+    <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.DevExpress\Devolutions.AvaloniaTheme.DevExpress.csproj"/>
+    <ProjectReference Include="..\..\src\Devolutions.AvaloniaTheme.Linux\Devolutions.AvaloniaTheme.Linux.csproj"/>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="DemoPages\EditableComboBoxDemo.axaml.cs">
+      <DependentUpon>EditableComboBoxDemo.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
 </Project>

@@ -23,5 +23,4 @@
     <TextBlock Margin="10">Right-click anywhere in this space</TextBlock>
   </Border>
 
-
 </UserControl>

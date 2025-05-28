@@ -1,13 +1,11 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-
 namespace SampleApp.DemoPages;
+
+using Avalonia.Controls;
 
 public partial class ButtonDemo : UserControl
 {
   public ButtonDemo()
   {
-    InitializeComponent();
+    this.InitializeComponent();
   }
 }

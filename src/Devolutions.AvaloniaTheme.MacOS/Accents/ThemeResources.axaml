@@ -1,441 +1,442 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-   <ResourceDictionary.ThemeDictionaries>
-      <ResourceDictionary x:Key="Light">
-         <Color x:Key="BackgroundColor">#ffffff</Color>
-         <Color x:Key="ForegroundColor">#000000</Color>
 
-         <Color x:Key="AccentForegroundColor">#ffffff</Color>
-         <Color x:Key="ErrorTextColor">#C50500</Color>
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <Color x:Key="BackgroundColor">#ffffff</Color>
+      <Color x:Key="ForegroundColor">#000000</Color>
 
-         <Color x:Key="ControlBackgroundHighColor">#ffffff</Color>
+      <Color x:Key="AccentForegroundColor">#ffffff</Color>
+      <Color x:Key="ErrorTextColor">#C50500</Color>
 
-         <Color x:Key="ControlBorderHighColor">#4a000000</Color> <!-- 29% -->
-         <Color x:Key="ControlBorderMidColor">#29000000</Color> <!-- 16% -->
-         <Color x:Key="ControlBorderLowColor">#14000000</Color> <!-- 8% -->
+      <Color x:Key="ControlBackgroundHighColor">#ffffff</Color>
 
-         <Color x:Key="GridSplitterLineColor">#4D000000</Color> <!-- 30% -->
-         <Color x:Key="SvgIconDisabledColor">#b2b2b2</Color>
-         <Color x:Key="ToolTipBackgroundColor">#e1e1e1</Color>
-         <Color x:Key="ToolTipBorderColor">Transparent</Color>
+      <Color x:Key="ControlBorderHighColor">#4a000000</Color> <!-- 29% -->
+      <Color x:Key="ControlBorderMidColor">#29000000</Color> <!-- 16% -->
+      <Color x:Key="ControlBorderLowColor">#14000000</Color> <!-- 8% -->
 
-         <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
-         <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
-         <Color x:Key="TextBoxBackgroundColor">#ffffff</Color>
-         <Color x:Key="TextBoxClearButtonBackgroundColor">#808080</Color>
-         <Color x:Key="ButtonSpinnerButtonPressedColor">#e9e9e9</Color>
+      <Color x:Key="GridSplitterLineColor">#4D000000</Color> <!-- 30% -->
+      <Color x:Key="SvgIconDisabledColor">#b2b2b2</Color>
+      <Color x:Key="ToolTipBackgroundColor">#e1e1e1</Color>
+      <Color x:Key="ToolTipBorderColor">Transparent</Color>
 
-         <Color x:Key="ScrollBarTrackColor">#fbfbfb</Color>
-         <Color x:Key="ScrollBarTrackBorderColor">#d6d6d6</Color>
+      <Color x:Key="TabControlBackgroundColor">#f2f2f2</Color>
+      <Color x:Key="PopupBackgroundColor">#e7e7e7</Color>
+      <Color x:Key="TextBoxBackgroundColor">#ffffff</Color>
+      <Color x:Key="TextBoxClearButtonBackgroundColor">#808080</Color>
+      <Color x:Key="ButtonSpinnerButtonPressedColor">#e9e9e9</Color>
 
-         <Color x:Key="DefaultIconColor">#000000</Color>
+      <Color x:Key="ScrollBarTrackColor">#fbfbfb</Color>
+      <Color x:Key="ScrollBarTrackBorderColor">#d6d6d6</Color>
 
-         <Color x:Key="TransparentColor">Transparent</Color>
+      <Color x:Key="DefaultIconColor">#000000</Color>
 
-         <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" Opacity="1" />
+      <Color x:Key="TransparentColor">Transparent</Color>
 
-         <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
-         <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
-         <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" />
+      <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" Opacity="1" />
 
-         <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.12" />
-         <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
-         <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
+      <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
+      <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
+      <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" />
 
-         <SolidColorBrush x:Key="LayoutBorderHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
-         <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
-         <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
+      <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.12" />
+      <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
+      <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
 
-         <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush" Color="{DynamicResource BackgroundColor}"
-                          Opacity="0.5" />
-         <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #bfbfbf</BoxShadows>
-         <BoxShadows x:Key="PopupShadow">0 0 1 0 #66000000, 0 0 1.5 00 #4D000000, 0 7 22 0 #40000000</BoxShadows>
+      <SolidColorBrush x:Key="LayoutBorderHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
+      <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
+      <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.02" />
 
-         <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
-         <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
-         <x:Double x:Key="ScrollBarThumbOpacity">0.33</x:Double>
+      <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush" Color="{DynamicResource BackgroundColor}"
+                       Opacity="0.5" />
+      <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #bfbfbf</BoxShadows>
+      <BoxShadows x:Key="PopupShadow">0 0 1 0 #66000000, 0 0 1.5 00 #4D000000, 0 7 22 0 #40000000</BoxShadows>
 
-         <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundHighBrush" />
+      <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.44" />
+      <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.07" />
+      <x:Double x:Key="ScrollBarThumbOpacity">0.33</x:Double>
 
-         <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.10" />
-         <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.20" />
+      <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundHighBrush" />
 
-         <BoxShadows x:Key="TextBoxBorderShadows">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
-         <BoxShadows x:Key="ControlBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
-         <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
-         <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #66000000, 0 7 17 0 #30000000</BoxShadows>
-         <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
-         <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
-         <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0</Thickness>
-         <Thickness x:Key="ToolTipBorderThickness">0</Thickness>
+      <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.10" />
+      <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.20" />
 
+      <BoxShadows x:Key="TextBoxBorderShadows">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
+      <BoxShadows x:Key="ControlBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
+      <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
+      <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #66000000, 0 7 17 0 #30000000</BoxShadows>
+      <Thickness x:Key="ButtonBorderThickness">0.6 0.6 0.6 1</Thickness>
+      <Thickness x:Key="ControlBorderThickness">0.6</Thickness>
+      <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0</Thickness>
+      <Thickness x:Key="ToolTipBorderThickness">0</Thickness>
 
-         <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
-         <ImageBrush x:Key="StripedBackgroundBrush"
-                     Source="avares://Devolutions.AvaloniaTheme.MacOS/Accents/Assets/Alternating_Row_Background_Light.png"
-                     TileMode="Tile"
-                     Stretch="None"
-                     DestinationRect="0 0 40 44" />
 
-         <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
-                          Color="{DynamicResource ForegroundColor}" Opacity="0.04" />
+      <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
+      <ImageBrush x:Key="StripedBackgroundBrush"
+                  Source="avares://Devolutions.AvaloniaTheme.MacOS/Accents/Assets/Alternating_Row_Background_Light.png"
+                  TileMode="Tile"
+                  Stretch="None"
+                  DestinationRect="0 0 40 44" />
 
-         <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderLowColor" />
-         <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderMidColor" />
+      <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
+                       Color="{DynamicResource ForegroundColor}" Opacity="0.04" />
 
-         <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderMidColor" />
-         <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderLowColor" />
+      <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderLowColor" />
+      <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderMidColor" />
 
-         <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColorLight1" />
-         <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColor" />
+      <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderMidColor" />
+      <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderLowColor" />
 
-         <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}"
-                          Opacity="0.05" />
+      <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColorLight1" />
+      <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColor" />
 
-         <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColor" />
-         <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColorDark1" />
+      <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                       Opacity="0.05" />
 
-         <StaticResource x:Key="ControlBorderAccentColor" ResourceKey="TransparentColor" />
+      <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColor" />
+      <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColorDark1" />
 
-         <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="TransparentBrush" />
-         <Thickness x:Key="MenuFlyoutPresenterBorderThickness">0</Thickness>
+      <StaticResource x:Key="ControlBorderAccentColor" ResourceKey="TransparentColor" />
 
-         <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundLowBrush" />
+      <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="TransparentBrush" />
+      <Thickness x:Key="MenuFlyoutPresenterBorderThickness">0</Thickness>
 
-         <StaticResource x:Key="MenuItemForegroundBrush" ResourceKey="ForegroundHighBrush" />
+      <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundLowBrush" />
 
-         <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundHighBrush" />
+      <StaticResource x:Key="MenuItemForegroundBrush" ResourceKey="ForegroundHighBrush" />
 
-         <SolidColorBrush x:Key='ComboBoxDropDownBorderBrush'>#bababa</SolidColorBrush>
-         <BoxShadows x:Key='ComboBoxBoxShadow'>0 0 0 1 #99bababa</BoxShadows>
-         <SolidColorBrush x:Key='EditableComboBoxItemHoverBackground'>#2355d8</SolidColorBrush>
-      </ResourceDictionary>
+      <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundHighBrush" />
 
-      <ResourceDictionary x:Key="Dark">
-         <Color x:Key="BackgroundColor">#000000</Color>
-         <Color x:Key="ForegroundColor">#ffffff</Color>
+      <SolidColorBrush x:Key='ComboBoxDropDownBorderBrush'>#bababa</SolidColorBrush>
+      <BoxShadows x:Key='ComboBoxBoxShadow'>0 0 0 1 #99bababa</BoxShadows>
+      <SolidColorBrush x:Key='EditableComboBoxItemHoverBackground'>#2355d8</SolidColorBrush>
+    </ResourceDictionary>
 
-         <Color x:Key="AccentForegroundColor">#deecf9</Color>
-         <Color x:Key="ErrorTextColor">#ed7083</Color>
+    <ResourceDictionary x:Key="Dark">
+      <Color x:Key="BackgroundColor">#000000</Color>
+      <Color x:Key="ForegroundColor">#ffffff</Color>
 
-         <Color x:Key="ControlBackgroundHighColor">#595959</Color>
+      <Color x:Key="AccentForegroundColor">#deecf9</Color>
+      <Color x:Key="ErrorTextColor">#ed7083</Color>
 
-         <Color x:Key="ControlBorderHighColor">#4affffff</Color> <!-- 29% -->
-         <Color x:Key="ControlBorderMidColor">#33ffffff</Color> <!-- 20% -->
-         <Color x:Key="ControlBorderLowColor">#14ffffff</Color> <!-- 8% -->
+      <Color x:Key="ControlBackgroundHighColor">#595959</Color>
 
-         <Color x:Key="GridSplitterLineColor">#30ffffff</Color> <!-- 19% -->
-         <Color x:Key="SvgIconDisabledColor">#757575</Color>
-         <Color x:Key="ToolTipBackgroundColor">#2a2a2a</Color>
-         <Color x:Key="ToolTipBorderColor">#4a4a4a</Color>
+      <Color x:Key="ControlBorderHighColor">#4affffff</Color> <!-- 29% -->
+      <Color x:Key="ControlBorderMidColor">#33ffffff</Color> <!-- 20% -->
+      <Color x:Key="ControlBorderLowColor">#14ffffff</Color> <!-- 8% -->
 
-         <Color x:Key="TabControlBackgroundColor">#282828</Color>
-         <Color x:Key="PopupBackgroundColor">#262626</Color>
-         <Color x:Key="TextBoxBackgroundColor">#2c2c2c</Color>
-         <Color x:Key="TextBoxClearButtonBackgroundColor">#7F7F7F</Color>
-         <Color x:Key="ButtonSpinnerButtonPressedColor">#808080</Color>
+      <Color x:Key="GridSplitterLineColor">#30ffffff</Color> <!-- 19% -->
+      <Color x:Key="SvgIconDisabledColor">#757575</Color>
+      <Color x:Key="ToolTipBackgroundColor">#2a2a2a</Color>
+      <Color x:Key="ToolTipBorderColor">#4a4a4a</Color>
 
-         <Color x:Key="ScrollBarTrackColor">#2c2c2c</Color>
-         <Color x:Key="ScrollBarTrackBorderColor">#3f3f3f</Color>
+      <Color x:Key="TabControlBackgroundColor">#282828</Color>
+      <Color x:Key="PopupBackgroundColor">#262626</Color>
+      <Color x:Key="TextBoxBackgroundColor">#2c2c2c</Color>
+      <Color x:Key="TextBoxClearButtonBackgroundColor">#7F7F7F</Color>
+      <Color x:Key="ButtonSpinnerButtonPressedColor">#808080</Color>
 
-         <Color x:Key="DefaultIconColor">#b8b8b8</Color>
+      <Color x:Key="ScrollBarTrackColor">#2c2c2c</Color>
+      <Color x:Key="ScrollBarTrackBorderColor">#3f3f3f</Color>
 
-         <SolidColorBrush x:Key="BackgroundBrush" Color="#212121" />
+      <Color x:Key="DefaultIconColor">#b8b8b8</Color>
 
-         <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
-         <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
-         <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.35" />
+      <SolidColorBrush x:Key="BackgroundBrush" Color="#212121" />
 
-         <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
-         <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
-         <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.09" />
+      <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
+      <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
+      <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.35" />
 
-         <SolidColorBrush x:Key="LayoutBorderHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
-         <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
-         <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
+      <SolidColorBrush x:Key="LayoutBackgroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
+      <SolidColorBrush x:Key="LayoutBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
+      <SolidColorBrush x:Key="LayoutBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.09" />
 
-         <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
-                          Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
-         <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #ff0000</BoxShadows>
-         <BoxShadows x:Key="PopupShadow">0 0 1 0 #66000000, 0 0 1.5 00 #4d000000, 0 7 22 0 #40000000</BoxShadows>
+      <SolidColorBrush x:Key="LayoutBorderHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
+      <SolidColorBrush x:Key="LayoutBorderMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
+      <SolidColorBrush x:Key="LayoutBorderLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
 
-         <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
-         <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
-         <x:Double x:Key="ScrollBarThumbOpacity">0.6</x:Double>
+      <SolidColorBrush x:Key="ControlBackgroundDisabledHighBrush"
+                       Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
+      <BoxShadows x:Key="ControlBackgroundRecessedShadow">inset 0 5 3 -2 #ff0000</BoxShadows>
+      <BoxShadows x:Key="PopupShadow">0 0 1 0 #66000000, 0 0 1.5 00 #4d000000, 0 7 22 0 #40000000</BoxShadows>
 
-         <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundRecessedBrush" />
+      <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
+      <SolidColorBrush x:Key="ScrollBarDisabledThumbBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.17" />
+      <x:Double x:Key="ScrollBarThumbOpacity">0.6</x:Double>
 
-         <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
-         <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
+      <StaticResource x:Key="CheckBoxBackgroundBrush" ResourceKey="ControlBackgroundRecessedBrush" />
 
-         <BoxShadows x:Key="TextBoxBorderShadows">0 1 1 0 #4dffffff</BoxShadows>
-         <BoxShadows x:Key="ControlBorderBoxShadow">0 0 Transparent</BoxShadows>
-         <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
-         <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #ff000000</BoxShadows>
+      <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.14" />
+      <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
 
-         <Thickness x:Key="ButtonBorderThickness">0 1 0 0</Thickness>
-         <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
-         <Thickness x:Key="ControlBorderThickness">0 0.6 0 0</Thickness>
-         <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0.6</Thickness>
-         <Thickness x:Key="ToolTipBorderThickness">0.6</Thickness>
+      <BoxShadows x:Key="TextBoxBorderShadows">0 1 1 0 #4dffffff</BoxShadows>
+      <BoxShadows x:Key="ControlBorderBoxShadow">0 0 Transparent</BoxShadows>
+      <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
+      <BoxShadows x:Key="ToolTipBorderShadow">0 0 1 0 #ff000000</BoxShadows>
 
-         <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
-         <ImageBrush x:Key="StripedBackgroundBrush"
-                     Source="avares://Devolutions.AvaloniaTheme.MacOS/Accents/Assets/Alternating_Row_Background_Dark.png"
-                     TileMode="Tile"
-                     Stretch="None"
-                     DestinationRect="0 0 40 44" />
-         <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
-                          Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
+      <Thickness x:Key="ButtonBorderThickness">0 1 0 0</Thickness>
+      <Thickness x:Key="ButtonBorderAccentThickness">0 1 0 0</Thickness>
+      <Thickness x:Key="ControlBorderThickness">0 0.6 0 0</Thickness>
+      <Thickness x:Key="TabControlBorderThickness">0 0.6 0 0.6</Thickness>
+      <Thickness x:Key="ToolTipBorderThickness">0.6</Thickness>
 
-         <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderMidColor" />
-         <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderLowColor" />
+      <!-- DestinationRect Height must match TreeViewItem Height * 2 -->
+      <ImageBrush x:Key="StripedBackgroundBrush"
+                  Source="avares://Devolutions.AvaloniaTheme.MacOS/Accents/Assets/Alternating_Row_Background_Dark.png"
+                  TileMode="Tile"
+                  Stretch="None"
+                  DestinationRect="0 0 40 44" />
+      <SolidColorBrush x:Key="DataGridItemBackgroundAlternating"
+                       Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
 
-         <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderLowColor" />
-         <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderMidColor" />
+      <StaticResource x:Key="ControlBorderRaisedTopColor" ResourceKey="ControlBorderMidColor" />
+      <StaticResource x:Key="ControlBorderRaisedBottomColor" ResourceKey="ControlBorderLowColor" />
 
-         <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColor" />
-         <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColorDark1" />
+      <StaticResource x:Key="ControlBorderRecessedTopColor" ResourceKey="ControlBorderLowColor" />
+      <StaticResource x:Key="ControlBorderRecessedBottomColor" ResourceKey="ControlBorderMidColor" />
 
-         <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}"
-                          Opacity="0.37" />
+      <StaticResource x:Key="AccentButtonTopColor" ResourceKey="SystemAccentColor" />
+      <StaticResource x:Key="AccentButtonBottomColor" ResourceKey="SystemAccentColorDark1" />
 
-         <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColorLight1" />
-         <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColor" />
+      <SolidColorBrush x:Key="ControlBackgroundActiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                       Opacity="0.37" />
 
-         <StaticResource x:Key="ControlBorderAccentColor" ResourceKey="SystemAccentColorLight1" />
+      <StaticResource x:Key="ControlBackgroundAccentRecessedTopColor" ResourceKey="SystemAccentColorLight1" />
+      <StaticResource x:Key="ControlBackgroundAccentRecessedBottomColor" ResourceKey="SystemAccentColor" />
 
-         <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="ControlBorderBrush" />
-         <Thickness x:Key="MenuFlyoutPresenterBorderThickness">1</Thickness>
+      <StaticResource x:Key="ControlBorderAccentColor" ResourceKey="SystemAccentColorLight1" />
 
-         <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundMidBrush" />
+      <StaticResource x:Key="MenuFlyoutPresenterBorderBrush" ResourceKey="ControlBorderBrush" />
+      <Thickness x:Key="MenuFlyoutPresenterBorderThickness">1</Thickness>
 
-         <StaticResource x:Key="MenuItemForegroundBrush" ResourceKey="ForegroundMidBrush" />
+      <StaticResource x:Key="SortIconForegroundBrush" ResourceKey="ForegroundMidBrush" />
 
-         <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundLowBrush" />
+      <StaticResource x:Key="MenuItemForegroundBrush" ResourceKey="ForegroundMidBrush" />
 
-         <SolidColorBrush x:Key='ComboBoxDropDownBorderBrush'>#525250</SolidColorBrush>
-         <BoxShadows x:Key='ComboBoxBoxShadow'>0 0 0 1 #050505</BoxShadows>
-         <SolidColorBrush x:Key='EditableComboBoxItemHoverBackground'>#214ac6</SolidColorBrush>
-      </ResourceDictionary>
-   </ResourceDictionary.ThemeDictionaries>
+      <StaticResource x:Key="TabStripVerticalBackgroundBrush" ResourceKey="LayoutBackgroundLowBrush" />
 
+      <SolidColorBrush x:Key='ComboBoxDropDownBorderBrush'>#525250</SolidColorBrush>
+      <BoxShadows x:Key='ComboBoxBoxShadow'>0 0 0 1 #050505</BoxShadows>
+      <SolidColorBrush x:Key='EditableComboBoxItemHoverBackground'>#214ac6</SolidColorBrush>
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
 
-   <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
-   <FontFamily x:Key="MacOsThemeFontFamily">Inter, Helvetica Neue, Segoe UI, SF Pro, sans-serif</FontFamily>
 
-   <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-      <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
-      <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
-   </LinearGradientBrush>
+  <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
+  <FontFamily x:Key="MacOsThemeFontFamily">Inter, Helvetica Neue, Segoe UI, SF Pro, sans-serif</FontFamily>
 
-   <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-      <GradientStop Offset="0" Color="{DynamicResource AccentButtonTopColor}" />
-      <GradientStop Offset="1" Color="{DynamicResource AccentButtonBottomColor}" />
-   </LinearGradientBrush>
-
-   <LinearGradientBrush x:Key="ButtonBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-      <GradientStop Offset="0" Color="{DynamicResource ControlBackgroundAccentRecessedTopColor}" />
-      <GradientStop Offset="1" Color="{DynamicResource ControlBackgroundAccentRecessedBottomColor}" />
-   </LinearGradientBrush>
-
-   <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-      <GradientStop Offset="0" Color="{DynamicResource ControlBorderRaisedTopColor}" />
-      <GradientStop Offset="1" Color="{DynamicResource ControlBorderRaisedBottomColor}" />
-   </LinearGradientBrush>
-
-   <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
-      <GradientStop Offset="0" Color="{DynamicResource ControlBorderRecessedTopColor}" />
-      <GradientStop Offset="1" Color="{DynamicResource ControlBorderRecessedBottomColor}" />
-   </LinearGradientBrush>
-
-   <CornerRadius x:Key="LayoutCornerRadius">5</CornerRadius>
-   <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
-   <CornerRadius x:Key="SelectionCornerRadius">4</CornerRadius>
-
-   <Thickness x:Key="BorderThickness">1</Thickness>
-
-   <Thickness x:Key="InputControlsSpaceForFocusBorder">1.5</Thickness>
-   <Thickness x:Key="TabControlSpaceForFocusFactors">3</Thickness>
-
-   <x:Double x:Key="DefaultFontSize">13</x:Double>
-   <x:Double x:Key="ControlFontSize">13</x:Double>
-   <x:Double x:Key="PasswordHiddenFontSize">11</x:Double>
-
-   <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
-
-   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.85" />
-   <!-- <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" /> -->
-   <SolidColorBrush x:Key="ForegroundMidLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.34" />
-   <!-- <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" /> -->
-
-   <SolidColorBrush x:Key="SystemControlErrorTextForegroundBrush" Color="{DynamicResource ErrorTextColor}" />
-
-   <SolidColorBrush x:Key="SelectionInInactiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.15" />
-
-   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
-   <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}"
-                    Opacity="0.85" />
-
-   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
-   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
-   <SolidColorBrush x:Key="ControlBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.9" />
-   <SolidColorBrush x:Key="ControlBackgroundAccentHighBrush" Color="{StaticResource SystemAccentColor}" />
-   <SolidColorBrush x:Key="ControlBackgroundAccentMidBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.63" />
-
-   <SolidColorBrush x:Key="ControlBorderAccentBrush" Color="{DynamicResource ControlBorderAccentColor}" />
-
-   <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
-
-   <SolidColorBrush x:Key="ControlBorderBrush" Color="{DynamicResource ControlBorderMidColor}" />
-   <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{DynamicResource ControlBorderLowColor}" />
-
-   <SolidColorBrush x:Key="FocusBorderBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
-   <Thickness x:Key="FocusBorderThickness">3.5</Thickness>
-   <Thickness x:Key="FocusBorderMargin">-3</Thickness>
-
-   <SolidColorBrush x:Key="DefaultIconFillBrush" Color="{DynamicResource DefaultIconColor}" />
-
-   <!-- Button Resources (& button-like parts of other controls) -->
-   <Thickness x:Key="ButtonPadding">10 1.4 10 2.6</Thickness>
-   <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
-   <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="{DynamicResource ControlBorderAccentColor}" />
-
-   <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
-   <VisualBrush x:Key="TempButtonAccentBackgroundPrecise" Stretch="Fill">
-      <VisualBrush.Visual>
-         <Panel>
-            <!-- <Rectangle Fill="{StaticResource SystemAccentColor}" Width="20" Height="20" /> // might not have access to Logical tree where resources are defined-->
-            <Rectangle Fill="#007aff" Width="20" Height="20" />
-            <Rectangle>
-               <Rectangle.Fill>
-                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
-                     <GradientStop Offset="0" Color="white" />
-                     <GradientStop Offset="1" Color="Transparent" />
-                  </LinearGradientBrush>
-               </Rectangle.Fill>
-               <Rectangle.OpacityMask>
-                  <SolidColorBrush Color="White" Opacity="0.17" />
-               </Rectangle.OpacityMask>
-            </Rectangle>
-         </Panel>
-      </VisualBrush.Visual>
-   </VisualBrush>
-
-   <VisualBrush x:Key="TempButtonAccentPressedBackgroundPrecise" Stretch="Fill">
-      <VisualBrush.Visual>
-         <Panel>
-            <!-- <Rectangle Fill="{StaticResource ControlBackgroundAccentMidBrush}" Width="20" Height="20" /> -->
-            <Rectangle Fill="#005FC6" Width="20" Height="20" />
-            <Rectangle>
-               <Rectangle.Fill>
-                  <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
-                     <GradientStop Offset="0" Color="white" />
-                     <GradientStop Offset="1" Color="Transparent" />
-                  </LinearGradientBrush>
-               </Rectangle.Fill>
-               <Rectangle.OpacityMask>
-                  <SolidColorBrush Color="White" Opacity="0.17" />
-               </Rectangle.OpacityMask>
-            </Rectangle>
-         </Panel>
-      </VisualBrush.Visual>
-   </VisualBrush>
-
-   <!-- TabControl & TabItem Resources -->
-   <Thickness x:Key="TabItemPadding">8 2</Thickness>
-   <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{DynamicResource TabControlBackgroundColor}" />
-
-   <!-- CheckBox Resources -->
-   <CornerRadius x:Key="CheckBoxCornerRadius">3</CornerRadius>
-
-   <!-- ComboBox & ComboBoxItem Resources -->
-   <Thickness x:Key="ComboBoxItemMargin">2 0</Thickness>
-   <Thickness x:Key="ComboBoxItemPadding">5 3</Thickness>
-   <x:Int32 x:Key="ComboBoxItemHeight">22</x:Int32>
-   <Thickness x:Key="ComboBoxShadowMargin">4</Thickness>
-   <!-- InitialFirstItemDistance must match ComboBoxShadowMargin.bottom + PopupPadding.top -->
-   <x:Int32 x:Key="InitialFirstItemDistance">9</x:Int32>
-   <x:Int32 x:Key="PopupTrimHeight">30</x:Int32> <!-- includes Margin, Padding, Shadow -->
-   <x:Int32 x:Key="PopupSideMarginWidth">12</x:Int32> <!-- must match PopupMargin l/r values -->
-   <Thickness x:Key="PopupMargin">12 1 12 29</Thickness> <!-- to accommodate shadow -->
-   <Thickness x:Key="PopupPadding">3 5</Thickness>
-   <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource PopupBackgroundColor}" />
-
-   <!-- TextBox Resources -->
-   <SolidColorBrush x:Key="TextBoxClearButtonBackgroundBrush"
-                    Color="{DynamicResource TextBoxClearButtonBackgroundColor}" />
-   <SolidColorBrush x:Key="TextBoxSelectionHighlightBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.3" />
-   <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
-   <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
-                    Color="{DynamicResource BackgroundColor}" Opacity="0.5" />
-
-   <!-- TreeView Resources -->
-   <SolidColorBrush x:Key="TreeViewItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" />
-   <SolidColorBrush x:Key="TreeViewItemForegroundSelected" Color="{DynamicResource AccentForegroundColor}" />
-   <x:Double x:Key="TreeViewItemChevronSize">8</x:Double>
-   <x:Double x:Key="TreeViewItemIndent">13</x:Double>
-   <Thickness x:Key="TreeViewItemChevronMargin">4, 0, 5, 0</Thickness>
-
-   <!-- DataGrid Resources -->
-   <SolidColorBrush x:Key="DataGridItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" />
-   <SolidColorBrush x:Key="DataGridForegroundSelectedBrush" Color="{DynamicResource AccentForegroundColor}" />
-   <x:Double x:Key="DataGridColumnHeaderFontSize">11</x:Double>
-   <x:Double x:Key="DataGridSortChevronSize">7</x:Double>
-
-   <!-- Menu & MenuItem Resources -->
-   <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{DynamicResource PopupBackgroundColor}" />
-   <x:Double x:Key="MenuFlyoutSubItemPopupHorizontalOffset">-14</x:Double>
-   <x:Double x:Key="MenuFlyoutSubItemPopupVerticalOffset">-7</x:Double>
-   <x:Double x:Key="MenuPopupHorizontalOffset">-12</x:Double>
-   <x:Double x:Key="MenuPopupVerticalOffset">6</x:Double>
-   <x:Double x:Key="MenuToolBarPopupVerticalOffset">-10</x:Double>
-   <x:Double x:Key="MenuPopupAboveVerticalOffset">-5</x:Double>
-   <Thickness x:Key="MenuPopupAboveMargin">12 1 12 2</Thickness>
-   <Thickness x:Key="MenuBarPadding">6</Thickness>
-   <Thickness x:Key="MenuFlyoutPadding">5 2 5 2</Thickness>
-   <Thickness x:Key="MenuFlyoutSeparatorThemePadding">8,5,8,5</Thickness>
-   <Thickness x:Key="MenuIconPresenterMargin">0,0,4,0</Thickness>
-   <Thickness x:Key="MenuInputGestureTextMargin">24,0,0,0</Thickness>
-   <Thickness x:Key="MenuItemPadding">9 4 7 2</Thickness>
-   <Thickness x:Key="MenuToolBarItemPadding">4 0 4 4</Thickness>
-   <Thickness x:Key="MenuToolBarItemIconPadding">10 5 8 5</Thickness>
-   <Thickness x:Key="MenuToolBarItemActiveBackgroundMargin">-10 -3 -8 -3</Thickness>
-   <Thickness x:Key="MenuItemActiveBackgroundMargin">-6,-2,-7,-2</Thickness>
-   <Thickness x:Key="MenuItemIconPadding">0</Thickness>
-   <SolidColorBrush x:Key="SeparatorBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
-   <SolidColorBrush x:Key="SvgIconDisabledColorBrush" Color="{DynamicResource SvgIconDisabledColor}" />
-   <Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>
-   <x:Double x:Key="MenuHeaderFontSizeSmall">10</x:Double>
-
-   <!-- ScrollBar Resources -->
-   <x:Double x:Key="ScrollBarThumbWidth">6</x:Double>
-   <x:Double x:Key="ScrollBarExpandedStaticThumbWidth">8</x:Double>
-   <x:Double x:Key="ScrollBarExpandedThumbWidth">9</x:Double>
-   <x:Double x:Key="ScrollBarMinLength">10</x:Double>
-   <SolidColorBrush x:Key="ScrollBarTrackBrush" Color="{DynamicResource ScrollBarTrackColor}" />
-   <SolidColorBrush x:Key="ScrollBarTrackBorderBrush" Color="{DynamicResource ScrollBarTrackBorderColor}" />
-   <Thickness x:Key="ScrollBarTrackBorderThickness">1</Thickness>
-   <Thickness x:Key="ScrollBarSeparatorBorderFactors">0 0 1 1</Thickness>
-   <Thickness x:Key="ScrollBarTrackHorizontalBorderFactors">0 1 0 1</Thickness>
-   <Thickness x:Key="ScrollBarTrackVerticalBorderFactors">1 0 1 0</Thickness>
-
-   <!-- ToolTip Resources -->
-   <x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
-   <CornerRadius x:Key="ToolTipCornerRadius">0 0 1 0</CornerRadius>
-   <Thickness x:Key="ToolTipPadding">5 2 4 2</Thickness>
-   <x:Double x:Key="ToolTipFontSize">11</x:Double>
-
-   <!-- ButtonSpinner Resources -->
-   <SolidColorBrush x:Key="ButtonSpinnerButtonPressedBrush" Color="{DynamicResource ButtonSpinnerButtonPressedColor}" />
-
-
-   <!-- DEVELOPMENT ONLY -->
-   <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
-
-   <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
-   <SolidColorBrush x:Key="TestRed" Color="Red" />
-   <SolidColorBrush x:Key="TestBlue" Color="Blue" />
-   <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
+  <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBorderMidColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ControlBackgroundAccentRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource AccentButtonTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource AccentButtonBottomColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ButtonBackgroundAccentRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBackgroundAccentRecessedTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBackgroundAccentRecessedBottomColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ControlBorderRaisedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBorderRaisedTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBorderRaisedBottomColor}" />
+  </LinearGradientBrush>
+
+  <LinearGradientBrush x:Key="ControlBorderRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
+    <GradientStop Offset="0" Color="{DynamicResource ControlBorderRecessedTopColor}" />
+    <GradientStop Offset="1" Color="{DynamicResource ControlBorderRecessedBottomColor}" />
+  </LinearGradientBrush>
+
+  <CornerRadius x:Key="LayoutCornerRadius">5</CornerRadius>
+  <CornerRadius x:Key="ControlCornerRadius">5</CornerRadius>
+  <CornerRadius x:Key="SelectionCornerRadius">4</CornerRadius>
+
+  <Thickness x:Key="BorderThickness">1</Thickness>
+
+  <Thickness x:Key="InputControlsSpaceForFocusBorder">1.5</Thickness>
+  <Thickness x:Key="TabControlSpaceForFocusFactors">3</Thickness>
+
+  <x:Double x:Key="DefaultFontSize">13</x:Double>
+  <x:Double x:Key="ControlFontSize">13</x:Double>
+  <x:Double x:Key="PasswordHiddenFontSize">11</x:Double>
+
+  <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
+
+  <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.85" />
+  <!-- <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" /> -->
+  <SolidColorBrush x:Key="ForegroundMidLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.34" />
+  <!-- <SolidColorBrush x:Key="ForegroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.25" /> -->
+
+  <SolidColorBrush x:Key="SystemControlErrorTextForegroundBrush" Color="{DynamicResource ErrorTextColor}" />
+
+  <SolidColorBrush x:Key="SelectionInInactiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.15" />
+
+  <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
+  <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}"
+                   Opacity="0.85" />
+
+  <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
+  <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
+  <SolidColorBrush x:Key="ControlBackgroundLowBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.9" />
+  <SolidColorBrush x:Key="ControlBackgroundAccentHighBrush" Color="{StaticResource SystemAccentColor}" />
+  <SolidColorBrush x:Key="ControlBackgroundAccentMidBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.63" />
+
+  <SolidColorBrush x:Key="ControlBorderAccentBrush" Color="{DynamicResource ControlBorderAccentColor}" />
+
+  <BoxShadows x:Key="ControlBackgroundRaisedShadow">2 2 3 -2 #bfbfbf</BoxShadows>
+
+  <SolidColorBrush x:Key="ControlBorderBrush" Color="{DynamicResource ControlBorderMidColor}" />
+  <SolidColorBrush x:Key="ControlBorderDisabledBrush" Color="{DynamicResource ControlBorderLowColor}" />
+
+  <SolidColorBrush x:Key="FocusBorderBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.5" />
+  <Thickness x:Key="FocusBorderThickness">3.5</Thickness>
+  <Thickness x:Key="FocusBorderMargin">-3</Thickness>
+
+  <SolidColorBrush x:Key="DefaultIconFillBrush" Color="{DynamicResource DefaultIconColor}" />
+
+  <!-- Button Resources (& button-like parts of other controls) -->
+  <Thickness x:Key="ButtonPadding">10 1.4 10 2.6</Thickness>
+  <FontWeight x:Key="ButtonFontWeight">400</FontWeight>
+  <SolidColorBrush x:Key="ButtonBorderAccentBrush" Color="{DynamicResource ControlBorderAccentColor}" />
+
+  <!-- TODO: To be replaced by templated button control (accent colour with hard-coded gradient overlay) -->
+  <VisualBrush x:Key="TempButtonAccentBackgroundPrecise" Stretch="Fill">
+    <VisualBrush.Visual>
+      <Panel>
+        <!-- <Rectangle Fill="{StaticResource SystemAccentColor}" Width="20" Height="20" /> // might not have access to Logical tree where resources are defined-->
+        <Rectangle Fill="#007aff" Width="20" Height="20" />
+        <Rectangle>
+          <Rectangle.Fill>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+              <GradientStop Offset="0" Color="white" />
+              <GradientStop Offset="1" Color="Transparent" />
+            </LinearGradientBrush>
+          </Rectangle.Fill>
+          <Rectangle.OpacityMask>
+            <SolidColorBrush Color="White" Opacity="0.17" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Panel>
+    </VisualBrush.Visual>
+  </VisualBrush>
+
+  <VisualBrush x:Key="TempButtonAccentPressedBackgroundPrecise" Stretch="Fill">
+    <VisualBrush.Visual>
+      <Panel>
+        <!-- <Rectangle Fill="{StaticResource ControlBackgroundAccentMidBrush}" Width="20" Height="20" /> -->
+        <Rectangle Fill="#005FC6" Width="20" Height="20" />
+        <Rectangle>
+          <Rectangle.Fill>
+            <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+              <GradientStop Offset="0" Color="white" />
+              <GradientStop Offset="1" Color="Transparent" />
+            </LinearGradientBrush>
+          </Rectangle.Fill>
+          <Rectangle.OpacityMask>
+            <SolidColorBrush Color="White" Opacity="0.17" />
+          </Rectangle.OpacityMask>
+        </Rectangle>
+      </Panel>
+    </VisualBrush.Visual>
+  </VisualBrush>
+
+  <!-- TabControl & TabItem Resources -->
+  <Thickness x:Key="TabItemPadding">8 2</Thickness>
+  <SolidColorBrush x:Key="TabControlBackgroundBrush" Color="{DynamicResource TabControlBackgroundColor}" />
+
+  <!-- CheckBox Resources -->
+  <CornerRadius x:Key="CheckBoxCornerRadius">3</CornerRadius>
+
+  <!-- ComboBox & ComboBoxItem Resources -->
+  <Thickness x:Key="ComboBoxItemMargin">2 0</Thickness>
+  <Thickness x:Key="ComboBoxItemPadding">5 3</Thickness>
+  <x:Int32 x:Key="ComboBoxItemHeight">22</x:Int32>
+  <Thickness x:Key="ComboBoxShadowMargin">4</Thickness>
+  <!-- InitialFirstItemDistance must match ComboBoxShadowMargin.bottom + PopupPadding.top -->
+  <x:Int32 x:Key="InitialFirstItemDistance">9</x:Int32>
+  <x:Int32 x:Key="PopupTrimHeight">30</x:Int32> <!-- includes Margin, Padding, Shadow -->
+  <x:Int32 x:Key="PopupSideMarginWidth">12</x:Int32> <!-- must match PopupMargin l/r values -->
+  <Thickness x:Key="PopupMargin">12 1 12 29</Thickness> <!-- to accommodate shadow -->
+  <Thickness x:Key="PopupPadding">3 5</Thickness>
+  <SolidColorBrush x:Key="PopupBackgroundBrush" Color="{DynamicResource PopupBackgroundColor}" />
+
+  <!-- TextBox Resources -->
+  <SolidColorBrush x:Key="TextBoxClearButtonBackgroundBrush"
+                   Color="{DynamicResource TextBoxClearButtonBackgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxSelectionHighlightBrush" Color="{StaticResource SystemAccentColor}" Opacity="0.3" />
+  <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
+  <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
+                   Color="{DynamicResource BackgroundColor}" Opacity="0.5" />
+
+  <!-- TreeView Resources -->
+  <SolidColorBrush x:Key="TreeViewItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" />
+  <SolidColorBrush x:Key="TreeViewItemForegroundSelected" Color="{DynamicResource AccentForegroundColor}" />
+  <x:Double x:Key="TreeViewItemChevronSize">8</x:Double>
+  <x:Double x:Key="TreeViewItemIndent">13</x:Double>
+  <Thickness x:Key="TreeViewItemChevronMargin">4, 0, 5, 0</Thickness>
+
+  <!-- DataGrid Resources -->
+  <SolidColorBrush x:Key="DataGridItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" />
+  <SolidColorBrush x:Key="DataGridForegroundSelectedBrush" Color="{DynamicResource AccentForegroundColor}" />
+  <x:Double x:Key="DataGridColumnHeaderFontSize">11</x:Double>
+  <x:Double x:Key="DataGridSortChevronSize">7</x:Double>
+
+  <!-- Menu & MenuItem Resources -->
+  <SolidColorBrush x:Key="MenuFlyoutPresenterBackground" Color="{DynamicResource PopupBackgroundColor}" />
+  <x:Double x:Key="MenuFlyoutSubItemPopupHorizontalOffset">-14</x:Double>
+  <x:Double x:Key="MenuFlyoutSubItemPopupVerticalOffset">-7</x:Double>
+  <x:Double x:Key="MenuPopupHorizontalOffset">-12</x:Double>
+  <x:Double x:Key="MenuPopupVerticalOffset">6</x:Double>
+  <x:Double x:Key="MenuToolBarPopupVerticalOffset">-10</x:Double>
+  <x:Double x:Key="MenuPopupAboveVerticalOffset">-5</x:Double>
+  <Thickness x:Key="MenuPopupAboveMargin">12 1 12 2</Thickness>
+  <Thickness x:Key="MenuBarPadding">6</Thickness>
+  <Thickness x:Key="MenuFlyoutPadding">5 2 5 2</Thickness>
+  <Thickness x:Key="MenuFlyoutSeparatorThemePadding">8,5,8,5</Thickness>
+  <Thickness x:Key="MenuIconPresenterMargin">0,0,4,0</Thickness>
+  <Thickness x:Key="MenuInputGestureTextMargin">24,0,0,0</Thickness>
+  <Thickness x:Key="MenuItemPadding">9 4 7 2</Thickness>
+  <Thickness x:Key="MenuToolBarItemPadding">4 0 4 4</Thickness>
+  <Thickness x:Key="MenuToolBarItemIconPadding">10 5 8 5</Thickness>
+  <Thickness x:Key="MenuToolBarItemActiveBackgroundMargin">-10 -3 -8 -3</Thickness>
+  <Thickness x:Key="MenuItemActiveBackgroundMargin">-6,-2,-7,-2</Thickness>
+  <Thickness x:Key="MenuItemIconPadding">0</Thickness>
+  <SolidColorBrush x:Key="SeparatorBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.2" />
+  <SolidColorBrush x:Key="SvgIconDisabledColorBrush" Color="{DynamicResource SvgIconDisabledColor}" />
+  <Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>
+  <x:Double x:Key="MenuHeaderFontSizeSmall">10</x:Double>
+
+  <!-- ScrollBar Resources -->
+  <x:Double x:Key="ScrollBarThumbWidth">6</x:Double>
+  <x:Double x:Key="ScrollBarExpandedStaticThumbWidth">8</x:Double>
+  <x:Double x:Key="ScrollBarExpandedThumbWidth">9</x:Double>
+  <x:Double x:Key="ScrollBarMinLength">10</x:Double>
+  <SolidColorBrush x:Key="ScrollBarTrackBrush" Color="{DynamicResource ScrollBarTrackColor}" />
+  <SolidColorBrush x:Key="ScrollBarTrackBorderBrush" Color="{DynamicResource ScrollBarTrackBorderColor}" />
+  <Thickness x:Key="ScrollBarTrackBorderThickness">1</Thickness>
+  <Thickness x:Key="ScrollBarSeparatorBorderFactors">0 0 1 1</Thickness>
+  <Thickness x:Key="ScrollBarTrackHorizontalBorderFactors">0 1 0 1</Thickness>
+  <Thickness x:Key="ScrollBarTrackVerticalBorderFactors">1 0 1 0</Thickness>
+
+  <!-- ToolTip Resources -->
+  <x:Double x:Key="ToolTipContentMaxWidth">320</x:Double>
+  <CornerRadius x:Key="ToolTipCornerRadius">0 0 1 0</CornerRadius>
+  <Thickness x:Key="ToolTipPadding">5 2 4 2</Thickness>
+  <x:Double x:Key="ToolTipFontSize">11</x:Double>
+
+  <!-- ButtonSpinner Resources -->
+  <SolidColorBrush x:Key="ButtonSpinnerButtonPressedBrush" Color="{DynamicResource ButtonSpinnerButtonPressedColor}" />
+
+
+  <!-- DEVELOPMENT ONLY -->
+  <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
+
+  <SolidColorBrush x:Key="TestGreen" Color="Green" Opacity="0.84" />
+  <SolidColorBrush x:Key="TestRed" Color="Red" />
+  <SolidColorBrush x:Key="TestBlue" Color="Blue" />
+  <SolidColorBrush x:Key="TestYellow" Color="Yellow" />
 
 </ResourceDictionary>

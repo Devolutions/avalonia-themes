@@ -4,10 +4,10 @@ public class DataGridItem
 {
   public DataGridItem(string itemType, string commonName, string accountName, string lastModified)
   {
-    ItemType = itemType;
-    CommonName = commonName;
-    AccountName = accountName;
-    LastModified = lastModified;
+    this.ItemType = itemType;
+    this.CommonName = commonName;
+    this.AccountName = accountName;
+    this.LastModified = lastModified;
   }
 
   public string ItemType { get; set; }

@@ -1,13 +1,11 @@
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-
 namespace SampleApp.Experiments;
+
+using Avalonia.Controls;
 
 public partial class SystemColoursDemo : UserControl
 {
   public SystemColoursDemo()
   {
-    InitializeComponent();
+    this.InitializeComponent();
   }
 }

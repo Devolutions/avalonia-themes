@@ -9,16 +9,15 @@ Custom Avalonia Controls developed by [Devolutions](https://devolutions.net/)
 
 ## Custom Controls [Work in Progress]
 
-In this package we publish various custom controls as well as converters, markup extensions and other helper 
-utilities used in our [themes](https://github.com/Devolutions/avalonia-extensions) and  [Devolutions Remote 
-Desktop Manager](https://devolutions.net/remote-desktop-manager/). The more generically useful ones are listed here 
+In this package we publish various custom controls as well as converters, markup extensions and other helper
+utilities used in our [themes](https://github.com/Devolutions/avalonia-extensions) and  [Devolutions Remote
+Desktop Manager](https://devolutions.net/remote-desktop-manager/). The more generically useful ones are listed here
 (full documentation tba ...).
 
 - [Installation](#installation)
 - [Controls](#controls)
 - [Converters](#converters)
 - [MarkupExtensions](#markupextensions)
-
 
 ## Installation
 
@@ -34,7 +33,6 @@ or .NET
 ```bash
 dotnet add package Devolutions.AvaloniaControls
 ```
-
 
 ### Controls
 

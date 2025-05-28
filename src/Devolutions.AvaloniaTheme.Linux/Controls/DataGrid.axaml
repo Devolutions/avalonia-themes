@@ -22,7 +22,7 @@
       </DataGrid.Columns>
     </DataGrid>
   </Design.PreviewWith>
-  
+
   <SolidColorBrush x:Key="DataGridColumnHeaderForegroundBrush" Color="{DynamicResource DataGridColumnHeaderForegroundColor}" />
   <SolidColorBrush x:Key="DataGridColumnHeaderBackground" Color="{DynamicResource DataGridColumnHeaderBackgroundColor}" />
   <SolidColorBrush x:Key="DataGridColumnHeaderHoveredBackground" Color="{DynamicResource SystemListLowColor}" />
@@ -350,7 +350,7 @@
         </Border>
       </ControlTemplate>
     </Setter>
-    
+
     <ControlTheme.Children>
       <Style Selector="^:nth-child(2n)">
         <Setter Property="Background"

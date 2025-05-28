@@ -14,14 +14,16 @@ on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea
 both as a fallback for any controls not covered yet and as starting point for our style definitions targeting a
 Linux look similar to Ubuntu’s default “Yaru” GTK theme..
 
-While we are prioritizing controls for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/), we welcome contributions from the Avalonia community to add more controls.
+While we are prioritizing controls
+for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/), we welcome contributions from
+the Avalonia community to add more controls.
 
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
-    - Available in the current build
-    - 🚧 In progress ...
-        - Dark mode support
-    - 🔮 Next on the road map ...
+  - Available in the current build
+  - 🚧 In progress ...
+    - Dark mode support
+  - 🔮 Next on the road map ...
 
 ## Installation
 

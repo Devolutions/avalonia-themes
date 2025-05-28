@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.Experiments.ToggleButtonExperiments">
+
   <Grid RowDefinitions="50, 50" ColumnDefinitions="Auto, 10, Auto">
     <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Built-in Toggle Button: </TextBlock>
     <ToggleButton Grid.Row="0" Grid.Column="2">Test</ToggleButton>

@@ -1,21 +1,21 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-   <!-- Using Fluent Theme as a fallback for anything not defined in DevExpress theme -->
-   <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" />
+  <!-- Using Fluent Theme as a fallback for anything not defined in DevExpress theme -->
+  <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" />
 
-   <StyleInclude Source="avares://Devolutions.AvaloniaControls/DefaultControlTemplates.axaml" />
+  <StyleInclude Source="avares://Devolutions.AvaloniaControls/DefaultControlTemplates.axaml" />
 
-   <Styles.Resources>
-      <ResourceDictionary>
-         <ResourceDictionary.MergedDictionaries>
-            <MergeResourceInclude Source="/Accents/Icons.axaml" />
-            <MergeResourceInclude Source="/Controls/_index.axaml" />
-            <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
-         </ResourceDictionary.MergedDictionaries>
-      </ResourceDictionary>
-   </Styles.Resources>
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <MergeResourceInclude Source="/Accents/Icons.axaml" />
+        <MergeResourceInclude Source="/Controls/_index.axaml" />
+        <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
 
-   <!-- Themed Controls -->
-   <StyleInclude Source="/Accents/Styles.axaml" />
+  <!-- Themed Controls -->
+  <StyleInclude Source="/Accents/Styles.axaml" />
 </Styles>
