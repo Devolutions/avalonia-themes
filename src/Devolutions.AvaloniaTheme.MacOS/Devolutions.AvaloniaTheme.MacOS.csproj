@@ -15,12 +15,12 @@
       <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
       <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
       <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
-      <PackageReference Include="Devolutions.AvaloniaControls" Version="*" />
+      <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.5.28,)" />
    </ItemGroup>
    <ItemGroup>
       <AvaloniaResource Include="Accents/Assets/**" />
    </ItemGroup>
-   <ItemGroup>
+   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
       <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
    </ItemGroup>
 </Project>
