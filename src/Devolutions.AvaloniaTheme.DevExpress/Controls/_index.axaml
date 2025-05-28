@@ -7,6 +7,7 @@
     <MergeResourceInclude Source="CheckBox.axaml" />
     <MergeResourceInclude Source="ComboBox.axaml" />
     <MergeResourceInclude Source="ComboBoxItem.axaml" />
+    <MergeResourceInclude Source="DataGrid.axaml" />
     <MergeResourceInclude Source="EmbeddableControlRoot.axaml" />
     <MergeResourceInclude Source="EditableComboBox.axaml" />
     <MergeResourceInclude Source="NumericUpDown.axaml" />
