@@ -4,8 +4,7 @@ Custom Avalonia Controls developed by [Devolutions](https://devolutions.net/)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Build Status](https://github.com/Devolutions/avalonia-extensions/actions/workflows/build-package.yml/badge.svg?branch=master)](https://github.com/Devolutions/avalonia-extensions/actions/workflows/build-package.yml)
-[![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.AvaloniaControls)](https://www.nuget.
-org/packages/Devolutions.AvaloniaControls)
+[![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.AvaloniaControls)](https://www.nuget.org/packages/Devolutions.AvaloniaControls)
 ![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.AvaloniaControls)
 
 ## Custom Controls [Work in Progress]
