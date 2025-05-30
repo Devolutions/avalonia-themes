@@ -13,120 +13,120 @@
         x:DataType="vm:MainWindowViewModel"
         Title="Devolutions Theme Sampler">
 
-   <!-- TODO: move the margins into the theme ?? -->
-   <Panel Classes="mainControl">
-      <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
-         <TabItem IsSelected="True">
-            <TabItem.Header>
-               <TextBlock FontWeight="600">Overview</TextBlock>
-            </TabItem.Header>
-            <demoPages:Overview />
-         </TabItem>
-         <TabItem Header="Button">
-            <demoPages:ButtonDemo />
-         </TabItem>
-         <TabItem Header="CheckBox">
-            <demoPages:CheckBoxDemo />
-         </TabItem>
-         <TabItem Header="ComboBox">
-            <demoPages:ComboBoxDemo />
-         </TabItem>
-         <TabItem Header="EditableComboBox">
-            <demoPages:EditableComboBoxDemo />
-         </TabItem>
-         <TabItem Header="ContextMenu">
-            <demoPages:ContextMenuDemo />
-         </TabItem>
-         <TabItem Header="DataGrid">
-            <demoPages:DataGridDemo>
-               <demoPages:DataGridDemo.DataContext>
-                  <vm:DataGridViewModel />
-               </demoPages:DataGridDemo.DataContext>
-            </demoPages:DataGridDemo>
-         </TabItem>
-         <TabItem Header="Menu">
-            <demoPages:MenuDemo />
-         </TabItem>
-         <TabItem Header="GridSplitter">
-            <demoPages:GridSplitterDemo />
-         </TabItem>
-         <TabItem Header="MenuFlyout">
-            <demoPages:MenuFlyoutDemo />
-         </TabItem>
-         <TabItem Header="NumericUpDown">
-            <demoPages:NumericUpDownDemo />
-         </TabItem>
-         <TabItem Header="ScrollViewer">
-            <demoPages:ScrollViewerDemo />
-         </TabItem>
-         <TabItem Header="TabControl">
-            <demoPages:TabControlDemo />
-         </TabItem>
-         <TabItem Header="TextBox">
-            <demoPages:TextBoxDemo />
-         </TabItem>
-         <TabItem Header="Toggle Switch [WIP]">
-            <demoPages:ToggleSwitchDemo />
-         </TabItem>
-         <TabItem Header="TreeView">
-            <demoPages:TreeViewDemo />
-         </TabItem>
-         <TabItem Header="ToolTip">
-            <demoPages:ToolTipDemo />
-         </TabItem>
-         <TabItem Header="✜ Control Alignment">
-            <demoPages:ControlAlignment />
-         </TabItem>
+  <!-- TODO: move the margins into the theme ?? -->
+  <Panel Classes="mainControl">
+    <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
+      <TabItem IsSelected="True">
+        <TabItem.Header>
+          <TextBlock FontWeight="600">Overview</TextBlock>
+        </TabItem.Header>
+        <demoPages:Overview />
+      </TabItem>
+      <TabItem Header="Button">
+        <demoPages:ButtonDemo />
+      </TabItem>
+      <TabItem Header="CheckBox">
+        <demoPages:CheckBoxDemo />
+      </TabItem>
+      <TabItem Header="ComboBox">
+        <demoPages:ComboBoxDemo />
+      </TabItem>
+      <TabItem Header="EditableComboBox">
+        <demoPages:EditableComboBoxDemo />
+      </TabItem>
+      <TabItem Header="ContextMenu">
+        <demoPages:ContextMenuDemo />
+      </TabItem>
+      <TabItem Header="DataGrid">
+        <demoPages:DataGridDemo>
+          <demoPages:DataGridDemo.DataContext>
+            <vm:DataGridViewModel />
+          </demoPages:DataGridDemo.DataContext>
+        </demoPages:DataGridDemo>
+      </TabItem>
+      <TabItem Header="Menu">
+        <demoPages:MenuDemo />
+      </TabItem>
+      <TabItem Header="GridSplitter">
+        <demoPages:GridSplitterDemo />
+      </TabItem>
+      <TabItem Header="MenuFlyout">
+        <demoPages:MenuFlyoutDemo />
+      </TabItem>
+      <TabItem Header="NumericUpDown">
+        <demoPages:NumericUpDownDemo />
+      </TabItem>
+      <TabItem Header="ScrollViewer">
+        <demoPages:ScrollViewerDemo />
+      </TabItem>
+      <TabItem Header="TabControl">
+        <demoPages:TabControlDemo />
+      </TabItem>
+      <TabItem Header="TextBox">
+        <demoPages:TextBoxDemo />
+      </TabItem>
+      <TabItem Header="Toggle Switch [WIP]">
+        <demoPages:ToggleSwitchDemo />
+      </TabItem>
+      <TabItem Header="TreeView">
+        <demoPages:TreeViewDemo />
+      </TabItem>
+      <TabItem Header="ToolTip">
+        <demoPages:ToolTipDemo />
+      </TabItem>
+      <TabItem Header="✜ Control Alignment">
+        <demoPages:ControlAlignment />
+      </TabItem>
 
 
-         <TabItem>
-            <TabItem.Header>
-               <StackPanel Orientation="Horizontal">
-                  <Svg Path="/Assets/Padlock.svg" Height="16" Width="16" Margin="-2 -2 2 0" Css=".st0 {fill : #3E6CB0; }" />
-                  <TextBlock Text="Experiments" />
-               </StackPanel>
-            </TabItem.Header>
-            <TabControl>
-               <TabItem Header="System Colours">
-                  <experiments:SystemColoursDemo />
-               </TabItem>
-               <TabItem Header="Toggle Buttons">
-                  <experiments:ToggleButtonExperiments />
-               </TabItem>
-            </TabControl>
-         </TabItem>
+      <TabItem>
+        <TabItem.Header>
+          <StackPanel Orientation="Horizontal">
+            <Svg Path="/Assets/Padlock.svg" Height="16" Width="16" Margin="-2 -2 2 0" Css=".st0 {fill : #3E6CB0; }" />
+            <TextBlock Text="Experiments" />
+          </StackPanel>
+        </TabItem.Header>
+        <TabControl>
+          <TabItem Header="System Colours">
+            <experiments:SystemColoursDemo />
+          </TabItem>
+          <TabItem Header="Toggle Buttons">
+            <experiments:ToggleButtonExperiments />
+          </TabItem>
+        </TabControl>
+      </TabItem>
 
-         <TabItem Header="Settings">
-            <TabItem.Template>
-               <ControlTemplate>
-                  <Button x:Name="SettingsButton" Content="Settings">
-                     <Button.Flyout>
-                        <Flyout>
-                           <StackPanel Width="152" Spacing="8">
-                              <ComboBox x:Name="ThemeVariants"
-                                        HorizontalAlignment="Stretch"
-                                        DisplayMemberBinding="{Binding Key, x:DataType=ThemeVariant}"
-                                        SelectedIndex="0"
-                                        SelectionChanged="ThemeVariants_OnSelectionChanged">
-                                 <ComboBox.Items>
-                                    <ThemeVariant>Default</ThemeVariant>
-                                    <ThemeVariant>Light</ThemeVariant>
-                                    <ThemeVariant>Dark</ThemeVariant>
-                                 </ComboBox.Items>
-                              </ComboBox>
-                              <ComboBox x:Name="Themes"
-                                        HorizontalAlignment="Stretch"
-                                        DisplayMemberBinding="{Binding Name, x:DataType=sampleApp:Theme}"
-                                        ItemsSource="{Binding AvailableThemes}"
-                                        SelectedItem="{Binding CurrentTheme}"
-                                        SelectionChanged="Themes_OnSelectionChanged" />
-                           </StackPanel>
-                        </Flyout>
-                     </Button.Flyout>
-                  </Button>
-               </ControlTemplate>
-            </TabItem.Template>
-         </TabItem>
-      </TabControl>
-   </Panel>
+      <TabItem Header="Settings">
+        <TabItem.Template>
+          <ControlTemplate>
+            <Button x:Name="SettingsButton" Content="Settings">
+              <Button.Flyout>
+                <Flyout>
+                  <StackPanel Width="152" Spacing="8">
+                    <ComboBox x:Name="ThemeVariants"
+                              HorizontalAlignment="Stretch"
+                              DisplayMemberBinding="{Binding Key, x:DataType=ThemeVariant}"
+                              SelectedIndex="0"
+                              SelectionChanged="ThemeVariants_OnSelectionChanged">
+                      <ComboBox.Items>
+                        <ThemeVariant>Default</ThemeVariant>
+                        <ThemeVariant>Light</ThemeVariant>
+                        <ThemeVariant>Dark</ThemeVariant>
+                      </ComboBox.Items>
+                    </ComboBox>
+                    <ComboBox x:Name="Themes"
+                              HorizontalAlignment="Stretch"
+                              DisplayMemberBinding="{Binding Name, x:DataType=sampleApp:Theme}"
+                              ItemsSource="{Binding AvailableThemes}"
+                              SelectedItem="{Binding CurrentTheme}"
+                              SelectionChanged="Themes_OnSelectionChanged" />
+                  </StackPanel>
+                </Flyout>
+              </Button.Flyout>
+            </Button>
+          </ControlTemplate>
+        </TabItem.Template>
+      </TabItem>
+    </TabControl>
+  </Panel>
 </Window>

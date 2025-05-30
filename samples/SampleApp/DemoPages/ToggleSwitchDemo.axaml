@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.ToggleSwitchDemo">
+
   <StackPanel>
     <ToggleSwitch>Toggle with Title</ToggleSwitch>
     <ToggleSwitch Theme="{DynamicResource ButtonToggleSwitch}">Toggle</ToggleSwitch>

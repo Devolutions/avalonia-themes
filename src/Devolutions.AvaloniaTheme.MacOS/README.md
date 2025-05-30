@@ -7,19 +7,21 @@ Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 [![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.AvaloniaTheme.MacOS)](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.MacOS)
 ![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.AvaloniaTheme.MacOS)
 
-
 ## MacOS Theme [Work in Progress]
-(Inspired by [@MikeCodesDotNET's earlier draft](https://github.com/AvaloniaUI/Avalonia/issues/14880#issuecomment-1985425341))
+
+(Inspired
+by [@MikeCodesDotNET's earlier draft](https://github.com/AvaloniaUI/Avalonia/issues/14880#issuecomment-1985425341))
 
 ![image](https://github.com/user-attachments/assets/33d9a103-936f-4db3-b5cc-520a5ccdaf60)
 
-
-This theme is currently based on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent), 
-both as a fallback for any controls not covered yet and as starting point for our (somewhat simplified) 
+This theme is currently based
+on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent),
+both as a fallback for any controls not covered yet and as starting point for our (somewhat simplified)
 style definitions targeting AppKit macOS look.
 
-While we are prioritizing controls for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/) initially,
-the goal is to create a theme that helps all of the Avalonia community to bring a native look to their macOS apps. 
+While we are prioritizing controls
+for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/) initially,
+the goal is to create a theme that helps all of the Avalonia community to bring a native look to their macOS apps.
 
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
@@ -39,7 +41,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
       - [ButtonSpinner](#buttonspinner)
     - [ScrollViewer](#scrollviewer)
       - [ScrollBar](#scrollbar)
-    - [Separator](#separator) 
+    - [Separator](#separator)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
     - [TextBox](#textbox)
@@ -52,19 +54,24 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - small improvements & fixes, some code cleanup
   - 🔮 Next on the road map ...
     - AutoCompleteBox
-    
-
 
 ## Installation
-Install the Devolutions.AvaloniaTheme.MacOS package via [NuGet](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.MacOS):
+
+Install the Devolutions.AvaloniaTheme.MacOS package
+via [NuGet](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.MacOS):
+
 ``` bash
 Install-Package Devolutions.AvaloniaTheme.MacOS
 ```
+
 or .NET
+
 ```bash
 dotnet add package Devolutions.AvaloniaTheme.MacOS
 ```
+
 In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the macOS theme:
+
 ``` xaml
 <Application ...>
   <Application.Styles>

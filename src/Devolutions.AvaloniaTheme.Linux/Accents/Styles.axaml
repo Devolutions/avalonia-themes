@@ -27,11 +27,11 @@
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
     </Style>
-    
+
     <Style Selector="^ TextBlock">
       <Setter Property="Padding" Value="0 0 0 1" />
     </Style>
-    
+
     <Style Selector="^ AccessText">
       <Setter Property="Margin" Value="0 0 0 1" />
     </Style>

@@ -17,9 +17,9 @@ using Avalonia.Data.Converters;
 /// </remarks>
 public class IsExplicitlyTrueConverter : IMultiValueConverter
 {
-    public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture) =>
-        values[0] is true;
+  public object Convert(IList<object?> values, Type targetType, object? parameter, CultureInfo culture) =>
+    values[0] is true;
 
-    public object ConvertBack(IList<object?> values, Type targetType, object? parameter, CultureInfo culture) =>
-        throw new NotImplementedException();
+  public object ConvertBack(IList<object?> values, Type targetType, object? parameter, CultureInfo culture) =>
+    throw new NotImplementedException();
 }

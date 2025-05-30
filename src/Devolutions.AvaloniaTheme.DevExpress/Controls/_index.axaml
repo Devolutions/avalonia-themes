@@ -1,24 +1,24 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-   <ResourceDictionary.MergedDictionaries>
-      <MergeResourceInclude Source="Button.axaml" />
-      <MergeResourceInclude Source="ButtonSpinner.axaml" />
-      <MergeResourceInclude Source="CheckBox.axaml" />
-      <MergeResourceInclude Source="ComboBox.axaml" />
-      <MergeResourceInclude Source="ComboBoxItem.axaml" />
-      <MergeResourceInclude Source="EmbeddableControlRoot.axaml" />
-      <MergeResourceInclude Source="EditableComboBox.axaml" />
-      <MergeResourceInclude Source="NumericUpDown.axaml" />
-      <MergeResourceInclude Source="ScrollBar.axaml" />
-      <MergeResourceInclude Source="ScrollViewer.axaml" />
-      <MergeResourceInclude Source="SplitButton.axaml" />
-      <MergeResourceInclude Source="TabControl.axaml" />
-      <MergeResourceInclude Source="TabItem.axaml" />
-      <MergeResourceInclude Source="TextBox.axaml" />
-      <MergeResourceInclude Source="TreeView.axaml" />
-      <MergeResourceInclude Source="TreeViewItem.axaml" />
-      <MergeResourceInclude Source="ContextMenu.axaml" />
-      <MergeResourceInclude Source="Window.axaml" />
-   </ResourceDictionary.MergedDictionaries>
+  <ResourceDictionary.MergedDictionaries>
+    <MergeResourceInclude Source="Button.axaml" />
+    <MergeResourceInclude Source="ButtonSpinner.axaml" />
+    <MergeResourceInclude Source="CheckBox.axaml" />
+    <MergeResourceInclude Source="ComboBox.axaml" />
+    <MergeResourceInclude Source="ComboBoxItem.axaml" />
+    <MergeResourceInclude Source="EmbeddableControlRoot.axaml" />
+    <MergeResourceInclude Source="EditableComboBox.axaml" />
+    <MergeResourceInclude Source="NumericUpDown.axaml" />
+    <MergeResourceInclude Source="ScrollBar.axaml" />
+    <MergeResourceInclude Source="ScrollViewer.axaml" />
+    <MergeResourceInclude Source="SplitButton.axaml" />
+    <MergeResourceInclude Source="TabControl.axaml" />
+    <MergeResourceInclude Source="TabItem.axaml" />
+    <MergeResourceInclude Source="TextBox.axaml" />
+    <MergeResourceInclude Source="TreeView.axaml" />
+    <MergeResourceInclude Source="TreeViewItem.axaml" />
+    <MergeResourceInclude Source="ContextMenu.axaml" />
+    <MergeResourceInclude Source="Window.axaml" />
+  </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.ControlAlignment">
-  
+
   <UserControl.Styles>
     <Style Selector="StackPanel > Border">
       <!-- <Setter Property="BorderBrush" Value="BlueViolet" /> -->
@@ -14,71 +14,119 @@
   </UserControl.Styles>
   <StackPanel Margin="10">
     <TextBlock Classes="h1" Text="Grid" />
-    <Grid RowDefinitions="*, *, *, *, *, *, *, *" 
-          ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto" 
+    <Grid RowDefinitions="*, *, *, *, *, *, *, *"
+          ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
           RowSpacing="5"
           ColumnSpacing="10"
-          Margin="10" >
-        <Border Grid.Row="0" Grid.Column="0"><TextBlock VerticalAlignment="Center">TextBlock</TextBlock></Border>
-        <Border Grid.Row="0" Grid.Column="1"><TextBox Watermark="TextBox" /></Border>
-        <Border Grid.Row="0" Grid.Column="2"><ComboBox SelectedIndex="2">
+          Margin="10">
+      <Border Grid.Row="0" Grid.Column="0">
+        <TextBlock VerticalAlignment="Center">TextBlock</TextBlock>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="1">
+        <TextBox Watermark="TextBox" />
+      </Border>
+      <Border Grid.Row="0" Grid.Column="2">
+        <ComboBox SelectedIndex="2">
           <ComboBoxItem>Option 1</ComboBoxItem>
           <ComboBoxItem>Option 2</ComboBoxItem>
           <ComboBoxItem>Option 3</ComboBoxItem>
           <ComboBoxItem>Option 4</ComboBoxItem>
-        </ComboBox></Border>
-        <Border Grid.Row="0" Grid.Column="3"><NumericUpDown Value="0"
-                                                           Increment="1"
-                                                           Watermark="mm" /></Border>
-        <Border Grid.Row="0" Grid.Column="4"><Button Content="Button" /></Border>
-        <Border Grid.Row="0" Grid.Column="5"><CheckBox Content="Checkbox" IsChecked="True"></CheckBox></Border>
+        </ComboBox>
+      </Border>
+      <Border Grid.Row="0" Grid.Column="3">
+        <NumericUpDown Value="0"
+                       Increment="1"
+                       Watermark="mm" />
+      </Border>
+      <Border Grid.Row="0" Grid.Column="4">
+        <Button Content="Button" />
+      </Border>
+      <Border Grid.Row="0" Grid.Column="5">
+        <CheckBox Content="Checkbox" IsChecked="True" />
+      </Border>
 
-      <Border Grid.Row="2" Grid.Column="0"><TextBlock VerticalAlignment="Center">TextBlock</TextBlock></Border>
-        <Border Grid.Row="3" Grid.Column="0"><TextBox Watermark="TextBox" /></Border>
-        <Border Grid.Row="4" Grid.Column="0"><ComboBox SelectedIndex="2">
+      <Border Grid.Row="2" Grid.Column="0">
+        <TextBlock VerticalAlignment="Center">TextBlock</TextBlock>
+      </Border>
+      <Border Grid.Row="3" Grid.Column="0">
+        <TextBox Watermark="TextBox" />
+      </Border>
+      <Border Grid.Row="4" Grid.Column="0">
+        <ComboBox SelectedIndex="2">
           <ComboBoxItem>Option 1</ComboBoxItem>
           <ComboBoxItem>Option 2</ComboBoxItem>
           <ComboBoxItem>Option 3</ComboBoxItem>
           <ComboBoxItem>Option 4</ComboBoxItem>
-        </ComboBox></Border>
-        <Border Grid.Row="5" Grid.Column="0"><NumericUpDown Value="0"
-                                                           Increment="1"
-                                                           Watermark="mm" /></Border>
-        <Border Grid.Row="6" Grid.Column="0"><Button Content="Button" /></Border>
-        <Border Grid.Row="7" Grid.Column=""><CheckBox Content="Checkbox" IsChecked="True"></CheckBox></Border>
+        </ComboBox>
+      </Border>
+      <Border Grid.Row="5" Grid.Column="0">
+        <NumericUpDown Value="0"
+                       Increment="1"
+                       Watermark="mm" />
+      </Border>
+      <Border Grid.Row="6" Grid.Column="0">
+        <Button Content="Button" />
+      </Border>
+      <Border Grid.Row="7" Grid.Column="">
+        <CheckBox Content="Checkbox" IsChecked="True" />
+      </Border>
     </Grid>
-    
-    <TextBlock Classes="h1" Text="StackPanels" Margin="0 20 0 0 "/>
+
+    <TextBlock Classes="h1" Text="StackPanels" Margin="0 20 0 0 " />
     <StackPanel Orientation="Vertical" Margin="10" Spacing="20" VerticalAlignment="Top">
       <StackPanel Orientation="Horizontal" Margin="10" Spacing="10" VerticalAlignment="Top">
-        <Border><TextBlock VerticalAlignment="Center">TextBlock</TextBlock></Border>
-        <Border><TextBox Watermark="TextBox" /></Border>
-        <Border><ComboBox SelectedIndex="2">
-          <ComboBoxItem>Option 1</ComboBoxItem>
-          <ComboBoxItem>Option 2</ComboBoxItem>
-          <ComboBoxItem>Option 3</ComboBoxItem>
-          <ComboBoxItem>Option 4</ComboBoxItem>
-        </ComboBox></Border>
-        <Border><NumericUpDown Value="0"
-                               Increment="1"
-                               Watermark="mm" /></Border>
-        <Border><Button Content="Button" /></Border>
-        <Border><CheckBox Content="Checkbox" IsChecked="True"></CheckBox></Border>
+        <Border>
+          <TextBlock VerticalAlignment="Center">TextBlock</TextBlock>
+        </Border>
+        <Border>
+          <TextBox Watermark="TextBox" />
+        </Border>
+        <Border>
+          <ComboBox SelectedIndex="2">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+            <ComboBoxItem>Option 3</ComboBoxItem>
+            <ComboBoxItem>Option 4</ComboBoxItem>
+          </ComboBox>
+        </Border>
+        <Border>
+          <NumericUpDown Value="0"
+                         Increment="1"
+                         Watermark="mm" />
+        </Border>
+        <Border>
+          <Button Content="Button" />
+        </Border>
+        <Border>
+          <CheckBox Content="Checkbox" IsChecked="True" />
+        </Border>
       </StackPanel>
       <StackPanel Orientation="Vertical" Width="90" Margin="10" Spacing="10" VerticalAlignment="Top" HorizontalAlignment="Left">
-        <Border><TextBlock VerticalAlignment="Center">TextBlock</TextBlock></Border>
-        <Border><TextBox Watermark="TextBox" /></Border>
-        <Border><ComboBox SelectedIndex="2">
-          <ComboBoxItem>Option 1</ComboBoxItem>
-          <ComboBoxItem>Option 2</ComboBoxItem>
-          <ComboBoxItem>Option 3</ComboBoxItem>
-          <ComboBoxItem>Option 4</ComboBoxItem>
-        </ComboBox></Border>
-        <Border><NumericUpDown Value="0"
-                               Increment="1"
-                               Watermark="mm" /></Border>
-        <Border><Button Content="Button" /></Border>
-        <Border><CheckBox Content="Checkbox" IsChecked="True"></CheckBox></Border>
+        <Border>
+          <TextBlock VerticalAlignment="Center">TextBlock</TextBlock>
+        </Border>
+        <Border>
+          <TextBox Watermark="TextBox" />
+        </Border>
+        <Border>
+          <ComboBox SelectedIndex="2">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+            <ComboBoxItem>Option 3</ComboBoxItem>
+            <ComboBoxItem>Option 4</ComboBoxItem>
+          </ComboBox>
+        </Border>
+        <Border>
+          <NumericUpDown Value="0"
+                         Increment="1"
+                         Watermark="mm" />
+        </Border>
+        <Border>
+          <Button Content="Button" />
+        </Border>
+        <Border>
+          <CheckBox Content="Checkbox" IsChecked="True" />
+        </Border>
       </StackPanel>
     </StackPanel>
   </StackPanel>

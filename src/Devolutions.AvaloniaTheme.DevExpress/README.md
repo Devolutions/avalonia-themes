@@ -7,14 +7,16 @@ Custom Avalonia Themes developed by [Devolutions](https://devolutions.net/)
 [![NuGet Version](https://img.shields.io/nuget/vpre/Devolutions.AvaloniaTheme.DevExpress)](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.DevExpress)
 ![NuGet Downloads](https://img.shields.io/nuget/dt/Devolutions.AvaloniaTheme.DevExpress)
 
-
 ## DevExpress Theme [Work in Progress]
 
-This theme is currently based on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent), 
-both as a fallback for any controls not covered yet and as starting point for our (somewhat simplified) 
+This theme is currently based
+on [Avalonia.Themes.Fluent](https://github.com/AvaloniaUI/Avalonia/tree/759facea182b7771ce07baf173c52529f4871004/src/Avalonia.Themes.Fluent),
+both as a fallback for any controls not covered yet and as starting point for our (somewhat simplified)
 style definitions targeting DevExpress Winforms look.
 
-While we are prioritizing controls for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/), we welcome contributions from the Avalonia community to add more DevExpress-style controls. 
+While we are prioritizing controls
+for [Devolutions Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/), we welcome contributions from
+the Avalonia community to add more DevExpress-style controls.
 
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
@@ -28,19 +30,24 @@ While we are prioritizing controls for [Devolutions Remote Desktop Manager](http
     - Dark mode support
   - 🔮 Next on the road map ...
     - ScrollViewer/ScrollBar
-    
-
 
 ## Installation
-Install the Devolutions.AvaloniaTheme.DevExpress package via [NuGet](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.DevExpress):
+
+Install the Devolutions.AvaloniaTheme.DevExpress package
+via [NuGet](https://www.nuget.org/packages/Devolutions.AvaloniaTheme.DevExpress):
+
 ``` bash
 Install-Package Devolutions.AvaloniaTheme.DevExpress
 ```
+
 or .NET
+
 ```bash
 dotnet add package Devolutions.AvaloniaTheme.DevExpress
 ```
+
 In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the macOS theme:
+
 ``` xaml
 <Application ...>
   <Application.Styles>

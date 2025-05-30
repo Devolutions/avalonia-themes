@@ -1,103 +1,103 @@
 <ResourceDictionary
-   xmlns="https://github.com/avaloniaui"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-   <ResourceDictionary.MergedDictionaries>
-      <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-   </ResourceDictionary.MergedDictionaries>
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
 
-   <Design.PreviewWith>
-      <StackPanel Width="110">
-         <Button Content="Cancel" Margin="10" />
-         <Button Content="Test" Margin="10 " IsEnabled="False" />
-         <Button Classes="accent" Content="Open" Margin="10 " />
-         <Button Classes="accent" Content="Open" Margin="10 " IsEnabled="False" />
-      </StackPanel>
-   </Design.PreviewWith>
+  <Design.PreviewWith>
+    <StackPanel Width="110">
+      <Button Content="Cancel" Margin="10" />
+      <Button Content="Test" Margin="10 " IsEnabled="False" />
+      <Button Classes="accent" Content="Open" Margin="10 " />
+      <Button Classes="accent" Content="Open" Margin="10 " IsEnabled="False" />
+    </StackPanel>
+  </Design.PreviewWith>
 
-   <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
-      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
-      <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-      <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
-      <Setter Property="HorizontalContentAlignment" Value="Center" />
-      <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="VerticalAlignment" Value="Center" />
-      <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
-      <Setter Property="FontWeight" Value="{DynamicResource ButtonFontWeight}" />
-      <Setter Property="FocusAdorner" Value="{x:Null}" />
-      <Setter Property="ClipToBounds" Value="False" />
-      <Setter Property="Template">
-         <ControlTemplate>
-            <Panel Name="ReservedSpaceForFocus"
-                   Margin="{StaticResource InputControlsSpaceForFocusBorder}">
-               <Border Name="BackgroundElement"
-                       Background="{TemplateBinding Background}"
-                       BorderBrush="{TemplateBinding BorderBrush}"
-                       BorderThickness="{TemplateBinding BorderThickness}"
-                       CornerRadius="{TemplateBinding CornerRadius}" />
-               <ContentPresenter Name="PART_ContentPresenter"
-                                 Content="{TemplateBinding Content}"
-                                 Foreground="{TemplateBinding Foreground}"
-                                 Padding="{TemplateBinding Padding}"
-                                 HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                 VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                 FontSize="{TemplateBinding FontSize}"
-                                 FontWeight="{TemplateBinding FontWeight}" />
-               <Border Name="FocusBorderElement"
-                       Margin="{StaticResource FocusBorderMargin}"
-                       BorderThickness="{StaticResource FocusBorderThickness}"
-                       CornerRadius="7" />
-            </Panel>
-         </ControlTemplate>
-      </Setter>
+  <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
+    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+    <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
+    <Setter Property="FontWeight" Value="{DynamicResource ButtonFontWeight}" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Panel Name="ReservedSpaceForFocus"
+               Margin="{StaticResource InputControlsSpaceForFocusBorder}">
+          <Border Name="BackgroundElement"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="{TemplateBinding CornerRadius}" />
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Content="{TemplateBinding Content}"
+                            Foreground="{TemplateBinding Foreground}"
+                            Padding="{TemplateBinding Padding}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            FontSize="{TemplateBinding FontSize}"
+                            FontWeight="{TemplateBinding FontWeight}" />
+          <Border Name="FocusBorderElement"
+                  Margin="{StaticResource FocusBorderMargin}"
+                  BorderThickness="{StaticResource FocusBorderThickness}"
+                  CornerRadius="7" />
+        </Panel>
+      </ControlTemplate>
+    </Setter>
 
-      <!-- Tabbing focus -->
-      <Style Selector="^:focus-visible">
-         <Style Selector="^ /template/ Border#FocusBorderElement">
-            <Setter Property="BorderBrush" Value="{DynamicResource FocusBorderBrush}" />
-         </Style>
+    <!-- Tabbing focus -->
+    <Style Selector="^:focus-visible">
+      <Style Selector="^ /template/ Border#FocusBorderElement">
+        <Setter Property="BorderBrush" Value="{DynamicResource FocusBorderBrush}" />
       </Style>
+    </Style>
+
+    <Style Selector="^:pressed">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundActiveHighBrush}" />
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderDisabledBrush}" />
+    </Style>
+
+    <Style Selector="^.accent">
+      <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
+      <Setter Property="Foreground" Value="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ForegroundHighBrush}" />
+      <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ButtonBorderAccentBrush, ControlBorderRaisedBrush}" />
 
       <Style Selector="^:pressed">
-         <Setter Property="Background" Value="{DynamicResource ControlBackgroundActiveHighBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBackgroundAccentRecessedBrush}" />
       </Style>
       <Style Selector="^:disabled">
-         <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
-         <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
-         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderDisabledBrush}" />
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
       </Style>
+    </Style>
 
-      <Style Selector="^.accent">
-         <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentRaisedBrush, ControlBackgroundHighBrush}" />
-         <Setter Property="Foreground" Value="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ForegroundHighBrush}" />
-         <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ButtonBorderAccentBrush, ControlBorderRaisedBrush}" />
-
-         <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource ButtonBackgroundAccentRecessedBrush}" />
-         </Style>
-         <Style Selector="^:disabled">
-            <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
-            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
-            <Setter Property="BorderThickness" Value="{DynamicResource ButtonBorderThickness}" />
-         </Style>
+    <Style Selector="^.accentPrecise">
+      <Setter Property="Background" Value="{DynamicResource TempButtonAccentBackgroundPrecise}" />
+      <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
+      <Setter Property="BorderThickness" Value="0" />
+      <Style Selector="^:pressed">
+        <Setter Property="Background" Value="{DynamicResource TempButtonAccentPressedBackgroundPrecise}" />
       </Style>
-
-      <Style Selector="^.accentPrecise">
-         <Setter Property="Background" Value="{DynamicResource TempButtonAccentBackgroundPrecise}" />
-         <Setter Property="Foreground" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
-         <Setter Property="BorderThickness" Value="0" />
-         <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource TempButtonAccentPressedBackgroundPrecise}" />
-         </Style>
-         <Style Selector="^:disabled">
-            <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
-            <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
-            <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
-         </Style>
+      <Style Selector="^:disabled">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDisabledHighBrush}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
       </Style>
-   </ControlTheme>
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>

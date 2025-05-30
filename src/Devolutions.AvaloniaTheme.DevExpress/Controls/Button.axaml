@@ -1,93 +1,93 @@
 <ResourceDictionary
-   xmlns="https://github.com/avaloniaui"
-   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-   <ResourceDictionary.MergedDictionaries>
-      <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-   </ResourceDictionary.MergedDictionaries>
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
+  </ResourceDictionary.MergedDictionaries>
 
-   <Design.PreviewWith>
-      <StackPanel Spacing="20">
-         <Border Padding="20" Background="#f0f0f0">
-            <Grid ColumnDefinitions="91, 2, 75" RowDefinitions="Auto, 10, Auto">
-               <Button Grid.Row="0" Grid.Column="0" Classes="accent" Content="test" />
-               <Button Grid.Row="0" Grid.Column="2" Content="Cancel" />
-               <Button Grid.Row="2" Grid.Column="0" Classes="accent" Content="Disabled" IsEnabled="False" />
-               <Button Grid.Row="2" Grid.Column="2" Content="Disabled" IsEnabled="False" />
-            </Grid>
-         </Border>
-         <CheckBox IsEnabled="False">Birthday focussed</CheckBox>
-      </StackPanel>
-   </Design.PreviewWith>
+  <Design.PreviewWith>
+    <StackPanel Spacing="20">
+      <Border Padding="20" Background="#f0f0f0">
+        <Grid ColumnDefinitions="91, 2, 75" RowDefinitions="Auto, 10, Auto">
+          <Button Grid.Row="0" Grid.Column="0" Classes="accent" Content="test" />
+          <Button Grid.Row="0" Grid.Column="2" Content="Cancel" />
+          <Button Grid.Row="2" Grid.Column="0" Classes="accent" Content="Disabled" IsEnabled="False" />
+          <Button Grid.Row="2" Grid.Column="2" Content="Disabled" IsEnabled="False" />
+        </Grid>
+      </Border>
+      <CheckBox IsEnabled="False">Birthday focussed</CheckBox>
+    </StackPanel>
+  </Design.PreviewWith>
 
-   <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
-      <Setter Property="MinHeight" Value="26" />
+  <ControlTheme x:Key="{x:Type Button}" TargetType="Button">
+    <Setter Property="MinHeight" Value="26" />
+    <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+    <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
+    <Setter Property="FontWeight" Value="SemiLight" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Panel>
+          <Border
+            Name="BackgroundElement"
+            Background="{TemplateBinding Background}"
+            BorderBrush="{TemplateBinding BorderBrush}"
+            BorderThickness="{TemplateBinding BorderThickness}"
+            CornerRadius="{TemplateBinding CornerRadius}" />
+          <Border
+            Name="ButtonActiveElement"
+            Background="Transparent"
+            BorderBrush="{DynamicResource TransparentBrush}"
+            BorderThickness="2"
+            CornerRadius="{TemplateBinding CornerRadius}" />
+          <ContentPresenter
+            Name="PART_ContentPresenter"
+            Content="{TemplateBinding Content}"
+            Foreground="{TemplateBinding Foreground}"
+            Padding="{TemplateBinding Padding}"
+            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+            FontSize="{TemplateBinding FontSize}"
+            FontWeight="{TemplateBinding FontWeight}" />
+        </Panel>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
+      <Setter Property="Background" Value="{DynamicResource ButtonPointerOverBrushTransparent}" />
+    </Style>
+    <Style Selector="^:pressed">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
-      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderRaisedBrush}" />
-      <Setter Property="BorderThickness" Value="1" />
-      <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-      <Setter Property="Padding" Value="{DynamicResource ButtonPadding}" />
-      <Setter Property="HorizontalContentAlignment" Value="Center" />
-      <Setter Property="VerticalContentAlignment" Value="Center" />
-      <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
-      <Setter Property="FontWeight" Value="SemiLight" />
-      <Setter Property="Template">
-         <ControlTemplate>
-            <Panel>
-               <Border
-                  Name="BackgroundElement"
-                  Background="{TemplateBinding Background}"
-                  BorderBrush="{TemplateBinding BorderBrush}"
-                  BorderThickness="{TemplateBinding BorderThickness}"
-                  CornerRadius="{TemplateBinding CornerRadius}" />
-               <Border
-                  Name="ButtonActiveElement"
-                  Background="Transparent"
-                  BorderBrush="{DynamicResource TransparentBrush}"
-                  BorderThickness="2"
-                  CornerRadius="{TemplateBinding CornerRadius}" />
-               <ContentPresenter
-                  Name="PART_ContentPresenter"
-                  Content="{TemplateBinding Content}"
-                  Foreground="{TemplateBinding Foreground}"
-                  Padding="{TemplateBinding Padding}"
-                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                  FontSize="{TemplateBinding FontSize}"
-                  FontWeight="{TemplateBinding FontWeight}" />
-            </Panel>
-         </ControlTemplate>
-      </Setter>
+      <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
+        <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+      </Style>
+    </Style>
+    <Style Selector="^:focus, ^:focus-visible">
+      <Style Selector="^ /template/ Border#ButtonActiveElement">
+        <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^.accent">
+      <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBackgroundHighBrush}" />
+      <Setter Property="Foreground" Value="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ForegroundHighBrush}" />
+      <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
 
       <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
-         <Setter Property="Background" Value="{DynamicResource ButtonPointerOverBrushTransparent}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonAccentPointerOverBrushTransparent}" />
       </Style>
-      <Style Selector="^:pressed">
-         <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
-         <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
-            <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
-         </Style>
-      </Style>
-      <Style Selector="^:focus, ^:focus-visible">
-         <Style Selector="^ /template/ Border#ButtonActiveElement">
-            <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
-         </Style>
-      </Style>
-
-      <Style Selector="^.accent">
-         <Setter Property="Background" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBackgroundHighBrush}" />
-         <Setter Property="Foreground" Value="{WindowActiveResourceToggler ControlForegroundAccentHighBrush, ForegroundHighBrush}" />
-         <Setter Property="BorderBrush" Value="{WindowActiveResourceToggler ControlBackgroundAccentBrush, ControlBorderRaisedBrush}" />
-
-         <Style Selector="^:pointerover /template/ Border#ButtonActiveElement">
-            <Setter Property="Background" Value="{DynamicResource ButtonAccentPointerOverBrushTransparent}" />
-         </Style>
-      </Style>
-      <Style Selector="^:disabled">
-         <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabledBrush}" />
-         <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
-         <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderMidBrush}" />
-      </Style>
-   </ControlTheme>
+    </Style>
+    <Style Selector="^:disabled">
+      <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabledBrush}" />
+      <Setter Property="Background" Value="{DynamicResource TransparentBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderMidBrush}" />
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>

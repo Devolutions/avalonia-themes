@@ -17,7 +17,7 @@
       </TreeView>
     </Border>
   </Design.PreviewWith>
-  
+
 
   <x:Double x:Key="TreeViewItemIndent">23</x:Double>
   <converters:MarginMultiplierConverter Indent="{StaticResource TreeViewItemIndent}"
@@ -42,7 +42,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Foreground="{DynamicResource ForegroundHighBrush}"
-                    Data="{StaticResource ChevronPath}" >
+                    Data="{StaticResource ChevronPath}">
             <PathIcon.RenderTransform>
               <RotateTransform Angle="-90" />
             </PathIcon.RenderTransform>

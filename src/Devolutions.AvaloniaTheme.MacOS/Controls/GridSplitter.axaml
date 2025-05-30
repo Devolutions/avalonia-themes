@@ -59,7 +59,7 @@
       <Setter Property="Width" Value="{x:Static sys:Double.NaN}" />
       <Setter Property="Height" Value="1" />
     </Style>
-    
+
     <!-- Tabbing focus -->
     <Style Selector="^:focus-visible">
       <Style Selector="^ /template/ Rectangle#VisualLineMarker">
@@ -68,7 +68,7 @@
       <Style Selector="^[ResizeDirection=Columns] /template/ Rectangle#VisualLineMarker">
         <Setter Property="Width" Value="7" />
       </Style>
-     <Style Selector="^[ResizeDirection=Rows] /template/ Rectangle#VisualLineMarker">
+      <Style Selector="^[ResizeDirection=Rows] /template/ Rectangle#VisualLineMarker">
         <Setter Property="Height" Value="3.5" />
       </Style>
     </Style>
