@@ -175,6 +175,11 @@
     <Style Selector="^:current /template/ Rectangle#CurrencyVisual">
       <Setter Property="IsVisible" Value="True" />
     </Style>
+
+    <Style Selector="^:focus /template/ Grid#FocusVisual">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+    
     <Style Selector="^:invalid /template/ Rectangle#InvalidVisualElement">
       <Setter Property="IsVisible" Value="True" />
     </Style>
