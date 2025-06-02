@@ -17,16 +17,39 @@
     <Setter Property="Padding" Value="10 2" />
   </Style>
 
+  <!-- TODO: Move to ControlTheme for DataGrid -->
+  
   <Style Selector="DataGrid">
     <Setter Property="RowHeight" Value="22" />
     <Setter Property="ColumnHeaderHeight" Value="22" />
     <Setter Property="Foreground" Value="{DynamicResource DataGridForeground}" />
+    <Setter Property="Background" Value="{DynamicResource ScrollControlBackground}" />
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ScrollControlBorder}" />
+    <Setter Property="GridLinesVisibility" Value="All" />
+    <Setter Property="CanUserReorderColumns" Value="True" />
+    <Setter Property="CanUserSortColumns" Value="True" />
+    <Setter Property="CanUserResizeColumns" Value="True" />
+    <Setter Property="IsReadOnly" Value="True" />
+    
     <Style Selector="^ DataGridRow:selected /template/ Rectangle#BackgroundRectangle">
       <Setter Property="Fill" Value="{DynamicResource DataGridSelectedRowFill}" />
     </Style>
 
-    <Style Selector="^ DataGridRow > Border#RowBorder">
-      <Setter Property="MinHeight" Value="25" />
+    <Style Selector="^ TextBlock">
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style Selector="^:focus DataGridCell:current /template/ Grid#FocusVisual">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+
+    <Style Selector="^.CellSelectableStyle">
+      <Setter Property="IsReadOnly" Value="False" />
+    </Style>
+
+    <Style Selector="^.CellSelectableStyle:focus DataGridCell:current /template/ Grid#FocusVisual">
+      <Setter Property="IsVisible" Value="True" />
     </Style>
   </Style>
 
@@ -35,7 +58,26 @@
     <Setter Property="MinHeight" Value="22" />
   </Style>
 
-  <Style Selector="DataGridRow:nth-child(even)">
-    <Setter Property="Background" Value="{DynamicResource DataGridRowAlternatingBackgroundBrush}" />
+  <Style Selector="DataGridRow">
+    <Style Selector="^">
+      <Setter Property="Background" Value="{DynamicResource DataGridRowBackgroundBrush}" />
+    </Style>
+    <Style Selector="^ /template/ Rectangle#BackgroundRectangle">
+      <Setter Property="Fill" Value="Transparent" />
+    </Style>
+    <Style Selector="^:nth-child(even)">
+      <Setter Property="Background" Value="{DynamicResource DataGridRowAlternatingBackgroundBrush}" />
+    </Style>
+    <Style Selector="^:nth-child(even) /template/ Rectangle#BackgroundRectangle">
+      <Setter Property="Fill" Value="Transparent" />
+    </Style>
+    <Style Selector="^:selected /template/ Rectangle#BackgroundRectangle">
+      <Setter Property="Fill" Value="{DynamicResource DataGridRowSelectedUnfocusedBackgroundBrush}" />
+      <Setter Property="Opacity" Value="{DynamicResource DataGridRowSelectedUnfocusedBackgroundOpacity}" />
+    </Style>
+    <Style Selector="^ > Border#RowBorder">
+      <Setter Property="MinHeight" Value="25" />
+    </Style>
   </Style>
+  
 </Styles>
