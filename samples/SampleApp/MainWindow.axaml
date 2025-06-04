@@ -44,6 +44,13 @@
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
+      <TabItem Header="DataGrid grouped" IsSelected="True">
+        <demoPages:DataGridGroupedDemo>
+          <demoPages:DataGridGroupedDemo.DataContext>
+            <vm:DataGridGroupedViewModel />
+          </demoPages:DataGridGroupedDemo.DataContext>
+        </demoPages:DataGridGroupedDemo>
+      </TabItem>
       <TabItem Header="Menu">
         <demoPages:MenuDemo />
       </TabItem>

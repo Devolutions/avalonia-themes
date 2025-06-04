@@ -37,6 +37,12 @@
       <SolidColorBrush x:Key="EditableComboBoxGlyphHoverBrush" Color="{ChangeColorOpacity {DynamicResource SystemAccentColorLight2}, 0.25}" />
       <SolidColorBrush x:Key="EditableComboBoxGlyphPressedBrush" Color="{ChangeColorOpacity {DynamicResource SystemAccentColorLight3}, 0.2}" />
       <BoxShadows x:Key='EditableComboBoxBoxShadow'>0 0 5 0 #88666666</BoxShadows>
+
+      <SolidColorBrush x:Key="DataGridItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" Opacity="0.2" />
+      <SolidColorBrush x:Key="SelectionInInactiveWindow" Color="{StaticResource ForegroundColor}" Opacity="0.15" />
+      <SolidColorBrush x:Key="DataGridItemBackgroundAlternating" Color="{DynamicResource SystemAccentColor}" Opacity="0.04" />
+      <SolidColorBrush x:Key="DataGridItemBackgroundAlternatingInInactiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.04" />
+      <SolidColorBrush x:Key="DataGridGroupHeaderBackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
     </ResourceDictionary>
 
     <!-- TODO: Darkmode colours just roughly -->
@@ -76,6 +82,13 @@
       <SolidColorBrush x:Key="EditableComboBoxGlyphPressedBrush" Color="#363636" />
       <SolidColorBrush x:Key="ComboBoxDropDownBorderBrush" Color="#404040" />
       <BoxShadows x:Key='EditableComboBoxBoxShadow'>0 0 4 0 #88010101</BoxShadows>
+
+      <SolidColorBrush x:Key="DataGridItemBackgroundSelected" Color="{StaticResource ForegroundColor}" Opacity="0.13" />
+      <SolidColorBrush x:Key="SelectionInInactiveWindow" Color="{StaticResource ForegroundColor}" Opacity="0.13" />
+      <SolidColorBrush x:Key="DataGridItemBackgroundAlternating" Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
+      <SolidColorBrush x:Key="DataGridItemBackgroundAlternatingInInactiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
+      <SolidColorBrush x:Key="DataGridGroupHeaderBackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
+      
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
@@ -150,10 +163,7 @@
 
   <Thickness x:Key="TabItemHeaderPadding">4 0</Thickness>
   <Thickness x:Key="FirstTabItemHeaderPadding">6 0 4 0</Thickness>
-
-  <SolidColorBrush x:Key="DataGridForeground" Color="{DynamicResource DataGridForegroundColor}" />
-  <SolidColorBrush x:Key="DataGridSelectedRowFill" Color="{DynamicResource DataGridSelectedRowColor}" />
-
+  
   <CornerRadius x:Key="OverlayCornerRadius">0</CornerRadius>
 
   <x:Double x:Key="OpacityVisible">1</x:Double>

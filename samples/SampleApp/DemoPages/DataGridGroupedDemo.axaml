@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:SampleApp.ViewModels"
+             xmlns:local="clr-namespace:SampleApp.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.DataGridGroupedDemo"
+             x:DataType="vm:DataGridGroupedViewModel">
+
+  <Design.DataContext>
+    <vm:DataGridGroupedViewModel />
+  </Design.DataContext>
+
+  <DataGrid Margin="20" ItemsSource="{Binding Items}"
+            GridLinesVisibility="None">
+    <DataGrid.Columns>
+      <DataGridTemplateColumn Header="">
+        <DataGridTemplateColumn.CellTemplate>
+          <DataTemplate>
+            <Svg Path="/Assets/Computer.svg" Width="20" Height="20" Css=".st0 {fill: #3B86EA}" />
+          </DataTemplate>
+        </DataGridTemplateColumn.CellTemplate>
+      </DataGridTemplateColumn>
+      <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" x:DataType="local:DataGridItem" />
+      <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" />
+      <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" />
+      <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" />
+    </DataGrid.Columns>
+  </DataGrid>
+</UserControl>

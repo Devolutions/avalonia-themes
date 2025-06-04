@@ -16,26 +16,5 @@
     <Setter Property="Height" Value="26" />
     <Setter Property="Padding" Value="10 2" />
   </Style>
-
-  <Style Selector="DataGrid">
-    <Setter Property="RowHeight" Value="22" />
-    <Setter Property="ColumnHeaderHeight" Value="22" />
-    <Setter Property="Foreground" Value="{DynamicResource DataGridForeground}" />
-    <Style Selector="^ DataGridRow:selected /template/ Rectangle#BackgroundRectangle">
-      <Setter Property="Fill" Value="{DynamicResource DataGridSelectedRowFill}" />
-    </Style>
-
-    <Style Selector="^ DataGridRow > Border#RowBorder">
-      <Setter Property="MinHeight" Value="25" />
-    </Style>
-  </Style>
-
-  <Style Selector="DataGridColumnHeader">
-    <Setter Property="Background" Value="{DynamicResource MainControlBackground}" />
-    <Setter Property="MinHeight" Value="22" />
-  </Style>
-
-  <Style Selector="DataGridRow:nth-child(even)">
-    <Setter Property="Background" Value="{DynamicResource DataGridRowAlternatingBackgroundBrush}" />
-  </Style>
+  
 </Styles>
