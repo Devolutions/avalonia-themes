@@ -46,7 +46,7 @@ or .NET
 dotnet add package Devolutions.AvaloniaTheme.DevExpress
 ```
 
-In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the macOS theme:
+In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<SimpleTheme />`) with the DevExpress theme:
 
 ``` xaml
 <Application ...>
