@@ -7,7 +7,7 @@
 
   <Design.PreviewWith>
     <ThemeVariantScope RequestedThemeVariant="Dark">
-      <Border Background="#212121">
+      <Border Background="{DynamicResource BackgroundBrush}">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
           <Border Width="500">
             <TabControl TabStripPlacement="Left" Margin="5">
@@ -66,12 +66,9 @@
     </ThemeVariantScope>
   </Design.PreviewWith>
 
-  <!-- Shifting the divider right up to the left neighbour -->
+  <!-- Shifting the tab to the left to cover the divider of its left neighbour -->
   <Thickness x:Key="TabItemDividerMargin">-2, 0, 0, 0</Thickness>
-  <!-- Shifting the 'selected' border to the right to hide the divider -->
-  <Thickness x:Key="TabItemSelectedMargin">1, 0, -1, 0</Thickness>
-  <!-- = ButtonDefaultPadding + 1px horizontal offset to keep the text position stable as the margin shifts -->
-  <Thickness x:Key="TabItemSelectedOffsetPadding">7, 2, 9, 2</Thickness>
+
 
   <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">
     <Setter Property="Background" Value="Transparent" />
@@ -81,8 +78,8 @@
     <Setter Property="BorderBrush" Value="Transparent" />
     <Setter Property="HorizontalAlignment" Value="Stretch" />
     <Setter Property="HorizontalContentAlignment" Value="Center" />
-    <Setter Property="Margin" Value="0" />
-    <Setter Property="Padding" Value="{DynamicResource TabItemPadding}" />
+    <Setter Property="Margin" Value="{DynamicResource TabItemDividerMargin}" />
+    <Setter Property="Padding" Value="{DynamicResource TabItemPadding} " />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ClipToBounds" Value="False" />
 
@@ -94,34 +91,23 @@
       <Setter Property="Template">
         <ControlTemplate>
           <Panel>
-            <StackPanel Orientation="Horizontal">
-              <!-- POTENTIALLY FRAGILE HACK (TODO: test with different user font size settings ...?)
-                 The TextBlock as divider works better than Rectangle, because the pipe character is anti-aliased.
-                 A better option might be to track the selected tab in code-behind and attach a property addressing the 
-                 tab to the right of it somehow ... Or check DataGrid ColumnHeader - that works fine with Rectangle TODO: ??? -->
-              <TextBlock Name="TabDivider"
-                         Foreground="{DynamicResource ForegroundLowBrush}"
-                         VerticalAlignment="Center"
-                         Margin="{DynamicResource TabItemDividerMargin}">
-                |
-              </TextBlock>
-              <!-- <Rectangle Name="TabDivider" -->
-              <!--            Height="14" -->
-              <!--            Width="1" -->
-              <!--            Fill="{DynamicResource ForegroundLowBrush}" -->
-              <!--            VerticalAlignment="Center" /> -->
-              <ContentPresenter Name="PART_ContentPresenter"
-                                Padding="{TemplateBinding Padding}"
-                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                Content="{TemplateBinding Header}"
-                                ContentTemplate="{TemplateBinding HeaderTemplate}"
-                                CornerRadius="{TemplateBinding CornerRadius}"
-                                RecognizesAccessKey="True" />
-            </StackPanel>
+            <Border Name="TabDivider"
+                    Height="12"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    BorderThickness=" 0 0  1 0"
+                    BorderBrush="{DynamicResource ForegroundLowBrush}" />
+            <ContentPresenter Name="PART_ContentPresenter"
+                              Padding="{TemplateBinding Padding}"
+                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                              Background="{TemplateBinding Background}"
+                              BorderBrush="{TemplateBinding BorderBrush}"
+                              BorderThickness="{TemplateBinding BorderThickness}"
+                              Content="{TemplateBinding Header}"
+                              ContentTemplate="{TemplateBinding HeaderTemplate}"
+                              CornerRadius="{TemplateBinding CornerRadius}"
+                              RecognizesAccessKey="True" />
             <Border Name="FocusBorderElement"
                     Margin="-1 -3 -3 -3"
                     BorderThickness="{StaticResource FocusBorderThickness}"
@@ -137,11 +123,11 @@
         </Style>
       </Style>
 
-      <Style Selector="^:nth-child(1) /template/ TextBlock#TabDivider">
-        <Setter Property="Foreground" Value="Transparent" />
+      <Style Selector="^:nth-last-child(1) /template/ Border#TabDivider">
+        <Setter Property="BorderBrush" Value="Transparent" />
       </Style>
-      <Style Selector="^:selected /template/ TextBlock#TabDivider">
-        <Setter Property="Foreground" Value="Transparent" />
+      <Style Selector="^:selected /template/ Border#TabDivider">
+        <Setter Property="BorderBrush" Value="Transparent" />
       </Style>
       <Style Selector="^:selected /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundHighBrush}" />
@@ -149,9 +135,8 @@
         <Setter Property="BorderBrush" Value="{DynamicResource ForegroundLowBrush}" />
         <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
       </Style>
-      <Style Selector="^:selected:not(:nth-last-child(1)) /template/ ContentPresenter#PART_ContentPresenter">
-        <Setter Property="Margin" Value="{DynamicResource TabItemSelectedMargin}" />
-        <Setter Property="Padding" Value="{DynamicResource TabItemSelectedOffsetPadding}" />
+      <Style Selector="^:selected:pressed /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource TabItemSelectedPressedBrush}" />
       </Style>
     </Style>
 
