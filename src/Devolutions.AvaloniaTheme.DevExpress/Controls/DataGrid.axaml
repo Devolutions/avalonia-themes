@@ -78,16 +78,15 @@
                        IsHitTestVisible="False"
                        Stroke="{DynamicResource DataGridCurrencyVisualPrimaryBrush}"
                        StrokeThickness="1" />
-            <Grid Grid.Column="0" Name="FocusVisual" IsHitTestVisible="False"
-                  IsVisible="False">
-              <Rectangle
-                HorizontalAlignment="Stretch"
-                         VerticalAlignment="Stretch"
-                         Fill="Transparent"
-                         IsHitTestVisible="False"
-                Stroke="{DynamicResource ControlBorderSelectedBrush}"
-                StrokeThickness="1.5" />
-            </Grid>
+
+            <Rectangle Grid.Column="0" Name="FocusVisual"
+                       IsVisible="False"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch"
+                       Fill="Transparent"
+                       IsHitTestVisible="False"
+                       Stroke="{DynamicResource ControlBorderSelectedBrush}"
+                       StrokeThickness="1.5" />
 
             <ContentPresenter Grid.Column="0" Margin="{TemplateBinding Padding}"
                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -116,10 +115,10 @@
     <Style Selector="^:current /template/ Rectangle#CurrencyVisual">
       <Setter Property="IsVisible" Value="True" />
     </Style>
-    <Style Selector="^:focus /template/ Grid#FocusVisual">
+    <Style Selector="^:focus /template/ Rectangle#FocusVisual">
       <Setter Property="IsVisible" Value="False" />
     </Style>
-    <Style Selector="^:current /template/ Grid#FocusVisual">
+    <Style Selector="^:current /template/ Rectangle#FocusVisual">
       <Setter Property="IsVisible"
               Value="{AndBinding
                   {Binding $parent[DataGrid].IsFocused},
