@@ -107,6 +107,7 @@
   <SolidColorBrush x:Key="BorderBrush" Color="{DynamicResource BorderColor}" />
 
   <SolidColorBrush x:Key="ForegroundHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.90" />
+  <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />
   <SolidColorBrush x:Key="ForegroundDisabledBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.55" />
 
   <SolidColorBrush x:Key="SystemControlErrorTextForegroundBrush" Color="{DynamicResource ErrorTextColor}" />

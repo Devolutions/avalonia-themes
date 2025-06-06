@@ -374,10 +374,25 @@
 
             <Border Name="ItemBorder"
                     Background="{TemplateBinding Background}"
-                    Margin="8 0"
-                    CornerRadius="{DynamicResource ControlCornerRadius}"
                     Grid.RowSpan="2"
-                    Grid.ColumnSpan="2" />
+                    Grid.ColumnSpan="2">
+              <Border.Margin>
+                <MultiBinding Converter="{x:Static DevoMultiConverters.OptionsToChoiceConverter}"
+                              ConverterParameter="None,All,Horizontal,Vertical">
+                  <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGrid}" Path="GridLinesVisibility" />
+                  <Binding Source="{StaticResource DataGridRowMargin}" />
+                  <Binding Source="{StaticResource DataGridGroupHeaderMarginGridLinesVisible}" />
+                </MultiBinding>
+              </Border.Margin>
+              <Border.CornerRadius>
+                <MultiBinding Converter="{x:Static DevoMultiConverters.OptionsToChoiceConverter}"
+                              ConverterParameter="None,All,Horizontal,Vertical">
+                  <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGrid}" Path="GridLinesVisibility" />
+                  <Binding Source="{StaticResource ControlCornerRadius}" />
+                  <Binding Source="{StaticResource ZeroCornerRadius}" />
+                </MultiBinding>
+              </Border.CornerRadius>
+            </Border>
             <Rectangle Name="InvalidVisualElement"
                        Opacity="0"
                        Grid.ColumnSpan="2"
@@ -389,7 +404,7 @@
             <DataGridCellsPresenter Name="PART_CellsPresenter"
                                     Grid.Column="1"
                                     DataGridFrozenGrid.IsFrozen="True"
-                                    Margin="{DynamicResource DataGridRowMargin}" />
+                                    Margin="{DynamicResource DataGridRowPadding}" />
             <DataGridDetailsPresenter Name="PART_DetailsPresenter"
                                       Grid.Row="1"
                                       Grid.Column="1"
@@ -420,7 +435,7 @@
   </ControlTheme>
 
   <!-- RowGroupExpanderButton -->
-  <ControlTheme x:Key="FluentDataGridRowGroupExpanderButtonTheme" TargetType="ToggleButton">
+  <ControlTheme x:Key="DataGridRowGroupExpanderButtonTheme" TargetType="ToggleButton">
     <Setter Property="Template">
       <ControlTemplate>
         <Border Width="12"
@@ -429,31 +444,63 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center">
           <Path Fill="{TemplateBinding Foreground}"
-                Data="{StaticResource DataGridRowGroupHeaderIconClosedPath}"
+                Data="{StaticResource ChevronPath}"
+                Width="9"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
-                Stretch="Uniform" />
+                Stretch="Uniform">
+            <Path.RenderTransform>
+              <RotateTransform Angle="90" />
+            </Path.RenderTransform>
+          </Path>
         </Border>
       </ControlTemplate>
     </Setter>
     <Style Selector="^:checked /template/ Path">
-      <Setter Property="Data" Value="{StaticResource DataGridRowGroupHeaderIconOpenedPath}" />
+      <Setter Property="RenderTransform">
+        <RotateTransform Angle="180" />
+      </Setter>
     </Style>
   </ControlTheme>
 
   <!-- RowGroupHeader -->
   <ControlTheme x:Key="{x:Type DataGridRowGroupHeader}" TargetType="DataGridRowGroupHeader">
-    <Setter Property="Foreground" Value="{DynamicResource DataGridRowGroupHeaderForegroundBrush}" />
-    <Setter Property="Background" Value="{DynamicResource DataGridRowGroupHeaderBackgroundBrush}" />
-    <Setter Property="FontSize" Value="15" />
-    <Setter Property="MinHeight" Value="32" />
+    <Setter Property="Foreground" Value="{Binding $parent[DataGrid].Foreground}" />
+    <Setter Property="Background" Value="{DynamicResource DataGridGroupHeaderBackgroundBrush}" />
+    <Setter Property="MinHeight" Value="26" />
     <Setter Property="Template">
       <ControlTemplate x:DataType="collections:DataGridCollectionViewGroup">
-        <DataGridFrozenGrid Name="PART_Root"
-                            Background="{TemplateBinding Background}"
-                            MinHeight="{TemplateBinding MinHeight}"
-                            ColumnDefinitions="Auto,Auto,Auto,Auto,*"
-                            RowDefinitions="*,Auto">
+        <Border BorderBrush="{Binding $parent[DataGrid].BorderBrush}">
+          <Border.BorderThickness>
+            <MultiBinding Converter="{x:Static DevoMultiConverters.OptionsToChoiceConverter}"
+                          ConverterParameter="None,All,Horizontal,Vertical">
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGrid}" Path="GridLinesVisibility" />
+              <Binding Source="{StaticResource DataGridGroupHeaderBorderThickness}" />
+              <Binding Source="{StaticResource DataGridGroupHeaderBorderThicknessGridLinesVisible}" />
+            </MultiBinding>
+          </Border.BorderThickness>
+          <Border.Margin>
+            <MultiBinding Converter="{x:Static DevoMultiConverters.OptionsToChoiceConverter}"
+                          ConverterParameter="None,All,Horizontal,Vertical">
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGrid}" Path="GridLinesVisibility" />
+              <Binding Source="{StaticResource DataGridGroupHeaderMargin}" />
+              <Binding Source="{StaticResource DataGridGroupHeaderMarginGridLinesVisible}" />
+            </MultiBinding>
+          </Border.Margin>
+          <Border.CornerRadius>
+            <MultiBinding Converter="{x:Static DevoMultiConverters.OptionsToChoiceConverter}"
+                          ConverterParameter="None,All,Horizontal,Vertical">
+              <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGrid}" Path="GridLinesVisibility" />
+              <Binding Source="{StaticResource ControlCornerRadius}" />
+              <Binding Source="{StaticResource ZeroCornerRadius}" />
+            </MultiBinding>
+          </Border.CornerRadius>
+
+          <DataGridFrozenGrid Name="PART_Root"
+                              Background="{TemplateBinding Background}"
+                              MinHeight="{TemplateBinding MinHeight}"
+                              ColumnDefinitions="Auto,Auto,Auto,Auto,*"
+                              RowDefinitions="*,Auto">
 
           <Rectangle Name="PART_IndentSpacer"
                      Grid.Column="1" />
@@ -462,7 +509,7 @@
                         Width="12"
                         Height="12"
                         Margin="12,0,0,0"
-                        Theme="{StaticResource FluentDataGridRowGroupExpanderButtonTheme}"
+                        Theme="{StaticResource DataGridRowGroupExpanderButtonTheme}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         Background="{TemplateBinding Background}"
@@ -470,22 +517,24 @@
                         IsTabStop="False"
                         Foreground="{TemplateBinding Foreground}" />
 
-          <StackPanel Grid.Column="3"
-                      Orientation="Horizontal"
-                      VerticalAlignment="Center"
-                      Margin="12,0,0,0">
+          <DockPanel Grid.Column="3"
+                     Grid.ColumnSpan="2"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Stretch"
+                     Margin="12,0">
             <TextBlock Name="PART_PropertyNameElement"
+                       DockPanel.Dock="Left"
                        Margin="4,0,0,0"
                        IsVisible="{TemplateBinding IsPropertyNameVisible}"
+                       Foreground="{DynamicResource ForegroundMidBrush}" />
+            <TextBlock Name="PART_ItemCountElement"
+                       DockPanel.Dock="Right"
+                       IsVisible="{TemplateBinding IsItemCountVisible}"
                        Foreground="{TemplateBinding Foreground}" />
             <TextBlock Margin="4,0,0,0"
                        Text="{Binding Key}"
                        Foreground="{TemplateBinding Foreground}" />
-            <TextBlock Name="PART_ItemCountElement"
-                       Margin="4,0,0,0"
-                       IsVisible="{TemplateBinding IsItemCountVisible}"
-                       Foreground="{TemplateBinding Foreground}" />
-          </StackPanel>
+          </DockPanel>
 
           <Rectangle Name="CurrencyVisual"
                      Grid.ColumnSpan="5"
@@ -524,6 +573,7 @@
                      Grid.ColumnSpan="5"
                      Height="1" />
         </DataGridFrozenGrid>
+        </Border>
       </ControlTemplate>
     </Setter>
   </ControlTheme>
@@ -568,7 +618,7 @@
             <DataGridColumnHeadersPresenter Name="PART_ColumnHeadersPresenter"
                                             Grid.Column="1"
                                             Grid.Row="0" Grid.ColumnSpan="2"
-                                            Margin="{DynamicResource DataGridRowMargin}" />
+                                            Margin="{DynamicResource DataGridRowPadding}" />
             <Rectangle Name="PART_ColumnHeadersAndRowsSeparator"
                        Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="0"
                        VerticalAlignment="Bottom"
