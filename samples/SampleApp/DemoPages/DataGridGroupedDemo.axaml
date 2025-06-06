@@ -12,20 +12,67 @@
     <vm:DataGridGroupedViewModel />
   </Design.DataContext>
 
-  <DataGrid Margin="20" ItemsSource="{Binding Items}"
-            GridLinesVisibility="None">
-    <DataGrid.Columns>
-      <DataGridTemplateColumn Header="">
-        <DataGridTemplateColumn.CellTemplate>
-          <DataTemplate>
-            <Svg Path="/Assets/Computer.svg" Width="20" Height="20" Css=".st0 {fill: #3B86EA}" />
-          </DataTemplate>
-        </DataGridTemplateColumn.CellTemplate>
-      </DataGridTemplateColumn>
-      <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" x:DataType="local:DataGridItem" />
-      <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" />
-      <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" />
-      <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" />
-    </DataGrid.Columns>
-  </DataGrid>
+  <StackPanel Spacing="20"
+              Margin="20">
+    <DataGrid ItemsSource="{Binding Items}"
+              Height="280"
+              GridLinesVisibility="None">
+
+      <DataGrid.Styles>
+        <Style Selector="DataGridRowGroupHeader">
+          <Setter Property="IsPropertyNameVisible" Value="True" />
+          <Setter Property="IsItemCountVisible" Value="True" />
+        </Style>
+      </DataGrid.Styles>
+
+      <DataGrid.Columns>
+        <DataGridTemplateColumn Header="">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Svg Path="/Assets/Computer.svg" Width="20" Height="20" Css=".st0 {fill: #3B86EA}" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" />
+        <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" />
+        <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" />
+      </DataGrid.Columns>
+    </DataGrid>
+    <TextBlock>
+      Display of the property by which items are grouped (here 'Type') and the number of items in the group can be enabled with:
+    </TextBlock>
+    <TextBlock Classes="code"
+               HorizontalAlignment="Left"
+               Margin="5 -5 0 0 "
+               Padding="5 8 6 8">
+      <TextBlock.Inlines>
+        <Run Text=" &lt;Style Selector=&quot;DataGridRowGroupHeader&quot;&gt;&#x0a;" />
+        <Run Text="  &lt;Setter Property=&quot;IsPropertyNameVisible&quot; Value=&quot;True&quot; /&gt;&#x0a;" />
+        <Run Text="  &lt;Setter Property=&quot;IsItemCountVisible&quot; Value=&quot;True&quot; /&gt;&#x0a;" />
+        <Run Text="&lt;/Style&gt;" />
+      </TextBlock.Inlines>
+    </TextBlock>
+
+    <DataGrid ItemsSource="{Binding Items}"
+              Height="280"
+              GridLinesVisibility="All">
+      <DataGrid.Columns>
+        <DataGridTemplateColumn Header="">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <Svg Path="/Assets/Computer.svg" Width="20" Height="20" Css=".st0 {fill: #3B86EA}" />
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" />
+        <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" />
+        <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" />
+      </DataGrid.Columns>
+    </DataGrid>
+
+    <TextBlock>
+      Display of Gridlines can be enabled with the property <TextBlock Classes="code" Text="GridLinesVisibility=&quot;All&quot;" /> (Default under DevExpress)
+    </TextBlock>
+
+  </StackPanel>
 </UserControl>
