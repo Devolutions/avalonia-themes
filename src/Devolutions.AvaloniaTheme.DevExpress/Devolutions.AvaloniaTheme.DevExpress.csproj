@@ -15,7 +15,7 @@
     <PackageReference Include="Avalonia" Version="[11.2.0,)"/>
     <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)"/>
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)"/>
-    <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.5.28,)"/>
+    <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.6.9,)"/>
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
