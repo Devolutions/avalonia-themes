@@ -76,16 +76,16 @@ jobs:
           }
                     
           $PackageList = ""
-          if ('${{ inputs.build-mac }}' -eq 'true) {
+          if ('${{ inputs.build-mac }}' -eq 'true') {
             $PackageList += "AvaloniaTheme.MacOS"
           }
-          if ('${{ inputs.build-devexpress }}' -eq 'true) {
+          if ('${{ inputs.build-devexpress }}' -eq 'true') {
             $PackageList += "AvaloniaTheme.DevExpress"
           }
-          if ('${{ inputs.build-linux }}' -eq 'true) {
+          if ('${{ inputs.build-linux }}' -eq 'true') {
             $PackageList += "AvaloniaTheme.Linux"
           }
-          if ('${{ inputs.build-controls }}' -eq 'true) {
+          if ('${{ inputs.build-controls }}' -eq 'true') {
             $PackageList += "AvaloniaControls"
           }
           $PackageList = $PackageList -replace [,]$
