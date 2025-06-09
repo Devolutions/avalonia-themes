@@ -77,16 +77,16 @@ jobs:
                     
           $PackageList = ""
           if ('${{ inputs.build-mac }}' -eq 'true') {
-            $PackageList += "AvaloniaTheme.MacOS"
+            $PackageList += "AvaloniaTheme.MacOS,"
           }
           if ('${{ inputs.build-devexpress }}' -eq 'true') {
-            $PackageList += "AvaloniaTheme.DevExpress"
+            $PackageList += "AvaloniaTheme.DevExpress,"
           }
           if ('${{ inputs.build-linux }}' -eq 'true') {
-            $PackageList += "AvaloniaTheme.Linux"
+            $PackageList += "AvaloniaTheme.Linux,"
           }
           if ('${{ inputs.build-controls }}' -eq 'true') {
-            $PackageList += "AvaloniaControls"
+            $PackageList += "AvaloniaControls,"
           }
           $PackageList = $PackageList -replace '[,]$'
 
