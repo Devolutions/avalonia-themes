@@ -10,13 +10,9 @@
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="/Accents/Icons.axaml" />
-        <!-- <MergeResourceInclude Source="/Converters/_index.axaml" /> -->
         <MergeResourceInclude Source="/Controls/_index.axaml" />
         <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Styles.Resources>
-
-  <!-- Themed Controls -->
-  <StyleInclude Source="/Accents/Styles.axaml" />
 </Styles>
