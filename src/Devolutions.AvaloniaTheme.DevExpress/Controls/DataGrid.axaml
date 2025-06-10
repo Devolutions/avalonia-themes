@@ -481,6 +481,7 @@
     <Setter Property="GridLinesVisibility" Value="All" />
     <Setter Property="RowHeight" Value="{DynamicResource DataGridRowHeight}" />
     <Setter Property="ColumnHeaderHeight" Value="26" />
+    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
     <Setter Property="RowBackground" Value="Transparent" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="BorderThickness" Value="1" />
