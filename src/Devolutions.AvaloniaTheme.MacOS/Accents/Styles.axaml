@@ -1,17 +1,20 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+  <!--
+    This file *MUST NEVER* contain global styles overrides that are not gated behind a specific class!
+    Additionally, if they can be included in their respective ControlTheme, that is prefered.
+
+    This is to ensure no styles "bleed-out"/"linger" if the consumer change/unset a control's ControlTheme.
+    - sbergerondrouin 2025-06-09
+  -->
+
   <Style Selector="Menu.MacOS_Theme_MenuOpensAbove > MenuItem > Border > Panel > Popup">
     <Setter Property="Placement" Value="TopEdgeAlignedLeft" />
     <Setter Property="VerticalOffset" Value="{DynamicResource MenuPopupAboveVerticalOffset}" />
     <Style Selector="^ Border">
       <Setter Property="Margin" Value="{DynamicResource MenuPopupAboveMargin}" />
     </Style>
-  </Style>
-
-  <Style Selector="MenuItem Svg">
-    <Setter Property="Width" Value="15" />
-    <Setter Property="Height" Value="15" />
   </Style>
 
   <Style Selector="Svg">

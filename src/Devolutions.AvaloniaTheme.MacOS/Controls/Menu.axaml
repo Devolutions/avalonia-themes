@@ -60,9 +60,51 @@
     </DockPanel>
   </Design.PreviewWith>
 
+  <ControlTheme x:Key="DevolutionsMacOsTopLevelMenuItemIconTheme" TargetType="ContentControl">
+    <Setter Property="MaxWidth" Value="15" />
+    <Setter Property="MaxHeight" Value="15" />
+
+    <Setter Property="Template">
+      <ControlTemplate>
+        <!-- <Panel> -->
+        <!--   <Viewbox -->
+        <!--     StretchDirection="DownOnly" -->
+        <!--     HorizontalAlignment="Center" -->
+        <!--     VerticalAlignment="Center"> -->
+        <!--     <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" /> -->
+        <!--   </Viewbox> -->
+        <!--   <GreyscaleOverlay /> -->
+        <!-- </Panel> -->
+        <!-- <Panel> -->
+        <!--   <Viewbox -->
+        <!--     StretchDirection="DownOnly" -->
+        <!--     HorizontalAlignment="Center" -->
+        <!--     VerticalAlignment="Center"> -->
+        <!--     ~1~ <GreyscaleControl Content="{TemplateBinding Content}" /> @1@ -->
+        <!--     <GreyscaleControl> -->
+        <!--       <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" /> -->
+        <!--     </GreyscaleControl> -->
+        <!--   </Viewbox> -->
+        <!-- </Panel> -->
+        <GreyscaleControl>
+          <Viewbox
+            StretchDirection="DownOnly"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <!-- <GreyscaleControl Content="{TemplateBinding Content}" /> -->
+            <ContentPresenter
+              Name="PART_ContentPresenter"
+              Content="{TemplateBinding Content}" />
+          </Viewbox>
+        </GreyscaleControl>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+
   <!-- TODO: Consider refactoring with separate ControlThemes for the different Menu types 
        (instead of multiple individual variations on the property level) -->
-  <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
+  <ControlTheme x:Key="DevolutionsMacOsTopLevelMenuItem" TargetType="MenuItem">
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="FontSize">
       <Setter.Value>
@@ -155,8 +197,12 @@
                         <Binding Source="{x:False}" />
                       </MultiBinding>
                     </ToolTip.ServiceEnabled>
-                    <ContentPresenter Name="PART_IconPresenter"
-                                      Content="{TemplateBinding Icon}" />
+
+                    <ContentControl
+                      Name="PART_IconPresenter"
+                      Content="{TemplateBinding Icon}"
+                      Theme="{StaticResource DevolutionsMacOsTopLevelMenuItemIconTheme}" />
+
                     <Panel Name="PART_ChevronPanel">
                       <Border Name="PART_ChevronBorder" Margin="3 0 0 0 ">
                         <Path Name="PART_ChevronPath"
@@ -319,7 +365,7 @@
 
   <ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
     <Setter Property="Background" Value="Transparent" />
-    <Setter Property="ItemContainerTheme" Value="{StaticResource FluentTopLevelMenuItem}" />
+    <Setter Property="ItemContainerTheme" Value="{StaticResource DevolutionsMacOsTopLevelMenuItem}" />
     <Setter Property="Padding" Value="{DynamicResource MenuBarPadding}" />
     <Setter Property="Template">
       <ControlTemplate>
