@@ -24,7 +24,7 @@
             -->
       <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,11.2.7.1)" />
       <PackageReference Include="SkiaSharp" Version="[2.88.9,3.116.0)" />
-      <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.5.28,)" />
+      <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.6.9,)" />
    </ItemGroup>
    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
       <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />

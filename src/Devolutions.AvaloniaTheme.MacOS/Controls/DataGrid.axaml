@@ -584,6 +584,7 @@
     <Setter Property="CanUserReorderColumns" Value="True" />
     <Setter Property="CanUserResizeColumns" Value="True" />
     <Setter Property="CanUserSortColumns" Value="True" />
+    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
     <Setter Property="RowBackground" Value="Transparent" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="BorderThickness" Value="1" />
@@ -628,6 +629,8 @@
             <DataGridRowsPresenter Name="PART_RowsPresenter"
                                    Grid.Row="1"
                                    Grid.Column="0"
+                                   Grid.ColumnSpan="2"
+                                   Grid.RowSpan="2"
                                    ScrollViewer.IsScrollInertiaEnabled="{TemplateBinding IsScrollInertiaEnabled}">
               <DataGridRowsPresenter.GestureRecognizers>
                 <ScrollGestureRecognizer CanHorizontallyScroll="True"
@@ -697,9 +700,5 @@
       </Style>
     </Style>
 
-    <Style Selector="^ /template/ DataGridRowsPresenter#PART_RowsPresenter">
-      <Setter Property="Grid.RowSpan" Value="2" />
-      <Setter Property="Grid.ColumnSpan" Value="3" />
-    </Style>
   </ControlTheme>
 </ResourceDictionary>

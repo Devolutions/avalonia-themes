@@ -33,7 +33,7 @@
 
       <Color x:Key="TransparentColor">Transparent</Color>
 
-      <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" Opacity="1" />
+      <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource BackgroundColor}" />
 
       <SolidColorBrush x:Key="ForegroundHighMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.73" />
       <SolidColorBrush x:Key="ForegroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.5" />

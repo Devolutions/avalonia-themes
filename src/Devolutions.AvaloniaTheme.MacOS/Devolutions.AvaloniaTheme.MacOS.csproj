@@ -15,30 +15,12 @@
       <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
       <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
       <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
-      <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.5.28,)" />
+      <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.6.9,)" />
    </ItemGroup>
    <ItemGroup>
       <AvaloniaResource Include="Accents/Assets/**" />
    </ItemGroup>
    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
       <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
-   </ItemGroup>
-   <ItemGroup>
-      <Compile Update="__INTERNAL__\MacOsTheme.axaml.cs">
-         <DependentUpon>MacOsTheme.axaml</DependentUpon>
-         <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="__INTERNAL__\MacOsThemeWithGlobalStyles.axaml.cs">
-         <DependentUpon>MacOsThemeWithGlobalStyles.axaml</DependentUpon>
-         <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="DevolutionsMacOsTheme.axaml.cs">
-         <SubType>Code</SubType>
-         <DependentUpon>DevolutionsMacOsTheme.axaml</DependentUpon>
-      </Compile>
-      <Compile Update="DevolutionsMacOsThemeGlobalStyles.axaml.cs">
-         <DependentUpon>DevolutionsMacOsThemeGlobalStyles.axaml</DependentUpon>
-         <SubType>Code</SubType>
-      </Compile>
    </ItemGroup>
 </Project>

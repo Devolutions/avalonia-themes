@@ -3,28 +3,32 @@ name: build package
 on:
   workflow_dispatch:
     inputs:
+      build-mac:
+        description: 'AvaloniaTheme.MacOS'
+        type: boolean
+        default: false
+      build-devexpress:
+        description: 'AvaloniaTheme.DevExpress'
+        type: boolean
+        default: false
+      build-linux:
+        description: 'AvaloniaTheme.Linux'
+        type: boolean
+        default: false
+      build-controls:
+        description: 'AvaloniaControls'
+        type: boolean
+        default: false
       version:
         description: 'release version'
         default: "latest"
         required: true
-      target-package:
-        type: choice
-        description: target package to build
-        required: true
-        options:
-          - all
-          - AvaloniaTheme.MacOS
-          - AvaloniaTheme.DevExpress
-          - AvaloniaTheme.Linux
-          - AvaloniaControls
       skip-publish:
         description: 'Skip publishing'
-        required: true
         type: boolean
         default: false
       dry-run:
         description: 'Dry run (simulate)'
-        required: true
         type: boolean
         default: true
   schedule:
@@ -70,13 +74,21 @@ jobs:
           if ($PackageVersion -NotMatch '^\d+\.\d+\.\d+\.\d+$') {
             throw "invalid version format: $PackageVersion, expected: 1.2.3.4"
           }
-
-          $TargetPackage = '${{ inputs.target-package }}'
-          if ([string]::IsNullOrEmpty($TargetPackage) -or $TargetPackage -eq 'all') {
-            $PackageList = "AvaloniaTheme.MacOS,AvaloniaTheme.DevExpress,AvaloniaTheme.Linux,AvaloniaControls"
-          } else {
-            $PackageList = $TargetPackage
+                    
+          $PackageList = ""
+          if ('${{ inputs.build-mac }}' -eq 'true') {
+            $PackageList += "AvaloniaTheme.MacOS,"
           }
+          if ('${{ inputs.build-devexpress }}' -eq 'true') {
+            $PackageList += "AvaloniaTheme.DevExpress,"
+          }
+          if ('${{ inputs.build-linux }}' -eq 'true') {
+            $PackageList += "AvaloniaTheme.Linux,"
+          }
+          if ('${{ inputs.build-controls }}' -eq 'true') {
+            $PackageList += "AvaloniaControls,"
+          }
+          $PackageList = $PackageList -replace '[,]$'
 
           echo "package-env=$PackageEnv" >> $Env:GITHUB_OUTPUT
           echo "package-version=$PackageVersion" >> $Env:GITHUB_OUTPUT
@@ -84,6 +96,7 @@ jobs:
           echo "skip-publish=$($SkipPublish.ToString().ToLower())" >> $Env:GITHUB_OUTPUT
           echo "dry-run=$($DryRun.ToString().ToLower())" >> $Env:GITHUB_OUTPUT
 
+          echo "::notice::Building Packages: $PackageList"
           echo "::notice::Version: $PackageVersion"
           echo "::notice::DryRun: $DryRun"
 
