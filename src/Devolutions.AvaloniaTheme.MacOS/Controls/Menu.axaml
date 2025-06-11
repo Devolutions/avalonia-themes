@@ -66,37 +66,14 @@
 
     <Setter Property="Template">
       <ControlTemplate>
-        <!-- <Panel> -->
-        <!--   <Viewbox -->
-        <!--     StretchDirection="DownOnly" -->
-        <!--     HorizontalAlignment="Center" -->
-        <!--     VerticalAlignment="Center"> -->
-        <!--     <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" /> -->
-        <!--   </Viewbox> -->
-        <!--   <GreyscaleOverlay /> -->
-        <!-- </Panel> -->
-        <!-- <Panel> -->
-        <!--   <Viewbox -->
-        <!--     StretchDirection="DownOnly" -->
-        <!--     HorizontalAlignment="Center" -->
-        <!--     VerticalAlignment="Center"> -->
-        <!--     ~1~ <GreyscaleControl Content="{TemplateBinding Content}" /> @1@ -->
-        <!--     <GreyscaleControl> -->
-        <!--       <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" /> -->
-        <!--     </GreyscaleControl> -->
-        <!--   </Viewbox> -->
-        <!-- </Panel> -->
-        <GreyscaleControl>
-          <Viewbox
-            StretchDirection="DownOnly"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center">
-            <!-- <GreyscaleControl Content="{TemplateBinding Content}" /> -->
-            <ContentPresenter
-              Name="PART_ContentPresenter"
-              Content="{TemplateBinding Content}" />
-          </Viewbox>
-        </GreyscaleControl>
+        <Viewbox
+          StretchDirection="DownOnly"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+          <ContentPresenter
+            Name="PART_ContentPresenter"
+            Content="{TemplateBinding Content}" />
+        </Viewbox>
       </ControlTemplate>
     </Setter>
   </ControlTheme>

@@ -1,8 +1,10 @@
-﻿<Styles xmlns="https://github.com/avaloniaui"
+﻿<Styles x:Class="Devolutions.AvaloniaTheme.DevExpress.DevolutionsDevExpressTheme"
+        xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <!-- Using Fluent Theme as a fallback for anything not defined in DevExpress theme -->
-  <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" />
+  <!-- <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentTheme.axaml" /> -->
+  <FluentTheme />
 
   <StyleInclude Source="avares://Devolutions.AvaloniaControls/DefaultControlTemplates.axaml" />
 
@@ -10,12 +12,9 @@
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="/Accents/Icons.axaml" />
-        <MergeResourceInclude Source="/Controls/_index.axaml" />
         <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
+        <MergeResourceInclude Source="/Controls/_index.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
   </Styles.Resources>
-
-  <!-- Themed Controls -->
-  <StyleInclude Source="/Accents/Styles.axaml" />
 </Styles>

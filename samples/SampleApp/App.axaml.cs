@@ -43,13 +43,21 @@ public class App : Application
             var theme = this.DetectDesignTheme();
 
             if (OperatingSystem.IsWindows())
+            {
                 theme ??= new DevExpressTheme();
+            }
             else if (OperatingSystem.IsMacOS())
+            {
                 theme ??= new MacOsTheme();
+            }
             else if (OperatingSystem.IsLinux())
+            {
                 theme ??= new LinuxYaruTheme();
+            }
             else
+            {
                 theme ??= new MacOsTheme();
+            }
 
             SetTheme(theme);
         }
@@ -69,17 +77,10 @@ public class App : Application
                 doc.Load(Path.Join(projDir!.FullName, "App.axaml"));
                 var styles = doc["Application"]!["Application.Styles"];
                 foreach (var obj in styles!)
-                    if (obj is XmlElement elem && elem.Name.Equals("StyleInclude", StringComparison.OrdinalIgnoreCase))
-                    {
-                        var source = elem.GetAttribute("Source");
-                        return source switch
-                        {
-                            "avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" => new MacOsTheme(),
-                            "avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" => new LinuxYaruTheme(),
-                            "avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" => new DevExpressTheme(),
-                            _ => null,
-                        };
-                    }
+                {
+                    var theme = this.ThemeFromXmlElement(obj as XmlElement);
+                    if (theme is not null) return theme;
+                }
             }
         }
         catch (Exception)
@@ -87,6 +88,26 @@ public class App : Application
         }
 
         return null;
+    }
+
+    private Theme? ThemeFromXmlElement(XmlElement? elem)
+    {
+        if (elem is null) return null;
+
+        return elem.Name switch
+        {
+            "DevolutionsMacOsTheme" => new MacOsTheme(),
+            "DevolutionsLinuxYaruTheme" => new LinuxYaruTheme(),
+            "DevolutionsDevExpressTheme" => new DevExpressTheme(),
+            "StyleInclude" => elem.GetAttribute("Source") switch
+            {
+                "avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" => new MacOsTheme(),
+                "avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" => new LinuxYaruTheme(),
+                "avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" => new DevExpressTheme(),
+                _ => null,
+            },
+            _ => null,
+        };
     }
 
     public static void SetTheme(Theme theme)
@@ -109,6 +130,7 @@ public class App : Application
         app.themeStylesContainer.AddRange(styles!);
 
         if (reopenWindow)
+        {
             if (app.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopLifetime)
             {
                 var oldWindow = desktopLifetime.MainWindow;
@@ -118,19 +140,25 @@ public class App : Application
                 newWindow.Show();
                 oldWindow?.Close();
             }
+        }
     }
 
     public override void OnFrameworkInitializationCompleted()
     {
         if (this.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+        {
             desktop.MainWindow = new MainWindow { DataContext = new MainWindowViewModel() };
+        }
 
         base.OnFrameworkInitializationCompleted();
     }
 
     public void AttacheDevToolsOnce()
     {
-        if (this.devToolsAttached) return;
+        if (this.devToolsAttached)
+        {
+            return;
+        }
 
         this.AttachDeveloperTools();
         this.devToolsAttached = true;
@@ -143,9 +171,21 @@ public abstract class Theme
 
     public override bool Equals(object? obj)
     {
-        if (obj is null) return false;
-        if (ReferenceEquals(this, obj)) return true;
-        if (obj.GetType() != this.GetType()) return false;
+        if (obj is null)
+        {
+            return false;
+        }
+
+        if (ReferenceEquals(this, obj))
+        {
+            return true;
+        }
+
+        if (obj.GetType() != this.GetType())
+        {
+            return false;
+        }
+
         return this.Equals((Theme)obj);
     }
 
