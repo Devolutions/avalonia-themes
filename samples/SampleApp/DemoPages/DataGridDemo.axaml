@@ -11,43 +11,84 @@
     <vm:DataGridViewModel />
   </Design.DataContext>
 
-  <StackPanel Margin="20" Spacing="30">
-    <DataGrid ItemsSource="{Binding Items}"
-              Height="150"
-              IsReadOnly="False">
-      <DataGrid.Columns>
-        <DataGridTemplateColumn Header="">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <Svg Path="/Assets/Computer.svg" Width="16" Height="16" Css=".st0 {fill: #3B86EA}" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" />
-        <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" />
-        <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" />
-        <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" />
-      </DataGrid.Columns>
-    </DataGrid>
-    <StackPanel Spacing="10">
-      <TextBlock>With <TextBlock Classes="code" Text="Classes='cell-selectable-style'" /></TextBlock>
-      <DataGrid ItemsSource="{Binding Items}"
-                Classes="cell-selectable-style"
-                IsReadOnly="False">
-        <DataGrid.Columns>
-          <DataGridTemplateColumn Header="">
-            <DataGridTemplateColumn.CellTemplate>
-              <DataTemplate>
-                <Svg Path="/Assets/Computer.svg" Width="16" Height="16" Css=".st0 {fill: #3B86EA}" />
-              </DataTemplate>
-            </DataGridTemplateColumn.CellTemplate>
-          </DataGridTemplateColumn>
-          <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" />
-          <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" />
-          <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" />
-          <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" />
-        </DataGrid.Columns>
-      </DataGrid>
-    </StackPanel>
-  </StackPanel>
+  <TabControl TabStripPlacement="Top" Margin="20">
+    <TabItem Header="DataGrid">
+      <StackPanel Margin="20" Spacing="30">
+        <DataGrid ItemsSource="{Binding Items}"
+                  Height="150"
+                  IsReadOnly="False">
+          <DataGrid.Columns>
+            <DataGridTemplateColumn Header="">
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Svg Path="/Assets/Computer.svg" Width="16" Height="16" Css=".st0 {fill: #3B86EA}" />
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" Width="*" />
+            <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" Width="*" />
+            <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" Width="*" />
+            <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" Width="*" />
+          </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Spacing="10">
+          <TextBlock>With <TextBlock Classes="code" Text="Classes='cell-selectable-style'" /></TextBlock>
+          <DataGrid ItemsSource="{Binding Items}"
+                    Classes="cell-selectable-style"
+                    IsReadOnly="False">
+            <DataGrid.Columns>
+              <DataGridTemplateColumn Header="">
+                <DataGridTemplateColumn.CellTemplate>
+                  <DataTemplate>
+                    <Svg Path="/Assets/Computer.svg" Width="16" Height="16" Css=".st0 {fill: #3B86EA}" />
+                  </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+              </DataGridTemplateColumn>
+              <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" Width="*" />
+              <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" Width="*" />
+              <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" Width="*" />
+              <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" Width="*" />
+            </DataGrid.Columns>
+          </DataGrid>
+        </StackPanel>
+      </StackPanel>
+    </TabItem>
+    <TabItem Header="Non-Distributed Columns">
+      <StackPanel Margin="20" Spacing="10">
+        <TextBlock><Bold>NOTE:</Bold> When none of the columns are sized to fill the width of the table (<TextBlock Classes="code" Text="Width='*'" />), the right row margins are too large</TextBlock>
+        <DataGrid ItemsSource="{Binding Items}">
+          <DataGrid.Columns>
+            <DataGridTemplateColumn Header="">
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Svg Path="/Assets/Computer.svg" Width="16" Height="16" Css=".st0 {fill: #3B86EA}" />
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" />
+            <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" />
+            <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" />
+            <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" />
+          </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock>This can be fixed by applying <TextBlock Classes="code" Text="Classes='MacOS_NonDistributed_Columns'" />:</TextBlock>
+        <DataGrid ItemsSource="{Binding Items}"
+                  Classes="MacOS_NonDistributed_Columns">
+          <DataGrid.Columns>
+            <DataGridTemplateColumn Header="">
+              <DataGridTemplateColumn.CellTemplate>
+                <DataTemplate>
+                  <Svg Path="/Assets/Computer.svg" Width="16" Height="16" Css=".st0 {fill: #3B86EA}" />
+                </DataTemplate>
+              </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTextColumn Header="Type" Binding="{Binding ItemType}" />
+            <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" />
+            <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" />
+            <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" />
+          </DataGrid.Columns>
+        </DataGrid>
+      </StackPanel>
+    </TabItem>
+  </TabControl>
 </UserControl>

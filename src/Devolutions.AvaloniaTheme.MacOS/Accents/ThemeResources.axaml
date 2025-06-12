@@ -391,6 +391,7 @@
   <x:Double x:Key="DataGridSortChevronSize">7</x:Double>
   <Thickness x:Key="DataGridRowPadding">6 0</Thickness>
   <Thickness x:Key="DataGridRowMargin">8 0</Thickness>
+  <Thickness x:Key="DataGridDistributedColumnsRowMargin">8 0 18 0</Thickness>  
   <Thickness x:Key="DataGridGroupHeaderBorderThickness">1</Thickness>
   <Thickness x:Key="DataGridGroupHeaderBorderThicknessGridLinesVisible">0 1</Thickness>
   <Thickness x:Key="DataGridGroupHeaderMargin">8 2</Thickness>
