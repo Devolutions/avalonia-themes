@@ -3,6 +3,9 @@ namespace Devolutions.AvaloniaTheme.MacOS;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 
+/// <summary>
+/// Include Devolution's MacOs theme's optional global styles in an application.
+/// </summary>
 public class DevolutionsMacOsThemeGlobalStyles : Styles
 {
     /// <summary> 

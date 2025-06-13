@@ -3,6 +3,9 @@ namespace Devolutions.AvaloniaTheme.DevExpress;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 
+/// <summary>
+/// Includes Devolutions's Windows theme, based on DevExpress's look, in an application.
+/// </summary>
 public class DevolutionsDevExpressTheme : Styles
 {
     /// <summary> 

@@ -3,9 +3,6 @@ namespace Devolutions.AvaloniaTheme.MacOS.Internal;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 
-/// <summary>
-/// Includes the fluent theme in an application.
-/// </summary>
 internal class MacOsTheme : Styles
 {
     /// <summary> 

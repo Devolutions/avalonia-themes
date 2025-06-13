@@ -5,7 +5,7 @@ using Avalonia.Styling;
 using Internal;
 
 /// <summary>
-/// Includes the fluent theme in an application.
+/// Includes Devolutions's MacOs theme in an application.
 /// </summary>
 public class DevolutionsMacOsTheme : Styles, ISupportInitialize
 {
@@ -13,6 +13,7 @@ public class DevolutionsMacOsTheme : Styles, ISupportInitialize
 
     /// <summary> 
     /// Initializes a new instance of the <see cref="MacOsTheme"/> class.
+    ///
     /// Global Styles will also be loaded by default, unless `GlobalStyles`
     /// is set to false (`<MacOsTheme GlobalStyles="False" />`)
     /// </summary>

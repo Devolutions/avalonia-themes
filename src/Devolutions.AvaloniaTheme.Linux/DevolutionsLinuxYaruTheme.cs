@@ -3,6 +3,9 @@ namespace Devolutions.AvaloniaTheme.Linux;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 
+/// <summary>
+/// Includes Devolutions's Linux theme, based on the GTK Yaru theme, in an application.
+/// </summary>
 public class DevolutionsLinuxYaruTheme : Styles
 {
     /// <summary> 
