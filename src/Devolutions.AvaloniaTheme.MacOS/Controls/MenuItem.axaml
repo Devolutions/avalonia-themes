@@ -55,6 +55,22 @@
 
   <conv:PlatformKeyGestureConverter x:Key="KeyGestureConverter" />
 
+  <ControlTheme x:Key="DevolutionsMacOsMenuItemIconTheme" TargetType="ContentControl">
+    <Setter Property="Width" Value="10" />
+    <Setter Property="Height" Value="10" />
+
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Viewbox
+          StretchDirection="DownOnly"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+          <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
+        </Viewbox>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
   <ControlTheme x:Key="{x:Type MenuItem}" TargetType="MenuItem">
     <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
     <Setter Property="Background" Value="Transparent" />
@@ -85,13 +101,13 @@
               <ContentControl Grid.Column="0"
                               x:Name="PART_ToggleIconPresenter"
                               IsVisible="False"
-                              Theme="{StaticResource FluentMenuItemIconTheme}"
+                              Theme="{StaticResource DevolutionsMacOsMenuItemIconTheme}"
                               Margin="{DynamicResource MenuIconPresenterMargin}" />
 
               <ContentControl Name="PART_IconPresenter"
                               Grid.Column="1"
                               IsVisible="False"
-                              Theme="{StaticResource FluentMenuItemIconTheme}"
+                              Theme="{StaticResource DevolutionsMacOsMenuItemIconTheme}"
                               Content="{TemplateBinding Icon}"
                               Margin="{DynamicResource MenuIconPresenterMargin}" />
 
@@ -231,25 +247,5 @@
         </Template>
       </Setter>
     </Style>
-  </ControlTheme>
-  <ControlTheme x:Key="HorizontalMenuItem" TargetType="MenuItem" BasedOn="{StaticResource FluentTopLevelMenuItem}">
-    <Setter Property="Padding" Value="{DynamicResource HorizontalMenuFlyoutItemThemePaddingNarrow}" />
-    <Setter Property="Margin" Value="{DynamicResource HorizontalMenuFlyoutItemMargin}" />
-  </ControlTheme>
-
-  <ControlTheme x:Key="FluentMenuItemIconTheme"
-                TargetType="ContentControl">
-    <Setter Property="Width" Value="10" />
-    <Setter Property="Height" Value="10" />
-    <Setter Property="Template">
-      <ControlTemplate>
-        <Viewbox
-          StretchDirection="DownOnly"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center">
-          <ContentPresenter Name="PART_ContentPresenter" Content="{TemplateBinding Content}" />
-        </Viewbox>
-      </ControlTemplate>
-    </Setter>
   </ControlTheme>
 </ResourceDictionary>
