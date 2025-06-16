@@ -46,7 +46,7 @@
     <Setter Property="Background" Value="Transparent" />
 
     <Style Selector="^[TabStripPlacement=Top]">
-      <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderLowBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderMidBrush}" />
       <Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
       <Setter Property="CornerRadius" Value="{DynamicResource LayoutCornerRadius}" />
       <Setter Property="ClipToBounds" Value="False" />
