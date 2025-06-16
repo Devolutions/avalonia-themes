@@ -64,7 +64,7 @@
                       Background="{DynamicResource TabControlBackgroundBrush}"
                       HorizontalAlignment="Center"
                       BorderBrush="{DynamicResource LayoutBorderMidBrush}"
-                      BorderThickness="0.5 1 0.5 0.6"
+                      BorderThickness="0.5 0.5 0.5 0.6"
                       CornerRadius="{DynamicResource ControlCornerRadius}"
                       Padding="0"
                       ZIndex="1"
