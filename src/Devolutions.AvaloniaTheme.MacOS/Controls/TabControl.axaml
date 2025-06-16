@@ -7,7 +7,7 @@
 
   <Design.PreviewWith>
     <ThemeVariantScope RequestedThemeVariant="Dark">
-      <Border Background="#212121">
+      <Border Background="{DynamicResource BackgroundBrush}">
         <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
           <Border Width="500">
             <TabControl TabStripPlacement="Left" Margin="5">
@@ -47,7 +47,7 @@
 
     <Style Selector="^[TabStripPlacement=Top]">
       <Setter Property="BorderBrush" Value="{DynamicResource LayoutBorderMidBrush}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource BorderThickness}" />
+      <Setter Property="BorderThickness" Value="0.6" />
       <Setter Property="CornerRadius" Value="{DynamicResource LayoutCornerRadius}" />
       <Setter Property="ClipToBounds" Value="False" />
       <Setter Property="Padding" Value="10 -10 10 10" />
@@ -66,7 +66,7 @@
                       BorderBrush="{DynamicResource LayoutBorderMidBrush}"
                       BorderThickness="0.5 0.5 0.5 0.6"
                       CornerRadius="{DynamicResource ControlCornerRadius}"
-                      Padding="0"
+                      Padding="2 0 0 0"
                       ZIndex="1"
                       DockPanel.Dock="{TemplateBinding TabStripPlacement}">
                 <Border.Margin>
