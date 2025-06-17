@@ -1,37 +1,36 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Background="{DynamicResource BackgroundBrush}"
-            Margin="16"
-            Padding="48"
-            Width="400"
-            Height="200">
-      <Border.ContextMenu>
-        <ContextMenu>
-          <MenuItem Header="Standard _Menu Item" />
-          <MenuItem Header="Disabled" IsEnabled="False" />
-          <Separator />
-          <MenuItem Header="Menu with _Submenu">
-            <MenuItem Header="Submenu _1" />
-            <MenuItem Header="Submenu _2" />
-          </MenuItem>
-          <MenuItem Header="Menu Item with _Icon" />
-          <MenuItem Header="Menu Item with _Checkbox">
-            <MenuItem.Icon>
-              <CheckBox BorderThickness="0"
-                        IsHitTestVisible="False"
-                        IsChecked="True" />
-            </MenuItem.Icon>
-          </MenuItem>
-        </ContextMenu>
-      </Border.ContextMenu>
-      <TextBlock Text="Test" />
-    </Border>
+    <design:ThemePreviewer Padding="0">
+      <Border Background="{DynamicResource BackgroundBrush}"
+              Margin="0"
+              Padding="0"
+              Width="400"
+              Height="200">
+        <Border.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="Standard _Menu Item" />
+            <MenuItem Header="Disabled" IsEnabled="False" />
+            <Separator />
+            <MenuItem Header="Menu with _Submenu">
+              <MenuItem Header="Submenu _1" />
+              <MenuItem Header="Submenu _2" />
+            </MenuItem>
+            <MenuItem Header="Menu Item with _Icon" />
+            <MenuItem Header="Menu Item with _Checkbox">
+              <MenuItem.Icon>
+                <CheckBox BorderThickness="0"
+                          IsHitTestVisible="False"
+                          IsChecked="True" />
+              </MenuItem.Icon>
+            </MenuItem>
+          </ContextMenu>
+        </Border.ContextMenu>
+        <TextBlock Text="Right-click here" HorizontalAlignment="Center" VerticalAlignment="Center" />
+      </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ContextMenu}" TargetType="ContextMenu">

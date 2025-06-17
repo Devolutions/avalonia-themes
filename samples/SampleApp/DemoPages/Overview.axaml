@@ -72,6 +72,7 @@
               <Button Margin="5" VerticalAlignment="Center" Content="Cancel" />
               <Button Margin="5" VerticalAlignment="Center" Classes="accent" IsEnabled="False">Submit</Button>
             </StackPanel>
+
             <StackPanel Width="200" HorizontalAlignment="Left" Spacing="5">
               <SplitButton Content="Splitted" Classes="accent">
                 <SplitButton.Flyout>

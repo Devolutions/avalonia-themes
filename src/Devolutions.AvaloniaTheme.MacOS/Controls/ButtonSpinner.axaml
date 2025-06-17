@@ -1,32 +1,15 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="using:System">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:sys="using:System"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Padding="20">
+    <design:ThemePreviewer>
       <StackPanel Spacing="20" Width="100">
-        <NumericUpDown Minimum="0"
-                       Maximum="10"
-                       Increment="1"
-                       Watermark="Days" />
-        <NumericUpDown Minimum="0"
-                       Maximum="10"
-                       Increment="0.5"
-                       Value="10" />
-        <NumericUpDown Minimum="0"
-                       Maximum="10"
-                       Value="5"
-                       Increment="0.5"
-                       IsEnabled="False" />
-        <NumericUpDown Minimum="0"
-                       Maximum="10"
-                       Value="5"
-                       Increment="0.5"
-                       IsReadOnly="True" />
+        <NumericUpDown Minimum="0" Maximum="10" Increment="1" Watermark="Days" />
+        <NumericUpDown Minimum="0" Maximum="10" Increment="0.5" Value="10" />
+        <NumericUpDown Minimum="0" Maximum="10" Increment="0.5" Value="5" IsEnabled="False" />
+        <NumericUpDown Minimum="0" Maximum="10" Increment="0.5" Value="5" IsReadOnly="True" />
         <NumericUpDown Minimum="0"
                        Maximum="10"
                        Increment="0.5"
@@ -54,7 +37,7 @@
           </DataValidationErrors.Error>
         </NumericUpDown>
       </StackPanel>
-    </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="FluentButtonSpinnerRepeatButton" TargetType="RepeatButton">

@@ -1,14 +1,11 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Padding="20">
-      <StackPanel Spacing="20">
+    <design:ThemePreviewer>
+      <StackPanel Margin="20" Spacing="20">
         <NumericUpDown Minimum="0"
                        Maximum="10"
                        Increment="0.5"
@@ -56,7 +53,7 @@
           </DataValidationErrors.Error>
         </NumericUpDown>
       </StackPanel>
-    </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="NumericUpDown">

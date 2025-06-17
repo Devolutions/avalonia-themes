@@ -2,9 +2,6 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   xmlns:collections="clr-namespace:Avalonia.Collections;assembly=Avalonia.Controls.DataGrid">
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
 
   <ResourceDictionary.ThemeDictionaries>
     <ResourceDictionary x:Key="Dark">
@@ -180,7 +177,7 @@
                         {Binding $parent[DataGrid].Classes, Converter={x:Static DevoConverters.HasClass}, ConverterParameter=cell-selectable-style}
                      }" />
     </Style>
-    
+
     <Style Selector="^:invalid /template/ Rectangle#InvalidVisualElement">
       <Setter Property="IsVisible" Value="True" />
     </Style>
@@ -506,77 +503,77 @@
                               ColumnDefinitions="Auto,Auto,Auto,Auto,*"
                               RowDefinitions="*,Auto">
 
-          <Rectangle Name="PART_IndentSpacer"
-                     Grid.Column="1" />
-          <ToggleButton Name="PART_ExpanderButton"
-                        Grid.Column="2"
-                        Width="12"
-                        Height="12"
-                        Margin="12,0,0,0"
-                        Theme="{StaticResource DataGridRowGroupExpanderButtonTheme}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        Background="{TemplateBinding Background}"
-                        CornerRadius="{TemplateBinding CornerRadius}"
-                        IsTabStop="False"
-                        Foreground="{TemplateBinding Foreground}" />
+            <Rectangle Name="PART_IndentSpacer"
+                       Grid.Column="1" />
+            <ToggleButton Name="PART_ExpanderButton"
+                          Grid.Column="2"
+                          Width="12"
+                          Height="12"
+                          Margin="12,0,0,0"
+                          Theme="{StaticResource DataGridRowGroupExpanderButtonTheme}"
+                          BorderBrush="{TemplateBinding BorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          Background="{TemplateBinding Background}"
+                          CornerRadius="{TemplateBinding CornerRadius}"
+                          IsTabStop="False"
+                          Foreground="{TemplateBinding Foreground}" />
 
-          <DockPanel Grid.Column="3"
-                     Grid.ColumnSpan="2"
-                     VerticalAlignment="Center"
-                     HorizontalAlignment="Stretch"
-                     Margin="12,0">
-            <TextBlock Name="PART_PropertyNameElement"
-                       DockPanel.Dock="Left"
-                       Margin="4,0,0,0"
-                       IsVisible="{TemplateBinding IsPropertyNameVisible}"
-                       Foreground="{DynamicResource ForegroundMidBrush}" />
-            <TextBlock Name="PART_ItemCountElement"
-                       DockPanel.Dock="Right"
-                       IsVisible="{TemplateBinding IsItemCountVisible}"
-                       Foreground="{TemplateBinding Foreground}" />
-            <TextBlock Margin="4,0,0,0"
-                       Text="{Binding Key}"
-                       Foreground="{TemplateBinding Foreground}" />
-          </DockPanel>
+            <DockPanel Grid.Column="3"
+                       Grid.ColumnSpan="2"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Stretch"
+                       Margin="12,0">
+              <TextBlock Name="PART_PropertyNameElement"
+                         DockPanel.Dock="Left"
+                         Margin="4,0,0,0"
+                         IsVisible="{TemplateBinding IsPropertyNameVisible}"
+                         Foreground="{DynamicResource ForegroundMidBrush}" />
+              <TextBlock Name="PART_ItemCountElement"
+                         DockPanel.Dock="Right"
+                         IsVisible="{TemplateBinding IsItemCountVisible}"
+                         Foreground="{TemplateBinding Foreground}" />
+              <TextBlock Margin="4,0,0,0"
+                         Text="{Binding Key}"
+                         Foreground="{TemplateBinding Foreground}" />
+            </DockPanel>
 
-          <Rectangle Name="CurrencyVisual"
-                     Grid.ColumnSpan="5"
-                     IsVisible="False"
-                     HorizontalAlignment="Stretch"
-                     VerticalAlignment="Stretch"
-                     Fill="Transparent"
-                     IsHitTestVisible="False"
-                     Stroke="{DynamicResource DataGridCurrencyVisualPrimaryBrush}"
-                     StrokeThickness="1" />
-          <Grid Name="FocusVisual"
-                Grid.ColumnSpan="5"
-                IsVisible="False"
-                IsHitTestVisible="False">
-            <Rectangle HorizontalAlignment="Stretch"
-                       VerticalAlignment="Stretch"
-                       Fill="Transparent"
-                       IsHitTestVisible="False"
-                       Stroke="{DynamicResource DataGridCellFocusVisualPrimaryBrush}"
-                       StrokeThickness="2" />
-            <Rectangle Margin="2"
+            <Rectangle Name="CurrencyVisual"
+                       Grid.ColumnSpan="5"
+                       IsVisible="False"
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch"
                        Fill="Transparent"
                        IsHitTestVisible="False"
-                       Stroke="{DynamicResource DataGridCellFocusVisualSecondaryBrush}"
+                       Stroke="{DynamicResource DataGridCurrencyVisualPrimaryBrush}"
                        StrokeThickness="1" />
-          </Grid>
+            <Grid Name="FocusVisual"
+                  Grid.ColumnSpan="5"
+                  IsVisible="False"
+                  IsHitTestVisible="False">
+              <Rectangle HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Fill="Transparent"
+                         IsHitTestVisible="False"
+                         Stroke="{DynamicResource DataGridCellFocusVisualPrimaryBrush}"
+                         StrokeThickness="2" />
+              <Rectangle Margin="2"
+                         HorizontalAlignment="Stretch"
+                         VerticalAlignment="Stretch"
+                         Fill="Transparent"
+                         IsHitTestVisible="False"
+                         Stroke="{DynamicResource DataGridCellFocusVisualSecondaryBrush}"
+                         StrokeThickness="1" />
+            </Grid>
 
-          <DataGridRowHeader Name="PART_RowHeader"
-                             Grid.RowSpan="2"
-                             DataGridFrozenGrid.IsFrozen="True" />
+            <DataGridRowHeader Name="PART_RowHeader"
+                               Grid.RowSpan="2"
+                               DataGridFrozenGrid.IsFrozen="True" />
 
-          <Rectangle Name="PART_BottomGridLine"
-                     Grid.Row="1"
-                     Grid.ColumnSpan="5"
-                     Height="1" />
-        </DataGridFrozenGrid>
+            <Rectangle Name="PART_BottomGridLine"
+                       Grid.Row="1"
+                       Grid.ColumnSpan="5"
+                       Height="1" />
+          </DataGridFrozenGrid>
         </Border>
       </ControlTemplate>
     </Setter>

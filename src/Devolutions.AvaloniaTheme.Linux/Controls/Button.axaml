@@ -10,6 +10,14 @@
     <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
 
+    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
+    </Style>
+
+    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
+    </Style>
+
     <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{DynamicResource ButtonBackgroundDisabled}" />
       <Setter Property="Foreground" Value="{DynamicResource ButtonForegroundDisabled}" />

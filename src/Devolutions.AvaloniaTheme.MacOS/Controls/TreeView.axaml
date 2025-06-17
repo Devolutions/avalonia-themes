@@ -1,21 +1,16 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Padding="20">
-      <StackPanel Spacing="20">
-        <TreeView>
-          <TreeViewItem Header="Root" IsExpanded="True">
-            <TreeViewItem Header="Child1" />
-            <TreeViewItem Header="Child2" />
-          </TreeViewItem>
-        </TreeView>
-      </StackPanel>
-    </Border>
+    <design:ThemePreviewer Width="140" Height="120" Padding="10">
+      <TreeView>
+        <TreeViewItem Header="Root" IsExpanded="True">
+          <TreeViewItem Header="Child1" />
+          <TreeViewItem Header="Child2" />
+        </TreeViewItem>
+      </TreeView>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type TreeView}" TargetType="TreeView">

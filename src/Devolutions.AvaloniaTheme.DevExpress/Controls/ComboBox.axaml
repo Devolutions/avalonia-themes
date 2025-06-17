@@ -1,13 +1,10 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="using:System">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:sys="using:System"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
 
   <Design.PreviewWith>
-    <Border Padding="20" Height="300" Background="#f0f0f0">
+    <design:ThemePreviewer Padding="20" Height="300">
       <StackPanel Spacing="10" Width="200">
         <ComboBox PlaceholderText="Select an option" SelectedIndex="1" IsDropDownOpen="False">
           <ComboBoxItem>External</ComboBoxItem>
@@ -31,7 +28,7 @@
           </DataValidationErrors.Error>
         </ComboBox>
       </StackPanel>
-    </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ComboBox}" TargetType="ComboBox">

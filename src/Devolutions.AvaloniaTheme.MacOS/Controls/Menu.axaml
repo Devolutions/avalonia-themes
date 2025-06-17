@@ -1,68 +1,87 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+<ResourceDictionary
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <DockPanel Height="200">
-      <Menu DockPanel.Dock="Top" VerticalAlignment="Top"
-            Classes="MacOS_Theme_MenuItemIconOnly MacOS_Theme_MenuLabelBelowIcon">
-        <MenuItem Header="Add">
-          <MenuItem.Icon>
-            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
-          </MenuItem.Icon>
-          <MenuItem Header="User" />
-          <MenuItem Header="Group" />
-        </MenuItem>
-        <MenuItem Header="-" />
-        <MenuItem Header="Test">
-          <MenuItem.Icon>
-            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
-          </MenuItem.Icon>
-        </MenuItem>
-        <MenuItem Header="Disabled" IsEnabled="False">
-          <MenuItem.Icon>
-            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
-          </MenuItem.Icon>
-        </MenuItem>
-      </Menu>
-      <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom"
-            Classes="MacOS_Theme_MenuOpensAbove MacOS_Theme_MenuLabelBelowIcon">
-        <MenuItem Header="_Standard">
-          <MenuItem.Icon>
-            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
-          </MenuItem.Icon>
-          <MenuItem Header="_Standard" />
-          <MenuItem Header="_Standard" />
-        </MenuItem>
-        <MenuItem Header="-" />
-        <MenuItem Header="Focus session" IsSelected="True">
-          <MenuItem.Icon>
-            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
-          </MenuItem.Icon>
-        </MenuItem>
-        <MenuItem Header="Copy username and password" IsSelected="True">
-          <MenuItem.Icon>
-            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
-          </MenuItem.Icon>
-        </MenuItem>
-        <MenuItem Header="Disabled" IsEnabled="False">
-          <MenuItem.Icon>
-            <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
-          </MenuItem.Icon>
-          <MenuItem Header="_Standard" />
-        </MenuItem>
-      </Menu>
-      <Border Background="Gainsboro" />
-    </DockPanel>
+    <design:ThemePreviewer>
+      <DockPanel Height="200">
+        <Menu DockPanel.Dock="Top" VerticalAlignment="Top"
+              Classes="MacOS_Theme_MenuItemIconOnly MacOS_Theme_MenuLabelBelowIcon">
+          <MenuItem Header="Add">
+            <MenuItem.Icon>
+              <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+            </MenuItem.Icon>
+            <MenuItem Header="User" />
+            <MenuItem Header="Group" />
+          </MenuItem>
+          <MenuItem Header="-" />
+          <MenuItem Header="Test">
+            <MenuItem.Icon>
+              <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Disabled" IsEnabled="False">
+            <MenuItem.Icon>
+              <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+            </MenuItem.Icon>
+          </MenuItem>
+        </Menu>
+        <Menu DockPanel.Dock="Bottom" VerticalAlignment="Bottom"
+              Classes="MacOS_Theme_MenuOpensAbove MacOS_Theme_MenuLabelBelowIcon">
+          <MenuItem Header="_Standard">
+            <MenuItem.Icon>
+              <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+            </MenuItem.Icon>
+            <MenuItem Header="_Standard" />
+            <MenuItem Header="_Standard" />
+          </MenuItem>
+          <MenuItem Header="-" />
+          <MenuItem Header="Focus session" IsSelected="True">
+            <MenuItem.Icon>
+              <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Copy username and password" IsSelected="True">
+            <MenuItem.Icon>
+              <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+            </MenuItem.Icon>
+          </MenuItem>
+          <MenuItem Header="Disabled" IsEnabled="False">
+            <MenuItem.Icon>
+              <Svg Path="/Accents/Assets/TestIconForDesignPreview.svg" />
+            </MenuItem.Icon>
+            <MenuItem Header="_Standard" />
+          </MenuItem>
+        </Menu>
+        <Border Background="Gainsboro" />
+      </DockPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
+
+  <ControlTheme x:Key="DevolutionsMacOsTopLevelMenuItemIconTheme" TargetType="ContentControl">
+    <Setter Property="MaxWidth" Value="15" />
+    <Setter Property="MaxHeight" Value="15" />
+
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Viewbox
+          StretchDirection="DownOnly"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+          <ContentPresenter
+            Name="PART_ContentPresenter"
+            Content="{TemplateBinding Content}" />
+        </Viewbox>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
 
   <!-- TODO: Consider refactoring with separate ControlThemes for the different Menu types 
        (instead of multiple individual variations on the property level) -->
-  <ControlTheme x:Key="FluentTopLevelMenuItem" TargetType="MenuItem">
+  <ControlTheme x:Key="DevolutionsMacOsTopLevelMenuItem" TargetType="MenuItem">
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="FontSize">
       <Setter.Value>
@@ -155,8 +174,12 @@
                         <Binding Source="{x:False}" />
                       </MultiBinding>
                     </ToolTip.ServiceEnabled>
-                    <ContentPresenter Name="PART_IconPresenter"
-                                      Content="{TemplateBinding Icon}" />
+
+                    <ContentControl
+                      Name="PART_IconPresenter"
+                      Content="{TemplateBinding Icon}"
+                      Theme="{StaticResource DevolutionsMacOsTopLevelMenuItemIconTheme}" />
+
                     <Panel Name="PART_ChevronPanel">
                       <Border Name="PART_ChevronBorder" Margin="3 0 0 0 ">
                         <Path Name="PART_ChevronPath"
@@ -248,7 +271,7 @@
       </ControlTemplate>
     </Setter>
 
-    <!-- Not working -> handled in Styles.axaml -->
+    <!-- Not working -> handled in GlobalStyles.axaml -->
     <!-- <Style Selector="^ /template/ ContentPresenter#PART_IconPresenter Svg"> -->
     <!--   <Setter Property="Css" Value=".st0 {fill : #9500C3; }" /> -->
     <!-- </Style> -->
@@ -319,7 +342,7 @@
 
   <ControlTheme x:Key="{x:Type Menu}" TargetType="Menu">
     <Setter Property="Background" Value="Transparent" />
-    <Setter Property="ItemContainerTheme" Value="{StaticResource FluentTopLevelMenuItem}" />
+    <Setter Property="ItemContainerTheme" Value="{StaticResource DevolutionsMacOsTopLevelMenuItem}" />
     <Setter Property="Padding" Value="{DynamicResource MenuBarPadding}" />
     <Setter Property="Template">
       <ControlTemplate>

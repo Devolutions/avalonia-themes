@@ -1,9 +1,17 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+  <Design.PreviewWith>
+    <design:ThemePreviewer>
+      <StackPanel Orientation="Vertical" Margin="10">
+        <TextBlock Text="Some text" />
+        <Separator />
+        <TextBlock Text="Separated by a separator" />
+      </StackPanel>
+    </design:ThemePreviewer>
+  </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type Separator}" TargetType="Separator">
     <Setter Property="Background" Value="{DynamicResource SeparatorBrush}" />

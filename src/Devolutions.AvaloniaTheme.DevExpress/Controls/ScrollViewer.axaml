@@ -1,12 +1,12 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
 
   <Design.PreviewWith>
-    <StackPanel Spacing="20" Margin="10">
-      <Border Background="{DynamicResource BackgroundBrush}"
-              BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1" Width="330"
-              Height="300">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5">
+    <design:ThemePreviewer>
+      <StackPanel Spacing="20" Margin="10">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5"
+                      Width="330" Height="200">
           <StackPanel Background="{DynamicResource BackgroundBrush}">
             <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
             <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
@@ -36,11 +36,9 @@
             <TextBlock>-rw-r--r--   1 jdoe  staff     561 27 Jan 15:29 User.svg</TextBlock>
           </StackPanel>
         </ScrollViewer>
-      </Border>
-      <Border Background="{DynamicResource BackgroundBrush}"
-              BorderBrush="{DynamicResource ControlBorderMidColor}" BorderThickness="1" Width="330"
-              Height="300">
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 " AllowAutoHide="False">
+
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Padding="5 " AllowAutoHide="False"
+                      Width="330" Height="200">
           <StackPanel Background="{DynamicResource BackgroundBrush}">
             <TextBlock>drwxr-xr-x  26 jdoe  staff     832 28 Jan 14:27 .</TextBlock>
             <TextBlock>drwxr-xr-x@ 17 jdoe  staff     544 29 Jan 11:59 ..</TextBlock>
@@ -70,8 +68,8 @@
             <TextBlock>-rw-r--r--   1 jdoe  staff     561 27 Jan 15:29 User.svg</TextBlock>
           </StackPanel>
         </ScrollViewer>
-      </Border>
-    </StackPanel>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ScrollViewer}" TargetType="ScrollViewer">

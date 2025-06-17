@@ -1,12 +1,9 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
 
   <Design.PreviewWith>
-    <Border Padding="20" Background="#f0f0f0">
+    <design:ThemePreviewer Padding="20">
       <StackPanel>
         <CheckBox>Birthday</CheckBox>
         <CheckBox IsChecked="True">Checked</CheckBox>
@@ -16,7 +13,7 @@
         <CheckBox IsEnabled="False" IsChecked="True">Birthday</CheckBox>
         <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
       </StackPanel>
-    </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">

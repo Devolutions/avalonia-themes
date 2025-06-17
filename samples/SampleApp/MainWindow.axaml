@@ -44,7 +44,7 @@
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
-      <TabItem Header="DataGrid grouped" IsSelected="True">
+      <TabItem Header="DataGrid grouped">
         <demoPages:DataGridGroupedDemo>
           <demoPages:DataGridGroupedDemo.DataContext>
             <vm:DataGridGroupedViewModel />
