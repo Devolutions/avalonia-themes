@@ -11,7 +11,7 @@
     <ResourceDictionary>
       <ResourceDictionary.MergedDictionaries>
         <MergeResourceInclude Source="/Accents/Icons.axaml" />
-        <MergeResourceInclude Source="/Accents/ThemeControlResources.axaml" />
+        <MergeResourceInclude Source="/Accents/ThemeResources.axaml" />
         <MergeResourceInclude Source="/Controls/_index.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>

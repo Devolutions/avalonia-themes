@@ -100,7 +100,7 @@
               <ThemeVariantScope.Resources>
                 <ResourceDictionary>
                   <ResourceDictionary.MergedDictionaries>
-                    <ResourceInclude Source="/Accents/ThemeControlResources.axaml" />
+                    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
                   </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
               </ThemeVariantScope.Resources>
@@ -124,7 +124,7 @@
               <ThemeVariantScope.Resources>
                 <ResourceDictionary>
                   <ResourceDictionary.MergedDictionaries>
-                    <ResourceInclude Source="/Accents/ThemeControlResources.axaml" />
+                    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
                   </ResourceDictionary.MergedDictionaries>
                 </ResourceDictionary>
               </ThemeVariantScope.Resources>
