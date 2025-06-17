@@ -1,6 +1,7 @@
 namespace Devolutions.AvaloniaTheme.DevExpress;
 
 using Avalonia.Markup.Xaml;
+using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
 
 /// <summary>
@@ -15,5 +16,9 @@ public class DevolutionsDevExpressTheme : Styles
     public DevolutionsDevExpressTheme(IServiceProvider? sp = null)
     {
         AvaloniaXamlLoader.Load(sp, this);
+#if DEBUG
+        var themePreviewerUri = new Uri("avares://Devolutions.AvaloniaTheme.DevExpress/Design/ThemePreviewer.axaml");
+        this.Resources.MergedDictionaries.Add(new ResourceInclude(themePreviewerUri) { Source = themePreviewerUri });
+#endif
     }
 }

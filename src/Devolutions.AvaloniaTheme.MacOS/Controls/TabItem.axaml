@@ -1,69 +1,64 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <ThemeVariantScope RequestedThemeVariant="Dark">
-      <Border Background="{DynamicResource BackgroundBrush}">
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-          <Border Width="500">
-            <TabControl TabStripPlacement="Left" Margin="5">
-              <TabItem Header="Tab 1">
-                <!-- <TextBlock Text="Vertical tab view" /> -->
-                <Border Background="Beige">
-                  <StackPanel Orientation="Horizontal">
-                    <Border Background="White" BorderBrush="red" BorderThickness="3" Padding="20">
-                      <Panel>
-                        <Border Background="LightGray"
-                                Width="100"
-                                Height="100"
-                                Margin="-10"
-                                ZIndex="1">
-                          <Border.Effect>
-                            <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.7" />
-                          </Border.Effect>
-                        </Border>
-                      </Panel>
-                    </Border>
-                    <Border Background="White"
-                            BorderBrush="Red"
-                            VerticalAlignment="Top"
-                            BorderThickness="3">
-                      <Border Width="50"
-                              Height="50"
-                              Background="LightGray"
-                              BoxShadow="10 10 15 Black"> <!-- X, Y, Blur, Color -->
+    <design:ThemePreviewer>
+      <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+        <Border Width="500">
+          <TabControl TabStripPlacement="Left" Margin="5">
+            <TabItem Header="Tab 1">
+              <!-- <TextBlock Text="Vertical tab view" /> -->
+              <Border Background="Beige">
+                <StackPanel Orientation="Horizontal">
+                  <Border Background="White" BorderBrush="red" BorderThickness="3" Padding="20">
+                    <Panel>
+                      <Border Background="LightGray"
+                              Width="100"
+                              Height="100"
+                              Margin="-10"
+                              ZIndex="1">
+                        <Border.Effect>
+                          <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.7" />
+                        </Border.Effect>
                       </Border>
+                    </Panel>
+                  </Border>
+                  <Border Background="White"
+                          BorderBrush="Red"
+                          VerticalAlignment="Top"
+                          BorderThickness="3">
+                    <Border Width="50"
+                            Height="50"
+                            Background="LightGray"
+                            BoxShadow="10 10 15 Black"> <!-- X, Y, Blur, Color -->
                     </Border>
-                  </StackPanel>
-                </Border>
-              </TabItem>
-              <TabItem Header="Tab 2">
-                <TextBlock Text="Content 2" />
-              </TabItem>
-              <TabItem Header="Tab3" IsEnabled="False" />
-            </TabControl>
-          </Border>
-          <Border Width="500">
-            <TabControl TabStripPlacement="Top" Margin="5">
-              <TabItem Header="General">
-                <TextBlock Text="Horizontal tab view" />
-              </TabItem>
-              <TabItem Header="Settings">
-                <TextBlock Text="Content 2" />
-              </TabItem>
-              <TabItem Header="Disabled Tab" IsEnabled="False" />
-              <TabItem Header="Advanced">
-                <TextBlock Text="Content 3" />
-              </TabItem>
-            </TabControl>
-          </Border>
-        </StackPanel>
-      </Border>
-    </ThemeVariantScope>
+                  </Border>
+                </StackPanel>
+              </Border>
+            </TabItem>
+            <TabItem Header="Tab 2">
+              <TextBlock Text="Content 2" />
+            </TabItem>
+            <TabItem Header="Tab3" IsEnabled="False" />
+          </TabControl>
+        </Border>
+        <Border Width="500">
+          <TabControl TabStripPlacement="Top" Margin="5">
+            <TabItem Header="General">
+              <TextBlock Text="Horizontal tab view" />
+            </TabItem>
+            <TabItem Header="Settings">
+              <TextBlock Text="Content 2" />
+            </TabItem>
+            <TabItem Header="Disabled Tab" IsEnabled="False" />
+            <TabItem Header="Advanced">
+              <TextBlock Text="Content 3" />
+            </TabItem>
+          </TabControl>
+        </Border>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <!-- Shifting the tab to the left to cover the divider of its left neighbour -->

@@ -1,13 +1,11 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+<ResourceDictionary
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Padding="20" MinWidth="300">
+    <design:ThemePreviewer>
       <TreeView>
         <TreeViewItem Header="MacOS UI elements" IsExpanded="True" IsSelected="True">
           <TreeViewItem Header="Button" IsExpanded="True">
@@ -20,7 +18,7 @@
           <TreeViewItem Header="Level 2.2" IsEnabled="False" />
         </TreeViewItem>
       </TreeView>
-    </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <converters:MarginMultiplierConverter Indent="{StaticResource TreeViewItemIndent}" Left="True" x:Key="TreeViewItemLeftMarginConverter" />

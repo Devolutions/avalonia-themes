@@ -1,25 +1,14 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
 
   <Design.PreviewWith>
-    <StackPanel Spacing="20" Orientation="Vertical" Background="#000">
-      <ThemeVariantScope RequestedThemeVariant="Dark">
-        <Border Background="#212121">
-          <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
-            <TextBlock Classes="section-title">Some text</TextBlock>
-            <TextBlock>Some text</TextBlock>
-          </StackPanel>
-        </Border>
-      </ThemeVariantScope>
-      <ThemeVariantScope RequestedThemeVariant="Light">
-        <Border Background="#FFF">
-          <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
-            <TextBlock Classes="section-title">Some text</TextBlock>
-            <TextBlock>Some text</TextBlock>
-          </StackPanel>
-        </Border>
-      </ThemeVariantScope>
-    </StackPanel>
+    <design:ThemePreviewer>
+      <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
+        <TextBlock Classes="section-title">Some text</TextBlock>
+        <TextBlock>Some text</TextBlock>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type TextBlock}" TargetType="TextBlock">

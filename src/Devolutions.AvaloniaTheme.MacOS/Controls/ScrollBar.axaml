@@ -1,37 +1,36 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Padding="20">
-      <StackPanel>
-        <ScrollViewer Width="200" Height="200" HorizontalScrollBarVisibility="Auto">
-          <Image Width="800" Height="600"
-                 Source="avares://SampleApp/Assets/SampleImage.jpg" />
-        </ScrollViewer>
+    <design:ThemePreviewer>
+      <Border Padding="20">
+        <StackPanel>
+          <ScrollViewer Width="200" Height="200" HorizontalScrollBarVisibility="Auto">
+            <Image Width="800" Height="600"
+                   Source="avares://SampleApp/Assets/SampleImage.jpg" />
+          </ScrollViewer>
 
-        <StackPanel Orientation="Horizontal" Spacing="20">
-          <StackPanel Spacing="20">
-            <ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100" />
-            <ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100"
+          <StackPanel Orientation="Horizontal" Spacing="20">
+            <StackPanel Spacing="20">
+              <ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100" />
+              <ScrollBar Orientation="Horizontal" AllowAutoHide="False" VerticalAlignment="Center" Width="100"
+                         IsEnabled="False" />
+              <ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100" />
+              <ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100"
+                         IsEnabled="False" />
+            </StackPanel>
+            <ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100" />
+            <ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100"
                        IsEnabled="False" />
-            <ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100" />
-            <ScrollBar Orientation="Horizontal" AllowAutoHide="True" VerticalAlignment="Center" Width="100"
+            <ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100" />
+            <ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100"
                        IsEnabled="False" />
           </StackPanel>
-          <ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100" />
-          <ScrollBar Orientation="Vertical" AllowAutoHide="False" HorizontalAlignment="Center" Height="100"
-                     IsEnabled="False" />
-          <ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100" />
-          <ScrollBar Orientation="Vertical" AllowAutoHide="True" HorizontalAlignment="Center" Height="100"
-                     IsEnabled="False" />
         </StackPanel>
-      </StackPanel>
-    </Border>
+      </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="ScrollBarThumbTheme" TargetType="Thumb">
@@ -89,7 +88,7 @@
                         Opacity="0">
                   <Border.Transitions>
                     <Transitions>
-                      <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                      <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
                     </Transitions>
                   </Border.Transitions>
                 </Border>
@@ -121,7 +120,7 @@
                          Opacity="0.6">
                     <Thumb.Transitions>
                       <Transitions>
-                        <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                        <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
                       </Transitions>
                     </Thumb.Transitions>
                   </Thumb>
@@ -152,7 +151,7 @@
                   Opacity="0">
                   <Border.Transitions>
                     <Transitions>
-                      <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                      <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
                     </Transitions>
                   </Border.Transitions>
                 </Border>
@@ -184,7 +183,7 @@
                          Opacity="0.33">
                     <Thumb.Transitions>
                       <Transitions>
-                        <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                        <DoubleTransition Property="Opacity" Duration="0:0:0.15" />
                       </Transitions>
                     </Thumb.Transitions>
                   </Thumb>
@@ -198,6 +197,9 @@
     </Style>
 
     <Style Selector="^:pointerover /template/ Panel#Root Thumb">
+      <Setter Property="Opacity" Value="1" />
+    </Style>
+    <Style Selector="^ /template/ Panel#Root Thumb:pressed">
       <Setter Property="Opacity" Value="1" />
     </Style>
 

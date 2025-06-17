@@ -1,23 +1,20 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
 
   <Design.PreviewWith>
-    <StackPanel Spacing="20">
-      <Border Padding="20" Background="#f0f0f0">
+    <design:ThemePreviewer Padding="20">
+      <StackPanel Spacing="20">
         <Grid ColumnDefinitions="91, 2, 75" RowDefinitions="Auto, 10, Auto">
           <Button Grid.Row="0" Grid.Column="0" Classes="accent" Content="test" />
           <Button Grid.Row="0" Grid.Column="2" Content="Cancel" />
           <Button Grid.Row="2" Grid.Column="0" Classes="accent" Content="Disabled" IsEnabled="False" />
           <Button Grid.Row="2" Grid.Column="2" Content="Disabled" IsEnabled="False" />
         </Grid>
-      </Border>
-      <CheckBox IsEnabled="False">Birthday focussed</CheckBox>
-    </StackPanel>
+        <CheckBox IsEnabled="False">Birthday focussed</CheckBox>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type Button}" TargetType="Button">

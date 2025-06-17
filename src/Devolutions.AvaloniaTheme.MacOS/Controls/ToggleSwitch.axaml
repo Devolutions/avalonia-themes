@@ -1,20 +1,20 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design"
   x:CompileBindings="True">
 
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
-
   <Design.PreviewWith>
-    <StackPanel Margin="20">
-      <ToggleSwitch
-        Content="Content"
-        OffContent="OffContent"
-        OnContent="OnContent" />
-    </StackPanel>
+    <design:ThemePreviewer>
+      <StackPanel Margin="20">
+        <ToggleSwitch
+          Content="Content"
+          OffContent="OffContent"
+          OnContent="OnContent" />
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
+
   <ControlTheme x:Key="{x:Type ToggleSwitch}" TargetType="ToggleSwitch">
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />

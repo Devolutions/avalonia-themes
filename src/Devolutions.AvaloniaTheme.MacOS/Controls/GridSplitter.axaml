@@ -1,29 +1,28 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Height="400" BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
-      <Grid ColumnDefinitions="50, 1, 250">
-        <Border Grid.Column="0" Background="{DynamicResource BackgroundColor}">
-          <ScrollViewer>
-            <Border Height="2000" />
-          </ScrollViewer>
-        </Border>
-        <GridSplitter Grid.Column="1" ResizeDirection="Columns" />
-        <Border Grid.Column="2" Background="{DynamicResource BackgroundColor}">
-          <Grid RowDefinitions="30, 1, *">
-            <Border Grid.Row="0" Background="{DynamicResource BackgroundColor}" />
-            <GridSplitter Grid.Row="1" ResizeDirection="Rows" />
-            <Border Grid.Row="2" Background="{DynamicResource BackgroundColor}" />
-          </Grid>
-        </Border>
-      </Grid>
-    </Border>
+    <design:ThemePreviewer>
+      <Border Height="400" BorderBrush="{DynamicResource LayoutBorderHighBrush}" BorderThickness="1" Margin="5">
+        <Grid ColumnDefinitions="50, 1, 250">
+          <Border Grid.Column="0" Background="{DynamicResource BackgroundColor}">
+            <ScrollViewer>
+              <Border Height="2000" />
+            </ScrollViewer>
+          </Border>
+          <GridSplitter Grid.Column="1" ResizeDirection="Columns" />
+          <Border Grid.Column="2" Background="{DynamicResource BackgroundColor}">
+            <Grid RowDefinitions="30, 1, *">
+              <Border Grid.Row="0" Background="{DynamicResource BackgroundColor}" />
+              <GridSplitter Grid.Row="1" ResizeDirection="Rows" />
+              <Border Grid.Row="2" Background="{DynamicResource BackgroundColor}" />
+            </Grid>
+          </Border>
+        </Grid>
+      </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
 

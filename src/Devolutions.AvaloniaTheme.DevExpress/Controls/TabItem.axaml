@@ -1,7 +1,8 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
   <Design.PreviewWith>
-    <Border Width="600" Background="{DynamicResource LayoutBackgroundLowBrush}">
+    <design:ThemePreviewer Width="450">
       <TabControl TabStripPlacement="Top" Margin="5">
         <TabItem Header="General">
           <StackPanel Orientation="Horizontal" Spacing="30">
@@ -16,7 +17,7 @@
         </TabItem>
         <TabItem Header="Disabled" IsEnabled="False" />
       </TabControl>
-    </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type TabItem}" TargetType="TabItem">

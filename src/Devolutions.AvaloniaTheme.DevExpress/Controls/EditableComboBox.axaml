@@ -1,35 +1,38 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design"
   x:ClassModifier="internal">
 
   <Design.PreviewWith>
-    <StackPanel Width="400" Height="400" Spacing="20">
-      <EditableComboBox
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Watermark="test2">
-        <EditableComboBoxItem Value="test1" />
-        <EditableComboBoxItem Value="test2" />
-        <EditableComboBoxItem Value="test3" />
-      </EditableComboBox>
+    <design:ThemePreviewer Padding="20">
+      <StackPanel Width="200" Height="200" Spacing="20">
+        <EditableComboBox
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Watermark="test2">
+          <EditableComboBoxItem Value="test1" />
+          <EditableComboBoxItem Value="test2" />
+          <EditableComboBoxItem Value="test3" />
+        </EditableComboBox>
 
-      <EditableComboBox
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Watermark="test">
-        <EditableComboBox.InnerLeftContent>
-          <Label Content="A" />
-        </EditableComboBox.InnerLeftContent>
-        <EditableComboBox.InnerRightContent>
-          <Label Content="B" />
-        </EditableComboBox.InnerRightContent>
+        <EditableComboBox
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Watermark="test">
+          <EditableComboBox.InnerLeftContent>
+            <Label Content="A" />
+          </EditableComboBox.InnerLeftContent>
+          <EditableComboBox.InnerRightContent>
+            <Label Content="B" />
+          </EditableComboBox.InnerRightContent>
 
-        <EditableComboBoxItem Value="test1" />
-        <EditableComboBoxItem Value="test2" />
-        <EditableComboBoxItem Value="test3" />
-      </EditableComboBox>
-    </StackPanel>
+          <EditableComboBoxItem Value="test1" />
+          <EditableComboBoxItem Value="test2" />
+          <EditableComboBoxItem Value="test3" />
+        </EditableComboBox>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <Thickness x:Key="EditableComboBoxBorderThickness">1</Thickness>

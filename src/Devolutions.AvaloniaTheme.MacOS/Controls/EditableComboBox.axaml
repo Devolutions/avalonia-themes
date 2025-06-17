@@ -1,44 +1,44 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  x:ClassModifier="internal">
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
   <Design.PreviewWith>
-    <StreamGeometry x:Key="CheckMarkPathData">M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z</StreamGeometry>
+    <design:ThemePreviewer>
+      <StackPanel Width="200" Height="400" Spacing="20" Margin="20">
+        <EditableComboBox
+          Width="200"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Watermark="test">
+          <EditableComboBoxItem Value="test1" />
+          <EditableComboBoxItem Value="test2" />
+          <EditableComboBoxItem Value="test3" />
+        </EditableComboBox>
 
-    <StackPanel Width="400" Height="400" Spacing="20">
-      <EditableComboBox
-        Width="200"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Watermark="test">
-        <EditableComboBoxItem Value="test1" />
-        <EditableComboBoxItem Value="test2" />
-        <EditableComboBoxItem Value="test3" />
-      </EditableComboBox>
+        <EditableComboBox
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Watermark="test">
+          <EditableComboBox.InnerLeftContent>
+            <Svg Path="M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z" />
+          </EditableComboBox.InnerLeftContent>
+          <EditableComboBox.InnerRightContent>
+            <Svg Path="M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z" />
+          </EditableComboBox.InnerRightContent>
+          <EditableComboBoxItem Value="test1" />
+          <EditableComboBoxItem Value="test2" />
+          <EditableComboBoxItem Value="test3" />
+        </EditableComboBox>
 
-      <EditableComboBox
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        Watermark="test">
-        <EditableComboBox.InnerLeftContent>
-          <Svg Path="M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z" />
-        </EditableComboBox.InnerLeftContent>
-        <EditableComboBox.InnerRightContent>
-          <Svg Path="M5.5 10.586 1.707 6.793A1 1 0 0 0 .293 8.207l4.5 4.5a1 1 0 0 0 1.414 0l11-11A1 1 0 0 0 15.793.293L5.5 10.586Z" />
-        </EditableComboBox.InnerRightContent>
-        <EditableComboBoxItem Value="test1" />
-        <EditableComboBoxItem Value="test2" />
-        <EditableComboBoxItem Value="test3" />
-      </EditableComboBox>
-
-      <EditableComboBox
-        HorizontalAlignment="Center"
-        VerticalAlignment="Center"
-        IsEnabled="False"
-        Watermark="test">
-        <EditableComboBoxItem Value="test" />
-      </EditableComboBox>
-    </StackPanel>
+        <EditableComboBox
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          IsEnabled="False"
+          Watermark="test">
+          <EditableComboBoxItem Value="test" />
+        </EditableComboBox>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <Thickness x:Key="EditableComboBoxBorderThickness">1</Thickness>

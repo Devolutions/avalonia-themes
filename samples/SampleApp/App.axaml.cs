@@ -160,7 +160,9 @@ public class App : Application
             return;
         }
 
+#if DEBUG
         this.AttachDeveloperTools();
+#endif
         this.devToolsAttached = true;
     }
 }

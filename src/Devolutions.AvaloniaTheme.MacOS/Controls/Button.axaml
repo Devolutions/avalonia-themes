@@ -1,18 +1,25 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+  <!-- 
+    Un-comment to allow auto-completion;
+    DO NOT INCLUDE WHEN PUBLISHING!
+  -->
+  <!-- <ResourceDictionary.MergedDictionaries> -->
+  <!--   <ResourceInclude Source="/Accents/ThemeResources.axaml" /> -->
+  <!-- </ResourceDictionary.MergedDictionaries> -->
 
   <Design.PreviewWith>
-    <StackPanel Width="110">
-      <Button Content="Cancel" Margin="10" />
-      <Button Content="Test" Margin="10 " IsEnabled="False" />
-      <Button Classes="accent" Content="Open" Margin="10 " />
-      <Button Classes="accent" Content="Open" Margin="10 " IsEnabled="False" />
-    </StackPanel>
+    <design:ThemePreviewer>
+      <StackPanel Width="110">
+        <Button Content="Cancel" Margin="10" />
+        <Button Content="Test" Margin="10 " IsEnabled="False" />
+        <Button Classes="accent" Content="Open" Margin="10 " />
+        <Button Classes="accent" Content="Open" Margin="10 " IsEnabled="False" />
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type Button}" TargetType="Button">

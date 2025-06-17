@@ -23,4 +23,12 @@
    <ItemGroup Condition="'$(Configuration)' == 'Debug'">
       <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
    </ItemGroup>
+
+   <ItemGroup Condition="'$(Configuration)' != 'Debug'">
+      <Compile Remove="Design\ThemePreviewer.axaml.cs" />
+      <None Include="Design\ThemePreviewer.axaml.cs" />
+
+      <AvaloniaXaml Remove="Design\ThemePreviewer.axaml" />
+      <None Include="Design\ThemePreviewer.axaml" />
+   </ItemGroup>
 </Project>
