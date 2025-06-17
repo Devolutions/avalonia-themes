@@ -40,7 +40,7 @@ public class App : Application
 
         if (!Design.IsDesignMode)
         {
-            var theme = this.DetectDesignTheme();
+            Theme? theme = this.DetectDesignTheme();
 
             if (OperatingSystem.IsWindows())
             {
@@ -67,18 +67,18 @@ public class App : Application
     {
         try
         {
-            var doc = new XmlDocument();
-            var dir = Directory.GetCurrentDirectory();
-            var debug = Directory.GetParent(dir);
-            var bin = Directory.GetParent(debug!.FullName);
+            XmlDocument doc = new();
+            string dir = Directory.GetCurrentDirectory();
+            DirectoryInfo? debug = Directory.GetParent(dir);
+            DirectoryInfo? bin = Directory.GetParent(debug!.FullName);
             if (debug.Name.Equals("Debug", StringComparison.OrdinalIgnoreCase) && bin!.Name.Equals("bin", StringComparison.OrdinalIgnoreCase))
             {
-                var projDir = Directory.GetParent(bin.FullName);
+                DirectoryInfo? projDir = Directory.GetParent(bin.FullName);
                 doc.Load(Path.Join(projDir!.FullName, "App.axaml"));
-                var styles = doc["Application"]!["Application.Styles"];
-                foreach (var obj in styles!)
+                XmlElement? styles = doc["Application"]!["Application.Styles"];
+                foreach (object? obj in styles!)
                 {
-                    var theme = this.ThemeFromXmlElement(obj as XmlElement);
+                    Theme? theme = this.ThemeFromXmlElement(obj as XmlElement);
                     if (theme is not null) return theme;
                 }
             }
@@ -112,13 +112,13 @@ public class App : Application
 
     public static void SetTheme(Theme theme)
     {
-        var app = (App)Current!;
-        var previousTheme = CurrentTheme;
+        App app = (App)Current!;
+        Theme? previousTheme = CurrentTheme;
         CurrentTheme = theme;
 
-        var reopenWindow = previousTheme != null && previousTheme.Name != theme.Name;
+        bool reopenWindow = previousTheme != null && previousTheme.Name != theme.Name;
 
-        var styles = theme switch
+        Styles? styles = theme switch
         {
             LinuxYaruTheme => app.linuxYaruStyles,
             DevExpressTheme => app.devExpressStyles,
@@ -133,8 +133,8 @@ public class App : Application
         {
             if (app.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktopLifetime)
             {
-                var oldWindow = desktopLifetime.MainWindow;
-                var dataContext = oldWindow?.DataContext;
+                Window? oldWindow = desktopLifetime.MainWindow;
+                object? dataContext = oldWindow?.DataContext;
                 MainWindow newWindow = new() { DataContext = dataContext };
                 desktopLifetime.MainWindow = newWindow;
                 newWindow.Show();

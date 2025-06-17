@@ -70,7 +70,7 @@ public class EditableComboBoxItem : TemplatedControl, ISelectable
 
         if (!e.Handled && this.GetOwner() is { } owner)
         {
-            var p = e.GetCurrentPoint(this);
+            PointerPoint p = e.GetCurrentPoint(this);
 
             if (p.Properties.PointerUpdateKind is PointerUpdateKind.LeftButtonPressed or PointerUpdateKind.RightButtonPressed)
             {
@@ -98,10 +98,10 @@ public class EditableComboBoxItem : TemplatedControl, ISelectable
 
         if (!e.Handled && !double.IsNaN(this.pointerDownPoint.X) && e.InitialPressMouseButton is MouseButton.Left or MouseButton.Right)
         {
-            var point = e.GetCurrentPoint(this);
-            var settings = TopLevel.GetTopLevel(e.Source as Visual)?.PlatformSettings;
-            var tapSize = settings?.GetTapSize(point.Pointer.Type) ?? new Size(4, 4);
-            var tapRect = new Rect(this.pointerDownPoint, new Size()).Inflate(new Thickness(tapSize.Width, tapSize.Height));
+            PointerPoint point = e.GetCurrentPoint(this);
+            IPlatformSettings? settings = TopLevel.GetTopLevel(e.Source as Visual)?.PlatformSettings;
+            Size tapSize = settings?.GetTapSize(point.Pointer.Type) ?? new Size(4, 4);
+            Rect tapRect = new Rect(this.pointerDownPoint, new Size()).Inflate(new Thickness(tapSize.Width, tapSize.Height));
 
             if (new Rect(this.Bounds.Size).ContainsExclusive(point.Position) && tapRect.ContainsExclusive(point.Position) &&
                 this.GetOwner() is { } owner)
@@ -112,7 +112,7 @@ public class EditableComboBoxItem : TemplatedControl, ISelectable
                     // the pointer event on the owner to trigger a commit.
                     if (e.Pointer.Type != PointerType.Mouse)
                     {
-                        var sourceBackup = e.Source;
+                        object? sourceBackup = e.Source;
                         owner.RaiseEvent(e);
                         e.Source = sourceBackup;
                     }
