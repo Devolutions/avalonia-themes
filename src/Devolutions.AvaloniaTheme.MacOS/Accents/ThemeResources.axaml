@@ -227,7 +227,7 @@
 
 
   <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
-  <FontFamily x:Key="MacOsThemeFontFamily">Inter, Helvetica Neue, Segoe UI, SF Pro, sans-serif</FontFamily>
+  <FontFamily x:Key="MacOsThemeFontFamily">SF Pro Text, Inter, Helvetica Neue, Segoe UI, sans-serif</FontFamily>
 
   <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
     <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
