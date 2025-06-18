@@ -39,8 +39,8 @@ internal class ThemePreviewer : ContentControl
             return;
         }
 
-        var prevTab = args.RemovedItems[0] as TabItem;
-        var nextTab = args.AddedItems[0] as TabItem;
+        TabItem? prevTab = args.RemovedItems[0] as TabItem;
+        TabItem? nextTab = args.AddedItems[0] as TabItem;
 
         if (prevTab is null || nextTab is null || this.nameScope is null)
         {
@@ -49,8 +49,8 @@ internal class ThemePreviewer : ContentControl
 
         this.presenter = this.nameScope.Get<ContentPresenter>("PART_ContentPresenter");
 
-        var prevContainer = this.nameScope.Find<Border>($"PART_ContentContainer_{prevTab.Header}");
-        var nextContainer = this.nameScope.Find<Border>($"PART_ContentContainer_{nextTab.Header}");
+        Border? prevContainer = this.nameScope.Find<Border>($"PART_ContentContainer_{prevTab.Header}");
+        Border? nextContainer = this.nameScope.Find<Border>($"PART_ContentContainer_{nextTab.Header}");
 
         if (prevContainer is not null && nextContainer is not null)
         {

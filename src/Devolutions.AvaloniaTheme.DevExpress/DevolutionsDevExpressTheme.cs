@@ -17,7 +17,7 @@ public class DevolutionsDevExpressTheme : Styles
     {
         AvaloniaXamlLoader.Load(sp, this);
 #if DEBUG
-        var themePreviewerUri = new Uri("avares://Devolutions.AvaloniaTheme.DevExpress/Design/ThemePreviewer.axaml");
+        Uri themePreviewerUri = new("avares://Devolutions.AvaloniaTheme.DevExpress/Design/ThemePreviewer.axaml");
         this.Resources.MergedDictionaries.Add(new ResourceInclude(themePreviewerUri) { Source = themePreviewerUri });
 #endif
     }

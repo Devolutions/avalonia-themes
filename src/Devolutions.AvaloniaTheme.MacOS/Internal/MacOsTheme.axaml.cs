@@ -14,7 +14,7 @@ internal class MacOsTheme : Styles
     {
         AvaloniaXamlLoader.Load(sp, this);
 #if DEBUG
-        var themePreviewerUri = new Uri("avares://Devolutions.AvaloniaTheme.MacOS/Design/ThemePreviewer.axaml");
+        Uri themePreviewerUri = new("avares://Devolutions.AvaloniaTheme.MacOS/Design/ThemePreviewer.axaml");
         this.Resources.MergedDictionaries.Add(new ResourceInclude(themePreviewerUri) { Source = themePreviewerUri });
 #endif
     }
