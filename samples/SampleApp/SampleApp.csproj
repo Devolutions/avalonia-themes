@@ -14,10 +14,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.0" />
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.0" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.0" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.0" />
+    <PackageReference Include="Avalonia" Version="11.3.1" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.1" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.1" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.1" />
+    <PackageReference Include="Avalonia.Svg.Skia" Version="11.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Linux'))">
+    <!-- 
+        More recent versions of SkiaSharp are currently broken on Linux.
+        See: https://github.com/mono/SkiaSharp/issues/3117#issuecomment-2896259517
+        - sbergerondrouin 2025-06-18
+    -->
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux" Version="3.116.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,7 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.7" /><!-- Frozen until fixed on linux -->
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <!-- <PackageReference Include="Devolutions.AvaloniaTheme.MacOS" Version="2024.12.4" /> -->
   </ItemGroup>
