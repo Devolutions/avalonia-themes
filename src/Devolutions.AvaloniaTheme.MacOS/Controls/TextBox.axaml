@@ -284,8 +284,11 @@
       </Setter>
     </Style>
 
-    <Style Selector="^[AcceptsReturn=True] /template/ TextPresenter#PART_TextPresenter">
-      <Setter Property="VerticalAlignment" Value="Top" />
+    <Style Selector="^[AcceptsReturn=True]">
+      <Setter Property="VerticalAlignment" Value="Stretch" />
+      <Style Selector="^ /template/ TextPresenter#PART_TextPresenter">
+        <Setter Property="VerticalAlignment" Value="Top" />
+      </Style>
     </Style>
 
     <Style Selector="^.clearButton[AcceptsReturn=False][IsReadOnly=False]:focus:not(TextBox:empty)">
