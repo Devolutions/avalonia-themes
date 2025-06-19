@@ -6,13 +6,14 @@
         xmlns:experiments="clr-namespace:SampleApp.Experiments"
         xmlns:vm="clr-namespace:SampleApp.ViewModels"
         xmlns:sampleApp="clr-namespace:SampleApp"
+        xmlns:actipro="http://schemas.actiprosoftware.com/avaloniaui"
         mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
         Width="1250"
         Height="800"
         x:Class="SampleApp.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="Devolutions Theme Sampler">
-
+  
   <!-- TODO: move the margins into the theme ?? -->
   <Panel Classes="mainControl">
     <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
@@ -44,7 +45,7 @@
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
-      <TabItem Header="DataGrid grouped" IsSelected="True">
+      <TabItem Header="DataGrid grouped">
         <demoPages:DataGridGroupedDemo>
           <demoPages:DataGridGroupedDemo.DataContext>
             <vm:DataGridGroupedViewModel />
@@ -94,6 +95,9 @@
           </StackPanel>
         </TabItem.Header>
         <TabControl>
+          <TabItem Header="ActiPro Controls">
+            <experiments:ActiProDemo />
+          </TabItem>
           <TabItem Header="System Colours">
             <experiments:SystemColoursDemo />
           </TabItem>
@@ -102,38 +106,34 @@
           </TabItem>
         </TabControl>
       </TabItem>
-
-      <TabItem Header="Settings">
-        <TabItem.Template>
-          <ControlTemplate>
-            <Button x:Name="SettingsButton" Content="Settings">
-              <Button.Flyout>
-                <Flyout>
-                  <StackPanel Width="152" Spacing="8">
-                    <ComboBox x:Name="ThemeVariants"
-                              HorizontalAlignment="Stretch"
-                              DisplayMemberBinding="{Binding Key, x:DataType=ThemeVariant}"
-                              SelectedIndex="0"
-                              SelectionChanged="ThemeVariants_OnSelectionChanged">
-                      <ComboBox.Items>
-                        <ThemeVariant>Default</ThemeVariant>
-                        <ThemeVariant>Light</ThemeVariant>
-                        <ThemeVariant>Dark</ThemeVariant>
-                      </ComboBox.Items>
-                    </ComboBox>
-                    <ComboBox x:Name="Themes"
-                              HorizontalAlignment="Stretch"
-                              DisplayMemberBinding="{Binding Name, x:DataType=sampleApp:Theme}"
-                              ItemsSource="{Binding AvailableThemes}"
-                              SelectedItem="{Binding CurrentTheme}"
-                              SelectionChanged="Themes_OnSelectionChanged" />
-                  </StackPanel>
-                </Flyout>
-              </Button.Flyout>
-            </Button>
-          </ControlTemplate>
-        </TabItem.Template>
-      </TabItem>
     </TabControl>
+
+    <Border HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Width="250"
+            Padding="0 0 8 8 ">
+      <actipro:ShadowChrome  Elevation="8" ShadowColor="Black" ShadowOpacity="0.7">
+        <Border Background="{DynamicResource BackgroundBrush}"
+                CornerRadius="5"
+                BorderThickness="1"
+                BorderBrush="Gray"
+                Padding="5">
+          <DockPanel>
+            <actipro:ToggleThemeButton 
+              DockPanel.Dock="Right" 
+              Classes.theme-outline="True" 
+              VerticalAlignment="Center"
+              Margin="10 0 0 0 "/>
+            <ComboBox x:Name="Themes"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Center"
+                      DisplayMemberBinding="{Binding Name, x:DataType=sampleApp:Theme}"
+                      ItemsSource="{Binding AvailableThemes}"
+                      SelectedItem="{Binding CurrentTheme}"
+                      SelectionChanged="Themes_OnSelectionChanged" />
+          </DockPanel>
+        </Border>
+      </actipro:ShadowChrome>
+    </Border>
   </Panel>
 </Window>

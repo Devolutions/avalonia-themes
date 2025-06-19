@@ -1,17 +1,21 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:actipro="http://schemas.actiprosoftware.com/avaloniaui"
              x:Class="SampleApp.App">
 
   <Application.Resources>
     <Styles x:Key="LinuxYaruStyles">
+      <actipro:ModernTheme />
       <StyleInclude Source="avares://Devolutions.AvaloniaTheme.Linux/LinuxTheme.axaml" />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
     <Styles x:Key="DevExpressStyles">
+      <actipro:ModernTheme />
       <StyleInclude Source="avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
     <Styles x:Key="MacOsStyles">
+      <actipro:ModernTheme />
       <StyleInclude Source="avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
@@ -19,6 +23,7 @@
 
   <!-- KEPT FOR DESIGNER! -->
   <Application.Styles>
+    <actipro:ModernTheme />
     <!-- <FluentTheme /> -->
     <StyleInclude Source="avares://Devolutions.AvaloniaTheme.MacOS/MacOSTheme.axaml" />
     <!-- <StyleInclude Source="avares://Devolutions.AvaloniaTheme.DevExpress/DevExpressTheme.axaml" /> -->
