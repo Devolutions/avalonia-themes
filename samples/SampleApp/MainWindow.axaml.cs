@@ -5,7 +5,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
-using Avalonia.Styling;
 
 public partial class MainWindow : Window
 {
@@ -34,11 +33,5 @@ public partial class MainWindow : Window
   {
     SelectingItemsControl? cb = sender as SelectingItemsControl;
     if (cb?.SelectedItem is Theme newTheme) App.SetTheme(newTheme);
-  }
-
-  private void ThemeVariants_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
-  {
-    SelectingItemsControl? cb = sender as SelectingItemsControl;
-    if (cb?.SelectedItem is ThemeVariant themeVariant) Application.Current!.RequestedThemeVariant = themeVariant;
   }
 }
