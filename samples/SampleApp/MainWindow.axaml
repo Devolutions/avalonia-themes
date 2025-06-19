@@ -13,7 +13,7 @@
         x:Class="SampleApp.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="Devolutions Theme Sampler">
-  
+
   <!-- TODO: move the margins into the theme ?? -->
   <Panel Classes="mainControl">
     <TabControl TabStripPlacement="Left" VerticalAlignment="Stretch">
@@ -112,18 +112,18 @@
             VerticalAlignment="Bottom"
             Width="250"
             Padding="0 0 8 8 ">
-      <actipro:ShadowChrome  Elevation="8" ShadowColor="Black" ShadowOpacity="0.7">
+      <actipro:ShadowChrome Elevation="8" ShadowColor="Black" ShadowOpacity="0.7">
         <Border Background="{DynamicResource BackgroundBrush}"
                 CornerRadius="5"
                 BorderThickness="1"
                 BorderBrush="Gray"
                 Padding="5">
           <DockPanel>
-            <actipro:ToggleThemeButton 
-              DockPanel.Dock="Right" 
-              Classes.theme-outline="True" 
+            <actipro:ToggleThemeButton
+              DockPanel.Dock="Right"
+              Classes.theme-outline="True"
               VerticalAlignment="Center"
-              Margin="10 0 0 0 "/>
+              Margin="10 0 0 0 " />
             <ComboBox x:Name="Themes"
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Center"
