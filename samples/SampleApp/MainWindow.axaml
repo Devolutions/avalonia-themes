@@ -94,6 +94,9 @@
           </StackPanel>
         </TabItem.Header>
         <TabControl>
+          <TabItem Header="ActiPro Controls">
+            <experiments:ActiProDemo />
+          </TabItem>
           <TabItem Header="System Colours">
             <experiments:SystemColoursDemo />
           </TabItem>
