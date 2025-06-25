@@ -75,20 +75,28 @@ jobs:
             throw "invalid version format: $PackageVersion, expected: 1.2.3.4"
           }
                     
-          $PackageList = ""
+          $Packages = @()
           if ('${{ inputs.build-mac }}' -eq 'true') {
-            $PackageList += "AvaloniaTheme.MacOS,"
+              $Packages += "AvaloniaTheme.MacOS"
           }
           if ('${{ inputs.build-devexpress }}' -eq 'true') {
-            $PackageList += "AvaloniaTheme.DevExpress,"
+              $Packages += "AvaloniaTheme.DevExpress"
           }
           if ('${{ inputs.build-linux }}' -eq 'true') {
-            $PackageList += "AvaloniaTheme.Linux,"
+              $Packages += "AvaloniaTheme.Linux"
           }
           if ('${{ inputs.build-controls }}' -eq 'true') {
-            $PackageList += "AvaloniaControls,"
+              $Packages += "AvaloniaControls"
           }
-          $PackageList = $PackageList -replace '[,]$'
+          if ($Packages.Count -eq 0) {
+              $Packages = @(
+                  "AvaloniaTheme.MacOS",
+                  "AvaloniaTheme.DevExpress",
+                  "AvaloniaTheme.Linux",
+                  "AvaloniaControls"
+              )
+          }
+          $PackageList = $Packages -join ","
 
           echo "package-env=$PackageEnv" >> $Env:GITHUB_OUTPUT
           echo "package-version=$PackageVersion" >> $Env:GITHUB_OUTPUT

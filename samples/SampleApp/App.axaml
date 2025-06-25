@@ -1,17 +1,22 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="SampleApp.App">
+<Application
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:actipro="http://schemas.actiprosoftware.com/avaloniaui"
+  x:Class="SampleApp.App">
 
   <Application.Resources>
     <Styles x:Key="LinuxYaruStyles">
+      <actipro:ModernTheme />
       <DevolutionsLinuxYaruTheme />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
     <Styles x:Key="DevExpressStyles">
+      <actipro:ModernTheme />
       <DevolutionsDevExpressTheme />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
     <Styles x:Key="MacOsStyles">
+      <actipro:ModernTheme />
       <DevolutionsMacOsTheme GlobalStyles="False" />
       <DevolutionsMacOsThemeGlobalStyles />
       <StyleInclude Source="/Styles.axaml" />
@@ -21,8 +26,10 @@
   <!-- KEPT FOR DESIGNER! -->
   <!-- This also dictate which theme is initially loaded -->
   <Application.Styles>
-    <!-- <DevolutionsMacOsTheme /> -->
-    <DevolutionsDevExpressTheme />
+    <actipro:ModernTheme />
+
+    <DevolutionsMacOsTheme />
+    <!-- <DevolutionsDevExpressTheme /> -->
     <!-- <DevolutionsLinuxYaruTheme /> -->
 
     <StyleInclude Source="/Styles.axaml" />

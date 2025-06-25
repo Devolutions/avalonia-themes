@@ -33,9 +33,9 @@
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" />
-        <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" />
-        <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" />
+        <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" Width="*" />
+        <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" Width="*" />
+        <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" Width="*" />
       </DataGrid.Columns>
     </DataGrid>
     <TextBlock>
@@ -64,9 +64,9 @@
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" />
-        <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" />
-        <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" />
+        <DataGridTextColumn Header="Common Name" Binding="{Binding CommonName}" x:DataType="local:DataGridItem" Width="*" />
+        <DataGridTextColumn Header="Account Name" Binding="{Binding AccountName}" x:DataType="local:DataGridItem" Width="*" />
+        <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" x:DataType="local:DataGridItem" Width="*" />
       </DataGrid.Columns>
     </DataGrid>
 

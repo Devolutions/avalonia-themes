@@ -368,7 +368,6 @@
           <DataGridFrozenGrid Name="PART_Root"
                               ColumnDefinitions="Auto,*"
                               RowDefinitions="*,Auto,Auto">
-
             <Border Name="ItemBorder"
                     Background="{TemplateBinding Background}"
                     Grid.RowSpan="2"
@@ -377,7 +376,12 @@
                 <MultiBinding Converter="{x:Static DevoMultiConverters.OptionsToChoiceConverter}"
                               ConverterParameter="None,All,Horizontal,Vertical">
                   <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGrid}" Path="GridLinesVisibility" />
+                  <MultiBinding Converter="{x:Static DevoMultiConverters.ClassToChoiceConverter}"
+                                ConverterParameter="MacOS_NonDistributed_Columns">
+                    <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=DataGrid}" Path="Classes" />
                   <Binding Source="{StaticResource DataGridRowMargin}" />
+                    <Binding Source="{StaticResource DataGridDistributedColumnsRowMargin}" />
+                  </MultiBinding>
                   <Binding Source="{StaticResource DataGridGroupHeaderMarginGridLinesVisible}" />
                 </MultiBinding>
               </Border.Margin>

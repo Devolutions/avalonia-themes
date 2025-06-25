@@ -227,7 +227,7 @@
 
 
   <!-- TODO: Appkit buttons have DD at the bottom, EE at the top & fading -> try sub-pixel rendering (UseLayoutRounding) (s. `default button issues.psd` ... -->
-  <FontFamily x:Key="MacOsThemeFontFamily">Inter, Helvetica Neue, Segoe UI, SF Pro, sans-serif</FontFamily>
+  <FontFamily x:Key="MacOsThemeFontFamily">SF Pro Text, Inter, Helvetica Neue, Segoe UI, sans-serif</FontFamily>
 
   <LinearGradientBrush x:Key="ControlBackgroundRecessedBrush" StartPoint="0%,0%" EndPoint="0%,100%">
     <GradientStop Offset="0" Color="{DynamicResource ControlBorderLowColor}" />
@@ -262,7 +262,7 @@
   <Thickness x:Key="BorderThickness">1</Thickness>
 
   <Thickness x:Key="InputControlsSpaceForFocusBorder">1.5</Thickness>
-  <Thickness x:Key="TabControlSpaceForFocusFactors">2 2 2 0</Thickness>
+  <Thickness x:Key="TabControlSpaceForFocusFactors">1 1 1 -1.5</Thickness>
 
   <x:Double x:Key="DefaultFontSize">13</x:Double>
   <x:Double x:Key="ControlFontSize">13</x:Double>
@@ -393,6 +393,7 @@
   <x:Double x:Key="DataGridSortChevronSize">7</x:Double>
   <Thickness x:Key="DataGridRowPadding">6 0</Thickness>
   <Thickness x:Key="DataGridRowMargin">8 0</Thickness>
+  <Thickness x:Key="DataGridDistributedColumnsRowMargin">8 0 18 0</Thickness>  
   <Thickness x:Key="DataGridGroupHeaderBorderThickness">1</Thickness>
   <Thickness x:Key="DataGridGroupHeaderBorderThicknessGridLinesVisible">0 1</Thickness>
   <Thickness x:Key="DataGridGroupHeaderMargin">8 2</Thickness>
