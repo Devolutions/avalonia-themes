@@ -1,13 +1,10 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <Border Margin="10" Background="{DynamicResource LayoutBackgroundHighBrush}">
+    <design:ThemePreviewer>
       <StackPanel Margin="20" Height="400" Width="180" Spacing="5">
         <ComboBox SelectedIndex="2" MaxDropDownHeight="100">
           <ComboBoxItem>Option 1</ComboBoxItem>
@@ -31,7 +28,7 @@
           <ComboBoxItem>Option 9</ComboBoxItem>
         </ComboBox>
       </StackPanel>
-    </Border>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="PopUpToggleButton" TargetType="ToggleButton">

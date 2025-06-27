@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <ResourceDictionary.MergedDictionaries>
+    <MergeResourceInclude Source="AutoCompleteBox.axaml" />
     <MergeResourceInclude Source="Button.axaml" />
     <MergeResourceInclude Source="ButtonSpinner.axaml" />
     <MergeResourceInclude Source="CheckBox.axaml" />
@@ -17,6 +18,7 @@
     <MergeResourceInclude Source="TabControl.axaml" />
     <MergeResourceInclude Source="TabItem.axaml" />
     <MergeResourceInclude Source="TextBox.axaml" />
+    <MergeResourceInclude Source="TextBlock.axaml" />
     <MergeResourceInclude Source="TreeView.axaml" />
     <MergeResourceInclude Source="TreeViewItem.axaml" />
     <MergeResourceInclude Source="ContextMenu.axaml" />

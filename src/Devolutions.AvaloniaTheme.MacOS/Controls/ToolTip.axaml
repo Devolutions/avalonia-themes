@@ -1,25 +1,20 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <ThemeVariantScope RequestedThemeVariant="Dark">
-      <Border Padding="20" Background="{DynamicResource BackgroundBrush}">
-        <StackPanel Spacing="10">
-          <ToolTip Opacity="1" HorizontalAlignment="Left">Text Content</ToolTip>
-          <ToolTip Opacity="1">Very long text content which should exceed the maximum with of the tooltip and wrap.</ToolTip>
-          <ToolTip Opacity="1" HorizontalAlignment="Left">
-            <StackPanel>
-              <TextBlock>Multi-line</TextBlock>
-              <TextBlock>ToolTip Content</TextBlock>
-            </StackPanel>
-          </ToolTip>
-        </StackPanel>
-      </Border>
-    </ThemeVariantScope>
+    <design:ThemePreviewer>
+      <StackPanel Spacing="10">
+        <ToolTip Opacity="1" HorizontalAlignment="Left">Text Content</ToolTip>
+        <ToolTip Opacity="1">Very long text content which should exceed the maximum with of the tooltip and wrap.</ToolTip>
+        <ToolTip Opacity="1" HorizontalAlignment="Left">
+          <StackPanel>
+            <TextBlock>Multi-line</TextBlock>
+            <TextBlock>ToolTip Content</TextBlock>
+          </StackPanel>
+        </ToolTip>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type ToolTip}" TargetType="ToolTip">

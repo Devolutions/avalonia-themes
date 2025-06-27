@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
   <ResourceDictionary.ThemeDictionaries>
-    <ResourceDictionary x:Key="Light">
+    <ResourceDictionary x:Key="Default">
       <Color x:Key="BackgroundColor">#ffffff</Color>
       <Color x:Key="ForegroundColor">#000000</Color>
 
@@ -62,7 +62,7 @@
       <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.20" />
 
       <SolidColorBrush x:Key="TabItemSelectedPressedBrush" Color="#f0f0f0" />
-      
+
       <BoxShadows x:Key="TextBoxBorderShadows">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ControlBorderBoxShadow">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26000000, 0 0 0 0.5 #08000000</BoxShadows>
@@ -172,7 +172,7 @@
       <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.24" />
 
       <SolidColorBrush x:Key="TabItemSelectedPressedBrush" Color="#666666" />
-      
+
       <BoxShadows x:Key="TextBoxBorderShadows">0 1 1 0 #4dffffff</BoxShadows>
       <BoxShadows x:Key="ControlBorderBoxShadow">0 0 Transparent</BoxShadows>
       <BoxShadows x:Key="ComboBoxDisabledBoxShadow">0 0.5 2.5 0 #26ffffff, 0 0 0 0.5 #08ffffff</BoxShadows>
@@ -280,8 +280,7 @@
   <SolidColorBrush x:Key="SelectionInInactiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.15" />
 
   <SolidColorBrush x:Key="ControlForegroundAccentHighBrush" Color="{DynamicResource AccentForegroundColor}" />
-  <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}"
-                   Opacity="0.85" />
+  <SolidColorBrush x:Key="ControlForegroundAccentInactiveHighBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.85" />
 
   <SolidColorBrush x:Key="ControlBackgroundHighBrush" Color="{DynamicResource ControlBackgroundHighColor}" />
   <SolidColorBrush x:Key="ControlBackgroundMidBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
@@ -356,10 +355,13 @@
   <CornerRadius x:Key="CheckBoxCornerRadius">3</CornerRadius>
 
   <!-- ComboBox & ComboBoxItem Resources -->
+
+  <!-- Resources for ComboBoxItem.xaml -->
   <Thickness x:Key="ComboBoxItemMargin">2 0</Thickness>
   <Thickness x:Key="ComboBoxItemPadding">5 3</Thickness>
   <x:Int32 x:Key="ComboBoxItemHeight">22</x:Int32>
   <Thickness x:Key="ComboBoxShadowMargin">4</Thickness>
+
   <!-- InitialFirstItemDistance must match ComboBoxShadowMargin.bottom + PopupPadding.top -->
   <x:Int32 x:Key="InitialFirstItemDistance">9</x:Int32>
   <x:Int32 x:Key="PopupTrimHeight">30</x:Int32> <!-- includes Margin, Padding, Shadow -->

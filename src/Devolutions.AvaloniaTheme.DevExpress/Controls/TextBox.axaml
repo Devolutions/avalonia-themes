@@ -1,10 +1,10 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:converters="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Converters">
+                    xmlns:converters="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Converters"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
 
   <Design.PreviewWith>
-    <!-- <ThemeVariantScope RequestedThemeVariant="Dark"> -->
-    <Border Background="#f0f0f0">
+    <design:ThemePreviewer>
       <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
         <TextBlock>Name:</TextBlock>
         <TextBox Watermark="Enter your name">Normal</TextBox>
@@ -34,8 +34,7 @@
                   Margin="5 0 0 0 " />
         </Grid>
       </StackPanel>
-    </Border>
-    <!-- </ThemeVariantScope> -->
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <Thickness x:Key="TextBoxPrefixPaddingFactors">1 1 2 1</Thickness>

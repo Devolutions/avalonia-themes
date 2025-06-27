@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Version>1.0.0.0</Version>
+    <Version>1.0.0</Version>
     <Company>Devolutions</Company>
     <Description>Devolutions Avalonia macOS Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.MacOS</PackageId>
@@ -10,17 +10,28 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="[11.2.0,)"/>
-    <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)"/>
-    <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)"/>
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)"/>
-    <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.6.9,)"/>
+    <PackageReference Include="Avalonia" Version="[11.2.0,)" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
+    <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
   </ItemGroup>
+
+  <!-- flip these when debugging -->
   <ItemGroup>
-    <AvaloniaResource Include="Accents/Assets/**"/>
+    <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.6.9,)" />
+    <!--    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />-->
   </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
-    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj"/>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Accents/Assets/**" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(Configuration)' != 'Debug'">
+    <Compile Remove="Design\ThemePreviewer.axaml.cs" />
+    <None Include="Design\ThemePreviewer.axaml.cs" />
+    <AvaloniaXaml Remove="Design\ThemePreviewer.axaml" />
+    <None Include="Design\ThemePreviewer.axaml" />
   </ItemGroup>
 </Project>

@@ -1,31 +1,22 @@
 <ResourceDictionary
   xmlns="https://github.com/avaloniaui"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <ThemeVariantScope RequestedThemeVariant="Dark">
-      <StackPanel>
-        <Border Background="#212121">
-          <Border Background="{DynamicResource LayoutBackgroundLowBrush}" Margin="5">
-            <StackPanel Margin="10">
-              <CheckBox IsChecked="True">Emulate 3 buttons</CheckBox>
-              <CheckBox IsChecked="False">Swap mouse bu</CheckBox>
-              <CheckBox IsChecked="True" IsEnabled="False">Auto scale with</CheckBox>
-              <CheckBox IsEnabled="False">Unchecked disabled </CheckBox>
-              <CheckBox IsThreeState="True" IsChecked="{x:Null}">Unknown by default</CheckBox>
-              <CheckBox IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False">
-                Indeterminate
-              </CheckBox>
-              <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
-            </StackPanel>
-          </Border>
-        </Border>
+    <design:ThemePreviewer>
+      <StackPanel Margin="10">
+        <CheckBox IsChecked="True">Emulate 3 buttons</CheckBox>
+        <CheckBox IsChecked="False">Swap mouse bu</CheckBox>
+        <CheckBox IsChecked="True" IsEnabled="False">Auto scale with</CheckBox>
+        <CheckBox IsEnabled="False">Unchecked disabled </CheckBox>
+        <CheckBox IsThreeState="True" IsChecked="{x:Null}">Unknown by default</CheckBox>
+        <CheckBox IsThreeState="True" IsChecked="{x:Null}" IsEnabled="False">
+          Indeterminate
+        </CheckBox>
+        <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
       </StackPanel>
-    </ThemeVariantScope>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type CheckBox}" TargetType="CheckBox">
@@ -33,7 +24,7 @@
     <Setter Property="Background" Value="{DynamicResource CheckBoxBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderBrush}" />
     <Setter Property="BorderThickness" Value="{DynamicResource ControlBorderThickness}" />
-    <Setter Property="Padding" Value="6 0 0 0" />
+    <Setter Property="Padding" Value="0" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="HorizontalAlignment" Value="Left" />
@@ -47,7 +38,7 @@
       <ControlTemplate>
         <Panel Name="ReservedSpaceForFocus"
                Margin="{StaticResource InputControlsSpaceForFocusBorder}">
-          <Grid ColumnDefinitions="Auto,*" MinHeight="20" ClipToBounds="False">
+          <Grid ColumnDefinitions="Auto,6,*" MinHeight="20" ClipToBounds="False">
             <Border
               Name="FocusBorderElement"
               VerticalAlignment="Center"
@@ -89,7 +80,7 @@
             </Border>
             <ContentPresenter
               Name="PART_ContentPresenter"
-              Grid.Column="1"
+              Grid.Column="2"
               Margin="{TemplateBinding Padding}"
               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"

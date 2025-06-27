@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:SampleApp.ViewModels"
              xmlns:local="clr-namespace:SampleApp.Models"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
              x:Class="SampleApp.DemoPages.DataGridGroupedDemo"
              x:DataType="vm:DataGridGroupedViewModel">
 

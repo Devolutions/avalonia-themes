@@ -3,7 +3,7 @@
                     x:ClassModifier="internal">
 
   <ControlTheme x:Key="{x:Type ListBox}" TargetType="ListBox" BasedOn="{StaticResource {x:Type ListBox}}">
-    <Setter Property="Background" Value="{DynamicResource ScrollControlBackground}" />
+    <Setter Property="Background" Value="{DynamicResource InputBackground}" />
     <Setter Property="BorderBrush" Value="{DynamicResource InputBorder}" />
   </ControlTheme>
 </ResourceDictionary>

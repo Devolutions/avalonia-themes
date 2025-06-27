@@ -1,42 +1,34 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
-  <ResourceDictionary.MergedDictionaries>
-    <ResourceInclude Source="/Accents/ThemeResources.axaml" />
-  </ResourceDictionary.MergedDictionaries>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
 
   <Design.PreviewWith>
-    <ThemeVariantScope RequestedThemeVariant="Dark">
-      <Border Background="{DynamicResource BackgroundBrush}">
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-          <Border Width="500">
-            <TabControl TabStripPlacement="Left" Margin="5">
-              <TabItem Header="Tab 1">
-                <TextBlock Text="Vertical tab view" />
-              </TabItem>
-              <TabItem Header="Tab 2">
-                <TextBlock Text="Content 2" />
-              </TabItem>
-              <TabItem Header="Tab3" IsEnabled="False" />
-            </TabControl>
-          </Border>
-          <Border Width="500">
-            <TabControl TabStripPlacement="Top" Margin="5">
-              <TabItem Header="General">
-                <TextBlock Text="Horizontal tab view" />
-              </TabItem>
-              <TabItem Header="Settings">
-                <TextBlock Text="Content 2" />
-              </TabItem>
-              <TabItem Header="Disabled Tab" IsEnabled="False" />
-              <TabItem Header="Advanced">
-                <TextBlock Text="Content 3" />
-              </TabItem>
-            </TabControl>
-          </Border>
-        </StackPanel>
-      </Border>
-    </ThemeVariantScope>
+    <design:ThemePreviewer Padding="20">
+      <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+        <TabControl TabStripPlacement="Left" Margin="5">
+          <TabItem Header="Tab 1">
+            <TextBlock Text="Vertical tab view" />
+          </TabItem>
+          <TabItem Header="Tab 2">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Tab3" IsEnabled="False" />
+        </TabControl>
+
+        <TabControl TabStripPlacement="Top" Margin="5">
+          <TabItem Header="General">
+            <TextBlock Text="Horizontal tab view" />
+          </TabItem>
+          <TabItem Header="Settings">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Disabled Tab" IsEnabled="False" />
+          <TabItem Header="Advanced">
+            <TextBlock Text="Content 3" />
+          </TabItem>
+        </TabControl>
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <Thickness x:Key="TabControlTopPlacementItemMargin">0 0 0 2</Thickness>

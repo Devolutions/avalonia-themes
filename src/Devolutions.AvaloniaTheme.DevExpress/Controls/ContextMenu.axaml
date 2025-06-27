@@ -4,35 +4,38 @@
 -->
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design"
                     x:ClassModifier="internal">
 
   <Design.PreviewWith>
-    <Border Background="{DynamicResource SystemAccentColor}"
-            Margin="16"
-            Padding="48"
-            Width="400"
-            Height="200">
-      <Border.ContextMenu>
-        <ContextMenu>
-          <MenuItem Header="Standard _Menu Item" />
-          <MenuItem Header="Disabled" IsEnabled="False" />
-          <Separator />
-          <MenuItem Header="Menu with _Submenu">
-            <MenuItem Header="Submenu _1" />
-            <MenuItem Header="Submenu _2" />
-          </MenuItem>
-          <MenuItem Header="Menu Item with _Icon" />
-          <MenuItem Header="Menu Item with _Checkbox">
-            <MenuItem.Icon>
-              <CheckBox BorderThickness="0"
-                        IsHitTestVisible="False"
-                        IsChecked="True" />
-            </MenuItem.Icon>
-          </MenuItem>
-        </ContextMenu>
-      </Border.ContextMenu>
-      <TextBlock Text="Defined in XAML" />
-    </Border>
+    <design:ThemePreviewer>
+      <Panel Width="400" Height="200" Background="Transparent">
+        <Panel.ContextMenu>
+          <ContextMenu>
+            <MenuItem Header="Standard _Menu Item" />
+            <MenuItem Header="Disabled" IsEnabled="False" />
+            <Separator />
+            <MenuItem Header="Menu with _Submenu">
+              <MenuItem Header="Submenu _1" />
+              <MenuItem Header="Submenu _2" />
+            </MenuItem>
+            <MenuItem Header="Menu Item with _Icon" />
+            <MenuItem Header="Menu Item with _Checkbox">
+              <MenuItem.Icon>
+                <CheckBox BorderThickness="0"
+                          IsHitTestVisible="False"
+                          IsChecked="True" />
+              </MenuItem.Icon>
+            </MenuItem>
+          </ContextMenu>
+        </Panel.ContextMenu>
+
+        <TextBlock
+          Text="Right-click to open"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center" />
+      </Panel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
   <Thickness x:Key="MenuFlyoutScrollerMargin">0,4,0,4</Thickness>

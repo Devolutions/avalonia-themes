@@ -21,9 +21,9 @@
       <Style Selector="^.LongTitle ContentPresenter#PART_HeaderPresenter.TopLevelMenuItem">
         <Setter Property="MaxWidth" Value="75" />
       </Style>
-      <Style Selector="^ Svg">
-        <Setter Property="Width" Value="25" />
-        <Setter Property="Height" Value="25" />
+      <Style Selector="^ ContentControl#PART_IconPresenter">
+        <Setter Property="MaxWidth" Value="25" />
+        <Setter Property="MaxHeight" Value="25" />
       </Style>
     </Style>
 
