@@ -24,7 +24,7 @@
   </Application.Resources>
 
   <!-- KEPT FOR DESIGNER! -->
-  <!-- This also dictate which theme is initially loaded -->
+  <!-- This also dictates which theme is initially loaded -->
   <Application.Styles>
     <actipro:ModernTheme />
 

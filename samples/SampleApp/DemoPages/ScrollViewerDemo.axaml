@@ -99,7 +99,7 @@
       </Grid>
       <TextBlock TextWrapping="Wrap">
         <Bold>Note:</Bold> MacOS hides scrollbars completely (depending on user settings), but they re-appear on scroll events.
-        Since Avalonia ScrollBars only expand on pointerOver hiding them completely would be a bit confusing, so the Thumb sliders
+        Since Avalonia ScrollBars only expand on pointerOver, hiding them completely would be a bit confusing. So the Thumb sliders
         remain visible even when <TextBlock Classes="code" Text="AllowAutoHide=&quot;True&quot;" />.
       </TextBlock>
       <TextBlock TextWrapping="Wrap">
