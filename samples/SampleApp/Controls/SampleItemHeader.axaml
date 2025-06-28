@@ -7,11 +7,6 @@
              x:Class="SampleApp.Controls.SampleItemHeader">
 
   <StackPanel Orientation="Horizontal" Spacing="10">
-    <!-- <TextBlock DockPanel.Dock="Right" Text="🟢" -->
-    <!--            IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance},  -->
-    <!--                Path=CurrentThemeName, -->
-    <!--                Converter={StaticResource NotEqualToComparisonConverter}, -->
-    <!--                ConverterParameter=Linux - Yaru}" /> -->
     <TextBlock Text="{Binding $parent[controls:SampleItemHeader].Status}" />
     <TextBlock Text="{Binding $parent[controls:SampleItemHeader].Title}" />
   </StackPanel>

@@ -25,8 +25,7 @@
     <Setter Property="FontFamily" Value="{DynamicResource CodeFontFamily}" />
     <Setter Property="Foreground" Value="{DynamicResource CodeFontColor}" />
     <Setter Property="Background" Value="{DynamicResource LayoutBackgroundLowBrush}" />
-    <Setter Property="Padding" Value="4,4,4,0" />
-    <Setter Property="Margin" Value="0 0 0 -2" />
+    <Setter Property="Padding" Value="4,0,4,0" />
     <Setter Property="VerticalAlignment" Value="Center" />
   </Style>
 </Styles>

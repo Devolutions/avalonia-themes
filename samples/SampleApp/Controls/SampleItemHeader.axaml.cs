@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
-using Helpers;
 
 public partial class SampleItemHeader : UserControl, INotifyPropertyChanged
 {
@@ -34,7 +33,7 @@ public partial class SampleItemHeader : UserControl, INotifyPropertyChanged
 
   private bool IsApplicable =>
     this.ApplicableTo.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).Any(theme =>
-      string.Equals(theme, ThemeInfo.Instance.CurrentThemeName, StringComparison.OrdinalIgnoreCase));
+      string.Equals(theme, App.CurrentTheme?.Name, StringComparison.OrdinalIgnoreCase));
 
   public string? Status => this.IsApplicable ? "🟢" : "🔴";
 
@@ -47,6 +46,7 @@ public partial class SampleItemHeader : UserControl, INotifyPropertyChanged
   protected override void OnInitialized()
   {
     base.OnInitialized();
-    this.OnPropertyChanged(nameof(this.Status)); // let Avalonia know to re-evaluate the Status binding
+    this.OnPropertyChanged(nameof(this
+      .Status)); // let Avalonia know to re-evaluate the Status binding (initial rendering only has the StyledProperty values available) 
   }
 }
