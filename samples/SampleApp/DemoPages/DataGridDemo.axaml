@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:SampleApp.ViewModels"
+             xmlns:helpers="using:SampleApp.Helpers"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.DataGridDemo"
              x:DataType="vm:DataGridViewModel">
@@ -55,7 +56,13 @@
     </TabItem>
     <TabItem Header="Non-Distributed Columns">
       <StackPanel Margin="20" Spacing="10">
-        <TextBlock><Bold>NOTE:</Bold> When none of the columns are sized to fill the width of the table (<TextBlock Classes="code" Text="Width='*'" />), the right row margins are too large</TextBlock>
+        <TextBlock
+          IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance}, 
+                   Path=CurrentThemeName,
+                   Converter={StaticResource EqualToComparisonConverter},
+                   ConverterParameter=MacOS}">
+          <Bold>NOTE:</Bold> When none of the columns are sized to fill the width of the table (<TextBlock Classes="code" Text="Width='*'" />), the right row margins are too large
+        </TextBlock>
         <DataGrid ItemsSource="{Binding Items}">
           <DataGrid.Columns>
             <DataGridTemplateColumn Header="">
@@ -71,7 +78,14 @@
             <DataGridTextColumn Header="Last Modified" Binding="{Binding LastModified}" IsReadOnly="True" />
           </DataGrid.Columns>
         </DataGrid>
-        <TextBlock>This can be fixed by applying <TextBlock Classes="code" Text="Classes='MacOS_NonDistributed_Columns'" />:</TextBlock>
+        <TextBlock
+          IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance}, 
+                   Path=CurrentThemeName,
+                   Converter={StaticResource EqualToComparisonConverter},
+                   ConverterParameter=MacOS}">
+          This can be fixed by applying
+          <TextBlock Classes="code" Text="Classes='MacOS_NonDistributed_Columns'" />:
+        </TextBlock>
         <DataGrid ItemsSource="{Binding Items}"
                   Classes="MacOS_NonDistributed_Columns">
           <DataGrid.Columns>

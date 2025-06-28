@@ -40,7 +40,7 @@
                   ColumnDefinitions="Auto, *">
               <ItemsPresenter Name="PART_ItemsPresenter"
                               Grid.Column="0"
-                              VerticalAlignment="Bottom"
+                              VerticalAlignment="Top"
                               ItemsPanel="{TemplateBinding ItemsPanel}" />
               <Border Name="CardBorderBeyondTheTabs"
                       Grid.Column="1"

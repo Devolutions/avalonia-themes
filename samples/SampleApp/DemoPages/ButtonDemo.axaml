@@ -2,21 +2,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:helpers="clr-namespace:SampleApp.Helpers"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.ButtonDemo">
 
   <StackPanel>
     <Border Margin="20 0">
-      <Grid ColumnDefinitions="100, 72, 40, 72, Auto" RowDefinitions="50, 50, 50" Margin="20">
+      <Grid ColumnDefinitions="100, 72, Auto" RowDefinitions="50, 50, 50" Margin="20">
         <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center">Default</TextBlock>
         <Button Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Content="Cancel" />
         <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">accent</TextBlock>
         <Button Grid.Row="1" Grid.Column="1" Classes="accent" VerticalAlignment="Center">Open</Button>
         <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center">Disabled</TextBlock>
         <Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Classes="accent" IsEnabled="False">Submit</Button>
-        <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">/</TextBlock>
-        <Button Grid.Row="1" Grid.Column="3" Classes="accentPrecise" VerticalAlignment="Center">Open</Button>
-        <TextBlock Grid.Row="1" Grid.Column="4" VerticalAlignment="Center" Margin="10 0 0 0">(MacOS: More precise look, but not responsive to user-selected accent colour)</TextBlock>
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal" Spacing="20"
+                    IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance}, 
+                   Path=CurrentThemeName,
+                   Converter={StaticResource EqualToComparisonConverter},
+                   ConverterParameter=MacOS}">
+          <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0">/</TextBlock>
+          <Button Classes="accentPrecise" VerticalAlignment="Center">Open</Button>
+          <TextBlock VerticalAlignment="Center" Margin="10 0 0 0">(MacOS: More precise look, but not responsive to user-selected accent colour)</TextBlock>
+        </StackPanel>
       </Grid>
     </Border>
     <Border Background="{DynamicResource LayoutBackgroundLowBrush}" Margin="20 0">

@@ -7,6 +7,7 @@
         xmlns:vm="clr-namespace:SampleApp.ViewModels"
         xmlns:sampleApp="clr-namespace:SampleApp"
         xmlns:actipro="http://schemas.actiprosoftware.com/avaloniaui"
+        xmlns:controls="clr-namespace:SampleApp.Controls"
         mc:Ignorable="d" d:DesignWidth="1000" d:DesignHeight="450"
         Width="1250"
         Height="800"
@@ -23,63 +24,114 @@
         </TabItem.Header>
         <demoPages:Overview />
       </TabItem>
-      <TabItem Header="Button">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="Button" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:ButtonDemo />
       </TabItem>
-      <TabItem Header="CheckBox">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="CheckBox" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:CheckBoxDemo />
       </TabItem>
-      <TabItem Header="ComboBox">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="ComboBox" ApplicableTo="MacOS, Windows - DevExpress" />
+        </TabItem.Header>
         <demoPages:ComboBoxDemo />
       </TabItem>
-      <TabItem Header="EditableComboBox">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="EditableComboBox" ApplicableTo="MacOS, Windows - DevExpress" />
+        </TabItem.Header>
         <demoPages:EditableComboBoxDemo />
       </TabItem>
-      <TabItem Header="ContextMenu">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="ContextMenu" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:ContextMenuDemo />
       </TabItem>
-      <TabItem Header="DataGrid">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="DataGrid" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:DataGridDemo>
           <demoPages:DataGridDemo.DataContext>
             <vm:DataGridViewModel />
           </demoPages:DataGridDemo.DataContext>
         </demoPages:DataGridDemo>
       </TabItem>
-      <TabItem Header="DataGrid grouped">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="DataGrid grouped" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:DataGridGroupedDemo>
           <demoPages:DataGridGroupedDemo.DataContext>
             <vm:DataGridGroupedViewModel />
           </demoPages:DataGridGroupedDemo.DataContext>
         </demoPages:DataGridGroupedDemo>
       </TabItem>
-      <TabItem Header="Menu">
-        <demoPages:MenuDemo />
-      </TabItem>
-      <TabItem Header="GridSplitter">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="GridSplitter" ApplicableTo="MacOS" />
+        </TabItem.Header>
         <demoPages:GridSplitterDemo />
       </TabItem>
-      <TabItem Header="MenuFlyout">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="Menu" ApplicableTo="MacOS" />
+        </TabItem.Header>
+        <demoPages:MenuDemo />
+      </TabItem>
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="MenuFlyout" ApplicableTo="MacOS" />
+        </TabItem.Header>
         <demoPages:MenuFlyoutDemo />
       </TabItem>
-      <TabItem Header="NumericUpDown">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="NumericUpDown" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:NumericUpDownDemo />
       </TabItem>
-      <TabItem Header="ScrollViewer">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="ScrollViewer" ApplicableTo="MacOS, Windows - DevExpress" />
+        </TabItem.Header>
         <demoPages:ScrollViewerDemo />
       </TabItem>
-      <TabItem Header="TabControl">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="TabControl" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:TabControlDemo />
       </TabItem>
-      <TabItem Header="TextBox">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="TextBox" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+        </TabItem.Header>
         <demoPages:TextBoxDemo />
       </TabItem>
-      <TabItem Header="Toggle Switch [WIP]">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="Toggle Switch" ApplicableTo="" />
+        </TabItem.Header>
         <demoPages:ToggleSwitchDemo />
       </TabItem>
-      <TabItem Header="TreeView">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="TreeView" ApplicableTo="MacOS, Windows - DevExpress" />
+        </TabItem.Header>
         <demoPages:TreeViewDemo />
       </TabItem>
-      <TabItem Header="ToolTip">
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="ToolTip" ApplicableTo="MacOS" />
+        </TabItem.Header>
         <demoPages:ToolTipDemo />
       </TabItem>
       <TabItem Header="✜ Control Alignment">

@@ -21,15 +21,17 @@
       <DevolutionsMacOsThemeGlobalStyles />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
+    <actipro:ComparisonConverter x:Key="EqualToComparisonConverter" Operator="EqualTo" />
+    <actipro:ComparisonConverter x:Key="NotEqualToComparisonConverter" Operator="NotEqualTo" />
   </Application.Resources>
 
   <!-- KEPT FOR DESIGNER! -->
-  <!-- This also dictate which theme is initially loaded -->
+  <!-- This also dictates which theme is initially loaded -->
   <Application.Styles>
     <actipro:ModernTheme />
 
-    <DevolutionsMacOsTheme />
-    <!-- <DevolutionsDevExpressTheme /> -->
+    <!-- <DevolutionsMacOsTheme /> -->
+    <DevolutionsDevExpressTheme />
     <!-- <DevolutionsLinuxYaruTheme /> -->
 
     <StyleInclude Source="/Styles.axaml" />

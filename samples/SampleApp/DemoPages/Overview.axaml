@@ -2,23 +2,28 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:helpers="clr-namespace:SampleApp.Helpers"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.Overview">
 
   <StackPanel Margin="10">
     <TextBlock Classes="h1" Text="{Binding $parent[Window].Title}" />
     <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap">
-      Elements in this sampler are styled with a partial
-      <TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />
-      theme, built upon <TextBlock Classes="code" FontSize="16" Text="Avalonia.Fluent" />. <LineBreak />
+      Elements in this sampler are styled with partial themes (<TextBlock Classes="code" FontSize="16" Text="Avalonia.MacOS" />,
+      <TextBlock Classes="code" FontSize="16" Text="Avalonia.DevExpress" /> and <TextBlock Classes="code" FontSize="16" Text="Avalonia.Linux" />),
+      all built upon <TextBlock Classes="code" FontSize="16" Text="Avalonia.Fluent" />. <LineBreak />
       <LineBreak />
       <Bold>Note:</Bold> at the moment the base theme is not just a
-      fallback for everything not implemented yet in the MacOS theme, but may in some instances provide
+      fallback for everything not implemented yet in the themes, but may in some instances provide
       the base template to attach styles to (currently the case for buttons) and in most cases there may
       also still be references to colour &amp; other resources provided by Fluent.
       We still need to research what the drawbacks to this approach might be ...
     </TextBlock>
-    <TabControl TabStripPlacement="Top" Margin="0 25 0 0">
+    <StackPanel Orientation="Horizontal" Margin="0 30 0 0">
+      <TextBlock Classes="h1" Text="Quick view of current theme: " />
+      <TextBlock Classes="h1" Foreground="{DynamicResource AccentButtonBackground}" Text="{Binding Source={x:Static helpers:ThemeInfo.Instance}, Path=CurrentThemeName}" />
+    </StackPanel>
+    <TabControl TabStripPlacement="Top" Margin="0 15 0 0">
       <TabItem Header="Tab 1">
         <StackPanel Orientation="Horizontal" Spacing="20">
           <StackPanel>
@@ -45,7 +50,7 @@
             </CheckBox>
           </StackPanel>
           <StackPanel Orientation="Horizontal">
-            <ComboBox PlaceholderText="Chose one" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="True">
+            <ComboBox PlaceholderText="Chose one" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="False">
               <ComboBoxItem>Option 1</ComboBoxItem>
               <ComboBoxItem>Option 2</ComboBoxItem>
               <ComboBoxItem>Option 3</ComboBoxItem>
@@ -59,7 +64,7 @@
                 <ComboBoxItem>Option 4</ComboBoxItem>
               </ComboBox>
               <Border Margin="0 50">
-                <ComboBox SelectedIndex="2" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="True">
+                <ComboBox SelectedIndex="2" VerticalAlignment="Top" Margin="10 0 20 0" IsDropDownOpen="False">
                   <ComboBoxItem>Option 1</ComboBoxItem>
                   <ComboBoxItem>Option 2</ComboBoxItem>
                   <ComboBoxItem>Option 3</ComboBoxItem>
@@ -100,5 +105,13 @@
       <TabItem Header="Tab 3" IsEnabled="False">Content 1</TabItem>
       <TabItem Header="Tab 4">Content 1</TabItem>
     </TabControl>
+
+    <TextBlock FontSize="15" LineSpacing="2" TextWrapping="Wrap" Margin="0 30 0 0">
+      Use the tabs on the left for a closer look at specific controls.<LineBreak />
+      🟢 Controls that have been styled for the current theme (even if they may still need more work)<LineBreak />
+      🔴 Controls not started yet <LineBreak />
+      <LineBreak />
+      Use the tools below to select a different theme or switch modes.<LineBreak />
+    </TextBlock>
   </StackPanel>
 </UserControl>

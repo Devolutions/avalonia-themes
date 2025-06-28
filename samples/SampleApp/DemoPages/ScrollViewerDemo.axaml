@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:helpers="clr-namespace:SampleApp.Helpers"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
              x:Class="SampleApp.DemoPages.ScrollViewerDemo">
 
@@ -97,9 +98,14 @@
           </ScrollViewer>
         </Border>
       </Grid>
-      <TextBlock TextWrapping="Wrap">
+      <TextBlock
+        TextWrapping="Wrap"
+        IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance}, 
+                   Path=CurrentThemeName,
+                   Converter={StaticResource EqualToComparisonConverter},
+                   ConverterParameter=MacOS}">
         <Bold>Note:</Bold> MacOS hides scrollbars completely (depending on user settings), but they re-appear on scroll events.
-        Since Avalonia ScrollBars only expand on pointerOver hiding them completely would be a bit confusing, so the Thumb sliders
+        Since Avalonia ScrollBars only expand on pointerOver, hiding them completely would be a bit confusing. So the Thumb sliders
         remain visible even when <TextBlock Classes="code" Text="AllowAutoHide=&quot;True&quot;" />.
       </TextBlock>
       <TextBlock TextWrapping="Wrap">

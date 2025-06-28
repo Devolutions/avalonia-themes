@@ -7,7 +7,7 @@
     <Thickness x:Key="H1Margins">0,0,0,10</Thickness>
 
     <FontFamily x:Key="CodeFontFamily">"Courier New, Courier, monospace"</FontFamily>
-    <Color x:Key="CodeFontColor">#23b4c8</Color>
+    <Color x:Key="CodeFontColor">#3597A5</Color>
   </Styles.Resources>
 
   <Style Selector="Panel.mainControl">
@@ -25,7 +25,8 @@
     <Setter Property="FontFamily" Value="{DynamicResource CodeFontFamily}" />
     <Setter Property="Foreground" Value="{DynamicResource CodeFontColor}" />
     <Setter Property="Background" Value="{DynamicResource LayoutBackgroundLowBrush}" />
-    <Setter Property="Padding" Value="2,2,1,1" />
+    <Setter Property="Padding" Value="4,4,4,0" />
+    <Setter Property="Margin" Value="0 0 0 -2" />
     <Setter Property="VerticalAlignment" Value="Center" />
   </Style>
 </Styles>

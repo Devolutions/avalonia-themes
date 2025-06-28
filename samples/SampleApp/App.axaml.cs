@@ -2,7 +2,6 @@ namespace SampleApp;
 
 using System;
 using System.IO;
-using System.Net;
 using System.Xml;
 using Avalonia;
 using Avalonia.Controls;
@@ -10,6 +9,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 using Avalonia.Svg.Skia;
+using Helpers;
 using ViewModels;
 
 public class App : Application
@@ -115,6 +115,7 @@ public class App : Application
         App app = (App)Current!;
         Theme? previousTheme = CurrentTheme;
         CurrentTheme = theme;
+        ThemeInfo.Instance.CurrentThemeName = theme.Name;
 
         bool reopenWindow = previousTheme != null && previousTheme.Name != theme.Name;
 
