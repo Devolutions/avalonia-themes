@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:SampleApp.ViewModels"
-             xmlns:helpers="using:SampleApp.Helpers"
+             xmlns:sampleApp="clr-namespace:SampleApp"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.DataGridDemo"
              x:DataType="vm:DataGridViewModel">
@@ -57,8 +57,8 @@
     <TabItem Header="Non-Distributed Columns">
       <StackPanel Margin="20" Spacing="10">
         <TextBlock
-          IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance}, 
-                   Path=CurrentThemeName,
+          IsVisible="{Binding Source={x:Static sampleApp:App.CurrentTheme}, 
+                   Path=Name,
                    Converter={StaticResource EqualToComparisonConverter},
                    ConverterParameter=MacOS}">
           <Bold>NOTE:</Bold> When none of the columns are sized to fill the width of the table (<TextBlock Classes="code" Text="Width='*'" />), the right row margins are too large
@@ -79,8 +79,8 @@
           </DataGrid.Columns>
         </DataGrid>
         <TextBlock
-          IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance}, 
-                   Path=CurrentThemeName,
+          IsVisible="{Binding Source={x:Static sampleApp:App.CurrentTheme}, 
+                   Path=Name,
                    Converter={StaticResource EqualToComparisonConverter},
                    ConverterParameter=MacOS}">
           This can be fixed by applying

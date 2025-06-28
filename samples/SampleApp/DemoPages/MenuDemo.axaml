@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:helpers="clr-namespace:SampleApp.Helpers"
+             xmlns:sampleApp="clr-namespace:SampleApp"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.MenuDemo">
 
@@ -215,8 +215,8 @@
           </Menu>
           <Border Background="{DynamicResource BackgroundBrush}" Padding="15">
             <TextBlock FontSize="12" LineSpacing="2" TextWrapping="Wrap"
-                       IsVisible="{Binding Source={x:Static helpers:ThemeInfo.Instance}, 
-                       Path=CurrentThemeName,
+                       IsVisible="{Binding Source={x:Static sampleApp:App.CurrentTheme}, 
+                       Path=Name,
                        Converter={StaticResource EqualToComparisonConverter},
                        ConverterParameter=MacOS}">
               <Bold>Use the following classes for menu styling:</Bold><LineBreak /><LineBreak />
