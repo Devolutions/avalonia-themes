@@ -44,12 +44,6 @@
       </TabItem>
       <TabItem>
         <TabItem.Header>
-          <controls:SampleItemHeader Title="EditableComboBox" ApplicableTo="MacOS, Windows - DevExpress" />
-        </TabItem.Header>
-        <demoPages:EditableComboBoxDemo />
-      </TabItem>
-      <TabItem>
-        <TabItem.Header>
           <controls:SampleItemHeader Title="ContextMenu" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
         </TabItem.Header>
         <demoPages:ContextMenuDemo />
@@ -73,6 +67,12 @@
             <vm:DataGridGroupedViewModel />
           </demoPages:DataGridGroupedDemo.DataContext>
         </demoPages:DataGridGroupedDemo>
+      </TabItem>
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="EditableComboBox" ApplicableTo="MacOS, Windows - DevExpress" />
+        </TabItem.Header>
+        <demoPages:EditableComboBoxDemo />
       </TabItem>
       <TabItem>
         <TabItem.Header>
@@ -124,16 +124,17 @@
       </TabItem>
       <TabItem>
         <TabItem.Header>
-          <controls:SampleItemHeader Title="TreeView" ApplicableTo="MacOS, Windows - DevExpress" />
-        </TabItem.Header>
-        <demoPages:TreeViewDemo />
-      </TabItem>
-      <TabItem>
-        <TabItem.Header>
           <controls:SampleItemHeader Title="ToolTip" ApplicableTo="MacOS" />
         </TabItem.Header>
         <demoPages:ToolTipDemo />
       </TabItem>
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="TreeView" ApplicableTo="MacOS, Windows - DevExpress" />
+        </TabItem.Header>
+        <demoPages:TreeViewDemo />
+      </TabItem>
+
       <TabItem Header="✜ Control Alignment">
         <demoPages:ControlAlignment />
       </TabItem>
