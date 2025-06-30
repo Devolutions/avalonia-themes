@@ -22,7 +22,7 @@
                    ConverterParameter=MacOS}">
           <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20 0 0 0">/</TextBlock>
           <Button Classes="accentPrecise" VerticalAlignment="Center">Open</Button>
-          <TextBlock VerticalAlignment="Center" Margin="10 0 0 0">(<TextBlock Classes="code" Text="Classes=&quot;accentPrecise&quot;" />More precise look, but not responsive to user-selected accent colour or inactive window)</TextBlock>
+          <TextBlock VerticalAlignment="Center" Margin="5 0 0 0">(<TextBlock Classes="code" Text="Classes=&quot;accentPrecise&quot;" />More precise look, but not responsive to custom accent colour / inactive window)</TextBlock>
         </StackPanel>
       </Grid>
     </Border>
