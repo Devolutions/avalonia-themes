@@ -115,7 +115,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |✅ | <h3>ContextMenu</h3> |
 || <img src="https://github.com/user-attachments/assets/72a2c409-da86-4ff9-8bac-2be7c0ef2b7d" alt="ContextMenu demo" style="width: 316px; max-width: 100%;" /> |
 |✅ | <h3>DataGrid</h3> |
-|| <img src="https://github.com/user-attachments/assets/" alt="DataGrid demo" style="width: 955px; max-width: 100%;" /> <br />The editable field still has an issue, forcing the row to be slightly higher than the others <br /> <img src="https://github.com/user-attachments/assets/" alt="Grouped DataGrid demo" style="width: 1047px; max-width: 100%;" />   |
+|| <img src="https://github.com/user-attachments/assets/2810997d-3bfb-4ba0-9d7e-19f483733fd4" alt="DataGrid demo" style="width: 955px; max-width: 100%;" /> <br />The editable field still has an issue, forcing the row to be slightly higher than the others <br /><br /><strong>Grouped Data</strong><br /><img src="https://github.com/user-attachments/assets/0b1f3dfc-79bc-477a-8418-fda1258c2d1d" alt="Grouped DataGrid demo" style="width: 1047px; max-width: 100%;" />   |
 || <h3>DataValidationErrors</h3> |
 |||
 || <h3>DatePicker</h3> |
