@@ -48,12 +48,14 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [ToolTip](#tooltip)
     - [TreeView](#treeview)
       - [TreeViewItem](#treeviewitem)
+    - [Window](#window)
     - Dark mode support
     - Limited inactive window behaviour (Accent colours switch to subdued look)
   - 🚧 In progress ...
     - small improvements & fixes, some code cleanup
+    - EditableComboBox [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)
   - 🔮 Next on the road map ...
-    - AutoCompleteBox
+    - DatePicker
 
 ## Installation
 
@@ -87,8 +89,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 || <h3>AdornerLayer</h3> ||
 ||||
-|| <h3>AutoCompleteBox</h3> ||
-||||
+|➡️ | <h3>AutoCompleteBox</h3> ||
+||| See [EditableComboBox](#editablecombobox) in our [custom controls](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)|
 |✅ | <h3>Button</h3> ||
 || <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons demo" max-width="300"> ||
 || <h3>Calendar</h3> ||
@@ -107,10 +109,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 |✅ | <h3>CheckBox</h3> ||
 || <img src="https://github.com/user-attachments/assets/30182450-b339-49d4-9aab-96cef627d0ca" alt="CheckBox demo" max-width="723"> ||
-|✅ | <h3>ComboBox</h3> ||
+|✅ | <h3>ComboBox</h3> <h3>ComboBoxItem</h3> ||
 || <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" max-width="461"> |  |
-|| <h3>ComboBoxItem</h3> ||
-||||
 |✅ | <h3>ContextMenu</h3> ||
 || <img src="https://github.com/user-attachments/assets/72a2c409-da86-4ff9-8bac-2be7c0ef2b7d" alt="ComboBox demo" max-width="316"> ||
 |✅ | <h3>DataGrid</h3> ||
@@ -122,6 +122,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>DateTimePickerShared</h3> ||
 ||||
 || <h3>DropDownButton</h3> ||
+||||
+|🚧 | <h3>EditableComboBox</h3> | [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md) |
 ||||
 || <h3>EmbeddableControlRoot</h3> ||
 ||||
@@ -213,8 +215,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 ||||
 |✅ | <h3>TreeView</h3> <h4>TreeViewItem<h4> ||
 || <img src="https://github.com/user-attachments/assets/0f1981ae-d001-49f9-8ee3-fda47ec2a461" alt="TabControl demo" max-width="515"> | Use `Classes="MacOS_Theme_AlternatingRowColor"` to achieve striped background.  (Cannot currently be rendered with rounded corners & breaks when default TreeViewItem height is altered (see comment in ThemeResources.axaml))|
-|| <h3>Window</h3> ||
-||||
+|✅ | <h3>Window</h3> ||
+|||MacOS-specific Fore-/Background & Font|
 || <h3>WindowNotificationManager</h3> ||
 ||||
 

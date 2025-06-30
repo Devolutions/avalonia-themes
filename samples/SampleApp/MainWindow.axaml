@@ -124,16 +124,17 @@
       </TabItem>
       <TabItem>
         <TabItem.Header>
-          <controls:SampleItemHeader Title="TreeView" ApplicableTo="MacOS, Windows - DevExpress" />
-        </TabItem.Header>
-        <demoPages:TreeViewDemo />
-      </TabItem>
-      <TabItem>
-        <TabItem.Header>
           <controls:SampleItemHeader Title="ToolTip" ApplicableTo="MacOS" />
         </TabItem.Header>
         <demoPages:ToolTipDemo />
       </TabItem>
+      <TabItem>
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="TreeView" ApplicableTo="MacOS, Windows - DevExpress" />
+        </TabItem.Header>
+        <demoPages:TreeViewDemo />
+      </TabItem>
+
       <TabItem Header="✜ Control Alignment">
         <demoPages:ControlAlignment />
       </TabItem>
