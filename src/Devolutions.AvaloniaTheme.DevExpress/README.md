@@ -26,7 +26,6 @@ the Avalonia community to add more DevExpress-style controls.
     - [CheckBox](#checkbox)
     - [ComboBox](#combobox)
       - [ComboBoxItem](#comboboxitem)
-    - [ContextMenu](#contextmenu)
     - [DataGrid](#datagrid)
     - [NumericUpDown](#numericupdown)
       - [ButtonSpinner](#buttonspinner)
@@ -39,9 +38,12 @@ the Avalonia community to add more DevExpress-style controls.
       - [TreeViewItem](#treeviewitem)
     - [Window](#window)
    - 🚧 In progress ...
-    - Dark mode support
+    - small improvements & fixes, some code cleanup
+    - ContextMenu
+    - SplitButton
+    - EditableComboBox [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)
   - 🔮 Next on the road map ...
-    - ScrollViewer/ScrollBar
+    - DatePicker
 
 ## Installation
 
@@ -97,7 +99,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <img src="https://github.com/user-attachments/assets/5faea9f6-3cf9-433f-86f5-fd8f75ad05f6" alt="CheckBox demo" style="width: 810px; max-width: 100%;" /> |
 |✅ | <h3>ComboBox</h3> <h4>ComboBoxItem</h4> |
 || <img src="https://github.com/user-attachments/assets/f0e107c0-a4b2-4eec-bc0b-789e0f90cad6" alt="ComboBox demo" style="width: 232px; max-width: 100%;" /> |
-|✅ | <h3>ContextMenu</h3> |
+|🚧 | <h3>ContextMenu</h3> |
 |||
 |✅ | <h3>DataGrid</h3> |
 || <img src="https://github.com/user-attachments/assets/" alt="DataGrid demo" style="width: 834px; max-width: 100%;" /> <br /><img src="https://github.com/user-attachments/assets/" alt="Grouped DataGrid demo" style="width: 936px; max-width: 100%;" /> |

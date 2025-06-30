@@ -53,6 +53,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - Limited inactive window behaviour (Accent colours switch to subdued look)
   - 🚧 In progress ...
     - small improvements & fixes, some code cleanup
+    - SplitButton
     - EditableComboBox [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)
   - 🔮 Next on the road map ...
     - DatePicker
@@ -112,7 +113,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |✅ | <h3>ComboBox</h3> <h4>ComboBoxItem</h4> |
 || <img src="https://github.com/user-attachments/assets/7a8ed69e-1e1c-4218-9b97-591f5b7baaba" alt="ComboBox demo" style="width: 461px; max-width: 100%;" /> |
 |✅ | <h3>ContextMenu</h3> |
-|| <img src="https://github.com/user-attachments/assets/72a2c409-da86-4ff9-8bac-2be7c0ef2b7d" alt="ComboBox demo" style="width: 316px; max-width: 100%;" /> |
+|| <img src="https://github.com/user-attachments/assets/72a2c409-da86-4ff9-8bac-2be7c0ef2b7d" alt="ContextMenu demo" style="width: 316px; max-width: 100%;" /> |
 |✅ | <h3>DataGrid</h3> |
 || <img src="https://github.com/user-attachments/assets/" alt="DataGrid demo" style="width: 955px; max-width: 100%;" /> <br />The editable field still has an issue, forcing the row to be slightly higher than the others <br /> <img src="https://github.com/user-attachments/assets/" alt="Grouped DataGrid demo" style="width: 1047px; max-width: 100%;" />   |
 || <h3>DataValidationErrors</h3> |
