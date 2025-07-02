@@ -98,6 +98,7 @@
   <SolidColorBrush x:Key="SystemRegionBrush" Color="{DynamicResource SystemRegionColor}" />
 
   <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
+  <x:Double x:Key="DefaultLineHeight">15</x:Double>
   <x:Double x:Key="DefaultFontSize">12</x:Double>
   <x:Double x:Key="ControlFontSize">12</x:Double>
   <x:Double x:Key="PasswordHiddenFontSize">10</x:Double>

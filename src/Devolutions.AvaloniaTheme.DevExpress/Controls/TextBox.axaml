@@ -126,6 +126,7 @@
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
             Value="{OnFormFactor Desktop={StaticResource DefaultTextBoxContextFlyout}, Mobile={StaticResource HorizontalTextBoxContextFlyout}}" />
+    <Setter Property="LineHeight" Value="{StaticResource DefaultLineHeight}" />
     <Setter Property="FontSize">
       <Setter.Value>
         <MultiBinding Converter="{x:Static DevoMultiConverters.RevealPasswordToFontSizeConverter}">
@@ -187,6 +188,7 @@
                     Margin="{TemplateBinding Padding}">
                     <TextBlock Name="PART_Watermark"
                                Opacity="0.5"
+                               LineHeight="{TemplateBinding LineHeight}"
                                FontSize="{DynamicResource ControlFontSize}"
                                Text="{TemplateBinding Watermark}"
                                TextAlignment="{TemplateBinding TextAlignment}"
