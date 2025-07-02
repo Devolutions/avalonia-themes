@@ -7,7 +7,8 @@
              x:Class="SampleApp.Controls.SampleItemHeader">
 
   <StackPanel Orientation="Horizontal" Spacing="10">
-    <TextBlock Text="{Binding $parent[controls:SampleItemHeader].Status}" />
+    <!-- Non-retina displays will click the status indicator icon if not set to ClipToBounds="False" -->
+    <TextBlock Text="{Binding $parent[controls:SampleItemHeader].Status}" ClipToBounds="False" />
     <TextBlock Text="{Binding $parent[controls:SampleItemHeader].Title}" />
   </StackPanel>
 </UserControl>
