@@ -99,6 +99,7 @@
     <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
     <Setter Property="BorderThickness" Value="0.6" />
     <Setter Property="CaretBrush" Value="{DynamicResource SystemAccentColor}" />
+    <Setter Property="LineHeight" Value="{StaticResource DefaultLineHeight}" />
     <Setter Property="FontSize">
       <Setter.Value>
         <MultiBinding Converter="{x:Static DevoMultiConverters.RevealPasswordToFontSizeConverter}">
@@ -158,7 +159,8 @@
                       <Panel>
                         <TextBlock Name="PART_Watermark"
                                    Foreground="{DynamicResource ForegroundLowBrush}"
-                                   FontSize="{DynamicResource ControlFontSize}"
+                                   LineHeight="{TemplateBinding LineHeight}"
+                                   FontSize="{StaticResource ControlFontSize}"
                                    Text="{TemplateBinding Watermark}"
                                    TextAlignment="{TemplateBinding TextAlignment}"
                                    TextWrapping="{TemplateBinding TextWrapping}"
