@@ -6,17 +6,17 @@
 
   <Application.Resources>
     <Styles x:Key="LinuxYaruStyles">
-      <actipro:ModernTheme />
+      <actipro:ModernTheme AreNativeControlThemesEnabled="False" />
       <DevolutionsLinuxYaruTheme />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
     <Styles x:Key="DevExpressStyles">
-      <actipro:ModernTheme />
+      <actipro:ModernTheme AreNativeControlThemesEnabled="False" />
       <DevolutionsDevExpressTheme />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
     <Styles x:Key="MacOsStyles">
-      <actipro:ModernTheme />
+      <actipro:ModernTheme AreNativeControlThemesEnabled="False" />
       <DevolutionsMacOsTheme GlobalStyles="False" />
       <DevolutionsMacOsThemeGlobalStyles />
       <StyleInclude Source="/Styles.axaml" />
@@ -28,7 +28,7 @@
   <!-- KEPT FOR DESIGNER! -->
   <!-- This also dictates which theme is initially loaded -->
   <Application.Styles>
-    <actipro:ModernTheme />
+    <actipro:ModernTheme AreNativeControlThemesEnabled="False" />
 
     <!-- <DevolutionsMacOsTheme /> -->
     <DevolutionsDevExpressTheme />
