@@ -97,7 +97,7 @@
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
-    <Setter Property="BorderThickness" Value="0.6" />
+    <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
     <Setter Property="CaretBrush" Value="{DynamicResource SystemAccentColor}" />
     <Setter Property="LineHeight" Value="{StaticResource DefaultLineHeight}" />
     <Setter Property="FontSize">
@@ -112,9 +112,9 @@
     </Setter>
     <Setter Property="SelectionBrush" Value="{DynamicResource TextBoxSelectionHighlightBrush}" />
     <!-- <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" /> TODO: make this a style? Class: rounded true/false -->
-    <Setter Property="CornerRadius" Value="0" />
-    <Setter Property="MinHeight" Value="19" />
-    <Setter Property="MinWidth" Value="19" />
+    <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBoxMinDimensions}" />
+    <Setter Property="MinWidth" Value="{DynamicResource TextBoxMinDimensions}" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ClipToBounds" Value="False" />
