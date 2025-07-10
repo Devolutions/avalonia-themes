@@ -75,6 +75,7 @@
                     Padding="{DynamicResource PopupPadding}"
                     BoxShadow="{DynamicResource PopupShadow}">
               <ListBox Name="PART_SelectingItemsControl"
+                       Classes="selection_checkmark_off"
                        BorderThickness="0"
                        Background="Transparent"
                        ItemTemplate="{TemplateBinding ItemTemplate}"

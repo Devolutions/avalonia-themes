@@ -36,7 +36,12 @@
                   Data="{DynamicResource CheckMarkPath}"
                   Fill="Transparent"
                   FlowDirection="LeftToRight"
-                  Stretch="Fill" />
+                  Stretch="Fill">
+              <Path.IsVisible>
+                <Binding RelativeSource="{RelativeSource FindAncestor, AncestorType=ListBox}" Path="Classes" Converter="{x:Static DevoConverters.HasNotClass}"
+                         ConverterParameter="selection_checkmark_off" />
+              </Path.IsVisible>
+            </Path>
             <ContentPresenter Name="PART_ContentPresenter"
                               Padding="4 0"
                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -55,7 +60,7 @@
     </Style>
     <Style Selector="^:pointerover">
       <Style Selector="^ /template/ Border#RootPanel">
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundAccentRaisedBrush}" />
+        <Setter Property="Background" Value="{DynamicResource SystemAccentColorDark1}" />
       </Style>
       <Style Selector="^:selected /template/ Path#CheckMark">
         <Setter Property="Fill" Value="{DynamicResource ControlForegroundAccentHighBrush}" />
