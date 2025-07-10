@@ -1,0 +1,79 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:generic="using:System.Collections.Generic"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
+
+  <Design.PreviewWith>
+    <design:ThemePreviewer>
+      <StackPanel Margin="20">
+      <AutoCompleteBox Width="200">
+
+      </AutoCompleteBox>
+        <TextBox />
+      </StackPanel>
+    </design:ThemePreviewer>
+  </Design.PreviewWith>
+
+  <ControlTheme x:Key="{x:Type AutoCompleteBox}" TargetType="AutoCompleteBox">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
+    <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBoxMinDimensions}" />
+    <Setter Property="MinWidth" Value="{DynamicResource TextBoxMinDimensions}" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteListMaxHeight}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Name="PART_LayoutRoot">
+          <TextBox Name="PART_TextBox"
+                   Watermark="{TemplateBinding Watermark}"
+                   Width="{TemplateBinding Width}"
+                   Foreground="{TemplateBinding Foreground}"
+                   Background="{TemplateBinding Background}"
+                   BorderBrush="{TemplateBinding BorderBrush}"
+                   BorderThickness="{TemplateBinding BorderThickness}"
+                   CornerRadius="{TemplateBinding CornerRadius}"
+                   CaretIndex="{TemplateBinding CaretIndex, Mode=TwoWay}"
+                   Padding="{TemplateBinding Padding}"
+                   DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}"
+                   MaxLength="{TemplateBinding MaxLength}"
+                   InnerLeftContent="{TemplateBinding InnerLeftContent}"
+                   InnerRightContent="{TemplateBinding InnerRightContent}" />
+          
+          <Popup Name="PART_Popup"
+                 WindowManagerAddShadowHint="False"
+                 MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                 IsLightDismissEnabled="True"
+                 PlacementTarget="{TemplateBinding}">
+            <Popup.MinWidth>
+              <MultiBinding Converter="{x:Static DevoMultiConverters.TotalWidthConverter}">
+                <Binding RelativeSource="{RelativeSource TemplatedParent}" Path="Bounds.Width" />
+                <Binding Source="{StaticResource PopupSideMarginWidth}" />
+              </MultiBinding>
+            </Popup.MinWidth>
+            <Border Name="PART_SuggestionsContainer"
+                    BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThickness}"
+                    BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
+                    Background="{DynamicResource PopupBackgroundBrush}"
+                    CornerRadius="{DynamicResource LayoutCornerRadius}"
+                    Margin="{DynamicResource PopupMargin}"
+                    Padding="{DynamicResource PopupPadding}"
+                    BoxShadow="{DynamicResource PopupShadow}">
+              <ListBox Name="PART_SelectingItemsControl"
+                       Classes="selection_checkmark_off"
+                       BorderThickness="0"
+                       Background="Transparent"
+                       ItemTemplate="{TemplateBinding ItemTemplate}"
+                       Margin="{DynamicResource AutoCompleteListPadding}" />
+            </Border>
+          </Popup>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+</ResourceDictionary>

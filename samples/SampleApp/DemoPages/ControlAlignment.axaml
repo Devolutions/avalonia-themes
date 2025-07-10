@@ -14,8 +14,8 @@
   </UserControl.Styles>
   <StackPanel Margin="10">
     <TextBlock Classes="h1" Text="Grid" />
-    <Grid RowDefinitions="*, *, *, *, *, *, *, *"
-          ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+    <Grid RowDefinitions="*, *, *, *, *, *, *, *, *"
+          ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
           RowSpacing="5"
           ColumnSpacing="10"
           Margin="10">
@@ -34,14 +34,17 @@
         </ComboBox>
       </Border>
       <Border Grid.Row="0" Grid.Column="3">
+        <AutoCompleteBox x:Name="Animals" FilterMode="Contains" />
+      </Border>
+      <Border Grid.Row="0" Grid.Column="4">
         <NumericUpDown Value="0"
                        Increment="1"
                        Watermark="mm" />
       </Border>
-      <Border Grid.Row="0" Grid.Column="4">
+      <Border Grid.Row="0" Grid.Column="5">
         <Button Content="Button" />
       </Border>
-      <Border Grid.Row="0" Grid.Column="5">
+      <Border Grid.Row="0" Grid.Column="6">
         <CheckBox Content="Checkbox" IsChecked="True" />
       </Border>
 
@@ -60,14 +63,17 @@
         </ComboBox>
       </Border>
       <Border Grid.Row="5" Grid.Column="0">
+        <AutoCompleteBox x:Name="Animals2" FilterMode="Contains" />
+      </Border>
+      <Border Grid.Row="6" Grid.Column="0">
         <NumericUpDown Value="0"
                        Increment="1"
                        Watermark="mm" />
       </Border>
-      <Border Grid.Row="6" Grid.Column="0">
+      <Border Grid.Row="7" Grid.Column="0">
         <Button Content="Button" />
       </Border>
-      <Border Grid.Row="7" Grid.Column="">
+      <Border Grid.Row="8" Grid.Column="">
         <CheckBox Content="Checkbox" IsChecked="True" />
       </Border>
     </Grid>
@@ -88,6 +94,9 @@
             <ComboBoxItem>Option 3</ComboBoxItem>
             <ComboBoxItem>Option 4</ComboBoxItem>
           </ComboBox>
+        </Border>
+        <Border>
+          <AutoCompleteBox x:Name="Animals3" FilterMode="Contains" />
         </Border>
         <Border>
           <NumericUpDown Value="0"
@@ -115,6 +124,9 @@
             <ComboBoxItem>Option 3</ComboBoxItem>
             <ComboBoxItem>Option 4</ComboBoxItem>
           </ComboBox>
+        </Border>
+        <Border>
+          <AutoCompleteBox x:Name="Animals4" FilterMode="Contains" />
         </Border>
         <Border>
           <NumericUpDown Value="0"

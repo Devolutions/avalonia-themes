@@ -60,7 +60,7 @@
 
       <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.10" />
       <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.20" />
-
+      
       <SolidColorBrush x:Key="TabItemSelectedPressedBrush" Color="#f0f0f0" />
 
       <BoxShadows x:Key="TextBoxBorderShadows">0 0.5 2.5 0 #4d000000, 0 0 0 0.5 #03000000</BoxShadows>
@@ -378,7 +378,10 @@
   <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}" />
   <SolidColorBrush x:Key="TextBoxBackgroundDisabledHighBrush"
                    Color="{DynamicResource BackgroundColor}" Opacity="0.5" />
-
+  <Thickness x:Key="TextBoxBorderThickness">0.6</Thickness>
+  <CornerRadius x:Key="TextBoxCornerRadius">0</CornerRadius>
+  <x:Double x:Key="TextBoxMinDimensions">19</x:Double>
+  
   <!-- TreeView Resources -->
   <SolidColorBrush x:Key="TreeViewItemBackgroundSelected" Color="{StaticResource SystemAccentColor}" />
   <SolidColorBrush x:Key="TreeViewItemForegroundSelected" Color="{DynamicResource AccentForegroundColor}" />
