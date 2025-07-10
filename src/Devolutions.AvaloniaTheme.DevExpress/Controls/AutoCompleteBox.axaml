@@ -72,11 +72,13 @@
             PlacementTarget="{TemplateBinding}">
             <Border
               Name="PART_SuggestionsContainer"
-              Padding="{DynamicResource AutoCompleteListMargin}"
-              BorderThickness="{DynamicResource AutoCompleteListBorderThemeThickness}"
-              BorderBrush="{DynamicResource AutoCompleteBoxSuggestionsListBorderBrush}"
-              Background="{DynamicResource AutoCompleteBoxSuggestionsListBackground}"
-              CornerRadius="{DynamicResource OverlayCornerRadius}">
+              Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
+              BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
+              BorderBrush="{DynamicResource ComboBoxDropDownBorderBrushTransparent}"
+              Background="{DynamicResource BackgroundColor}"
+              CornerRadius="{DynamicResource OverlayCornerRadius}"
+              Margin="0 0 0 10"
+              BoxShadow="{DynamicResource ComboBoxDropDownShadow}">
               <ListBox
                 Name="PART_SelectingItemsControl"
                 BorderThickness="0"
