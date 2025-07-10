@@ -141,7 +141,7 @@
                     VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
                     IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}">
                     <ItemsPresenter Name="PART_ItemsPresenter"
-                                    Margin=" 3 5 4 3 "
+                                    Margin="4"
                                     ItemsPanel="{TemplateBinding ItemsPanel}" />
                   </ScrollViewer>
                 </Border>

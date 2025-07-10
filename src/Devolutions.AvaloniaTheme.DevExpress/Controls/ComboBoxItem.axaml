@@ -46,7 +46,8 @@
           <StackPanel Orientation="Horizontal">
             <Border
               Name="SelectionHighlight"
-              Width="2"
+              Width="3"
+              Margin="0 1"
               VerticalAlignment="Stretch"
               Background="Transparent"
               Padding="{TemplateBinding Padding}"
@@ -60,6 +61,7 @@
               Content="{TemplateBinding Content}"
               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+              Margin="6 0 0 0"
               Padding="0" />
           </StackPanel>
         </Border>
@@ -76,6 +78,9 @@
                   {DynamicResource ComboBoxItemBackgroundBrush},
                   {DynamicResource ControlBackgroundSelectedBrush}
                }" />
+        <Style Selector="^ ContentPresenter#PART_ContentPresenter">
+          <Setter Property="Background" Value="Transparent" />
+        </Style>
       </Style>
       <Style Selector="^ /template/ Border#SelectionHighlight">
         <Setter
