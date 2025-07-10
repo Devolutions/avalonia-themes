@@ -26,6 +26,12 @@
       </TabItem>
       <TabItem>
         <TabItem.Header>
+          <controls:SampleItemHeader Title="AutoCompleteBox" ApplicableTo="" />
+        </TabItem.Header>
+        <demoPages:AutoCompleteBoxDemo />
+      </TabItem>
+      <TabItem>
+        <TabItem.Header>
           <controls:SampleItemHeader Title="Button" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
         </TabItem.Header>
         <demoPages:ButtonDemo />

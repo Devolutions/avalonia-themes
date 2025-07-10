@@ -26,6 +26,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
   - ✅ Available in the current build
+    - [AutoCompleteBox](#autocompletebox)
     - [Button](#button)
     - [ButtonSpinner](#buttonspinner)
     - [CheckBox](#checkbox)
@@ -90,10 +91,10 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |||
 || <h3>AdornerLayer</h3> |
 |||
-|➡️ | <h3>AutoCompleteBox</h3> |
-|| See [EditableComboBox](#editablecombobox) in our [custom controls](https://github.com/Devolutionsavalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)|
+|✅ | <h3>AutoCompleteBox</h3> |
+|| <img src="https://github.com/user-attachments/assets/a4e939c0-6516-499f-b3e7-8c68e8be2770" alt="AutoCompleteBox demo" style="width: 460px; max-width: 100%;"> <br /><br />  ➡️ See also [EditableComboBox](#editablecombobox) in our [custom controls](https://github.com/Devolutionsavalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)|
 |✅ | <h3>Button</h3> |
-|| <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttonsdemo" style="width: 300px; max-width: 100%;"> |
+|| <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons demo" style="width: 300px; max-width: 100%;"> |
 || <h3>Calendar</h3> |
 |||
 || <h3>CalendarButton</h3> |
