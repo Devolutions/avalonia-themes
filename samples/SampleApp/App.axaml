@@ -12,7 +12,8 @@
     </Styles>
     <Styles x:Key="DevExpressStyles">
       <actipro:ModernTheme AreNativeControlThemesEnabled="False" />
-      <DevolutionsDevExpressTheme />
+      <DevolutionsDevExpressTheme GlobalStyles="False" />
+      <DevolutionsDevExpressThemeGlobalStyles />
       <StyleInclude Source="/Styles.axaml" />
     </Styles>
     <Styles x:Key="MacOsStyles">

@@ -11,6 +11,7 @@
           <ComboBoxItem>Embedded (tabbed)</ComboBoxItem>
           <ComboBoxItem>Undocked</ComboBoxItem>
         </ComboBox>
+
         <ComboBox IsEnabled="False"
                   Width="200"
                   SelectedIndex="1"
@@ -18,6 +19,7 @@
           <ComboBoxItem>Item 1</ComboBoxItem>
           <ComboBoxItem>Item 2</ComboBoxItem>
         </ComboBox>
+
         <ComboBox PlaceholderText="Error">
           <DataValidationErrors.Error>
             <sys:Exception>
@@ -26,6 +28,18 @@
               </x:Arguments>
             </sys:Exception>
           </DataValidationErrors.Error>
+        </ComboBox>
+
+        <ComboBox PlaceholderText="Search Highlight" Classes="search-highlight">
+          <ComboBoxItem>External</ComboBoxItem>
+          <ComboBoxItem Classes="search-highlight">Embedded (tabbed)</ComboBoxItem>
+          <ComboBoxItem>Undocked</ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox PlaceholderText="Secondary Search Highlight" Classes="secondary-search-highlight">
+          <ComboBoxItem Classes="secondary-search-highlight">External</ComboBoxItem>
+          <ComboBoxItem>Embedded (tabbed)</ComboBoxItem>
+          <ComboBoxItem>Undocked</ComboBoxItem>
         </ComboBox>
       </StackPanel>
     </design:ThemePreviewer>
@@ -80,14 +94,16 @@
                        Text="{TemplateBinding PlaceholderText}"
                        Foreground="{TemplateBinding PlaceholderForeground}"
                        IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
-            <ContentControl Name="ContentPresenter"
-                            Grid.Column="0"
-                            Content="{TemplateBinding SelectionBoxItem}"
-                            FontSize="{TemplateBinding FontSize}"
-                            Margin="{TemplateBinding Padding}"
-                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+            <ContentPresenter Name="ContentPresenter"
+                              Grid.Column="0"
+                              Content="{TemplateBinding SelectionBoxItem}"
+                              FontSize="{TemplateBinding FontSize}"
+                              FontWeight="{TemplateBinding FontWeight}"
+                              Foreground="{TemplateBinding Foreground}"
+                              Margin="{TemplateBinding Padding}"
+                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                              ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
 
             <Border Name="DropDownGlyphBackground"
                     Grid.Column="1"
@@ -103,7 +119,7 @@
                         Width="9"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
-                        Foreground="{DynamicResource ForegroundColor}"
+                        Foreground="{TemplateBinding Foreground}"
                         Data="{StaticResource ChevronPath}" />
             </Border>
 
@@ -195,6 +211,19 @@
         <Setter Property="Foreground" Value="{DynamicResource ComboBoxDropDownGlyphForegroundDisabled}" />
       </Style>
     </Style>
-  </ControlTheme>
 
+    <!-- Search highlight -->
+    <Style Selector="^.search-highlight">
+      <Setter Property="Background" Value="{DynamicResource SearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SearchHighlightForeground}" />
+      <Setter Property="PlaceholderForeground" Value="{DynamicResource SearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style Selector="^.secondary-search-highlight">
+      <Setter Property="Background" Value="{DynamicResource SecondarySearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SecondarySearchHighlightForeground}" />
+      <Setter Property="PlaceholderForeground" Value="{DynamicResource SecondarySearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>

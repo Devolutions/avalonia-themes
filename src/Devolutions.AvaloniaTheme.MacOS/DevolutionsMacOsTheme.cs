@@ -12,10 +12,10 @@ public class DevolutionsMacOsTheme : Styles, ISupportInitialize
     private readonly IServiceProvider? sp;
 
     /// <summary> 
-    /// Initializes a new instance of the <see cref="MacOsTheme"/> class.
+    /// Initializes a new instance of the <see cref="DevolutionsMacOsTheme"/> class.
     ///
     /// Global Styles will also be loaded by default, unless `GlobalStyles`
-    /// is set to false (`<MacOsTheme GlobalStyles="False" />`)
+    /// is set to false (`<DevolutionsMacOsTheme GlobalStyles="False" />`)
     /// </summary>
     /// <param name="sp">The parent's service provider.</param>
     public DevolutionsMacOsTheme(IServiceProvider? sp = null)

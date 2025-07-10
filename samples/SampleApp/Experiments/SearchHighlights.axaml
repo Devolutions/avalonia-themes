@@ -1,0 +1,27 @@
+<UserControl
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+  x:Class="SampleApp.Experiments.SearchHighlights">
+
+  <TabControl>
+    <TabItem Header="Highlighted" Classes="secondary-search-highlight">
+      <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto">
+        <Label Grid.Row="0" Grid.Column="0" Content="Test1" />
+        <ComboBox Grid.Row="0" Grid.Column="1" Classes="secondary-search-highlight">
+          <ComboBoxItem Content="Search" Classes="search-highlight" />
+          <ComboBoxItem Content="SecondarySearch" Classes="secondary-search-highlight" />
+          <ComboBoxItem Content="Item3" />
+        </ComboBox>
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Test2" Classes="search-highlight" />
+        <ComboBox Grid.Row="1" Grid.Column="1" Classes="search-highlight">
+          <ComboBoxItem Content="Item3" />
+        </ComboBox>
+      </Grid>
+    </TabItem>
+    <TabItem Header="Not Highlighted" />
+  </TabControl>
+</UserControl>

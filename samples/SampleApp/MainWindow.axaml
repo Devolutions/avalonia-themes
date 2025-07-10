@@ -157,6 +157,9 @@
           <TabItem Header="Toggle Buttons">
             <experiments:ToggleButtonExperiments />
           </TabItem>
+          <TabItem Header="Search Highlights">
+            <experiments:SearchHighlights />
+          </TabItem>
         </TabControl>
       </TabItem>
     </TabControl>

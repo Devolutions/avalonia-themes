@@ -17,10 +17,12 @@
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
   </ItemGroup>
 
-  <!-- flip these when debugging -->
-  <ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' != 'Debug'">
+    <!-- MAKE SURE TO BUMP THIS *if* A NEW CONTROL/CONVERTER/EXTENSION IS ADDED AND USED! -->
     <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.6.9,)" />
-    <!--    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />-->
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' != 'Debug'">
@@ -28,5 +30,21 @@
     <None Include="Design\ThemePreviewer.axaml.cs" />
     <AvaloniaXaml Remove="Design\ThemePreviewer.axaml" />
     <None Include="Design\ThemePreviewer.axaml" />
+    <Compile Update="Internal\DevExpressThemeWithGlobalStyles.axaml.cs">
+      <DependentUpon>DevExpressThemeWithGlobalStyles.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Internal\DevExpressTheme.axaml.cs">
+      <DependentUpon>MacOsTheme.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Internal\MacOsThemeWithGlobalStyles.axaml.cs">
+      <DependentUpon>MacOsThemeWithGlobalStyles.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Internal\MacOsThemeWithGlobalStyles.axaml" />
   </ItemGroup>
 </Project>

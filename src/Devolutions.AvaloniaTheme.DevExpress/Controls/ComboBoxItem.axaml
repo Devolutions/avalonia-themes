@@ -10,14 +10,17 @@
           <ComboBoxItem>External</ComboBoxItem>
           <ComboBoxItem>Embedded (tabbed)</ComboBoxItem>
           <ComboBoxItem>Undocked</ComboBoxItem>
+          <ComboBoxItem Classes="search-highlight">Search Highlight</ComboBoxItem>
+          <ComboBoxItem Classes="secondary-search-highlight">Secondary Search Highlight</ComboBoxItem>
         </ComboBox>
+
         <ComboBox
           IsEnabled="False"
           Width="200"
           SelectedIndex="1"
           HorizontalContentAlignment="Center">
           <ComboBoxItem>Item 1</ComboBoxItem>
-          <ComboBoxItem>Item 2</ComboBoxItem>
+          <ComboBoxItem>Disabled</ComboBoxItem>
         </ComboBox>
       </StackPanel>
     </design:ThemePreviewer>
@@ -25,11 +28,13 @@
 
   <ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
+    <Setter Property="FontWeight" Value="Regular" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
     <Setter Property="Padding" Value="10 3 " />
     <Setter Property="CornerRadius" Value="3" />
     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+
     <Setter Property="Template">
       <ControlTemplate>
         <Border
@@ -44,16 +49,18 @@
               Width="2"
               VerticalAlignment="Stretch"
               Background="Transparent"
+              Padding="{TemplateBinding Padding}"
               CornerRadius="2" />
             <ContentPresenter
               Name="PART_ContentPresenter"
               FontSize="{TemplateBinding FontSize}"
+              Background="{TemplateBinding Background}"
               Foreground="{TemplateBinding Foreground}"
               ContentTemplate="{TemplateBinding ContentTemplate}"
               Content="{TemplateBinding Content}"
               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-              Padding="{TemplateBinding Padding}" />
+              Padding="0" />
           </StackPanel>
         </Border>
       </ControlTemplate>
@@ -85,6 +92,9 @@
     <Style Selector="^:pointerover">
       <Style Selector="^ /template/ Border#LayoutRoot">
         <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+        <Style Selector="^ ContentPresenter#PART_ContentPresenter">
+          <Setter Property="Background" Value="Transparent" />
+        </Style>
       </Style>
       <Style Selector="^ /template/ Border#SelectionHighlight">
         <Setter Property="Background" Value="{DynamicResource ControlBorderSelectedBrush}" />
@@ -96,6 +106,18 @@
       <Setter Property="Background" Value="{DynamicResource ComboBoxItemBackgroundDisabled}" />
       <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxItemBorderBrushDisabled}" />
       <Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForegroundDisabled}" />
+    </Style>
+
+    <!-- Search highlight -->
+    <Style Selector="^.search-highlight /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource SearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style Selector="^.secondary-search-highlight /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource SecondarySearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SecondarySearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
     </Style>
 
   </ControlTheme>
