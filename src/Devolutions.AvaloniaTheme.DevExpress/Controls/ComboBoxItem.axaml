@@ -46,7 +46,8 @@
           <StackPanel Orientation="Horizontal">
             <Border
               Name="SelectionHighlight"
-              Width="2"
+              Width="3"
+              Margin="0 1"
               VerticalAlignment="Stretch"
               Background="Transparent"
               Padding="{TemplateBinding Padding}"
