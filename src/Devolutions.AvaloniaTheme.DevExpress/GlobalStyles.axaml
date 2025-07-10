@@ -23,24 +23,6 @@
     - sbergerondrouin 2025-06-09
   -->
 
-  <!-- <Style Selector="Label.search-highlight > AccessText, ComboBox.search-highlight, ComboBoxItem.search-highlight"> -->
-  <!--   <Setter Property="Background" Value="{DynamicResource SearchHighlightBackground}" /> -->
-  <!--   <Setter Property="Foreground" Value="{DynamicResource SearchHighlightForeground}" /> -->
-  <!-- </Style> -->
-  <!-- <Style Selector="Label.secondary-search-highlight > AccessText, ComboBox.secondary-search-highlight, ComboBoxItem.secondary-search-highlight"> -->
-  <!--   <Setter Property="Background" Value="{DynamicResource SecondarySearchHighlightBackground}" /> -->
-  <!--   <Setter Property="Foreground" Value="{DynamicResource SecondarySearchHighlightForeground}" /> -->
-  <!-- </Style> -->
-
-  <!-- <Style Selector="ComboBox.search-highlight, ComboBoxItem.search-highlight"> -->
-  <!--   <Setter Property="Background" Value="{DynamicResource SearchHighlightBackground}" /> -->
-  <!--   <Setter Property="Foreground" Value="{DynamicResource SearchHighlightForeground}" /> -->
-  <!-- </Style> -->
-  <!-- <Style Selector="ComboBox.secondary-search-highlight, ComboBoxItem.secondary-search-highlight"> -->
-  <!--   <Setter Property="Background" Value="{DynamicResource SecondarySearchHighlightBackground}" /> -->
-  <!--   <Setter Property="Foreground" Value="{DynamicResource SecondarySearchHighlightForeground}" /> -->
-  <!-- </Style> -->
-
   <Style Selector="Label.search-highlight > AccessText">
     <Setter Property="Background" Value="{DynamicResource SearchHighlightBackground}" />
     <Setter Property="Foreground" Value="{DynamicResource SearchHighlightForeground}" />

@@ -4,7 +4,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Styling;
 
 /// <summary>
-/// Include Devolution's MacOs theme's optional global styles in an application.
+/// Include Devolution's DevExpress theme's optional global styles in an application.
 /// </summary>
 public class DevolutionsDevExpressThemeGlobalStyles : Styles
 {

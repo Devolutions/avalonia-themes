@@ -5,7 +5,7 @@ using Avalonia.Styling;
 using Internal;
 
 /// <summary>
-/// Includes Devolutions's MacOs theme in an application.
+/// Includes Devolutions's Windows theme, based on DevExpress's look, in an application.
 /// </summary>
 public class DevolutionsDevExpressTheme : Styles, ISupportInitialize
 {
