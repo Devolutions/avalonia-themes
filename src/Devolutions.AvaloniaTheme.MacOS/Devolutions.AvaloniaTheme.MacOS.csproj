@@ -17,11 +17,13 @@
     <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
   </ItemGroup>
-
-  <!-- flip these when debugging -->
-  <ItemGroup>
+  
+  <ItemGroup Condition="'$(Configuration)' != 'Debug'">
+    <!-- MAKE SURE TO BUMP THIS *if* A NEW CONTROL/CONVERTER/EXTENSION IS ADDED AND USED! -->
     <PackageReference Include="Devolutions.AvaloniaControls" Version="[2025.6.9,)" />
-    <!--    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />-->
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)' == 'Debug'">
+    <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj"/>
   </ItemGroup>
 
   <ItemGroup>
