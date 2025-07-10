@@ -1,32 +1,18 @@
-<ResourceDictionary
-  xmlns="https://github.com/avaloniaui"
-  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
 
   <Design.PreviewWith>
-    <design:ThemePreviewer Padding="20" Height="300">
-      <StackPanel Spacing="10" Width="200">
-        <ComboBox PlaceholderText="Select an option" SelectedIndex="1">
-          <ComboBoxItem>External</ComboBoxItem>
-          <ComboBoxItem>Embedded (tabbed)</ComboBoxItem>
-          <ComboBoxItem>Undocked</ComboBoxItem>
-          <ComboBoxItem Classes="search-highlight">Search Highlight</ComboBoxItem>
-          <ComboBoxItem Classes="secondary-search-highlight">Secondary Search Highlight</ComboBoxItem>
-        </ComboBox>
-
-        <ComboBox
-          IsEnabled="False"
-          Width="200"
-          SelectedIndex="1"
-          HorizontalContentAlignment="Center">
-          <ComboBoxItem>Item 1</ComboBoxItem>
-          <ComboBoxItem>Disabled</ComboBoxItem>
-        </ComboBox>
+    <design:ThemePreviewer Padding="10">
+      <StackPanel>
+        <ListBoxItem>No</ListBoxItem>
+        <ListBoxItem IsSelected="True">Yes</ListBoxItem>
+        <ListBoxItem IsEnabled="False">Disabled</ListBoxItem>
       </StackPanel>
     </design:ThemePreviewer>
   </Design.PreviewWith>
 
-  <ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
+  <ControlTheme x:Key="{x:Type ListBoxItem}" TargetType="ListBoxItem">
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="FontWeight" Value="Regular" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
