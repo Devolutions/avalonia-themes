@@ -17,7 +17,7 @@
         </ComboBox>
 
         <Label Grid.Row="1" Grid.Column="0" Content="Test2" Classes="search-highlight" />
-        <ComboBox Grid.Row="1" Grid.Column="1" Classes="search-highlight">
+        <ComboBox Grid.Row="1" Grid.Column="1" Classes="search-highlight" MinWidth="200">
           <ComboBoxItem Content="Item3" />
         </ComboBox>
       </Grid>
