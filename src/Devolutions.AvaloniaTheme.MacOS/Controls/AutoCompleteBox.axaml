@@ -7,18 +7,7 @@
     <design:ThemePreviewer>
       <StackPanel Margin="20">
       <AutoCompleteBox Width="200">
-        <AutoCompleteBox.ItemsSource>
-          <generic:List x:TypeArguments="x:String">
-            Alabama
-            Alaska
-            Arizona
-            Arkansas
-            California
-            Colorado
-            Connecticut
-            Delaware
-          </generic:List>
-        </AutoCompleteBox.ItemsSource>
+
       </AutoCompleteBox>
         <TextBox />
       </StackPanel>

@@ -5,8 +5,9 @@
              xmlns:generic="clr-namespace:System.Collections.Generic;assembly=System.Collections"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.AutoCompleteBoxDemo">
-  
-  <Border Padding="20">
-    <AutoCompleteBox x:Name="Animals" FilterMode="Contains" />
-  </Border>
+
+  <StackPanel Margin="20" Spacing="20"  HorizontalAlignment="Left">
+    <TextBlock Text="Start typing to find your animal:" />
+    <AutoCompleteBox x:Name="Animals" FilterMode="Contains" IsDropDownOpen="True" />
+  </StackPanel>
 </UserControl>

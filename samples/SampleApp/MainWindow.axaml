@@ -24,7 +24,7 @@
         </TabItem.Header>
         <demoPages:Overview />
       </TabItem>
-      <TabItem IsSelected="True">
+      <TabItem>
         <TabItem.Header>
           <controls:SampleItemHeader Title="AutoCompleteBox" ApplicableTo="" />
         </TabItem.Header>
