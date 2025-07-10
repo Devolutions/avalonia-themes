@@ -4,21 +4,39 @@
 
   <Design.PreviewWith>
     <design:ThemePreviewer Width="450">
-      <TabControl TabStripPlacement="Top" Margin="5">
-        <TabItem Header="General">
-          <StackPanel Orientation="Horizontal" Spacing="30">
-            <TextBlock Text="Company" VerticalAlignment="Center" />
-            <TextBox Width="200" VerticalAlignment="Center" />
-          </StackPanel>
-        </TabItem>
-        <TabItem Header="Communication">
-          <TextBlock Text="Content 2" />
-        </TabItem>
-        <TabItem Header="Contact Details">
-          <TextBlock Text="Content 3" />
-        </TabItem>
-        <TabItem Header="Disabled" IsEnabled="False" />
-      </TabControl>
+      <StackPanel Orientation="Vertical" Spacing="10">
+        <TabControl TabStripPlacement="Top" Margin="5">
+          <TabItem Header="General">
+            <StackPanel Orientation="Horizontal" Spacing="30">
+              <TextBlock Text="Company" VerticalAlignment="Center" />
+              <TextBox Width="200" VerticalAlignment="Center" />
+            </StackPanel>
+          </TabItem>
+          <TabItem Header="Communication">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Contact Details">
+            <TextBlock Text="Content 3" />
+          </TabItem>
+          <TabItem Header="Disabled" IsEnabled="False" />
+        </TabControl>
+
+        <TabControl TabStripPlacement="Left" Margin="5" Height="200">
+          <TabItem Header="General">
+            <StackPanel Orientation="Horizontal" Spacing="30">
+              <TextBlock Text="Company" VerticalAlignment="Center" />
+              <TextBox Width="200" VerticalAlignment="Center" />
+            </StackPanel>
+          </TabItem>
+          <TabItem Header="Communication">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Contact Details">
+            <TextBlock Text="Content 3" />
+          </TabItem>
+          <TabItem Header="Disabled" IsEnabled="False" />
+        </TabControl>
+      </StackPanel>
     </design:ThemePreviewer>
   </Design.PreviewWith>
 
@@ -26,22 +44,25 @@
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
     <Setter Property="Margin" Value="0" />
     <Setter Property="Padding" Value="25 20" />
+    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource ControlBorderMidBrush}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Border
           BorderThickness="{TemplateBinding BorderThickness}"
           CornerRadius="{TemplateBinding CornerRadius}"
-          Background="Transparent"
+          Background="{TemplateBinding Background}"
           HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
           VerticalAlignment="{TemplateBinding VerticalAlignment}">
           <DockPanel>
             <Grid DockPanel.Dock="{TemplateBinding TabStripPlacement}"
-                  ColumnDefinitions="Auto, *">
+                  ColumnDefinitions="Auto, *"
+                  ZIndex="2">
               <ItemsPresenter Name="PART_ItemsPresenter"
                               Grid.Column="0"
                               VerticalAlignment="Top"
-                              ItemsPanel="{TemplateBinding ItemsPanel}" />
+                              ItemsPanel="{TemplateBinding ItemsPanel}"
+                              ZIndex="2" />
               <Border Name="CardBorderBeyondTheTabs"
                       Grid.Column="1"
                       HorizontalAlignment="Stretch"
@@ -68,9 +89,11 @@
     <Style Selector="^[TabStripPlacement=Left]">
       <Style Selector="^ /template/ Border#CardBorderBeyondTheTabs">
         <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Margin" Value="0 " />
       </Style>
       <Style Selector="^ /template/ ItemsPresenter#PART_ItemsPresenter > WrapPanel">
         <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="VerticalAlignment" Value="Top" />
       </Style>
       <Style Selector="^ /template/ ContentPresenter#PART_SelectedContentHost">
         <Setter Property="BorderThickness" Value="1" />

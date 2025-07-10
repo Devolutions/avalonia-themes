@@ -11,6 +11,7 @@
           <ComboBoxItem>Embedded (tabbed)</ComboBoxItem>
           <ComboBoxItem>Undocked</ComboBoxItem>
         </ComboBox>
+
         <ComboBox IsEnabled="False"
                   Width="200"
                   SelectedIndex="1"
@@ -18,6 +19,7 @@
           <ComboBoxItem>Item 1</ComboBoxItem>
           <ComboBoxItem>Item 2</ComboBoxItem>
         </ComboBox>
+
         <ComboBox PlaceholderText="Error">
           <DataValidationErrors.Error>
             <sys:Exception>
@@ -26,6 +28,18 @@
               </x:Arguments>
             </sys:Exception>
           </DataValidationErrors.Error>
+        </ComboBox>
+
+        <ComboBox PlaceholderText="Search Highlight" Classes="search-highlight">
+          <ComboBoxItem>External</ComboBoxItem>
+          <ComboBoxItem Classes="search-highlight">Embedded (tabbed)</ComboBoxItem>
+          <ComboBoxItem>Undocked</ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox PlaceholderText="Secondary Search Highlight" Classes="secondary-search-highlight">
+          <ComboBoxItem Classes="secondary-search-highlight">External</ComboBoxItem>
+          <ComboBoxItem>Embedded (tabbed)</ComboBoxItem>
+          <ComboBoxItem>Undocked</ComboBoxItem>
         </ComboBox>
       </StackPanel>
     </design:ThemePreviewer>
@@ -52,10 +66,8 @@
     <Setter Property="Template">
       <ControlTemplate>
         <DataValidationErrors>
-          <Grid ColumnDefinitions="*,24" HorizontalAlignment="Stretch">
+          <Panel>
             <Border Name="BorderElement"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{DynamicResource TextBoxBorderBrush}"
                     BorderThickness="1 1 1 0"
@@ -63,78 +75,79 @@
                     MinWidth="{TemplateBinding MinWidth}"
                     MinHeight="{TemplateBinding MinHeight}" />
             <Border Name="BottomBorderElement"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="2"
                     Background="Transparent"
                     BorderBrush="{DynamicResource TextBoxBottomBorderBrush}"
                     BorderThickness="0 0 0 1"
                     CornerRadius="{TemplateBinding CornerRadius}"
                     MinWidth="{TemplateBinding MinWidth}"
                     MinHeight="{TemplateBinding MinHeight}" />
-            <TextBlock Name="PlaceholderTextBlock"
-                       Grid.Column="0"
-                       FontSize="{TemplateBinding FontSize}"
-                       HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                       VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                       Margin="{TemplateBinding Padding}"
-                       Text="{TemplateBinding PlaceholderText}"
-                       Foreground="{TemplateBinding PlaceholderForeground}"
-                       IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
-            <ContentControl Name="ContentPresenter"
-                            Grid.Column="0"
-                            Content="{TemplateBinding SelectionBoxItem}"
-                            FontSize="{TemplateBinding FontSize}"
-                            Margin="{TemplateBinding Padding}"
-                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
-
-            <Border Name="DropDownGlyphBackground"
-                    Grid.Column="1"
-                    Background="Transparent"
-                    Width="19"
-                    Height="17"
-                    CornerRadius="{DynamicResource ControlCornerRadius}"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-              <PathIcon Name="DropDownGlyph"
-                        UseLayoutRounding="False"
-                        IsHitTestVisible="False"
-                        Width="9"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Foreground="{DynamicResource ForegroundColor}"
-                        Data="{StaticResource ChevronPath}" />
-            </Border>
-
-            <Popup Name="PART_Popup"
-                   WindowManagerAddShadowHint="False"
-                   IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
-                   MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
-                   MaxHeight="{TemplateBinding MaxDropDownHeight}"
-                   PlacementTarget="BorderElement"
-                   IsLightDismissEnabled="True"
-                   InheritsTransform="True">
-              <Border Name="PopupBorder"
-                      Background="{DynamicResource BackgroundColor}"
-                      BorderBrush="{DynamicResource ComboBoxDropDownBorderBrushTransparent}"
-                      BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
-                      Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
-                      HorizontalAlignment="Stretch"
-                      CornerRadius="{DynamicResource OverlayCornerRadius}"
-                      Margin="0 0 0 10"
-                      BoxShadow="{DynamicResource ComboBoxDropDownShadow}">
-                <ScrollViewer
-                  HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
-                  VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
-                  IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}">
-                  <ItemsPresenter Name="PART_ItemsPresenter"
-                                  Margin=" 3 5 4 3 "
-                                  ItemsPanel="{TemplateBinding ItemsPanel}" />
-                </ScrollViewer>
+            <DockPanel HorizontalAlignment="Stretch">
+              <Border Name="DropDownGlyphBackground"
+                      DockPanel.Dock="Right"
+                      Background="Transparent"
+                      Margin="2 0"
+                      Width="20"
+                      Height="17"
+                      CornerRadius="{DynamicResource ControlCornerRadius}"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                <PathIcon Name="DropDownGlyph"
+                          UseLayoutRounding="False"
+                          IsHitTestVisible="False"
+                          Width="9"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Foreground="{TemplateBinding Foreground}"
+                          Data="{StaticResource ChevronPath}" />
               </Border>
-            </Popup>
-          </Grid>
+
+              <TextBlock Name="PlaceholderTextBlock"
+                         FontSize="{TemplateBinding FontSize}"
+                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                         Margin="{TemplateBinding Padding}"
+                         Text="{TemplateBinding PlaceholderText}"
+                         Foreground="{TemplateBinding PlaceholderForeground}"
+                         IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
+              <ContentPresenter Name="ContentPresenter"
+                                Content="{TemplateBinding SelectionBoxItem}"
+                                FontSize="{TemplateBinding FontSize}"
+                                FontWeight="{TemplateBinding FontWeight}"
+                                Foreground="{TemplateBinding Foreground}"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+
+              <Popup Name="PART_Popup"
+                     WindowManagerAddShadowHint="False"
+                     IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
+                     MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                     MaxHeight="{TemplateBinding MaxDropDownHeight}"
+                     PlacementTarget="BorderElement"
+                     IsLightDismissEnabled="True"
+                     InheritsTransform="True">
+                <Border Name="PopupBorder"
+                        Background="{DynamicResource BackgroundColor}"
+                        BorderBrush="{DynamicResource ComboBoxDropDownBorderBrushTransparent}"
+                        BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
+                        Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
+                        HorizontalAlignment="Stretch"
+                        CornerRadius="{DynamicResource OverlayCornerRadius}"
+                        Margin="0 0 0 10"
+                        BoxShadow="{DynamicResource ComboBoxDropDownShadow}">
+                  <ScrollViewer
+                    HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                    VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+                    IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}">
+                    <ItemsPresenter Name="PART_ItemsPresenter"
+                                    Margin=" 3 5 4 3 "
+                                    ItemsPanel="{TemplateBinding ItemsPanel}" />
+                  </ScrollViewer>
+                </Border>
+              </Popup>
+            </DockPanel>
+          </Panel>
         </DataValidationErrors>
       </ControlTemplate>
     </Setter>
@@ -195,6 +208,19 @@
         <Setter Property="Foreground" Value="{DynamicResource ComboBoxDropDownGlyphForegroundDisabled}" />
       </Style>
     </Style>
-  </ControlTheme>
 
+    <!-- Search highlight -->
+    <Style Selector="^.search-highlight">
+      <Setter Property="Background" Value="{DynamicResource SearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SearchHighlightForeground}" />
+      <Setter Property="PlaceholderForeground" Value="{DynamicResource SearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style Selector="^.secondary-search-highlight">
+      <Setter Property="Background" Value="{DynamicResource SecondarySearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SecondarySearchHighlightForeground}" />
+      <Setter Property="PlaceholderForeground" Value="{DynamicResource SecondarySearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+  </ControlTheme>
 </ResourceDictionary>

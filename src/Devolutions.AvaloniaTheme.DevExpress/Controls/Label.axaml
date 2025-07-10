@@ -1,0 +1,39 @@
+<ResourceDictionary
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design"
+  x:ClassModifier="internal">
+
+  <Design.PreviewWith>
+    <design:ThemePreviewer Padding="20">
+      <StackPanel Spacing="20">
+        <Label Content="test1" />
+        <Label Content="searched" Classes="search-highlight" />
+        <Label Content="secondary search" Classes="secondary-search-highlight" />
+        <Label Classes="secondary-search-highlight">
+          <TextBlock Text="teest" />
+        </Label>
+      </StackPanel>
+    </design:ThemePreviewer>
+  </Design.PreviewWith>
+
+  <ControlTheme x:Key="{x:Type Label}" TargetType="Label">
+    <Setter Property="Padding" Value="3" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter
+          Name="PART_ContentPresenter"
+          Background="{TemplateBinding Background}"
+          BorderBrush="{TemplateBinding BorderBrush}"
+          BorderThickness="{TemplateBinding BorderThickness}"
+          CornerRadius="{TemplateBinding CornerRadius}"
+          ContentTemplate="{TemplateBinding ContentTemplate}"
+          Content="{TemplateBinding Content}"
+          Padding="{TemplateBinding Padding}"
+          RecognizesAccessKey="True"
+          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+</ResourceDictionary>

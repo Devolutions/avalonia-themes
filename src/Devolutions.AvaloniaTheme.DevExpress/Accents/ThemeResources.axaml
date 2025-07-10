@@ -43,6 +43,12 @@
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternating" Color="{DynamicResource SystemAccentColor}" Opacity="0.04" />
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternatingInInactiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.04" />
       <SolidColorBrush x:Key="DataGridGroupHeaderBackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
+
+      <Color x:Key='SearchHighlightBackground'>#fffad000</Color>
+      <Color x:Key='SearchHighlightForeground'>#FF000000</Color>
+
+      <Color x:Key='SecondarySearchHighlightBackground'>#77fad000</Color>
+      <Color x:Key='SecondarySearchHighlightForeground'>#ee000000</Color>
     </ResourceDictionary>
 
     <!-- TODO: Darkmode colours just roughly -->
@@ -89,6 +95,11 @@
       <SolidColorBrush x:Key="DataGridItemBackgroundAlternatingInInactiveWindow" Color="{DynamicResource ForegroundColor}" Opacity="0.05" />
       <SolidColorBrush x:Key="DataGridGroupHeaderBackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.03" />
 
+      <Color x:Key='SearchHighlightBackground'>#ffe6af56</Color>
+      <Color x:Key='SearchHighlightForeground'>#ff202020</Color>
+
+      <Color x:Key='SecondarySearchHighlightBackground'>#aae6af56</Color>
+      <Color x:Key='SecondarySearchHighlightForeground'>#ee202020</Color>
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
