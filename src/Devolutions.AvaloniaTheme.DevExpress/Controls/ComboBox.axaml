@@ -125,6 +125,7 @@
                      MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
                      MaxHeight="{TemplateBinding MaxDropDownHeight}"
                      PlacementTarget="BorderElement"
+                     Placement="BottomEdgeAlignedLeft"
                      IsLightDismissEnabled="True"
                      InheritsTransform="True">
                 <Border Name="PopupBorder"
@@ -134,14 +135,14 @@
                         Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
                         HorizontalAlignment="Stretch"
                         CornerRadius="{DynamicResource OverlayCornerRadius}"
-                        Margin="0 0 0 10"
+                        Margin="{DynamicResource ComboBoxPopupBorderMargin}"
                         BoxShadow="{DynamicResource ComboBoxDropDownShadow}">
                   <ScrollViewer
                     HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
                     VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
                     IsDeferredScrollingEnabled="{TemplateBinding (ScrollViewer.IsDeferredScrollingEnabled)}">
                     <ItemsPresenter Name="PART_ItemsPresenter"
-                                    Margin="4"
+                                    Margin="{StaticResource ComboBoxDropDownInnerPadding}"
                                     ItemsPanel="{TemplateBinding ItemsPanel}" />
                   </ScrollViewer>
                 </Border>

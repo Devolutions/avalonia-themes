@@ -6,7 +6,7 @@
   <Design.PreviewWith>
     <design:ThemePreviewer Padding="20">
       <StackPanel Width="300" Spacing="10" HorizontalAlignment="Left">
-        <AutoCompleteBox Width="200">
+        <AutoCompleteBox>
           <AutoCompleteBox.ItemsSource>
             <generic:List x:TypeArguments="x:String">
               Alabama
@@ -20,6 +20,7 @@
             </generic:List>
           </AutoCompleteBox.ItemsSource>
         </AutoCompleteBox>
+        <TextBox />
       </StackPanel>
     </design:ThemePreviewer>
   </Design.PreviewWith>
@@ -31,15 +32,16 @@
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type AutoCompleteBox}" TargetType="AutoCompleteBox">
-    <Setter Property="MinHeight" Value="1" />
-
-    <Setter Property="VerticalAlignment" Value="Top" />
-    <Setter Property="Foreground" Value="{DynamicResource TextControlForeground}" />
-    <Setter Property="Background" Value="{DynamicResource TextControlBackground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrush}" />
-    <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThickness}" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="1 1 1 0" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
-    <Setter Property="Padding" Value="{DynamicResource TextControlThemePadding}" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
+    <Setter Property="MinWidth" Value="{DynamicResource TextBasedInputMinHeight}" />
+    <Setter Property="Padding" Value="10 2 10 2.5" />
+    <Setter Property="FocusAdorner" Value="{x:Null}" />
+
     <Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteListMaxHeight}" />
 
     <Setter Property="Template">
@@ -67,20 +69,23 @@
             MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
             MaxHeight="{TemplateBinding MaxDropDownHeight}"
             IsLightDismissEnabled="True"
-            PlacementTarget="{TemplateBinding}">
+            PlacementTarget="{TemplateBinding}"
+            Placement="BottomEdgeAlignedLeft">
             <Border
               Name="PART_SuggestionsContainer"
-              Padding="{DynamicResource AutoCompleteListMargin}"
-              BorderThickness="{DynamicResource AutoCompleteListBorderThemeThickness}"
-              BorderBrush="{DynamicResource AutoCompleteBoxSuggestionsListBorderBrush}"
-              Background="{DynamicResource AutoCompleteBoxSuggestionsListBackground}"
-              CornerRadius="{DynamicResource OverlayCornerRadius}">
+              Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
+              BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
+              BorderBrush="{DynamicResource ComboBoxDropDownBorderBrushTransparent}"
+              Background="{DynamicResource BackgroundColor}"
+              CornerRadius="{DynamicResource OverlayCornerRadius}"
+              Margin="{DynamicResource ComboBoxPopupBorderMargin}"
+              BoxShadow="{DynamicResource ComboBoxDropDownShadow}">
               <ListBox
                 Name="PART_SelectingItemsControl"
                 BorderThickness="0"
                 Background="Transparent"
                 ItemTemplate="{TemplateBinding ItemTemplate}"
-                Margin="{DynamicResource AutoCompleteListPadding}"
+                Margin="{StaticResource ComboBoxDropDownInnerPadding}"
                 ItemContainerTheme="{StaticResource DevoDevExpress_AutoCompleteBox_ItemContainerTheme}" />
             </Border>
           </Popup>
