@@ -69,7 +69,8 @@
             MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}"
             MaxHeight="{TemplateBinding MaxDropDownHeight}"
             IsLightDismissEnabled="True"
-            PlacementTarget="{TemplateBinding}">
+            PlacementTarget="{TemplateBinding}"
+            Placement="BottomEdgeAlignedLeft">
             <Border
               Name="PART_SuggestionsContainer"
               Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
