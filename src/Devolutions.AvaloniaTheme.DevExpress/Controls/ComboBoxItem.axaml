@@ -28,7 +28,6 @@
 
   <ControlTheme x:Key="{x:Type ComboBoxItem}" TargetType="ComboBoxItem">
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
-    <Setter Property="FontWeight" Value="Regular" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource BackgroundColor}" />
     <Setter Property="Padding" Value="{DynamicResource ComboBoxItemPadding}" />

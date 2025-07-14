@@ -10,10 +10,10 @@
     <Border Width="500">
       <TabControl TabStripPlacement="Left">
         <TabItem Header="Tab 1">
-          <TextBlock Text="Vertical tab view" />
+          <TextBlock Text="Vertical tab view" VerticalAlignment="Top" />
         </TabItem>
         <TabItem Header="Tab 2">
-          <TextBlock Text="Content 2" />
+          <TextBlock Text="Content 2" VerticalAlignment="Top" />
         </TabItem>
         <TabItem Header="Tab3" IsEnabled="False" />
       </TabControl>
@@ -21,14 +21,14 @@
     <Border Width="500">
       <TabControl TabStripPlacement="Top">
         <TabItem Header="General">
-          <TextBlock Text="Horizontal tab view" />
+          <TextBlock Text="Horizontal tab view" VerticalAlignment="Top" />
         </TabItem>
         <TabItem Header="Settings">
-          <TextBlock Text="Content 2" />
+          <TextBlock Text="Content 2" VerticalAlignment="Top" />
         </TabItem>
         <TabItem Header="Disabled Tab" IsEnabled="False" />
         <TabItem Header="Advanced">
-          <TextBlock Text="Content 3" />
+          <TextBlock Text="Content 3" VerticalAlignment="Top" />
         </TabItem>
       </TabControl>
     </Border>
