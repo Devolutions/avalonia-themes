@@ -31,6 +31,26 @@
           <EditableComboBoxItem Value="test2" />
           <EditableComboBoxItem Value="test3" />
         </EditableComboBox>
+
+        <EditableComboBox
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Classes="search-highlight"
+          Watermark="search highlight">
+          <EditableComboBoxItem Value="test1" Classes="search-highlight" />
+          <EditableComboBoxItem Value="test2" Classes="secondary-search-highlight" />
+          <EditableComboBoxItem Value="test3" />
+        </EditableComboBox>
+
+        <EditableComboBox
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Classes="secondary-search-highlight"
+          Watermark="secondary search highlight">
+          <EditableComboBoxItem Value="test1" />
+          <EditableComboBoxItem Value="test2" />
+          <EditableComboBoxItem Value="test3" />
+        </EditableComboBox>
       </StackPanel>
     </design:ThemePreviewer>
   </Design.PreviewWith>
@@ -45,6 +65,7 @@
 
   <ControlTheme x:Key="{x:Type EditableComboBoxItem}" TargetType="EditableComboBoxItem" BasedOn="{StaticResource {x:Type EditableComboBoxItem}}">
     <Setter Property="IsHitTestVisible" Value="True" />
+    <Setter Property="FontWeight" Value="Normal" />
     <Setter Property="Foreground" Value="{DynamicResource ComboBoxItemForeground}" />
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="Padding" Value="{DynamicResource EditableComboBoxItemPadding}" />
@@ -56,6 +77,10 @@
 
     <Style Selector="^:pointerover /template/ SearchHighlightTextBlock#PART_Text">
       <Setter Property="Foreground" Value="{DynamicResource EditableComboBoxItemHoverForegroundColor}" />
+    </Style>
+    <Style Selector="^:pointerover /template/ TextBlock">
+      <Setter Property="Foreground" Value="{DynamicResource EditableComboBoxItemHoverForegroundColor}" />
+      <Setter Property="FontWeight" Value="Normal" />
     </Style>
 
     <Style Selector="^[IsSelected=True] /template/ SearchHighlightTextBlock#PART_Text">
@@ -96,12 +121,6 @@
       <ControlTemplate>
         <Grid ColumnDefinitions="Auto,*,Auto">
           <DockPanel x:Name="PART_InnerDockPanel" Grid.Column="1" Margin="{TemplateBinding Padding}">
-            <TextBlock
-              Name="PART_FloatingWatermark"
-              Foreground="{DynamicResource SystemAccentColor}"
-              IsVisible="False"
-              Text="{TemplateBinding Watermark}"
-              DockPanel.Dock="Top" />
             <ScrollViewer
               Name="PART_ScrollViewer"
               HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
@@ -235,7 +254,7 @@
                 Width="8"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Foreground="{DynamicResource ForegroundHighBrush}"
+                Foreground="{TemplateBinding Foreground}"
                 Data="{StaticResource ChevronPath}" />
             </Panel>
 
@@ -271,7 +290,7 @@
               <Panel>
                 <Border
                   x:Name="PopupBorder"
-                  Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"
+                  Background="{DynamicResource BackgroundBrush}"
                   BorderBrush="{DynamicResource ComboBoxDropDownBorderBrush}"
                   BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
                   Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
@@ -355,5 +374,17 @@
     <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrush}" />
     <Setter Property="BorderThickness" Value="{DynamicResource EditableComboBoxBorderThickness}" />
     <Setter Property="Mode" Value="Immediate" />
+
+    <!-- Search highlight -->
+    <Style Selector="^.search-highlight">
+      <Setter Property="Background" Value="{DynamicResource SearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+    <Style Selector="^.secondary-search-highlight">
+      <Setter Property="Background" Value="{DynamicResource SecondarySearchHighlightBackground}" />
+      <Setter Property="Foreground" Value="{DynamicResource SecondarySearchHighlightForeground}" />
+      <Setter Property="FontWeight" Value="Bold" />
+    </Style>
   </ControlTheme>
 </ResourceDictionary>

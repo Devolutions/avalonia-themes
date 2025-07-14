@@ -9,6 +9,8 @@
         VerticalAlignment="Center"
         Watermark="test">
         <EditableComboBoxItem Value="tesfsdfast df asdf asdf as fd" />
+        <EditableComboBoxItem Value="search highlight" Classes="search-highlight" />
+        <EditableComboBoxItem Value="secondary search highlight" Classes="secondary-search-highlight" />
       </EditableComboBox>
     </Panel>
   </Design.PreviewWith>
@@ -53,10 +55,46 @@
               Content="{TemplateBinding Value}"
               Search="{TemplateBinding FilterHighlightText}"
               VerticalAlignment="Center" />
+            <TextBlock
+              Name="PART_SearchHighlightText"
+              Text="{TemplateBinding Value}"
+              Foreground="{DynamicResource SearchHighlightForeground}"
+              Background="{DynamicResource SearchHighlightBackground}"
+              VerticalAlignment="Center" />
+            <TextBlock
+              Name="PART_SecondarySearchHighlightText"
+              Text="{TemplateBinding Value}"
+              Foreground="{DynamicResource SecondarySearchHighlightForeground}"
+              Background="{DynamicResource SecondarySearchHighlightBackground}"
+              VerticalAlignment="Center" />
           </StackPanel>
         </Border>
       </ControlTemplate>
     </Setter>
+
+    <!-- Search highlight -->
+    <Style Selector="^ /template/ SearchHighlightTextBlock#PART_Text">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+    <Style Selector="^ /template/ TextBlock#PART_SearchHighlightText, ^ /template/ TextBlock#PART_SecondarySearchHighlightText">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
+    <Style Selector="^.search-highlight">
+      <Style Selector="^ /template/ SearchHighlightTextBlock#PART_Text">
+        <Setter Property="IsVisible" Value="False" />
+      </Style>
+      <Style Selector="^ /template/ TextBlock#PART_SearchHighlightText">
+        <Setter Property="IsVisible" Value="True" />
+      </Style>
+    </Style>
+    <Style Selector="^.secondary-search-highlight">
+      <Style Selector="^ /template/ SearchHighlightTextBlock#PART_Text">
+        <Setter Property="IsVisible" Value="False" />
+      </Style>
+      <Style Selector="^ /template/ TextBlock#PART_SecondarySearchHighlightText">
+        <Setter Property="IsVisible" Value="True" />
+      </Style>
+    </Style>
 
     <Style Selector="^ /template/ Border#PART_Background">
       <Setter Property="Background" Value="Transparent" />
@@ -121,12 +159,6 @@
       <ControlTemplate>
         <DockPanel x:Name="PART_InnerDockPanel"
                    Margin="{TemplateBinding Padding}">
-          <TextBlock
-            Name="PART_FloatingWatermark"
-            Foreground="{DynamicResource SystemAccentColor}"
-            IsVisible="False"
-            Text="{TemplateBinding Watermark}"
-            DockPanel.Dock="Top" />
           <ScrollViewer
             Name="PART_ScrollViewer"
             HorizontalScrollBarVisibility="{TemplateBinding (ScrollViewer.HorizontalScrollBarVisibility)}"
@@ -258,7 +290,7 @@
                       Margin="0,0,10,0"
                       HorizontalAlignment="Right"
                       VerticalAlignment="Center"
-                      Foreground="{DynamicResource ComboBoxDropDownGlyphForeground}"
+                      Foreground="{TemplateBinding Foreground}"
                       Data="M1939 486L2029 576L1024 1581L19 576L109 486L1024 1401L1939 486Z" />
 
             <ItemsControl

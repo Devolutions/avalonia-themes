@@ -12,7 +12,9 @@
           <Button Grid.Row="2" Grid.Column="0" Classes="accent" Content="Disabled" IsEnabled="False" />
           <Button Grid.Row="2" Grid.Column="2" Content="Disabled" IsEnabled="False" />
         </Grid>
-        <CheckBox IsEnabled="False">Birthday focussed</CheckBox>
+
+        <Button Classes="search-highlight" Content="search highlight" />
+        <Button Classes="secondary-search-highlight" Content="secondary search highlight" />
       </StackPanel>
     </design:ThemePreviewer>
   </Design.PreviewWith>
@@ -28,7 +30,6 @@
     <Setter Property="HorizontalContentAlignment" Value="Center" />
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="FontSize" Value="{DynamicResource ControlFontSize}" />
-    <Setter Property="FontWeight" Value="SemiLight" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel>
@@ -48,7 +49,9 @@
             Name="PART_ContentPresenter"
             Content="{TemplateBinding Content}"
             Foreground="{TemplateBinding Foreground}"
-            Padding="{TemplateBinding Padding}"
+            Margin="{TemplateBinding Padding}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
             FontSize="{TemplateBinding FontSize}"
