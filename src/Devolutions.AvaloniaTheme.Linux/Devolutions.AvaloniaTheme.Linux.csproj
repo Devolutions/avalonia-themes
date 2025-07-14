@@ -22,6 +22,10 @@
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
     <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <None Include="docs\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' != 'Debug'">
     <!-- MAKE SURE TO BUMP THIS *if* A NEW CONTROL/CONVERTER/EXTENSION IS ADDED AND USED! -->
