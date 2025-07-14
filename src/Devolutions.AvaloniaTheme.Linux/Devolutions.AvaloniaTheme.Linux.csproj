@@ -5,6 +5,9 @@
     <Description>Devolutions Avalonia Linux Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
     <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
+    <PackageReleaseNotes>
+      See https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaTheme.Linux/CHANGELOG.md
+    </PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
