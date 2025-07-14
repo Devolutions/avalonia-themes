@@ -8,5 +8,7 @@
         <MergeResourceInclude Source="Controls/EditableComboBox/EditableComboBox.axaml" />
       </ResourceDictionary.MergedDictionaries>
     </ResourceDictionary>
+    
+    <StaticResource x:Key="{x:Type TabPane}" ResourceKey="{x:Type TabControl}" />
   </Styles.Resources>
 </Styles>
