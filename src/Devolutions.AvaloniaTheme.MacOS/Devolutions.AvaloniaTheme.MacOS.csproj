@@ -4,6 +4,7 @@
     <Company>Devolutions</Company>
     <Description>Devolutions Avalonia macOS Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.MacOS</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
     <PackageReleaseNotes>
       See https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaTheme.MacOS/CHANGELOG.md

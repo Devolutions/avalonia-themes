@@ -4,6 +4,7 @@
     <Company>Devolutions</Company>
     <Description>Devolutions Avalonia DevExpress Theme</Description>
     <PackageId>Devolutions.AvaloniaTheme.DevExpress</PackageId>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
     <PackageReleaseNotes>
       See https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaTheme.DevExpress/CHANGELOG.md
