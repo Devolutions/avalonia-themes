@@ -40,6 +40,7 @@
     <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
     <Setter Property="MinWidth" Value="{DynamicResource TextBasedInputMinHeight}" />
     <Setter Property="Padding" Value="10 2 10 2.5" />
+    <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
 
     <Setter Property="MaxDropDownHeight" Value="{DynamicResource AutoCompleteListMaxHeight}" />
