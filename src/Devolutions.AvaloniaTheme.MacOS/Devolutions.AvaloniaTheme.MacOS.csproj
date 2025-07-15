@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Version>1.0.0</Version>
     <Company>Devolutions</Company>
     <Description>Devolutions Avalonia macOS Theme</Description>
@@ -12,20 +18,17 @@
       BREAKING: 2025.07.14 - changes default vertical alignment of `TextBlock` to centred
     </PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="[11.2.0,)" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
     <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' != 'Debug'">

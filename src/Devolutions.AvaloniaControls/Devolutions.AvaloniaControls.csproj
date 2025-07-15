@@ -4,10 +4,26 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>13</LangVersion>
-    <PackageId>Devolutions.AvaloniaControls</PackageId>
-    <Version>1.0.0</Version>
     <RootNamespace>Devolutions.AvaloniaControls</RootNamespace>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Company>Devolutions</Company>
+    <Description>Devolutions Avalonia Controls Library</Description>
+    <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions/tree/master/src/Devolutions.AvaloniaControls</PackageProjectUrl>
+    <PackageId>Devolutions.AvaloniaControls</PackageId>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>
+      See https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/CHANGELOG.md
+    </PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="[11.2.0,)" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
