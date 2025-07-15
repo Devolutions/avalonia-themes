@@ -49,6 +49,15 @@
 
       <Color x:Key='SecondarySearchHighlightBackground'>#77fad000</Color>
       <Color x:Key='SecondarySearchHighlightForeground'>#ee000000</Color>
+
+      <!-- 
+        Temporary work-around; currently, black text in light theme looks blurry / grey-ish instead of
+        black and crisp.
+        This seems to be due to poor hinting for the Segoe UI font when rendered with Skia.
+        For now, demi-bold is the compromise we were the least dissatisfied with.
+      -->
+      <FontWeight x:Key="DefaultFontWeight">DemiBold</FontWeight>
+      <FontWeight x:Key="DemiBoldWeight">Bold</FontWeight>
     </ResourceDictionary>
 
     <!-- TODO: Darkmode colours just roughly -->
@@ -100,6 +109,9 @@
 
       <Color x:Key='SecondarySearchHighlightBackground'>#aae6af56</Color>
       <Color x:Key='SecondarySearchHighlightForeground'>#ee202020</Color>
+
+      <FontWeight x:Key="DefaultFontWeight">Normal</FontWeight>
+      <FontWeight x:Key="DemiBoldWeight">DemiBold</FontWeight>
     </ResourceDictionary>
   </ResourceDictionary.ThemeDictionaries>
 
@@ -108,7 +120,7 @@
   <SolidColorBrush x:Key="TransparentBrush" Color="Transparent" />
   <SolidColorBrush x:Key="SystemRegionBrush" Color="{DynamicResource SystemRegionColor}" />
 
-  <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Helvetica Neue, Arial, sans-serif</FontFamily>
+  <FontFamily x:Key="DevExpressThemeFontFamily">Segoe UI, Tahoma, sans-serif</FontFamily>
   <x:Double x:Key="DefaultLineHeight">15</x:Double>
   <x:Double x:Key="DefaultFontSize">12</x:Double>
   <x:Double x:Key="ControlFontSize">12</x:Double>

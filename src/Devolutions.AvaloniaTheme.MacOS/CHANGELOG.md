@@ -7,3 +7,6 @@ Please see commits if you're curious. However we will do our best to call out ke
 
 - BREAKING: default vertical alignment of `TextBlock` changed to centred. You may see unwanted changes in
   your layouts.
+
+
+- Themed `TabPane`, which is an alternately-themed `TabControl`

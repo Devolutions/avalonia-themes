@@ -5,8 +5,9 @@
     <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
     <Setter Property="TopLevel.SystemBarColor" Value="{DynamicResource SystemControlBackgroundAltHighBrush}" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="FontFamily" Value="{DynamicResource DevExpressThemeFontFamily}" />
     <Setter Property="FontSize" Value="{DynamicResource DefaultFontSize}" />
-    <Setter Property="FontFamily" Value="{StaticResource DevExpressThemeFontFamily}" />
+    <Setter Property="FontWeight" Value="{DynamicResource DefaultFontWeight}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Panel>
