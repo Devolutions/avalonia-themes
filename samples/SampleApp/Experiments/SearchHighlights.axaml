@@ -8,7 +8,9 @@
 
   <TabControl>
     <TabItem Header="Highlighted" Classes="secondary-search-highlight">
-      <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="Auto, Auto">
+      <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+            ColumnDefinitions="Auto, Auto"
+            RowSpacing="5">
         <Label Grid.Row="0" Grid.Column="0" Content="Test1" />
         <ComboBox Grid.Row="0" Grid.Column="1" Classes="secondary-search-highlight">
           <ComboBoxItem Content="Search" Classes="search-highlight" />
@@ -20,6 +22,25 @@
         <ComboBox Grid.Row="1" Grid.Column="1" Classes="search-highlight" MinWidth="200">
           <ComboBoxItem Content="Item3" />
         </ComboBox>
+
+        <EditableComboBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Classes="search-highlight" Watermark="highlight" HorizontalAlignment="Stretch">
+          <EditableComboBoxItem Value="Item1" Classes="search-highlight" />
+          <EditableComboBoxItem Value="Item2" Classes="secondary-search-highlight" />
+        </EditableComboBox>
+
+        <EditableComboBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Classes="secondary-search-highlight" Watermark="secondary highlight" HorizontalAlignment="Stretch">
+          <EditableComboBoxItem Value="Item1" />
+          <EditableComboBoxItem Value="Item2" />
+        </EditableComboBox>
+
+        <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="test" Classes="search-highlight" />
+        <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="test" Classes="secondary-search-highlight" />
+
+        <CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Content="test" Classes="search-highlight" />
+        <CheckBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Content="test" Classes="secondary-search-highlight" />
+
+        <RadioButton Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" Content="Option 1" Classes="search-highlight" />
+        <RadioButton Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Content="Option 2" Classes="secondary-search-highlight" />
       </Grid>
     </TabItem>
     <TabItem Header="Not Highlighted" />
