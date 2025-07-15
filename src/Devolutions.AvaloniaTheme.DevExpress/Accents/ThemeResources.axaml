@@ -106,7 +106,6 @@
 
       <Color x:Key='SearchHighlightBackground'>#ffe6af56</Color>
       <Color x:Key='SearchHighlightForeground'>#ff202020</Color>
-      <StaticResource x:Key="DataGridFillerColumnGridLinesBrush" ResourceKey="SearchHighlightBackground" />
 
       <Color x:Key='SecondarySearchHighlightBackground'>#aae6af56</Color>
       <Color x:Key='SecondarySearchHighlightForeground'>#ee202020</Color>
