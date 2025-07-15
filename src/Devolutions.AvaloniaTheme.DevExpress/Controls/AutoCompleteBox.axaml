@@ -39,7 +39,7 @@
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
     <Setter Property="MinWidth" Value="{DynamicResource TextBasedInputMinHeight}" />
-    <Setter Property="Padding" Value="10 2 10 2.5" />
+    <Setter Property="Padding" Value="{DynamicResource TextBoxPadding}" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
 

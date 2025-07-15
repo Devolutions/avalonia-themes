@@ -171,6 +171,7 @@
   <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource ControlBorderLowColorSolid}" />
   <SolidColorBrush x:Key="TextBoxBottomBorderBrush" Color="{DynamicResource TextBoxBorderBottomColor}" />
   <SolidColorBrush x:Key="TextBoxDisabledBorderSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.1" />
+  <Thickness x:Key="TextBoxPadding">4 0.5 4 1.5</Thickness>
 
   <x:Double x:Key="TextBasedInputMinHeight">23</x:Double>
 
