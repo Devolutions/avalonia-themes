@@ -33,6 +33,7 @@
           <Button Grid.Column="1" Content="..." HorizontalContentAlignment="Center" Height="35" Width="35"
                   Margin="5 0 0 0 " />
         </Grid>
+        <TextBox Height="22" MinHeight="22" MaxHeight="22">thin</TextBox>
       </StackPanel>
     </design:ThemePreviewer>
   </Design.PreviewWith>
@@ -122,7 +123,7 @@
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
     <Setter Property="MinWidth" Value="{DynamicResource TextBasedInputMinHeight}" />
-    <Setter Property="Padding" Value="10 2 10 2.5" />
+    <Setter Property="Padding" Value="4 1" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
