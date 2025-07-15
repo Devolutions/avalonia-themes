@@ -8,25 +8,26 @@
   
   <StackPanel Margin="10">
     <TextBlock Classes="h1" Text="Grids" />
-    <Grid ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+    <Grid ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
           ColumnSpacing="10"
           Margin="10">
       <TextBlock Grid.Column="0">TextBlock</TextBlock>
       <TextBox Grid.Column="1" Watermark="TextBox" />
-      <ComboBox Grid.Column="2" SelectedIndex="2">
+      <TextBox Grid.Column="2" Height="22" MinHeight="22" MaxHeight="22">thin</TextBox>
+      <ComboBox Grid.Column="3" SelectedIndex="2">
           <ComboBoxItem>Option 1</ComboBoxItem>
           <ComboBoxItem>Option 2</ComboBoxItem>
           <ComboBoxItem>Option 3</ComboBoxItem>
           <ComboBoxItem>Option 4 much longer</ComboBoxItem>
         </ComboBox>
-      <AutoCompleteBox Grid.Column="3" x:Name="Animals" FilterMode="Contains" Watermark="AutoComplete" />
-      <NumericUpDown Grid.Column="4" Value="0"
+      <AutoCompleteBox Grid.Column="4" x:Name="Animals" FilterMode="Contains" Watermark="AutoComplete" />
+      <NumericUpDown Grid.Column="5" Value="0"
                      Increment="1"
                      Watermark="mm" />
-      <Button Grid.Column="5" Content="Button" />
-      <CheckBox Grid.Column="6" Content="Checkbox" IsChecked="True" />
+      <Button Grid.Column="6" Content="Button" />
+      <CheckBox Grid.Column="7" Content="Checkbox" IsChecked="True" />
       <!-- Force larger container height to test if controls are affected (they shouldn't be) -->
-      <TextBlock Grid.Column="7" Text="🙂" FontSize="45" />
+      <TextBlock Grid.Column="8" Text="🙂" FontSize="45" />
     </Grid>
 
     <Grid RowDefinitions="*, *, *, *, *, *, *, *, *"
@@ -54,21 +55,22 @@
     <StackPanel Orientation="Vertical" Margin="0 10" Spacing="20" VerticalAlignment="Top">
       <StackPanel Orientation="Horizontal" Margin="10" Spacing="10" VerticalAlignment="Top">
         <TextBlock>TextBlock</TextBlock>
-          <TextBox Watermark="TextBox" />
-          <ComboBox SelectedIndex="2">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-            <ComboBoxItem>Option 3</ComboBoxItem>
-            <ComboBoxItem>Option 4</ComboBoxItem>
-          </ComboBox>
-          <AutoCompleteBox x:Name="Animals3" FilterMode="Contains" Watermark="AutoComplete" />
-          <NumericUpDown Value="0"
-                         Increment="1"
-                         Watermark="mm" />
-          <Button Content="Button" />
-          <CheckBox Content="Checkbox" IsChecked="True" />
-          <!-- Force larger container height to test if controls are affected (they shouldn't be) -->
-          <TextBlock Text="🙂" FontSize="45" />
+        <TextBox Watermark="TextBox" />
+        <TextBox Grid.Column="2" Height="22" MinHeight="22" MaxHeight="22">thin</TextBox>
+        <ComboBox SelectedIndex="2">
+          <ComboBoxItem>Option 1</ComboBoxItem>
+          <ComboBoxItem>Option 2</ComboBoxItem>
+          <ComboBoxItem>Option 3</ComboBoxItem>
+          <ComboBoxItem>Option 4</ComboBoxItem>
+        </ComboBox>
+        <AutoCompleteBox x:Name="Animals3" FilterMode="Contains" Watermark="AutoComplete" />
+        <NumericUpDown Value="0"
+                       Increment="1"
+                       Watermark="mm" />
+        <Button Content="Button" />
+        <CheckBox Content="Checkbox" IsChecked="True" />
+        <!-- Force larger container height to test if controls are affected (they shouldn't be) -->
+        <TextBlock Text="🙂" FontSize="45" />
       </StackPanel>
       <StackPanel Orientation="Vertical" Width="100" Margin="10" Spacing="10" VerticalAlignment="Top" HorizontalAlignment="Left">
         <TextBlock>TextBlock</TextBlock>

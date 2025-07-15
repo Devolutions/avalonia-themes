@@ -123,7 +123,7 @@
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
     <Setter Property="MinWidth" Value="{DynamicResource TextBasedInputMinHeight}" />
-    <Setter Property="Padding" Value="4 1" />
+    <Setter Property="Padding" Value="{DynamicResource TextBoxPadding}" />
     <Setter Property="FocusAdorner" Value="{x:Null}" />
     <Setter Property="ScrollViewer.IsScrollChainingEnabled" Value="True" />
     <Setter Property="ContextFlyout"
