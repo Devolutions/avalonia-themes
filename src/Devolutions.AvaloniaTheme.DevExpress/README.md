@@ -180,6 +180,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |||
 |✅ | <h3>TabControl</h3> <h4>TabItem<h4> |
 || <img src="https://github.com/user-attachments/assets/21864dbb-1058-4656-99dd-c24fde76d4e4" alt="TabControl demo" style="width: 585px; max-width: 100%;" /> |
+|✅ | <h3>TabPane</h3> |
+|| [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md) |
 || <h3>TabStrip</h3> |
 |||
 || <h3>TabStripItem</h3> |
