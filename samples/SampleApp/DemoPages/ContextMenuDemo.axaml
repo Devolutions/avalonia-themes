@@ -20,7 +20,7 @@
         </MenuItem>
       </ContextMenu>
     </Border.ContextMenu>
-    <TextBlock Margin="10">Right-click anywhere in this space</TextBlock>
+    <TextBlock Margin="10" VerticalAlignment="Top">Right-click anywhere in this space</TextBlock>
   </Border>
 
 </UserControl>

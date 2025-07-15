@@ -5,32 +5,63 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.TabControlDemo">
 
+  <StackPanel Orientation="Vertical" Spacing="20">
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Spacing="10">
+      <Border Width="500">
+        <TabControl TabStripPlacement="Left">
+          <TabItem Header="Tab 1">
+            <TextBlock Text="Vertical tab view" VerticalAlignment="Top" />
+          </TabItem>
+          <TabItem Header="Tab 2">
+            <TextBlock Text="Content 2" VerticalAlignment="Top" />
+          </TabItem>
+          <TabItem Header="Tab3" IsEnabled="False" />
+        </TabControl>
+      </Border>
 
-  <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-    <Border Width="500">
-      <TabControl TabStripPlacement="Left">
-        <TabItem Header="Tab 1">
-          <TextBlock Text="Vertical tab view" />
-        </TabItem>
-        <TabItem Header="Tab 2">
-          <TextBlock Text="Content 2" />
-        </TabItem>
-        <TabItem Header="Tab3" IsEnabled="False" />
-      </TabControl>
-    </Border>
-    <Border Width="500">
-      <TabControl TabStripPlacement="Top">
-        <TabItem Header="General">
-          <TextBlock Text="Horizontal tab view" />
-        </TabItem>
-        <TabItem Header="Settings">
-          <TextBlock Text="Content 2" />
-        </TabItem>
-        <TabItem Header="Disabled Tab" IsEnabled="False" />
-        <TabItem Header="Advanced">
-          <TextBlock Text="Content 3" />
-        </TabItem>
-      </TabControl>
-    </Border>
+      <Border Width="500">
+        <TabControl TabStripPlacement="Top">
+          <TabItem Header="General">
+            <TextBlock Text="Horizontal tab view" VerticalAlignment="Top" />
+          </TabItem>
+          <TabItem Header="Settings">
+            <TextBlock Text="Content 2" VerticalAlignment="Top" />
+          </TabItem>
+          <TabItem Header="Disabled Tab" IsEnabled="False" />
+          <TabItem Header="Advanced">
+            <TextBlock Text="Content 3" VerticalAlignment="Top" />
+          </TabItem>
+        </TabControl>
+      </Border>
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Spacing="10">
+      <Border Width="500">
+        <TabPane TabStripPlacement="Left">
+          <TabItem Header="Tab 1">
+            <TextBlock Text="Vertical TabPane" />
+          </TabItem>
+          <TabItem Header="Tab 2">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Tab3" IsEnabled="False" />
+        </TabPane>
+      </Border>
+
+      <Border Width="500">
+        <TabPane TabStripPlacement="Top">
+          <TabItem Header="General">
+            <TextBlock Text="Horizontal TabPane" />
+          </TabItem>
+          <TabItem Header="Settings">
+            <TextBlock Text="Content 2" />
+          </TabItem>
+          <TabItem Header="Disabled Tab" IsEnabled="False" />
+          <TabItem Header="Advanced">
+            <TextBlock Text="Content 3" />
+          </TabItem>
+        </TabPane>
+      </Border>
+    </StackPanel>
   </StackPanel>
 </UserControl>

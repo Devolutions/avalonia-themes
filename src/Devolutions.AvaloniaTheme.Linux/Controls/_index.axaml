@@ -15,4 +15,6 @@
     <MergeResourceInclude Source="TextBox.axaml" />
     <MergeResourceInclude Source="Window.axaml" />
   </ResourceDictionary.MergedDictionaries>
+
+  <StaticResource x:Key="{x:Type TabPane}" ResourceKey="{x:Type TabControl}" />
 </ResourceDictionary>
