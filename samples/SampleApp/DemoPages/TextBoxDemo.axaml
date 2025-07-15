@@ -41,6 +41,8 @@
         <StackPanel Margin="20" Width="300" Spacing="10" HorizontalAlignment="Left">
           <Label>Error Indicator:</Label>
           <TextBox Watermark="Required Input" Text="{Binding RequiredInput}" />
+
+          <TextBox Height="22" MinHeight="22" MaxHeight="22">thin</TextBox>
         </StackPanel>
       </StackPanel>
     </Border>
