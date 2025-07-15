@@ -35,6 +35,8 @@
       </Border>
     </StackPanel>
 
+    <TextBlock Classes="section-title" Margin="0 50 0 0" Text="TabPane" />
+    <TextBlock>Custom control <TextBlock Classes="code" Text="TabPane" /> - use exactly like <TextBlock Classes="code" Text="TabControl" /></TextBlock>
     <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Spacing="10">
       <Border Width="500">
         <TabPane TabStripPlacement="Left">

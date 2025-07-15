@@ -21,6 +21,7 @@ the Avalonia community to add more DevExpress-style controls.
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
   - ✅ Available in the current build
+    - [AutoCompleteBox](#autocompletebox)
     - [Button](#button)
     - [ButtonSpinner](#buttonspinner)
     - [CheckBox](#checkbox)
@@ -33,17 +34,18 @@ the Avalonia community to add more DevExpress-style controls.
       - [ScrollBar](#scrollbar)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
+    - [TabPane](#tabpane) 
     - [TextBox](#textbox)
     - [TreeView](#treeview)
       - [TreeViewItem](#treeviewitem)
     - [Window](#window)
    - 🚧 In progress ...
-    - small improvements & fixes, some code cleanup
-    - ContextMenu
-    - SplitButton
-    - EditableComboBox [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)
+     - small improvements & fixes, some code cleanup
+     - ContextMenu
+     - SplitButton
+     - EditableComboBox [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)
   - 🔮 Next on the road map ...
-    - DatePicker
+     - DatePicker
 
 ## Installation
 
@@ -77,8 +79,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |||
 || <h3>AdornerLayer</h3> |
 |||
-|| <h3>AutoCompleteBox</h3> |
-|||
+|✅ | <h3>AutoCompleteBox</h3> |
+|| <img alt="AutoCompleteBox" src="https://github.com/user-attachments/assets/81d2676e-0fe0-4a43-944a-43cf40ec0dd5" style="width: 384px; max-width: 100%;" />  <br /><br />  ➡️ See also [EditableComboBox](#editablecombobox) in our [custom controls](https://github.com/Devolutionsavalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)||
 |✅ | <h3>Button</h3> |
 ||  <img src="https://github.com/user-attachments/assets/58571893-927e-4e4a-92b3-7d0b7ced4f68" alt="Button demo" style="width: 182px; max-width: 100%;" /> |
 || <h3>Calendar</h3> |
@@ -111,8 +113,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |||
 || <h3>DropDownButton</h3> |
 |||
-|🚧 | <h3>EditableComboBox</h3> |
-|| [Custom control](https://github.com/Devolutions/avalonia-extensions/blobmaster/src/Devolutions.AvaloniaControls/README.md) |
+|🚧 | <h3>EditableComboBox</h3> ([Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md))|
+|||
 || <h3>EmbeddableControlRoot</h3> |
 |||
 || <h3>Expander</h3> |
@@ -179,6 +181,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |||
 |✅ | <h3>TabControl</h3> <h4>TabItem<h4> |
 || <img src="https://github.com/user-attachments/assets/21864dbb-1058-4656-99dd-c24fde76d4e4" alt="TabControl demo" style="width: 585px; max-width: 100%;" /> |
+|✅ | <h3>TabPane</h3> ([Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)) |
+|| <img alt="TabPane" src="https://github.com/user-attachments/assets/9388973f-d286-41d4-83a3-bc56ea2f87a8" style="width: 447px; max-width: 100%;" /> |
 || <h3>TabStrip</h3> |
 |||
 || <h3>TabStripItem</h3> |

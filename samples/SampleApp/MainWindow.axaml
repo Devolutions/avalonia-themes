@@ -26,7 +26,7 @@
       </TabItem>
       <TabItem>
         <TabItem.Header>
-          <controls:SampleItemHeader Title="AutoCompleteBox" ApplicableTo="" />
+          <controls:SampleItemHeader Title="AutoCompleteBox" ApplicableTo="MacOS, Windows - DevExpress" />
         </TabItem.Header>
         <demoPages:AutoCompleteBoxDemo />
       </TabItem>
@@ -112,7 +112,7 @@
       </TabItem>
       <TabItem>
         <TabItem.Header>
-          <controls:SampleItemHeader Title="TabControl" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
+          <controls:SampleItemHeader Title="TabControl / TabPane" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
         </TabItem.Header>
         <demoPages:TabControlDemo />
       </TabItem>

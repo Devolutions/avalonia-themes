@@ -126,7 +126,7 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <h3>DropDownButton</h3> |
 |||
 |🚧 | <h3>EditableComboBox</h3> |
-|| [Custom control](https://github.com/Devolutions/avalonia-extensions/blobmaster/src/Devolutions.AvaloniaControls/README.md) |
+|| [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md) |
 || <h3>EmbeddableControlRoot</h3> |
 |||
 || <h3>Expander</h3> |

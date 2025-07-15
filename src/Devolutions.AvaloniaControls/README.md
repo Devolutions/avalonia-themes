@@ -38,15 +38,23 @@ dotnet add package Devolutions.AvaloniaControls
 
 - `EditableComboBox`
 - `SearchHighlightTextBlock`
+- `TabPane`
+  (Extends `TabControl` for different styling only)
 
 ### Converters
+Usage: `Converter={x:Static DevoConverters.<ConverterName>}`
 
-- `ColorToCssFillConverter`
-- `CornerRadiusExtractor`
-- `HasClassConverter`
-- `ThicknessExtractor`
+- `ColorToCssFillConverter` <br />ConverterParameter: class(es) of the path(s) to apply colour to <br />
+  Converts a Brush and CSS class(es) into a CSS string for SVG path styling.
+- `CornerRadiusExtractor` <br />ConverterParameter: predefined `CornerRadiusSubset` (enum) <br />
+  Returns a new CornerRadius, to selectively apply a given CornerRadius to a subset of the four corners (0 to the others)
+- `HasClass` / `HasNotClass` <br />ConverterParameter: class name to check for <br />
+  Returns a boolean depending on whether the given element has the given class
+- `ThicknessExtractor` <br />ConverterParameter: predefined `ThicknessSubset` (enum) <br />
+  Returns a new Thickness, to selectively apply a given Thickness to a subset of the four sides (0 to the others)
 
 ### MultiConverters
+Usage: `<MultiBinding Converter="{x:Static DevoMultiConverters.<ConverterName>}">`
 
 - `BooleanToChoiceConverter`
 - `ClassToChoiceConverter`
