@@ -54,13 +54,6 @@ public class EditableComboBoxItem : TemplatedControl, ISelectable
         set => this.SetValue(ValueProperty, value);
     }
 
-
-    // public EditableComboBoxItem Clone() =>
-    //     new(this)
-    //     {
-    //         Value = this.Value,
-    //     };
-
     public EditableComboBoxItem Clone() =>
         new(this)
         {
