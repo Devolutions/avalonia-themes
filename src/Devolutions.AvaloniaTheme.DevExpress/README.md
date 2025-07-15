@@ -34,6 +34,7 @@ the Avalonia community to add more DevExpress-style controls.
       - [ScrollBar](#scrollbar)
     - [TabControl](#tabcontrol)
       - [TabItem](#tabitem)
+    - [TabPane](#tabpane) 
     - [TextBox](#textbox)
     - [TreeView](#treeview)
       - [TreeViewItem](#treeviewitem)
