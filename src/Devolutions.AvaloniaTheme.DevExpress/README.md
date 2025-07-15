@@ -21,6 +21,7 @@ the Avalonia community to add more DevExpress-style controls.
 - [Installation](#installation)
 - [Styled Controls](#styled-controls)
   - ✅ Available in the current build
+    - [AutoCompleteBox](#autocompletebox)
     - [Button](#button)
     - [ButtonSpinner](#buttonspinner)
     - [CheckBox](#checkbox)
@@ -77,8 +78,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |||
 || <h3>AdornerLayer</h3> |
 |||
-|| <h3>AutoCompleteBox</h3> |
-|||
+|✅ | <h3>AutoCompleteBox</h3> |
+|| <img alt="AutoCompleteBox" src="https://github.com/user-attachments/assets/81d2676e-0fe0-4a43-944a-43cf40ec0dd5" style="width: 384px; max-width: 100%;" />  <br /><br />  ➡️ See also [EditableComboBox](#editablecombobox) in our [custom controls](https://github.com/Devolutionsavalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)||
 |✅ | <h3>Button</h3> |
 ||  <img src="https://github.com/user-attachments/assets/58571893-927e-4e4a-92b3-7d0b7ced4f68" alt="Button demo" style="width: 182px; max-width: 100%;" /> |
 || <h3>Calendar</h3> |
