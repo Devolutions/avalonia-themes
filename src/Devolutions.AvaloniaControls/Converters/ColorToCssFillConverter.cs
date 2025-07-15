@@ -5,11 +5,11 @@ using Avalonia.Data.Converters;
 using Avalonia.Media;
 
 /// <summary>
-///   Converts a Brush and CSS class(es) into a CSS string for SVG styling.
+///   Converts a Brush and CSS class(es) into a CSS string for SVG path styling.
 /// </summary>
 /// <param name="value">The SolidColorBrush to be converted into a CSS color.</param>
 /// <param name="parameter">A string containing one or more CSS class names (starting with '.'), separated by commas.</param>
-/// <returns>A string containing CSS for SVG styling.</returns>
+/// <returns>A string containing CSS for SVG path styling.</returns>
 /// <remarks>
 ///   Even though we just need a colour, the input needs to be a brush, because the colour is theme-dependent
 ///   but theme-dependent colours can only be accessed as `DynamicResource` and Binding only allows `StaticResource`.
