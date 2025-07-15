@@ -1,8 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Devolutions.AvaloniaTheme.Linux</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <Version>1.0.0</Version>
     <Company>Devolutions</Company>
-    <Description>Devolutions Avalonia Linux Theme</Description>
+    <Description>Devolutions Avalonia Linux Theme (Yaru)</Description>
     <PackageId>Devolutions.AvaloniaTheme.Linux</PackageId>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Devolutions/avalonia-extensions</PackageProjectUrl>
@@ -10,10 +17,6 @@
       See https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaTheme.Linux/CHANGELOG.md
     </PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <TargetFramework>net9.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <RootNamespace>Devolutions.AvaloniaTheme.Linux</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,10 +24,6 @@
     <PackageReference Include="Avalonia.Themes.Fluent" Version="[11.2.0,)" />
     <PackageReference Include="Avalonia.Controls.DataGrid" Version="[11.2.0,)" />
     <PackageReference Include="Avalonia.Svg.Skia" Version="[11.2.0,)" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup Condition="'$(Configuration)' != 'Debug'">
