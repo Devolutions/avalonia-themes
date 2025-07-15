@@ -25,4 +25,8 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="*" />
     <PackageReference Include="System.Reactive" Version="*" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>

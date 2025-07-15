@@ -33,4 +33,8 @@
   <ItemGroup Condition="'$(Configuration)' == 'Debug'">
     <ProjectReference Include="..\Devolutions.AvaloniaControls\Devolutions.AvaloniaControls.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>
