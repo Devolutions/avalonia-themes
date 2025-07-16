@@ -76,9 +76,9 @@
       </TabItem>
       <TabItem IsSelected="True">
         <TabItem.Header>
-          <controls:SampleItemHeader Title="DatePicker" ApplicableTo="MacOS" />
+          <controls:SampleItemHeader Title="CalendarDatePicker" ApplicableTo="MacOS" />
         </TabItem.Header>
-        <demoPages:DatePickerDemo />
+        <demoPages:CalendarDatePickerDemo />
       </TabItem>
       <TabItem>
         <TabItem.Header>
