@@ -6,6 +6,7 @@
   xmlns="https://github.com/avaloniaui"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
   x:CompileBindings="True">
+  
   <Design.PreviewWith>
     <Border Width="400">
       <TabPane>
@@ -48,6 +49,16 @@
                 Padding="{TemplateBinding Padding}"
                 Background="{Binding $parent[TabItem].Background}">
           <Panel>
+            <TextBlock
+                      Name="ReserveWidthForSelectedTabText"
+                      FontFamily="{TemplateBinding FontFamily}"
+                      FontSize="{TemplateBinding FontSize}"
+                      FontWeight="Bold"
+                      Foreground="Transparent"
+                      Background="Transparent"
+                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                      Text="{TemplateBinding Header}" />
             <ContentPresenter Name="PART_ContentPresenter"
                               ContentTemplate="{TemplateBinding HeaderTemplate}"
                               Content="{TemplateBinding Header}"
