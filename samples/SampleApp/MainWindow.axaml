@@ -74,6 +74,12 @@
           </demoPages:DataGridGroupedDemo.DataContext>
         </demoPages:DataGridGroupedDemo>
       </TabItem>
+      <TabItem IsSelected="True">
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="DatePicker" ApplicableTo="MacOS" />
+        </TabItem.Header>
+        <demoPages:DatePickerDemo />
+      </TabItem>
       <TabItem>
         <TabItem.Header>
           <controls:SampleItemHeader Title="EditableComboBox" ApplicableTo="MacOS, Windows - DevExpress" />
