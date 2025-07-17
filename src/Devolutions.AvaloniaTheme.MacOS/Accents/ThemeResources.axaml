@@ -30,7 +30,8 @@
       <Color x:Key="ScrollBarTrackBorderColor">#d6d6d6</Color>
 
       <Color x:Key="DefaultIconColor">#000000</Color>
-      <SolidColorBrush x:Key="CalendarIconColor" Color="#7b7b7b" />
+      <Color x:Key="CalendarIconColor">#7b7b7b</Color>
+      <Color x:Key="CalendarSelectedBackgroundColor">#dcdcdc</Color>
 
       <Color x:Key="TransparentColor">Transparent</Color>
 
@@ -143,7 +144,9 @@
       <Color x:Key="ScrollBarTrackBorderColor">#3f3f3f</Color>
 
       <Color x:Key="DefaultIconColor">#b8b8b8</Color>
-      <SolidColorBrush x:Key="CalendarIconColor" Color="#9f9f9f" />
+      <Color x:Key="CalendarIconColor">#9f9f9f</Color>
+      <Color x:Key="CalendarSelectedBackgroundColor">#454545</Color>
+      
       
       <SolidColorBrush x:Key="BackgroundBrush" Color="#212121" />
 
@@ -451,7 +454,11 @@
   <!-- ButtonSpinner Resources -->
   <SolidColorBrush x:Key="ButtonSpinnerButtonPressedBrush" Color="{DynamicResource ButtonSpinnerButtonPressedColor}" />
 
+  <!-- CalendarDatePicker Resources -->
+  <SolidColorBrush x:Key="CalendarIconBrush" Color="{DynamicResource CalendarIconColor}" />
+  <SolidColorBrush x:Key="CalendarSelectedBackgroundBrush" Color="{DynamicResource CalendarSelectedBackgroundColor}" />
 
+  
   <!-- DEVELOPMENT ONLY -->
   <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->
 

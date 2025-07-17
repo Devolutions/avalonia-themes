@@ -31,6 +31,8 @@
   
   <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
     <Setter Property="Watermark" Value="yyyy-MM-dd" />
+    <Setter Property="IsTodayHighlighted" Value="True" />
+    <Setter Property="FirstDayOfWeek" Value="Monday" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
@@ -69,7 +71,7 @@
                                 Foreground="{DynamicResourceToggler 
                                   {Binding IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=CalendarDatePicker}
                                   }, 
-                                  CalendarIconColor,
+                                  CalendarIconBrush,
                                   ForegroundLowBrush
                                 }"
                                 Height="13" />
@@ -90,6 +92,7 @@
                      IsLightDismissEnabled="True">
                 <Border BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThickness}"
                         BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
+                        Background="{DynamicResource BackgroundBrush}"
                         CornerRadius="{DynamicResource LayoutCornerRadius}"
                         Margin="{DynamicResource PopupMargin}"
                         Padding="{DynamicResource PopupPadding}"
