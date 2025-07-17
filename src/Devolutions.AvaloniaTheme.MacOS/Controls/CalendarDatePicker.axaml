@@ -11,6 +11,7 @@
       <CalendarDatePicker />
       <TextBox Classes="revealPasswordButton" PasswordChar="*" Text="tests" />
       <TextBox Watermark="&lt;yyyy-MM-dd&gt;" />
+      <CalendarDatePicker IsEnabled="False" />
     </StackPanel>
   </Design.PreviewWith>
 
@@ -65,7 +66,12 @@
                                 ClipToBounds="False">
                     <Panel>
                       <PathIcon Data="{StaticResource CalendarIconPath}"
-                                Foreground="#7b7b7b"
+                                Foreground="{DynamicResourceToggler 
+                                  {Binding IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=CalendarDatePicker}
+                                  }, 
+                                  CalendarIconColor,
+                                  ForegroundLowBrush
+                                }"
                                 Height="13" />
                       <PathIcon Data="{StaticResource CalendarIconPath}"
                                 Foreground="{DynamicResource AccentButtonBackground}"
@@ -113,17 +119,6 @@
     <Style Selector="^:pointerover /template/ Border#Background">
       <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPointerOver}" />
       <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPointerOver}" />
-    </Style>
-
-    <!-- Disabled State -->
-    <Style Selector="^:disabled">
-      <Style Selector="^ /template/ PathIcon">
-        <Setter Property="Foreground" Value="{DynamicResource TestRed}" />
-      </Style>
-    
-      <Style Selector="^ /template/ Button#PART_Button">
-        <Setter Property="TextElement.Foreground" Value="{DynamicResource CalendarDatePickerCalendarGlyphForegroundDisabled}" />
-      </Style>
     </Style>
 
     <!-- Focused State -->
