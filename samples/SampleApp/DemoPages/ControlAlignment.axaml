@@ -8,9 +8,9 @@
   
   <StackPanel Margin="10">
     <TextBlock Classes="h1" Text="Grids" />
-    <Grid ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
+    <Grid ColumnDefinitions="Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto, Auto"
           ColumnSpacing="10"
-          Margin="10">
+          Margin="10 0">
       <TextBlock Grid.Column="0">TextBlock</TextBlock>
       <TextBox Grid.Column="1" Watermark="TextBox" />
       <TextBox Grid.Column="2" Height="22" MinHeight="22" MaxHeight="22">thin</TextBox>
@@ -24,17 +24,18 @@
       <NumericUpDown Grid.Column="5" Value="0"
                      Increment="1"
                      Watermark="mm" />
-      <Button Grid.Column="6" Content="Button" />
-      <CheckBox Grid.Column="7" Content="Checkbox" IsChecked="True" />
+      <CalendarDatePicker Grid.Column="6" />
+      <Button Grid.Column="7" Content="Button" />
+      <CheckBox Grid.Column="8" Content="Checkbox" IsChecked="True" />
       <!-- Force larger container height to test if controls are affected (they shouldn't be) -->
-      <TextBlock Grid.Column="8" Text="🙂" FontSize="45" />
+      <TextBlock Grid.Column="9" Text="🙂" FontSize="45" />
     </Grid>
 
-    <Grid RowDefinitions="*, *, *, *, *, *, *, *, *"
+    <Grid RowDefinitions="*, *, *, *, *, *, *, *, *, *"
           RowSpacing="5"
-          Width="100"
+          Width="150"
           HorizontalAlignment="Left"
-          Margin="10">
+          Margin="10 5">
       <TextBlock Grid.Row="2">TextBlock</TextBlock>
       <TextBox Grid.Row="3" Watermark="TextBox" />
       <ComboBox Grid.Row="4" SelectedIndex="2">
@@ -47,13 +48,14 @@
       <NumericUpDown Grid.Row="6" Value="0"
                      Increment="1"
                      Watermark="mm" />
-      <Button Grid.Row="7" Content="Button" />
-      <CheckBox Grid.Row="8" Content="Checkbox" IsChecked="True" />
+      <CalendarDatePicker Grid.Row="7" />
+      <Button Grid.Row="8" Content="Button" />
+      <CheckBox Grid.Row="9" Content="Checkbox" IsChecked="True" />
     </Grid>
 
     <TextBlock Classes="h1" Text="StackPanels" Margin="0 20 0 0 " />
-    <StackPanel Orientation="Vertical" Margin="0 10" Spacing="20" VerticalAlignment="Top">
-      <StackPanel Orientation="Horizontal" Margin="10" Spacing="10" VerticalAlignment="Top">
+    <StackPanel Orientation="Vertical" Spacing="20" VerticalAlignment="Top">
+      <StackPanel Orientation="Horizontal" Margin="10 0" Spacing="10" VerticalAlignment="Top">
         <TextBlock>TextBlock</TextBlock>
         <TextBox Watermark="TextBox" />
         <TextBox Grid.Column="2" Height="22" MinHeight="22" MaxHeight="22">thin</TextBox>
@@ -67,12 +69,13 @@
         <NumericUpDown Value="0"
                        Increment="1"
                        Watermark="mm" />
+        <CalendarDatePicker />
         <Button Content="Button" />
         <CheckBox Content="Checkbox" IsChecked="True" />
         <!-- Force larger container height to test if controls are affected (they shouldn't be) -->
         <TextBlock Text="🙂" FontSize="45" />
       </StackPanel>
-      <StackPanel Orientation="Vertical" Width="100" Margin="10" Spacing="10" VerticalAlignment="Top" HorizontalAlignment="Left">
+      <StackPanel Orientation="Vertical" Width="150" Margin="10 5" Spacing="10" VerticalAlignment="Top" HorizontalAlignment="Left">
         <TextBlock>TextBlock</TextBlock>
           <TextBox Watermark="TextBox" />
           <ComboBox SelectedIndex="2">
@@ -85,6 +88,8 @@
           <NumericUpDown Value="0"
                          Increment="1"
                          Watermark="mm" />
+          <CalendarDatePicker />
+          <TextBox Classes="revealPasswordButton" />
           <Button Content="Button" />
           <CheckBox Content="Checkbox" IsChecked="True" />
       </StackPanel>

@@ -119,7 +119,7 @@
             </ThemeVariantScope>
           </TabItem>
 
-          <TabItem Header="Light" Name="PART_LightTab">
+          <TabItem Header="Light" Name="PART_LightTab" IsSelected="True">
             <ThemeVariantScope RequestedThemeVariant="Light">
               <ThemeVariantScope.Resources>
                 <ResourceDictionary>

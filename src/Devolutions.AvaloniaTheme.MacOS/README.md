@@ -57,7 +57,7 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - SplitButton
     - EditableComboBox [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)
   - 🔮 Next on the road map ...
-    - DatePicker
+    - CalendarDatePicker
 
 ## Installation
 
