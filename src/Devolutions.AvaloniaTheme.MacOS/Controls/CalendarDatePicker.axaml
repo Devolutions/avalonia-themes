@@ -109,25 +109,6 @@
       </ControlTemplate>
     </Setter>
 
-    <!-- Pressed State -->
-    <Style Selector="^:pressed /template/ Border#Background">
-      <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPressed}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPressed}" />
-    </Style>
-
-    <!-- Pointer-over State -->
-    <Style Selector="^:pointerover /template/ Border#Background">
-      <Setter Property="Background" Value="{DynamicResource CalendarDatePickerBackgroundPointerOver}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource CalendarDatePickerBorderBrushPointerOver}" />
-    </Style>
-
-    <!-- Focused State -->
-    <Style Selector="^:focus-within:not(CalendarDatePicker:focus) /template/ Border#Background">
-      <Setter Property="Background" Value="{DynamicResource TextControlBackgroundFocused}" />
-      <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}" />
-      <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
-    </Style>
-
     <!-- Error State -->
     <Style Selector="^:error /template/ Border#Background">
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
