@@ -36,6 +36,12 @@
         </TabItem.Header>
         <demoPages:ButtonDemo />
       </TabItem>
+      <TabItem IsSelected="True">
+        <TabItem.Header>
+          <controls:SampleItemHeader Title="CalendarDatePicker" ApplicableTo="MacOS" />
+        </TabItem.Header>
+        <demoPages:CalendarDatePickerDemo />
+      </TabItem>
       <TabItem>
         <TabItem.Header>
           <controls:SampleItemHeader Title="CheckBox" ApplicableTo="MacOS, Windows - DevExpress, Linux - Yaru" />
@@ -73,12 +79,6 @@
             <vm:DataGridGroupedViewModel />
           </demoPages:DataGridGroupedDemo.DataContext>
         </demoPages:DataGridGroupedDemo>
-      </TabItem>
-      <TabItem IsSelected="True">
-        <TabItem.Header>
-          <controls:SampleItemHeader Title="CalendarDatePicker" ApplicableTo="MacOS" />
-        </TabItem.Header>
-        <demoPages:CalendarDatePickerDemo />
       </TabItem>
       <TabItem>
         <TabItem.Header>

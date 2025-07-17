@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190.04 169.93">
+  <defs>
+    <style>
+      .st0 {
+      fill: #010101;
+      }
+    </style>
+  </defs>
+  i
+  <path class="st0"
+        d="M175.04,0H15C6.72,0,0,6.72,0,15v139.93c0,8.28,6.72,15,15,15h160.04c8.28,0,15-6.72,15-15V15c0-8.28-6.72-15-15-15ZM176.42,137.88c0,6.2-5.03,11.23-11.23,11.23H23.71c-6.2,0-11.23-5.03-11.23-11.23V49.9c0-6.2,5.03-11.23,11.23-11.23h141.48c6.2,0,11.23,5.03,11.23,11.23v87.98Z"/>
+  <rect class="st0" x="129.64" y="55.46" width="16.38" height="16.38"/>
+  <rect class="st0" x="99.71" y="55.46" width="16.38" height="16.38"/>
+  <rect class="st0" x="69.78" y="55.46" width="16.38" height="16.38"/>
+  <rect class="st0" x="129.64" y="84.96" width="16.38" height="16.38"/>
+  <rect class="st0" x="99.71" y="84.96" width="16.38" height="16.38"/>
+  <rect class="st0" x="69.78" y="84.96" width="16.38" height="16.38"/>
+  <rect class="st0" x="39.85" y="84.96" width="16.38" height="16.38"/>
+  <rect class="st0" x="99.42" y="114.76" width="16.38" height="16.38"/>
+  <rect class="st0" x="69.49" y="114.76" width="16.38" height="16.38"/>
+  <rect class="st0" x="39.56" y="114.76" width="16.38" height="16.38"/>
+</svg>
