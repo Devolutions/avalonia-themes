@@ -23,8 +23,8 @@
           <Calendar.BlackoutDates>
             <CalendarDateRange>
               <x:Arguments>
-                <system:DateTime>2000-01-01</system:DateTime>
-                <system:DateTime>2000-01-05</system:DateTime>
+                <system:DateTime>2025-06-01</system:DateTime>
+                <system:DateTime>2025-07-20</system:DateTime>
               </x:Arguments>
             </CalendarDateRange>
           </Calendar.BlackoutDates>
@@ -62,20 +62,15 @@
                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                               Margin="{TemplateBinding Padding}" />
             <Rectangle Name="Blackout"
-                       Width="15" Height="2"
+                       Height="1"
                        Fill="{DynamicResource ForegroundHighBrush}"
-                       Opacity="0.6"
+                       Margin="0 0 0 1"
                        IsVisible="False" />
             </Panel>
           </Border>
         </Panel>
       </ControlTemplate>
     </Setter>
-
-
-    <Style Selector="^:pressed /template/ Border#Border">
-      <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewPressedBorderBrush}" />
-    </Style>
 
     <Style Selector="^:selected">
       <Style Selector="^ /template/ Border#Root">
