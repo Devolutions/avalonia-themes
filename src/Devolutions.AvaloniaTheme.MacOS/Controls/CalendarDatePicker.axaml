@@ -59,8 +59,7 @@
                        BorderBrush="{TemplateBinding BorderBrush}"
                        BorderThickness="{TemplateBinding BorderThickness}"
                        CornerRadius="{TemplateBinding CornerRadius}"
-                       Padding="{TemplateBinding Padding}"
-                       DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}" />
+                       Padding="{TemplateBinding Padding}" />
                   <!-- Brittle Button placement! Placing the Button as TextBox.InnerRightContent breaks functionality,
                        But this placement breaks if ValidationError text is positioned _above_ the TextBox 
                        Also: centering the button via setting a top margin give inconsistent results on different monitors -->
@@ -117,8 +116,9 @@
     </Setter>
 
     <!-- Error State -->
-    <Style Selector="^:error /template/ Border#Background">
+    <Style Selector="^:error /template/ TextBox#PART_TextBox">
       <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
     </Style>
   </ControlTheme>
 </ResourceDictionary>
