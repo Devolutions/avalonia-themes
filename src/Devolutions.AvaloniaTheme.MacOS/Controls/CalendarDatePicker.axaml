@@ -16,12 +16,12 @@
   </Design.PreviewWith>
 
 
-  <ControlTheme x:Key="DatePickerToggleButton"
-                TargetType="ToggleButton">
+  <ControlTheme x:Key="DatePickerButton"
+                TargetType="Button">
     <Setter Property="Margin" Value="2 0 2 1" /> 
     <Setter Property="Template">
       <Setter.Value>
-        <ControlTemplate TargetType="ToggleButton">
+        <ControlTemplate TargetType="Button">
           <ContentPresenter Name="PART_ContentPresenter"
                             Content="{TemplateBinding Content}" />
         </ControlTemplate>
@@ -39,7 +39,7 @@
     <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
     <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
     <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
-    <Setter Property="MinHeight" Value="{DynamicResource TextBoxMinDimensions}" />
+    <Setter Property="MinHeight" Value="{DynamicResource CalendarControlHeight}" />
     <Setter Property="MinWidth" Value="120" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="ClipToBounds" Value="False" />
@@ -60,12 +60,17 @@
                        BorderThickness="{TemplateBinding BorderThickness}"
                        CornerRadius="{TemplateBinding CornerRadius}"
                        Padding="{TemplateBinding Padding}"
-                       DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}">
-                <TextBox.InnerRightContent>
-                  <ToggleButton Name="PART_Button"
-                                Theme="{StaticResource DatePickerToggleButton}"
-                                IsChecked="False"
-                                ClipToBounds="False">
+                       DataValidationErrors.Errors="{TemplateBinding (DataValidationErrors.Errors)}" />
+                  <!-- Brittle Button placement! Placing the Button as TextBox.InnerRightContent breaks functionality,
+                       But this placement breaks if ValidationError text is positioned _above_ the TextBox 
+                       Also: centering the button via setting a top margin give inconsistent results on different monitors -->
+              <Panel Height="{DynamicResource CalendarControlHeight}" VerticalAlignment="Top">
+                  <Button Name="PART_Button"
+                                Theme="{StaticResource DatePickerButton}"
+                                ClipToBounds="False"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Margin="0 0 10 0">
                     <Panel>
                       <PathIcon Data="{StaticResource CalendarIconPath}"
                                 Foreground="{DynamicResourceToggler 
@@ -80,9 +85,8 @@
                                 Height="13"
                                 IsVisible="{Binding $parent[CalendarDatePicker].IsDropDownOpen}" />
                     </Panel>
-                  </ToggleButton>
-                </TextBox.InnerRightContent>
-              </TextBox>
+                  </Button>
+              </Panel>
 
               <Popup Name="PART_Popup"
                      PlacementTarget="{TemplateBinding}"

@@ -457,6 +457,7 @@
   <!-- CalendarDatePicker Resources -->
   <SolidColorBrush x:Key="CalendarIconBrush" Color="{DynamicResource CalendarIconColor}" />
   <SolidColorBrush x:Key="CalendarSelectedBackgroundBrush" Color="{DynamicResource CalendarSelectedBackgroundColor}" />
+  <x:Double x:Key="CalendarControlHeight">24</x:Double>
 
   
   <!-- DEVELOPMENT ONLY -->
