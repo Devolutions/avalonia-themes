@@ -35,8 +35,8 @@
 
   <ControlTheme x:Key="{x:Type CalendarDayButton}" TargetType="CalendarDayButton">
     <Setter Property="ClickMode" Value="Release" />
-    <Setter Property="MinWidth" Value="20" />
-    <Setter Property="MinHeight" Value="20" />
+    <Setter Property="MinWidth" Value="16" />
+    <Setter Property="MinHeight" Value="16" />
     <Setter Property="Margin" Value="2" />
     <Setter Property="Padding" Value="0" />
     <!--These are actually set on the CalendarView in WinUI-->

@@ -89,14 +89,15 @@
                 CornerRadius="{TemplateBinding CornerRadius}">
           <!-- To keep calendar from resizing when switching DisplayMode
                  In WinUI Min-Width from TemplateSettings
-                 basically...MinWidth of DayItem = 20 + 2x2 margin, 24 * 7 = 168 
-                 Viewport height is set from # of rows displayed in Month mode, = ~178 for 6 weeks (+ day names)
+                 basically...MinWidth of DayItem = 16 + 2x2 margin, 20 * 7 = 140 
+                 Viewport height is set from # of rows displayed in Month mode, = ~150 for 6 weeks (+ day names)
                  -->
-          <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" RowDefinitions="Auto,*" MinWidth="168">
+          <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" RowDefinitions="Auto,*" MinWidth="140">
             <Grid ColumnDefinitions="*,Auto,Auto">
               <Button Name="PART_HeaderButton"
                       Theme="{StaticResource FluentCalendarButton}"
                       Foreground="{TemplateBinding Foreground}"
+                      FontSize="{DynamicResource ControlFontSize}"
                       Padding="0"
                       HorizontalContentAlignment="Left" />
               <Button Name="PART_PreviousButton"
@@ -105,20 +106,20 @@
                       Foreground="{TemplateBinding Foreground}"
                       Padding="0 0 6 0"
                       HorizontalContentAlignment="Left">
-                <Polygon Points="0,5 10,0, 10,10" Fill="{DynamicResource CalendarIconColor}" />
+                <Polygon Points="0,4 8,0, 8,8" Fill="{DynamicResource CalendarIconColor}" />
               </Button>
               <Button Name="PART_NextButton"
                       Grid.Column="2"
                       Theme="{StaticResource FluentCalendarButton}"
                       Foreground="{TemplateBinding Foreground}"
-                      Padding="6 0 0 0"
+                      Padding="4 0 0 0"
                       HorizontalContentAlignment="Left">
-                <Polygon Points="0,0 0,10, 10,5" Fill="{DynamicResource CalendarIconColor}" />
+                <Polygon Points="0,0 0,8, 8,4" Fill="{DynamicResource CalendarIconColor}" />
               </Button>
             </Grid>
             <!--Border below is used only for MonthView but it can't be moved inside of Grid because CalendarItem expects it to be empty and it will cause side-effects-->
             <Border Name="BackgroundLayer" Background="{TemplateBinding BorderBrush}" Margin="0,30,0,0" IsVisible="{Binding #PART_MonthView.IsVisible}" Grid.Row="1" />
-            <Grid Name="PART_MonthView" Grid.Row="1" IsVisible="False" MinHeight="178">
+            <Grid Name="PART_MonthView" Grid.Row="1" IsVisible="False" MinHeight="150">
               <Grid.RowDefinitions>
                 <!--This should always be the week day names??-->
                 <RowDefinition Height="30" />
@@ -141,7 +142,7 @@
             </Grid>
             <Grid Name="PART_YearView"
                   Background="{TemplateBinding BorderBrush}"
-                  MinHeight="178"
+                  MinHeight="150"
                   Grid.Row="1"
                   IsVisible="False">
               <Grid.RowDefinitions>
