@@ -5,11 +5,13 @@
 
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design"
+                    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
   <Design.PreviewWith>
     <design:ThemePreviewer>
       <StackPanel Margin="20" Spacing="20">
         <CalendarDatePicker />
+        <CalendarDatePicker SelectedDate="{Binding Source={x:Static sys:DateTime.Today}}" />
         <TextBox Classes="revealPasswordButton" PasswordChar="*" Text="tests" />
         <TextBox Watermark="&lt;yyyy-MM-dd&gt;" />
         <CalendarDatePicker IsEnabled="False" />
@@ -31,9 +33,7 @@
   </ControlTheme>
   
   <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
-    <Setter Property="Watermark" Value="yyyy-MM-dd" />
     <Setter Property="IsTodayHighlighted" Value="True" />
-    <Setter Property="FirstDayOfWeek" Value="Monday" />
     <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
@@ -41,7 +41,7 @@
     <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
     <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
     <Setter Property="MinHeight" Value="{DynamicResource CalendarControlHeight}" />
-    <Setter Property="MinWidth" Value="120" />
+    <!-- <Setter Property="MinWidth" Value="120" /> -->
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="ClipToBounds" Value="False" />
     <Setter Property="Template">
@@ -59,8 +59,11 @@
                        Background="{TemplateBinding Background}"
                        BorderBrush="{TemplateBinding BorderBrush}"
                        BorderThickness="{TemplateBinding BorderThickness}"
-                       CornerRadius="{TemplateBinding CornerRadius}"
-                       Padding="{TemplateBinding Padding}" />
+                       CornerRadius="{TemplateBinding CornerRadius}">
+                <TextBox.InnerRightContent>
+                  <Rectangle Width="20" Fill="Transparent"/>
+                </TextBox.InnerRightContent>
+              </TextBox>
                   <!-- Brittle Button placement! Placing the Button as TextBox.InnerRightContent breaks functionality,
                        But this placement breaks if ValidationError text is positioned _above_ the TextBox 
                        Also: centering the button via setting a top margin gives inconsistent results on different monitors -->
