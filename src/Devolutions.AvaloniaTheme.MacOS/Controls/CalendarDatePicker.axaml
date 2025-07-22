@@ -5,14 +5,16 @@
 
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="using:System">
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.MacOS.Design">
   <Design.PreviewWith>
-    <StackPanel Margin="20" Spacing="20">
-      <CalendarDatePicker />
-      <TextBox Classes="revealPasswordButton" PasswordChar="*" Text="tests" />
-      <TextBox Watermark="&lt;yyyy-MM-dd&gt;" />
-      <CalendarDatePicker IsEnabled="False" />
-    </StackPanel>
+    <design:ThemePreviewer>
+      <StackPanel Margin="20" Spacing="20">
+        <CalendarDatePicker />
+        <TextBox Classes="revealPasswordButton" PasswordChar="*" Text="tests" />
+        <TextBox Watermark="&lt;yyyy-MM-dd&gt;" />
+        <CalendarDatePicker IsEnabled="False" />
+      </StackPanel>
+    </design:ThemePreviewer>
   </Design.PreviewWith>
 
 
