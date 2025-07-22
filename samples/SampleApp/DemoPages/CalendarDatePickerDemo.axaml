@@ -8,9 +8,10 @@
 
   <StackPanel Orientation="Horizontal" Margin="20" Spacing="20">
     <StackPanel Spacing="20">
-    <CalendarDatePicker HorizontalAlignment="Left" />
+      <CalendarDatePicker Watermark="yyyy-MM-dd" HorizontalAlignment="Left" />
     <CalendarDatePicker Name="DatePicker" HorizontalAlignment="Left" />
     <CalendarDatePicker Name="DatePicker2" HorizontalAlignment="Left" IsEnabled="False" />
+      <CalendarDatePicker Name="DatePicker3" HorizontalAlignment="Left" SelectedDateFormat="Long" />
     </StackPanel>
     <CalendarDatePicker HorizontalAlignment="Left" VerticalAlignment="Top">
       <DataValidationErrors.Error>
