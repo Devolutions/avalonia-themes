@@ -29,6 +29,11 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - [AutoCompleteBox](#autocompletebox)
     - [Button](#button)
     - [ButtonSpinner](#buttonspinner)
+    - [Calendar](#calendar)
+      - [CalendarButton](#calendarbutton)
+      - [CalendarDatePicker](#calendardatepicker)
+      - [CalendarDayButton](#calendardaybutton)
+      - [CalendarItem](#calendaritem)
     - [CheckBox](#checkbox)
     - [ComboBox](#combobox)
       - [ComboBoxItem](#comboboxitem)
@@ -57,7 +62,8 @@ the goal is to create a theme that helps all of the Avalonia community to bring 
     - SplitButton
     - EditableComboBox [Custom control](https://github.com/Devolutions/avalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)
   - 🔮 Next on the road map ...
-    - DatePicker
+    - RadioButton
+    - DropDownButton
 
 ## Installation
 
@@ -94,17 +100,9 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 |✅ | <h3>AutoCompleteBox</h3> |
 || <img src="https://github.com/user-attachments/assets/a4e939c0-6516-499f-b3e7-8c68e8be2770" alt="AutoCompleteBox demo" style="width: 460px; max-width: 100%;"> <br /><br />  ➡️ See also [EditableComboBox](#editablecombobox) in our [custom controls](https://github.com/Devolutionsavalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)|
 |✅ | <h3>Button</h3> |
-|| <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons demo" style="width: 300px; max-width: 100%;"> |
-|| <h3>Calendar</h3> |
-|||
-|| <h3>CalendarButton</h3> |
-|||
-|| <h3>CalendarDatePicker</h3> |
-|||
-|| <h3>CalendarDayButton</h3> |
-|||
-|| <h3>CalendarItem</h3> |
-|||
+|| <img src="https://github.com/user-attachments/assets/49093553-a8b6-4cbe-b7a5-7c8f6a8ead3b" alt="Buttons demo" style="width: 300px; max-width: 100%;" /> |
+|✅ | <h3>CalendarDatePicker</h3> <h4>Calendar</h4> <h4>CalendarItem</h4> <h4>CalendarButton</h4> <h4>CalendarDayButton</h4> |
+|| <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/27ab5934-2b67-439e-b651-ee96aa173a3e" style="width: 488px; max-width: 100%;" /> <br /> <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/86284afe-c84d-4761-9a40-a72146b56db5" style="width: 543px; max-width: 100%;" /> <br /> <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/7d65388f-3b8f-4055-ae35-dd71f9047b1d" style="width: 488px; max-width: 100%;" /> <br /> <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/07410b9f-79df-43ac-bba5-502216f33f29" style="width: 543px; max-width: 100%;" /> |
 || <h3>CaptionButtons</h3> |
 |||
 || <h3>Carousel</h3> |

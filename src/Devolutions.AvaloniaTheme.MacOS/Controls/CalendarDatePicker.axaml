@@ -1,0 +1,124 @@
+<!--
+  Based off:
+  https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Themes.Fluent/Controls/CalendarDatePicker.xaml
+-->
+
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="using:System">
+  <Design.PreviewWith>
+    <StackPanel Margin="20" Spacing="20">
+      <CalendarDatePicker />
+      <TextBox Classes="revealPasswordButton" PasswordChar="*" Text="tests" />
+      <TextBox Watermark="&lt;yyyy-MM-dd&gt;" />
+      <CalendarDatePicker IsEnabled="False" />
+    </StackPanel>
+  </Design.PreviewWith>
+
+
+  <ControlTheme x:Key="DatePickerButton"
+                TargetType="Button">
+    <Setter Property="Margin" Value="2 0 2 1" /> 
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Content="{TemplateBinding Content}" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </ControlTheme>
+  
+  <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+    <Setter Property="Watermark" Value="yyyy-MM-dd" />
+    <Setter Property="IsTodayHighlighted" Value="True" />
+    <Setter Property="FirstDayOfWeek" Value="Monday" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource TextBoxBorderThickness}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource TextBoxCornerRadius}" />
+    <Setter Property="FontSize" Value="{StaticResource ControlFontSize}" />
+    <Setter Property="MinHeight" Value="{DynamicResource CalendarControlHeight}" />
+    <Setter Property="MinWidth" Value="120" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors ClipToBounds="False">
+          <Panel x:Name="LayoutRoot"
+                 ClipToBounds="False"
+                 HorizontalAlignment="Stretch">
+            <Panel ClipToBounds="False">
+              <TextBox Name="PART_TextBox"
+                       Watermark="{TemplateBinding Watermark}"
+                       UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
+                       Width="{TemplateBinding Width}"
+                       Foreground="{TemplateBinding Foreground}"
+                       Background="{TemplateBinding Background}"
+                       BorderBrush="{TemplateBinding BorderBrush}"
+                       BorderThickness="{TemplateBinding BorderThickness}"
+                       CornerRadius="{TemplateBinding CornerRadius}"
+                       Padding="{TemplateBinding Padding}" />
+                  <!-- Brittle Button placement! Placing the Button as TextBox.InnerRightContent breaks functionality,
+                       But this placement breaks if ValidationError text is positioned _above_ the TextBox 
+                       Also: centering the button via setting a top margin give inconsistent results on different monitors -->
+              <Panel Height="{DynamicResource CalendarControlHeight}" VerticalAlignment="Top">
+                  <Button Name="PART_Button"
+                                Theme="{StaticResource DatePickerButton}"
+                                ClipToBounds="False"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Margin="0 0 10 0">
+                    <Panel>
+                      <PathIcon Data="{StaticResource CalendarIconPath}"
+                                Foreground="{DynamicResourceToggler 
+                                  {Binding IsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=CalendarDatePicker}
+                                  }, 
+                                  CalendarIconBrush,
+                                  ForegroundLowBrush
+                                }"
+                                Height="13" />
+                      <PathIcon Data="{StaticResource CalendarIconPath}"
+                                Foreground="{DynamicResource AccentButtonBackground}"
+                                Height="13"
+                                IsVisible="{Binding $parent[CalendarDatePicker].IsDropDownOpen}" />
+                    </Panel>
+                  </Button>
+              </Panel>
+
+              <Popup Name="PART_Popup"
+                     PlacementTarget="{TemplateBinding}"
+                     Placement="BottomEdgeAlignedLeft"
+                     HorizontalOffset="-10"
+                     WindowManagerAddShadowHint="False"
+                     IsLightDismissEnabled="True">
+                <Border BorderThickness="{DynamicResource MenuFlyoutPresenterBorderThickness}"
+                        BorderBrush="{DynamicResource MenuFlyoutPresenterBorderBrush}"
+                        Background="{DynamicResource BackgroundBrush}"
+                        CornerRadius="{DynamicResource LayoutCornerRadius}"
+                        Margin="{DynamicResource PopupMargin}"
+                        Padding="{DynamicResource PopupPadding}"
+                        BoxShadow="{DynamicResource PopupShadow}">
+                <Calendar Name="PART_Calendar"
+                          FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+                          IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+                          SelectedDate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedDate, Mode=TwoWay}"
+                          DisplayDate="{TemplateBinding DisplayDate}"
+                          DisplayDateStart="{TemplateBinding DisplayDateStart}"
+                          DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
+                </Border>
+              </Popup>
+            </Panel>
+          </Panel>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Error State -->
+    <Style Selector="^:error /template/ TextBox#PART_TextBox">
+      <Setter Property="BorderBrush" Value="{DynamicResource SystemControlErrorTextForegroundBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

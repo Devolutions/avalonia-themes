@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:system="clr-namespace:System;assembly=System.Runtime"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="SampleApp.DemoPages.CalendarDatePickerDemo">
+
+  <StackPanel Orientation="Horizontal" Margin="20" Spacing="20">
+    <StackPanel Spacing="20">
+    <CalendarDatePicker HorizontalAlignment="Left" />
+    <CalendarDatePicker Name="DatePicker" HorizontalAlignment="Left" />
+    <CalendarDatePicker Name="DatePicker2" HorizontalAlignment="Left" IsEnabled="False" />
+    </StackPanel>
+    <CalendarDatePicker HorizontalAlignment="Left" VerticalAlignment="Top">
+      <DataValidationErrors.Error>
+        <system:Exception>
+          <x:Arguments>
+            <x:String>Error</x:String>
+          </x:Arguments>
+        </system:Exception>
+      </DataValidationErrors.Error>
+    </CalendarDatePicker>
+    <StackPanel Spacing="20">
+      <TextBlock Classes="section-title" Text="Blackout Period:" />
+      <Calendar DisplayDate="2025-07-01">
+        <Calendar.BlackoutDates>
+          <CalendarDateRange>
+            <x:Arguments>
+              <system:DateTime>2025-06-01</system:DateTime>
+              <system:DateTime>2025-07-20</system:DateTime>
+            </x:Arguments>
+          </CalendarDateRange>
+        </Calendar.BlackoutDates>
+      </Calendar>
+    </StackPanel>
+  </StackPanel>
+</UserControl>
