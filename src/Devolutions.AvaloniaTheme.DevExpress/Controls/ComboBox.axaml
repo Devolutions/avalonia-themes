@@ -82,6 +82,7 @@
                     MinWidth="{TemplateBinding MinWidth}"
                     MinHeight="{TemplateBinding MinHeight}" />
             <DockPanel HorizontalAlignment="Stretch">
+              <!-- TODO: Create Resources for shared settings (EditableComboBox too!) -->
               <Border Name="DropDownGlyphBackground"
                       DockPanel.Dock="Right"
                       Background="Transparent"
