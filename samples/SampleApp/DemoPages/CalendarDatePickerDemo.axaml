@@ -6,14 +6,27 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.CalendarDatePickerDemo">
 
-  <StackPanel Orientation="Horizontal" Margin="20" Spacing="20">
-    <StackPanel Spacing="20">
-      <CalendarDatePicker Watermark="yyyy-MM-dd" HorizontalAlignment="Left" />
-    <CalendarDatePicker Name="DatePicker" HorizontalAlignment="Left" />
-    <CalendarDatePicker Name="DatePicker2" HorizontalAlignment="Left" IsEnabled="False" />
+  <Grid ColumnDefinitions="*, *, *"
+        RowDefinitions="Auto, Auto"
+        Margin="20"
+        ColumnSpacing="30"
+        RowSpacing="30">
+    <StackPanel Grid.Column="0" Grid.Row="0" Spacing="20" Width="220">
+      <CalendarDatePicker HorizontalAlignment="Left" />
+      <CalendarDatePicker Name="DatePicker" HorizontalAlignment="Left" />
+      <CalendarDatePicker Name="DatePicker2" HorizontalAlignment="Left" IsEnabled="False" />
       <CalendarDatePicker Name="DatePicker3" HorizontalAlignment="Left" SelectedDateFormat="Long" />
     </StackPanel>
-    <CalendarDatePicker HorizontalAlignment="Left" VerticalAlignment="Top">
+    <TextBlock Grid.Column="0" Grid.Row="1"
+               Grid.ColumnSpan="2" TextWrapping="Wrap">
+      <Bold>Note:</Bold>
+      <TextBlock Classes="code">MinWidth</TextBlock> is set to comfortably accommodate short date formats &amp; the corresponding default watermark when
+      <TextBlock Classes="code">HorizontalAlignment</TextBlock> is set to anything other than the default (<TextBlock Classes="code">Stretch</TextBlock>).<LineBreak /><LineBreak />
+      If you set <TextBlock Classes="code">SelectedDateFormat="Long"</TextBlock> you will have to override <TextBlock Classes="code">MinWidth</TextBlock> to the longest
+      expected string length, depending on supported languages. Otherwise the control's width will jump when the date is changed.
+    </TextBlock>
+    <CalendarDatePicker Grid.Row="0" Grid.Column="1"
+                        HorizontalAlignment="Left" VerticalAlignment="Top">
       <DataValidationErrors.Error>
         <system:Exception>
           <x:Arguments>
@@ -22,7 +35,9 @@
         </system:Exception>
       </DataValidationErrors.Error>
     </CalendarDatePicker>
-    <StackPanel Spacing="20">
+    <StackPanel Grid.Row="0" Grid.Column="2"
+                Grid.RowSpan="2"
+                Spacing="20" Margin="30 0 0 0 ">
       <TextBlock Classes="section-title" Text="Blackout Period:" />
       <Calendar DisplayDate="2025-07-01">
         <Calendar.BlackoutDates>
@@ -35,5 +50,5 @@
         </Calendar.BlackoutDates>
       </Calendar>
     </StackPanel>
-  </StackPanel>
+  </Grid>
 </UserControl>
