@@ -30,6 +30,7 @@
       <Color x:Key='ScrollBarThumbColor'>#9f9f9f</Color>
 
       <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.07" />
+      <SolidColorBrush x:Key="ControlBackgroundPointerOverBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.1" />
       <SolidColorBrush x:Key="TreeViewItemBackgroundSelectedBrush" Color="{DynamicResource SystemAccentColor}" Opacity="0.2" />
 
       <Color x:Key="EditableComboBoxItemHoverForegroundColor">#0067c0</Color>
@@ -87,8 +88,8 @@
 
       <Color x:Key='ScrollBarThumbColor'>#808080</Color>
 
-      <Color x:Key='ControlBackgroundSelectedColor'>#21ffffff</Color>
-      <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource ControlBackgroundSelectedColor}" />
+      <SolidColorBrush x:Key="ControlBackgroundSelectedBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.11" />
+      <SolidColorBrush x:Key="ControlBackgroundPointerOverBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" />
       <SolidColorBrush x:Key="TreeViewItemBackgroundSelectedBrush" Color="{DynamicResource ForegroundColor}"
                        Opacity="0.13" />
       <Color x:Key="EditableComboBoxItemHoverForegroundColor">#387ec4</Color>
@@ -215,6 +216,10 @@
   <x:Double x:Key="TreeViewItemExpandCollapseChevronSize">12</x:Double>
   <Thickness x:Key="TreeViewItemExpandCollapseChevronMargin">4 0 4 0</Thickness>
   <Thickness x:Key="TreeViewItemTreeViewItemPaddingn">0 0 5 0</Thickness>
+
+  <!-- CalendarDatePicker Resources -->
+  <SolidColorBrush x:Key="CalendarWeekendForegroundBrush" Color="Red" />
+  <x:Double x:Key="CalendarFontSize">11</x:Double>
 
   <!-- DEVELOPMENT ONLY -->
   <!-- <SolidColorBrush x:Key="BackgroundBrush" Color="{DynamicResource ForegroundColor}" Opacity="0.13" /> -->

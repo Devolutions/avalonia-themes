@@ -18,10 +18,8 @@
   </Design.PreviewWith>
 
   <ControlTheme x:Key="{x:Type Calendar}" TargetType="Calendar">
-    <Setter Property="Foreground" Value="{DynamicResource CalendarViewForeground}" />
-    <Setter Property="Background" Value="{DynamicResource CalendarViewBackground}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewBorderBrush}" />
-    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
     <Setter Property="HorizontalAlignment" Value="Left" />
     <Setter Property="VerticalAlignment" Value="Center" />
     <Setter Property="FontSize" Value="{DynamicResource CalendarFontSize}" />

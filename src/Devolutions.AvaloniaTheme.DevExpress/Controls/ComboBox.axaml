@@ -187,7 +187,7 @@
     </Style>
 
     <Style Selector="^ /template/ Border#DropDownGlyphBackground:pointerover">
-      <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundPointerOverBrush}" />
     </Style>
 
     <!--  Disabled State  -->
