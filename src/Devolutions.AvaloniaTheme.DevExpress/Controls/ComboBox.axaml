@@ -82,20 +82,19 @@
                     MinWidth="{TemplateBinding MinWidth}"
                     MinHeight="{TemplateBinding MinHeight}" />
             <DockPanel HorizontalAlignment="Stretch">
-              <!-- TODO: Create Resources for shared settings (EditableComboBox too!) -->
               <Border Name="DropDownGlyphBackground"
                       DockPanel.Dock="Right"
                       Background="Transparent"
-                      Margin="2 0"
-                      Width="20"
-                      Height="17"
+                      Margin="{DynamicResource DropdownButtonMargin}"
+                      Width="{DynamicResource DropdownButtonWidth}"
+                      Height="{DynamicResource DropdownButtonHeight}"
                       CornerRadius="{DynamicResource ControlCornerRadius}"
                       HorizontalAlignment="Center"
                       VerticalAlignment="Center">
                 <PathIcon Name="DropDownGlyph"
                           UseLayoutRounding="False"
                           IsHitTestVisible="False"
-                          Width="9"
+                          Width="{DynamicResource DropdownButtonIconWidth}"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Center"
                           Foreground="{TemplateBinding Foreground}"
