@@ -24,6 +24,11 @@ the Avalonia community to add more DevExpress-style controls.
     - [AutoCompleteBox](#autocompletebox)
     - [Button](#button)
     - [ButtonSpinner](#buttonspinner)
+    - [Calendar](#calendar)
+      - [CalendarButton](#calendarbutton)
+      - [CalendarDatePicker](#calendardatepicker)
+      - [CalendarDayButton](#calendardaybutton)
+      - [CalendarItem](#calendaritem)
     - [CheckBox](#checkbox)
     - [ComboBox](#combobox)
       - [ComboBoxItem](#comboboxitem)
@@ -83,16 +88,8 @@ In your App.axaml, replace the existing theme (e.g. `<FluentTheme />` or `<Simpl
 || <img alt="AutoCompleteBox" src="https://github.com/user-attachments/assets/81d2676e-0fe0-4a43-944a-43cf40ec0dd5" style="width: 384px; max-width: 100%;" />  <br /><br />  ➡️ See also [EditableComboBox](#editablecombobox) in our [custom controls](https://github.com/Devolutionsavalonia-extensions/blob/master/src/Devolutions.AvaloniaControls/README.md)||
 |✅ | <h3>Button</h3> |
 ||  <img src="https://github.com/user-attachments/assets/58571893-927e-4e4a-92b3-7d0b7ced4f68" alt="Button demo" style="width: 182px; max-width: 100%;" /> |
-|| <h3>Calendar</h3> |
-|||
-|| <h3>CalendarButton</h3> |
-|||
-|| <h3>CalendarDatePicker</h3> |
-|||
-|| <h3>CalendarDayButton</h3> |
-|||
-|| <h3>CalendarItem</h3> |
-|||
+|✅ | <h3>CalendarDatePicker</h3> <h4>Calendar</h4> <h4>CalendarItem</h4> <h4>CalendarButton</h4> <h4>CalendarDayButton</h4> |
+|| <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/0e9f2ad2-8b55-49c6-8688-9230b3ae4b7d" style="width: 841px; max-width: 100%;" /> <br /> <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/41851f15-2f7c-46ae-9b2f-95db814863ee" style="width: 915px; max-width: 100%;" /> <br /> <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/ab15ec44-1e8f-42f3-b596-564702aedfba" style="width: 841px; max-width: 100%;" /> <br /> <img alt="CalendarDatePicker" src="https://github.com/user-attachments/assets/0a9d60ff-f5de-40f0-b1cd-f0c990efcc69" style="width: 915px; max-width: 100%;" />  <br /> **Note:** `MinWidth` is set to comfortably accommodate short date formats &amp; the corresponding default watermark when `HorizontalAlignment` is set to anything other than the default (`Stretch`).<br /><br />If you set `SelectedDateFormat="Long"` you will have to override `MinWidth` to the longest expected string length, depending on supported languages. Otherwise the control's width will jump when the date is changed. |
 || <h3>CaptionButtons</h3> |
 |||
 || <h3>Carousel</h3> |

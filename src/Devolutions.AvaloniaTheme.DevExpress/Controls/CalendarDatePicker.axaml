@@ -1,0 +1,171 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="using:System"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design">
+  
+  <Design.PreviewWith>
+    <design:ThemePreviewer>
+      <StackPanel Margin="20" Spacing="20" Width="230">
+        <CalendarDatePicker />
+        <CalendarDatePicker SelectedDate="{Binding Source={x:Static sys:DateTime.Today}}" />
+        <CalendarDatePicker SelectedDateFormat="Long" SelectedDate="{Binding Source={x:Static sys:DateTime.Today}}" />
+        <ComboBox PlaceholderText="ComboBox" />
+        <CalendarDatePicker IsEnabled="False" />
+        <TextBlock Text="HorizontalAlignment: Left" Classes="section-title" />
+        <CalendarDatePicker HorizontalAlignment="Left" />
+        <CalendarDatePicker HorizontalAlignment="Left" SelectedDate="{Binding Source={x:Static sys:DateTime.Today}}" />
+        <CalendarDatePicker HorizontalAlignment="Left" VerticalAlignment="Top">
+          <DataValidationErrors.Error>
+            <sys:Exception>
+              <x:Arguments>
+                <x:String>Error</x:String>
+              </x:Arguments>
+            </sys:Exception>
+          </DataValidationErrors.Error>
+        </CalendarDatePicker>
+        <CalendarDatePicker HorizontalAlignment="Left" SelectedDateFormat="Long" SelectedDate="{Binding Source={x:Static sys:DateTime.Today}}" />
+        
+      </StackPanel>
+    </design:ThemePreviewer>
+  </Design.PreviewWith>
+  
+  <x:Double x:Key="CalendarDatePickerCurrentDayFontSize">12</x:Double>
+  <x:Double x:Key="CalendarDatePickerMinHeight">32</x:Double>
+
+  <ControlTheme x:Key="DatePickerButton"
+                TargetType="Button">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="Button">
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Content="{TemplateBinding Content}" />
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type CalendarDatePicker}" TargetType="CalendarDatePicker">
+    <Setter Property="Watermark" Value="yyyy-MM-dd" />
+    <Setter Property="IsTodayHighlighted" Value="True" />
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ComboBoxBorderBrush}" />
+    <Setter Property="BorderThickness" Value="{DynamicResource ComboBoxBorderThemeThickness}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+    <Setter Property="MinHeight" Value="{DynamicResource TextBasedInputMinHeight}" />
+    <Setter Property="Padding" Value="4 0 0 0 " />
+    <Setter Property="MinWidth" Value="102" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <DataValidationErrors>
+          <Panel x:Name="LayoutRoot"
+                 HorizontalAlignment="Stretch">
+            <!-- Brittle Button placement! Placing the Button as TextBox.InnerRightContent breaks functionality,
+                       But this placement breaks if ValidationError text is positioned _above_ the TextBox 
+                       Also: centering the button via setting a top margin gives inconsistent results on different monitors -->
+            <Panel>
+              <TextBox Name="PART_TextBox"
+                       Watermark="{TemplateBinding Watermark}"
+                       UseFloatingWatermark="{TemplateBinding UseFloatingWatermark}"
+                       Width="{TemplateBinding Width}"
+                       Foreground="{TemplateBinding Foreground}"
+                       BorderThickness="{TemplateBinding BorderThickness}"
+                       CornerRadius="{TemplateBinding CornerRadius}"
+                       Padding="{TemplateBinding Padding}">
+                <TextBox.InnerRightContent>
+                  <Rectangle Width="22" Fill="Transparent" />
+                </TextBox.InnerRightContent>
+              </TextBox>
+              <Border
+                Name="ErrorBorder"
+                BorderBrush="{StaticResource SystemControlErrorTextForegroundBrush}"
+                BorderThickness="1"
+                CornerRadius="{DynamicResource ControlCornerRadius}"
+                IsVisible="False" />
+              <Panel Height="{DynamicResource TextBasedInputMinHeight}" VerticalAlignment="Top">
+                <Button Name="PART_Button"
+                        Theme="{StaticResource DatePickerButton}"
+                        Focusable="False">
+                  <Border Name="DropDownGlyphBackground"
+                          DockPanel.Dock="Right"
+                          Background="Transparent"
+                          Margin="{DynamicResource DropdownButtonMargin}"
+                          Width="{DynamicResource DropdownButtonWidth}"
+                          Height="{DynamicResource DropdownButtonHeight}"
+                          CornerRadius="{DynamicResource ControlCornerRadius}"
+                          HorizontalAlignment="Right"
+                          VerticalAlignment="Center">
+                    <PathIcon Name="DropDownGlyph"
+                              UseLayoutRounding="False"
+                              IsHitTestVisible="False"
+                              Width="{DynamicResource DropdownButtonIconWidth}"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              Foreground="{TemplateBinding Foreground}"
+                              Data="{StaticResource ChevronPath}" />
+                  </Border>
+                </Button>
+              </Panel>
+              <Popup Name="PART_Popup"
+                     PlacementTarget="{TemplateBinding}"
+                     Placement="BottomEdgeAlignedLeft"
+                     WindowManagerAddShadowHint="False"
+                     IsLightDismissEnabled="True">
+                <Border Name="PopupBorder"
+                        Background="{DynamicResource BackgroundColor}"
+                        BorderBrush="{DynamicResource ComboBoxDropDownBorderBrushTransparent}"
+                        BorderThickness="{DynamicResource ComboBoxDropdownBorderThickness}"
+                        Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
+                        HorizontalAlignment="Stretch"
+                        CornerRadius="{DynamicResource OverlayCornerRadius}"
+                        Margin="{DynamicResource ComboBoxPopupBorderMargin}"
+                        BoxShadow="{DynamicResource ComboBoxDropDownShadow}">
+                <Calendar Name="PART_Calendar"
+                          FirstDayOfWeek="{TemplateBinding FirstDayOfWeek}"
+                          IsTodayHighlighted="{TemplateBinding IsTodayHighlighted}"
+                          SelectedDate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectedDate, Mode=TwoWay}"
+                          DisplayDate="{TemplateBinding DisplayDate}"
+                          DisplayDateStart="{TemplateBinding DisplayDateStart}"
+                          DisplayDateEnd="{TemplateBinding DisplayDateEnd}" />
+                </Border>
+              </Popup>
+            </Panel>
+          </Panel>
+        </DataValidationErrors>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Disabled State -->
+    <Style Selector="^:disabled">
+      <Style Selector="^ /template/ Button#PART_Button PathIcon">
+        <Setter Property="TextElement.Foreground" Value="{DynamicResource CalendarDatePickerCalendarGlyphForegroundDisabled}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^ /template/ Border#DropDownGlyphBackground:pointerover">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundPointerOverBrush}" />
+    </Style>
+
+    <Style Selector="^:flyout-open">
+      <Style Selector="^ /template/ Border#DropDownGlyphBackground">
+        <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+      </Style>
+      <Style Selector="^ /template/ PathIcon#DropDownGlyph">
+        <Setter Property="Foreground" Value="#939393" />
+      </Style>
+    </Style>
+
+    <!-- Focused State -->
+    <Style Selector="^:focus-within:not(CalendarDatePicker:focus) /template/ Border#Background">
+      <Setter Property="Background" Value="{DynamicResource TextControlBackgroundFocused}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource TextControlBorderBrushFocused}" />
+      <Setter Property="BorderThickness" Value="{DynamicResource TextControlBorderThemeThicknessFocused}" />
+    </Style>
+
+    <!-- Error State -->
+    <Style Selector="^:error /template/ Border#ErrorBorder">
+      <Setter Property="IsVisible" Value="True" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

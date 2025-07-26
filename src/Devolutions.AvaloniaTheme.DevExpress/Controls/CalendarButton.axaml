@@ -1,0 +1,97 @@
+  
+<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see https://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+-->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+
+  <Design.PreviewWith>
+    <design:ThemePreviewer>
+      <Border Padding="20">
+        <Calendar DisplayDate="2025-07-01">
+          <Calendar.BlackoutDates>
+            <CalendarDateRange>
+              <x:Arguments>
+                <system:DateTime>2023-05-01</system:DateTime>
+                <system:DateTime>2025-07-20</system:DateTime>
+              </x:Arguments>
+            </CalendarDateRange>
+          </Calendar.BlackoutDates>
+        </Calendar>
+      </Border>
+    </design:ThemePreviewer>
+  </Design.PreviewWith>
+
+
+  <ControlTheme x:Key="{x:Type CalendarButton}" TargetType="CalendarButton">
+    <Setter Property="ClickMode" Value="Release" />
+    <Setter Property="MinWidth" Value="40" />
+    <Setter Property="MinHeight" Value="40" />
+    <Setter Property="Padding" Value="0,0,0,0" />
+    <!--These are actually set on the CalendarView in WinUI-->
+    <Setter Property="Foreground" Value="{DynamicResource CalendarViewCalendarItemForeground}" />
+    <Setter Property="Background" Value="{DynamicResource CalendarViewCalendarItemRevealBackground}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource CalendarViewCalendarItemRevealBorderBrush}" />
+    <Setter Property="BorderThickness" Value="2" />
+    <Setter Property="ClipToBounds" Value="False" />
+    <Setter Property="HorizontalContentAlignment" Value="Center" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Panel>
+          <!-- To mimic WinUI SystemFocusVisual, Focus visual is drawn outside the bounds of the item -->
+          <Border Name="Root" Background="{TemplateBinding Background}"
+                  BorderThickness="0" ClipToBounds="True">
+            <Panel>
+              <ContentPresenter Name="PART_ContentPresenter"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Content="{TemplateBinding Content}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Margin="{TemplateBinding Padding}" />
+              <Rectangle Name="Blackout"
+                         Height="1"
+                         Fill="{DynamicResource ForegroundHighBrush}"
+                         Margin="15 0"
+                         IsVisible="False" />
+            </Panel>
+          </Border>
+        </Panel>
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:pointerover">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+    </Style>
+
+    <Style Selector="^:selected">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+    </Style>
+
+    <!-- WinUI calls this OutOfFocus -->
+    <Style Selector="^:inactive">
+      <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource ForegroundDisabledBrush}" />
+      </Style>
+    </Style>
+
+    <!-- CalendarButton doesn't actually support the :blackout PseudoClass. Leaving the code in, in case they fix that omission. (AMP, Jul 2025)  -->
+    <Style Selector="^:blackout">
+      <Style Selector="^ /template/ Rectangle#Blackout">
+        <Setter Property="IsVisible" Value="True" />
+      </Style>
+      <Style Selector="^:pointerover">
+        <Setter Property="Background" Value="{DynamicResource BackgroundBrush}" />
+      </Style>
+    </Style>
+
+    <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource CalendarViewWeekDayForegroundDisabled}" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>

@@ -6,7 +6,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="SampleApp.DemoPages.CalendarDatePickerDemo">
 
-  <Grid ColumnDefinitions="*, *, *"
+  <Grid ColumnDefinitions="*, *, Auto"
         RowDefinitions="Auto, Auto"
         Margin="20"
         ColumnSpacing="30"
@@ -25,25 +25,32 @@
       If you set <TextBlock Classes="code">SelectedDateFormat="Long"</TextBlock> you will have to override <TextBlock Classes="code">MinWidth</TextBlock> to the longest
       expected string length, depending on supported languages. Otherwise the control's width will jump when the date is changed.
     </TextBlock>
-    <CalendarDatePicker Grid.Row="0" Grid.Column="1"
-                        HorizontalAlignment="Left" VerticalAlignment="Top">
-      <DataValidationErrors.Error>
-        <system:Exception>
-          <x:Arguments>
-            <x:String>Error</x:String>
-          </x:Arguments>
-        </system:Exception>
-      </DataValidationErrors.Error>
-    </CalendarDatePicker>
+    <StackPanel Grid.Row="0" Grid.Column="1"
+                Spacing="10" Margin="30 0 0 0 ">
+      <CalendarDatePicker HorizontalAlignment="Left" VerticalAlignment="Top">
+        <DataValidationErrors.Error>
+          <system:Exception>
+            <x:Arguments>
+              <x:String>Error</x:String>
+            </x:Arguments>
+          </system:Exception>
+        </DataValidationErrors.Error>
+      </CalendarDatePicker>
+      <TextBlock Margin="0 15 0 0" TextWrapping="Wrap">
+        <TextBlock Classes="code">FirstDayOfWeek</TextBlock> follows system settings, unless explicitly set.<LineBreak /> E.g.
+        <TextBlock Classes="code">FirstDayOfWeek="Sunday"</TextBlock>:
+      </TextBlock>
+      <CalendarDatePicker HorizontalAlignment="Left" FirstDayOfWeek="Sunday" />
+    </StackPanel>
     <StackPanel Grid.Row="0" Grid.Column="2"
                 Grid.RowSpan="2"
                 Spacing="20" Margin="30 0 0 0 ">
       <TextBlock Classes="section-title" Text="Blackout Period:" />
-      <Calendar DisplayDate="2025-07-01">
+      <Calendar DisplayDate="2025-07-25">
         <Calendar.BlackoutDates>
           <CalendarDateRange>
             <x:Arguments>
-              <system:DateTime>2025-06-01</system:DateTime>
+              <system:DateTime>2023-06-01</system:DateTime>
               <system:DateTime>2025-07-20</system:DateTime>
             </x:Arguments>
           </CalendarDateRange>

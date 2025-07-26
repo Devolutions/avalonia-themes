@@ -1,0 +1,190 @@
+<!--
+// (c) Copyright Microsoft Corporation.
+// This source is subject to the Microsoft Public License (Ms-PL).
+// Please see https://go.microsoft.com/fwlink/?LinkID=131993 for details.
+// All other rights reserved.
+-->
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="using:System"
+                    xmlns:design="clr-namespace:Devolutions.AvaloniaTheme.DevExpress.Design"
+                    x:ClassModifier="internal">
+
+  <Design.PreviewWith>
+    <design:ThemePreviewer>
+      <Border Padding="0">
+        <Calendar DisplayDate="2025-07-01">
+          <Calendar.BlackoutDates>
+            <CalendarDateRange>
+              <x:Arguments>
+                <sys:DateTime>2025-06-01</sys:DateTime>
+                <sys:DateTime>2025-07-20</sys:DateTime>
+              </x:Arguments>
+            </CalendarDateRange>
+          </Calendar.BlackoutDates>
+        </Calendar>
+      </Border>
+    </design:ThemePreviewer>
+  </Design.PreviewWith>
+
+  <!-- This governs the top three buttons (month/year, previous & next) - see CalendarButton.axaml CalendarDayButton.axaml for others -->
+  <ControlTheme x:Key="FluentCalendarButton" TargetType="Button">
+    <Setter Property="HorizontalAlignment" Value="Stretch" />
+    <Setter Property="VerticalAlignment" Value="Stretch" />
+    <Setter Property="VerticalContentAlignment" Value="Center" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter Name="PART_ContentPresenter"
+                          Background="{TemplateBinding Background}"
+                          CornerRadius="{DynamicResource ControlCornerRadius}"
+                          BorderBrush="{DynamicResource CalendarViewNavigationButtonBorderBrush}"
+                          BorderThickness="{TemplateBinding BorderThickness}"
+                          Content="{TemplateBinding Content}"
+                          Margin="{TemplateBinding Margin}"
+                          Padding="12 0"
+                          HorizontalContentAlignment="Stretch"
+                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+      </ControlTemplate>
+    </Setter>
+
+    <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundPointerOverBrush}" />
+    </Style>
+    <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
+    </Style>
+    <!-- Disabled here just means it's not a button. But it still functions as a heading (PART_HeaderButton in decade mode) -->
+    <Style Selector="^:disabled /template/ ContentPresenter">
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    </Style>
+  </ControlTheme>
+
+  <ControlTheme x:Key="{x:Type CalendarItem}" TargetType="CalendarItem">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
+    <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
+    <Setter Property="Margin" Value="10" />
+    <!-- This governs the weekday names above the month view -->
+    <Setter Property="DayTitleTemplate">
+      <Template x:DataType="x:String">
+        <TextBlock Text="{Binding}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="{DynamicResource CalendarDayButtonFontSize}" />
+      </Template>
+    </Setter>
+
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                MinWidth="265">
+          <!-- To keep calendar from resizing when switching DisplayMode
+                 In WinUI Min-Width from TemplateSettings
+                 basically...MinWidth of DayItem = 34 x 26, 34 * 7 = 238 + margins/padding = ~265
+                 Viewport height is set from # of rows displayed (2-8) in Month mode, = ~294 for 6 weeks (+ day names)
+                 -->
+          <Grid RowDefinitions="Auto,*"
+                VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <Grid ColumnDefinitions="Auto,*,Auto"
+                  Height="34">
+              <Button Name="PART_PreviousButton"
+                      Grid.Column="0"
+                      Theme="{StaticResource FluentCalendarButton}"
+                      Foreground="{TemplateBinding Foreground}"
+                      Margin="0 3"
+                      HorizontalContentAlignment="Center">
+                <PathIcon Name="LeftArrow"
+                          Data="{DynamicResource ScrollBarLineButtonPath}"
+                          Foreground="{DynamicResource ForegroundHighBrush}"
+                          HorizontalAlignment="Center"
+                          Width="7">
+                  <PathIcon.RenderTransform>
+                    <TransformGroup>
+                      <RotateTransform Angle="-90" />
+                    </TransformGroup>
+                  </PathIcon.RenderTransform>
+                </PathIcon>
+              </Button>
+              <Button Grid.Column="1" Name="PART_HeaderButton"
+                      Theme="{StaticResource FluentCalendarButton}"
+                      Foreground="{TemplateBinding Foreground}"
+                      HorizontalAlignment="Center"
+                      HorizontalContentAlignment="Center" />
+              <Button Name="PART_NextButton"
+                      Grid.Column="2"
+                      Theme="{StaticResource FluentCalendarButton}"
+                      Foreground="{TemplateBinding Foreground}"
+                      Margin="0 3"
+
+                      HorizontalContentAlignment="Center">
+                <PathIcon Name="RightArrow"
+                          Data="{DynamicResource ScrollBarLineButtonPath}"
+                          Foreground="{DynamicResource ForegroundHighBrush}"
+                          HorizontalAlignment="Center"
+                          Width="7">
+                  <PathIcon.RenderTransform>
+                    <TransformGroup>
+                      <RotateTransform Angle="90" />
+                    </TransformGroup>
+                  </PathIcon.RenderTransform>
+                </PathIcon>
+              </Button>
+            </Grid>
+            <!--Border below is used only for MonthView but it can't be moved inside of Grid because CalendarItem expects it to be empty and it will cause side-effects-->
+            <Border Grid.Row="1" Name="BackgroundLayer"
+                    Background="{TemplateBinding BorderBrush}"
+                    Padding="10,0,50,0"
+                    IsVisible="{Binding #PART_MonthView.IsVisible}" />
+            <Grid Name="PART_MonthView" Grid.Row="1" IsVisible="False" MinHeight="190" HorizontalAlignment="Center">
+              <Grid.RowDefinitions>
+                <!--First row should always be the week day names-->
+                <RowDefinition Height="28" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+              </Grid.ColumnDefinitions>
+            </Grid>
+            <Grid Name="PART_YearView"
+                  Background="{TemplateBinding BorderBrush}"
+                  MinHeight="190"
+                  Grid.Row="1"
+                  IsVisible="False">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+              </Grid.RowDefinitions>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+              </Grid.ColumnDefinitions>
+            </Grid>
+          </Grid>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+    
+    <Style Selector="^ /template/ Button:pointerover > Path">
+      <Setter Property="Stroke" Value="{DynamicResource CalendarViewNavigationButtonForegroundPointerOver}" />
+    </Style>
+    <Style Selector="^ /template/ Button:pressed > Path">
+      <Setter Property="Stroke" Value="{DynamicResource CalendarViewNavigationButtonForegroundPressed}" />
+    </Style>
+  </ControlTheme>
+</ResourceDictionary>
