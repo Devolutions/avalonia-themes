@@ -67,13 +67,7 @@
                          Margin="4 0"
                          IsVisible="False" />
             </Panel>
-
           </Border>
-
-          <!-- Drawn Border should render on top of background to preserve the 1px margin between items-->
-          <Border Name="Border"
-                  BorderThickness="2"
-                  BorderBrush="{TemplateBinding BorderBrush}" />
         </Panel>
       </ControlTemplate>
     </Setter>

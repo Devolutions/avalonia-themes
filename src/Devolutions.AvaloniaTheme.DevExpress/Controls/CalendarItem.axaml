@@ -34,7 +34,6 @@
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="Template">
       <ControlTemplate>
-        <!-- HCA was changed here to ensure nav arrows display correctly -->
         <ContentPresenter Name="PART_ContentPresenter"
                           Background="{TemplateBinding Background}"
                           CornerRadius="{DynamicResource ControlCornerRadius}"
@@ -54,7 +53,7 @@
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
     </Style>
-    <!-- Disabled here just means it's not a button, but still functions as a heading (PART_HeaderButton in decade mode) -->
+    <!-- Disabled here just means it's not a button. But it still functions as a heading (PART_HeaderButton in decade mode) -->
     <Style Selector="^:disabled /template/ ContentPresenter">
       <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     </Style>
