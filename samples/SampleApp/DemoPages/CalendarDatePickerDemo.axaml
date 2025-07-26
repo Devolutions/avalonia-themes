@@ -50,7 +50,7 @@
         <Calendar.BlackoutDates>
           <CalendarDateRange>
             <x:Arguments>
-              <system:DateTime>2025-06-01</system:DateTime>
+              <system:DateTime>2023-06-01</system:DateTime>
               <system:DateTime>2025-07-20</system:DateTime>
             </x:Arguments>
           </CalendarDateRange>
