@@ -54,14 +54,17 @@
     <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
       <Setter Property="Background" Value="{DynamicResource ControlBackgroundSelectedBrush}" />
     </Style>
+    <!-- Disabled here just means it's not a button, but still functions as a heading (PART_HeaderButton in decade mode) -->
     <Style Selector="^:disabled /template/ ContentPresenter">
-      <Setter Property="Foreground" Value="{DynamicResource ForegroundLowBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     </Style>
   </ControlTheme>
 
   <ControlTheme x:Key="{x:Type CalendarItem}" TargetType="CalendarItem">
+    <Setter Property="Foreground" Value="{DynamicResource ForegroundHighBrush}" />
     <Setter Property="CornerRadius" Value="{DynamicResource ControlCornerRadius}" />
     <Setter Property="Margin" Value="10" />
+    <!-- This governs the weekday names above the month view -->
     <Setter Property="DayTitleTemplate">
       <Template x:DataType="x:String">
         <TextBlock Text="{Binding}"
@@ -177,6 +180,7 @@
         </Border>
       </ControlTemplate>
     </Setter>
+    
     <Style Selector="^ /template/ Button:pointerover > Path">
       <Setter Property="Stroke" Value="{DynamicResource CalendarViewNavigationButtonForegroundPointerOver}" />
     </Style>
